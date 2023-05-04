@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/hevea",
+    "base": "afc:block/wood/lectern/hevea/base",
+    "front": "afc:block/wood/lectern/hevea/front",
+    "sides": "afc:block/wood/lectern/hevea/sides",
+    "top": "afc:block/wood/lectern/hevea/top",
+    "particle": "afc:block/wood/lectern/hevea/sides"
+  }
+}

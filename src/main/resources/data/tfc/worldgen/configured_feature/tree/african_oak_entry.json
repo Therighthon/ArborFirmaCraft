@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 180,
+    "max_rain": 320,
+    "min_temp": 12,
+    "max_temp": 24,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/african_oak"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/african_oak"
+      }
+    ],
+    "normal_tree": "tfc:tree/african_oak",
+    "dead_tree": "tfc:tree/african_oak_dead",
+    "fallen_log": "afc:wood/log/african_oak",
+    "bush_log": {
+      "Name": "afc:wood/wood/african_oak",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/african_oak",
+    "old_growth_tree": "tfc:tree/african_oak"
+  }
+}

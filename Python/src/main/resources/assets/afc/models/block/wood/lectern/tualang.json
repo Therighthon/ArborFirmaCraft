@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/tualang",
+    "base": "afc:block/wood/lectern/tualang/base",
+    "front": "afc:block/wood/lectern/tualang/front",
+    "sides": "afc:block/wood/lectern/tualang/sides",
+    "top": "afc:block/wood/lectern/tualang/top",
+    "particle": "afc:block/wood/lectern/tualang/sides"
+  }
+}

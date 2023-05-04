@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 280,
+    "max_rain": 390,
+    "min_temp": -16,
+    "max_temp": 4,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/white_elm"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/white_elm"
+      }
+    ],
+    "normal_tree": "tfc:tree/white_elm",
+    "dead_tree": "tfc:tree/white_elm_dead",
+    "fallen_log": "afc:wood/log/white_elm",
+    "bush_log": {
+      "Name": "afc:wood/wood/white_elm",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/white_elm"
+  }
+}

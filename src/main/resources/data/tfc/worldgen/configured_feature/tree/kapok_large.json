@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:kapok_large/1",
+      "tfc:kapok_large/2",
+      "tfc:kapok_large/3",
+      "tfc:kapok_large/4",
+      "tfc:kapok_large/5",
+      "tfc:kapok_large/6"
+    ],
+    "radius": 2,
+    "placement": {
+      "width": 2,
+      "height": 5,
+      "allow_submerged": false
+    },
+	"trunk": {
+      "state": {
+        "Name": "tfc:wood/log/kapok",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 15,
+      "max_height": 20,
+      "width": 2
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/stairs",
+  "textures": {
+    "bottom": "afc:block/wood/planks/gum_arabic",
+    "top": "afc:block/wood/planks/gum_arabic",
+    "side": "afc:block/wood/planks/gum_arabic"
+  }
+}

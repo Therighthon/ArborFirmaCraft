@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:white_elm/1",
+      "tfc:white_elm/2",
+      "tfc:white_elm/3",
+      "tfc:white_elm/4",
+      "tfc:white_elm/5",
+      "tfc:white_elm/6",
+      "tfc:white_elm/7",
+      "tfc:white_elm/8",
+      "tfc:white_elm/9",
+      "tfc:white_elm/10",
+      "tfc:white_elm/11",
+      "tfc:white_elm/12",
+      "tfc:white_elm/13",
+      "tfc:white_elm/14",
+      "tfc:white_elm/15",
+      "tfc:white_elm/16"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 3,
+      "allow_submerged": true
+    }
+  }
+}

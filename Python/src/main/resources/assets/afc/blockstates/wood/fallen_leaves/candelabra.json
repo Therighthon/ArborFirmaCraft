@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/fallen_leaves/candelabra",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/candelabra"
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/candelabra",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/candelabra",
+        "y": 270
+      }
+    ]
+  }
+}

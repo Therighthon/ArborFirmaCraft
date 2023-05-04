@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/candelabra",
+    "base": "afc:block/wood/lectern/candelabra/base",
+    "front": "afc:block/wood/lectern/candelabra/front",
+    "sides": "afc:block/wood/lectern/candelabra/sides",
+    "top": "afc:block/wood/lectern/candelabra/top",
+    "particle": "afc:block/wood/lectern/candelabra/sides"
+  }
+}

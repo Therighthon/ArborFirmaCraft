@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 370,
+    "max_rain": 500,
+    "min_temp": 22,
+    "max_temp": 28,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/tualang"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/tualang"
+      }
+    ],
+    "normal_tree": "tfc:tree/tualang",
+    "dead_tree": "tfc:tree/tualang_dead",
+    "fallen_log": "afc:wood/log/tualang",
+    "bush_log": {
+      "Name": "afc:wood/wood/tualang",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/tualang",
+    "old_growth_tree": "tfc:tree/tualang_large"
+  }
+}

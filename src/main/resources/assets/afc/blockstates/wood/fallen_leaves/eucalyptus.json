@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/fallen_leaves/eucalyptus",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/eucalyptus"
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/eucalyptus",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/eucalyptus",
+        "y": 270
+      }
+    ]
+  }
+}
