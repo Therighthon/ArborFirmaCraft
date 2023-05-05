@@ -22,8 +22,9 @@ public enum AFCWood implements RegistryWood
     BAOBAB(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
     HEVEA(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
     TUALANG(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    TEAK(false, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    CYPRESS(false, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10);
+    TEAK(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
+    CYPRESS(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
+    FIG(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,12);
 
     public static final AFCWood[] VALUES = values();
 

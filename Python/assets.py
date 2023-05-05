@@ -99,6 +99,37 @@ def generate(rm: ResourceManager):
     # for plant in ('duckweed', 'lotus', 'sargassum', 'water_lily'):
     #     rm.block_model('plant/%s' % plant, parent='afc:block/plant/template_floating_tinted', textures={'pad': 'afc:block/plant/%s/%s' % (plant, plant)})
 
+    for variant in TREE_VARIANTS.keys():
+        # Leaves
+        block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s' % variant)
+        block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='block/leaves')
+        block.with_item_model()
+        block.with_tag('minecraft:leaves')
+        block.with_block_loot(({
+                                   'name': 'afc:wood/leaves/%s' % variant,
+                                   'conditions': [loot_tables.or_condition(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
+                               }, {
+                                   'name': 'afc:wood/sapling/%s' % variant,
+                                   'conditions': ['minecraft:survives_explosion', loot_tables.random_chance(TREE_SAPLING_DROP_CHANCES[variant])] #Delete this bit to run for now, will fix itself when you run Generate trees.py because it will calc the sapling drop chances
+                               }), ({
+                                        'name': 'minecraft:stick',
+                                        'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.2)],
+                                        'functions': [loot_tables.set_count(1, 2)]
+                                    }, {
+                                        'name': 'minecraft:stick',
+                                        'conditions': [loot_tables.random_chance(0.05)],
+                                        'functions': [loot_tables.set_count(1, 2)]
+                                    }))
+
+        # Sapling
+        block = rm.blockstate(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
+        block.with_block_model({'cross': 'afc:block/wood/sapling/%s' % variant}, 'block/cross')
+        block.with_block_loot('afc:wood/sapling/%s' % variant)
+        rm.item_model(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
+
+        flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant, 'afc:wood/sapling/%s' % variant)
+
+
     # Wood Blocks
     for wood in WOODS.keys():
         # Logs

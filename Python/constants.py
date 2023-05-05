@@ -57,6 +57,9 @@ class Wood(NamedTuple):
     temp: float
     duration: int
 
+class TreeVariant(NamedTuple):
+    wood: str
+
 class Berry(NamedTuple):
     min_temp: float
     max_temp: float
@@ -389,12 +392,13 @@ ALCOHOLS = ('beer', 'cider', 'rum', 'sake', 'vodka', 'whiskey', 'corn_whiskey', 
 VANILLA_WOODS = ('oak', 'spruce', 'acacia', 'birch', 'jungle', 'dark_oak', 'crimson', 'warped')
 
 WOODS: Dict[str, Wood] = {
-    'african_oak': Wood(650, 1000),
+    'cypress': Wood(650, 1000),
     'tualang': Wood(696, 1250),
     'hevea': Wood(611, 1000),
-    'white_elm': Wood(720, 1750),
+    'teak': Wood(720, 1750),
     'eucalyptus': Wood(651, 1200),
-    'gum_arabic': Wood(707, 1000),
+    'baobab': Wood(707, 1000),
+    'fig': Wood(680, 1100),
     'mahogany': Wood(700, 1600),
     'acacia': Wood(650, 1000),
     'ash': Wood(696, 1250),
@@ -415,6 +419,31 @@ WOODS: Dict[str, Wood] = {
     'sycamore': Wood(653, 1750),
     'white_cedar': Wood(625, 1500),
     'willow': Wood(603, 1000)
+}
+
+TREE_VARIANTS: set[str, str] = {
+    'gum_arabic', 'acacia',
+    'acacia_koa', 'acacia',
+    'evergreen_ash', 'ash',
+    'mulga_blackwood', 'blackwood',
+    'mountain_fir', 'douglas_fir',
+    'scrub_hickory', 'hickory',
+    'bigleaf_maple', 'maple',
+    'weeping_maple', 'maple',
+    'black_oak', 'oak',
+    'pin_oak', 'oak',
+    'stone_pine', 'pine',
+    'red_pine', 'pine',
+    'giant_rosewood', 'rosewood',
+    'coast_spruce', 'spruce',
+    'sitka_spruce', 'spruce',
+    'atlas_cedar', 'white_cedar',
+    'weeping_willow', 'willow',
+    'rainbow_eucalyptus', 'eucalyptus',
+    'mountain_ash', 'eucalyptus',
+    'weeping_cypress', 'cypress',
+    'redcedar', 'cypress',
+    'bald_cypress', 'cypress'
 }
 
 # DO NOT EDIT DIRECTLY - Imported directly from spreadsheet

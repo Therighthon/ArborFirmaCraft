@@ -20,7 +20,7 @@ STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resou
 
 
 NORMAL_TREES = [
-    Tree('gum_arabic', 'random', 'acacia', 35),
+    Tree('baobab', 'random', 'baobab', 35),
     Tree('mahogany', 'random', 'jungle', 17),
     #Tree('kapok', 'random', 'canopy', 15),
     Tree('eucalyptus', 'random', 'canopy', 15),
