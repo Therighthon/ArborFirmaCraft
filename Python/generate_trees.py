@@ -88,7 +88,7 @@ DEAD_TREES = [
     Tree('sitka_spruce', 'random', 'dead_tall', 6, 'spruce'),
     Tree('atlas_cedar', 'random', 'dead_small', 6, 'white_cedar'),
     Tree('weeping_willow', 'random', 'dead_small', 6, 'willow'),
-    Tree('rainbow_eucalptus', 'random', 'dead_jungle', 4, 'rainbow_eucalyptus'),
+    Tree('rainbow_eucalyptus', 'random', 'dead_jungle', 4, 'rainbow_eucalyptus'),
     Tree('eucalyptus', 'random', 'dead_tall', 6, 'eucalyptus'),
     Tree('mountain_ash', 'random', 'dead_tall', 6, 'eucalyptus'),
     Tree('hevea', 'random', 'dead_tall', 6, 'hevea'),

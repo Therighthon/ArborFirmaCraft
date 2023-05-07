@@ -398,8 +398,8 @@ WOODS: Dict[str, Wood] = {
     'teak': Wood(720, 1750),
     'eucalyptus': Wood(651, 1200),
     'baobab': Wood(707, 1000),
-    'fig': Wood(680, 1100)
-    # 'mahogany': Wood(700, 1600),
+    'fig': Wood(680, 1100),
+    'mahogany': Wood(700, 1600)
     # 'acacia': Wood(650, 1000),
     # 'ash': Wood(696, 1250),
     # 'aspen': Wood(611, 1000),
