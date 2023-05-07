@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:forest_entry",
   "config": {
-    "min_rain": 230,
+    "min_rain": 330,
     "max_rain": 480,
     "min_temp": -8,
     "max_temp": 14,

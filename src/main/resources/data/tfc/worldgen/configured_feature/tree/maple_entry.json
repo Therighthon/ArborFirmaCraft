@@ -2,10 +2,10 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:forest_entry",
   "config": {
-    "min_rain": 270,
-    "max_rain": 500,
-    "min_temp": -4,
-    "max_temp": 14,
+    "min_rain": 260,
+    "max_rain": 360,
+    "min_temp": -8,
+    "max_temp": 10,
     "groundcover": [
       {
         "block": "tfc:wood/twig/maple"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/maple",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },

@@ -9,7 +9,7 @@
         "Name": "tfc:wood/log/white_cedar",
         "Properties": {
           "axis": "y",
-          "natural": "true"
+          "natural": "True"
         }
       },
       "min_height": 2,

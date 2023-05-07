@@ -18,12 +18,14 @@
       "tfc:hevea/13",
       "tfc:hevea/14",
       "tfc:hevea/15",
-      "tfc:hevea/16"
+      "tfc:hevea/16",
+      "tfc:hevea/17",
+      "tfc:hevea/18"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 3,
+      "height": 0,
       "allow_submerged": true
     }
   }

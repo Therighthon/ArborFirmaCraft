@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 210,
     "max_rain": 400,
-    "min_temp": -6,
+    "min_temp": 0,
     "max_temp": 12,
     "groundcover": [
       {
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/hickory",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },

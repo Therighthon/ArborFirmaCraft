@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:forest_entry",
   "config": {
-    "min_rain": 140,
-    "max_rain": 250,
+    "min_rain": 90,
+    "max_rain": 275,
     "min_temp": 16,
     "max_temp": 40,
     "groundcover": [
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/acacia",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },

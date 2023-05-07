@@ -8,23 +8,23 @@
     "max_temp": 40,
     "groundcover": [
       {
-        "block": "afc:wood/twig/hevea"
+        "block": "tfc:wood/twig/hevea"
       },
       {
-        "block": "afc:wood/fallen_leaves/hevea"
+        "block": "tfc:wood/fallen_leaves/hevea"
       }
     ],
     "normal_tree": "tfc:tree/hevea",
     "dead_tree": "tfc:tree/hevea_dead",
-    "fallen_log": "afc:wood/log/hevea",
+    "fallen_log": "tfc:wood/log/hevea",
     "bush_log": {
-      "Name": "afc:wood/wood/hevea",
+      "Name": "tfc:wood/wood/hevea",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/hevea",
-    "old_growth_tree": "tfc:tree/hevea"
+    "bush_leaves": "tfc:wood/leaves/hevea",
+    "old_growth_tree": "tfc:tree/hevea_large"
   }
 }

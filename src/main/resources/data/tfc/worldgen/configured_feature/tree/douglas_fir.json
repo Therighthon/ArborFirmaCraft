@@ -11,13 +11,14 @@
       "tfc:douglas_fir/6",
       "tfc:douglas_fir/7",
       "tfc:douglas_fir/8",
-      "tfc:douglas_fir/9"
+      "tfc:douglas_fir/9",
+      "tfc:douglas_fir/10"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 5,
-      "allow_submerged": false
+      "height": 0,
+      "allow_submerged": true
     }
   }
 }

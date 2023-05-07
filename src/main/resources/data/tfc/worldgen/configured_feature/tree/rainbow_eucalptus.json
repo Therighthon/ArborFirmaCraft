@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:rainbow_eucalptus/1",
+      "tfc:rainbow_eucalptus/2",
+      "tfc:rainbow_eucalptus/3",
+      "tfc:rainbow_eucalptus/4",
+      "tfc:rainbow_eucalptus/5",
+      "tfc:rainbow_eucalptus/6",
+      "tfc:rainbow_eucalptus/7",
+      "tfc:rainbow_eucalptus/8",
+      "tfc:rainbow_eucalptus/9",
+      "tfc:rainbow_eucalptus/10",
+      "tfc:rainbow_eucalptus/11",
+      "tfc:rainbow_eucalptus/12",
+      "tfc:rainbow_eucalptus/13",
+      "tfc:rainbow_eucalptus/14",
+      "tfc:rainbow_eucalptus/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": true
+    }
+  }
+}

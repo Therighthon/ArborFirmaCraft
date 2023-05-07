@@ -31,7 +31,7 @@
         "Name": "tfc:wood/log/aspen",
         "Properties": {
           "axis": "y",
-          "natural": "true"
+          "natural": "True"
         }
       },
       "min_height": 3,

@@ -20,11 +20,11 @@
     "bush_log": {
       "Name": "tfc:wood/wood/chestnut",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },
     "bush_leaves": "tfc:wood/leaves/chestnut",
-    "old_growth_tree": "tfc:tree/chestnut"
+    "old_growth_tree": "tfc:tree/chestnut_large"
   }
 }

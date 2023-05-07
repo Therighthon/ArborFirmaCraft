@@ -9,7 +9,7 @@
         "Name": "tfc:wood/log/maple",
         "Properties": {
           "axis": "y",
-          "natural": "true"
+          "natural": "True"
         }
       },
       "min_height": 2,

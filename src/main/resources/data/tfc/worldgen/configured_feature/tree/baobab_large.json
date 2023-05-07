@@ -1,0 +1,21 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:baobab_large/1",
+      "tfc:baobab_large/2",
+      "tfc:baobab_large/3",
+      "tfc:baobab_large/4",
+      "tfc:baobab_large/5",
+      "tfc:baobab_large/6",
+      "tfc:baobab_large/7"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": true
+    }
+  }
+}

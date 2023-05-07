@@ -5,7 +5,7 @@
     "min_rain": 110,
     "max_rain": 320,
     "min_temp": -20,
-    "max_temp": 2,
+    "max_temp": -4,
     "groundcover": [
       {
         "block": "tfc:wood/twig/spruce"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/spruce",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },

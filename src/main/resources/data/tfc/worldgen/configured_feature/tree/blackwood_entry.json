@@ -2,10 +2,10 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:forest_entry",
   "config": {
-    "min_rain": 0,
-    "max_rain": 180,
-    "min_temp": 12,
-    "max_temp": 28,
+    "min_rain": 35,
+    "max_rain": 150,
+    "min_temp": 16,
+    "max_temp": 40,
     "groundcover": [
       {
         "block": "tfc:wood/twig/blackwood"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/blackwood",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },

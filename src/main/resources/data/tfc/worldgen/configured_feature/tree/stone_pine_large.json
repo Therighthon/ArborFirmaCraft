@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:stone_pine_large/1",
+      "tfc:stone_pine_large/2",
+      "tfc:stone_pine_large/3",
+      "tfc:stone_pine_large/4",
+      "tfc:stone_pine_large/5",
+      "tfc:stone_pine_large/6",
+      "tfc:stone_pine_large/7",
+      "tfc:stone_pine_large/8",
+      "tfc:stone_pine_large/9",
+      "tfc:stone_pine_large/10",
+      "tfc:stone_pine_large/11",
+      "tfc:stone_pine_large/12",
+      "tfc:stone_pine_large/13",
+      "tfc:stone_pine_large/14",
+      "tfc:stone_pine_large/15",
+      "tfc:stone_pine_large/16",
+      "tfc:stone_pine_large/17",
+      "tfc:stone_pine_large/18",
+      "tfc:stone_pine_large/19"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": false
+    }
+  }
+}

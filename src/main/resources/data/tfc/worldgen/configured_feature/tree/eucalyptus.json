@@ -17,12 +17,15 @@
       "tfc:eucalyptus/12",
       "tfc:eucalyptus/13",
       "tfc:eucalyptus/14",
-      "tfc:eucalyptus/15"
+      "tfc:eucalyptus/15",
+      "tfc:eucalyptus/16",
+      "tfc:eucalyptus/17",
+      "tfc:eucalyptus/18"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 5,
+      "height": 0,
       "allow_submerged": true
     }
   }

@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 165,
+    "max_rain": 500,
+    "min_temp": 8,
+    "max_temp": 22,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/atlas_cedar"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/atlas_cedar"
+      }
+    ],
+    "normal_tree": "tfc:tree/atlas_cedar",
+    "dead_tree": "tfc:tree/atlas_cedar_dead",
+    "fallen_log": "tfc:wood/log/atlas_cedar",
+    "bush_log": {
+      "Name": "tfc:wood/wood/atlas_cedar",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/atlas_cedar",
+    "old_growth_tree": "tfc:tree/atlas_cedar_large"
+  }
+}

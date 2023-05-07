@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:slender_cypress/1",
+      "tfc:slender_cypress/2",
+      "tfc:slender_cypress/3",
+      "tfc:slender_cypress/4",
+      "tfc:slender_cypress/5",
+      "tfc:slender_cypress/6",
+      "tfc:slender_cypress/7",
+      "tfc:slender_cypress/8",
+      "tfc:slender_cypress/9",
+      "tfc:slender_cypress/10",
+      "tfc:slender_cypress/11",
+      "tfc:slender_cypress/12",
+      "tfc:slender_cypress/13",
+      "tfc:slender_cypress/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": false
+    }
+  }
+}

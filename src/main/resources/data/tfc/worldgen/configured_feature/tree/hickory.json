@@ -11,13 +11,18 @@
       "tfc:hickory/6",
       "tfc:hickory/7",
       "tfc:hickory/8",
-      "tfc:hickory/9"
+      "tfc:hickory/9",
+      "tfc:hickory/10",
+      "tfc:hickory/11",
+      "tfc:hickory/12",
+      "tfc:hickory/13",
+      "tfc:hickory/14"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 5,
-      "allow_submerged": false
+      "height": 0,
+      "allow_submerged": true
     }
   }
 }

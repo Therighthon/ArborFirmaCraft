@@ -4,27 +4,17 @@
   "config": {
     "structures": [
       "tfc:tualang/1",
-	  "tfc:tualang/2",
-	  "tfc:tualang/3",
-	  "tfc:tualang/4"
+      "tfc:tualang/2",
+      "tfc:tualang/3",
+      "tfc:tualang/4",
+      "tfc:tualang/5",
+      "tfc:tualang/6"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 5,
+      "height": 11,
       "allow_submerged": true
-    },
-    "trunk": {
-      "state": {
-        "Name": "afc:wood/log/tualang",
-        "Properties": {
-          "axis": "y",
-          "natural": "true"
-        }
-      },
-      "min_height": 15,
-      "max_height": 27,
-      "width": 1
     }
   }
 }

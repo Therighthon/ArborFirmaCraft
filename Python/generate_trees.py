@@ -20,7 +20,7 @@ STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resou
 
 
 NORMAL_TREES = [
-    Tree('baobab', 'random', 'baobab', 12, 'baobab'),
+    Tree('baobab', 'random', 'baobab', 11, 'baobab'),
     Tree('cypress', 'random', 'slender', 14, 'cypress'),
     Tree('eucalyptus', 'random', 'tall_branches', 18, 'eucalyptus'),
     Tree('fig', 'random', 'emergent', 6, 'fig'),
@@ -32,7 +32,7 @@ NORMAL_TREES = [
     Tree('gum_arabic', 'random', 'acacia', 35, 'acacia'),
     Tree('acacia_koa', 'random', 'canopy', 15, 'acacia'),
     Tree('evergreen_ash', 'overlay', 'normal', 0, 'ash'),
-    Tree('mulga_blackwood' 'random', 'acacia', 35, 'acacia'),
+    Tree('mulga_blackwood', 'random', 'acacia', 35, 'blackwood'),
     Tree('mountain_fir', 'random', 'fir', 9, 'douglas_fir'),
     Tree('scrub_hickory', 'random', 'blackwood', 10, 'hickory'),
     Tree('bigleaf_maple', 'random', 'round', 23, 'maple'),
@@ -45,7 +45,7 @@ NORMAL_TREES = [
     Tree('coast_spruce', 'random', 'conifer', 9, 'spruce'),
     Tree('sitka_spruce', 'random', 'fir', 9, 'spruce'),
     Tree('atlas_cedar', 'random', 'atlas', 17, 'white_cedar'),
-    Tree('weeping_willow', 'random', 'willow', 7, 'willow'),
+    Tree('weeping_willow', 'random', 'willow_large', 14, 'willow'),
 
     Tree('rainbow_eucalyptus', 'random', 'canopy', 15, 'rainbow_eucalyptus'),
     Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
@@ -55,27 +55,51 @@ NORMAL_TREES = [
 ]
 
 LARGE_TREES = [
-    Tree('tualang', 'random', 'kapok_large', 6, 'kapok')
+    #Tree('bigleaf_maple', 'random', 'normal_large', 5, 'maple'),
+    Tree('evergreen_ash', 'random', 'round', 14, 'ash'),
+    Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir'),
+    Tree('scrub_hickory', 'random', 'blackwood_large', 10, 'hickory'),
+    Tree('kapok', 'random', 'kapok_large', 6, 'kapok'),
+    Tree('weeping_maple', 'random', 'willow_large', 14, 'maple'),
+    Tree('live_oak', 'random', 'normal_large', 5, 'oak'),
+    Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),
+    Tree('sitka_spruce', 'random', 'fir_large', 5, 'spruce'),
+    Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
+    Tree('baobab', 'random', 'old_baobab', 7, 'baobab'),
+    Tree('tualang', 'random', 'emergent', 6, 'tualang'),
+    Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress')
 ]
 
 DEAD_TREES = [
-    Tree('hevea', 'random', 'dead_tall', 6, 'hevea'),
-    Tree('tualang', 'random', 'dead_jungle', 4, 'tualang'),
-    Tree('eucalyptus', 'random', 'dead_jungle', 4, 'eucalyptus'),
-    Tree('mahogany', 'random', 'dead_jungle', 4, 'mahogany'),
     Tree('gum_arabic', 'random', 'dead_small', 6, 'acacia'),
-    Tree('african_oak', 'random', 'dead_small', 6, 'oak')
-]
-
-VAR_NORMAL_TREES = [
-    Tree('black_oak', 'random', 'african_oak', 15, 'oak')
-]
-
-VAR_LARGE_TREES = [
-
-]
-
-VAR_DEAD_TREES = [
+    Tree('acacia_koa', 'random', 'dead_jungle', 4, 'acacia'),
+    Tree('evergreen_ash', 'random', 'dead_small', 6, 'ash'),
+    Tree('mulga_blackwood', 'random', 'dead_small', 6, 'blackwood'),
+    Tree('mountain_fir', 'random', 'dead_tall', 6, 'douglas_fir'),
+    Tree('scrub_hickory', 'random', 'dead_small', 6, 'hickory'),
+    Tree('bigleaf_maple', 'random', 'dead_small', 6, 'maple'),
+    Tree('weeping_maple', 'random', 'dead_small', 6, 'maple'),
+    Tree('live_oak', 'random', 'dead_small', 6, 'oak'),
+    Tree('black_oak', 'random', 'dead_small', 6, 'oak'),
+    Tree('stone_pine', 'random', 'dead_tall', 6, 'pine'),
+    Tree('red_pine_', 'random', 'dead_tall', 6, 'pine'),
+    Tree('giant_rosewood', 'random', 'dead_jungle', 4, 'rosewood'),
+    Tree('coast_spruce', 'random', 'dead_tall', 6, 'spruce'),
+    Tree('sitka_spruce', 'random', 'dead_tall', 6, 'spruce'),
+    Tree('atlas_cedar', 'random', 'dead_small', 6, 'white_cedar'),
+    Tree('weeping_willow', 'random', 'dead_small', 6, 'willow'),
+    Tree('rainbow_eucalptus', 'random', 'dead_jungle', 4, 'rainbow_eucalyptus'),
+    Tree('eucalyptus', 'random', 'dead_tall', 6, 'eucalyptus'),
+    Tree('mountain_ash', 'random', 'dead_tall', 6, 'eucalyptus'),
+    Tree('hevea', 'random', 'dead_tall', 6, 'hevea'),
+    Tree('mahogany', 'random', 'dead_jungle', 4, 'mahogany'),
+    Tree('tualang', 'random', 'dead_tall', 6, 'tualang'),
+    Tree('teak', 'random', 'dead_tall', 6, 'teak'),
+    Tree('slender_cypress', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('weeping_cypress', 'random', 'dead_small', 6, 'cypress'),
+    Tree('redcedar', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('bald_cypress', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('fig', 'random', 'dead_jungle', 4, 'fig')
 ]
 
 
@@ -96,7 +120,26 @@ def main():
     verify_center_trunk('dead_tall', 6)
     verify_center_trunk('canopy', 15)
     verify_center_trunk('african_oak', 15)
-    verify_center_trunk('emergent', 1)
+    verify_center_trunk('emergent', 6)
+    verify_center_trunk('atlas', 17)
+    verify_center_trunk('baobab', 11)
+    verify_center_trunk('blackwood_large', 10)
+    verify_center_trunk('blackwood', 10)
+    verify_center_trunk('conifer', 9)
+    verify_center_trunk('fir_large', 5)
+    verify_center_trunk('fir', 9)
+    verify_center_trunk('fluffyconifer', 10)
+    verify_center_trunk('kapok_large', 6)
+    verify_center_trunk('nootka', 11)
+    verify_center_trunk('normal_large', 5)
+    verify_center_trunk('old_baobab', 7)
+    verify_center_trunk('red_pine', 12)
+    verify_center_trunk('round', 23)
+    verify_center_trunk('slender', 14)
+    verify_center_trunk('stone_pine', 19)
+    verify_center_trunk('tall_branches', 18)
+    verify_center_trunk('willow_large', 14)
+    verify_center_trunk('willow', 7)
 
     print('Tree sapling drop chances:')
     for tree in NORMAL_TREES:
@@ -117,26 +160,27 @@ def main():
 
 def make_tree_structures(tree: Tree, suffix: str = ''):
     result = tree.name + suffix
+    leaf = tree.log
     if tree.feature == 'random':
         for i in range(1, 1 + tree.count):
-            make_tree_structure(tree.variant + str(i), tree.name, str(i), result)
+            make_tree_structure(tree.variant + str(i), tree.name, str(i), result, leaf)
     elif tree.feature == 'overlay':
-        make_tree_structure(tree.variant, tree.name, 'base', result)
-        make_tree_structure(tree.variant + '_overlay', tree.name, 'overlay', result)
+        make_tree_structure(tree.variant, tree.name, 'base', result, leaf)
+        make_tree_structure(tree.variant + '_overlay', tree.name, 'overlay', result, leaf)
     elif tree.feature == 'stacked':
         for j, c in zip(range(1, 1 + len(tree.count)), tree.count):
             for i in range(1, 1 + c):
-                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), tree.name, 'layer%d_%d' % (j, i), result)
+                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), tree.name, 'layer%d_%d' % (j, i), result, leaf)
 
 
-def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str):
+def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str):
     f = nbt.load('%s/%s.nbt' % (TEMPLATES_DIR, template))
     for block in f['palette']:
         if block['Name'] == 'minecraft:oak_log':
-            block['Name'] = StringTag('afc:wood/log/%s' % wood)
+            block['Name'] = StringTag('afc:wood/log/%s' % log)
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_wood':
-            block['Name'] = StringTag('afc:wood/wood/%s' % wood)
+            block['Name'] = StringTag('afc:wood/wood/%s' % log)
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_leaves':
             block['Name'] = StringTag('afc:wood/leaves/%s' % wood)

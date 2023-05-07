@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:bigleaf_maple/1",
+      "tfc:bigleaf_maple/2",
+      "tfc:bigleaf_maple/3",
+      "tfc:bigleaf_maple/4",
+      "tfc:bigleaf_maple/5",
+      "tfc:bigleaf_maple/6",
+      "tfc:bigleaf_maple/7",
+      "tfc:bigleaf_maple/8",
+      "tfc:bigleaf_maple/9",
+      "tfc:bigleaf_maple/10",
+      "tfc:bigleaf_maple/11",
+      "tfc:bigleaf_maple/12",
+      "tfc:bigleaf_maple/13",
+      "tfc:bigleaf_maple/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": true
+    }
+  }
+}

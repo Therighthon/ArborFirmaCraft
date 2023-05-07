@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 100,
+    "max_rain": 260,
+    "min_temp": 2,
+    "max_temp": 14,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/slender_cypress"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/slender_cypress"
+      }
+    ],
+    "normal_tree": "tfc:tree/slender_cypress",
+    "dead_tree": "tfc:tree/slender_cypress_dead",
+    "fallen_log": "tfc:wood/log/slender_cypress",
+    "bush_log": {
+      "Name": "tfc:wood/wood/slender_cypress",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/slender_cypress",
+    "old_growth_tree": "tfc:tree/slender_cypress_large"
+  }
+}

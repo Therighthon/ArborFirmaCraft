@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 405,
+    "max_rain": 500,
+    "min_temp": -6,
+    "max_temp": 12,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/bigleaf_maple"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/bigleaf_maple"
+      }
+    ],
+    "normal_tree": "tfc:tree/bigleaf_maple",
+    "dead_tree": "tfc:tree/bigleaf_maple_dead",
+    "fallen_log": "tfc:wood/log/bigleaf_maple",
+    "bush_log": {
+      "Name": "tfc:wood/wood/bigleaf_maple",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/bigleaf_maple",
+    "old_growth_tree": "tfc:tree/bigleaf_maple_large"
+  }
+}

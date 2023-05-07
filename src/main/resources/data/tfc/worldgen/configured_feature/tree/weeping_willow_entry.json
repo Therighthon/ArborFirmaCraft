@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 355,
+    "max_rain": 500,
+    "min_temp": 14,
+    "max_temp": 22,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/weeping_willow"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/weeping_willow"
+      }
+    ],
+    "normal_tree": "tfc:tree/weeping_willow",
+    "dead_tree": "tfc:tree/weeping_willow_dead",
+    "fallen_log": "tfc:wood/log/weeping_willow",
+    "bush_log": {
+      "Name": "tfc:wood/wood/weeping_willow",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/weeping_willow",
+    "old_growth_tree": "tfc:tree/weeping_willow_large"
+  }
+}

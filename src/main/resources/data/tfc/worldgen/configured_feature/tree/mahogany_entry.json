@@ -2,29 +2,29 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:forest_entry",
   "config": {
-    "min_rain": 320,
-    "max_rain": 500,
-    "min_temp": 16,
-    "max_temp": 24,
+    "min_rain": 300,
+    "max_rain": 430,
+    "min_temp": 20,
+    "max_temp": 40,
     "groundcover": [
       {
-        "block": "afc:wood/twig/mahogany"
+        "block": "tfc:wood/twig/mahogany"
       },
       {
-        "block": "afc:wood/fallen_leaves/mahogany"
+        "block": "tfc:wood/fallen_leaves/mahogany"
       }
     ],
     "normal_tree": "tfc:tree/mahogany",
     "dead_tree": "tfc:tree/mahogany_dead",
-    "fallen_log": "afc:wood/log/mahogany",
+    "fallen_log": "tfc:wood/log/mahogany",
     "bush_log": {
-      "Name": "afc:wood/wood/mahogany",
+      "Name": "tfc:wood/wood/mahogany",
       "Properties": {
-        "natural": "true",
+        "natural": "True",
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/mahogany",
-    "old_growth_tree": "tfc:tree/mahogany"
+    "bush_leaves": "tfc:wood/leaves/mahogany",
+    "old_growth_tree": "tfc:tree/mahogany_large"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:fig/1",
+      "tfc:fig/2",
+      "tfc:fig/3",
+      "tfc:fig/4",
+      "tfc:fig/5",
+      "tfc:fig/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

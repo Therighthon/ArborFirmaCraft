@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 375,
+    "max_rain": 480,
+    "min_temp": 14,
+    "max_temp": 20,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/scrub_hickory"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/scrub_hickory"
+      }
+    ],
+    "normal_tree": "tfc:tree/scrub_hickory",
+    "dead_tree": "tfc:tree/scrub_hickory_dead",
+    "fallen_log": "tfc:wood/log/scrub_hickory",
+    "bush_log": {
+      "Name": "tfc:wood/wood/scrub_hickory",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/scrub_hickory",
+    "old_growth_tree": "tfc:tree/scrub_hickory_large"
+  }
+}
