@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/twig/baobab",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/twig/baobab"
+      },
+      {
+        "model": "afc:block/wood/twig/baobab",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/twig/baobab",
+        "y": 270
+      }
+    ]
+  }
+}

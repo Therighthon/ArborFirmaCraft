@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "minecraft:block/flower_pot_cross",
-  "textures": {
-    "plant": "afc:block/wood/sapling/mahogany",
-    "dirt": "afc:block/dirt/loam"
-  }
-}

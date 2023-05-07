@@ -175,12 +175,16 @@ def make_tree_structures(tree: Tree, suffix: str = ''):
 
 def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str):
     f = nbt.load('%s/%s.nbt' % (TEMPLATES_DIR, template))
+    wood_prefix = 'tfc'
+    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress':
+        wood_prefix = 'afc'
+
     for block in f['palette']:
         if block['Name'] == 'minecraft:oak_log':
-            block['Name'] = StringTag('afc:wood/log/%s' % log)
+            block['Name'] = StringTag('%s:wood/log/%s' % (wood_prefix, log))
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_wood':
-            block['Name'] = StringTag('afc:wood/wood/%s' % log)
+            block['Name'] = StringTag('%s:wood/wood/%s' % (wood_prefix, log))
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_leaves':
             block['Name'] = StringTag('afc:wood/leaves/%s' % wood)

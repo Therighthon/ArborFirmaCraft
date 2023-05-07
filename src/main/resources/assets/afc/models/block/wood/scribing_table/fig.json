@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/scribing_table",
+  "textures": {
+    "top": "afc:block/wood/scribing_table/fig",
+    "leg": "afc:block/wood/log/fig",
+    "side": "afc:block/wood/planks/fig",
+    "misc": "afc:block/wood/scribing_table/scribing_paraphernalia",
+    "particle": "afc:block/wood/planks/fig"
+  }
+}

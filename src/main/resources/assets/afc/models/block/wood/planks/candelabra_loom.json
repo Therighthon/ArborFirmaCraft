@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/loom",
-  "textures": {
-    "texture": "afc:block/wood/planks/candelabra",
-    "particle": "afc:block/wood/planks/candelabra"
-  }
-}

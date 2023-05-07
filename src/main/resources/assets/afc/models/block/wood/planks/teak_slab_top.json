@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "afc:block/wood/planks/teak",
+    "top": "afc:block/wood/planks/teak",
+    "side": "afc:block/wood/planks/teak"
+  }
+}

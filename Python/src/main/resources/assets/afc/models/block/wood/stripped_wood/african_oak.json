@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/cube_column",
-  "textures": {
-    "end": "afc:block/wood/stripped_log/african_oak",
-    "side": "afc:block/wood/stripped_log/african_oak"
-  }
-}

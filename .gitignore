@@ -20,7 +20,7 @@ build
 # other
 eclipse
 run
-Python\src
+Python/src/*
 
 # Files from Forge MDK
 forge*changelog.txt

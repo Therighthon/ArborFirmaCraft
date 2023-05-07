@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/groundcover/twig",
+  "textures": {
+    "side": "afc:block/wood/log/cypress",
+    "top": "afc:block/wood/log_top/cypress"
+  }
+}

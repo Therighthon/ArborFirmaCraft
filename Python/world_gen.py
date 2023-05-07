@@ -11,55 +11,55 @@ from constants import *
 def generate(rm: ResourceManager):
 
     # Trees / Forests
-    forest_config(rm, 90, 275, 16, 40, 'acacia', True)
-    forest_config(rm, 90, 275, 16, 40, 'gum_arabic', True)
-    forest_config(rm, 350, 500, 24, 40, 'acacia_koa', True)
-    forest_config(rm, 60, 240, -2, 10, 'ash', True)
-    forest_config(rm, 80, 265, 10, 20, 'evergreen_ash', True)
-    forest_config(rm, 350, 500, -18, 6, 'aspen', True)
-    forest_config(rm, 125, 310, -12, 8, 'birch', True)
-    forest_config(rm, 35, 150, 16, 40, 'blackwood', True)
-    forest_config(rm, 85, 285, 12, 22, 'mulga_blackwood', True)
-    forest_config(rm, 150, 340, -4, 12, 'chestnut', True)
-    forest_config(rm, 305, 500, -12, 4, 'douglas_fir', True)
-    forest_config(rm, 220, 345, -6, 0, 'mountain_fir', True)
-    forest_config(rm, 210, 400, 0, 12, 'hickory', True)
-    forest_config(rm, 375, 480, 14, 20, 'scrub_hickory', True)
-    forest_config(rm, 360, 500, 20, 40, 'kapok', True)
-    forest_config(rm, 260, 360, -8, 10, 'maple', True)
-    forest_config(rm, 405, 500, -6, 12, 'bigleaf_maple', True)
-    forest_config(rm, 240, 320, -2, 8, 'weeping_maple', True)
-    forest_config(rm, 390, 500, 12, 20, 'oak', True)
-    forest_config(rm, 150, 330, 10, 22, 'live_oak', True)
-    forest_config(rm, 210, 320, -6, 10, 'oak', True)
-    forest_config(rm, 200, 405, 16, 40, 'palm', True)
-    forest_config(rm, 60, 270, -18, -4, 'pine', True)
-    forest_config(rm, 140, 290, 6, 14, 'stone_pine', True)
-    forest_config(rm, 185, 320, -10, 4, 'red_pine_', True)
-    forest_config(rm, 245, 360, 12, 40, 'rosewood', True)
-    forest_config(rm, 340, 440, 16, 24, 'giant_rosewood', True)
-    forest_config(rm, 320, 500, -2, 10, 'sequoia', True)
-    forest_config(rm, 110, 320, -20, -4, 'spruce', True)
-    forest_config(rm, 320, 390, -14, 4, 'coast_spruce', True)
-    forest_config(rm, 370, 500, -16, -6, 'sitka_spruce', True)
-    forest_config(rm, 330, 480, -8, 14, 'sycamore', True)
-    forest_config(rm, 100, 220, -16, 4, 'white_cedar', True)
-    forest_config(rm, 165, 500, 8, 22, 'atlas_cedar', True)
-    forest_config(rm, 330, 500, -4, 14, 'willow', True)
-    forest_config(rm, 355, 500, 14, 22, 'weeping_willow', True)
-    forest_config(rm, 300, 450, 16, 40, 'rainbow_eucalptus', True)
-    forest_config(rm, 170, 325, 10, 24, 'eucalyptus', True)
-    forest_config(rm, 420, 500, 10, 20, 'mountain_ash', True)
-    forest_config(rm, 30, 190, 14, 28, 'baobab', True)
-    forest_config(rm, 390, 500, 24, 40, 'hevea', True)
-    forest_config(rm, 300, 430, 20, 40, 'mahogany', True)
-    forest_config(rm, 360, 500, 22, 40, 'tualang', True)
-    forest_config(rm, 215, 330, 22, 40, 'teak', True)
-    forest_config(rm, 100, 260, 2, 14, 'slender_cypress', True)
-    forest_config(rm, 290, 375, 6, 16, 'weeping_cypress', True)
-    forest_config(rm, 410, 500, -10, 2, 'redcedar', True)
-    forest_config(rm, 360, 500, 4, 18, 'bald_cypress', True)
-    forest_config(rm, 340, 500, 18, 40, 'fig', True)
+    forest_config(rm, 90, 275, 16, 40, 'acacia', 'acacia', True)
+    forest_config(rm, 90, 275, 16, 40, 'gum_arabic', 'acacia', False)
+    forest_config(rm, 350, 500, 24, 40, 'acacia_koa', 'acacia', False)
+    forest_config(rm, 60, 240, -2, 10, 'ash', 'ash', True)
+    forest_config(rm, 80, 265, 10, 20, 'evergreen_ash', 'ash', True)
+    forest_config(rm, 350, 500, -18, 6, 'aspen', 'aspen', False)
+    forest_config(rm, 125, 310, -12, 8, 'birch', 'birch', False)
+    forest_config(rm, 35, 150, 16, 40, 'blackwood', 'blackwood', True)
+    forest_config(rm, 85, 285, 12, 22, 'mulga_blackwood', 'blackwood', False)
+    forest_config(rm, 150, 340, -4, 12, 'chestnut', 'chestnut', True)
+    forest_config(rm, 305, 500, -12, 4, 'douglas_fir', 'douglas_fir', True)
+    forest_config(rm, 220, 345, -6, 0, 'mountain_fir', 'douglas_fir', True)
+    forest_config(rm, 210, 400, 0, 12, 'hickory', 'hickory', False)
+    forest_config(rm, 375, 480, 14, 20, 'scrub_hickory', 'hickory', True)
+    forest_config(rm, 360, 500, 20, 40, 'kapok', 'kapok', True)
+    forest_config(rm, 260, 360, -8, 10, 'maple', 'maple', True)
+    forest_config(rm, 405, 500, -6, 12, 'bigleaf_maple', 'maple', False)
+    forest_config(rm, 240, 320, -2, 8, 'weeping_maple', 'maple', True)
+    forest_config(rm, 390, 500, 12, 20, 'live_oak', 'oak', True)
+    forest_config(rm, 150, 330, 10, 22, 'black_oak', 'oak', False)
+    forest_config(rm, 210, 320, -6, 10, 'oak', 'oak', False)
+    forest_config(rm, 200, 405, 16, 40, 'palm', 'palm', False)
+    forest_config(rm, 60, 270, -18, -4, 'pine', 'pine', True)
+    forest_config(rm, 140, 290, 6, 14, 'stone_pine', 'pine', True)
+    forest_config(rm, 185, 320, -10, 4, 'red_pine_', 'pine', False)
+    forest_config(rm, 245, 360, 12, 40, 'rosewood', 'rosewood', False)
+    forest_config(rm, 340, 440, 16, 24, 'giant_rosewood', 'rosewood', False)
+    forest_config(rm, 320, 500, -2, 10, 'sequoia', 'sequoia', True)
+    forest_config(rm, 110, 320, -20, -4, 'spruce', 'spruce', True)
+    forest_config(rm, 320, 390, -14, 4, 'coast_spruce', 'spruce', False)
+    forest_config(rm, 370, 500, -16, -6, 'sitka_spruce', 'spruce', True)
+    forest_config(rm, 330, 480, -8, 14, 'sycamore', 'sycamore', True)
+    forest_config(rm, 100, 220, -16, 4, 'white_cedar', 'white_cedar', True)
+    forest_config(rm, 165, 500, 8, 22, 'atlas_cedar', 'white_cedar', False)
+    forest_config(rm, 330, 500, -4, 14, 'willow', 'willow', True)
+    forest_config(rm, 355, 500, 14, 22, 'weeping_willow', 'willow', False)
+    forest_config(rm, 300, 450, 16, 40, 'rainbow_eucalptus', 'rainbow_eucalyptus', False)
+    forest_config(rm, 170, 325, 10, 24, 'eucalyptus', 'eucalyptus', False)
+    forest_config(rm, 420, 500, 10, 20, 'mountain_ash', 'eucalyptus', True)
+    forest_config(rm, 30, 190, 14, 28, 'baobab', 'baobab', True)
+    forest_config(rm, 390, 500, 24, 40, 'hevea', 'hevea', False)
+    forest_config(rm, 300, 430, 20, 40, 'mahogany', 'mahogany', False)
+    forest_config(rm, 360, 500, 22, 40, 'tualang', 'tualang', True)
+    forest_config(rm, 215, 330, 22, 40, 'teak', 'teak', False)
+    forest_config(rm, 100, 260, 2, 14, 'slender_cypress', 'cypress', False)
+    forest_config(rm, 290, 375, 6, 16, 'weeping_cypress', 'cypress', False)
+    forest_config(rm, 410, 500, -10, 2, 'redcedar', 'cypress', False)
+    forest_config(rm, 360, 500, 4, 18, 'bald_cypress', 'cypress', True)
+    forest_config(rm, 340, 500, 18, 40, 'fig', 'fig', False)
     # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
 
     configured_placed_feature(rm, 'forest', 'tfc:forest', {
@@ -107,12 +107,12 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'blackwood'), 'tfc:random_tree', random_config('blackwood', 10, place=tree_placement_config(1, 5)))
     configured_placed_feature(rm, ('tree', 'blackwood_large'), 'tfc:random_tree', random_config('blackwood', 10, 1, '_large', place=tree_placement_config(1, 5)))
     configured_placed_feature(rm, ('tree', 'blackwood_dead'), 'tfc:random_tree', random_config('blackwood', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
-    #configured_placed_feature(rm, ('tree', 'chestnut'), 'tfc:overlay_tree', overlay_config('chestnut', 2, 4, place=tree_placement_config(1, 5)))
-    configured_placed_feature(rm, ('tree', 'chestnut_dead'), 'tfc:random_tree', random_config('chestnut', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
-    #configured_placed_feature(rm, ('tree', 'douglas_fir'), 'tfc:random_tree', random_config('douglas_fir', 9, place=tree_placement_config(1, 5)))
+    # configured_placed_feature(rm, ('tree', 'chestnut'), 'tfc:overlay_tree', overlay_config('chestnut', 2, 4, place=tree_placement_config(1, 5)))
+    # configured_placed_feature(rm, ('tree', 'chestnut_dead'), 'tfc:random_tree', random_config('chestnut', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
+    # configured_placed_feature(rm, ('tree', 'douglas_fir'), 'tfc:random_tree', random_config('douglas_fir', 9, place=tree_placement_config(1, 5)))
     configured_placed_feature(rm, ('tree', 'douglas_fir_large'), 'tfc:random_tree', random_config('douglas_fir', 5, 2, '_large', place=tree_placement_config(1, 9)))
     configured_placed_feature(rm, ('tree', 'douglas_fir_dead'), 'tfc:random_tree', random_config('douglas_fir', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-    #configured_placed_feature(rm, ('tree', 'hickory'), 'tfc:random_tree', random_config('hickory', 9, place=tree_placement_config(1, 5)))
+    # configured_placed_feature(rm, ('tree', 'hickory'), 'tfc:random_tree', random_config('hickory', 9, place=tree_placement_config(1, 5)))
     configured_placed_feature(rm, ('tree', 'hickory_large'), 'tfc:random_tree', random_config('hickory', 5, 2, '_large', place=tree_placement_config(1, 9)))
     configured_placed_feature(rm, ('tree', 'hickory_dead'), 'tfc:random_tree', random_config('hickory', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
     configured_placed_feature(rm, ('tree', 'maple'), 'tfc:overlay_tree', overlay_config('maple', 2, 4, place=tree_placement_config(1, 5)))
@@ -221,346 +221,6 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'bald_cypress_large'), 'tfc:random_tree', random_config('bald_cypress', 5, 1, '_large', place=tree_placement_config(1, 0, True)))
     configured_placed_feature(rm, ('tree', 'fig'), 'tfc:random_tree', random_config('fig', 6, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'fig_dead'), 'tfc:random_tree', random_config('fig', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
-
-    # Ore Veins
-    # for vein_name, vein in ORE_VEINS.items():
-    #     rocks = expand_rocks(vein.rocks, vein_name)
-    #     ore = ORES[vein.ore]  # standard ore
-    #     if ore.graded:  # graded ore vein
-    #         configured_placed_feature(rm, ('vein', vein_name), 'tfc:%s_vein' % vein.type, {
-    #             'rarity': vein.rarity,
-    #             'min_y': utils.vertical_anchor(vein.min_y, 'absolute'),
-    #             'max_y': utils.vertical_anchor(vein.max_y, 'absolute'),
-    #             'size': vein.size,
-    #             'density': vein_density(vein.density),
-    #             'blocks': [{
-    #                 'replace': ['tfc:rock/raw/%s' % rock],
-    #                 'with': vein_ore_blocks(vein, rock)
-    #             } for rock in rocks],
-    #             'indicator': {
-    #                 'rarity': 12,
-    #                 'blocks': [{
-    #                     'block': 'tfc:ore/small_%s' % vein.ore
-    #                 }]
-    #             },
-    #             'random_name': vein_name,
-    #             'biomes': vein.biomes
-    #         })
-    #     else:  # non-graded ore vein (mineral)
-    #         vein_config = {
-    #             'rarity': vein.rarity,
-    #             'min_y': utils.vertical_anchor(vein.min_y, 'absolute'),
-    #             'max_y': utils.vertical_anchor(vein.max_y, 'absolute'),
-    #             'size': vein.size,
-    #             'density': vein_density(vein.density),
-    #             'blocks': [{
-    #                 'replace': ['tfc:rock/raw/%s' % rock],
-    #                 'with': [{'block': 'tfc:ore/%s/%s' % (vein.ore, rock)}]
-    #             } for rock in rocks],
-    #             'random_name': vein_name,
-    #             'biomes': vein.biomes
-    #         }
-    #         if vein.type == 'pipe':
-    #             vein_config['min_skew'] = 5
-    #             vein_config['max_skew'] = 13
-    #             vein_config['min_slant'] = 0
-    #             vein_config['max_slant'] = 2
-    #         configured_placed_feature(rm, ('vein', vein_name), 'tfc:%s_vein' % vein.type, vein_config)
-    #
-    # configured_placed_feature(rm, ('vein', 'gravel'), 'tfc:disc_vein', {
-    #     'rarity': 30,
-    #     'min_y': utils.vertical_anchor(-64, 'absolute'),
-    #     'max_y': utils.vertical_anchor(100, 'absolute'),
-    #     'size': 44,
-    #     'height': 2,
-    #     'density': 0.98,
-    #     'blocks': [{
-    #         'replace': ['tfc:rock/raw/%s' % rock],
-    #         'with': [{'block': 'tfc:rock/gravel/%s' % rock}]
-    #     } for rock in ROCKS.keys()],
-    #     'random_name': 'tfc:vein/gravel'
-    # })
-    #
-    # for rock, data in ROCKS.items():
-    #     if data.category == 'igneous_intrusive':
-    #         configured_placed_feature(rm, ('vein', '%s_dike' % rock), 'tfc:pipe_vein', {
-    #             'rarity': 220,
-    #             'min_y': utils.vertical_anchor(-64, 'absolute'),
-    #             'max_y': utils.vertical_anchor(180, 'absolute'),
-    #             'size': 150,
-    #             'density': 0.98,
-    #             'blocks': [{
-    #                 'replace': ['tfc:rock/raw/%s' % rock_in],
-    #                 'with': [{'block': 'tfc:rock/raw/%s' % rock}]
-    #             } for rock_in in ROCKS.keys()] + [{
-    #                 'replace': ['tfc:rock/gravel/%s' % rock_in],
-    #                 'with': [{'block': 'tfc:rock/raw/%s' % rock}]
-    #             } for rock_in in ROCKS.keys()] + [{
-    #                 'replace': ['tfc:rock/hardened/%s' % rock_in],
-    #                 'with': [{'block': 'tfc:rock/raw/%s' % rock}]
-    #             } for rock_in in ROCKS.keys()],
-    #             'random_name': '%s_dike' % rock,
-    #             'radius': 4,
-    #             'minSkew': 7,
-    #             'maxSkew': 20,
-    #             'minSlant': 2,
-    #             'maxSlant': 5
-    #         })
-    #
-    # rm.configured_feature('cave_vegetation', 'tfc:cave_vegetation', {
-    #     'blocks': [{
-    #         'replace': ['tfc:rock/raw/%s' % rock],
-    #         'with': [
-    #             {'block': 'tfc:rock/mossy_cobble/%s' % rock, 'weight': 8},
-    #             {'block': 'tfc:rock/cobble/%s' % rock, 'weight': 2}
-    #         ]
-    #     } for rock in ROCKS.keys()]
-    # })
-    # rm.placed_feature('cave_vegetation', 'tfc:cave_vegetation', decorate_climate(16, 32, 150, 470, fuzzy=True), decorate_carving_mask(15, 100), decorate_chance(0.01))
-    #
-    # rm.configured_feature('hanging_roots', 'minecraft:simple_block', {'to_place': simple_state_provider('minecraft:hanging_roots[waterlogged=False]')})
-    # rm.placed_feature('hanging_roots', 'tfc:hanging_roots', decorate_air_or_empty_fluid(), decorate_would_survive('minecraft:hanging_roots[waterlogged=False]'))
-    # rm.configured_feature('hanging_roots_patch', 'minecraft:vegetation_patch', {
-    #     'type': 'minecraft:vegetation_patch',
-    #     'vegetation_chance': 0.08,
-    #     'xz_radius': uniform_int(4, 7),
-    #     'extra_edge_column_chance': 0.3,
-    #     'extra_bottom_block_chance': 0.0,
-    #     'vertical_range': 5,
-    #     'vegetation_feature': 'tfc:hanging_roots',
-    #     'surface': 'ceiling',
-    #     'depth': uniform_int(1, 2),
-    #     'replaceable': '#minecraft:base_stone_overworld',
-    #     'ground_state': simple_state_provider('tfc:rooted_dirt/silt')
-    # })
-    # rm.placed_feature('hanging_roots_patch', 'tfc:hanging_roots_patch', decorate_count(10), decorate_square(), decorate_range(40, 72), decorate_scanner('up', 12), decorate_random_offset(0, -1), decorate_climate(min_rain=300, min_temp=0), decorate_biome())
-    #
-    # # Plants
-    # configured_plant_patch_feature(rm, ('plant', 'allium'), plant_config('tfc:plant/allium[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, -2, 150, 400, min_forest='edge', max_forest='normal'))
-    # configured_plant_patch_feature(rm, ('plant', 'badderlocks'), plant_config('tfc:plant/badderlocks[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-18, 2, 150, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'barrel_cactus'), plant_config('tfc:plant/barrel_cactus[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(4, 18, 0, 85))
-    # configured_plant_patch_feature(rm, ('plant', 'black_orchid'), plant_config('tfc:plant/black_orchid[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(14, 40, 290, 410))
-    # configured_plant_patch_feature(rm, ('plant', 'blood_lily'), plant_config('tfc:plant/blood_lily[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(8, 18, 200, 500, min_forest='normal', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'blue_orchid'), plant_config('tfc:plant/blue_orchid[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(10, 40, 250, 390))
-    # configured_plant_patch_feature(rm, ('plant', 'butterfly_milkweed'), plant_config('tfc:plant/butterfly_milkweed[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-16, 18, 75, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'calendula'), plant_config('tfc:plant/calendula[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(4, 22, 130, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'cattail'), plant_config('tfc:plant/cattail[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-16, 22, 150, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'coontail'), plant_config('tfc:plant/coontail[age=1,stage=1,fluid=empty]', 1, 15, 100, water_plant=True), decorate_chance(2), decorate_square(), decorate_climate(2, 18, 250, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'dandelion'), plant_config('tfc:plant/dandelion[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-22, 40, 120, 400))
-    # configured_plant_patch_feature(rm, ('plant', 'dead_bush'), plant_config('tfc:plant/dead_bush[age=1,stage=1]', 1, 15, 10), decorate_chance(5), decorate_square(), decorate_climate(-12, 40, 0, 120))
-    # configured_noise_plant_feature(rm, ('plant', 'duckweed'), plant_config('tfc:plant/duckweed[age=1,stage=1]', 1, 7, 100), decorate_square(), decorate_climate(-18, 2, 0, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'eel_grass'), plant_config('tfc:plant/eel_grass[age=1,stage=1,fluid=empty]', 1, 15, 100, water_plant=True), decorate_chance(2), decorate_square(), decorate_climate(6, 40, 200, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'field_horsetail'), plant_config('tfc:plant/field_horsetail[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-12, 20, 300, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'foxglove'), plant_config('tfc:plant/foxglove[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(-8, 16, 150, 300, min_forest='none', max_forest='normal'))
-    # configured_plant_patch_feature(rm, ('plant', 'grape_hyacinth'), plant_config('tfc:plant/grape_hyacinth[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, 10, 150, 250))
-    # configured_plant_patch_feature(rm, ('plant', 'gutweed'), plant_config('tfc:plant/gutweed[age=1,stage=1,fluid=empty]', 1, 10, 10, water_plant=True), decorate_chance(4), decorate_square(), decorate_climate(-6, 18, 100, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'guzmania'), plant_config('tfc:plant/guzmania[age=1,stage=1,facing=north]', 6, 5), decorate_chance(5), decorate_square(), decorate_climate(20, 40, 290, 480))
-    # configured_plant_patch_feature(rm, ('plant', 'houstonia'), plant_config('tfc:plant/houstonia[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-12, 10, 150, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'labrador_tea'), plant_config('tfc:plant/labrador_tea[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-18, 0, 200, 380))
-    # configured_plant_patch_feature(rm, ('plant', 'lady_fern'), plant_config('tfc:plant/lady_fern[age=1,stage=1]', 1, 10, 15), decorate_chance(5), decorate_square(), decorate_climate(-10, 8, 200, 500, min_forest='edge', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'licorice_fern'), plant_config('tfc:plant/licorice_fern[age=1,stage=1,facing=north]', 6, 5), decorate_chance(5), decorate_square(), decorate_climate(2, 10, 300, 400))
-    # configured_plant_patch_feature(rm, ('plant', 'laminaria'), plant_config('tfc:plant/laminaria[age=1,stage=1,fluid=empty]', 1, 10, 10, water_plant=True), decorate_chance(4), decorate_square(), decorate_climate(-24, -2, 100, 500))
-    # configured_noise_plant_feature(rm, ('plant', 'lotus'), plant_config('tfc:plant/lotus[age=1,stage=1]', 1, 7, 100), decorate_square(), decorate_climate(-4, 18, 0, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'marigold'), plant_config('tfc:plant/marigold[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-8, 18, 50, 390))
-    # configured_plant_patch_feature(rm, ('plant', 'meads_milkweed'), plant_config('tfc:plant/meads_milkweed[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, 2, 130, 380))
-    # configured_plant_patch_feature(rm, ('plant', 'milfoil'), plant_config('tfc:plant/milfoil[age=1,stage=1,fluid=empty]', 1, 10, 10, water_plant=True), decorate_chance(4), decorate_square(), decorate_climate(-14, 22, 250, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'morning_glory'), plant_config('tfc:plant/morning_glory[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 6), decorate_chance(15), decorate_square(), decorate_climate(-11, 19, 300, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'nasturtium'), plant_config('tfc:plant/nasturtium[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(6, 22, 150, 380))
-    # configured_plant_patch_feature(rm, ('plant', 'ostrich_fern'), plant_config('tfc:plant/ostrich_fern[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(8), decorate_square(), decorate_climate(-14, 6, 290, 470, min_forest='edge', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'oxeye_daisy'), plant_config('tfc:plant/oxeye_daisy[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-14, 10, 120, 300, min_forest='none', max_forest='edge'))
-    # configured_noise_plant_feature(rm, ('plant', 'pistia'), plant_config('tfc:plant/pistia[age=1,stage=1]', 1, 7, 100), decorate_chance(5), decorate_square(), decorate_climate(6, 26, 0, 400))
-    # configured_plant_patch_feature(rm, ('plant', 'poppy'), plant_config('tfc:plant/poppy[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-12, 14, 150, 250))
-    # configured_plant_patch_feature(rm, ('plant', 'primrose'), plant_config('tfc:plant/primrose[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-8, 10, 150, 300, min_forest='edge', max_forest='normal'))
-    # configured_plant_patch_feature(rm, ('plant', 'pulsatilla'), plant_config('tfc:plant/pulsatilla[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, 2, 50, 200))
-    # configured_plant_patch_feature(rm, ('plant', 'rose'), plant_config('tfc:plant/rose[age=1,stage=1,part=lower]', 1, 15, 128, True, tall_plant=True), decorate_square(), decorate_climate(-5, 20, 150, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'sacred_datura'), plant_config('tfc:plant/sacred_datura[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(4, 18, 75, 150))
-    # configured_plant_patch_feature(rm, ('plant', 'sago'), plant_config('tfc:plant/sago[age=1,stage=1,fluid=empty]', 1, 10, 10, water_plant=True), decorate_chance(4), decorate_square(), decorate_climate(-18, 18, 200, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'sagebrush'), plant_config('tfc:plant/sagebrush[age=1,stage=1]', 1, 15, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, 14, 0, 120))
-    # configured_plant_patch_feature(rm, ('plant', 'sapphire_tower'), plant_config('tfc:plant/sapphire_tower[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(10, 22, 75, 200, min_forest='none', max_forest='sparse'))
-    # configured_noise_plant_feature(rm, ('plant', 'sargassum'), plant_config('tfc:plant/sargassum[age=1,stage=1]', 1, 7, 100), decorate_square(), decorate_climate(-10, 16, 0, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'sword_fern'), plant_config('tfc:plant/sword_fern[age=1,stage=1]', 1, 10, 15), decorate_chance(5), decorate_square(), decorate_climate(-12, 12, 100, 500, min_forest='sparse', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'snapdragon_pink'), plant_config('tfc:plant/snapdragon_pink[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(16, 24, 150, 300, min_forest='none', max_forest='sparse'))
-    # configured_plant_patch_feature(rm, ('plant', 'snapdragon_red'), plant_config('tfc:plant/snapdragon_red[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(12, 20, 150, 300, min_forest='none', max_forest='sparse'))
-    # configured_plant_patch_feature(rm, ('plant', 'snapdragon_white'), plant_config('tfc:plant/snapdragon_white[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(8, 16, 150, 300, min_forest='none', max_forest='sparse'))
-    # configured_plant_patch_feature(rm, ('plant', 'snapdragon_yellow'), plant_config('tfc:plant/snapdragon_yellow[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(6, 24, 150, 300, min_forest='none', max_forest='sparse'))
-    # configured_plant_patch_feature(rm, ('plant', 'strelitzia'), plant_config('tfc:plant/strelitzia[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(14, 26, 50, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'toquilla_palm'), plant_config('tfc:plant/toquilla_palm[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(16, 40, 250, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'trillium'), plant_config('tfc:plant/trillium[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-10, 8, 250, 500, min_forest='normal', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'tropical_milkweed'), plant_config('tfc:plant/tropical_milkweed[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(8, 24, 120, 300, min_forest='sparse', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'tulip_orange'), plant_config('tfc:plant/tulip_orange[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(2, 10, 200, 400, min_forest='none', max_forest='edge'))
-    # configured_plant_patch_feature(rm, ('plant', 'tulip_pink'), plant_config('tfc:plant/tulip_pink[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-6, 2, 200, 400, min_forest='none', max_forest='edge'))
-    # configured_plant_patch_feature(rm, ('plant', 'tulip_red'), plant_config('tfc:plant/tulip_red[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(0, 4, 200, 400, min_forest='none', max_forest='edge'))
-    # configured_plant_patch_feature(rm, ('plant', 'tulip_white'), plant_config('tfc:plant/tulip_white[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(-12, -4, 200, 400, min_forest='none', max_forest='edge'))
-    # configured_plant_patch_feature(rm, ('plant', 'turtle_grass'), plant_config('tfc:plant/turtle_grass[age=1,stage=1,fluid=empty]', 1, 15, 128, water_plant=True), decorate_chance(1), decorate_square(), decorate_climate(14, 40, 240, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'vriesea'), plant_config('tfc:plant/vriesea[age=1,stage=1,facing=north]', 6, 5), decorate_chance(5), decorate_square(), decorate_climate(14, 40, 200, 400))
-    # configured_noise_plant_feature(rm, ('plant', 'water_lily'), plant_config('tfc:plant/water_lily[age=1,stage=1]', 1, 7, 100), decorate_square(), decorate_climate(-12, 40, 0, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'yucca'), plant_config('tfc:plant/yucca[age=1,stage=1]', 1, 15, 10), decorate_chance(5), decorate_square(), decorate_climate(-4, 22, 0, 75))
-    # configured_plant_patch_feature(rm, ('plant', 'switchgrass'), plant_config('tfc:plant/switchgrass[age=1,stage=1,part=lower]', 1, 15, tall_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-6, 22, 110, 390))
-    # configured_plant_patch_feature(rm, ('plant', 'tall_fescue_grass'), plant_config('tfc:plant/tall_fescue_grass[age=1,stage=1,part=lower]', 1, 15, tall_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-10, 10, 280, 430))
-    # configured_plant_patch_feature(rm, ('plant', 'arrowhead'), plant_config('tfc:plant/arrowhead[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-10, 22, 180, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'bur_reed'), plant_config('tfc:plant/bur_reed[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-16, 4, 250, 400))
-    # configured_plant_patch_feature(rm, ('plant', 'water_taro'), plant_config('tfc:plant/water_taro[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(12, 40, 260, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'phragmite'), plant_config('tfc:plant/phragmite[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-6, 18, 50, 250))
-    # configured_plant_patch_feature(rm, ('plant', 'pickerelweed'), plant_config('tfc:plant/pickerelweed[age=1,stage=1,fluid=empty,part=lower]', 1, 7, 100, emergent_plant=True), decorate_chance(2), decorate_square(), decorate_climate(-14, 16, 200, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'red_sealing_wax_palm'), plant_config('tfc:plant/red_sealing_wax_palm[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(10), decorate_square(), decorate_climate(18, 40, 280, 500, min_forest='edge', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'hibiscus'), plant_config('tfc:plant/hibiscus[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(10, 24, 260, 450, min_forest='edge', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'heliconia'), plant_config('tfc:plant/heliconia[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(14, 40, 320, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'blue_ginger'), plant_config('tfc:plant/blue_ginger[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(16, 26, 300, 450))
-    # configured_plant_patch_feature(rm, ('plant', 'king_fern'), plant_config('tfc:plant/king_fern[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(18, 40, 350, 500, min_forest='normal', max_forest='old_growth'))
-    # configured_plant_patch_feature(rm, ('plant', 'kangaroo_paw'), plant_config('tfc:plant/kangaroo_paw[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(14, 40, 100, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'lilac'), plant_config('tfc:plant/lilac[age=1,stage=1,part=lower]', 1, 15, 10, tall_plant=True), decorate_chance(5), decorate_square(), decorate_climate(-10, 6, 150, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'silver_spurflower'), plant_config('tfc:plant/silver_spurflower[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(14, 24, 230, 400, min_forest='sparse', max_forest='edge'))
-    # configured_plant_patch_feature(rm, ('plant', 'desert_flame'), plant_config('tfc:plant/desert_flame[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(0, 20, 40, 170, min_forest='none', max_forest='sparse'))
-    # configured_plant_patch_feature(rm, ('plant', 'anthurium'), plant_config('tfc:plant/anthurium[age=1,stage=1]', 1, 10, 10), decorate_chance(5), decorate_square(), decorate_climate(12, 40, 290, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'reindeer_lichen'), plant_config('tfc:plant/reindeer_lichen[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 6), decorate_chance(15), decorate_square(), decorate_climate(-24, -8, 50, 470))
-    # configured_plant_patch_feature(rm, ('plant', 'moss'), plant_config('tfc:plant/moss[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 6), decorate_chance(15), decorate_square(), decorate_climate(-7, 30, 250, 450))
-    # configured_plant_patch_feature(rm, ('plant', 'morning_glory'), plant_config('tfc:plant/morning_glory[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 6), decorate_chance(15), decorate_square(), decorate_climate(-11, 19, 300, 500))
-    #
-    # configured_placed_feature(rm, ('plant', 'hanging_vines'), 'tfc:weeping_vines', tall_plant_config('tfc:plant/hanging_vines_plant', 'tfc:plant/hanging_vines', 90, 10, 14, 21), decorate_heightmap('world_surface_wg'), decorate_square(), decorate_climate(16, 32, 150, 470, True, fuzzy=True), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'hanging_vines_cave'), 'tfc:weeping_vines', tall_plant_config('tfc:plant/hanging_vines_plant', 'tfc:plant/hanging_vines', 90, 10, 14, 22), decorate_carving_mask(30, 100), decorate_chance(0.003), decorate_climate(16, 32, 150, 470, True, fuzzy=True), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'spanish_moss'), 'tfc:weeping_vines', tall_plant_config('tfc:plant/spanish_moss_plant', 'tfc:plant/spanish_moss', 90, 10, 14, 21), decorate_heightmap('world_surface_wg'), decorate_square(), decorate_climate(8, 22, 400, 500, True, fuzzy=True), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'liana'), 'tfc:weeping_vines', tall_plant_config('tfc:plant/liana_plant', 'tfc:plant/liana', 40, 10, 8, 16), decorate_carving_mask(30, 100), decorate_chance(0.003), decorate_climate(16, 32, 150, 470, True, fuzzy=True))
-    # configured_placed_feature(rm, ('plant', 'tree_fern'), 'tfc:twisting_vines', tall_plant_config('tfc:plant/tree_fern_plant', 'tfc:plant/tree_fern', 8, 7, 2, 6), decorate_heightmap('world_surface_wg'), decorate_chance(5), decorate_square(), decorate_climate(19, 50, 300, 500), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'arundo'), 'tfc:twisting_vines', tall_plant_config('tfc:plant/arundo_plant', 'tfc:plant/arundo', 70, 7, 5, 8), decorate_heightmap('world_surface_wg'), decorate_chance(3), decorate_square(), decorate_climate(5, 22, 150, 500), ('tfc:near_water', {'radius': 6}), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'dry_phragmite'), 'tfc:twisting_vines', tall_plant_config('tfc:plant/dry_phragmite_plant', 'tfc:plant/dry_phragmite', 70, 7, 3, 5), decorate_range(62, 64), decorate_square(), decorate_climate(-5, 30, 100, 370, min_forest='sparse'), decorate_replaceable())
-    #
-    # configured_placed_feature(rm, ('plant', 'winged_kelp'), 'tfc:kelp', tall_plant_config('tfc:plant/winged_kelp_plant', 'tfc:plant/winged_kelp', 64, 12, 14, 21), decorate_heightmap('ocean_floor_wg'), decorate_square(), decorate_chance(2), decorate_climate(-15, 15, 0, 450, fuzzy=True), decorate_air_or_empty_fluid())
-    # configured_placed_feature(rm, ('plant', 'leafy_kelp'), 'tfc:kelp', tall_plant_config('tfc:plant/leafy_kelp_plant', 'tfc:plant/leafy_kelp', 64, 12, 14, 21), decorate_heightmap('ocean_floor_wg'), decorate_square(), decorate_chance(2), decorate_climate(-20, 20, 0, 500, fuzzy=True), decorate_air_or_empty_fluid())
-    #
-    # configured_patch_feature(rm, ('plant', 'giant_kelp'), patch_config('tfc:plant/giant_kelp_flower[age=0,fluid=empty]', 2, 10, 20, water='salt', custom_feature='tfc:kelp_tree', custom_config={'block': 'tfc:plant/giant_kelp_flower'}), decorate_square(), decorate_climate(-18, 18, 0, 500, fuzzy=True))
-    #
-    # configured_placed_feature(rm, ('plant', 'ivy'), 'tfc:vines', {'state': utils.block_state('tfc:plant/ivy[up=False,north=False,east=False,south=False,west=False]')}, decorate_count(127), decorate_square(), decorate_range(48, 128), decorate_replaceable(), decorate_climate(-4, 14, 90, 450, True, fuzzy=True))
-    # configured_placed_feature(rm, ('plant', 'jungle_vines'), 'tfc:vines', {'state': utils.block_state('tfc:plant/jungle_vines[up=False,north=False,east=False,south=False,west=False]')}, decorate_count(127), decorate_square(), decorate_range(48, 128), decorate_replaceable(), decorate_climate(16, 32, 150, 470, True, fuzzy=True))
-    #
-    # # Grass-Type / Basic Plants
-    # configured_plant_patch_feature(rm, ('plant', 'fountain_grass'), plant_config('tfc:plant/fountain_grass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(0, 26, 75, 150))
-    # configured_plant_patch_feature(rm, ('plant', 'manatee_grass'), plant_config('tfc:plant/manatee_grass[age=1,stage=1]', 1, 15, 64, water_plant=True), decorate_square(), decorate_climate(12, 40, 250, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'orchard_grass'), plant_config('tfc:plant/orchard_grass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(-30, 10, 75, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'ryegrass'), plant_config('tfc:plant/ryegrass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(-24, 40, 150, 320))
-    # configured_plant_patch_feature(rm, ('plant', 'scutch_grass'), plant_config('tfc:plant/scutch_grass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(0, 40, 150, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'star_grass'), plant_config('tfc:plant/star_grass[age=1,stage=1]', 1, 15, 64, water_plant=True), decorate_square(), decorate_climate(2, 40, 50, 260))
-    # configured_plant_patch_feature(rm, ('plant', 'timothy_grass'), plant_config('tfc:plant/timothy_grass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(-22, 16, 289, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'bromegrass'), plant_config('tfc:plant/bromegrass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(4, 20, 140, 360))
-    # configured_plant_patch_feature(rm, ('plant', 'bluegrass'), plant_config('tfc:plant/bluegrass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(-4, 12, 110, 280))
-    # configured_plant_patch_feature(rm, ('plant', 'raddia_grass'), plant_config('tfc:plant/raddia_grass[age=1,stage=1]', 1, 15, 64), decorate_square(), decorate_climate(18, 40, 330, 500))
-    #
-    # # Covers
-    # configured_noise_plant_feature(rm, ('plant', 'moss_cover'), plant_config('tfc:plant/moss[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 7, 100), decorate_climate(18, 35, 340, 500, True, fuzzy=True), decorate_square(), water=False)
-    # configured_noise_plant_feature(rm, ('plant', 'morning_glory_cover'), plant_config('tfc:plant/morning_glory[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 7, 100), decorate_climate(9, 13, 160, 230, True, fuzzy=True), decorate_square(), water=False)
-    # configured_noise_plant_feature(rm, ('plant', 'reindeer_lichen_cover'), plant_config('tfc:plant/reindeer_lichen[age=1,stage=1,up=False,down=True,north=False,east=False,west=False,south=False]', 1, 7, 100), decorate_climate(-20, -10, 220, 310, True, fuzzy=True), decorate_square(), water=False)
-    #
-    # # Clay Indicator Plants
-    # # These piggyback on the clay disc feature, and so have limited decorators
-    # configured_plant_patch_feature(rm, ('plant', 'athyrium_fern'), plant_config('tfc:plant/athyrium_fern[age=1,stage=1]', 1, 6, 16, requires_clay=True), decorate_climate(-10, 14, 270, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'canna'), plant_config('tfc:plant/canna[age=1,stage=1]', 1, 6, 16, requires_clay=True), decorate_climate(10, 40, 270, 500))
-    # configured_plant_patch_feature(rm, ('plant', 'goldenrod'), plant_config('tfc:plant/goldenrod[age=1,stage=1]', 1, 6, 16, requires_clay=True), decorate_climate(-16, 6, 75, 310))
-    # configured_plant_patch_feature(rm, ('plant', 'pampas_grass'), plant_config('tfc:plant/pampas_grass[age=1,stage=1,part=lower]', 1, 6, 16, requires_clay=True, tall_plant=True), decorate_climate(12, 40, 0, 300))
-    # configured_plant_patch_feature(rm, ('plant', 'perovskia'), plant_config('tfc:plant/perovskia[age=1,stage=1]', 1, 6, 16, requires_clay=True), decorate_climate(-6, 12, 0, 270))
-    # configured_noise_plant_feature(rm, ('plant', 'water_canna'), plant_config('tfc:plant/water_canna[age=1,stage=1]', 1, 6, 16, requires_clay=True), decorate_climate(0, 36, 150, 500))
-    #
-    # # Crops
-    # for crop, crop_data in CROPS.items():
-    #     name_parts = ('plant', 'wild_crop', crop)
-    #     name = 'tfc:wild_crop/%s' % crop
-    #     heightmap: Heightmap = 'world_surface_wg'
-    #     replaceable = decorate_replaceable()
-    #
-    #     if crop_data.type == 'double' or crop_data.type == 'double_stick':
-    #         feature = 'tfc:tall_wild_crop', {'block': name}
-    #         name += '[part=bottom]'
-    #     elif crop == 'rice':  # waterlogged
-    #         feature = 'tfc:block_with_fluid', {'to_place': simple_state_provider(name)}
-    #         heightmap = 'ocean_floor_wg'
-    #         replaceable = decorate_shallow(1)
-    #     elif crop_data.type == 'spreading':
-    #         feature = 'tfc:spreading_crop', {'block': name}
-    #     else:
-    #         feature = 'simple_block', {'to_place': simple_state_provider(name)}
-    #
-    #     res = utils.resource_location(rm.domain, name_parts)
-    #     patch_feature = res.join() + '_patch'
-    #     singular_feature = utils.resource_location(rm.domain, name_parts)
-    #
-    #     placed_feature_tag(rm, 'feature/crops', patch_feature)
-    #
-    #     rm.configured_feature(patch_feature, 'minecraft:random_patch', {'tries': 6, 'xz_spread': 5, 'y_spread': 1, 'feature': singular_feature.join()})
-    #     rm.configured_feature(singular_feature, *feature)
-    #     rm.placed_feature(patch_feature, patch_feature, decorate_chance(80), decorate_square(), decorate_climate(crop_data.min_temp, crop_data.max_temp, crop_data.min_rain, crop_data.max_rain, min_forest=crop_data.min_forest, max_forest=crop_data.max_forest))
-    #     rm.placed_feature(singular_feature, singular_feature, decorate_heightmap(heightmap), replaceable, decorate_would_survive(name))
-    #
-    # for berry, info in BERRIES.items():
-    #     if info.type == 'spreading':
-    #         configured_placed_feature(rm, ('plant', berry + '_bush'), 'tfc:spreading_bush', {'block': 'tfc:plant/%s_bush' % berry}, decorate_climate(info.min_temp, info.max_temp, info.min_rain, info.max_rain, min_forest=info.min_forest, max_forest=info.max_forest), decorate_heightmap('world_surface_wg'), decorate_square(), decorate_chance(22))
-    #         placed_feature_tag(rm, 'feature/berry_bushes', 'tfc:plant/%s_bush' % berry)
-    #     else:
-    #         bush_block = 'tfc:plant/%s_bush[lifecycle=healthy,stage=0%s]' % (berry, ',fluid=empty' if info.type == 'waterlogged' else '')
-    #         configured_patch_feature(rm, ('plant', berry + '_bush'), patch_config(bush_block, 1, 4, 4, 'fresh' if info.type == 'waterlogged' else False), decorate_climate(info.min_temp, info.max_temp, info.min_rain, info.max_rain, min_forest=info.min_forest, max_forest=info.max_forest), decorate_square(), decorate_chance(30), biome_check=False)
-    #         placed_feature_tag(rm, 'feature/berry_bushes', 'tfc:plant/%s_bush_patch' % berry)
-    #
-    # for fruit, info in FRUITS.items():
-    #     config = {
-    #         'min_temperature': info.min_temp,
-    #         'max_temperature': info.max_temp,
-    #         'min_rainfall': info.min_rain,
-    #         'max_rainfall': info.max_rain,
-    #         'max_forest': 'normal'
-    #     }
-    #     feature = 'tfc:fruit_trees'
-    #     state = 'tfc:plant/%s_growing_branch' % fruit
-    #     if fruit == 'banana':
-    #         feature = 'tfc:bananas'
-    #         state = 'tfc:plant/banana_plant'
-    #     configured_placed_feature(rm, ('plant', fruit), feature, {'state': state}, ('tfc:climate', config), decorate_heightmap('world_surface_wg'), decorate_square(), decorate_chance(50))
-    #
-    #     placed_feature_tag(rm, 'feature/fruit_trees', 'tfc:plant/%s' % fruit, 'tfc:plant/%s' % fruit)
-    #
-    # configured_placed_feature(rm, 'bamboo', 'minecraft:bamboo', {'probability': 0.2}, decorate_chance(30), decorate_climate(18, 28, 300, 500, True, fuzzy=True), ('minecraft:noise_based_count', {
-    #     'noise_to_count_ratio': 160,
-    #     'noise_factor': 80.0,
-    #     'noise_offset': 0.3
-    # }), decorate_square(), decorate_heightmap('world_surface_wg'))
-    #
-    # for coral in ('tree', 'mushroom', 'claw'):
-    #     configured_placed_feature(rm, 'coral_%s' % coral, 'tfc:coral_%s' % coral, {})
-    #     placed_feature_tag(rm, 'feature/corals', 'tfc:coral_%s' % coral)
-    #
-    # configured_placed_feature(rm, 'coral_reef', 'minecraft:simple_random_selector', {
-    #     'features': '#tfc:feature/corals'
-    # }, ('minecraft:noise_based_count', {
-    #     'noise_to_count_ratio': 20,
-    #     'noise_factor': 200,
-    #     'noise_offset': 1
-    # }), decorate_square(), decorate_climate(min_temp=12, max_temp=50, fuzzy=True), decorate_heightmap('ocean_floor_wg'))
-    #
-    # # Groundcover
-    # configured_patch_feature(rm, 'driftwood', patch_config('tfc:groundcover/driftwood[fluid=empty]', 1, 15, 5, True), decorate_chance(6), decorate_square(), decorate_climate(-10, 50, 200, 500))
-    # configured_patch_feature(rm, 'clam', patch_config('tfc:groundcover/clam[fluid=empty]', 1, 15, 5, 'salt'), decorate_chance(6), decorate_square(), decorate_climate(-50, 22, 10, 450))
-    # configured_patch_feature(rm, 'mollusk', patch_config('tfc:groundcover/mollusk[fluid=empty]', 1, 15, 5, 'salt'), decorate_chance(6), decorate_square(), decorate_climate(-10, 30, 150, 500))
-    # configured_patch_feature(rm, 'mussel', patch_config('tfc:groundcover/mussel[fluid=empty]', 1, 15, 5, 'salt'), decorate_chance(6), decorate_square(), decorate_climate(10, 50, 100, 500))
-    #
-    # configured_patch_feature(rm, 'sticks_shore', patch_config('tfc:groundcover/stick[fluid=empty]', 1, 15, 25, True), decorate_chance(2), decorate_square(), decorate_climate(-50, 50, 100, 500))
-    # configured_patch_feature(rm, 'seaweed', patch_config('tfc:groundcover/seaweed[fluid=empty]', 1, 15, 10, True), decorate_chance(5), decorate_square(), decorate_climate(-20, 50, 150, 500))
-    #
-    # Forest Only
-    configured_patch_feature(rm, 'sticks_forest', patch_config('tfc:groundcover/stick[fluid=empty]', 1, 15, 20), decorate_chance(3), decorate_square(), decorate_climate(-20, 50, 70, 500, True), biome_check=False)
-    configured_patch_feature(rm, 'pinecone', patch_config('tfc:groundcover/pinecone[fluid=empty]', 1, 15, 10), decorate_chance(5), decorate_square(), decorate_climate(-14, 0, 60, 320, True), biome_check=False)
-    configured_patch_feature(rm, 'humus', patch_config('tfc:groundcover/humus[fluid=empty]', 1, 5, 100), decorate_chance(5), decorate_square(), decorate_climate(8, 20, 180, 420, True, fuzzy=True), biome_check=False)
-    configured_patch_feature(rm, 'salt_lick', patch_config('tfc:groundcover/salt_lick[fluid=empty]', 1, 5, 100), decorate_chance(110), decorate_square(), decorate_climate(5, 33, 100, 500, True), biome_check=False)
-    configured_patch_feature(rm, 'dead_grass', patch_config('tfc:groundcover/dead_grass[fluid=empty]', 1, 5, 100), decorate_chance(70), decorate_square(), decorate_climate(10, 20, 0, 150, True, fuzzy=True), biome_check=False)
-    configured_patch_feature(rm, 'rotten_flesh', patch_config('tfc:groundcover/rotten_flesh[fluid=empty]', 1, 10, 10), decorate_chance(100), decorate_square(), decorate_climate(-30, 30, 0, 400), biome_check=False)
-    configured_patch_feature(rm, 'guano', patch_config('tfc:groundcover/guano[fluid=empty]', 1, 10, 10), decorate_chance(200), decorate_square(), decorate_climate(-30, 10, 100, 500), decorate_on_top_of('forge:gravel'), biome_check=False)
-
-    # Loose Rocks - Both Surface + Underground
-    configured_placed_feature(rm, 'loose_rock', 'tfc:loose_rock', {}, decorate_heightmap('ocean_floor_wg'))
-    configured_placed_feature(rm, 'surface_loose_rocks', 'minecraft:random_patch', {'tries': 8, 'xz_spread': 7, 'y_spread': 1, 'feature': 'tfc:loose_rock'}, decorate_square())
-
-    # Underground decoration
-    configured_placed_feature(rm, 'underground_loose_rocks', 'tfc:loose_rock', decorate_carving_mask(), decorate_chance(0.05), decorate_range(-59, 63))
-    configured_patch_feature(rm, 'underground_guano', patch_config('tfc:groundcover/guano[fluid=empty]', 5, 5, 60), decorate_chance(3), decorate_square(), decorate_range(40, 100), extra_singular_decorators=[decorate_underground()])
-    rm.configured_feature('geode', 'tfc:geode', {'outer': 'tfc:rock/hardened/basalt', 'middle': 'tfc:rock/raw/quartzite', 'inner': [
-        {'data': 'tfc:ore/amethyst/quartzite', 'weight': 1}, {'data': 'tfc:rock/raw/quartzite', 'weight': 5}
-    ]})
-    rm.placed_feature('geode', 'tfc:geode', decorate_chance(500), decorate_square(), decorate_range(-48, 32), decorate_biome())
 
 
 def configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifier, feature: Optional[ResourceIdentifier] = None, config: JsonObject = None, *placements: Json):
@@ -774,27 +434,42 @@ def vein_density(density: int) -> float:
 
 # Tree Helper Functions
 
-def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, tree: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None):
+def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None):
+
+    wood_prefix = 'tfc'
+    if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig':
+        wood_prefix = 'afc'
+
+    leaf_prefix = 'afc'
+    if basic_wood == tree:
+        leaf_prefix = wood_prefix
+
+    #adv_wood is used for groundcover items, Unique Logs don't have associated groundcover
+    adv_wood = basic_wood
+    if adv_wood == 'rainbow_eucalyptus':
+        adv_wood = 'eucalyptus'
+
     cfg = {
         'min_rain': min_rain,
         'max_rain': max_rain,
         'min_temp': min_temp,
         'max_temp': max_temp,
-        'groundcover': [{'block': 'tfc:wood/twig/%s' % tree}],
+        'groundcover': [{'block': '%s:wood/twig/%s' % (wood_prefix, adv_wood)}],
         'normal_tree': 'tfc:tree/%s' % tree,
         'dead_tree': 'tfc:tree/%s_dead' % tree,
         'old_growth_chance': old_growth_chance,
         'spoiler_old_growth_chance': spoiler_chance,
     }
+
     if tree != 'palm':
-        cfg['groundcover'] += [{'block': 'tfc:wood/fallen_leaves/%s' % tree}]
+        cfg['groundcover'] += [{'block': '%s:wood/fallen_leaves/%s' % (wood_prefix, adv_wood)}]
     if tree not in ('acacia', 'willow', 'gum_arabic'):
-        cfg['fallen_log'] = 'tfc:wood/log/%s' % tree
+        cfg['fallen_log'] = '%s:wood/log/%s' % (wood_prefix, basic_wood)
     else:
         cfg['fallen_tree_chance'] = 0
     if tree not in ('palm', 'rosewood', 'sycamore'):
-        cfg['bush_log'] = utils.block_state('tfc:wood/wood/%s[natural=True,axis=y]' % tree)
-        cfg['bush_leaves'] = 'tfc:wood/leaves/%s' % tree
+        cfg['bush_log'] = utils.block_state('%s:wood/wood/%s[natural=True,axis=y]' % (wood_prefix, basic_wood))
+        cfg['bush_leaves'] = '%s:wood/leaves/%s' % (leaf_prefix, tree)
     if old_growth:
         cfg['old_growth_tree'] = 'tfc:tree/%s_large' % tree
     rm.configured_feature('tree/%s_entry' % tree, 'tfc:forest_entry', cfg)

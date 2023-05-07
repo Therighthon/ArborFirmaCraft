@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/cypress",
+    "base": "afc:block/wood/lectern/cypress/base",
+    "front": "afc:block/wood/lectern/cypress/front",
+    "sides": "afc:block/wood/lectern/cypress/sides",
+    "top": "afc:block/wood/lectern/cypress/top",
+    "particle": "afc:block/wood/lectern/cypress/sides"
+  }
+}

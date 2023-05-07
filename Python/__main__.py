@@ -112,7 +112,7 @@ def clean_at(location: str):
 
 def validate_resources():
     """ Validates all resources are unchanged. """
-    rm = ValidatingResourceManager('afc', 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources')
+    rm = ValidatingResourceManager('tfc', 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources')
     resources_at(rm, True, True, True, True, True)
     error = rm.error_files != 0
 
@@ -136,9 +136,9 @@ def validate_resources():
 
 def resources(hotswap: str = None, do_assets: bool = False, do_data: bool = False, do_recipes: bool = False, do_worldgen: bool = False, do_advancements: bool = False):
     """ Generates resource files, or a subset of them """
-    resources_at(ResourceManager('afc', resource_dir='./src/main/resources'), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
+    resources_at(ResourceManager('tfc', resource_dir='./src/main/resources'), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
     if hotswap:
-        resources_at(ResourceManager('afc', resource_dir=hotswap), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
+        resources_at(ResourceManager('tfc', resource_dir=hotswap), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
 
 
 def resources_at(rm: ResourceManager, do_assets: bool, do_data: bool, do_recipes: bool, do_worldgen: bool, do_advancements: bool):

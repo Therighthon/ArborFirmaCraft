@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/door_top",
-  "textures": {
-    "top": "afc:block/wood/planks/mahogany_door_top",
-    "bottom": "afc:block/wood/planks/mahogany_door_bottom"
-  }
-}

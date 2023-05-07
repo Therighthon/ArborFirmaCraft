@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/outer_stairs",
-  "textures": {
-    "bottom": "afc:block/wood/planks/mahogany",
-    "top": "afc:block/wood/planks/mahogany",
-    "side": "afc:block/wood/planks/mahogany"
-  }
-}

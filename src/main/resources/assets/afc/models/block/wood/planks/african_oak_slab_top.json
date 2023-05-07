@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "afc:block/wood/planks/african_oak",
-    "top": "afc:block/wood/planks/african_oak",
-    "side": "afc:block/wood/planks/african_oak"
-  }
-}

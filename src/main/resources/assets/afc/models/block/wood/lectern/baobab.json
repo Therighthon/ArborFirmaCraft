@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/baobab",
+    "base": "afc:block/wood/lectern/baobab/base",
+    "front": "afc:block/wood/lectern/baobab/front",
+    "sides": "afc:block/wood/lectern/baobab/sides",
+    "top": "afc:block/wood/lectern/baobab/top",
+    "particle": "afc:block/wood/lectern/baobab/sides"
+  }
+}
