@@ -86,4 +86,5 @@ public enum AFCWood implements RegistryWood
     public int defaultDaysToGrow() {
         return defaultDaysToGrow;
     }
+
 }

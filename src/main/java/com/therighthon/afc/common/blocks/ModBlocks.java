@@ -65,6 +65,17 @@ public class ModBlocks
         return blockType.create(wood);
     }
 
+    public static final Map<UniqueLogs, Map<UniqueLogs.BlockType, RegistryObject<Block>>> UNIQUE_LOGS = Helpers.mapOfKeys(UniqueLogs.class, wood ->
+        Helpers.mapOfKeys(UniqueLogs.BlockType.class, type ->
+            register(type.nameFor(wood), createUniqueLogs(wood, type), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+        )
+    );
+
+    public static Supplier<Block> createUniqueLogs(UniqueLogs wood, UniqueLogs.BlockType blockType)
+    {
+        return blockType.create(wood);
+    }
+
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier) {
         return register(name, blockSupplier, (Function)null);
     }

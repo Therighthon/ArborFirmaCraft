@@ -4,7 +4,7 @@ from typing import Set, Any, Tuple, NamedTuple, Literal, Union
 from nbtlib import nbt
 from nbtlib.tag import String as StringTag, Int as IntTag
 
-Tree = NamedTuple('Tree', name=str, feature=Literal['random', 'overlay', 'stacked'], variant=str, count=Union[int, Tuple[int, ...]])
+Tree = NamedTuple('Tree', name=str, feature=Literal['random', 'overlay', 'stacked'], variant=str, count=Union[int, Tuple[int, ...]], log=str)
 
 DATA_VERSION = 2975
 
@@ -20,31 +20,62 @@ STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resou
 
 
 NORMAL_TREES = [
-    Tree('baobab', 'random', 'baobab', 35),
-    Tree('mahogany', 'random', 'jungle', 17),
-    #Tree('kapok', 'random', 'canopy', 15),
-    Tree('eucalyptus', 'random', 'canopy', 15),
-    Tree('hevea', 'random', 'aspen', 16),
-    Tree('white_elm', 'random', 'aspen', 16),
-    Tree('african_oak', 'random', 'african_oak', 15),
-    Tree('tualang', 'random', 'emergent', 1)
+    Tree('baobab', 'random', 'baobab', 12, 'baobab'),
+    Tree('cypress', 'random', 'slender', 14, 'cypress'),
+    Tree('eucalyptus', 'random', 'tall_branches', 18, 'eucalyptus'),
+    Tree('fig', 'random', 'emergent', 6, 'fig'),
+    Tree('hevea', 'random', 'tall_branches', 18, 'hevea'),
+    Tree('mahogany', 'random', 'jungle', 17, 'mahogany'),
+    Tree('teak', 'random', 'jungle', 17, 'teak'),
+    Tree('tualang', 'random', 'emergent', 6, 'tualang'),
+
+    Tree('gum_arabic', 'random', 'acacia', 35, 'acacia'),
+    Tree('acacia_koa', 'random', 'canopy', 15, 'acacia'),
+    Tree('evergreen_ash', 'overlay', 'normal', 0, 'ash'),
+    Tree('mulga_blackwood' 'random', 'acacia', 35, 'acacia'),
+    Tree('mountain_fir', 'random', 'fir', 9, 'douglas_fir'),
+    Tree('scrub_hickory', 'random', 'blackwood', 10, 'hickory'),
+    Tree('bigleaf_maple', 'random', 'round', 23, 'maple'),
+    Tree('weeping_maple', 'random', 'willow', 7, 'maple'),
+    Tree('live_oak', 'random', 'round', 23, 'oak'),
+    Tree('black_oak', 'random', 'african_oak', 15, 'oak'),
+    Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),
+    Tree('red_pine', 'random', 'red_pine', 12, 'pine'),
+    Tree('giant_rosewood', 'random', 'canopy', 15, 'rosewood'),
+    Tree('coast_spruce', 'random', 'conifer', 9, 'spruce'),
+    Tree('sitka_spruce', 'random', 'fir', 9, 'spruce'),
+    Tree('atlas_cedar', 'random', 'atlas', 17, 'white_cedar'),
+    Tree('weeping_willow', 'random', 'willow', 7, 'willow'),
+
+    Tree('rainbow_eucalyptus', 'random', 'canopy', 15, 'rainbow_eucalyptus'),
+    Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
+    Tree('weeping_cypress', 'random', 'nootka', 11, 'cypress'),
+    Tree('redcedar', 'random', 'fluffyconifer', 10, 'cypress'),
+    Tree('bald_cypress', 'random', 'fir', 9, 'cypress')
 ]
 
 LARGE_TREES = [
-    Tree('gum_arabic', 'random', 'kapok_large', 6),
-    #Tree('kapok', 'random', 'kapok_large', 6),
-    Tree('tualang', 'random', 'kapok_large', 6)
+    Tree('tualang', 'random', 'kapok_large', 6, 'kapok')
 ]
 
 DEAD_TREES = [
-    Tree('gum_arabic', 'random', 'dead_small', 6),
-    Tree('hevea', 'random', 'dead_tall', 6),
-    Tree('white_elm', 'random', 'dead_tall', 6),
-    #Tree('kapok', 'random', 'dead_jungle', 4),
-    Tree('tualang', 'random', 'dead_jungle', 4),
-    Tree('eucalyptus', 'random', 'dead_jungle', 4),
-    Tree('african_oak', 'random', 'dead_small', 6),
-    Tree('mahogany', 'random', 'dead_jungle', 4)
+    Tree('hevea', 'random', 'dead_tall', 6, 'hevea'),
+    Tree('tualang', 'random', 'dead_jungle', 4, 'tualang'),
+    Tree('eucalyptus', 'random', 'dead_jungle', 4, 'eucalyptus'),
+    Tree('mahogany', 'random', 'dead_jungle', 4, 'mahogany'),
+    Tree('gum_arabic', 'random', 'dead_small', 6, 'acacia'),
+    Tree('african_oak', 'random', 'dead_small', 6, 'oak')
+]
+
+VAR_NORMAL_TREES = [
+    Tree('black_oak', 'random', 'african_oak', 15, 'oak')
+]
+
+VAR_LARGE_TREES = [
+
+]
+
+VAR_DEAD_TREES = [
 ]
 
 
