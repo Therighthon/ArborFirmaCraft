@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 100,
+    "max_rain": 260,
+    "min_temp": 2,
+    "max_temp": 14,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/cypress"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/cypress"
+      }
+    ],
+    "normal_tree": "tfc:tree/cypress",
+    "dead_tree": "tfc:tree/cypress_dead",
+    "fallen_log": "afc:wood/log/cypress",
+    "bush_log": {
+      "Name": "afc:wood/wood/cypress",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/cypress"
+  }
+}

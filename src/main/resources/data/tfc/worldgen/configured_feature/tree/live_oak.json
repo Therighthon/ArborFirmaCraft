@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:live_oak/1",
+      "tfc:live_oak/2",
+      "tfc:live_oak/3",
+      "tfc:live_oak/4",
+      "tfc:live_oak/5",
+      "tfc:live_oak/6",
+      "tfc:live_oak/7",
+      "tfc:live_oak/8",
+      "tfc:live_oak/9",
+      "tfc:live_oak/10",
+      "tfc:live_oak/11",
+      "tfc:live_oak/12",
+      "tfc:live_oak/13",
+      "tfc:live_oak/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:coast_spruce_dead/1",
+      "tfc:coast_spruce_dead/2",
+      "tfc:coast_spruce_dead/3",
+      "tfc:coast_spruce_dead/4",
+      "tfc:coast_spruce_dead/5",
+      "tfc:coast_spruce_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 3,
+      "allow_submerged": true
+    }
+  }
+}

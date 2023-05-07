@@ -1,0 +1,49 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:mulga_blackwood/1",
+      "tfc:mulga_blackwood/2",
+      "tfc:mulga_blackwood/3",
+      "tfc:mulga_blackwood/4",
+      "tfc:mulga_blackwood/5",
+      "tfc:mulga_blackwood/6",
+      "tfc:mulga_blackwood/7",
+      "tfc:mulga_blackwood/8",
+      "tfc:mulga_blackwood/9",
+      "tfc:mulga_blackwood/10",
+      "tfc:mulga_blackwood/11",
+      "tfc:mulga_blackwood/12",
+      "tfc:mulga_blackwood/13",
+      "tfc:mulga_blackwood/14",
+      "tfc:mulga_blackwood/15",
+      "tfc:mulga_blackwood/16",
+      "tfc:mulga_blackwood/17",
+      "tfc:mulga_blackwood/18",
+      "tfc:mulga_blackwood/19",
+      "tfc:mulga_blackwood/20",
+      "tfc:mulga_blackwood/21",
+      "tfc:mulga_blackwood/22",
+      "tfc:mulga_blackwood/23",
+      "tfc:mulga_blackwood/24",
+      "tfc:mulga_blackwood/25",
+      "tfc:mulga_blackwood/26",
+      "tfc:mulga_blackwood/27",
+      "tfc:mulga_blackwood/28",
+      "tfc:mulga_blackwood/29",
+      "tfc:mulga_blackwood/30",
+      "tfc:mulga_blackwood/31",
+      "tfc:mulga_blackwood/32",
+      "tfc:mulga_blackwood/33",
+      "tfc:mulga_blackwood/34",
+      "tfc:mulga_blackwood/35"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

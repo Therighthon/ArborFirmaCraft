@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:tualang/1",
+      "tfc:tualang/2",
+      "tfc:tualang/3",
+      "tfc:tualang/4",
+      "tfc:tualang/5",
+      "tfc:tualang/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 11,
+      "allow_submerged": true
+    }
+  }
+}

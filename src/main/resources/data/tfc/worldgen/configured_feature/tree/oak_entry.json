@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 210,
+    "max_rain": 320,
+    "min_temp": -6,
+    "max_temp": 10,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/oak"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/oak"
+      }
+    ],
+    "normal_tree": "tfc:tree/oak",
+    "dead_tree": "tfc:tree/oak_dead",
+    "fallen_log": "tfc:wood/log/oak",
+    "bush_log": {
+      "Name": "tfc:wood/wood/oak",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/oak"
+  }
+}

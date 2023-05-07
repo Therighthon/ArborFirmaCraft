@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 300,
+    "max_rain": 450,
+    "min_temp": 16,
+    "max_temp": 40,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/eucalyptus"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/eucalyptus"
+      }
+    ],
+    "normal_tree": "tfc:tree/rainbow_eucalptus",
+    "dead_tree": "tfc:tree/rainbow_eucalptus_dead",
+    "fallen_log": "afc:wood/log/rainbow_eucalyptus",
+    "bush_log": {
+      "Name": "afc:wood/wood/rainbow_eucalyptus",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/rainbow_eucalptus"
+  }
+}

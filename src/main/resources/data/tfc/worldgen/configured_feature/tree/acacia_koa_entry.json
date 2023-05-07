@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 350,
+    "max_rain": 500,
+    "min_temp": 24,
+    "max_temp": 40,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/acacia"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/acacia"
+      }
+    ],
+    "normal_tree": "tfc:tree/acacia_koa",
+    "dead_tree": "tfc:tree/acacia_koa_dead",
+    "fallen_log": "tfc:wood/log/acacia",
+    "bush_log": {
+      "Name": "tfc:wood/wood/acacia",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/acacia_koa"
+  }
+}

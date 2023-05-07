@@ -95,10 +95,11 @@ DEAD_TREES = [
     Tree('mahogany', 'random', 'dead_jungle', 4, 'mahogany'),
     Tree('tualang', 'random', 'dead_tall', 6, 'tualang'),
     Tree('teak', 'random', 'dead_tall', 6, 'teak'),
-    Tree('slender_cypress', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('cypress', 'random', 'dead_tall', 6, 'cypress'),
     Tree('weeping_cypress', 'random', 'dead_small', 6, 'cypress'),
     Tree('redcedar', 'random', 'dead_tall', 6, 'cypress'),
     Tree('bald_cypress', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('baobab', 'random', 'dead_small', 6, 'baobab'),
     Tree('fig', 'random', 'dead_jungle', 4, 'fig')
 ]
 
