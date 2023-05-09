@@ -3,17 +3,17 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "tfc:acacia_dead/1",
-      "tfc:acacia_dead/2",
-      "tfc:acacia_dead/3",
-      "tfc:acacia_dead/4",
-      "tfc:acacia_dead/5",
-      "tfc:acacia_dead/6"
+      "tfc:baobab_dead/1",
+      "tfc:baobab_dead/2",
+      "tfc:baobab_dead/3",
+      "tfc:baobab_dead/4",
+      "tfc:baobab_dead/5",
+      "tfc:baobab_dead/6"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 6,
+      "height": 0,
       "allow_submerged": true
     }
   }

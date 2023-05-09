@@ -82,7 +82,7 @@ DEAD_TREES = [
     Tree('live_oak', 'random', 'dead_small', 6, 'oak'),
     Tree('black_oak', 'random', 'dead_small', 6, 'oak'),
     Tree('stone_pine', 'random', 'dead_tall', 6, 'pine'),
-    Tree('red_pine_', 'random', 'dead_tall', 6, 'pine'),
+    Tree('red_pine', 'random', 'dead_tall', 6, 'pine'),
     Tree('giant_rosewood', 'random', 'dead_jungle', 4, 'rosewood'),
     Tree('coast_spruce', 'random', 'dead_tall', 6, 'spruce'),
     Tree('sitka_spruce', 'random', 'dead_tall', 6, 'spruce'),

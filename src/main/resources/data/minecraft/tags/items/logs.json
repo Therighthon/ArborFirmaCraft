@@ -1,0 +1,15 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "#afc:cypress_logs",
+    "#afc:tualang_logs",
+    "#afc:hevea_logs",
+    "#afc:teak_logs",
+    "#afc:eucalyptus_logs",
+    "#afc:baobab_logs",
+    "#afc:fig_logs",
+    "#afc:mahogany_logs",
+    "#afc:rainbow_eucalyptus_logs"
+  ]
+}

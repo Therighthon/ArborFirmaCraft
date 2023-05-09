@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/twig/cypress",
+    "afc:wood/twig/tualang",
+    "afc:wood/twig/hevea",
+    "afc:wood/twig/teak",
+    "afc:wood/twig/eucalyptus",
+    "afc:wood/twig/baobab",
+    "afc:wood/twig/fig",
+    "afc:wood/twig/mahogany"
+  ]
+}

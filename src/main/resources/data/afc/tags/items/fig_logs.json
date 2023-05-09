@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/fig",
+    "afc:wood/wood/fig",
+    "afc:wood/stripped_log/fig",
+    "afc:wood/stripped_wood/fig"
+  ]
+}

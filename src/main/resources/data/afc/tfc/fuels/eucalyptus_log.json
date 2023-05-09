@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/eucalyptus"
+    },
+    {
+      "item": "afc:wood/wood/eucalyptus"
+    },
+    {
+      "item": "afc:wood/stripped_wood/eucalyptus"
+    },
+    {
+      "item": "afc:wood/stripped_log/eucalyptus"
+    }
+  ],
+  "duration": 1200,
+  "temperature": 651,
+  "purity": 0.95
+}

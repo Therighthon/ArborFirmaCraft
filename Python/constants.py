@@ -421,6 +421,10 @@ WOODS: Dict[str, Wood] = {
     # 'willow': Wood(603, 1000)
 }
 
+UNIQUE_LOGS: Dict[str, Wood] = {
+    'rainbow_eucalyptus': Wood(650, 1000)
+}
+
 TREE_VARIANTS: Dict[str, str] = {
     'gum_arabic': 'acacia',
     'acacia_koa': 'acacia',

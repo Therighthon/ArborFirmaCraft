@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_slab",
+    "afc:wood/planks/tualang_slab",
+    "afc:wood/planks/hevea_slab",
+    "afc:wood/planks/teak_slab",
+    "afc:wood/planks/eucalyptus_slab",
+    "afc:wood/planks/baobab_slab",
+    "afc:wood/planks/fig_slab",
+    "afc:wood/planks/mahogany_slab"
+  ]
+}

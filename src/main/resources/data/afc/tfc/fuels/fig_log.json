@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/fig"
+    },
+    {
+      "item": "afc:wood/wood/fig"
+    },
+    {
+      "item": "afc:wood/stripped_wood/fig"
+    },
+    {
+      "item": "afc:wood/stripped_log/fig"
+    }
+  ],
+  "duration": 1100,
+  "temperature": 680,
+  "purity": 0.95
+}

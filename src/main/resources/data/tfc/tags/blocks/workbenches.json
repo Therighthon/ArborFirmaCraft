@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_workbench",
+    "afc:wood/planks/tualang_workbench",
+    "afc:wood/planks/hevea_workbench",
+    "afc:wood/planks/teak_workbench",
+    "afc:wood/planks/eucalyptus_workbench",
+    "afc:wood/planks/baobab_workbench",
+    "afc:wood/planks/fig_workbench",
+    "afc:wood/planks/mahogany_workbench"
+  ]
+}

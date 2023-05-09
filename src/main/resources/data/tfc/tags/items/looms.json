@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_loom",
+    "afc:wood/planks/tualang_loom",
+    "afc:wood/planks/hevea_loom",
+    "afc:wood/planks/teak_loom",
+    "afc:wood/planks/eucalyptus_loom",
+    "afc:wood/planks/baobab_loom",
+    "afc:wood/planks/fig_loom",
+    "afc:wood/planks/mahogany_loom"
+  ]
+}

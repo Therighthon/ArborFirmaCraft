@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_pressure_plate",
+    "afc:wood/planks/tualang_pressure_plate",
+    "afc:wood/planks/hevea_pressure_plate",
+    "afc:wood/planks/teak_pressure_plate",
+    "afc:wood/planks/eucalyptus_pressure_plate",
+    "afc:wood/planks/baobab_pressure_plate",
+    "afc:wood/planks/fig_pressure_plate",
+    "afc:wood/planks/mahogany_pressure_plate"
+  ]
+}

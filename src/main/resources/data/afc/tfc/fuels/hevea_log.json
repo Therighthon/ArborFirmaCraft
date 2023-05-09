@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/hevea"
+    },
+    {
+      "item": "afc:wood/wood/hevea"
+    },
+    {
+      "item": "afc:wood/stripped_wood/hevea"
+    },
+    {
+      "item": "afc:wood/stripped_log/hevea"
+    }
+  ],
+  "duration": 1000,
+  "temperature": 611,
+  "purity": 0.95
+}

@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_fence",
+    "afc:wood/planks/cypress_log_fence",
+    "afc:wood/planks/tualang_fence",
+    "afc:wood/planks/tualang_log_fence",
+    "afc:wood/planks/hevea_fence",
+    "afc:wood/planks/hevea_log_fence",
+    "afc:wood/planks/teak_fence",
+    "afc:wood/planks/teak_log_fence",
+    "afc:wood/planks/eucalyptus_fence",
+    "afc:wood/planks/eucalyptus_log_fence",
+    "afc:wood/planks/baobab_fence",
+    "afc:wood/planks/baobab_log_fence",
+    "afc:wood/planks/fig_fence",
+    "afc:wood/planks/fig_log_fence",
+    "afc:wood/planks/mahogany_fence",
+    "afc:wood/planks/mahogany_log_fence"
+  ]
+}

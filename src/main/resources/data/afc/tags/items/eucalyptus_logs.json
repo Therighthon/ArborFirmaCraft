@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/eucalyptus",
+    "afc:wood/wood/eucalyptus",
+    "afc:wood/stripped_log/eucalyptus",
+    "afc:wood/stripped_wood/eucalyptus"
+  ]
+}

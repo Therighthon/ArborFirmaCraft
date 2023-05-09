@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_trapdoor",
+    "afc:wood/planks/tualang_trapdoor",
+    "afc:wood/planks/hevea_trapdoor",
+    "afc:wood/planks/teak_trapdoor",
+    "afc:wood/planks/eucalyptus_trapdoor",
+    "afc:wood/planks/baobab_trapdoor",
+    "afc:wood/planks/fig_trapdoor",
+    "afc:wood/planks/mahogany_trapdoor"
+  ]
+}

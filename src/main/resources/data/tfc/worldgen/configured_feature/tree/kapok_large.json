@@ -10,10 +10,10 @@
       "tfc:kapok_large/5",
       "tfc:kapok_large/6"
     ],
-    "radius": 1,
+    "radius": 2,
     "placement": {
       "width": 1,
-      "height": 2,
+      "height": 0,
       "allow_submerged": true
     }
   }

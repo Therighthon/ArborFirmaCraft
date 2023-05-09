@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_tool_rack",
+    "afc:wood/planks/tualang_tool_rack",
+    "afc:wood/planks/hevea_tool_rack",
+    "afc:wood/planks/teak_tool_rack",
+    "afc:wood/planks/eucalyptus_tool_rack",
+    "afc:wood/planks/baobab_tool_rack",
+    "afc:wood/planks/fig_tool_rack",
+    "afc:wood/planks/mahogany_tool_rack"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/boat/cypress",
+    "afc:wood/boat/tualang",
+    "afc:wood/boat/hevea",
+    "afc:wood/boat/teak",
+    "afc:wood/boat/eucalyptus",
+    "afc:wood/boat/baobab",
+    "afc:wood/boat/fig",
+    "afc:wood/boat/mahogany"
+  ]
+}

@@ -42,7 +42,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     WEEPING_MAPLE(false, 7, 9),
     //Oak
     BLACK_OAK(true, 7, 14),
-    PIN_OAK(false, 7, 10),
+    LIVE_OAK(false, 7, 10),
     //Pine
     STONE_PINE(true, 7, 11),
     RED_PINE(true, 7, 7),

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/teak"
+    },
+    {
+      "item": "afc:wood/wood/teak"
+    },
+    {
+      "item": "afc:wood/stripped_wood/teak"
+    },
+    {
+      "item": "afc:wood/stripped_log/teak"
+    }
+  ],
+  "duration": 1750,
+  "temperature": 720,
+  "purity": 0.95
+}

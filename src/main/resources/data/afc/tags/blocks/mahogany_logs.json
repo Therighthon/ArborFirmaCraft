@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/mahogany",
+    "afc:wood/wood/mahogany",
+    "afc:wood/stripped_log/mahogany",
+    "afc:wood/stripped_wood/mahogany"
+  ]
+}

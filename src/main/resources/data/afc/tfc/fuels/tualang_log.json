@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/tualang"
+    },
+    {
+      "item": "afc:wood/wood/tualang"
+    },
+    {
+      "item": "afc:wood/stripped_wood/tualang"
+    },
+    {
+      "item": "afc:wood/stripped_log/tualang"
+    }
+  ],
+  "duration": 1250,
+  "temperature": 696,
+  "purity": 0.95
+}

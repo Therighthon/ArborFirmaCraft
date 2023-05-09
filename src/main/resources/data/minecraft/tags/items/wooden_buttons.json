@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_button",
+    "afc:wood/planks/tualang_button",
+    "afc:wood/planks/hevea_button",
+    "afc:wood/planks/teak_button",
+    "afc:wood/planks/eucalyptus_button",
+    "afc:wood/planks/baobab_button",
+    "afc:wood/planks/fig_button",
+    "afc:wood/planks/mahogany_button"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_bookshelf",
+    "afc:wood/planks/tualang_bookshelf",
+    "afc:wood/planks/hevea_bookshelf",
+    "afc:wood/planks/teak_bookshelf",
+    "afc:wood/planks/eucalyptus_bookshelf",
+    "afc:wood/planks/baobab_bookshelf",
+    "afc:wood/planks/fig_bookshelf",
+    "afc:wood/planks/mahogany_bookshelf"
+  ]
+}

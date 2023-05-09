@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/mahogany"
+    },
+    {
+      "item": "afc:wood/wood/mahogany"
+    },
+    {
+      "item": "afc:wood/stripped_wood/mahogany"
+    },
+    {
+      "item": "afc:wood/stripped_log/mahogany"
+    }
+  ],
+  "duration": 1600,
+  "temperature": 700,
+  "purity": 0.95
+}

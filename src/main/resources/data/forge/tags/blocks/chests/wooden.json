@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/chest/cypress",
+    "afc:wood/trapped_chest/cypress",
+    "afc:wood/chest/tualang",
+    "afc:wood/trapped_chest/tualang",
+    "afc:wood/chest/hevea",
+    "afc:wood/trapped_chest/hevea",
+    "afc:wood/chest/teak",
+    "afc:wood/trapped_chest/teak",
+    "afc:wood/chest/eucalyptus",
+    "afc:wood/trapped_chest/eucalyptus",
+    "afc:wood/chest/baobab",
+    "afc:wood/trapped_chest/baobab",
+    "afc:wood/chest/fig",
+    "afc:wood/trapped_chest/fig",
+    "afc:wood/chest/mahogany",
+    "afc:wood/trapped_chest/mahogany"
+  ]
+}

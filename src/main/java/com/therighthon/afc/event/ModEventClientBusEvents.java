@@ -3,6 +3,7 @@ package com.therighthon.afc.event;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.ModBlocks;
+import com.therighthon.afc.common.blocks.TreeSpecies;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
@@ -42,15 +43,18 @@ public class ModEventClientBusEvents
 
     public static void registerColorHandlerItems(ColorHandlerEvent.Item event)
     {
-        final ItemColors registry = event.getItemColors();
-        final ItemColor grassColor = (stack, tintIndex) -> TFCColors.getGrassColor(null, tintIndex);
-        final ItemColor seasonalFoliageColor = (stack, tintIndex) -> TFCColors.getFoliageColor(null, tintIndex);
+        final BlockColors registry = event.getBlockColors();
+        final BlockColor grassColor = (state, level, pos, tintIndex) -> TFCColors.getGrassColor(pos, tintIndex);
+        final BlockColor tallGrassColor = (state, level, pos, tintIndex) -> TFCColors.getTallGrassColor(pos, tintIndex);
+        final BlockColor seasonalFoliageColor = (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex);
+        final BlockColor foliageColor = (state, level, pos, tintIndex) -> TFCColors.getFoliageColor(pos, tintIndex);
 
 //        ModBlocks.PLANTS.forEach((plant, reg) -> {
 //            if (plant.isItemTinted())
 //                registry.register(plant.isSeasonal() ? seasonalFoliageColor : grassColor, reg.get());
 //        });
-        ModBlocks.WOODS.forEach((key, value) -> registry.register(seasonalFoliageColor, value.get(Wood.BlockType.FALLEN_LEAVES).get(), value.get(LEAVES).get()));
+        ModBlocks.WOODS.forEach((wood, reg) -> registry.register(wood.isConifer() ? foliageColor : seasonalFoliageColor, reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
+        ModBlocks.TREE_SPECIES.forEach((key, value) -> registry.register(key.isConifer() ? foliageColor : seasonalFoliageColor, value.get(TreeSpecies.BlockType.LEAVES).get()));
     }
 
     public static void clientSetup(FMLClientSetupEvent event)

@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/baobab"
+    },
+    {
+      "item": "afc:wood/wood/baobab"
+    },
+    {
+      "item": "afc:wood/stripped_wood/baobab"
+    },
+    {
+      "item": "afc:wood/stripped_log/baobab"
+    }
+  ],
+  "duration": 1000,
+  "temperature": 707,
+  "purity": 0.95
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/sluice/cypress",
+    "afc:wood/sluice/tualang",
+    "afc:wood/sluice/hevea",
+    "afc:wood/sluice/teak",
+    "afc:wood/sluice/eucalyptus",
+    "afc:wood/sluice/baobab",
+    "afc:wood/sluice/fig",
+    "afc:wood/sluice/mahogany"
+  ]
+}

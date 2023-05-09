@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_fence_gate",
+    "afc:wood/planks/tualang_fence_gate",
+    "afc:wood/planks/hevea_fence_gate",
+    "afc:wood/planks/teak_fence_gate",
+    "afc:wood/planks/eucalyptus_fence_gate",
+    "afc:wood/planks/baobab_fence_gate",
+    "afc:wood/planks/fig_fence_gate",
+    "afc:wood/planks/mahogany_fence_gate"
+  ]
+}

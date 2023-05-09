@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/fallen_leaves/cypress",
+    "afc:wood/fallen_leaves/tualang",
+    "afc:wood/fallen_leaves/hevea",
+    "afc:wood/fallen_leaves/teak",
+    "afc:wood/fallen_leaves/eucalyptus",
+    "afc:wood/fallen_leaves/baobab",
+    "afc:wood/fallen_leaves/fig",
+    "afc:wood/fallen_leaves/mahogany"
+  ]
+}

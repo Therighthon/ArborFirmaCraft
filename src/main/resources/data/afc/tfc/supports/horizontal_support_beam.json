@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    "afc:wood/horizontal_support/cypress",
+    "afc:wood/horizontal_support/tualang",
+    "afc:wood/horizontal_support/hevea",
+    "afc:wood/horizontal_support/teak",
+    "afc:wood/horizontal_support/eucalyptus",
+    "afc:wood/horizontal_support/baobab",
+    "afc:wood/horizontal_support/fig",
+    "afc:wood/horizontal_support/mahogany"
+  ],
+  "support_up": 2,
+  "support_down": 2,
+  "support_horizontal": 4
+}

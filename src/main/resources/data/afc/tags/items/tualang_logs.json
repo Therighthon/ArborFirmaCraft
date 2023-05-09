@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/tualang",
+    "afc:wood/wood/tualang",
+    "afc:wood/stripped_log/tualang",
+    "afc:wood/stripped_wood/tualang"
+  ]
+}

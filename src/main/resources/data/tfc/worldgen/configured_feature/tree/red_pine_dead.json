@@ -3,12 +3,12 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "tfc:red_pine__dead/1",
-      "tfc:red_pine__dead/2",
-      "tfc:red_pine__dead/3",
-      "tfc:red_pine__dead/4",
-      "tfc:red_pine__dead/5",
-      "tfc:red_pine__dead/6"
+      "tfc:red_pine_dead/1",
+      "tfc:red_pine_dead/2",
+      "tfc:red_pine_dead/3",
+      "tfc:red_pine_dead/4",
+      "tfc:red_pine_dead/5",
+      "tfc:red_pine_dead/6"
     ],
     "radius": 1,
     "placement": {

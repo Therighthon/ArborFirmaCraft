@@ -42,7 +42,7 @@ def generate(rm: ResourceManager):
     # === Supports ===
 
     rm.data(('tfc', 'supports', 'horizontal_support_beam'), {
-        'ingredient': ['tfc:wood/horizontal_support/%s' % wood for wood in WOODS],
+        'ingredient': ['afc:wood/horizontal_support/%s' % wood for wood in WOODS],
         'support_up': 2,
         'support_down': 2,
         'support_horizontal': 4
@@ -51,25 +51,31 @@ def generate(rm: ResourceManager):
     # Fuels
 
     for wood, wood_data in WOODS.items():
-        fuel_item(rm, wood + '_log', ['tfc:wood/log/' + wood, 'tfc:wood/wood/' + wood, 'tfc:wood/stripped_wood/' + wood, 'tfc:wood/stripped_log/' + wood], wood_data.duration, wood_data.temp, 0.6 if wood == 'pine' else 0.95)
+        fuel_item(rm, wood + '_log', ['afc:wood/log/' + wood, 'afc:wood/wood/' + wood, 'afc:wood/stripped_wood/' + wood, 'afc:wood/stripped_log/' + wood], wood_data.duration, wood_data.temp, 0.6 if wood == 'pine' else 0.95)
+
+    # New
+    for wood, wood_data in UNIQUE_LOGS.items():
+        fuel_item(rm, wood + '_log', ['afc:wood/log/' + wood, 'afc:wood/wood/' + wood], wood_data.duration, wood_data.temp, 0.6 if wood == 'pine' else 0.95)
 
     for wood in WOODS.keys():
         def item(_variant: str) -> str:
-            return 'tfc:wood/%s/%s' % (_variant, wood)
+            return 'afc:wood/%s/%s' % (_variant, wood)
 
         def plank(_variant: str) -> str:
-            return 'tfc:wood/planks/%s_%s' % (wood, _variant)
+            return 'afc:wood/planks/%s_%s' % (wood, _variant)
 
-        rm.item_tag('lumber', item('lumber'))
-        block_and_item_tag(rm, 'twigs', item('twig'))
-        block_and_item_tag(rm, 'looms', plank('loom'))
-        block_and_item_tag(rm, 'sluices', item('sluice'))
-        block_and_item_tag(rm, 'workbenches', plank('workbench'))
-        block_and_item_tag(rm, 'bookshelves', plank('bookshelf'))
-        block_and_item_tag(rm, 'lecterns', item('lectern'))
-        block_and_item_tag(rm, 'barrels', item('barrel'))
-        block_and_item_tag(rm, 'fallen_leaves', item('fallen_leaves'))
-        block_and_item_tag(rm, 'tool_racks', plank('tool_rack'))
+        print(wood)
+
+        rm.item_tag('tfc:lumber', item('lumber'))
+        block_and_item_tag(rm, 'tfc:twigs', item('twig'))
+        block_and_item_tag(rm, 'tfc:looms', plank('loom'))
+        block_and_item_tag(rm, 'tfc:sluices', item('sluice'))
+        block_and_item_tag(rm, 'tfc:workbenches', plank('workbench'))
+        block_and_item_tag(rm, 'tfc:bookshelves', plank('bookshelf'))
+        block_and_item_tag(rm, 'tfc:lecterns', item('lectern'))
+        block_and_item_tag(rm, 'tfc:barrels', item('barrel'))
+        block_and_item_tag(rm, 'tfc:fallen_leaves', item('fallen_leaves'))
+        block_and_item_tag(rm, 'tfc:tool_racks', plank('tool_rack'))
 
         rm.item_tag('minecraft:boats', item('boat'))
         block_and_item_tag(rm, 'minecraft:wooden_buttons', plank('button'))
@@ -79,7 +85,7 @@ def generate(rm: ResourceManager):
         block_and_item_tag(rm, 'minecraft:wooden_doors', plank('door'))
         block_and_item_tag(rm, 'minecraft:wooden_trapdoors', plank('trapdoor'))
         block_and_item_tag(rm, 'minecraft:wooden_pressure_plates', plank('pressure_plate'))
-        block_and_item_tag(rm, 'minecraft:logs', '#tfc:%s_logs' % wood)
+        block_and_item_tag(rm, 'minecraft:logs', '#afc:%s_logs' % wood)
         block_and_item_tag(rm, 'minecraft:leaves', item('leaves'))
         block_and_item_tag(rm, 'minecraft:planks', item('planks'))
 
@@ -97,6 +103,21 @@ def generate(rm: ResourceManager):
         if wood in TANNIN_WOOD_TYPES:
             rm.item_tag('makes_tannin', item('log'), item('wood'))
 
+    # New
+    for wood in TREE_VARIANTS.keys():
+        def item(_variant: str) -> str:
+            return 'afc:wood/%s/%s' % (_variant, wood)
+
+        block_and_item_tag(rm, 'minecraft:leaves', item('leaves'))
+    # New
+    for wood in UNIQUE_LOGS.keys():
+        def item(_variant: str) -> str:
+            return 'afc:wood/%s/%s' % (_variant, wood)
+
+        block_and_item_tag(rm, 'minecraft:logs', '#afc:%s_logs' % wood)
+
+
+
     # for plant in PLANTS.keys():
     #     block_and_item_tag(rm, 'plants', 'tfc:plant/%s' % plant)
     # for plant in UNIQUE_PLANTS:
@@ -110,9 +131,6 @@ def generate(rm: ResourceManager):
 
     rm.block_tag('logs_that_log', '#minecraft:logs')
     rm.block_tag('scraping_surface', '#minecraft:logs')
-    rm.block_tag('plants', *['tfc:wild_crop/%s' % crop for crop in CROPS.keys()])
-    rm.block_tag('rabbit_raidable', 'tfc:crop/carrot', 'tfc:crop/cabbage', 'minecraft:carrots')
-
     # for plant, data in PLANTS.items():  # Plants
     #     block_and_item_tag(rm, 'plants', 'tfc:plant/%s' % plant)
     #     if data.type in ('standard', 'short_grass', 'dry', 'grass_water', 'water'):
@@ -133,17 +151,18 @@ def generate(rm: ResourceManager):
 
 
     rm.block_tag('minecraft:mineable/axe', *[
-        *['tfc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest') for wood in WOODS.keys()],
-        *['tfc:wood/planks/%s_%s' % (wood, variant) for variant in ('bookshelf', 'door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs', 'tool_rack', 'workbench', 'sign') for wood in WOODS.keys()]
+        *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest') for wood in WOODS.keys()],
+        *['afc:wood/planks/%s_%s' % (wood, variant) for variant in ('bookshelf', 'door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs', 'tool_rack', 'workbench', 'sign') for wood in WOODS.keys()]
     ])
     rm.block_tag('tfc:mineable_with_sharp_tool', *[
-        *['tfc:wood/%s/%s' % (variant, wood) for variant in ('leaves', 'sapling', 'fallen_leaves') for wood in WOODS.keys()],
-        *['tfc:plant/%s' % plant for plant in PLANTS.keys()],
-        *['tfc:plant/%s' % plant for plant in UNIQUE_PLANTS]
+        *['afc:wood/%s/%s' % (variant, wood) for variant in ('leaves', 'sapling', 'fallen_leaves') for wood in WOODS.keys()],
+        *['afc:plant/%s' % plant for plant in PLANTS.keys()],
+        *['afc:plant/%s' % plant for plant in UNIQUE_PLANTS]
     ])
     rm.block_tag('tfc:mineable_with_blunt_tool',
-                 *['tfc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood') for wood in WOODS.keys()]
+                 *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood') for wood in WOODS.keys()]
                  )
+    rm.flush()
 
     # ==========
     # FLUID TAGS
@@ -201,54 +220,54 @@ def generate(rm: ResourceManager):
     )], 'tfc:river_water')
 
 
-    # Item Sizes
-
-    item_size(rm, 'logs', '#minecraft:logs', Size.very_large, Weight.medium)
-    item_size(rm, 'tool_racks', '#tfc:tool_racks', Size.large, Weight.very_heavy)
-    item_size(rm, 'chests', '#forge:chests', Size.large, Weight.light)
-    item_size(rm, 'slabs', '#minecraft:slabs', Size.small, Weight.very_light)
-    item_size(rm, 'vessels', '#tfc:vessels', Size.normal, Weight.very_heavy)
-    item_size(rm, 'large_vessels', '#tfc:large_vessels', Size.huge, Weight.heavy)
-    item_size(rm, 'doors', '#minecraft:doors', Size.very_large, Weight.heavy)
-    item_size(rm, 'mortar', '#tfc:mortar', Size.tiny, Weight.very_light)
-    item_size(rm, 'stick_bunch', 'tfc:stick_bunch', Size.normal, Weight.light)
-    item_size(rm, 'stick_bundle', 'tfc:stick_bundle', Size.very_large, Weight.medium)
-    item_size(rm, 'jute_fiber', 'tfc:jute_fiber', Size.small, Weight.very_light)
-    item_size(rm, 'burlap_cloth', 'tfc:burlap_cloth', Size.small, Weight.very_light)
-    item_size(rm, 'straw', 'tfc:straw', Size.small, Weight.very_light)
-    item_size(rm, 'wool', 'tfc:wool', Size.small, Weight.light)
-    item_size(rm, 'wool_cloth', 'tfc:wool_cloth', Size.small, Weight.light)
-    item_size(rm, 'silk_cloth', 'tfc:silk_cloth', Size.small, Weight.light)
-    item_size(rm, 'alabaster_brick', 'tfc:alabaster_brick', Size.small, Weight.light)
-    item_size(rm, 'glue', 'tfc:glue', Size.tiny, Weight.light)
-    item_size(rm, 'brass_mechanisms', 'tfc:brass_mechanisms', Size.normal, Weight.light)
-    item_size(rm, 'wrought_iron_grill', 'tfc:wrought_iron_grill', Size.large, Weight.heavy)
-    item_size(rm, 'dyes', '#tfc:dyes', Size.tiny, Weight.light)
-    item_size(rm, 'foods', '#tfc:foods', Size.small, Weight.light)
-    item_size(rm, 'plants', '#tfc:plants', Size.tiny, Weight.very_light)
-    item_size(rm, 'jute', 'tfc:jute', Size.small, Weight.very_light)
-    item_size(rm, 'bloomery', 'tfc:bloomery', Size.large, Weight.very_heavy)
-    item_size(rm, 'sluice', '#tfc:sluices', Size.very_large, Weight.very_heavy)
-    item_size(rm, 'lamps', '#tfc:lamps', Size.normal, Weight.medium)
-    item_size(rm, 'signs', '#minecraft:signs', Size.very_small, Weight.heavy)
-    item_size(rm, 'soups', '#tfc:soups', Size.very_small, Weight.medium)
-    item_size(rm, 'salads', '#tfc:salads', Size.very_small, Weight.medium)
-    item_size(rm, 'buckets', '#tfc:buckets', Size.large, Weight.very_heavy)
-    item_size(rm, 'anvils', '#tfc:anvils', Size.huge, Weight.very_heavy)
-    item_size(rm, 'minecarts', '#tfc:minecarts', Size.very_large, Weight.heavy)
-    item_size(rm, 'boats', '#minecraft:boats', Size.very_large, Weight.heavy)
-    item_size(rm, 'looms', '#tfc:looms', Size.large, Weight.very_heavy)
-    item_size(rm, 'ingots', '#forge:ingots', Size.large, Weight.medium)
-    item_size(rm, 'double_ingots', '#forge:double_ingots', Size.large, Weight.heavy)
-    item_size(rm, 'sheets', '#forge:sheets', Size.large, Weight.medium)
-    item_size(rm, 'double_sheets', '#forge:double_sheets', Size.large, Weight.heavy)
-    item_size(rm, 'rods', '#forge:rods', Size.normal, Weight.light)
-    item_size(rm, 'tuyeres', '#tfc:tuyeres', Size.large, Weight.heavy)
-    item_size(rm, 'trapdoors', '#tfc:trapdoors', Size.large, Weight.heavy)
-    item_size(rm, 'small_tools', ['#tfc:chisels', '#tfc:knives', '#tfc:shears'], Size.large, Weight.medium)
-    item_size(rm, 'large_tools', ['#forge:fishing_rods', '#tfc:pickaxes', '#tfc:propicks', '#tfc:axes', '#tfc:shovels', '#tfc:hoes', '#tfc:hammers', '#tfc:saws', '#tfc:javelins', '#tfc:swords', '#tfc:maces', '#tfc:scythes'], Size.very_large, Weight.very_heavy)
-    item_size(rm, 'ore_pieces', '#tfc:ore_pieces', Size.small, Weight.medium)
-    item_size(rm, 'small_ore_pieces', '#tfc:small_ore_pieces', Size.small, Weight.light)
+    # # Item Sizes
+    #
+    # item_size(rm, 'logs', '#minecraft:logs', Size.very_large, Weight.medium)
+    # item_size(rm, 'tool_racks', '#tfc:tool_racks', Size.large, Weight.very_heavy)
+    # item_size(rm, 'chests', '#forge:chests', Size.large, Weight.light)
+    # item_size(rm, 'slabs', '#minecraft:slabs', Size.small, Weight.very_light)
+    # item_size(rm, 'vessels', '#tfc:vessels', Size.normal, Weight.very_heavy)
+    # item_size(rm, 'large_vessels', '#tfc:large_vessels', Size.huge, Weight.heavy)
+    # item_size(rm, 'doors', '#minecraft:doors', Size.very_large, Weight.heavy)
+    # item_size(rm, 'mortar', '#tfc:mortar', Size.tiny, Weight.very_light)
+    # item_size(rm, 'stick_bunch', 'tfc:stick_bunch', Size.normal, Weight.light)
+    # item_size(rm, 'stick_bundle', 'tfc:stick_bundle', Size.very_large, Weight.medium)
+    # item_size(rm, 'jute_fiber', 'tfc:jute_fiber', Size.small, Weight.very_light)
+    # item_size(rm, 'burlap_cloth', 'tfc:burlap_cloth', Size.small, Weight.very_light)
+    # item_size(rm, 'straw', 'tfc:straw', Size.small, Weight.very_light)
+    # item_size(rm, 'wool', 'tfc:wool', Size.small, Weight.light)
+    # item_size(rm, 'wool_cloth', 'tfc:wool_cloth', Size.small, Weight.light)
+    # item_size(rm, 'silk_cloth', 'tfc:silk_cloth', Size.small, Weight.light)
+    # item_size(rm, 'alabaster_brick', 'tfc:alabaster_brick', Size.small, Weight.light)
+    # item_size(rm, 'glue', 'tfc:glue', Size.tiny, Weight.light)
+    # item_size(rm, 'brass_mechanisms', 'tfc:brass_mechanisms', Size.normal, Weight.light)
+    # item_size(rm, 'wrought_iron_grill', 'tfc:wrought_iron_grill', Size.large, Weight.heavy)
+    # item_size(rm, 'dyes', '#tfc:dyes', Size.tiny, Weight.light)
+    # item_size(rm, 'foods', '#tfc:foods', Size.small, Weight.light)
+    # item_size(rm, 'plants', '#tfc:plants', Size.tiny, Weight.very_light)
+    # item_size(rm, 'jute', 'tfc:jute', Size.small, Weight.very_light)
+    # item_size(rm, 'bloomery', 'tfc:bloomery', Size.large, Weight.very_heavy)
+    # item_size(rm, 'sluice', '#tfc:sluices', Size.very_large, Weight.very_heavy)
+    # item_size(rm, 'lamps', '#tfc:lamps', Size.normal, Weight.medium)
+    # item_size(rm, 'signs', '#minecraft:signs', Size.very_small, Weight.heavy)
+    # item_size(rm, 'soups', '#tfc:soups', Size.very_small, Weight.medium)
+    # item_size(rm, 'salads', '#tfc:salads', Size.very_small, Weight.medium)
+    # item_size(rm, 'buckets', '#tfc:buckets', Size.large, Weight.very_heavy)
+    # item_size(rm, 'anvils', '#tfc:anvils', Size.huge, Weight.very_heavy)
+    # item_size(rm, 'minecarts', '#tfc:minecarts', Size.very_large, Weight.heavy)
+    # item_size(rm, 'boats', '#minecraft:boats', Size.very_large, Weight.heavy)
+    # item_size(rm, 'looms', '#tfc:looms', Size.large, Weight.very_heavy)
+    # item_size(rm, 'ingots', '#forge:ingots', Size.large, Weight.medium)
+    # item_size(rm, 'double_ingots', '#forge:double_ingots', Size.large, Weight.heavy)
+    # item_size(rm, 'sheets', '#forge:sheets', Size.large, Weight.medium)
+    # item_size(rm, 'double_sheets', '#forge:double_sheets', Size.large, Weight.heavy)
+    # item_size(rm, 'rods', '#forge:rods', Size.normal, Weight.light)
+    # item_size(rm, 'tuyeres', '#tfc:tuyeres', Size.large, Weight.heavy)
+    # item_size(rm, 'trapdoors', '#tfc:trapdoors', Size.large, Weight.heavy)
+    # item_size(rm, 'small_tools', ['#tfc:chisels', '#tfc:knives', '#tfc:shears'], Size.large, Weight.medium)
+    # item_size(rm, 'large_tools', ['#forge:fishing_rods', '#tfc:pickaxes', '#tfc:propicks', '#tfc:axes', '#tfc:shovels', '#tfc:hoes', '#tfc:hammers', '#tfc:saws', '#tfc:javelins', '#tfc:swords', '#tfc:maces', '#tfc:scythes'], Size.very_large, Weight.very_heavy)
+    # item_size(rm, 'ore_pieces', '#tfc:ore_pieces', Size.small, Weight.medium)
+    # item_size(rm, 'small_ore_pieces', '#tfc:small_ore_pieces', Size.small, Weight.light)
 
 
 # Climate Ranges
@@ -298,41 +317,41 @@ def fauna(chance: int = None, distance_below_sea_level: int = None, climate: Dic
     }
 
 
-def food_item(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, category: Category, hunger: int, saturation: float, water: int, decay: float, fruit: Optional[float] = None, veg: Optional[float] = None, protein: Optional[float] = None, grain: Optional[float] = None, dairy: Optional[float] = None):
-    rm.item_tag('tfc:foods', ingredient)
-    rm.data(('tfc', 'food_items', name_parts), {
-        'ingredient': utils.ingredient(ingredient),
-        'hunger': hunger,
-        'saturation': saturation,
-        'water': water if water != 0 else None,
-        'decay_modifier': decay,
-        'fruit': fruit,
-        'vegetables': veg,
-        'protein': protein,
-        'grain': grain,
-        'dairy': dairy
-    })
-    rm.item_tag('foods', ingredient)
-    if category in (Category.fruit, Category.vegetable):
-        rm.item_tag('foods/%ss' % category.name.lower(), ingredient)
-    if category in (Category.meat, Category.cooked_meat):
-        rm.item_tag('foods/meats', ingredient)
-        if category == Category.cooked_meat:
-            rm.item_tag('foods/cooked_meats', ingredient)
-        else:
-            rm.item_tag('foods/raw_meats', ingredient)
-    if category == Category.dairy:
-        rm.item_tag('foods/dairy', ingredient)
+# def food_item(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, category: Category, hunger: int, saturation: float, water: int, decay: float, fruit: Optional[float] = None, veg: Optional[float] = None, protein: Optional[float] = None, grain: Optional[float] = None, dairy: Optional[float] = None):
+#     rm.item_tag('tfc:foods', ingredient)
+#     rm.data(('tfc', 'food_items', name_parts), {
+#         'ingredient': utils.ingredient(ingredient),
+#         'hunger': hunger,
+#         'saturation': saturation,
+#         'water': water if water != 0 else None,
+#         'decay_modifier': decay,
+#         'fruit': fruit,
+#         'vegetables': veg,
+#         'protein': protein,
+#         'grain': grain,
+#         'dairy': dairy
+#     })
+#     rm.item_tag('foods', ingredient)
+#     if category in (Category.fruit, Category.vegetable):
+#         rm.item_tag('foods/%ss' % category.name.lower(), ingredient)
+#     if category in (Category.meat, Category.cooked_meat):
+#         rm.item_tag('foods/meats', ingredient)
+#         if category == Category.cooked_meat:
+#             rm.item_tag('foods/cooked_meats', ingredient)
+#         else:
+#             rm.item_tag('foods/raw_meats', ingredient)
+#     if category == Category.dairy:
+#         rm.item_tag('foods/dairy', ingredient)
 
 
-def drinkable(rm: ResourceManager, name_parts: utils.ResourceIdentifier, fluid: utils.Json, thirst: Optional[int] = None, intoxication: Optional[int] = None, effects: Optional[utils.Json] = None, food: Optional[utils.Json] = None):
-    rm.data(('tfc', 'drinkables', name_parts), {
-        'ingredient': fluid_ingredient(fluid),
-        'thirst': thirst,
-        'intoxication': intoxication,
-        'effects': effects,
-        'food': food
-    })
+# def drinkable(rm: ResourceManager, name_parts: utils.ResourceIdentifier, fluid: utils.Json, thirst: Optional[int] = None, intoxication: Optional[int] = None, effects: Optional[utils.Json] = None, food: Optional[utils.Json] = None):
+#     rm.data(('tfc', 'drinkables', name_parts), {
+#         'ingredient': fluid_ingredient(fluid),
+#         'thirst': thirst,
+#         'intoxication': intoxication,
+#         'effects': effects,
+#         'food': food
+#     })
 
 
 def item_size(rm: ResourceManager, name_parts: utils.ResourceIdentifier, ingredient: utils.Json, size: Size, weight: Weight):

@@ -6,7 +6,7 @@
       "predicate": {
         "tfc:sealed": 1.0
       },
-      "model": "tfc:block/wood/barrel_sealed/baobab"
+      "model": "afc:block/wood/barrel_sealed/baobab"
     }
   ]
 }

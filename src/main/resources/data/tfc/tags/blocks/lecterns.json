@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/lectern/cypress",
+    "afc:wood/lectern/tualang",
+    "afc:wood/lectern/hevea",
+    "afc:wood/lectern/teak",
+    "afc:wood/lectern/eucalyptus",
+    "afc:wood/lectern/baobab",
+    "afc:wood/lectern/fig",
+    "afc:wood/lectern/mahogany"
+  ]
+}
