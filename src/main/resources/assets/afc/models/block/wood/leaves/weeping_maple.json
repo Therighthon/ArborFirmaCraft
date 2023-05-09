@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "afc:block/leaves_no_tint",
   "textures": {
     "all": "afc:block/wood/leaves/weeping_maple"
   }
