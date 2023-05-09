@@ -206,6 +206,9 @@ dependencies {
     //patchouli
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1")
+    //Cyanide https://cursemaven.com/test/541676/3811793
+    fg.deobf("curse.maven:cyanide-541676:${3811793}")
+    implementation fg.deobf("curse.maven:cyanide-541676:${3811793}")
 
 }
 

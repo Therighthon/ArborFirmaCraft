@@ -2,8 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
-    "tfc:forest",
-    "tfc:bamboo",
-    "tfc:cave_vegetation"
+    "afc:normal_forest"
   ]
 }
