@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:balsam_fir_large/1",
+      "tfc:balsam_fir_large/2",
+      "tfc:balsam_fir_large/3",
+      "tfc:balsam_fir_large/4",
+      "tfc:balsam_fir_large/5",
+      "tfc:balsam_fir_large/6",
+      "tfc:balsam_fir_large/7",
+      "tfc:balsam_fir_large/8",
+      "tfc:balsam_fir_large/9",
+      "tfc:balsam_fir_large/10",
+      "tfc:balsam_fir_large/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 1,
+      "allow_submerged": false
+    }
+  }
+}

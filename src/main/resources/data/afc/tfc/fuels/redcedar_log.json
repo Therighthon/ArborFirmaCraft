@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/redcedar"
+    },
+    {
+      "item": "afc:wood/wood/redcedar"
+    }
+  ],
+  "duration": 1100,
+  "temperature": 700,
+  "purity": 0.95
+}

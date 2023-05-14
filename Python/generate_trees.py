@@ -32,25 +32,28 @@ NORMAL_TREES = [
     Tree('gum_arabic', 'random', 'acacia', 35, 'acacia'),
     Tree('acacia_koa', 'random', 'canopy', 15, 'acacia'),
     Tree('evergreen_ash', 'overlay', 'normal', 0, 'ash'),
-    Tree('mulga_blackwood', 'random', 'acacia', 35, 'blackwood'),
+    Tree('mpingo_blackwood', 'random', 'acacia', 35, 'blackwood'),
     Tree('mountain_fir', 'random', 'fir', 9, 'douglas_fir'),
+    Tree('balsam_fir', 'random', 'boreal', 9, 'douglas_fir'),
     Tree('scrub_hickory', 'random', 'blackwood', 10, 'hickory'),
     Tree('bigleaf_maple', 'random', 'round', 23, 'maple'),
-    Tree('weeping_maple', 'random', 'willow', 7, 'maple'),
+    Tree('weeping_maple', 'random', 'small_willow', 10, 'maple'),
     Tree('live_oak', 'random', 'round', 23, 'oak'),
     Tree('black_oak', 'random', 'african_oak', 15, 'oak'),
     Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),
     Tree('red_pine', 'random', 'red_pine', 12, 'pine'),
+    Tree('tamarack', 'random', 'boreal', 11, 'pine'),
     Tree('giant_rosewood', 'random', 'canopy', 15, 'rosewood'),
     Tree('coast_spruce', 'random', 'conifer', 9, 'spruce'),
     Tree('sitka_spruce', 'random', 'fir', 9, 'spruce'),
+    Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce'),
     Tree('atlas_cedar', 'random', 'atlas', 17, 'white_cedar'),
     Tree('weeping_willow', 'random', 'willow_large', 14, 'willow'),
 
     Tree('rainbow_eucalyptus', 'random', 'canopy', 15, 'rainbow_eucalyptus'),
     Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
     Tree('weeping_cypress', 'random', 'nootka', 11, 'cypress'),
-    Tree('redcedar', 'random', 'fluffyconifer', 10, 'cypress'),
+    Tree('redcedar', 'random', 'fluffyconifer', 10, 'redcedar'),
     Tree('bald_cypress', 'random', 'fir', 9, 'cypress')
 ]
 
@@ -58,12 +61,15 @@ LARGE_TREES = [
     #Tree('bigleaf_maple', 'random', 'normal_large', 5, 'maple'),
     Tree('evergreen_ash', 'random', 'round', 14, 'ash'),
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir'),
+    Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir'),
     Tree('scrub_hickory', 'random', 'blackwood_large', 10, 'hickory'),
     Tree('kapok', 'random', 'kapok_large', 6, 'kapok'),
-    Tree('weeping_maple', 'random', 'willow_large', 14, 'maple'),
+    Tree('weeping_maple', 'random', 'willow', 7, 'maple'),
     Tree('live_oak', 'random', 'normal_large', 5, 'oak'),
     Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),
+    Tree('tamarack', 'random', 'tall_boreal', 11, 'pine'),
     Tree('sitka_spruce', 'random', 'fir_large', 5, 'spruce'),
+    Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce'),
     Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
     Tree('baobab', 'random', 'old_baobab', 7, 'baobab'),
     Tree('tualang', 'random', 'emergent', 6, 'tualang'),
@@ -71,21 +77,24 @@ LARGE_TREES = [
 ]
 
 DEAD_TREES = [
-    Tree('gum_arabic', 'random', 'dead_small', 6, 'acacia'),
+    Tree('gum_arabic', 'random', 'dead_small', 6, 'gum_arabic'),
     Tree('acacia_koa', 'random', 'dead_jungle', 4, 'acacia'),
     Tree('evergreen_ash', 'random', 'dead_small', 6, 'ash'),
-    Tree('mulga_blackwood', 'random', 'dead_small', 6, 'blackwood'),
+    Tree('mpingo_blackwood', 'random', 'dead_small', 6, 'blackwood'),
     Tree('mountain_fir', 'random', 'dead_tall', 6, 'douglas_fir'),
+    Tree('balsam_fir', 'random', 'dead_small', 6, 'douglas_fir'),
     Tree('scrub_hickory', 'random', 'dead_small', 6, 'hickory'),
     Tree('bigleaf_maple', 'random', 'dead_small', 6, 'maple'),
     Tree('weeping_maple', 'random', 'dead_small', 6, 'maple'),
     Tree('live_oak', 'random', 'dead_small', 6, 'oak'),
-    Tree('black_oak', 'random', 'dead_small', 6, 'oak'),
+    Tree('black_oak', 'random', 'dead_small', 6, 'black_oak'),
     Tree('stone_pine', 'random', 'dead_tall', 6, 'pine'),
     Tree('red_pine', 'random', 'dead_tall', 6, 'pine'),
+    Tree('tamarack', 'random', 'dead_small', 6, 'pine'),
     Tree('giant_rosewood', 'random', 'dead_jungle', 4, 'rosewood'),
     Tree('coast_spruce', 'random', 'dead_tall', 6, 'spruce'),
     Tree('sitka_spruce', 'random', 'dead_tall', 6, 'spruce'),
+    Tree('black_spruce', 'random', 'dead_tall', 6, 'spruce'),
     Tree('atlas_cedar', 'random', 'dead_small', 6, 'white_cedar'),
     Tree('weeping_willow', 'random', 'dead_small', 6, 'willow'),
     Tree('rainbow_eucalyptus', 'random', 'dead_jungle', 4, 'rainbow_eucalyptus'),
@@ -97,7 +106,7 @@ DEAD_TREES = [
     Tree('teak', 'random', 'dead_tall', 6, 'teak'),
     Tree('cypress', 'random', 'dead_tall', 6, 'cypress'),
     Tree('weeping_cypress', 'random', 'dead_small', 6, 'cypress'),
-    Tree('redcedar', 'random', 'dead_tall', 6, 'cypress'),
+    Tree('redcedar', 'random', 'dead_tall', 6, 'redcedar'),
     Tree('bald_cypress', 'random', 'dead_tall', 6, 'cypress'),
     Tree('baobab', 'random', 'dead_small', 6, 'baobab'),
     Tree('fig', 'random', 'dead_jungle', 4, 'fig')
@@ -141,6 +150,9 @@ def main():
     verify_center_trunk('tall_branches', 18)
     verify_center_trunk('willow_large', 14)
     verify_center_trunk('willow', 7)
+    verify_center_trunk('small_willow', 10)
+    verify_center_trunk('boreal', 11)
+    verify_center_trunk('tall_boreal', 11)
 
     print('Tree sapling drop chances:')
     for tree in NORMAL_TREES:

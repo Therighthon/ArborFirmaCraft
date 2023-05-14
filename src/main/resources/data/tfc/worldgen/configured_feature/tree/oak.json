@@ -12,8 +12,8 @@
           "natural": "True"
         }
       },
-      "min_height": 3,
-      "max_height": 5,
+      "min_height": 1,
+      "max_height": 3,
       "width": 1
     },
     "radius": 1,

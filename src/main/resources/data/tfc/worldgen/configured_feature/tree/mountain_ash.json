@@ -20,6 +20,18 @@
       "tfc:mountain_ash/15",
       "tfc:mountain_ash/16"
     ],
+	"trunk": {
+      "state": {
+        "Name": "afc:wood/log/eucalyptus",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 8,
+      "max_height": 14,
+      "width": 1
+    },
     "radius": 1,
     "placement": {
       "width": 1,

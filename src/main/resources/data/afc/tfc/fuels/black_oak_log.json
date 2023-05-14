@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/black_oak"
+    },
+    {
+      "item": "afc:wood/wood/black_oak"
+    }
+  ],
+  "duration": 800,
+  "temperature": 700,
+  "purity": 0.95
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/gum_arabic"
+    },
+    {
+      "item": "afc:wood/wood/gum_arabic"
+    }
+  ],
+  "duration": 1100,
+  "temperature": 650,
+  "purity": 0.95
+}

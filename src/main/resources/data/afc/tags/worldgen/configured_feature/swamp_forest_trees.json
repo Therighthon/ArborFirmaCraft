@@ -1,5 +1,4 @@
 {
-  "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
     "tfc:tree/acacia_entry",
@@ -8,7 +7,7 @@
     "tfc:tree/aspen_entry",
     "tfc:tree/birch_entry",
     "tfc:tree/blackwood_entry",
-    "tfc:tree/mulga_blackwood_entry",
+    "tfc:tree/mpingo_blackwood_entry",
     "tfc:tree/douglas_fir_entry",
     "tfc:tree/hickory_entry",
     "tfc:tree/scrub_hickory_entry",
@@ -37,7 +36,8 @@
     "tfc:tree/weeping_cypress_entry",
     "tfc:tree/redcedar_entry",
     "tfc:tree/bald_cypress_entry",
-    "tfc:tree/fig_entry"
-    "
+    "tfc:tree/fig_entry",
+	"tfc:tree/tamarack_entry",
+	"tfc:tree/black_spruce_entry"
   ]
 }

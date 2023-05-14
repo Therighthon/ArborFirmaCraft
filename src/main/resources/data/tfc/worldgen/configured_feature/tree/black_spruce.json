@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:black_spruce/1",
+      "tfc:black_spruce/2",
+      "tfc:black_spruce/3",
+      "tfc:black_spruce/4",
+      "tfc:black_spruce/5",
+      "tfc:black_spruce/6",
+      "tfc:black_spruce/7",
+      "tfc:black_spruce/8",
+      "tfc:black_spruce/9",
+      "tfc:black_spruce/10",
+      "tfc:black_spruce/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 0,
+      "allow_submerged": true
+    }
+  }
+}

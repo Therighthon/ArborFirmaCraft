@@ -422,15 +422,19 @@ WOODS: Dict[str, Wood] = {
 }
 
 UNIQUE_LOGS: Dict[str, Wood] = {
-    'rainbow_eucalyptus': Wood(650, 1000)
+    'rainbow_eucalyptus': Wood(650, 1000),
+    'redcedar': Wood(700, 1100),
+    'gum_arabic': Wood(650, 1100),
+    'black_oak': Wood(700, 800)
 }
 
 TREE_VARIANTS: Dict[str, str] = {
     'gum_arabic': 'acacia',
     'acacia_koa': 'acacia',
     'evergreen_ash': 'ash',
-    'mulga_blackwood': 'blackwood',
+    'mpingo_blackwood': 'blackwood',
     'mountain_fir': 'douglas_fir',
+    'balsam_fir': 'douglas_fir',
     'scrub_hickory': 'hickory',
     'bigleaf_maple': 'maple',
     'weeping_maple': 'maple',
@@ -438,9 +442,11 @@ TREE_VARIANTS: Dict[str, str] = {
     'live_oak': 'oak',
     'stone_pine': 'pine',
     'red_pine': 'pine',
+    'tamarack': 'pine',
     'giant_rosewood': 'rosewood',
     'coast_spruce': 'spruce',
     'sitka_spruce': 'spruce',
+    'black_spruce': 'spruce',
     'atlas_cedar': 'white_cedar',
     'weeping_willow': 'willow',
     'rainbow_eucalyptus': 'eucalyptus',
@@ -1530,38 +1536,28 @@ TREE_SAPLING_DROP_CHANCES = {
     'gum_arabic': 0.0294,
     'acacia_koa': 0.0089,
     'evergreen_ash': 0.0215,
-    'mulga_blackwood': 0.0294,
+    'mpingo_blackwood': 0.0294,
     'mountain_fir': 0.0543,
+    'balsam_fir': 0.0495,
     'scrub_hickory': 0.0780,
     'bigleaf_maple': 0.0201,
-    'weeping_maple': 0.0143,
+    'weeping_maple': 0.0545,
     'live_oak': 0.0201,
     'black_oak': 0.0174,
     'stone_pine': 0.0283,
     'red_pine': 0.0248,
+    'tamarack': 0.0511,
     'giant_rosewood': 0.0089,
     'coast_spruce': 0.0238,
     'sitka_spruce': 0.0543,
+    'black_spruce': 0.0318,
     'atlas_cedar': 0.0210,
     'weeping_willow': 0.0107,
     'rainbow_eucalyptus': 0.0089,
     'mountain_ash': 0.0428,
     'weeping_cypress': 0.0591,
     'redcedar': 0.0132,
-    'bald_cypress': 0.0543,
+    'bald_cypress': 0.0543
 
-    'acacia': 0.0294,
-    'aspen': 0.0428,
-    'birch': 0.0428,
-    'blackwood': 0.0780,
-    'maple': 0.0215,
-    'oak': 0.0103,
-    'palm': 0.0914,
-    'pine': 0.0543,
-    'sequoia': 0.0238,
-    'spruce': 0.0238,
-    'sycamore': 0.0215,
-    'white_cedar': 0.0286,
-    'willow': 0.0143
 
 }

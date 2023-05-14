@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 150,
+    "max_rain": 500,
+    "min_temp": -18,
+    "max_temp": -8,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/pine"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/pine"
+      }
+    ],
+    "normal_tree": "tfc:tree/tamarack",
+    "dead_tree": "tfc:tree/tamarack_dead",
+    "fallen_log": "tfc:wood/log/pine",
+    "bush_log": {
+      "Name": "tfc:wood/wood/pine",
+      "Properties": {
+        "natural": "True",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/tamarack",
+    "old_growth_tree": "tfc:tree/tamarack_large"
+  }
+}

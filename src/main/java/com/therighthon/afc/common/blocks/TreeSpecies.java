@@ -35,6 +35,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     MPINGO_BLACKWOOD(true, 7, 9),
     //Fir
     MOUNTAIN_FIR(true, 7, 11),
+    BALSAM_FIR(true, 7, 13),
     //Hickory
     SCRUB_HICKORY(true, 7, 7),
     //Maple
@@ -46,11 +47,14 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Pine
     STONE_PINE(true, 7, 11),
     RED_PINE(true, 7, 7),
+    TAMARACK(false, 7, 10),
+
     //Rosewood
     GIANT_ROSEWOOD(true, 7, 16),
     //Spruce
     COAST_SPRUCE(true, 7, 8),
     SITKA_SPRUCE(true, 7, 10),
+    BLACK_SPRUCE(true, 7, 12),
     //Cedar
     ATLAS_CEDAR(true, 7, 10),
     //Willow
@@ -59,7 +63,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     RAINBOW_EUCALYPTUS(true, 8, 16),
     MOUNTAIN_ASH(true, 7, 13),
     //Cypress
-    RED_CEDAR(false, 7, 10),
+    REDCEDAR(false, 7, 10),
     WEEPING_CYPRESS(true, 7, 7),
     BALD_CYPRESS(true, 7, 7);
 

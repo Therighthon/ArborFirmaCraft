@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 305,
     "max_rain": 500,
-    "min_temp": -12,
+    "min_temp": -4,
     "max_temp": 4,
     "groundcover": [
       {

@@ -20,20 +20,37 @@ import net.dries007.tfc.common.blocks.wood.Wood;
 
 public enum UniqueLogs implements RegistryUniqueLogs
 {
-    RAINBOW_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS);
+    RAINBOW_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
+    BLACK_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
+    GUM_ARABIC(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
+    REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS);
 
     public static final UniqueLogs[] VALUES = values();
     private final String serializedName;
     private final MaterialColor woodColor;
     private final MaterialColor barkColor;
-    private final AFCWood woodType;
+    @Nullable
+    private final AFCWood AFCWoodType;
+    @Nullable
+    private final Wood TFCWoodType;
+    private final boolean hasAFCWoodType;
 
-
-    UniqueLogs(MaterialColor woodColor, MaterialColor barkColor, AFCWood woodType) {
+    UniqueLogs(MaterialColor woodColor, MaterialColor barkColor, Wood WoodType) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.woodColor = woodColor;
         this.barkColor = barkColor;
-        this.woodType = woodType;
+        this.hasAFCWoodType = false;
+        this.TFCWoodType = WoodType;
+        this.AFCWoodType = null;
+    }
+
+    UniqueLogs(MaterialColor woodColor, MaterialColor barkColor, AFCWood AFCWoodType) {
+        this.serializedName = this.name().toLowerCase(Locale.ROOT);
+        this.woodColor = woodColor;
+        this.barkColor = barkColor;
+        this.hasAFCWoodType = true;
+        this.TFCWoodType = null;
+        this.AFCWoodType = AFCWoodType;
     }
 
     @Override
@@ -54,10 +71,19 @@ public enum UniqueLogs implements RegistryUniqueLogs
         return barkColor;
     }
 
-    @Override
-    public AFCWood woodType()
+    public AFCWood AFCWoodType()
     {
-        return woodType;
+        return AFCWoodType;
+    }
+
+    public Wood TFCWoodType()
+    {
+        return TFCWoodType;
+    }
+
+    public boolean isAFCWoodType()
+    {
+        return hasAFCWoodType;
     }
 
     @Override
@@ -66,8 +92,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
     }
 
     public enum BlockType {
-        LOG((self, unique_log) -> new LogBlock(ExtendedProperties.of(Material.WOOD, state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? unique_log.woodColor() : unique_log.barkColor()).strength(8f).sound(SoundType.WOOD).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.woodType().getBlock(Wood.BlockType.STRIPPED_LOG))),
-        WOOD((self, unique_log) -> new LogBlock(properties(unique_log).strength(8f).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.woodType().getBlock(Wood.BlockType.STRIPPED_WOOD)));
+        LOG((self, unique_log) -> new LogBlock(ExtendedProperties.of(Material.WOOD, state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? unique_log.woodColor() : unique_log.barkColor()).strength(8f).sound(SoundType.WOOD).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG))),
+        WOOD((self, unique_log) -> new LogBlock(properties(unique_log).strength(8f).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD)));
 
         private static ExtendedProperties properties(RegistryUniqueLogs unique_log)
         {

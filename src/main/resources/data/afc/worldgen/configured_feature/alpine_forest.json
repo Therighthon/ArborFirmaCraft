@@ -25,12 +25,12 @@
         "groundcover_count": 15
       },
       "normal": {
-        "tree_count": 5,
+        "tree_count": 4,
         "groundcover_count": 30,
         "has_spoiler_old_growth": true
       },
       "old_growth": {
-        "tree_count": 7,
+        "tree_count": 6,
         "groundcover_count": 40,
         "allows_old_growth": true
       }

@@ -9,12 +9,15 @@
       "tfc:weeping_maple/4",
       "tfc:weeping_maple/5",
       "tfc:weeping_maple/6",
-      "tfc:weeping_maple/7"
+      "tfc:weeping_maple/7",
+      "tfc:weeping_maple/8",
+      "tfc:weeping_maple/9",
+      "tfc:weeping_maple/10"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 2,
+      "height": 0,
       "allow_submerged": false
     }
   }
