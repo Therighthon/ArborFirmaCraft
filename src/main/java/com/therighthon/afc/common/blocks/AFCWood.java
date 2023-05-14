@@ -1,16 +1,12 @@
 package com.therighthon.afc.common.blocks;
 
 import java.util.Locale;
-import java.util.Map;
 import java.util.function.Supplier;
+import com.therighthon.afc.AFC;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
-import net.minecraftforge.common.ForgeConfigSpec;
 
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.config.TFCConfig;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistryWood;
 import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 
@@ -41,7 +37,7 @@ public enum AFCWood implements RegistryWood
         this.conifer = conifer;
         this.woodColor = woodColor;
         this.barkColor = barkColor;
-        this.tree = new TFCTreeGrower(Helpers.identifier("tree/" + this.serializedName), Helpers.identifier("tree/" + this.serializedName + "_large"));
+        this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
         this.maxDecayDistance = maxDecayDistance;
         this.defaultDaysToGrow = daysToGrow;
     }
@@ -80,7 +76,8 @@ public enum AFCWood implements RegistryWood
     }
 
     public int daysToGrow() {
-        return (Integer)((ForgeConfigSpec.IntValue) TFCConfig.SERVER.saplingGrowthDays.get(this)).get();
+        //return (Integer)((ForgeConfigSpec.IntValue) AFCConfig.SERVER.saplingGrowthDays.get(this)).get();
+        return defaultDaysToGrow();
     }
 
     public int defaultDaysToGrow() {

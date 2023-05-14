@@ -5,6 +5,7 @@ import java.util.Objects;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import com.therighthon.afc.AFC;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -20,7 +21,6 @@ import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 
 public enum TreeSpecies implements RegistryTreeSpecies
@@ -63,9 +63,9 @@ public enum TreeSpecies implements RegistryTreeSpecies
     RAINBOW_EUCALYPTUS(true, 8, 16),
     MOUNTAIN_ASH(true, 7, 13),
     //Cypress
-    REDCEDAR(false, 7, 10),
+    REDCEDAR(true, 7, 10),
     WEEPING_CYPRESS(true, 7, 7),
-    BALD_CYPRESS(true, 7, 7);
+    BALD_CYPRESS(false, 7, 7);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
@@ -77,7 +77,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     TreeSpecies(boolean conifer, int maxDecayDistance, int daysToGrow) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.conifer = conifer;
-        this.tree = new TFCTreeGrower(Helpers.identifier("tree/" + this.serializedName), Helpers.identifier("tree/" + this.serializedName + "_large"));
+        this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
         this.maxDecayDistance = maxDecayDistance;
         this.daysToGrow = daysToGrow;
     }

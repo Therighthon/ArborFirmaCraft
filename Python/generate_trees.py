@@ -63,7 +63,6 @@ LARGE_TREES = [
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir'),
     Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir'),
     Tree('scrub_hickory', 'random', 'blackwood_large', 10, 'hickory'),
-    Tree('kapok', 'random', 'kapok_large', 6, 'kapok'),
     Tree('weeping_maple', 'random', 'willow', 7, 'maple'),
     Tree('live_oak', 'random', 'normal_large', 5, 'oak'),
     Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),

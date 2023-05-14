@@ -12,7 +12,7 @@
     ],
 	"trunk": {
       "state": {
-        "Name": "tfc:wood/log/oak",
+        "Name": "afc:wood/log/fig",
         "Properties": {
           "axis": "y",
           "natural": "true"

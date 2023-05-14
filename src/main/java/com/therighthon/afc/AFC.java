@@ -44,9 +44,9 @@ public class AFC
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
     }
 
-    public static ResourceLocation identifier(String path)
+    public static ResourceLocation treeIdentifier(String path)
     {
-        return new ResourceLocation(AFC.MOD_ID, path);
+        return new ResourceLocation("tfc", path);
     }
 
 }
