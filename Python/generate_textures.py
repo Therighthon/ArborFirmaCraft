@@ -236,6 +236,12 @@ def main():
         create_chest_minecart(wood, plank_color)
         create_logs(wood, plank_color)
 
+        easy_colorize(plank_color, templates + '/scribing_table', path + 'block/wood/scribing_table/%s' % wood)
+        easy_colorize(plank_color, templates + '/lectern_base', path + 'block/wood/lectern/%s/base' % wood)
+        easy_colorize(plank_color, templates + '/lectern_front', path + 'block/wood/lectern/%s/front' % wood)
+        easy_colorize(plank_color, templates + '/lectern_sides', path + 'block/wood/lectern/%s/sides' % wood)
+        easy_colorize(plank_color, templates + '/lectern_top', path + 'block/wood/lectern/%s/top' % wood)
+
 
 if __name__ == '__main__':
     main()
