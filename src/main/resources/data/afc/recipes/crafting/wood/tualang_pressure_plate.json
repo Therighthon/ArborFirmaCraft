@@ -1,0 +1,15 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:wood/lumber/tualang"
+    }
+  },
+  "result": {
+    "item": "tfc:wood/planks/tualang_pressure_plate"
+  }
+}

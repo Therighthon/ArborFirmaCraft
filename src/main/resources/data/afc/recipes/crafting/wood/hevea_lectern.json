@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " Y ",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "item": "tfc:wood/lumber/hevea"
+    },
+    "Y": {
+      "item": "tfc:wood/planks/hevea_bookshelf"
+    }
+  },
+  "result": {
+    "item": "tfc:wood/lectern/hevea"
+  }
+}
