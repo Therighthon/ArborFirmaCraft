@@ -3,7 +3,7 @@
   "type": "tfc:forest_entry",
   "config": {
     "min_rain": 165,
-    "max_rain": 500,
+    "max_rain": 450,
     "min_temp": 8,
     "max_temp": 22,
     "groundcover": [

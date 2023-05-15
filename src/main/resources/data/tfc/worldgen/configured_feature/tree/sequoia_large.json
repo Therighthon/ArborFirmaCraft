@@ -21,8 +21,8 @@
           "tfc:sequoia_large/layer1_2",
           "tfc:sequoia_large/layer1_3"
         ],
-        "min_count": 2,
-        "max_count": 3
+        "min_count": 3,
+        "max_count": 4
       },
       {
         "templates": [

@@ -15,6 +15,18 @@
       "width": 1,
       "height": 21,
       "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/tualang",
+        "Properties": {
+          "axis": "y",
+          "natural": "True"
+        }
+      },
+      "min_height": 19,
+      "max_height": 24,
+      "width": 1
     }
   }
 }

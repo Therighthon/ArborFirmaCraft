@@ -8,17 +8,17 @@
     "max_temp": 40,
     "groundcover": [
       {
-        "block": "tfc:wood/twig/acacia"
+        "block": "afc:wood/twig/gum_arabic"
       },
       {
-        "block": "tfc:wood/fallen_leaves/acacia"
+        "block": "afc:wood/fallen_leaves/gum_arabic"
       }
     ],
     "normal_tree": "tfc:tree/gum_arabic",
     "dead_tree": "tfc:tree/gum_arabic_dead",
     "fallen_tree_chance": 0,
     "bush_log": {
-      "Name": "tfc:wood/wood/acacia",
+      "Name": "afc:wood/wood/gum_arabic",
       "Properties": {
         "natural": "True",
         "axis": "y"

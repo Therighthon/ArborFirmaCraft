@@ -28,6 +28,18 @@
       "width": 1,
       "height": 2,
       "allow_submerged": false
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/pine",
+        "Properties": {
+          "axis": "y",
+          "natural": "True"
+        }
+      },
+      "min_height": 3,
+      "max_height": 6,
+      "width": 1
     }
   }
 }

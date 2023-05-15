@@ -69,7 +69,7 @@ LARGE_TREES = [
     Tree('tamarack', 'random', 'tall_boreal', 11, 'pine'),
     Tree('sitka_spruce', 'random', 'fir_large', 5, 'spruce'),
     Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce'),
-    Tree('mountain_ash', 'stacked', 'mountain_ash', (6, 5, 4, 5), 'eucalyptus'),
+    Tree('mountain_ash', 'stacked', 'mountain_ash', (12, 10, 4, 5), 'eucalyptus'),
     Tree('baobab', 'random', 'old_baobab', 7, 'baobab'),
     Tree('tualang', 'random', 'emergent', 6, 'tualang'),
     Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress')

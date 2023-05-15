@@ -10,23 +10,23 @@
       "tfc:tualang/5",
       "tfc:tualang/6"
     ],
-	"trunk": {
-      "state": {
-        "Name": "afc:wood/log/tualang",
-        "Properties": {
-          "axis": "y",
-          "natural": "true"
-        }
-      },
-      "min_height": 15,
-      "max_height": 19,
-      "width": 1
-    },
     "radius": 1,
     "placement": {
       "width": 1,
       "height": 14,
       "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/tualang",
+        "Properties": {
+          "axis": "y",
+          "natural": "True"
+        }
+      },
+      "min_height": 13,
+      "max_height": 18,
+      "width": 1
     }
   }
 }
