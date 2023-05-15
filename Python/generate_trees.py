@@ -51,7 +51,7 @@ NORMAL_TREES = [
     Tree('weeping_willow', 'random', 'willow_large', 14, 'willow'),
 
     Tree('rainbow_eucalyptus', 'random', 'canopy', 15, 'rainbow_eucalyptus'),
-    Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
+    Tree('mountain_ash', 'random', 'tall_branches', 18, 'eucalyptus'),
     Tree('weeping_cypress', 'random', 'nootka', 11, 'cypress'),
     Tree('redcedar', 'random', 'fluffyconifer', 10, 'redcedar'),
     Tree('bald_cypress', 'random', 'fir', 9, 'cypress')
@@ -69,7 +69,7 @@ LARGE_TREES = [
     Tree('tamarack', 'random', 'tall_boreal', 11, 'pine'),
     Tree('sitka_spruce', 'random', 'fir_large', 5, 'spruce'),
     Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce'),
-    Tree('mountain_ash', 'random', 'aspen', 16, 'eucalyptus'),
+    Tree('mountain_ash', 'stacked', 'mountain_ash', (6, 5, 4, 5), 'eucalyptus'),
     Tree('baobab', 'random', 'old_baobab', 7, 'baobab'),
     Tree('tualang', 'random', 'emergent', 6, 'tualang'),
     Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress')
@@ -186,7 +186,7 @@ def make_tree_structures(tree: Tree, suffix: str = ''):
 
 
 def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str):
-    f = nbt.load('%s/%s.nbt' % (TEMPLATES_DIR, template))
+    f = nbt.load('%s%s.nbt' % (TEMPLATES_DIR, template))
     wood_prefix = 'tfc'
     if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress':
         wood_prefix = 'afc'

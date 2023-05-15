@@ -24,8 +24,8 @@
         }
       },
       "min_height": 2,
-      "max_height": 6,
-      "width": 1
+      "max_height": 4,
+      "width": 2
     },
     "radius": 1,
     "placement": {
