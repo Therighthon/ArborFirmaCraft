@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/horizontal_support/cypress",
+    "afc:wood/horizontal_support/tualang",
+    "afc:wood/horizontal_support/hevea",
+    "afc:wood/horizontal_support/teak",
+    "afc:wood/horizontal_support/eucalyptus",
+    "afc:wood/horizontal_support/baobab",
+    "afc:wood/horizontal_support/fig",
+    "afc:wood/horizontal_support/mahogany",
+	"afc:wood/vertical_support/cypress",
+    "afc:wood/vertical_support/tualang",
+    "afc:wood/vertical_support/hevea",
+    "afc:wood/vertical_support/teak",
+    "afc:wood/vertical_support/eucalyptus",
+    "afc:wood/vertical_support/baobab",
+    "afc:wood/vertical_support/fig",
+    "afc:wood/vertical_support/mahogany"
+	
+  ]
+}

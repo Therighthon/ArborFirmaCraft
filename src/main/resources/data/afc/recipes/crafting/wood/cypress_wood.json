@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/cypress"
+      "item": "afc:wood/log/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/cypress",
+    "item": "afc:wood/wood/cypress",
     "count": 3
   }
 }

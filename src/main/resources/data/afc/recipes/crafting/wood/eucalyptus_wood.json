@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/eucalyptus"
+      "item": "afc:wood/log/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/eucalyptus",
+    "item": "afc:wood/wood/eucalyptus",
     "count": 3
   }
 }

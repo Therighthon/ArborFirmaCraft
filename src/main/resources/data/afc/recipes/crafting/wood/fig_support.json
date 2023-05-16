@@ -5,17 +5,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:fig_logs"
+        "tag": "afc:fig_logs"
       },
       {
-        "tag": "tfc:fig_logs"
+        "tag": "afc:fig_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/support/fig",
+      "item": "afc:wood/support/fig",
       "count": 8
     }
   }

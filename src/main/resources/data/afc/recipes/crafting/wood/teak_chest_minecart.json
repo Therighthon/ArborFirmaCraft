@@ -3,13 +3,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/teak"
+      "item": "afc:wood/chest/teak"
     },
     {
       "item": "minecraft:minecart"
     }
   ],
   "result": {
-    "item": "tfc:wood/chest_minecart/teak"
+    "item": "afc:wood/chest_minecart/teak"
   }
 }

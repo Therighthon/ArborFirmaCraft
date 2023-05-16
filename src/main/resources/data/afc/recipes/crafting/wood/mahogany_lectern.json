@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/mahogany"
+      "item": "afc:wood/lumber/mahogany"
     },
     "Y": {
-      "item": "tfc:wood/planks/mahogany_bookshelf"
+      "item": "afc:wood/planks/mahogany_bookshelf"
     }
   },
   "result": {
-    "item": "tfc:wood/lectern/mahogany"
+    "item": "afc:wood/lectern/mahogany"
   }
 }

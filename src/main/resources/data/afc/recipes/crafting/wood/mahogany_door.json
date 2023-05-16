@@ -8,11 +8,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/mahogany"
+      "item": "afc:wood/lumber/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/mahogany_door",
+    "item": "afc:wood/planks/mahogany_door",
     "count": 2
   }
 }

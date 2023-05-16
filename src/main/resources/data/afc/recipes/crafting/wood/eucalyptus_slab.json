@@ -6,11 +6,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/eucalyptus"
+      "item": "afc:wood/planks/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/eucalyptus_slab",
+    "item": "afc:wood/planks/eucalyptus_slab",
     "count": 6
   }
 }

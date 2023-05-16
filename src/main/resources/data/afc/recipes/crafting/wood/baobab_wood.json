@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/baobab"
+      "item": "afc:wood/log/baobab"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/baobab",
+    "item": "afc:wood/wood/baobab",
     "count": 3
   }
 }

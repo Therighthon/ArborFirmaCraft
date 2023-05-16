@@ -3,13 +3,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/cypress"
+      "item": "afc:wood/chest/cypress"
     },
     {
       "item": "minecraft:minecart"
     }
   ],
   "result": {
-    "item": "tfc:wood/chest_minecart/cypress"
+    "item": "afc:wood/chest_minecart/cypress"
   }
 }

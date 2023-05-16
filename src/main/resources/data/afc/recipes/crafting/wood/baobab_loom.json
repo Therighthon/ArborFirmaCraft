@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/baobab"
+      "item": "afc:wood/lumber/baobab"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/baobab_loom"
+    "item": "afc:wood/planks/baobab_loom"
   }
 }

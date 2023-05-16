@@ -6,10 +6,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/fig"
+      "item": "afc:wood/lumber/fig"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/fig_pressure_plate"
+    "item": "afc:wood/planks/fig_pressure_plate"
   }
 }

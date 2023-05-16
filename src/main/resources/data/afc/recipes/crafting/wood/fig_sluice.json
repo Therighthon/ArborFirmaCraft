@@ -11,10 +11,10 @@
       "tag": "forge:rods/wooden"
     },
     "Y": {
-      "item": "tfc:wood/lumber/fig"
+      "item": "afc:wood/lumber/fig"
     }
   },
   "result": {
-    "item": "tfc:wood/sluice/fig"
+    "item": "afc:wood/sluice/fig"
   }
 }

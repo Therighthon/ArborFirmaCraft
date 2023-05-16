@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/planks/baobab"
+      "item": "afc:wood/planks/baobab"
     }
   ],
   "result": {
-    "item": "tfc:wood/planks/baobab_button"
+    "item": "afc:wood/planks/baobab_button"
   }
 }

@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/cypress_slab"
+      "item": "afc:wood/planks/cypress_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/cypress"
+      "item": "afc:wood/planks/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/cypress"
+    "item": "afc:wood/scribing_table/cypress"
   }
 }

@@ -5,17 +5,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:teak_logs"
+        "tag": "afc:teak_logs"
       },
       {
-        "tag": "tfc:teak_logs"
+        "tag": "afc:teak_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/support/teak",
+      "item": "afc:wood/support/teak",
       "count": 8
     }
   }

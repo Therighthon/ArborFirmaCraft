@@ -3,10 +3,10 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/planks/mahogany"
+      "item": "afc:wood/planks/mahogany"
     }
   ],
   "result": {
-    "item": "tfc:wood/planks/mahogany_button"
+    "item": "afc:wood/planks/mahogany_button"
   }
 }

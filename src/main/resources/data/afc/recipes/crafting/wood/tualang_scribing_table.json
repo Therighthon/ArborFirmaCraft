@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/tualang_slab"
+      "item": "afc:wood/planks/tualang_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/tualang"
+      "item": "afc:wood/planks/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/tualang"
+    "item": "afc:wood/scribing_table/tualang"
   }
 }

@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/eucalyptus"
+      "item": "afc:wood/chest/eucalyptus"
     },
     {
       "item": "minecraft:tripwire_hook"
     }
   ],
   "result": {
-    "item": "tfc:wood/trapped_chest/eucalyptus",
+    "item": "afc:wood/trapped_chest/eucalyptus",
     "count": 1
   }
 }

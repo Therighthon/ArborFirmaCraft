@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/teak"
+      "item": "afc:wood/log/teak"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/teak",
+    "item": "afc:wood/wood/teak",
     "count": 3
   }
 }

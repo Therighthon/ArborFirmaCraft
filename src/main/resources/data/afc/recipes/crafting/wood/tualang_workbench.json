@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/tualang"
+      "item": "afc:wood/planks/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/tualang_workbench"
+    "item": "afc:wood/planks/tualang_workbench"
   }
 }

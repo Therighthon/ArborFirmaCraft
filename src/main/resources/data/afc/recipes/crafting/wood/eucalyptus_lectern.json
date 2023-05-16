@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/eucalyptus"
+      "item": "afc:wood/lumber/eucalyptus"
     },
     "Y": {
-      "item": "tfc:wood/planks/eucalyptus_bookshelf"
+      "item": "afc:wood/planks/eucalyptus_bookshelf"
     }
   },
   "result": {
-    "item": "tfc:wood/lectern/eucalyptus"
+    "item": "afc:wood/lectern/eucalyptus"
   }
 }

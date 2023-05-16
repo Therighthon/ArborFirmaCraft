@@ -110,12 +110,12 @@ def generate(rm: ResourceManager):
 
     for wood in WOODS.keys():
         def item(thing: str):
-            return 'tfc:wood/%s/%s' % (thing, wood)
+            return 'afc:wood/%s/%s' % (thing, wood)
 
         def plank(thing: str):
-            return 'tfc:wood/planks/%s_%s' % (wood, thing)
+            return 'afc:wood/planks/%s_%s' % (wood, thing)
 
-        log_tag = '#tfc:%s_logs' % wood
+        log_tag = '#afc:%s_logs' % wood
 
         rm.crafting_shaped('crafting/wood/%s_bookshelf' % wood, ['XXX', 'YYY', 'XXX'], {'X': item('lumber'), 'Y': '#forge:rods/wooden'}, plank('bookshelf')).with_advancement(item('lumber'))
         rm.crafting_shapeless('crafting/wood/%s_button' % wood, item('planks'), plank('button')).with_advancement(item('planks'))

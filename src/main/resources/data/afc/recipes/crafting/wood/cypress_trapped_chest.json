@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/cypress"
+      "item": "afc:wood/chest/cypress"
     },
     {
       "item": "minecraft:tripwire_hook"
     }
   ],
   "result": {
-    "item": "tfc:wood/trapped_chest/cypress",
+    "item": "afc:wood/trapped_chest/cypress",
     "count": 1
   }
 }

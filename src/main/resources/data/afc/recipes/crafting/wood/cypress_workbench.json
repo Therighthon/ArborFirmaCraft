@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/cypress"
+      "item": "afc:wood/planks/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/cypress_workbench"
+    "item": "afc:wood/planks/cypress_workbench"
   }
 }

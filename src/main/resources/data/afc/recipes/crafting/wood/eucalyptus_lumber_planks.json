@@ -5,14 +5,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "item": "tfc:wood/planks/eucalyptus"
+        "item": "afc:wood/planks/eucalyptus"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/lumber/eucalyptus",
+      "item": "afc:wood/lumber/eucalyptus",
       "count": 4
     }
   }

@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/cypress"
+      "item": "afc:wood/lumber/cypress"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/cypress_loom"
+    "item": "afc:wood/planks/cypress_loom"
   }
 }

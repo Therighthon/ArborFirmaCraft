@@ -8,14 +8,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/mahogany"
+      "item": "afc:wood/lumber/mahogany"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/sign/mahogany",
+    "item": "afc:wood/sign/mahogany",
     "count": 3
   }
 }

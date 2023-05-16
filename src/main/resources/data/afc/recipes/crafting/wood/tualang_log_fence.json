@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/tualang"
+      "item": "afc:wood/log/tualang"
     },
     "Y": {
-      "item": "tfc:wood/lumber/tualang"
+      "item": "afc:wood/lumber/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/tualang_log_fence",
+    "item": "afc:wood/planks/tualang_log_fence",
     "count": 8
   }
 }

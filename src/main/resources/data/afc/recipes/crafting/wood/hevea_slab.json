@@ -6,11 +6,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/hevea"
+      "item": "afc:wood/planks/hevea"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/hevea_slab",
+    "item": "afc:wood/planks/hevea_slab",
     "count": 6
   }
 }

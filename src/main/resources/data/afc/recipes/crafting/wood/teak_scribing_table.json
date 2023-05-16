@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/teak_slab"
+      "item": "afc:wood/planks/teak_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/teak"
+      "item": "afc:wood/planks/teak"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/teak"
+    "item": "afc:wood/scribing_table/teak"
   }
 }

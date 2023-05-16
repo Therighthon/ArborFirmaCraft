@@ -3,13 +3,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/baobab"
+      "item": "afc:wood/chest/baobab"
     },
     {
       "item": "minecraft:minecart"
     }
   ],
   "result": {
-    "item": "tfc:wood/chest_minecart/baobab"
+    "item": "afc:wood/chest_minecart/baobab"
   }
 }

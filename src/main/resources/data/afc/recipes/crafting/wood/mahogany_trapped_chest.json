@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/mahogany"
+      "item": "afc:wood/chest/mahogany"
     },
     {
       "item": "minecraft:tripwire_hook"
     }
   ],
   "result": {
-    "item": "tfc:wood/trapped_chest/mahogany",
+    "item": "afc:wood/trapped_chest/mahogany",
     "count": 1
   }
 }

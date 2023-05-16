@@ -6,11 +6,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/fig"
+      "item": "afc:wood/planks/fig"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/fig_slab",
+    "item": "afc:wood/planks/fig_slab",
     "count": 6
   }
 }

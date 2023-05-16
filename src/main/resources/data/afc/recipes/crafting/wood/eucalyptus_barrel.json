@@ -8,10 +8,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/eucalyptus"
+      "item": "afc:wood/lumber/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/barrel/eucalyptus"
+    "item": "afc:wood/barrel/eucalyptus"
   }
 }

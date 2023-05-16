@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/mahogany"
+      "item": "afc:wood/log/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/mahogany",
+    "item": "afc:wood/wood/mahogany",
     "count": 3
   }
 }

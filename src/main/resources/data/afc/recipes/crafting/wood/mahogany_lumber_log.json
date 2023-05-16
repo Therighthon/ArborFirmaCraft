@@ -5,14 +5,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:mahogany_logs"
+        "tag": "afc:mahogany_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/lumber/mahogany",
+      "item": "afc:wood/lumber/mahogany",
       "count": 8
     }
   }

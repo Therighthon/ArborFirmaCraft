@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/baobab_slab"
+      "item": "afc:wood/planks/baobab_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/baobab"
+      "item": "afc:wood/planks/baobab"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/baobab"
+    "item": "afc:wood/scribing_table/baobab"
   }
 }

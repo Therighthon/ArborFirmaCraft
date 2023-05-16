@@ -5,14 +5,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:cypress_logs"
+        "tag": "afc:cypress_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/lumber/cypress",
+      "item": "afc:wood/lumber/cypress",
       "count": 8
     }
   }

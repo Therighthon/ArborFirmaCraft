@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/mahogany"
+      "item": "afc:wood/log/mahogany"
     },
     "Y": {
-      "item": "tfc:wood/lumber/mahogany"
+      "item": "afc:wood/lumber/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/mahogany_log_fence",
+    "item": "afc:wood/planks/mahogany_log_fence",
     "count": 8
   }
 }

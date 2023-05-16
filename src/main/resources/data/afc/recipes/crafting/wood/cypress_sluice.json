@@ -11,10 +11,10 @@
       "tag": "forge:rods/wooden"
     },
     "Y": {
-      "item": "tfc:wood/lumber/cypress"
+      "item": "afc:wood/lumber/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/sluice/cypress"
+    "item": "afc:wood/sluice/cypress"
   }
 }

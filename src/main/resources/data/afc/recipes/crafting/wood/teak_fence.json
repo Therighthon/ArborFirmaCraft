@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/teak"
+      "item": "afc:wood/planks/teak"
     },
     "Y": {
-      "item": "tfc:wood/lumber/teak"
+      "item": "afc:wood/lumber/teak"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/teak_fence",
+    "item": "afc:wood/planks/teak_fence",
     "count": 8
   }
 }

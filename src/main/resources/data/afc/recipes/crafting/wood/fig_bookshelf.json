@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/fig"
+      "item": "afc:wood/lumber/fig"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/fig_bookshelf"
+    "item": "afc:wood/planks/fig_bookshelf"
   }
 }

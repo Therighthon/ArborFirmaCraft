@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/eucalyptus_slab"
+      "item": "afc:wood/planks/eucalyptus_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/eucalyptus"
+      "item": "afc:wood/planks/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/eucalyptus"
+    "item": "afc:wood/scribing_table/eucalyptus"
   }
 }

@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/hevea"
+      "item": "afc:wood/lumber/hevea"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/hevea_trapdoor",
+    "item": "afc:wood/planks/hevea_trapdoor",
     "count": 3
   }
 }

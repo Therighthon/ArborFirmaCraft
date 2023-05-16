@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/mahogany_slab"
+      "item": "afc:wood/planks/mahogany_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/mahogany"
+      "item": "afc:wood/planks/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/mahogany"
+    "item": "afc:wood/scribing_table/mahogany"
   }
 }

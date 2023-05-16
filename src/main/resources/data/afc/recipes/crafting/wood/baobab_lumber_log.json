@@ -5,14 +5,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:baobab_logs"
+        "tag": "afc:baobab_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/lumber/baobab",
+      "item": "afc:wood/lumber/baobab",
       "count": 8
     }
   }

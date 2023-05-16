@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/tualang"
+      "item": "afc:wood/lumber/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/tualang_trapdoor",
+    "item": "afc:wood/planks/tualang_trapdoor",
     "count": 3
   }
 }

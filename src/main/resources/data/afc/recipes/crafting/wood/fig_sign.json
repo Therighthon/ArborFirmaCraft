@@ -8,14 +8,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/fig"
+      "item": "afc:wood/lumber/fig"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/sign/fig",
+    "item": "afc:wood/sign/fig",
     "count": 3
   }
 }

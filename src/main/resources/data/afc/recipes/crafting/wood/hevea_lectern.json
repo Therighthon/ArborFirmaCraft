@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/hevea"
+      "item": "afc:wood/lumber/hevea"
     },
     "Y": {
-      "item": "tfc:wood/planks/hevea_bookshelf"
+      "item": "afc:wood/planks/hevea_bookshelf"
     }
   },
   "result": {
-    "item": "tfc:wood/lectern/hevea"
+    "item": "afc:wood/lectern/hevea"
   }
 }

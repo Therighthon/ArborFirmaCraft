@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/mahogany"
+      "item": "afc:wood/planks/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/boat/mahogany"
+    "item": "afc:wood/boat/mahogany"
   }
 }

@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/tualang"
+      "item": "afc:wood/lumber/tualang"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/tualang_bookshelf"
+    "item": "afc:wood/planks/tualang_bookshelf"
   }
 }

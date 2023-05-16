@@ -7,10 +7,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/baobab"
+      "item": "afc:wood/lumber/baobab"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/baobab"
+    "item": "afc:wood/planks/baobab"
   }
 }

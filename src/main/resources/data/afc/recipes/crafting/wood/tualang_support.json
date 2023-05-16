@@ -5,17 +5,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:tualang_logs"
+        "tag": "afc:tualang_logs"
       },
       {
-        "tag": "tfc:tualang_logs"
+        "tag": "afc:tualang_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/support/tualang",
+      "item": "afc:wood/support/tualang",
       "count": 8
     }
   }

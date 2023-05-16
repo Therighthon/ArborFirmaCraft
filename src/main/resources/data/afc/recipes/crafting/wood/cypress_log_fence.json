@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/cypress"
+      "item": "afc:wood/log/cypress"
     },
     "Y": {
-      "item": "tfc:wood/lumber/cypress"
+      "item": "afc:wood/lumber/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/cypress_log_fence",
+    "item": "afc:wood/planks/cypress_log_fence",
     "count": 8
   }
 }

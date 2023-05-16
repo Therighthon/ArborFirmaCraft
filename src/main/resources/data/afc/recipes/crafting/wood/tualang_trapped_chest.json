@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/tualang"
+      "item": "afc:wood/chest/tualang"
     },
     {
       "item": "minecraft:tripwire_hook"
     }
   ],
   "result": {
-    "item": "tfc:wood/trapped_chest/tualang",
+    "item": "afc:wood/trapped_chest/tualang",
     "count": 1
   }
 }

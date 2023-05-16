@@ -5,14 +5,14 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "item": "tfc:wood/planks/fig"
+        "item": "afc:wood/planks/fig"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/lumber/fig",
+      "item": "afc:wood/lumber/fig",
       "count": 4
     }
   }

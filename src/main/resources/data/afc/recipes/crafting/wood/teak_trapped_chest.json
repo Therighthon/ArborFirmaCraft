@@ -3,14 +3,14 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/teak"
+      "item": "afc:wood/chest/teak"
     },
     {
       "item": "minecraft:tripwire_hook"
     }
   ],
   "result": {
-    "item": "tfc:wood/trapped_chest/teak",
+    "item": "afc:wood/trapped_chest/teak",
     "count": 1
   }
 }

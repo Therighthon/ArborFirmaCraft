@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/cypress"
+      "item": "afc:wood/lumber/cypress"
     },
     "Y": {
-      "item": "tfc:wood/planks/cypress_bookshelf"
+      "item": "afc:wood/planks/cypress_bookshelf"
     }
   },
   "result": {
-    "item": "tfc:wood/lectern/cypress"
+    "item": "afc:wood/lectern/cypress"
   }
 }

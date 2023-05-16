@@ -3,13 +3,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfc:wood/chest/fig"
+      "item": "afc:wood/chest/fig"
     },
     {
       "item": "minecraft:minecart"
     }
   ],
   "result": {
-    "item": "tfc:wood/chest_minecart/fig"
+    "item": "afc:wood/chest_minecart/fig"
   }
 }

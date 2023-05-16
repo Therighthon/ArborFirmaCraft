@@ -6,10 +6,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/teak"
+      "item": "afc:wood/lumber/teak"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/teak_pressure_plate"
+    "item": "afc:wood/planks/teak_pressure_plate"
   }
 }

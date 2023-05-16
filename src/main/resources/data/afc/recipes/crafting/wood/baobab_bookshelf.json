@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/baobab"
+      "item": "afc:wood/lumber/baobab"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/baobab_bookshelf"
+    "item": "afc:wood/planks/baobab_bookshelf"
   }
 }

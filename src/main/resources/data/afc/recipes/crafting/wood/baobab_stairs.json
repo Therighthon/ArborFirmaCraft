@@ -8,11 +8,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/baobab"
+      "item": "afc:wood/planks/baobab"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/baobab_stairs",
+    "item": "afc:wood/planks/baobab_stairs",
     "count": 8
   }
 }

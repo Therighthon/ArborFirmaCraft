@@ -8,11 +8,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/eucalyptus"
+      "item": "afc:wood/lumber/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/eucalyptus_door",
+    "item": "afc:wood/planks/eucalyptus_door",
     "count": 2
   }
 }

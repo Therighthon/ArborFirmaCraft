@@ -8,11 +8,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/cypress"
+      "item": "afc:wood/planks/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/cypress_stairs",
+    "item": "afc:wood/planks/cypress_stairs",
     "count": 8
   }
 }

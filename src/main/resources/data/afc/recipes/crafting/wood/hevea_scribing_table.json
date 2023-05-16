@@ -14,13 +14,13 @@
       "item": "minecraft:black_dye"
     },
     "X": {
-      "item": "tfc:wood/planks/hevea_slab"
+      "item": "afc:wood/planks/hevea_slab"
     },
     "Y": {
-      "item": "tfc:wood/planks/hevea"
+      "item": "afc:wood/planks/hevea"
     }
   },
   "result": {
-    "item": "tfc:wood/scribing_table/hevea"
+    "item": "afc:wood/scribing_table/hevea"
   }
 }

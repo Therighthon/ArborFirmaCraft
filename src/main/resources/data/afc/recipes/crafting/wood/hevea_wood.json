@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/hevea"
+      "item": "afc:wood/log/hevea"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/hevea",
+    "item": "afc:wood/wood/hevea",
     "count": 3
   }
 }

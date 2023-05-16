@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/eucalyptus"
+      "item": "afc:wood/lumber/eucalyptus"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/eucalyptus_trapdoor",
+    "item": "afc:wood/planks/eucalyptus_trapdoor",
     "count": 3
   }
 }

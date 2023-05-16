@@ -8,10 +8,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/tualang"
+      "item": "afc:wood/lumber/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/barrel/tualang"
+    "item": "afc:wood/barrel/tualang"
   }
 }

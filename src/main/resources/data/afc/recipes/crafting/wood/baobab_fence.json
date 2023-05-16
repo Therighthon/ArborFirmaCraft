@@ -7,14 +7,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/planks/baobab"
+      "item": "afc:wood/planks/baobab"
     },
     "Y": {
-      "item": "tfc:wood/lumber/baobab"
+      "item": "afc:wood/lumber/baobab"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/baobab_fence",
+    "item": "afc:wood/planks/baobab_fence",
     "count": 8
   }
 }

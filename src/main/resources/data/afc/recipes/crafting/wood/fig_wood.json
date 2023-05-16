@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/fig"
+      "item": "afc:wood/log/fig"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/fig",
+    "item": "afc:wood/wood/fig",
     "count": 3
   }
 }

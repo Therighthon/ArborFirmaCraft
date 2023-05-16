@@ -8,10 +8,10 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/hevea"
+      "item": "afc:wood/lumber/hevea"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/hevea_tool_rack"
+    "item": "afc:wood/planks/hevea_tool_rack"
   }
 }

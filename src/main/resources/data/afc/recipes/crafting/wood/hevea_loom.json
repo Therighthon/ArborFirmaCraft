@@ -8,13 +8,13 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/hevea"
+      "item": "afc:wood/lumber/hevea"
     },
     "S": {
       "item": "minecraft:stick"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/hevea_loom"
+    "item": "afc:wood/planks/hevea_loom"
   }
 }

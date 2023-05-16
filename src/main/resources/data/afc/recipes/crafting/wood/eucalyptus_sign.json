@@ -8,14 +8,14 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/eucalyptus"
+      "item": "afc:wood/lumber/eucalyptus"
     },
     "Y": {
       "tag": "forge:rods/wooden"
     }
   },
   "result": {
-    "item": "tfc:wood/sign/eucalyptus",
+    "item": "afc:wood/sign/eucalyptus",
     "count": 3
   }
 }

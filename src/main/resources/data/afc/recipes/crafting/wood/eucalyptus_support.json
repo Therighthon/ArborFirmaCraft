@@ -5,17 +5,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:eucalyptus_logs"
+        "tag": "afc:eucalyptus_logs"
       },
       {
-        "tag": "tfc:eucalyptus_logs"
+        "tag": "afc:eucalyptus_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/support/eucalyptus",
+      "item": "afc:wood/support/eucalyptus",
       "count": 8
     }
   }

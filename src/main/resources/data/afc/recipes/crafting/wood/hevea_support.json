@@ -5,17 +5,17 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients": [
       {
-        "tag": "tfc:hevea_logs"
+        "tag": "afc:hevea_logs"
       },
       {
-        "tag": "tfc:hevea_logs"
+        "tag": "afc:hevea_logs"
       },
       {
         "tag": "tfc:saws"
       }
     ],
     "result": {
-      "item": "tfc:wood/support/hevea",
+      "item": "afc:wood/support/hevea",
       "count": 8
     }
   }

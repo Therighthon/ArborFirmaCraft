@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/cypress"
+      "item": "afc:wood/lumber/cypress"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/cypress_trapdoor",
+    "item": "afc:wood/planks/cypress_trapdoor",
     "count": 3
   }
 }

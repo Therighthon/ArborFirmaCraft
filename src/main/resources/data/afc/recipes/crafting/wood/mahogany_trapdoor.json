@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/lumber/mahogany"
+      "item": "afc:wood/lumber/mahogany"
     }
   },
   "result": {
-    "item": "tfc:wood/planks/mahogany_trapdoor",
+    "item": "afc:wood/planks/mahogany_trapdoor",
     "count": 3
   }
 }

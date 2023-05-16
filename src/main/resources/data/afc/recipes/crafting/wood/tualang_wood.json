@@ -7,11 +7,11 @@
   ],
   "key": {
     "X": {
-      "item": "tfc:wood/log/tualang"
+      "item": "afc:wood/log/tualang"
     }
   },
   "result": {
-    "item": "tfc:wood/wood/tualang",
+    "item": "afc:wood/wood/tualang",
     "count": 3
   }
 }
