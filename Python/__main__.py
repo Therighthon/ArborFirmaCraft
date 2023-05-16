@@ -17,6 +17,7 @@ import difflib
 
 import data
 import assets
+import format_lang
 import recipes
 import constants
 import world_gen
@@ -87,10 +88,10 @@ def main():
         #         generate_book.main(args.translate, args.local, False)
         elif action == 'trees':
             generate_trees.main()
-        # elif action == 'format_lang':
-        #     format_lang.main(False, MOD_LANGUAGES)
-        # elif action == 'update_lang':
-        #     format_lang.update(MOD_LANGUAGES)
+        elif action == 'format_lang':
+            format_lang.main(False, MOD_LANGUAGES)
+        elif action == 'update_lang':
+            format_lang.update(MOD_LANGUAGES)
 
 
 def clean(local: Optional[str]):

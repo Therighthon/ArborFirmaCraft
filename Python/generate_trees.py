@@ -39,7 +39,7 @@ NORMAL_TREES = [
     Tree('bigleaf_maple', 'random', 'round', 23, 'maple'),
     Tree('weeping_maple', 'random', 'small_willow', 10, 'maple'),
     Tree('live_oak', 'random', 'round', 23, 'oak'),
-    Tree('black_oak', 'random', 'african_oak', 15, 'oak'),
+    Tree('black_oak', 'random', 'african_oak', 15, 'black_oak'),
     Tree('stone_pine', 'random', 'stone_pine', 19, 'pine'),
     Tree('red_pine', 'random', 'red_pine', 12, 'pine'),
     Tree('tamarack', 'random', 'boreal', 11, 'pine'),

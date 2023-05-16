@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/wood/cypress",
+    "afc:wood/wood/gum_arabic",
+	"afc:wood/wood/redcedar",
+    "afc:wood/wood/teak",
+    "afc:wood/wood/eucalyptus",
+	"afc:wood/wood/rainbow_eucalyptus",
+    "afc:wood/wood/black_oak",
+	"afc:wood/log/cypress",
+    "afc:wood/log/gum_arabic",
+	"afc:wood/log/redcedar",
+    "afc:wood/log/teak",
+    "afc:wood/log/eucalyptus",
+	"afc:wood/log/rainbow_eucalyptus",
+    "afc:wood/log/black_oak"
+  ]
+}

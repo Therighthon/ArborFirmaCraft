@@ -220,8 +220,8 @@ def generate(rm: ResourceManager):
     )], 'tfc:river_water')
 
 
-    # # Item Sizes
-    #
+    # Item Sizes
+
     # item_size(rm, 'logs', '#minecraft:logs', Size.very_large, Weight.medium)
     # item_size(rm, 'tool_racks', '#tfc:tool_racks', Size.large, Weight.very_heavy)
     # item_size(rm, 'chests', '#forge:chests', Size.large, Weight.light)
@@ -245,15 +245,15 @@ def generate(rm: ResourceManager):
     # item_size(rm, 'dyes', '#tfc:dyes', Size.tiny, Weight.light)
     # item_size(rm, 'foods', '#tfc:foods', Size.small, Weight.light)
     # item_size(rm, 'plants', '#tfc:plants', Size.tiny, Weight.very_light)
-    # item_size(rm, 'jute', 'tfc:jute', Size.small, Weight.very_light)
-    # item_size(rm, 'bloomery', 'tfc:bloomery', Size.large, Weight.very_heavy)
+    # # item_size(rm, 'jute', 'tfc:jute', Size.small, Weight.very_light)
+    # # item_size(rm, 'bloomery', 'tfc:bloomery', Size.large, Weight.very_heavy)
     # item_size(rm, 'sluice', '#tfc:sluices', Size.very_large, Weight.very_heavy)
-    # item_size(rm, 'lamps', '#tfc:lamps', Size.normal, Weight.medium)
+    # # item_size(rm, 'lamps', '#tfc:lamps', Size.normal, Weight.medium)
     # item_size(rm, 'signs', '#minecraft:signs', Size.very_small, Weight.heavy)
-    # item_size(rm, 'soups', '#tfc:soups', Size.very_small, Weight.medium)
-    # item_size(rm, 'salads', '#tfc:salads', Size.very_small, Weight.medium)
-    # item_size(rm, 'buckets', '#tfc:buckets', Size.large, Weight.very_heavy)
-    # item_size(rm, 'anvils', '#tfc:anvils', Size.huge, Weight.very_heavy)
+    # # item_size(rm, 'soups', '#tfc:soups', Size.very_small, Weight.medium)
+    # # item_size(rm, 'salads', '#tfc:salads', Size.very_small, Weight.medium)
+    # # item_size(rm, 'buckets', '#tfc:buckets', Size.large, Weight.very_heavy)
+    # # item_size(rm, 'anvils', '#tfc:anvils', Size.huge, Weight.very_heavy)
     # item_size(rm, 'minecarts', '#tfc:minecarts', Size.very_large, Weight.heavy)
     # item_size(rm, 'boats', '#minecraft:boats', Size.very_large, Weight.heavy)
     # item_size(rm, 'looms', '#tfc:looms', Size.large, Weight.very_heavy)
