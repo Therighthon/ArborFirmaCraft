@@ -21,7 +21,7 @@
         "Name": "afc:wood/log/fig",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
       "min_height": 3,

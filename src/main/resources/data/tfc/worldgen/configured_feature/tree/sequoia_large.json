@@ -7,7 +7,7 @@
         "Name": "tfc:wood/log/sequoia",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
       "min_height": 8,

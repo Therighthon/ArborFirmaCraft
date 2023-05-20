@@ -483,7 +483,7 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
     else:
         cfg['fallen_tree_chance'] = 0
     if tree not in ('palm', 'rosewood', 'sycamore'):
-        cfg['bush_log'] = utils.block_state('%s:wood/wood/%s[natural=True,axis=y]' % (wood_prefix, basic_wood))
+        cfg['bush_log'] = utils.block_state('%s:wood/wood/%s[natural=true,axis=y]' % (wood_prefix, basic_wood))
         cfg['bush_leaves'] = '%s:wood/leaves/%s' % (leaf_prefix, tree)
     if old_growth:
         cfg['old_growth_tree'] = 'tfc:tree/%s_large' % tree
@@ -495,7 +495,7 @@ def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, 
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic':
         wood_prefix = 'afc'
 
-    block = '%s:wood/log/%s[axis=y,natural=True]' % (wood_prefix, basic_wood)
+    block = '%s:wood/log/%s[axis=y,natural=true]' % (wood_prefix, basic_wood)
     tree += suffix
     return {
         'base': 'tfc:%s/base' % tree,
@@ -514,7 +514,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic':
         wood_prefix = 'afc'
 
-    block = '%s:wood/log/%s[axis=y,natural=True]' % (wood_prefix, basic_wood)
+    block = '%s:wood/log/%s[axis=y,natural=true]' % (wood_prefix, basic_wood)
     tree += suffix
     cfg = {
         'structures': ['tfc:%s/%d' % (tree, i) for i in range(1, 1 + structure_count)],
@@ -532,7 +532,7 @@ def stacked_config(tree: str, min_height: int, max_height: int, width: int, laye
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic':
         wood_prefix = 'afc'
 
-    block = '%s:wood/log/%s[axis=y,natural=True]' % (wood_prefix, basic_wood)
+    block = '%s:wood/log/%s[axis=y,natural=true]' % (wood_prefix, basic_wood)
     tree += suffix
     return {
         'trunk': trunk_config(block, min_height, max_height, width),

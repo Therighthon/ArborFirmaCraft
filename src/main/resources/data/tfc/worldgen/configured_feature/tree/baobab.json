@@ -26,7 +26,7 @@
         "Name": "afc:wood/log/baobab",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
       "min_height": 2,

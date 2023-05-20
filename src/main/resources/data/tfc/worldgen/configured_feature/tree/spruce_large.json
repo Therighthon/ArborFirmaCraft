@@ -7,7 +7,7 @@
         "Name": "tfc:wood/log/spruce",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
       "min_height": 4,
