@@ -51,6 +51,8 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     //Rosewood
     GIANT_ROSEWOOD(true, 7, 16),
+    //Sequoia
+    COAST_REDWOOD(true, 7, 10),
     //Spruce
     COAST_SPRUCE(true, 7, 8),
     SITKA_SPRUCE(true, 7, 10),

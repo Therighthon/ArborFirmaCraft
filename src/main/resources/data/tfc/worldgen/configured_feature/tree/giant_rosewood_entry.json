@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/rosewood",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

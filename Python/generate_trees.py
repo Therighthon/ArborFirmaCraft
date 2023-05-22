@@ -44,6 +44,7 @@ NORMAL_TREES = [
     Tree('red_pine', 'random', 'red_pine', 12, 'pine', False),
     Tree('tamarack', 'random', 'boreal', 11, 'pine', False),
     Tree('giant_rosewood', 'random', 'canopy', 15, 'rosewood', False),
+    Tree('coast_redwood', 'random', 'fluffyconifer', 10, 'sequoia', False),
     Tree('coast_spruce', 'random', 'conifer', 9, 'spruce', False),
     Tree('sitka_spruce', 'random', 'fir', 9, 'spruce', False),
     Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce', False),
@@ -62,8 +63,7 @@ LARGE_TREES = [
     Tree('evergreen_ash', 'random', 'round', 14, 'ash', True),
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir', True),
     Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir', True),
-    Tree('douglas_fir', 'stacked', 'fluffy_old_conifer', (3, 3, 3), 'douglas_fir', True),
-    Tree('sequoia', 'stacked', 'sequoia', (7, 8, 4, 4), 'sequoia', True),
+    Tree('coast_redwood', 'stacked', 'conifer_large', (3, 3, 3), 'sequoia', True),
     Tree('scrub_hickory', 'random', 'blackwood_large', 10, 'hickory', True),
     Tree('weeping_maple', 'random', 'willow', 7, 'maple', True),
     Tree('live_oak', 'random', 'normal_large', 5, 'oak', True),
@@ -164,7 +164,7 @@ def main():
         make_tree_structures(tree)
 
     for tree in LARGE_TREES:
-        make_tree_structures(tree, '_large')
+        make_tree_structures(tree, '_large', True)
 
     for tree in DEAD_TREES:
         make_tree_structures(tree, '_dead')
@@ -172,31 +172,30 @@ def main():
     print('New = %d, Modified = %d, Unchanged = %d, Errors = %d' % (Count.NEW, Count.MODIFIED, Count.SKIPPED, Count.ERRORS))
 
 
-def make_tree_structures(tree: Tree, suffix: str = ''):
+def make_tree_structures(tree: Tree, suffix: str = '', il_booleano: bool = False):
     result = tree.name + suffix
-    leaf = tree.log
-    wood = tree.name
+    log = tree.log
     prefix = 'tfc'
-    if Tree.ancient:
-        wood = 'ancient_' + wood
+    if il_booleano:
+        log = 'ancient_' + log
         prefix = 'afc'
     if tree.feature == 'random':
         for i in range(1, 1 + tree.count):
-            make_tree_structure(tree.variant + str(i), wood, str(i), result, leaf, prefix)
+            make_tree_structure(tree.variant + str(i), tree.name, str(i), result, log, prefix)
     elif tree.feature == 'overlay':
-        make_tree_structure(tree.variant, wood, 'base', result, leaf, prefix)
-        make_tree_structure(tree.variant + '_overlay', wood, 'overlay', result, leaf, prefix)
+        make_tree_structure(tree.variant, tree.name, 'base', result, log, prefix)
+        make_tree_structure(tree.variant + '_overlay', tree.name, 'overlay', result, log, prefix)
     elif tree.feature == 'stacked':
         for j, c in zip(range(1, 1 + len(tree.count)), tree.count):
             for i in range(1, 1 + c):
-                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), wood, 'layer%d_%d' % (j, i), result, leaf, prefix)
+                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), tree.name, 'layer%d_%d' % (j, i), result, log, prefix)
 
 
 def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str, wood_prefix: str='tfc'):
     f = nbt.load('%s%s.nbt' % (TEMPLATES_DIR, template))
-    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress':
+    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress' or wood == 'black_oak' or wood == 'gum_arabic':
         wood_prefix = 'afc'
-
+    print(wood_prefix + ":" + log)
     for block in f['palette']:
         if block['Name'] == 'minecraft:oak_log':
             block['Name'] = StringTag('%s:wood/log/%s' % (wood_prefix, log))

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "tfc:block/wood/wood/hickory"
+    },
+    "axis=z": {
+      "model": "tfc:block/wood/wood/hickory",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "tfc:block/wood/wood/hickory",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

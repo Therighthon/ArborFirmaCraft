@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/redcedar",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },
