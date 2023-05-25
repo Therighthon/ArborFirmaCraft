@@ -65,7 +65,7 @@ public enum AFCWood implements RegistryWood
         return barkColor;
     }
     public Supplier<Block> getBlock(Wood.BlockType type) {
-        return ModBlocks.WOODS.get(this).get(type);
+        return AFCBlocks.WOODS.get(this).get(type);
     }
 
     public TFCTreeGrower tree() {

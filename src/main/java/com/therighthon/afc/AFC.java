@@ -1,7 +1,7 @@
 package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
-import com.therighthon.afc.common.blocks.ModBlocks;
+import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.items.ModItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -27,11 +27,17 @@ public class AFC
         eventBus.addListener(this::setup);
 
         ModItems.register(eventBus);
-        ModBlocks.register(eventBus);
+        AFCBlocks.register(eventBus);
 
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
+//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderers);
+        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
+        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
+//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onItemColors);
+        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onTextureStitch);
+//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onParticlesRegister);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

@@ -123,7 +123,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     @Override
     public Supplier<Block> getBlock(TreeSpecies.BlockType type)
     {
-        return ModBlocks.TREE_SPECIES.get(this).get(type);
+        return AFCBlocks.TREE_SPECIES.get(this).get(type);
     }
 
     public enum BlockType {

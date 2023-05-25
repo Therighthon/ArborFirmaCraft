@@ -122,7 +122,7 @@ public enum UniqueLogs implements RegistryUniqueLogs
 
     @Override
     public Supplier<Block> getBlock(UniqueLogs.BlockType type) {
-        return ModBlocks.UNIQUE_LOGS.get(this).get(type);
+        return AFCBlocks.UNIQUE_LOGS.get(this).get(type);
     }
 
     public enum BlockType {
