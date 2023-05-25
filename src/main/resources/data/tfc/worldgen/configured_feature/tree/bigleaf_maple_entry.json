@@ -24,6 +24,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/bigleaf_maple"
+    "bush_leaves": "afc:wood/leaves/bigleaf_maple",
+    "old_growth_tree": "tfc:tree/bigleaf_maple_large"
   }
 }

@@ -26,13 +26,18 @@ NORMAL_TREES = [
     Tree('chestnut', 'random', 'round', 23, False),
     Tree('sycamore', 'random', 'round', 23, False),
     Tree('rosewood', 'random', 'tall_branches', 18, False),
+    Tree('sequoia', 'random', 'sequoia_small', 1, False),
     Tree('kapok', 'random', 'canopy', 15, False)
 ]
 
 LARGE_TREES = [
+    Tree('ash', 'random', 'round_large', 1, True),
     Tree('douglas_fir', 'stacked', 'fluffy_old_conifer', (3, 3, 3), True),
+    Tree('hickory', 'random', 'round_large', 1, True),
+    Tree('maple', 'random', 'round_large', 1, True),
     Tree('sequoia', 'stacked', 'sequoia', (7, 8, 4, 4), True),
-    Tree('kapok', 'random', 'kapok_large', 6, True)
+    Tree('kapok', 'random', 'kapok_large', 6, True),
+    Tree('sycamore', 'random', 'round_large', 1, True)
 ]
 
 DEAD_TREES = [
@@ -82,24 +87,27 @@ def make_tree_structures(tree: Tree, suffix: str = ''):
         log = 'ancient_' + log
     if tree.feature == 'random':
         for i in range(1, 1 + tree.count):
-            make_tree_structure(tree.variant + str(i), tree.name, str(i), result, log)
+            make_tree_structure(tree.variant + str(i), tree.name, str(i), result, log, tree.old_growth)
     elif tree.feature == 'overlay':
-        make_tree_structure(tree.variant, tree.name, 'base', result, log)
-        make_tree_structure(tree.variant + '_overlay', tree.name, 'overlay', result, log)
+        make_tree_structure(tree.variant, tree.name, 'base', result, log, tree.old_growth)
+        make_tree_structure(tree.variant + '_overlay', tree.name, 'overlay', result, log, tree.old_growth)
     elif tree.feature == 'stacked':
         for j, c in zip(range(1, 1 + len(tree.count)), tree.count):
             for i in range(1, 1 + c):
-                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), tree.name, 'layer%d_%d' % (j, i), result, log)
+                make_tree_structure('%s_layer%d_%d' % (tree.variant, j, i), tree.name, 'layer%d_%d' % (j, i), result, log, tree.old_growth)
 
 
-def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str):
+def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str, old_growth: bool):
     f = nbt.load('%s/%s.nbt' % (TEMPLATES_DIR, template))
+    prefix = 'tfc'
+    if old_growth:
+        prefix = 'afc'
     for block in f['palette']:
         if block['Name'] == 'minecraft:oak_log':
-            block['Name'] = StringTag('tfc:wood/log/%s' % log)
+            block['Name'] = StringTag('%s:wood/log/%s' % (prefix, log))
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_wood':
-            block['Name'] = StringTag('tfc:wood/wood/%s' % log)
+            block['Name'] = StringTag('%s:wood/wood/%s' % (prefix, log))
             block['Properties']['natural'] = StringTag('true')
         elif block['Name'] == 'minecraft:oak_leaves':
             block['Name'] = StringTag('tfc:wood/leaves/%s' % wood)

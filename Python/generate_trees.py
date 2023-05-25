@@ -20,7 +20,7 @@ STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resou
 
 
 NORMAL_TREES = [
-    Tree('baobab', 'random', 'baobab', 11, 'baobab', False),
+    Tree('baobab', 'random', 'old_baobab', 7, 'baobab', False),
     Tree('cypress', 'random', 'slender', 14, 'cypress', False),
     Tree('eucalyptus', 'random', 'tall_branches', 18, 'eucalyptus', False),
     Tree('fig', 'random', 'emergent', 6, 'fig', False),
@@ -29,14 +29,14 @@ NORMAL_TREES = [
     Tree('teak', 'random', 'jungle', 17, 'teak', False),
     Tree('tualang', 'random', 'emergent', 6, 'tualang', False),
 
-    Tree('gum_arabic', 'random', 'acacia', 35, 'acacia', False),
+    Tree('gum_arabic', 'random', 'acacia', 35, 'gum_arabic', False),
     Tree('acacia_koa', 'random', 'canopy', 15, 'acacia', False),
     Tree('evergreen_ash', 'overlay', 'normal', 0, 'ash', False),
     Tree('mpingo_blackwood', 'random', 'acacia', 35, 'blackwood', False),
     Tree('mountain_fir', 'random', 'fir', 9, 'douglas_fir', False),
     Tree('balsam_fir', 'random', 'boreal', 9, 'douglas_fir', False),
     Tree('scrub_hickory', 'random', 'blackwood', 10, 'hickory', False),
-    Tree('bigleaf_maple', 'random', 'round', 23, 'maple', False),
+    Tree('bigleaf_maple', 'random', 'bigleaf_maple', 5, 'maple', False),
     Tree('weeping_maple', 'random', 'small_willow', 10, 'maple', False),
     Tree('live_oak', 'random', 'round', 23, 'oak', False),
     Tree('black_oak', 'random', 'african_oak', 15, 'black_oak', False),
@@ -59,22 +59,25 @@ NORMAL_TREES = [
 ]
 
 LARGE_TREES = [
-    #Tree('bigleaf_maple', 'random', 'normal_large', 5, 'maple'),
+    Tree('bigleaf_maple', 'random', 'bigleaf_large', 1, 'maple', True),
     Tree('evergreen_ash', 'random', 'round', 14, 'ash', True),
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir', True),
     Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir', True),
     Tree('coast_redwood', 'stacked', 'conifer_large', (3, 3, 3), 'sequoia', True),
     Tree('scrub_hickory', 'random', 'blackwood_large', 10, 'hickory', True),
     Tree('weeping_maple', 'random', 'willow', 7, 'maple', True),
+    Tree('black_oak', 'random', 'african_oak_old', 9, 'black_oak', True),
     Tree('live_oak', 'random', 'normal_large', 5, 'oak', True),
     Tree('stone_pine', 'random', 'stone_pine', 19, 'pine', True),
     Tree('tamarack', 'random', 'tall_boreal', 11, 'pine', True),
     Tree('sitka_spruce', 'random', 'fir_large', 5, 'spruce', True),
     Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce', True),
     Tree('mountain_ash', 'stacked', 'mountain_ash', (12, 10, 4, 5), 'eucalyptus', True),
-    Tree('baobab', 'random', 'old_baobab', 7, 'baobab', True),
+    Tree('baobab', 'random', 'great_baobab', 7, 'baobab', True),
+    Tree('mahogany', 'random', 'african_oak_old', 9, 'mahogany', True),
     Tree('tualang', 'random', 'emergent', 6, 'tualang', True),
-    Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress', True)
+    Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress', True),
+    Tree('redcedar', 'stacked', 'fluffy_old_conifer', (3, 3, 3), 'redcedar', True)
 ]
 
 DEAD_TREES = [
@@ -94,6 +97,7 @@ DEAD_TREES = [
     Tree('tamarack', 'random', 'dead_small', 6, 'pine', False),
     Tree('giant_rosewood', 'random', 'dead_jungle', 4, 'rosewood', False),
     Tree('coast_spruce', 'random', 'dead_tall', 6, 'spruce', False),
+    Tree('coast_redwood', 'random', 'dead_tall', 6, 'sequoia', False),
     Tree('sitka_spruce', 'random', 'dead_tall', 6, 'spruce', False),
     Tree('black_spruce', 'random', 'dead_tall', 6, 'spruce', False),
     Tree('atlas_cedar', 'random', 'dead_small', 6, 'white_cedar', False),
@@ -154,6 +158,12 @@ def main():
     verify_center_trunk('small_willow', 10)
     verify_center_trunk('boreal', 11)
     verify_center_trunk('tall_boreal', 11)
+    verify_center_trunk('great_baobab', 7)
+    verify_center_trunk('african_oak_old', 9)
+    verify_center_trunk('round_large', 1)
+    verify_center_trunk('bigleaf_large', 1)
+    verify_center_trunk('sequoia_small', 1)
+    verify_center_trunk('bigleaf_maple', 5)
 
     print('Tree sapling drop chances:')
     for tree in NORMAL_TREES:

@@ -24,6 +24,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/black_oak"
+    "bush_leaves": "afc:wood/leaves/black_oak",
+    "old_growth_tree": "tfc:tree/black_oak_large"
   }
 }

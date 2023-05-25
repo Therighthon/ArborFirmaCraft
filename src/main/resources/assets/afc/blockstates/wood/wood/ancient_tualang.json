@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "afc:block/wood/wood/tualang"
+    },
+    "axis=z": {
+      "model": "afc:block/wood/wood/tualang",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "afc:block/wood/wood/tualang",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

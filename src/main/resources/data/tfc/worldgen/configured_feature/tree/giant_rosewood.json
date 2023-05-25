@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:giant_rosewood/1",
+      "tfc:giant_rosewood/2",
+      "tfc:giant_rosewood/3",
+      "tfc:giant_rosewood/4",
+      "tfc:giant_rosewood/5",
+      "tfc:giant_rosewood/6",
+      "tfc:giant_rosewood/7",
+      "tfc:giant_rosewood/8",
+      "tfc:giant_rosewood/9",
+      "tfc:giant_rosewood/10",
+      "tfc:giant_rosewood/11",
+      "tfc:giant_rosewood/12",
+      "tfc:giant_rosewood/13",
+      "tfc:giant_rosewood/14",
+      "tfc:giant_rosewood/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 3,
+      "allow_submerged": true
+    }
+  }
+}

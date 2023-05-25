@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:mahogany_large/1",
+      "tfc:mahogany_large/2",
+      "tfc:mahogany_large/3",
+      "tfc:mahogany_large/4",
+      "tfc:mahogany_large/5",
+      "tfc:mahogany_large/6",
+      "tfc:mahogany_large/7",
+      "tfc:mahogany_large/8",
+      "tfc:mahogany_large/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ancient_mahogany",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 4,
+      "max_height": 8,
+      "width": 2
+    }
+  }
+}

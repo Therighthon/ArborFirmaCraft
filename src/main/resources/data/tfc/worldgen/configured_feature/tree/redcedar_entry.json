@@ -24,6 +24,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/redcedar"
+    "bush_leaves": "afc:wood/leaves/redcedar",
+    "old_growth_tree": "tfc:tree/redcedar_large"
   }
 }

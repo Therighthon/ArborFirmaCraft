@@ -24,6 +24,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/mahogany"
+    "bush_leaves": "afc:wood/leaves/mahogany",
+    "old_growth_tree": "tfc:tree/mahogany_large"
   }
 }

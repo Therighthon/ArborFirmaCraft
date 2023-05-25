@@ -38,6 +38,7 @@
     "tfc:tree/bald_cypress_entry",
     "tfc:tree/fig_entry",
 	"tfc:tree/tamarack_entry",
-	"tfc:tree/black_spruce_entry"
+	"tfc:tree/black_spruce_entry",
+	"tfc:tree/coast_redwood_entry"
   ]
 }

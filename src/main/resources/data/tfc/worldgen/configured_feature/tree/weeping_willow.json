@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:weeping_willow/1",
+      "tfc:weeping_willow/2",
+      "tfc:weeping_willow/3",
+      "tfc:weeping_willow/4",
+      "tfc:weeping_willow/5",
+      "tfc:weeping_willow/6",
+      "tfc:weeping_willow/7",
+      "tfc:weeping_willow/8",
+      "tfc:weeping_willow/9",
+      "tfc:weeping_willow/10",
+      "tfc:weeping_willow/11",
+      "tfc:weeping_willow/12",
+      "tfc:weeping_willow/13",
+      "tfc:weeping_willow/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

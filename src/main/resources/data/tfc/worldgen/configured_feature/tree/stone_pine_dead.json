@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:stone_pine_dead/1",
+      "tfc:stone_pine_dead/2",
+      "tfc:stone_pine_dead/3",
+      "tfc:stone_pine_dead/4",
+      "tfc:stone_pine_dead/5",
+      "tfc:stone_pine_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": false
+    }
+  }
+}
