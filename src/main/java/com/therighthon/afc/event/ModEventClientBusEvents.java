@@ -6,6 +6,7 @@ import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.TreeSpecies;
+import com.therighthon.afc.common.entities.AFCEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
 import net.minecraft.client.color.block.BlockColors;
@@ -132,10 +133,10 @@ public class ModEventClientBusEvents
     public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
     {
 
-//        for (AFCWood wood : AFCWood.VALUES)
-//        {
-//            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
-//        }
+        for (AFCWood wood : AFCWood.VALUES)
+        {
+            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
+        }
 
     }
 

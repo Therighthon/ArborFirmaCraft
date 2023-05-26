@@ -2,7 +2,8 @@ package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.blocks.AFCBlocks;
-import com.therighthon.afc.common.items.ModItems;
+import com.therighthon.afc.common.entities.AFCEntities;
+import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -26,13 +27,14 @@ public class AFC
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
 
-        ModItems.register(eventBus);
+        AFCItems.register(eventBus);
         AFCBlocks.register(eventBus);
+        AFCEntities.ENTITIES.register(eventBus);
 
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
-//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderers);
+        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderers);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onItemColors);

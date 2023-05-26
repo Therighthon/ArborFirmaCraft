@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.items.ModItems;
+import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.items.TFCBoatItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
@@ -34,7 +35,7 @@ public class AFCBlocks
 
     private static <T extends Block>RegistryObject<Item> registerBlockItem(String name, RegistryObject<T> block, CreativeModeTab tab)
     {
-        return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+        return AFCItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
     public static void register(IEventBus eventBus)
@@ -93,7 +94,7 @@ public class AFCBlocks
     }
 
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory) {
-        return RegistrationHelpers.registerBlock(BLOCKS, ModItems.ITEMS, name, blockSupplier, blockItemFactory);
+        return RegistrationHelpers.registerBlock(BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory);
     }
 
 }

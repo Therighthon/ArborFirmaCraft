@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.entities.AFCEntities;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SignItem;
@@ -24,7 +25,7 @@ import net.dries007.tfc.util.Helpers;
 import static net.dries007.tfc.common.TFCItemGroup.*;
 
 
-public class ModItems
+public class AFCItems
 {
     public static final DeferredRegister<Item> ITEMS =
         DeferredRegister.create(ForgeRegistries.ITEMS, AFC.MOD_ID);
@@ -43,7 +44,7 @@ public class ModItems
         register("wood/support/" + wood.name(), () -> new StandingAndWallBlockItem(AFCBlocks.WOODS.get(wood).get(Wood.BlockType.VERTICAL_SUPPORT).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.HORIZONTAL_SUPPORT).get(), new Item.Properties().tab(WOOD)))
     );
 
-    public static final Map<AFCWood, RegistryObject<Item>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/boat/" + wood.name(), () -> new TFCBoatItem(TFCEntities.BOATS.get(wood), new Item.Properties().tab(WOOD))));
+    public static final Map<AFCWood, RegistryObject<Item>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/boat/" + wood.name(), () -> new TFCBoatItem(AFCEntities.BOATS.get(wood), new Item.Properties().tab(WOOD))));
 
     public static final Map<AFCWood, RegistryObject<Item>> CHEST_MINECARTS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/chest_minecart/" + wood.name(), () -> new TFCMinecartItem(new Item.Properties().tab(WOOD), TFCEntities.CHEST_MINECART, () -> AFCBlocks.WOODS.get(wood).get(Wood.BlockType.CHEST).get().asItem())));
 
