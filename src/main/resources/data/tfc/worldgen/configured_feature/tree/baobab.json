@@ -13,8 +13,8 @@
     ],
     "radius": 2,
     "placement": {
-      "width": 3,
-      "height": 12,
+      "width": 2,
+      "height": 4,
       "allow_submerged": true
     }
   }

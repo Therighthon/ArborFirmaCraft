@@ -16,6 +16,7 @@
     ],
     "normal_tree": "tfc:tree/coast_redwood",
     "dead_tree": "tfc:tree/coast_redwood_dead",
+    "old_growth_chance": 3,
     "fallen_log": "tfc:wood/log/sequoia",
     "bush_log": {
       "Name": "tfc:wood/wood/sequoia",

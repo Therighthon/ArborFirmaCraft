@@ -3,6 +3,9 @@ package com.therighthon.afc.event;
 import java.util.Arrays;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.blockentity.AFCSignBlockEntityRenderer;
+import com.therighthon.afc.client.render.colors.AFCColors;
+import com.therighthon.afc.client.render.colors.ColorScheme;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.TreeSpecies;
@@ -17,19 +20,24 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.LecternRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import org.antlr.runtime.tree.Tree;
+import org.jetbrains.annotations.Nullable;
 
+import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.RenderHelpers;
 import net.dries007.tfc.client.TFCColors;
-import net.dries007.tfc.client.render.blockentity.TFCChestBlockEntityRenderer;
+import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
@@ -47,11 +55,41 @@ public class ModEventClientBusEvents
 //        final BlockColor tallGrassColor = (state, level, pos, tintIndex) -> TFCColors.getTallGrassColor(pos, tintIndex);
         final BlockColor foliageColor = (state, level, pos, tintIndex) -> TFCColors.getFoliageColor(pos, tintIndex);
         final BlockColor seasonalFoliageColor = (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex);
+        final BlockColor yellowDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getYellowDeciduousFoliageColor(pos, tintIndex);
+        final BlockColor orangeDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getOrangeDeciduousFoliageColor(pos, tintIndex);
+        final BlockColor redDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getRedDeciduousFoliageColor(pos, tintIndex);
+        final BlockColor transitionalDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getTransitionalDeciduousFoliageColor(pos, tintIndex);
+        final BlockColor lightTransitionalDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getLightTransitionalDeciduousFoliageColor(pos, tintIndex);
+        final BlockColor kapokFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getKapokFoliageColor(pos, tintIndex);
+        final BlockColor jacarandaFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getJacarandaFoliageColor(pos, tintIndex);
+        final BlockColor tamarackFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getTamarackFoliageColor(pos, tintIndex);
 
         //ModBlocks.PLANTS.forEach((plant, reg) -> registry.register(plant.isTallGrass() ? tallGrassColor : plant.isSeasonal() ? seasonalFoliageColor : plant.isFoliage() ? foliageColor : grassColor, reg.get()));
         //ModBlocks.POTTED_PLANTS.forEach((plant, reg) -> registry.register(grassColor, reg.get()));
-        AFCBlocks.WOODS.forEach((wood, reg) -> registry.register(wood.isConifer() ? foliageColor : seasonalFoliageColor, reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
-        AFCBlocks.TREE_SPECIES.forEach((key, value) -> registry.register(key.isConifer() ? foliageColor : seasonalFoliageColor, value.get(TreeSpecies.BlockType.LEAVES).get()));
+        AFCBlocks.WOODS.forEach((wood, reg) -> registry.register(
+            (wood.getColorScheme()== ColorScheme.EVERGREEN) ? foliageColor :
+            (wood.getColorScheme()== ColorScheme.TFC_DECIDUOUS) ? seasonalFoliageColor :
+            (wood.getColorScheme()== ColorScheme.YELLOW_DECIDUOUS) ? yellowDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.ORANGE_DECIDUOUS) ? orangeDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.RED_DECIDUOUS) ? redDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.TRANSITIONAL_DECIDUOUS) ? transitionalDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS) ? lightTransitionalDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.KAPOK) ? kapokFoliageColor :
+            (wood.getColorScheme()== ColorScheme.JACARANDA) ? jacarandaFoliageColor :
+                tamarackFoliageColor,
+            reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
+        AFCBlocks.TREE_SPECIES.forEach((wood, value) -> registry.register(
+            (wood.getColorScheme()== ColorScheme.EVERGREEN) ? foliageColor :
+            (wood.getColorScheme()== ColorScheme.TFC_DECIDUOUS) ? seasonalFoliageColor :
+            (wood.getColorScheme()== ColorScheme.YELLOW_DECIDUOUS) ? yellowDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.ORANGE_DECIDUOUS) ? orangeDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.RED_DECIDUOUS) ? redDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.TRANSITIONAL_DECIDUOUS) ? transitionalDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS) ? lightTransitionalDeciduousFoliageColor :
+            (wood.getColorScheme()== ColorScheme.KAPOK) ? kapokFoliageColor :
+            (wood.getColorScheme()== ColorScheme.JACARANDA) ? jacarandaFoliageColor :
+            tamarackFoliageColor,
+            value.get(TreeSpecies.BlockType.LEAVES).get()));
     }
 
     public static void registerColorHandlerItems(ColorHandlerEvent.Item event)
@@ -88,6 +126,12 @@ public class ModEventClientBusEvents
 
         event.enqueueWork(() -> {
             AFCBlocks.WOODS.values().forEach(map -> ItemProperties.register(map.get(BARREL).get().asItem(), Helpers.identifier("sealed"), (stack, level, entity, unused) -> stack.hasTag() ? 1.0f : 0f));
+
+            AFCBlocks.WOODS.forEach((wood, map) -> {
+                HorseChestLayer.registerChest(map.get(CHEST).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
+                HorseChestLayer.registerChest(map.get(TRAPPED_CHEST).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
+                HorseChestLayer.registerChest(map.get(BARREL).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + "_barrel.png"));
+            });
         });
 
 
@@ -138,6 +182,27 @@ public class ModEventClientBusEvents
             event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
         }
 
+        // BEs
+//        event.registerBlockEntityRenderer(TFCBlockEntities.CHEST.get(), AFCChestBlockEntityRenderer::new);
+//        event.registerBlockEntityRenderer(TFCBlockEntities.TRAPPED_CHEST.get(), AFCChestBlockEntityRenderer::new);
+//        event.registerBlockEntityRenderer(TFCBlockEntities.LOOM.get(), ctx -> new AFCLoomBlockEntityRenderer());
+//        event.registerBlockEntityRenderer(TFCBlockEntities.SLUICE.get(), ctx -> new AFCSluiceBlockEntityRenderer());
+//        event.registerBlockEntityRenderer(TFCBlockEntities.BELLOWS.get(), ctx -> new AFCBellowsBlockEntityRenderer());
+//        event.registerBlockEntityRenderer(TFCBlockEntities.TOOL_RACK.get(), ctx -> new AFCToolRackBlockEntityRenderer());
+//        event.registerBlockEntityRenderer(TFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
+//        event.registerBlockEntityRenderer(TFCBlockEntities.BARREL.get(), ctx -> new AFCBarrelBlockEntityRenderer());
+        //event.registerBlockEntityRenderer(TFCBlockEntities.LECTERN.get(), LecternRenderer::new);
+
+    }
+
+    public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
+    {
+        // Color maps
+        // Based on TFC Custom colormaps
+        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageJacarandaColors, AFCColors.FOLIAGE_JACARANDA_COLORS_LOCATION));
+        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageYellowColors, AFCColors.FOLIAGE_YELLOW_COLORS_LOCATION));
+        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageOrangeColors, AFCColors.FOLIAGE_ORANGE_COLORS_LOCATION));
+        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageRedColors, AFCColors.FOLIAGE_RED_COLORS_LOCATION));
     }
 
 

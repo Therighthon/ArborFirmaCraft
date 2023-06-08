@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.items.AFCItems;
+import com.therighthon.afc.event.ModEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.MinecraftForge;
@@ -13,19 +14,22 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
+import net.dries007.tfc.client.ClientEventHandler;
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AFC.MOD_ID)
 public class AFC
 {
     public static final String MOD_ID = "afc";
     // Directly reference a slf4j logger
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public AFC()
     {
         // Register the setup method for modloading
         IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
         eventBus.addListener(this::setup);
+        ModEvents.init();
 
         AFCItems.register(eventBus);
         AFCBlocks.register(eventBus);
@@ -34,6 +38,7 @@ public class AFC
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
+        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerClientReloadListeners);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderers);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);

@@ -5,7 +5,7 @@
     "min_rain": 220,
     "max_rain": 360,
     "min_temp": -20,
-    "max_temp": -8,
+    "max_temp": -14,
     "groundcover": [
       {
         "block": "tfc:wood/twig/spruce"

@@ -3,6 +3,7 @@ package com.therighthon.afc.common.blocks;
 import java.util.Locale;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.colors.ColorScheme;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MaterialColor;
 
@@ -13,29 +14,29 @@ import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 public enum AFCWood implements RegistryWood
 {
     //Wood color, then bark color
-    EUCALYPTUS(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    MAHOGANY(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    BAOBAB(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    HEVEA(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    TUALANG(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    TEAK(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    CYPRESS(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10),
-    FIG(true, MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,12);
+    EUCALYPTUS(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    MAHOGANY( MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    BAOBAB(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    HEVEA(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    TUALANG(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    TEAK(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    CYPRESS(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,10, ColorScheme.EVERGREEN),
+    FIG(MaterialColor.TERRACOTTA_ORANGE, MaterialColor.TERRACOTTA_LIGHT_GRAY,7,12, ColorScheme.EVERGREEN);
 
     public static final AFCWood[] VALUES = values();
 
     private final String serializedName;
-    private final boolean conifer;
+    private final ColorScheme colorScheme;
     private final MaterialColor woodColor;
     private final MaterialColor barkColor;
     private final TFCTreeGrower tree;
     private final int maxDecayDistance;
     private final int defaultDaysToGrow;
 
-    AFCWood(boolean conifer, MaterialColor woodColor, MaterialColor barkColor, int maxDecayDistance, int daysToGrow) {
+    AFCWood(MaterialColor woodColor, MaterialColor barkColor, int maxDecayDistance, int daysToGrow, ColorScheme colorScheme) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
-        this.conifer = conifer;
         this.woodColor = woodColor;
+        this.colorScheme = colorScheme;
         this.barkColor = barkColor;
         this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
         this.maxDecayDistance = maxDecayDistance;
@@ -50,7 +51,12 @@ public enum AFCWood implements RegistryWood
 
     public boolean isConifer()
     {
-        return conifer;
+        return colorScheme == ColorScheme.EVERGREEN;
+    }
+
+    public ColorScheme getColorScheme()
+    {
+        return colorScheme;
     }
 
     @Override

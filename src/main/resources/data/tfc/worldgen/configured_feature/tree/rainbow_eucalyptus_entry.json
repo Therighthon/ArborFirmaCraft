@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 300,
     "max_rain": 450,
-    "min_temp": 16,
+    "min_temp": 20,
     "max_temp": 40,
     "groundcover": [
       {
@@ -16,6 +16,7 @@
     ],
     "normal_tree": "tfc:tree/rainbow_eucalyptus",
     "dead_tree": "tfc:tree/rainbow_eucalyptus_dead",
+    "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/rainbow_eucalyptus",
     "bush_log": {
       "Name": "afc:wood/wood/rainbow_eucalyptus",
@@ -24,6 +25,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/rainbow_eucalyptus"
+    "bush_leaves": "afc:wood/leaves/rainbow_eucalyptus",
+    "old_growth_tree": "tfc:tree/rainbow_eucalyptus_large"
   }
 }

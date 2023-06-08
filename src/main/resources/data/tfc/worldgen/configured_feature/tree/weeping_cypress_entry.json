@@ -3,9 +3,9 @@
   "type": "tfc:forest_entry",
   "config": {
     "min_rain": 290,
-    "max_rain": 375,
+    "max_rain": 415,
     "min_temp": 6,
-    "max_temp": 16,
+    "max_temp": 18,
     "groundcover": [
       {
         "block": "afc:wood/twig/cypress"

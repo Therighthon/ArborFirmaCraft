@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 390,
     "max_rain": 500,
-    "min_temp": 12,
-    "max_temp": 20,
+    "min_temp": 16,
+    "max_temp": 22,
     "groundcover": [
       {
         "block": "tfc:wood/twig/oak"
@@ -16,6 +16,8 @@
     ],
     "normal_tree": "tfc:tree/live_oak",
     "dead_tree": "tfc:tree/live_oak_dead",
+    "old_growth_chance": 8,
+    "spoiler_old_growth_chance": 50,
     "fallen_log": "tfc:wood/log/oak",
     "bush_log": {
       "Name": "tfc:wood/wood/oak",

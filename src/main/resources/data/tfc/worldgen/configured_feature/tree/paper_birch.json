@@ -1,0 +1,42 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:paper_birch/1",
+      "tfc:paper_birch/2",
+      "tfc:paper_birch/3",
+      "tfc:paper_birch/4",
+      "tfc:paper_birch/5",
+      "tfc:paper_birch/6",
+      "tfc:paper_birch/7",
+      "tfc:paper_birch/8",
+      "tfc:paper_birch/9",
+      "tfc:paper_birch/10",
+      "tfc:paper_birch/11",
+      "tfc:paper_birch/12",
+      "tfc:paper_birch/13",
+      "tfc:paper_birch/14",
+      "tfc:paper_birch/15",
+      "tfc:paper_birch/16"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 5,
+      "allow_submerged": false
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/birch",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 2,
+      "max_height": 3,
+      "width": 1
+    }
+  }
+}

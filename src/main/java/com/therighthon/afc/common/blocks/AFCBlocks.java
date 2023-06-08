@@ -9,6 +9,10 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -16,10 +20,15 @@ import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCItemGroup;
+import net.dries007.tfc.common.blockentities.LoomBlockEntity;
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.wood.TFCLoomBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCBoatItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
+import net.dries007.tfc.util.registry.RegistryWood;
 
 public class AFCBlocks
 {
@@ -52,6 +61,10 @@ public class AFCBlocks
 
     public static Supplier<Block> createWood(AFCWood wood, Wood.BlockType blockType)
     {
+        if (blockType == Wood.BlockType.LOOM)
+        {
+            return () -> new TFCLoomBlock(woodProperties(wood).strength(2.5F).noOcclusion().blockEntity(TFCBlockEntities.LOOM).ticks(LoomBlockEntity::tick), AFC.treeIdentifier("block/wood/planks/" + wood.getSerializedName()));
+        }
         return blockType.create(wood);
     }
 
@@ -97,6 +110,19 @@ public class AFCBlocks
         return RegistrationHelpers.registerBlock(BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory);
     }
 
+    private static ExtendedProperties woodProperties(RegistryWood wood)
+    {
+        return ExtendedProperties.of(Material.WOOD, wood.woodColor()).sound(SoundType.WOOD);
+    }
+
+    public static void registerFlowerPotFlowers()
+    {
+        FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
+        WOODS.forEach((wood, map) -> pot.addPlant(map.get(Wood.BlockType.SAPLING).getId(), map.get(Wood.BlockType.POTTED_SAPLING)));
+    }
+
 }
+
+
 
 

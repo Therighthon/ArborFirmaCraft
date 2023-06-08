@@ -20,9 +20,7 @@ STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resou
 
 
 NORMAL_TREES = [
-    Tree('ash', 'random', 'round', 23, False),
     Tree('douglas_fir', 'random', 'fluffyconifer', 10, False),
-    Tree('hickory', 'random', 'round', 23, False),
     Tree('chestnut', 'random', 'round', 23, False),
     Tree('sycamore', 'random', 'round', 23, False),
     Tree('rosewood', 'random', 'tall_branches', 18, False),
@@ -31,10 +29,7 @@ NORMAL_TREES = [
 ]
 
 LARGE_TREES = [
-    Tree('ash', 'random', 'round_large', 1, True),
     Tree('douglas_fir', 'stacked', 'fluffy_old_conifer', (3, 3, 3), True),
-    Tree('hickory', 'random', 'round_large', 1, True),
-    Tree('maple', 'random', 'round_large', 1, True),
     Tree('sequoia', 'stacked', 'sequoia', (7, 8, 4, 4), True),
     Tree('kapok', 'random', 'kapok_large', 6, True),
     Tree('sycamore', 'random', 'round_large', 1, True)

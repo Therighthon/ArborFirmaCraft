@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 250,
+    "max_rain": 350,
+    "min_temp": 22,
+    "max_temp": 40,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/kapok"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/kapok"
+      }
+    ],
+    "normal_tree": "tfc:tree/red_silk_cotton",
+    "dead_tree": "tfc:tree/red_silk_cotton_dead",
+    "fallen_log": "tfc:wood/log/kapok",
+    "bush_log": {
+      "Name": "tfc:wood/wood/kapok",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/red_silk_cotton",
+    "old_growth_tree": "tfc:tree/red_silk_cotton_large"
+  }
+}

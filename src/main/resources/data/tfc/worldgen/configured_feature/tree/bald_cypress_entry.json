@@ -16,6 +16,7 @@
     ],
     "normal_tree": "tfc:tree/bald_cypress",
     "dead_tree": "tfc:tree/bald_cypress_dead",
+    "old_growth_chance": 2,
     "fallen_log": "afc:wood/log/cypress",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",

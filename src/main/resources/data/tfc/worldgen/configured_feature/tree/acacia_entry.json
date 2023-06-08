@@ -16,6 +16,7 @@
     ],
     "normal_tree": "tfc:tree/acacia",
     "dead_tree": "tfc:tree/acacia_dead",
+    "old_growth_chance": 12,
     "fallen_tree_chance": 0,
     "bush_log": {
       "Name": "tfc:wood/wood/acacia",

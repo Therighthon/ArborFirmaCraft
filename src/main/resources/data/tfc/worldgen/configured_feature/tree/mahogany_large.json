@@ -3,15 +3,7 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "tfc:mahogany_large/1",
-      "tfc:mahogany_large/2",
-      "tfc:mahogany_large/3",
-      "tfc:mahogany_large/4",
-      "tfc:mahogany_large/5",
-      "tfc:mahogany_large/6",
-      "tfc:mahogany_large/7",
-      "tfc:mahogany_large/8",
-      "tfc:mahogany_large/9"
+      "tfc:mahogany_large/1"
     ],
     "radius": 1,
     "placement": {
@@ -27,8 +19,8 @@
           "natural": "true"
         }
       },
-      "min_height": 4,
-      "max_height": 8,
+      "min_height": 10,
+      "max_height": 14,
       "width": 2
     }
   }

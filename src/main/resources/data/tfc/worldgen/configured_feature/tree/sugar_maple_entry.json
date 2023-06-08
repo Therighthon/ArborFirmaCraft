@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 260,
+    "max_rain": 360,
+    "min_temp": -8,
+    "max_temp": 10,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/maple"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/maple"
+      }
+    ],
+    "normal_tree": "tfc:tree/sugar_maple",
+    "dead_tree": "tfc:tree/sugar_maple_dead",
+    "fallen_log": "tfc:wood/log/maple",
+    "bush_log": {
+      "Name": "tfc:wood/wood/maple",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/sugar_maple",
+    "old_growth_tree": "tfc:tree/sugar_maple_large"
+  }
+}

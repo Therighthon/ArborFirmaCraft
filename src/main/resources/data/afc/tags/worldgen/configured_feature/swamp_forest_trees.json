@@ -2,14 +2,14 @@
   "replace": false,
   "values": [
     "tfc:tree/acacia_entry",
-    "tfc:tree/ash_entry",
+    "tfc:tree/black_ash_entry",
     "tfc:tree/evergreen_ash_entry",
-    "tfc:tree/aspen_entry",
-    "tfc:tree/birch_entry",
+    "tfc:tree/quaking_aspen_entry",
+    "tfc:tree/paper_birch_entry",
     "tfc:tree/blackwood_entry",
     "tfc:tree/mpingo_blackwood_entry",
     "tfc:tree/douglas_fir_entry",
-    "tfc:tree/hickory_entry",
+    "tfc:tree/bitternut_hickory_entry",
     "tfc:tree/scrub_hickory_entry",
     "tfc:tree/kapok_entry",
     "tfc:tree/bigleaf_maple_entry",
@@ -25,7 +25,7 @@
     "tfc:tree/sitka_spruce_entry",
     "tfc:tree/sycamore_entry",
     "tfc:tree/white_cedar_entry",
-    "tfc:tree/willow_entry",
+    "tfc:tree/corkscrew_willow_entry",
     "tfc:tree/weeping_willow_entry",
     "tfc:tree/rainbow_eucalyptus_entry",
     "tfc:tree/eucalyptus_entry",
@@ -39,6 +39,7 @@
     "tfc:tree/fig_entry",
 	"tfc:tree/tamarack_entry",
 	"tfc:tree/black_spruce_entry",
-	"tfc:tree/coast_redwood_entry"
+	"tfc:tree/coast_redwood_entry",
+	"tfc:tree/red_silk_cotton_entry"
   ]
 }

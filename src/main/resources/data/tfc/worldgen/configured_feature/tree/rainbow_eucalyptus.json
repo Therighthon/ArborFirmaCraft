@@ -9,21 +9,25 @@
       "tfc:rainbow_eucalyptus/4",
       "tfc:rainbow_eucalyptus/5",
       "tfc:rainbow_eucalyptus/6",
-      "tfc:rainbow_eucalyptus/7",
-      "tfc:rainbow_eucalyptus/8",
-      "tfc:rainbow_eucalyptus/9",
-      "tfc:rainbow_eucalyptus/10",
-      "tfc:rainbow_eucalyptus/11",
-      "tfc:rainbow_eucalyptus/12",
-      "tfc:rainbow_eucalyptus/13",
-      "tfc:rainbow_eucalyptus/14",
-      "tfc:rainbow_eucalyptus/15"
+      "tfc:rainbow_eucalyptus/7"
     ],
     "radius": 1,
     "placement": {
       "width": 1,
       "height": 2,
       "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/rainbow_eucalyptus",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 4,
+      "max_height": 8,
+      "width": 1
     }
   }
 }

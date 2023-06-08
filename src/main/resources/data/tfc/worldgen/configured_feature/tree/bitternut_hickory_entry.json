@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 600,
+    "max_rain": 700,
+    "min_temp": -20,
+    "max_temp": -22,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/hickory"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/hickory"
+      }
+    ],
+    "normal_tree": "tfc:tree/bitternut_hickory",
+    "dead_tree": "tfc:tree/bitternut_hickory_dead",
+    "fallen_log": "tfc:wood/log/hickory",
+    "bush_log": {
+      "Name": "tfc:wood/wood/hickory",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/bitternut_hickory",
+    "old_growth_tree": "tfc:tree/bitternut_hickory_large"
+  }
+}

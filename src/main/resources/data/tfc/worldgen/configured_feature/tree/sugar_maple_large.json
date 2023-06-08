@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:sugar_maple_large/1",
+      "tfc:sugar_maple_large/2",
+      "tfc:sugar_maple_large/3",
+      "tfc:sugar_maple_large/4",
+      "tfc:sugar_maple_large/5"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 5,
+      "allow_submerged": false
+    }
+  }
+}

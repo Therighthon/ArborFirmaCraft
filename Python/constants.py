@@ -453,7 +453,17 @@ TREE_VARIANTS: Dict[str, str] = {
     'mountain_ash': 'eucalyptus',
     'weeping_cypress': 'cypress',
     'redcedar': 'cypress',
-    'bald_cypress': 'cypress'
+    'bald_cypress': 'cypress',
+
+    'rubber_fig': 'fig',
+    'small_leaf_mahogany': 'mahogany',
+    'sapele_mahogany': 'mahogany',
+    'black_ash': 'ash',
+    'quaking_aspen': 'aspen',
+    'paper_birch': 'birch',
+    'bitternut_hickory': 'hickory',
+    'sugar_maple': 'maple',
+    'corkscrew_willow': 'willow'
 }
 
 # DO NOT EDIT DIRECTLY - Imported directly from spreadsheet
