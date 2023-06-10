@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 405,
     "max_rain": 500,
-    "min_temp": -6,
-    "max_temp": 12,
+    "min_temp": -2.1,
+    "max_temp": 13.9,
     "groundcover": [
       {
         "block": "tfc:wood/twig/maple"
@@ -26,7 +26,6 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/bigleaf_maple",
-    "old_growth_tree": "tfc:tree/bigleaf_maple_large"
+    "bush_leaves": "afc:wood/leaves/bigleaf_maple"
   }
 }

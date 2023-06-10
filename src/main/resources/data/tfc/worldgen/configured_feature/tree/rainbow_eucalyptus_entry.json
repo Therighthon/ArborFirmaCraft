@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 300,
     "max_rain": 450,
-    "min_temp": 20,
+    "min_temp": 21.1,
     "max_temp": 40,
     "groundcover": [
       {
@@ -25,7 +25,6 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/rainbow_eucalyptus",
-    "old_growth_tree": "tfc:tree/rainbow_eucalyptus_large"
+    "bush_leaves": "afc:wood/leaves/rainbow_eucalyptus"
   }
 }

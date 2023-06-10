@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 300,
     "max_rain": 430,
-    "min_temp": 20,
+    "min_temp": 21.1,
     "max_temp": 40,
     "groundcover": [
       {
@@ -24,7 +24,6 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/mahogany",
-    "old_growth_tree": "tfc:tree/mahogany_large"
+    "bush_leaves": "afc:wood/leaves/mahogany"
   }
 }

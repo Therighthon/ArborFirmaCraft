@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 220,
     "max_rain": 345,
-    "min_temp": -6,
-    "max_temp": 0,
+    "min_temp": -2.1,
+    "max_temp": 3.2,
     "groundcover": [
       {
         "block": "tfc:wood/twig/douglas_fir"

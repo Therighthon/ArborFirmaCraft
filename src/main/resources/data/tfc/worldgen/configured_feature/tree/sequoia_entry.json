@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 320,
     "max_rain": 500,
-    "min_temp": 4,
-    "max_temp": 10,
+    "min_temp": 6.8,
+    "max_temp": 12.1,
     "groundcover": [
       {
         "block": "tfc:wood/twig/sequoia"

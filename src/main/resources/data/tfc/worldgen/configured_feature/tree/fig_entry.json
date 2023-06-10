@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 340,
     "max_rain": 500,
-    "min_temp": 18,
-    "max_temp": 40,
+    "min_temp": 19.3,
+    "max_temp": 28.2,
     "groundcover": [
       {
         "block": "afc:wood/twig/fig"

@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 410,
     "max_rain": 500,
-    "min_temp": -8,
-    "max_temp": 2,
+    "min_temp": -3.9,
+    "max_temp": 5,
     "groundcover": [
       {
         "block": "afc:wood/twig/redcedar"
@@ -24,7 +24,6 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/redcedar",
-    "old_growth_tree": "tfc:tree/redcedar_large"
+    "bush_leaves": "afc:wood/leaves/redcedar"
   }
 }

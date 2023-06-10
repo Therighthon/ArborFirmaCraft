@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 355,
     "max_rain": 500,
-    "min_temp": 14,
-    "max_temp": 22,
+    "min_temp": 17.5,
+    "max_temp": 22.9,
     "groundcover": [
       {
         "block": "tfc:wood/twig/willow"
