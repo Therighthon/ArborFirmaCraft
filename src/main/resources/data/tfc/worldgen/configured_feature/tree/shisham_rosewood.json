@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:shisham_rosewood/1",
+      "tfc:shisham_rosewood/2",
+      "tfc:shisham_rosewood/3",
+      "tfc:shisham_rosewood/4",
+      "tfc:shisham_rosewood/5",
+      "tfc:shisham_rosewood/6",
+      "tfc:shisham_rosewood/7",
+      "tfc:shisham_rosewood/8",
+      "tfc:shisham_rosewood/9",
+      "tfc:shisham_rosewood/10",
+      "tfc:shisham_rosewood/11",
+      "tfc:shisham_rosewood/12",
+      "tfc:shisham_rosewood/13",
+      "tfc:shisham_rosewood/14",
+      "tfc:shisham_rosewood/15",
+      "tfc:shisham_rosewood/16",
+      "tfc:shisham_rosewood/17",
+      "tfc:shisham_rosewood/18"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

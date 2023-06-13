@@ -28,6 +28,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
+    UMBRELLA_THORN_ACACIA(7, 8, ColorScheme.EVERGREEN),
     GUM_ARABIC(7, 8, ColorScheme.EVERGREEN),
     ACACIA_KOA(8, 16, ColorScheme.EVERGREEN),
     //Ash
@@ -38,7 +39,8 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Birch
     PAPER_BIRCH(7, 7, ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS),
     //Blackwood
-    MPINGO_BLACKWOOD(7, 9, ColorScheme.EVERGREEN),
+    MULGA_BLACKWOOD(7, 7, ColorScheme.EVERGREEN),
+    MPINGO_BLACKWOOD(7, 11, ColorScheme.EVERGREEN),
     //Fir
     MOUNTAIN_FIR( 7, 11, ColorScheme.EVERGREEN),
     BALSAM_FIR( 7, 13, ColorScheme.EVERGREEN),
@@ -60,6 +62,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     TAMARACK(7, 10, ColorScheme.YELLOW_DECIDUOUS),
 
     //Rosewood
+    SHISHAM_ROSEWOOD( 7, 8, ColorScheme.EVERGREEN),
     GIANT_ROSEWOOD( 7, 16, ColorScheme.JACARANDA),
     //Sequoia
     COAST_REDWOOD( 7, 10, ColorScheme.EVERGREEN),

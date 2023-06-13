@@ -61,10 +61,10 @@ public class AFCBlocks
 
     public static Supplier<Block> createWood(AFCWood wood, Wood.BlockType blockType)
     {
-        if (blockType == Wood.BlockType.LOOM)
-        {
-            return () -> new TFCLoomBlock(woodProperties(wood).strength(2.5F).noOcclusion().blockEntity(TFCBlockEntities.LOOM).ticks(LoomBlockEntity::tick), AFC.treeIdentifier("block/wood/planks/" + wood.getSerializedName()));
-        }
+//        if (blockType == Wood.BlockType.LOOM)
+//        {
+//            return () -> new TFCLoomBlock(woodProperties(wood).strength(2.5F).noOcclusion().blockEntity(TFCBlockEntities.LOOM).ticks(LoomBlockEntity::tick), AFC.treeIdentifier("block/wood/planks/" + wood.getSerializedName()));
+//        }
         return blockType.create(wood);
     }
 

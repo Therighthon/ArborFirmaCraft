@@ -23,7 +23,7 @@ NORMAL_TREES = [
     Tree('douglas_fir', 'random', 'fluffyconifer', 10, False),
     Tree('chestnut', 'random', 'round', 23, False),
     Tree('sycamore', 'random', 'round', 23, False),
-    Tree('rosewood', 'random', 'tall_branches', 18, False),
+    # Tree('rosewood', 'random', 'tall_branches', 18, False),
     Tree('sequoia', 'random', 'sequoia_small', 1, False),
     Tree('kapok', 'random', 'canopy', 15, False)
 ]

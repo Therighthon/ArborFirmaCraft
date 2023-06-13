@@ -1,4 +1,4 @@
-package com.therighthon.afc.mxin;
+package com.therighthon.afc.mixin;
 
 //Copied pretty directly from EERussianguy's Beneath
 import java.util.Set;

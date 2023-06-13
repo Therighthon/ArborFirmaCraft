@@ -1,0 +1,14 @@
+{
+  "mappings": {
+    "com/therighthon/afc/mixin/BlockEntityTypeAccessor": {
+      "validBlocks": "f_58915_:Ljava/util/Set;"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/therighthon/afc/mixin/BlockEntityTypeAccessor": {
+        "validBlocks": "f_58915_:Ljava/util/Set;"
+      }
+    }
+  }
+}

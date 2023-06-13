@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 245,
+    "max_rain": 360,
+    "min_temp": 17.5,
+    "max_temp": 40,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/rosewood"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/rosewood"
+      }
+    ],
+    "normal_tree": "tfc:tree/shisham_rosewood",
+    "dead_tree": "tfc:tree/shisham_rosewood_dead",
+    "fallen_log": "tfc:wood/log/rosewood",
+    "bush_log": {
+      "Name": "tfc:wood/wood/rosewood",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/shisham_rosewood"
+  }
+}
