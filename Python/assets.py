@@ -12,6 +12,7 @@ from constants import *
 def generate(rm: ResourceManager):
 
 
+
     # Plants
     # for plant, plant_data in PLANTS.items():
     #     rm.lang('block.afc.plant.%s' % plant, lang(plant))
@@ -325,22 +326,30 @@ def generate(rm: ResourceManager):
         rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood)).with_tag('minecraft:wall_signs')
 
         # Barrels
-        texture = 'afc:block/wood/planks/%s' % wood
-        textures = {'particle': texture, 'planks': texture, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'hoop': 'tfc:block/barrel_hoop'}
-        block = rm.blockstate(('wood', 'barrel', wood), variants={
-            'sealed=true': {'model': 'afc:block/wood/barrel_sealed/%s' % wood},
-            'sealed=false': {'model': 'afc:block/wood/barrel/%s' % wood}
-        })
-        item_model_property(rm, ('wood', 'barrel', wood), [{'predicate': {'tfc:sealed': 1.0}, 'model': 'afc:block/wood/barrel_sealed/%s' % wood}], {'parent': 'afc:block/wood/barrel/%s' % wood})
+        texture = 'tfc:block/wood/planks/%s' % wood
+        textures = {'particle': texture, 'planks': texture, 'sheet': 'tfc:block/wood/sheet/%s' % wood}
+
+        faces = (('up', 0), ('east', 0), ('west', 180), ('south', 90), ('north', 270))
+        seals = (('true', 'barrel_sealed'), ('false', 'barrel'))
+        racks = (('true', '_rack'), ('false', ''))
+        block = rm.blockstate(('wood', 'barrel', wood), variants=dict((
+                                                                          'facing=%s,rack=%s,sealed=%s' % (face, rack, is_seal), {'model': 'tfc:block/wood/%s/%s%s%s' % (seal_type, wood, '_side' if face != 'up' else '', suff if face != 'up' else ''), 'y': yrot if yrot != 0 else None}
+                                                                      ) for face, yrot in faces for rack, suff in racks for is_seal, seal_type in seals))
+
+        item_model_property(rm, ('wood', 'barrel', wood), [{'predicate': {'tfc:sealed': 1.0}, 'model': 'tfc:block/wood/barrel_sealed/%s' % wood}], {'parent': 'tfc:block/wood/barrel/%s' % wood})
         block.with_block_model(textures, 'tfc:block/barrel')
+        rm.block_model(('wood', 'barrel', wood + '_side'), textures, 'tfc:block/barrel_side')
+        rm.block_model(('wood', 'barrel', wood + '_side_rack'), textures, 'tfc:block/barrel_side_rack')
+        rm.block_model(('wood', 'barrel_sealed', wood + '_side_rack'), textures, 'tfc:block/barrel_side_sealed_rack')
         rm.block_model(('wood', 'barrel_sealed', wood), textures, 'tfc:block/barrel_sealed')
+        rm.block_model(('wood', 'barrel_sealed', wood + '_side'), textures, 'tfc:block/barrel_side_sealed')
         block.with_lang(lang('%s barrel', wood))
         block.with_tag('tfc:barrels').with_tag('minecraft:mineable/axe')
         block.with_block_loot(({
-            'name': 'afc:wood/barrel/%s' % wood,
-            'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
-            'conditions': [loot_tables.block_state_property('afc:wood/barrel/%s[sealed=true]' % wood)]
-        }, 'afc:wood/barrel/%s' % wood))
+                                   'name': 'tfc:wood/barrel/%s' % wood,
+                                   'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
+                                   'conditions': [loot_tables.block_state_property('tfc:wood/barrel/%s[sealed=true]' % wood)]
+                               }, 'tfc:wood/barrel/%s' % wood))
 
         # Lecterns
         block = rm.blockstate('afc:wood/lectern/%s' % wood, variants=four_rotations('afc:block/wood/lectern/%s' % wood, (90, None, 180, 270)))

@@ -3,7 +3,6 @@ package com.therighthon.afc.event;
 import java.util.Arrays;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.client.render.blockentity.AFCSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
 import com.therighthon.afc.client.render.colors.ColorScheme;
 import com.therighthon.afc.common.blocks.AFCBlocks;
@@ -20,7 +19,6 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.LecternRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
@@ -181,18 +179,6 @@ public class ModEventClientBusEvents
         {
             event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
         }
-
-        // BEs
-//        event.registerBlockEntityRenderer(TFCBlockEntities.CHEST.get(), AFCChestBlockEntityRenderer::new);
-//        event.registerBlockEntityRenderer(TFCBlockEntities.TRAPPED_CHEST.get(), AFCChestBlockEntityRenderer::new);
-//        event.registerBlockEntityRenderer(TFCBlockEntities.LOOM.get(), ctx -> new AFCLoomBlockEntityRenderer());
-//        event.registerBlockEntityRenderer(TFCBlockEntities.SLUICE.get(), ctx -> new AFCSluiceBlockEntityRenderer());
-//        event.registerBlockEntityRenderer(TFCBlockEntities.BELLOWS.get(), ctx -> new AFCBellowsBlockEntityRenderer());
-//        event.registerBlockEntityRenderer(TFCBlockEntities.TOOL_RACK.get(), ctx -> new AFCToolRackBlockEntityRenderer());
-//        event.registerBlockEntityRenderer(TFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
-//        event.registerBlockEntityRenderer(TFCBlockEntities.BARREL.get(), ctx -> new AFCBarrelBlockEntityRenderer());
-        //event.registerBlockEntityRenderer(TFCBlockEntities.LECTERN.get(), LecternRenderer::new);
-
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

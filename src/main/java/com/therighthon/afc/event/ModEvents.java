@@ -85,9 +85,9 @@ public class ModEvents
     private static void modifyBlockEntityTypes()
     {
         modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
-        modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
+        modifyWood(TFCBlockEntities.TRAPPED_CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
         modifyWood(TFCBlockEntities.LOOM.get(), Wood.BlockType.LOOM);
-        modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
+        //modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
         modifyWood(TFCBlockEntities.BARREL.get(), Wood.BlockType.BARREL);
         modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
         modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
