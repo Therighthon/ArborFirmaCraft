@@ -55,18 +55,9 @@ public class AFCBlocks
 
     public static final Map<AFCWood, Map<Wood.BlockType, RegistryObject<Block>>> WOODS = Helpers.mapOfKeys(AFCWood.class, wood ->
         Helpers.mapOfKeys(Wood.BlockType.class, type ->
-            register(type.nameFor(wood), createWood(wood, type), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+            register(type.nameFor(wood), type.create(wood), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
         )
     );
-
-    public static Supplier<Block> createWood(AFCWood wood, Wood.BlockType blockType)
-    {
-//        if (blockType == Wood.BlockType.LOOM)
-//        {
-//            return () -> new TFCLoomBlock(woodProperties(wood).strength(2.5F).noOcclusion().blockEntity(TFCBlockEntities.LOOM).ticks(LoomBlockEntity::tick), AFC.treeIdentifier("block/wood/planks/" + wood.getSerializedName()));
-//        }
-        return blockType.create(wood);
-    }
 
     public static final Map<TreeSpecies, Map<TreeSpecies.BlockType, RegistryObject<Block>>> TREE_SPECIES = Helpers.mapOfKeys(TreeSpecies.class, wood ->
         Helpers.mapOfKeys(TreeSpecies.BlockType.class, type ->
