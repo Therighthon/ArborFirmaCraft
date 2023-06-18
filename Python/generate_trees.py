@@ -96,7 +96,7 @@ LARGE_TREES = [
     Tree('tualang', 'random', 'stretched', 7, 'tualang', True),
     Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress', True),
     Tree('redcedar', 'stacked', 'fluffy_old_conifer', (3, 3, 3), 'redcedar', True),
-    Tree('red_silk_cotton', 'random', 'kapok_large', 6, 'kapok', True),
+    Tree('red_silk_cotton', 'stacked', 'kapok', (5, 1, 6), 'kapok', True),
     Tree('acacia_koa', 'random', 'kapok_large', 6, 'acacia', True),
     Tree('hevea', 'random', 'emergent', 6, 'hevea', True),
     Tree('rainbow_eucalyptus', 'random', 'stretched', 7, 'rainbow_eucalyptus', True),

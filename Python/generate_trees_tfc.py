@@ -31,7 +31,7 @@ NORMAL_TREES = [
 LARGE_TREES = [
     Tree('douglas_fir', 'stacked', 'fluffy_old_conifer', (3, 3, 3), True),
     Tree('sequoia', 'stacked', 'sequoia', (7, 8, 4, 4), True),
-    Tree('kapok', 'random', 'kapok_large', 6, True),
+    Tree('kapok', 'stacked', 'kapok', (5, 1, 6), True),
     Tree('sycamore', 'random', 'round_large', 1, True)
 ]
 
