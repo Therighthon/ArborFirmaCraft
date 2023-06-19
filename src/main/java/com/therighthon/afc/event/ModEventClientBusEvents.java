@@ -1,6 +1,7 @@
 package com.therighthon.afc.event;
 
 import java.util.Arrays;
+import java.util.Locale;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.colors.AFCColors;

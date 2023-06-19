@@ -76,7 +76,7 @@ NORMAL_TREES = [
 ]
 
 LARGE_TREES = [
-    Tree('bigleaf_maple', 'random', 'bigleaf_large', 1, 'maple', True),
+    Tree('bigleaf_maple', 'random', 'bigleaf_large', 6, 'maple', True),
     Tree('evergreen_ash', 'random', 'round', 14, 'ash', True),
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir', True),
     Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir', True),
@@ -91,7 +91,7 @@ LARGE_TREES = [
     Tree('black_spruce', 'random', 'tall_boreal', 11, 'spruce', True),
     Tree('mountain_ash', 'stacked', 'mountain_ash', (12, 10, 4, 5), 'eucalyptus', True),
     Tree('baobab', 'random', 'great_baobab', 7, 'baobab', True),
-    Tree('mahogany', 'random', 'round_large', 1, 'mahogany', True),
+    Tree('mahogany', 'random', 'round_large', 6, 'mahogany', True),
     Tree('sapele_mahogany', 'random', 'african_oak_old', 9, 'mahogany', True),
     Tree('tualang', 'random', 'stretched', 7, 'tualang', True),
     Tree('bald_cypress', 'random', 'fir_large', 5, 'cypress', True),
@@ -104,8 +104,8 @@ LARGE_TREES = [
 
     Tree('mulga_blackwood', 'random', 'blackwood_large', 10, 'blackwood', True),
     Tree('umbrella_thorn_acacia', 'random', 'kapok_large', 6, 'acacia', True),
-    Tree('black_ash', 'random', 'round_large', 1, 'ash', True),
-    Tree('bitternut_hickory', 'random', 'round_large', 1, 'hickory', True),
+    Tree('black_ash', 'random', 'round_large', 6, 'ash', True),
+    Tree('bitternut_hickory', 'random', 'round_large', 6, 'hickory', True),
     Tree('sugar_maple', 'random', 'medium_round', 5, 'maple', True),
     Tree('corkscrew_willow', 'random', 'willow_large', 14, 'willow', True)
 ]
@@ -205,8 +205,8 @@ def main():
     verify_center_trunk('tall_boreal', 11)
     verify_center_trunk('great_baobab', 7)
     verify_center_trunk('african_oak_old', 9)
-    verify_center_trunk('round_large', 1)
-    verify_center_trunk('bigleaf_large', 1)
+    verify_center_trunk('round_large', 6)
+    verify_center_trunk('bigleaf_large', 6)
     verify_center_trunk('sequoia_small', 1)
     verify_center_trunk('bigleaf_maple', 5)
 

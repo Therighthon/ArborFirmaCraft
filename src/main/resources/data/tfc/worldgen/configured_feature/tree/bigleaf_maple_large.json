@@ -3,7 +3,12 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "tfc:bigleaf_maple_large/1"
+      "tfc:bigleaf_maple_large/1",
+      "tfc:bigleaf_maple_large/2",
+      "tfc:bigleaf_maple_large/3",
+      "tfc:bigleaf_maple_large/4",
+      "tfc:bigleaf_maple_large/5",
+      "tfc:bigleaf_maple_large/6"
     ],
     "radius": 2,
     "placement": {

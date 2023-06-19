@@ -1,6 +1,7 @@
 package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
+import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.items.AFCItems;
@@ -13,8 +14,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import net.dries007.tfc.client.ClientEventHandler;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AFC.MOD_ID)
@@ -34,6 +33,7 @@ public class AFC
         AFCItems.register(eventBus);
         AFCBlocks.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
+        AFCFeatures.FEATURES.register(eventBus);
 
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);
         eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);

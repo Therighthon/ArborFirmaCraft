@@ -12,6 +12,9 @@
       },
       {
         "block": "tfc:wood/fallen_leaves/maple"
+      },
+      {
+        "block": "tfc:plant/moss"
       }
     ],
     "normal_tree": "tfc:tree/bigleaf_maple",

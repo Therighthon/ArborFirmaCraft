@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "tfc:wood/twig/ash"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/ash"
       }
     ],
     "normal_tree": "tfc:tree/evergreen_ash",

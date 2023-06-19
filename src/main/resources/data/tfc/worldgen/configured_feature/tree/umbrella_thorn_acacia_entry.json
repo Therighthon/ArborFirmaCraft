@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "tfc:wood/twig/acacia"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/acacia"
       }
     ],
     "normal_tree": "tfc:tree/umbrella_thorn_acacia",

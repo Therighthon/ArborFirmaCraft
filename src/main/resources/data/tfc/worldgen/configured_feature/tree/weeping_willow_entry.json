@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "tfc:wood/twig/willow"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/willow"
       }
     ],
     "normal_tree": "tfc:tree/weeping_willow",

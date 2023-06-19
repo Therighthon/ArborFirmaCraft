@@ -1,21 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "type": "tfc:random_tree",
+  "type": "afc:trunkless_stacked_tree",
   "config": {
-    "structures": [
-      "tfc:kapok_large/1",
-      "tfc:kapok_large/2",
-      "tfc:kapok_large/3",
-      "tfc:kapok_large/4",
-      "tfc:kapok_large/5",
-      "tfc:kapok_large/6"
-    ],
-    "radius": 2,
-    "placement": {
-      "width": 2,
-      "height": 15,
-      "allow_submerged": true
-    },
     "trunk": {
       "state": {
         "Name": "afc:wood/log/ancient_kapok",
@@ -24,9 +10,46 @@
           "natural": "true"
         }
       },
-      "min_height": 15,
-      "max_height": 21,
-      "width": 2
+      "min_height": 0,
+      "max_height": 1,
+      "width": 4
+    },
+    "layers": [
+      {
+        "templates": [
+          "tfc:kapok_large/layer1_1",
+          "tfc:kapok_large/layer1_2",
+          "tfc:kapok_large/layer1_3",
+          "tfc:kapok_large/layer1_4",
+          "tfc:kapok_large/layer1_5"
+        ],
+        "min_count": 1,
+        "max_count": 1
+      },
+      {
+        "templates": [
+          "tfc:kapok_large/layer2_1"
+        ],
+        "min_count": 10,
+        "max_count": 18
+      },
+      {
+        "templates": [
+          "tfc:kapok_large/layer3_1",
+          "tfc:kapok_large/layer3_2",
+          "tfc:kapok_large/layer3_3",
+          "tfc:kapok_large/layer3_4",
+          "tfc:kapok_large/layer3_5",
+          "tfc:kapok_large/layer3_6"
+        ],
+        "min_count": 1,
+        "max_count": 1
+      }
+    ],
+    "radius": 2,
+    "placement": {
+      "width": 2,
+      "height": 7
     }
   }
 }

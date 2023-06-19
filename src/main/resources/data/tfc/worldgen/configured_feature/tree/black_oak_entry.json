@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "afc:wood/twig/black_oak"
-      },
-      {
-        "block": "afc:wood/fallen_leaves/black_oak"
       }
     ],
     "normal_tree": "tfc:tree/black_oak",

@@ -24,7 +24,7 @@ NORMAL_TREES = [
     Tree('chestnut', 'random', 'round', 23, False),
     Tree('sycamore', 'random', 'round', 23, False),
     # Tree('rosewood', 'random', 'tall_branches', 18, False),
-    Tree('sequoia', 'random', 'sequoia_small', 1, False),
+    Tree('sequoia', 'random', 'fir_large', 5, False),
     Tree('kapok', 'random', 'canopy', 15, False)
 ]
 
@@ -32,7 +32,7 @@ LARGE_TREES = [
     Tree('douglas_fir', 'stacked', 'fluffy_old_conifer', (3, 3, 3), True),
     Tree('sequoia', 'stacked', 'sequoia', (7, 8, 4, 4), True),
     Tree('kapok', 'stacked', 'kapok', (5, 1, 6), True),
-    Tree('sycamore', 'random', 'round_large', 1, True)
+    Tree('sycamore', 'random', 'round_large', 6, True)
 ]
 
 DEAD_TREES = [

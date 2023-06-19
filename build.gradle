@@ -218,7 +218,8 @@ dependencies {
 
     //TFC
     fg.deobf("curse.maven:tfc-302973:${4085585}")
-    implementation fg.deobf("curse.maven:tfc-302973:4552678")
+    implementation fg.deobf("curse.maven:tfc-302973:4572444")
+
     //patchouli
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1")

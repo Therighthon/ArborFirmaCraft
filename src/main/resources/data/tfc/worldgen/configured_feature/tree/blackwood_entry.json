@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "tfc:wood/twig/blackwood"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/blackwood"
       }
     ],
     "normal_tree": "tfc:tree/blackwood",

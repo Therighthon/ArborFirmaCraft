@@ -9,9 +9,6 @@
     "groundcover": [
       {
         "block": "tfc:wood/twig/hickory"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/hickory"
       }
     ],
     "normal_tree": "tfc:tree/scrub_hickory",

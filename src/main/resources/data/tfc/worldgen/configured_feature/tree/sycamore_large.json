@@ -3,7 +3,12 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "tfc:sycamore_large/1"
+      "tfc:sycamore_large/1",
+      "tfc:sycamore_large/2",
+      "tfc:sycamore_large/3",
+      "tfc:sycamore_large/4",
+      "tfc:sycamore_large/5",
+      "tfc:sycamore_large/6"
     ],
     "radius": 2,
     "placement": {
