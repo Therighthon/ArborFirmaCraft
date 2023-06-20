@@ -1,0 +1,5 @@
+This mod would not have been possible without the contributions of others. I'd like to thank the TerraFirmaCraft developers, for their hard work making the original mod, and and especially for the hard work of the past few years to make it easily extendable through datapacks. 
+
+I'd also like to thank EERussianguy specifically, as his code for the Firmalife and Beneath addons has served as a model for much of my mod's code, except of course for the parts that were outright copied over.
+
+And lastly, but not least, I'd like to thank the trees that inspired this addon. The mighty Douglas Firs that TFC can never *quite* depict right. The scraggled stone pines that inspired me to include variant species. The aspens and maples whose autumnal brilliance reminded me what TFC's fall was missing. And all the others.
