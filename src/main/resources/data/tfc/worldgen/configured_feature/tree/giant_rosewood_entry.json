@@ -4,14 +4,11 @@
   "config": {
     "min_rain": 340,
     "max_rain": 440,
-    "min_temp": 16,
-    "max_temp": 24,
+    "min_temp": 19.3,
+    "max_temp": 24.6,
     "groundcover": [
       {
         "block": "tfc:wood/twig/rosewood"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/rosewood"
       }
     ],
     "normal_tree": "tfc:tree/giant_rosewood",
@@ -20,7 +17,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/rosewood",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

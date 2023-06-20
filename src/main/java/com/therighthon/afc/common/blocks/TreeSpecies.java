@@ -6,6 +6,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.colors.ColorScheme;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -27,59 +28,84 @@ public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
-    GUM_ARABIC(true, 7, 8),
-    ACACIA_KOA(true, 8, 16),
+    UMBRELLA_THORN_ACACIA(7, 8, ColorScheme.EVERGREEN),
+    GUM_ARABIC(7, 8, ColorScheme.EVERGREEN),
+    ACACIA_KOA(8, 16, ColorScheme.EVERGREEN),
     //Ash
-    EVERGREEN_ASH(true, 7, 9),
+    BLACK_ASH(7, 7, ColorScheme.TRANSITIONAL_DECIDUOUS),
+    EVERGREEN_ASH(7, 9, ColorScheme.EVERGREEN),
+    //Aspen
+    QUAKING_ASPEN(7, 8, ColorScheme.YELLOW_DECIDUOUS),
+    //Birch
+    PAPER_BIRCH(7, 7, ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS),
     //Blackwood
-    MPINGO_BLACKWOOD(true, 7, 9),
+    MULGA_BLACKWOOD(7, 7, ColorScheme.EVERGREEN),
+    MPINGO_BLACKWOOD(7, 11, ColorScheme.EVERGREEN),
     //Fir
-    MOUNTAIN_FIR(true, 7, 11),
-    BALSAM_FIR(true, 7, 13),
+    MOUNTAIN_FIR( 7, 11, ColorScheme.EVERGREEN),
+    BALSAM_FIR( 7, 13, ColorScheme.EVERGREEN),
     //Hickory
-    SCRUB_HICKORY(true, 7, 7),
+    BITTERNUT_HICKORY(7, 10, ColorScheme.YELLOW_DECIDUOUS),
+    SCRUB_HICKORY( 7, 7, ColorScheme.EVERGREEN),
+    //Kapok
+    RED_SILK_COTTON(7, 18, ColorScheme.KAPOK),
     //Maple
-    BIGLEAF_MAPLE(false, 7, 9),
-    WEEPING_MAPLE(false, 7, 9),
+    SUGAR_MAPLE(7, 7, ColorScheme.RED_DECIDUOUS),
+    BIGLEAF_MAPLE( 7, 9, ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS),
+    WEEPING_MAPLE( 7, 9, ColorScheme.EVERGREEN),
     //Oak
-    BLACK_OAK(true, 7, 14),
-    LIVE_OAK(false, 7, 10),
+    BLACK_OAK( 8, 14, ColorScheme.EVERGREEN),
+    LIVE_OAK( 7, 10, ColorScheme.EVERGREEN), //LIGHT_TRANSITIONAL_DECIDUOUS
     //Pine
-    STONE_PINE(true, 7, 11),
-    RED_PINE(true, 7, 7),
-    TAMARACK(false, 7, 10),
+    STONE_PINE( 7, 11, ColorScheme.EVERGREEN),
+    RED_PINE( 7, 7, ColorScheme.EVERGREEN),
+    TAMARACK(7, 10, ColorScheme.YELLOW_DECIDUOUS),
 
     //Rosewood
-    GIANT_ROSEWOOD(true, 7, 16),
+    SHISHAM_ROSEWOOD( 7, 8, ColorScheme.EVERGREEN),
+    GIANT_ROSEWOOD( 7, 16, ColorScheme.JACARANDA),
+    //Sequoia
+    COAST_REDWOOD( 7, 10, ColorScheme.EVERGREEN),
     //Spruce
-    COAST_SPRUCE(true, 7, 8),
-    SITKA_SPRUCE(true, 7, 10),
-    BLACK_SPRUCE(true, 7, 12),
+    COAST_SPRUCE(7, 8, ColorScheme.EVERGREEN),
+    SITKA_SPRUCE( 7, 10, ColorScheme.EVERGREEN),
+    BLACK_SPRUCE(7, 12, ColorScheme.EVERGREEN),
     //Cedar
-    ATLAS_CEDAR(true, 7, 10),
+    ATLAS_CEDAR( 7, 10, ColorScheme.EVERGREEN),
     //Willow
-    WEEPING_WILLOW(true, 7, 7),
+    CORKSCREW_WILLOW(7, 11, ColorScheme.YELLOW_DECIDUOUS),
+    WEEPING_WILLOW(7, 7, ColorScheme.EVERGREEN),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(true, 8, 16),
-    MOUNTAIN_ASH(true, 7, 13),
+    RAINBOW_EUCALYPTUS(8, 16, ColorScheme.EVERGREEN),
+    MOUNTAIN_ASH(7, 13, ColorScheme.EVERGREEN),
+    //Fig
+    RUBBER_FIG(7, 13, ColorScheme.EVERGREEN),
     //Cypress
-    REDCEDAR(true, 7, 10),
-    WEEPING_CYPRESS(true, 7, 7),
-    BALD_CYPRESS(false, 7, 7);
+    REDCEDAR(7, 10, ColorScheme.EVERGREEN),
+    WEEPING_CYPRESS(7, 7, ColorScheme.EVERGREEN),
+    BALD_CYPRESS(7, 7, ColorScheme.ORANGE_DECIDUOUS),
+    //Mahogany
+    SAPELE_MAHOGANY(7, 14, ColorScheme.EVERGREEN),
+    SMALL_LEAF_MAHOGANY(7, 11, ColorScheme.EVERGREEN);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
-    private final boolean conifer;
+    private final ColorScheme colorScheme;
     private final TFCTreeGrower tree;
     private final int maxDecayDistance;
     private final int daysToGrow;
 
-    TreeSpecies(boolean conifer, int maxDecayDistance, int daysToGrow) {
+    TreeSpecies(int maxDecayDistance, int daysToGrow, ColorScheme colorScheme) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
-        this.conifer = conifer;
+        this.colorScheme = colorScheme;
         this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
         this.maxDecayDistance = maxDecayDistance;
         this.daysToGrow = daysToGrow;
+    }
+
+    public ColorScheme getColorScheme()
+    {
+        return colorScheme;
     }
 
     @Override
@@ -90,7 +116,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public boolean isConifer()
     {
-        return conifer;
+        return colorScheme==ColorScheme.EVERGREEN;
     }
 
     @Override
@@ -121,7 +147,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     @Override
     public Supplier<Block> getBlock(TreeSpecies.BlockType type)
     {
-        return ModBlocks.TREE_SPECIES.get(this).get(type);
+        return AFCBlocks.TREE_SPECIES.get(this).get(type);
     }
 
     public enum BlockType {

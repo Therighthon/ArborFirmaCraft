@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 360,
     "max_rain": 500,
-    "min_temp": 4,
-    "max_temp": 18,
+    "min_temp": 6.8,
+    "max_temp": 19.3,
     "groundcover": [
       {
         "block": "afc:wood/twig/cypress"
@@ -16,11 +16,13 @@
     ],
     "normal_tree": "tfc:tree/bald_cypress",
     "dead_tree": "tfc:tree/bald_cypress_dead",
+    "old_growth_chance": 2,
+    "spoiler_old_growth_chance": 30,
     "fallen_log": "afc:wood/log/cypress",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

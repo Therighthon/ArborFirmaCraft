@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 410,
     "max_rain": 500,
-    "min_temp": -10,
-    "max_temp": 2,
+    "min_temp": -3.9,
+    "max_temp": 5,
     "groundcover": [
       {
         "block": "afc:wood/twig/redcedar"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/redcedar",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

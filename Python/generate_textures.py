@@ -217,14 +217,16 @@ def put_on_all_pixels(img: Image, color) -> Image:
     return img
 
 def main():
-    for wood in WOODS.keys():
+    # for wood in WOODS.keys():
+    for wood in ['tualang']:
         overlay_image(templates + 'log_top/%s' % wood, path + 'block/wood/log/%s' % wood, path + 'block/wood/log_top/%s' % wood)
         overlay_image(templates + 'log_top/%s' % wood, path + 'block/wood/stripped_log/%s' % wood, path + 'block/wood/stripped_log_top/%s' % wood)
         for bench in ('workbench_front', 'workbench_side', 'workbench_top'):
             overlay_image(templates + bench, path + 'block/wood/planks/%s' % wood, path + 'block/wood/planks/%s_' % wood + bench)
-        create_chest(wood)
-        create_sign(wood)
-        plank_color = get_wood_colors('planks/%s' % wood)
+        # create_chest(wood)
+        # create_sign(wood)
+        # plank_color = get_wood_colors('planks/%s' % wood)
+        plank_color = get_wood_colors('sheet/%s' % wood)
         log_color = get_wood_colors('log/%s' % wood)
         create_sign_item(wood, plank_color, log_color)
         for item in ('twig', 'boat', 'lumber'):
@@ -236,6 +238,9 @@ def main():
         create_chest_minecart(wood, plank_color)
         create_logs(wood, plank_color)
 
+        easy_colorize(plank_color, templates + '/stripped_top', path + 'block/wood/stripped_log_top/%s' % wood)
+        easy_colorize(plank_color, templates + '/plank', path + 'block/wood/planks/%s' % wood)
+        # easy_colorize(plank_color, templates + '/boat_entity', path + 'entity/boat/%s' % wood)
         easy_colorize(plank_color, templates + '/scribing_table', path + 'block/wood/scribing_table/%s' % wood)
         easy_colorize(plank_color, templates + '/lectern_base', path + 'block/wood/lectern/%s/base' % wood)
         easy_colorize(plank_color, templates + '/lectern_front', path + 'block/wood/lectern/%s/front' % wood)

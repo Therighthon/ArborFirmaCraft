@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 290,
+    "max_rain": 400,
+    "min_temp": 15.7,
+    "max_temp": 24.6,
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/fig"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/fig"
+      }
+    ],
+    "normal_tree": "tfc:tree/rubber_fig",
+    "dead_tree": "tfc:tree/rubber_fig_dead",
+    "fallen_log": "afc:wood/log/fig",
+    "bush_log": {
+      "Name": "afc:wood/wood/fig",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/rubber_fig"
+  }
+}

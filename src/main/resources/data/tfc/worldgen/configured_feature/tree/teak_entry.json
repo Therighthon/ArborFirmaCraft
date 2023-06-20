@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 215,
     "max_rain": 330,
-    "min_temp": 22,
+    "min_temp": 22.9,
     "max_temp": 40,
     "groundcover": [
       {
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/teak",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

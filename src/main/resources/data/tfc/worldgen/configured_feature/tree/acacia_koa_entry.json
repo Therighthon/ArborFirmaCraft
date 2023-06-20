@@ -4,14 +4,11 @@
   "config": {
     "min_rain": 350,
     "max_rain": 500,
-    "min_temp": 24,
+    "min_temp": 24.6,
     "max_temp": 40,
     "groundcover": [
       {
         "block": "tfc:wood/twig/acacia"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/acacia"
       }
     ],
     "normal_tree": "tfc:tree/acacia_koa",
@@ -20,7 +17,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/acacia",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

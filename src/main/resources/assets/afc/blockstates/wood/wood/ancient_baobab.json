@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=y": {
+      "model": "afc:block/wood/wood/baobab"
+    },
+    "axis=z": {
+      "model": "afc:block/wood/wood/baobab",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "afc:block/wood/wood/baobab",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

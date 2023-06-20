@@ -2,25 +2,25 @@
   "__comment__": "This file was automatically created by mcresources",
   "type": "tfc:random_tree",
   "config": {
+	  "trunk": {
+      "state": {
+        "Name": "afc:wood/log/hevea",
+        "Properties": {
+          "axis": "y",
+          "natural": "true"
+        }
+      },
+      "min_height": 2,
+      "max_height": 6,
+      "width": 1
+    },
     "structures": [
       "tfc:hevea/1",
       "tfc:hevea/2",
       "tfc:hevea/3",
       "tfc:hevea/4",
       "tfc:hevea/5",
-      "tfc:hevea/6",
-      "tfc:hevea/7",
-      "tfc:hevea/8",
-      "tfc:hevea/9",
-      "tfc:hevea/10",
-      "tfc:hevea/11",
-      "tfc:hevea/12",
-      "tfc:hevea/13",
-      "tfc:hevea/14",
-      "tfc:hevea/15",
-      "tfc:hevea/16",
-      "tfc:hevea/17",
-      "tfc:hevea/18"
+      "tfc:hevea/6"
     ],
     "radius": 1,
     "placement": {

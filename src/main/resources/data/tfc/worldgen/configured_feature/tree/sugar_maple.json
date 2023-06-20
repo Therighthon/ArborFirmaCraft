@@ -1,0 +1,37 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:sugar_maple/1",
+      "tfc:sugar_maple/2",
+      "tfc:sugar_maple/3",
+      "tfc:sugar_maple/4",
+      "tfc:sugar_maple/5",
+      "tfc:sugar_maple/6",
+      "tfc:sugar_maple/7",
+      "tfc:sugar_maple/8",
+      "tfc:sugar_maple/9",
+      "tfc:sugar_maple/10",
+      "tfc:sugar_maple/11",
+      "tfc:sugar_maple/12",
+      "tfc:sugar_maple/13",
+      "tfc:sugar_maple/14",
+      "tfc:sugar_maple/15",
+      "tfc:sugar_maple/16",
+      "tfc:sugar_maple/17",
+      "tfc:sugar_maple/18",
+      "tfc:sugar_maple/19",
+      "tfc:sugar_maple/20",
+      "tfc:sugar_maple/21",
+      "tfc:sugar_maple/22",
+      "tfc:sugar_maple/23"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 5,
+      "allow_submerged": false
+    }
+  }
+}

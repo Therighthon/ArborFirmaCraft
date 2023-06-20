@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 360,
     "max_rain": 500,
-    "min_temp": 20,
+    "min_temp": 21.1,
     "max_temp": 40,
     "groundcover": [
       {
@@ -16,11 +16,13 @@
     ],
     "normal_tree": "tfc:tree/kapok",
     "dead_tree": "tfc:tree/kapok_dead",
+    "old_growth_chance": 8,
+    "spoiler_old_growth_chance": 120,
     "fallen_log": "tfc:wood/log/kapok",
     "bush_log": {
       "Name": "tfc:wood/wood/kapok",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

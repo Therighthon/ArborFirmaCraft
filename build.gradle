@@ -57,6 +57,22 @@ minecraft {
     // Default run configurations.
     // These can be tweaked, removed, or duplicated as needed.
     runs {
+        all {
+            args("-mixin.config=afc.mixins.json")
+
+            property("mixin.env.remapRefMap", "true")
+            property("mixin.env.refMapRemappingFile", "${projectDir}/build/createSrgToMcp/output.srg")
+            property("forge.logging.markers", "REGISTRIES")
+            property("forge.logging.console.level", "debug")
+
+
+            mods {
+                beneath {
+                    source sourceSets.main
+                }
+            }
+        }
+
         client {
             workingDirectory project.file('run')
 
@@ -202,7 +218,8 @@ dependencies {
 
     //TFC
     fg.deobf("curse.maven:tfc-302973:${4085585}")
-    implementation fg.deobf("curse.maven:tfc-302973:${4085585}")
+    implementation fg.deobf("curse.maven:tfc-302973:4572444")
+
     //patchouli
     compileOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1:api")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-71.1")

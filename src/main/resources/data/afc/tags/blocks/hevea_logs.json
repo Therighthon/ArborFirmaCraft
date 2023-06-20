@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
+	"afc:wood/log/ancient_hevea",
+    "afc:wood/wood/ancient_hevea",
     "afc:wood/log/hevea",
     "afc:wood/wood/hevea",
     "afc:wood/stripped_log/hevea",

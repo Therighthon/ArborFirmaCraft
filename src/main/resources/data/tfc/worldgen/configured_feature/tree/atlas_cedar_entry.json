@@ -3,9 +3,9 @@
   "type": "tfc:forest_entry",
   "config": {
     "min_rain": 165,
-    "max_rain": 450,
-    "min_temp": 8,
-    "max_temp": 22,
+    "max_rain": 500,
+    "min_temp": 10.4,
+    "max_temp": 15.7,
     "groundcover": [
       {
         "block": "tfc:wood/twig/white_cedar"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/white_cedar",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

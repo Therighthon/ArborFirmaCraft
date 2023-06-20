@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 170,
     "max_rain": 325,
-    "min_temp": 10,
-    "max_temp": 24,
+    "min_temp": 12.1,
+    "max_temp": 24.6,
     "groundcover": [
       {
         "block": "afc:wood/twig/eucalyptus"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/eucalyptus",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

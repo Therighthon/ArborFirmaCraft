@@ -4,7 +4,7 @@
   "config": {
     "min_rain": 300,
     "max_rain": 430,
-    "min_temp": 20,
+    "min_temp": 21.1,
     "max_temp": 40,
     "groundcover": [
       {
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/mahogany",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

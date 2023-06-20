@@ -11,23 +11,11 @@
       "tfc:baobab_large/6",
       "tfc:baobab_large/7"
     ],
-    "radius": 1,
+    "radius": 3,
     "placement": {
-      "width": 5,
-      "height": 12,
+      "width": 2,
+      "height": 4,
       "allow_submerged": true
-    },
-    "trunk": {
-      "state": {
-        "Name": "afc:wood/log/baobab",
-        "Properties": {
-          "axis": "y",
-          "natural": "True"
-        }
-      },
-      "min_height": 3,
-      "max_height": 5,
-      "width": 3
     }
   }
 }

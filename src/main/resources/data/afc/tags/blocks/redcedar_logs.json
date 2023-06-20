@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
+	"afc:wood/log/ancient_redcedar",
+    "afc:wood/wood/ancient_redcedar",
     "afc:wood/log/redcedar",
     "afc:wood/wood/redcedar"
   ]

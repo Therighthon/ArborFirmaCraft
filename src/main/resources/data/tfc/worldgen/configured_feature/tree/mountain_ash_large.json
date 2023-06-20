@@ -4,14 +4,14 @@
   "config": {
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/eucalyptus",
+        "Name": "afc:wood/log/ancient_eucalyptus",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
-      "min_height": 2,
-      "max_height": 5,
+      "min_height": 5,
+      "max_height": 8,
       "width": 2
     },
     "layers": [

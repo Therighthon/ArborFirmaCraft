@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 150,
     "max_rain": 500,
-    "min_temp": -18,
-    "max_temp": -8,
+    "min_temp": -12.9,
+    "max_temp": -3.9,
     "groundcover": [
       {
         "block": "tfc:wood/twig/pine"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/pine",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

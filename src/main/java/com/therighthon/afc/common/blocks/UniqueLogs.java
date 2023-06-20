@@ -23,7 +23,41 @@ public enum UniqueLogs implements RegistryUniqueLogs
     RAINBOW_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
     BLACK_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
     GUM_ARABIC(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
-    REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS);
+    REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS),
+
+    ANCIENT_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
+    ANCIENT_BAOBAB(MaterialColor.SAND, MaterialColor.STONE, AFCWood.BAOBAB),
+    ANCIENT_MAHOGANY(MaterialColor.SAND, MaterialColor.STONE, AFCWood.MAHOGANY),
+    ANCIENT_HEVEA(MaterialColor.SAND, MaterialColor.STONE, AFCWood.HEVEA),
+    ANCIENT_TEAK(MaterialColor.SAND, MaterialColor.STONE, AFCWood.TEAK),
+    ANCIENT_TUALANG(MaterialColor.SAND, MaterialColor.STONE, AFCWood.TUALANG),
+    ANCIENT_CYPRESS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS),
+    ANCIENT_FIG(MaterialColor.SAND, MaterialColor.STONE, AFCWood.FIG),
+
+    ANCIENT_ACACIA(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
+    ANCIENT_ASH(MaterialColor.SAND, MaterialColor.STONE, Wood.ASH),
+    ANCIENT_ASPEN(MaterialColor.SAND, MaterialColor.STONE, Wood.ASPEN),
+    ANCIENT_BIRCH(MaterialColor.SAND, MaterialColor.STONE, Wood.BIRCH),
+    ANCIENT_BLACKWOOD(MaterialColor.SAND, MaterialColor.STONE, Wood.BLACKWOOD),
+    ANCIENT_CHESTNUT(MaterialColor.SAND, MaterialColor.STONE, Wood.CHESTNUT),
+    ANCIENT_DOUGLAS_FIR(MaterialColor.SAND, MaterialColor.STONE, Wood.DOUGLAS_FIR),
+    ANCIENT_HICKORY(MaterialColor.SAND, MaterialColor.STONE, Wood.HICKORY),
+    ANCIENT_KAPOK(MaterialColor.SAND, MaterialColor.STONE, Wood.KAPOK),
+    ANCIENT_MAPLE(MaterialColor.SAND, MaterialColor.STONE, Wood.MAPLE),
+    ANCIENT_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
+    ANCIENT_PALM(MaterialColor.SAND, MaterialColor.STONE, Wood.PALM),
+    ANCIENT_PINE(MaterialColor.SAND, MaterialColor.STONE, Wood.PINE),
+    ANCIENT_ROSEWOOD(MaterialColor.SAND, MaterialColor.STONE, Wood.ROSEWOOD),
+    ANCIENT_SEQUOIA(MaterialColor.SAND, MaterialColor.STONE, Wood.SEQUOIA),
+    ANCIENT_SPRUCE(MaterialColor.SAND, MaterialColor.STONE, Wood.SPRUCE),
+    ANCIENT_SYCAMORE(MaterialColor.SAND, MaterialColor.STONE, Wood.SYCAMORE),
+    ANCIENT_WHITE_CEDAR(MaterialColor.SAND, MaterialColor.STONE, Wood.WHITE_CEDAR),
+    ANCIENT_WILLOW(MaterialColor.SAND, MaterialColor.STONE, Wood.WILLOW),
+
+    ANCIENT_RAINBOW_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
+    ANCIENT_BLACK_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
+    ANCIENT_GUM_ARABIC(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
+    ANCIENT_REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS);
 
     public static final UniqueLogs[] VALUES = values();
     private final String serializedName;
@@ -88,7 +122,7 @@ public enum UniqueLogs implements RegistryUniqueLogs
 
     @Override
     public Supplier<Block> getBlock(UniqueLogs.BlockType type) {
-        return ModBlocks.UNIQUE_LOGS.get(this).get(type);
+        return AFCBlocks.UNIQUE_LOGS.get(this).get(type);
     }
 
     public enum BlockType {

@@ -4,14 +4,11 @@
   "config": {
     "min_rain": 355,
     "max_rain": 500,
-    "min_temp": 14,
-    "max_temp": 22,
+    "min_temp": 17.5,
+    "max_temp": 22.9,
     "groundcover": [
       {
         "block": "tfc:wood/twig/willow"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/willow"
       }
     ],
     "normal_tree": "tfc:tree/weeping_willow",
@@ -20,7 +17,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/willow",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

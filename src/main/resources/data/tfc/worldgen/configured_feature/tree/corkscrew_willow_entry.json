@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 330,
+    "max_rain": 500,
+    "min_temp": -0.4,
+    "max_temp": 15.7,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/willow"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/willow"
+      }
+    ],
+    "normal_tree": "tfc:tree/corkscrew_willow",
+    "dead_tree": "tfc:tree/corkscrew_willow_dead",
+    "fallen_log": "tfc:wood/log/willow",
+    "bush_log": {
+      "Name": "tfc:wood/wood/willow",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/corkscrew_willow",
+    "old_growth_tree": "tfc:tree/corkscrew_willow_large"
+  }
+}

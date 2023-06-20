@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "axis=y": {
+      "model": "afc:block/wood/log/mahogany"
+    },
+    "axis=z": {
+      "model": "afc:block/wood/log/mahogany",
+      "x": 90
+    },
+    "axis=x": {
+      "model": "afc:block/wood/log/mahogany",
+      "x": 90,
+      "y": 90
+    }
+  }
+}

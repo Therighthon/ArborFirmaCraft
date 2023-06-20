@@ -20,10 +20,11 @@
     "bush_log": {
       "Name": "tfc:wood/wood/hickory",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },
-    "bush_leaves": "tfc:wood/leaves/hickory"
+    "bush_leaves": "tfc:wood/leaves/hickory",
+    "old_growth_tree": "tfc:tree/hickory_large"
   }
 }

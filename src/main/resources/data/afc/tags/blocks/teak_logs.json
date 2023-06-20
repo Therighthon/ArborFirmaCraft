@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
+	"afc:wood/log/ancient_teak",
+    "afc:wood/wood/ancient_teak",
     "afc:wood/log/teak",
     "afc:wood/wood/teak",
     "afc:wood/stripped_log/teak",

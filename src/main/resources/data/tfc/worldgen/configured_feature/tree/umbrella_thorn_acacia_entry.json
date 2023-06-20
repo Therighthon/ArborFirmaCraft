@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "min_rain": 90,
+    "max_rain": 275,
+    "min_temp": 17.5,
+    "max_temp": 40,
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/acacia"
+      }
+    ],
+    "normal_tree": "tfc:tree/umbrella_thorn_acacia",
+    "dead_tree": "tfc:tree/umbrella_thorn_acacia_dead",
+    "old_growth_chance": 12,
+    "fallen_log": "tfc:wood/log/acacia",
+    "bush_log": {
+      "Name": "tfc:wood/wood/acacia",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/umbrella_thorn_acacia",
+    "old_growth_tree": "tfc:tree/umbrella_thorn_acacia_large"
+  }
+}

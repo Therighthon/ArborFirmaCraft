@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 30,
     "max_rain": 190,
-    "min_temp": 14,
-    "max_temp": 28,
+    "min_temp": 17.5,
+    "max_temp": 28.2,
     "groundcover": [
       {
         "block": "afc:wood/twig/baobab"
@@ -16,11 +16,13 @@
     ],
     "normal_tree": "tfc:tree/baobab",
     "dead_tree": "tfc:tree/baobab_dead",
+    "old_growth_chance": 2,
+    "spoiler_old_growth_chance": 10,
     "fallen_log": "afc:wood/log/baobab",
     "bush_log": {
       "Name": "afc:wood/wood/baobab",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

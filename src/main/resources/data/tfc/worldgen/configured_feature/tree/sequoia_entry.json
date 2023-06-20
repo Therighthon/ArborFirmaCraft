@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 320,
     "max_rain": 500,
-    "min_temp": -2,
-    "max_temp": 10,
+    "min_temp": 6.8,
+    "max_temp": 12.1,
     "groundcover": [
       {
         "block": "tfc:wood/twig/sequoia"
@@ -16,11 +16,12 @@
     ],
     "normal_tree": "tfc:tree/sequoia",
     "dead_tree": "tfc:tree/sequoia_dead",
+    "old_growth_chance": 3,
     "fallen_log": "tfc:wood/log/sequoia",
     "bush_log": {
       "Name": "tfc:wood/wood/sequoia",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

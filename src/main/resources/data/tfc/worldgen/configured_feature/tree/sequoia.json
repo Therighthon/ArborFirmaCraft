@@ -7,9 +7,7 @@
       "tfc:sequoia/2",
       "tfc:sequoia/3",
       "tfc:sequoia/4",
-      "tfc:sequoia/5",
-      "tfc:sequoia/6",
-      "tfc:sequoia/7"
+      "tfc:sequoia/5"
     ],
     "radius": 1,
     "placement": {

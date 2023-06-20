@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:mulga_blackwood/1",
+      "tfc:mulga_blackwood/2",
+      "tfc:mulga_blackwood/3",
+      "tfc:mulga_blackwood/4",
+      "tfc:mulga_blackwood/5",
+      "tfc:mulga_blackwood/6",
+      "tfc:mulga_blackwood/7",
+      "tfc:mulga_blackwood/8",
+      "tfc:mulga_blackwood/9",
+      "tfc:mulga_blackwood/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 5,
+      "allow_submerged": false
+    }
+  }
+}

@@ -8,7 +8,8 @@
       "tfc:tualang_large/3",
       "tfc:tualang_large/4",
       "tfc:tualang_large/5",
-      "tfc:tualang_large/6"
+      "tfc:tualang_large/6",
+      "tfc:tualang_large/7"
     ],
     "radius": 1,
     "placement": {
@@ -18,10 +19,10 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/tualang",
+        "Name": "afc:wood/log/ancient_tualang",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
       "min_height": 19,

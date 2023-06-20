@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:small_leaf_mahogany/1",
+      "tfc:small_leaf_mahogany/2",
+      "tfc:small_leaf_mahogany/3",
+      "tfc:small_leaf_mahogany/4",
+      "tfc:small_leaf_mahogany/5"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

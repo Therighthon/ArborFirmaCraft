@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "replace": false,
   "values": [
+	"afc:wood/log/ancient_mahogany",
+    "afc:wood/wood/ancient_mahogany",
     "afc:wood/log/mahogany",
     "afc:wood/wood/mahogany",
     "afc:wood/stripped_log/mahogany",

@@ -4,14 +4,11 @@
   "config": {
     "min_rain": 90,
     "max_rain": 275,
-    "min_temp": 16,
+    "min_temp": 17.5,
     "max_temp": 40,
     "groundcover": [
       {
         "block": "afc:wood/twig/gum_arabic"
-      },
-      {
-        "block": "afc:wood/fallen_leaves/gum_arabic"
       }
     ],
     "normal_tree": "tfc:tree/gum_arabic",
@@ -20,7 +17,7 @@
     "bush_log": {
       "Name": "afc:wood/wood/gum_arabic",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

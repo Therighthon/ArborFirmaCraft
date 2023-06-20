@@ -4,14 +4,11 @@
   "config": {
     "min_rain": 35,
     "max_rain": 150,
-    "min_temp": 16,
+    "min_temp": 17.5,
     "max_temp": 40,
     "groundcover": [
       {
         "block": "tfc:wood/twig/blackwood"
-      },
-      {
-        "block": "tfc:wood/fallen_leaves/blackwood"
       }
     ],
     "normal_tree": "tfc:tree/blackwood",
@@ -20,7 +17,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/blackwood",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

@@ -1,43 +1,63 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "type": "tfc:stacked_tree",
+  "type": "afc:trunkless_stacked_tree",
   "config": {
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/sequoia",
+        "Name": "afc:wood/log/ancient_sequoia",
         "Properties": {
           "axis": "y",
-          "natural": "True"
+          "natural": "true"
         }
       },
-      "min_height": 8,
-      "max_height": 16,
-      "width": 2
+      "min_height": 0,
+      "max_height": 1,
+      "width": 5
     },
     "layers": [
       {
         "templates": [
           "tfc:sequoia_large/layer1_1",
           "tfc:sequoia_large/layer1_2",
-          "tfc:sequoia_large/layer1_3"
+          "tfc:sequoia_large/layer1_3",
+          "tfc:sequoia_large/layer1_4",
+          "tfc:sequoia_large/layer1_5",
+          "tfc:sequoia_large/layer1_6",
+          "tfc:sequoia_large/layer1_7"
+        ],
+        "min_count": 1,
+        "max_count": 1
+      },
+      {
+        "templates": [
+          "tfc:sequoia_large/layer2_1",
+          "tfc:sequoia_large/layer2_2",
+          "tfc:sequoia_large/layer2_3",
+          "tfc:sequoia_large/layer2_4",
+          "tfc:sequoia_large/layer2_5",
+          "tfc:sequoia_large/layer2_6",
+          "tfc:sequoia_large/layer2_7",
+          "tfc:sequoia_large/layer2_8"
+        ],
+        "min_count": 2,
+        "max_count": 3
+      },
+      {
+        "templates": [
+          "tfc:sequoia_large/layer3_1",
+          "tfc:sequoia_large/layer3_2",
+          "tfc:sequoia_large/layer3_3",
+          "tfc:sequoia_large/layer3_4"
         ],
         "min_count": 3,
         "max_count": 4
       },
       {
         "templates": [
-          "tfc:sequoia_large/layer2_1",
-          "tfc:sequoia_large/layer2_2",
-          "tfc:sequoia_large/layer2_3"
-        ],
-        "min_count": 1,
-        "max_count": 2
-      },
-      {
-        "templates": [
-          "tfc:sequoia_large/layer3_1",
-          "tfc:sequoia_large/layer3_2",
-          "tfc:sequoia_large/layer3_3"
+          "tfc:sequoia_large/layer4_1",
+          "tfc:sequoia_large/layer4_2",
+          "tfc:sequoia_large/layer4_3",
+          "tfc:sequoia_large/layer4_4"
         ],
         "min_count": 1,
         "max_count": 1

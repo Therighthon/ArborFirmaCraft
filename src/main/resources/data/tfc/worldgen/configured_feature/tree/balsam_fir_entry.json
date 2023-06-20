@@ -4,8 +4,8 @@
   "config": {
     "min_rain": 210,
     "max_rain": 500,
-    "min_temp": -16,
-    "max_temp": -2,
+    "min_temp": -11.1,
+    "max_temp": 1.4,
     "groundcover": [
       {
         "block": "tfc:wood/twig/douglas_fir"
@@ -20,7 +20,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/douglas_fir",
       "Properties": {
-        "natural": "True",
+        "natural": "true",
         "axis": "y"
       }
     },

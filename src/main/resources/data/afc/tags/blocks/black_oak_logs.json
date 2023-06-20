@@ -3,6 +3,8 @@
   "replace": false,
   "values": [
     "afc:wood/log/black_oak",
-    "afc:wood/wood/black_oak"
+    "afc:wood/wood/black_oak",
+	"afc:wood/log/ancient_black_oak",
+    "afc:wood/wood/ancient_black_oak"
   ]
 }
