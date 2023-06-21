@@ -107,6 +107,7 @@ LARGE_TREES = [
     Tree('black_ash', 'random', 'round_large', 6, 'ash', True),
     Tree('bitternut_hickory', 'random', 'round_large', 6, 'hickory', True),
     Tree('sugar_maple', 'random', 'medium_round', 5, 'maple', True),
+    Tree('shisham_rosewood', 'random', 'pin_oak', 8, 'rosewood', True),
     Tree('corkscrew_willow', 'random', 'willow_large', 14, 'willow', True)
 ]
 

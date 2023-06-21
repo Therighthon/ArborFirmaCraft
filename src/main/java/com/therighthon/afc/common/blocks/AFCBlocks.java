@@ -17,6 +17,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.antlr.runtime.tree.Tree;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCItemGroup;
@@ -110,6 +111,7 @@ public class AFCBlocks
     {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
         WOODS.forEach((wood, map) -> pot.addPlant(map.get(Wood.BlockType.SAPLING).getId(), map.get(Wood.BlockType.POTTED_SAPLING)));
+        TREE_SPECIES.forEach((wood, map) -> pot.addPlant(map.get(TreeSpecies.BlockType.SAPLING).getId(), map.get(TreeSpecies.BlockType.POTTED_SAPLING)));
     }
 
 }
