@@ -393,13 +393,13 @@ VANILLA_WOODS = ('oak', 'spruce', 'acacia', 'birch', 'jungle', 'dark_oak', 'crim
 
 WOODS: Dict[str, Wood] = {
     'cypress': Wood(650, 1000),
-    'tualang': Wood(696, 1250),
-    'hevea': Wood(611, 1000),
+    'tualang': Wood(696, 1300),
+    'hevea': Wood(700, 1800),
     'teak': Wood(720, 1750),
-    'eucalyptus': Wood(651, 1200),
+    'eucalyptus': Wood(720, 2100),
     'baobab': Wood(707, 1000),
-    'fig': Wood(680, 1100),
-    'mahogany': Wood(700, 1600)
+    'fig': Wood(715, 1900),
+    'mahogany': Wood(790, 1600)
     # 'acacia': Wood(650, 1000),
     # 'ash': Wood(696, 1250),
     # 'aspen': Wood(611, 1000),
