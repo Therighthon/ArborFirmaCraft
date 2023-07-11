@@ -133,6 +133,8 @@ public class ModEventClientBusEvents
             });
         });
 
+        ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
+
 
     }
 

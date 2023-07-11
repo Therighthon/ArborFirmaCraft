@@ -464,5 +464,7 @@
   "block.afc.wood.sapling.small_leaf_mahogany": "Small Leaf Mahogany Sapling",
   "block.afc.wood.potted_sapling.small_leaf_mahogany": "Small Leaf Mahogany Potted Sapling",
   "block.afc.wood.leaves.red_silk_cotton": "Red Silk Cotton Leaves",
-  "block.afc.wood.sapling.red_silk_cotton": "Red Silk Cotton Sapling"
+  "block.afc.wood.sapling.red_silk_cotton": "Red Silk Cotton Sapling",
+  
+  "block.afc.syrup_tap": "Tree Tap"
 }

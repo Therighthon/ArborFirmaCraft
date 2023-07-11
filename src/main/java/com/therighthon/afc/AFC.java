@@ -2,9 +2,11 @@ package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCFeatures;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.items.AFCItems;
+import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
@@ -36,6 +38,9 @@ public class AFC
         AFCBlocks.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
+        AFCBlockEntities.register(eventBus);
+        AFCRecipes.register(eventBus);
+
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);

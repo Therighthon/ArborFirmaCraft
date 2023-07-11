@@ -9,22 +9,28 @@ import java.util.Set;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.recipe.TreeTapRecipe;
 import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
 import javax.annotation.Nonnull;
+import net.minecraft.core.Registry;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
 import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
+import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.event.AddPackFindersEvent;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.resource.PathResourcePack;
+import org.antlr.runtime.tree.Tree;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
@@ -111,5 +117,11 @@ public class ModEvents
 
         blocks.addAll(extraBlocks.toList());
         ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
+    }
+
+    @SubscribeEvent
+    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event)
+    {
+        Registry.register(Registry.RECIPE_TYPE, TreeTapRecipe.Type.ID, TreeTapRecipe.Type.INSTANCE);
     }
 }

@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "afc:block/tree_tap" },
+    "facing=east": { "model": "afc:block/tree_tap", "y": 90 },
+    "facing=south": { "model": "afc:block/tree_tap", "y": 180 },
+    "facing=west": { "model": "afc:block/tree_tap", "y": 270 }
+  }
+}
