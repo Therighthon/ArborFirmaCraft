@@ -115,20 +115,13 @@ public class TapBlockEntity extends BlockEntity
             }
             BlockState logState = level.getBlockState(logPos);
 
-            //TODO:
-            AFC.LOGGER.debug(String.valueOf(logState));
-            AFC.LOGGER.debug(String.valueOf(AFCTags.Blocks.TAPPABLE_LOGS));
 
             //Ensure block at position is natural, and has the tappable logs tag. TODO: Tappable logs could be added to the canSurvive check.
             if (Helpers.isBlock(logState, AFCTags.Blocks.TAPPABLE_LOGS) && logState.getValue(LogBlock.NATURAL))
             {
-                //TODO:
-                AFC.LOGGER.debug("Tappable log tag, Natural blockstate");
                 //Hevea
                 if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.HEVEA_LOGS))
                 {
-                    //TODO:
-                    AFC.LOGGER.debug("Hevea");
                     final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
                     //Needs to check if the block entity is removed every tick while pouring
                     if (blockEntity != null)
@@ -166,8 +159,6 @@ public class TapBlockEntity extends BlockEntity
                 //Maple
                 else if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.MAPLE_LOGS))
                 {
-                    //TODO:
-                    AFC.LOGGER.debug("Maplc");
                     final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
                     //Needs to check if the block entity is removed every tick while pouring
                     if (blockEntity != null)
@@ -205,8 +196,6 @@ public class TapBlockEntity extends BlockEntity
                 //Birch
                 else if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.BIRCH_LOGS))
                 {
-                    //TODO:
-                    AFC.LOGGER.debug("Birch");
                     final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
                     //Needs to check if the block entity is removed every tick while pouring
                     if (blockEntity != null)
