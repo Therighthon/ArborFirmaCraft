@@ -1,33 +1,27 @@
 package com.therighthon.afc.common.recipe;
 
-import com.google.gson.JsonArray;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import com.google.gson.JsonObject;
 import com.therighthon.afc.AFC;
 import javax.annotation.Nullable;
-import net.minecraft.core.NonNullList;
-import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.util.GsonHelper;
 import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.item.crafting.ShapedRecipe;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
-import org.intellij.lang.annotations.JdkConstants;
 
 import net.dries007.tfc.common.recipes.ISimpleRecipe;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredients;
 import net.dries007.tfc.util.JsonHelpers;
-import net.dries007.tfc.util.calendar.Month;
+import net.dries007.tfc.util.collections.IndirectHashCollection;
 
 public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 {
@@ -36,13 +30,18 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
     private final BlockIngredient recipeBlock;
 //    private final NonNullList<Month> validMonths;
 
-//TODO: make work only during certain months
+    //TODO: make work only during certain months
     public TreeTapRecipe(ResourceLocation id, FluidStack output, BlockIngredient recipeBlock) //, NonNullList<Month> validMonths
     {
         this.id = id;
         this.output = output;
         this.recipeBlock = recipeBlock;
 //        this.validMonths = validMonths;
+    }
+
+    public BlockIngredient getBlockIngredient()
+    {
+        return this.recipeBlock;
     }
 
     @Override
@@ -142,4 +141,5 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
             return (Class<G>)cls;
         }
     }
+
 }

@@ -1,0 +1,8 @@
+{
+  "type": "afc:tree_tapping",
+  "input_block": "tfc:wood/log/birch",
+  "result_fluid": {
+    "fluid": "tfc:salt_water",
+	"amount": 1
+  }
+}

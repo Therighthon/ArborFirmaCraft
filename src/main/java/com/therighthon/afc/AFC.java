@@ -5,6 +5,7 @@ import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
+import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEvents;
@@ -36,6 +37,7 @@ public class AFC
 
         AFCItems.register(eventBus);
         AFCBlocks.register(eventBus);
+        AFCFluids.FLUIDS.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
         AFCBlockEntities.register(eventBus);

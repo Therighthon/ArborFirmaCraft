@@ -4,6 +4,8 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,6 +13,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -22,7 +25,9 @@ import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.TFCMaterials;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.dries007.tfc.util.registry.RegistryWood;
@@ -114,7 +119,9 @@ public class AFCBlocks
         () -> new TapBlock(
             BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL_FAN).noOcclusion()), TFCItemGroup.MISC);
 
-
+    public static final Map<SimpleAFCFluid, RegistryObject<LiquidBlock>> SIMPLE_AFC_FLUIDS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
+        register("fluid/" + fluid.getSerializedName(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100f).noDrops()))
+    );
 }
 
 

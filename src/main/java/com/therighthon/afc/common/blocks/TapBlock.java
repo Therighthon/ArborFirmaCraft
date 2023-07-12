@@ -55,10 +55,10 @@ public class TapBlock extends BaseEntityBlock
         super(properties);
     }
 
-    protected static final VoxelShape NORTH_SHAPE = box(0.0, 0.0, 4.0, 16.0, 16.0, 16.0);
-    protected static final VoxelShape SOUTH_SHAPE = box(0.0, 0.0, 0.0, 16.0, 16.0, 12.0);
-    protected static final VoxelShape WEST_SHAPE = box(4.0, 0.0, 0.0, 16.0, 16.0, 16.0);
-    protected static final VoxelShape EAST_SHAPE = box(0.0, 0.0, 0.0, 12.0, 16.0, 16.0);
+    protected static final VoxelShape NORTH_SHAPE = box(6.0, 0.0, 11.0, 10.0, 6.0, 16.0);
+    protected static final VoxelShape SOUTH_SHAPE = box(6.0, 0.0, 0.0, 10.0, 6.0, 5.0);
+    protected static final VoxelShape WEST_SHAPE = box(11.0, 0.0, 6.0, 16.0, 6.0, 10.0);
+    protected static final VoxelShape EAST_SHAPE = box(0.0, 0.0, 6.0, 5.0, 6.0, 10.0);
 
     protected static final Map<Direction, VoxelShape> SHAPES = ImmutableMap.of(Direction.NORTH, NORTH_SHAPE, Direction.SOUTH, SOUTH_SHAPE, Direction.WEST, WEST_SHAPE, Direction.EAST, EAST_SHAPE);
 
