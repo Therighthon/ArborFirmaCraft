@@ -1,8 +1,6 @@
 {
   "replace": false,
   "values": [
-    "afc:wood/log/ancient_oak",
-    "afc:wood/wood/ancient_oak",
     "#afc:black_oak_logs"
   ]
 }
