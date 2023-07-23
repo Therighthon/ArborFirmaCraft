@@ -2,6 +2,7 @@ package com.therighthon.afc.common.blocks;
 
 import java.util.Map;
 import com.google.common.collect.ImmutableMap;
+import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blockentities.TapBlockEntity;
 import net.minecraft.core.BlockPos;
@@ -71,7 +72,7 @@ public class TapBlock extends BaseEntityBlock
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos)
     {
         BlockState attachedState = level.getBlockState(pos.relative(state.getValue(FACING).getOpposite()));
-        return Helpers.isBlock(attachedState, BlockTags.LOGS);
+        return Helpers.isBlock(attachedState, AFCTags.Blocks.TAPPABLE_LOGS);
     }
 
     /* FACING */

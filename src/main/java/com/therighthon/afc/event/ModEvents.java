@@ -119,9 +119,4 @@ public class ModEvents
         ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
     }
 
-    @SubscribeEvent
-    public static void registerRecipeTypes(final RegistryEvent.Register<RecipeSerializer<?>> event)
-    {
-        Registry.register(Registry.RECIPE_TYPE, TreeTapRecipe.Type.ID, TreeTapRecipe.Type.INSTANCE);
-    }
 }

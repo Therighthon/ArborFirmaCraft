@@ -101,6 +101,7 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 
         @Override
         public TreeTapRecipe fromJson(ResourceLocation id, JsonObject json) {
+            AFC.LOGGER.debug(String.valueOf(id)); //Get an idea if the recipes are being loaded
             final FluidStack output = json.has("result_fluid") ? JsonHelpers.getFluidStack(json.getAsJsonObject("result_fluid")) : FluidStack.EMPTY;
             BlockIngredient recipeBlock = BlockIngredients.fromJson(JsonHelpers.get(json, "input_block"));
 

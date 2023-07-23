@@ -116,8 +116,8 @@ public class TapBlockEntity extends BlockEntity
             BlockState logState = level.getBlockState(logPos);
 
 
-            //Ensure block at position is natural, and has the tappable logs tag. TODO: Tappable logs could be added to the canSurvive check.
-            if (Helpers.isBlock(logState, AFCTags.Blocks.TAPPABLE_LOGS) && logState.getValue(LogBlock.NATURAL))
+            //Ensure block at position is natural, canSurvive handles whether the log has the tappable tag.
+            if (logState.getValue(LogBlock.NATURAL))
             {
                 //Hevea
                 if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.HEVEA_LOGS))
