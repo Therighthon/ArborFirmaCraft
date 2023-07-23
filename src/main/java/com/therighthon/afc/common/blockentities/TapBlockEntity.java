@@ -7,6 +7,7 @@ import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.TapBlock;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.fluids.SimpleAFCFluid;
+import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.TapInventory;
 import com.therighthon.afc.common.recipe.TreeTapRecipe;
 import net.minecraft.core.BlockPos;
@@ -14,6 +15,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
@@ -76,177 +78,88 @@ public class TapBlockEntity extends BlockEntity
         //Every 20 ticks...
         if (level.getGameTime() % 20 == 0)
         {
-            //May need to replace this with something that checks the season/recipe?
-//            if (!sealed && !this.inventory.tank.isEmpty() && facing != Direction.UP)
-//            {
             final BlockPos pourPos = pos.below();
             final BlockEntity blockEntity = level.getBlockEntity(pourPos);
-            if (blockEntity != null)
-            {
-                blockEntity.getCapability(Capabilities.FLUID, Direction.UP).ifPresent(cap -> {
-                    //TODO: This is where we need to reference the recipe and get the fluid type to pass to canPour
-                    if (canPour(cap, new FluidStack(TFCFluids.SALT_WATER.getSource(), 1) ))
-                    {
-                        this.pourPos = pourPos;
-                    }
-                });
-            }
-//                }
 
-        }
-        //Second part actually does the pouring, runs every 12 ticks to sync with sound effect
-        //Maybe make this interval part of the recipe too?
-        if (level.getGameTime() % 12 == 0)
-        {
-            //Check positional stuff
+            //Get the position of the log block
             BlockPos logPos;
             switch(facing)
             {
                 case NORTH: logPos = pos.south();
-                break;
+                    break;
                 case SOUTH: logPos = pos.north();
-                break;
+                    break;
                 case EAST: logPos = pos.west();
-                break;
+                    break;
                 case WEST: logPos = pos.east();
-                break;
+                    break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + facing);
             }
+
+            //Check for a valid recipe for said log block before worrying about blockentities and nonsense
             BlockState logState = level.getBlockState(logPos);
+            final TreeTapRecipe recipe = TreeTapRecipe.getRecipe(logState);
 
-
-            //Ensure block at position is natural, canSurvive handles whether the log has the tappable tag.
-            if (logState.getValue(LogBlock.NATURAL))
+            if (recipe != null)
             {
-                //Hevea
-                if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.HEVEA_LOGS))
+                if (blockEntity != null)
                 {
-                    final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
-                    //Needs to check if the block entity is removed every tick while pouring
-                    if (blockEntity != null)
-                    {
-                        //TODO: Reference recipe
-                        final FluidStack fluidStack = new FluidStack(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.LATEX).getSource(), 1);
-
-                        if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
-                            pour(cap, fluidStack)).orElse(false))
+                    blockEntity.getCapability(Capabilities.FLUID, Direction.UP).ifPresent(cap -> {
+                        //TODO: This is where we need to reference the recipe and get the fluid type to pass to canPour
+                        if (canPour(cap, recipe.getOutput()))
                         {
-                            if (level.getGameTime() % 12 == 0 && level instanceof ServerLevel server)
-                            {
-                                final double offset = -0.2;
-                                final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
-                                final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
-                                final double x = pos.getX() + 0.5f + dx;
-                                final double y = pos.getY() + 0.125f;
-                                final double z = pos.getZ() + 0.5f + dz;
-
-                                Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
-                                server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
-                            }
+                            this.pourPos = pourPos;
                         }
                         else
                         {
+                            //Makes sure it won't visually pour into a sealed barrel
                             this.pourPos = null;
                         }
-                    }
-                    else
-                    {
-                        this.pourPos = null;
-                    }
+                    });
                 }
 
-                //Maple
-                else if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.MAPLE_LOGS))
+
+                if (this.pourPos != null)
                 {
-                    final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
-                    //Needs to check if the block entity is removed every tick while pouring
-                    if (blockEntity != null)
+                    final Boolean requireNaturalLog = TreeTapRecipe.requiresNaturalLog();
+
+                    //Check if the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
+                    if (requireNaturalLog ? logState.getValue(LogBlock.NATURAL) : Boolean.TRUE)
                     {
-                        //TODO: Reference recipe
-                        final FluidStack fluidStack = new FluidStack(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SAP).getSource(), 1);
-
-                        if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
-                            pour(cap, fluidStack)).orElse(false))
+                        //Needs to check if the block entity is removed every tick while pouring to avoid a crash
+                        if (blockEntity != null)
                         {
-                            if (level.getGameTime() % 12 == 0 && level instanceof ServerLevel server)
-                            {
-                                final double offset = -0.2;
-                                final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
-                                final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
-                                final double x = pos.getX() + 0.5f + dx;
-                                final double y = pos.getY() + 0.125f;
-                                final double z = pos.getZ() + 0.5f + dz;
+                            final FluidStack fluidStack = recipe.getOutput();
 
-                                Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
-                                server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
+                            if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
+                                pour(cap, fluidStack)).orElse(false))
+                            {
+                                if (level.getGameTime() % 20 == 0 && level instanceof ServerLevel server)
+                                {
+                                    final double offset = -0.2;
+                                    final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
+                                    final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
+                                    final double x = pos.getX() + 0.5f + dx;
+                                    final double y = pos.getY() + 0.125f;
+                                    final double z = pos.getZ() + 0.5f + dz;
+
+                                    Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
+                                    server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
+                                }
+                            }
+                            else
+                            {
+                                this.pourPos = null;
                             }
                         }
                         else
                         {
                             this.pourPos = null;
                         }
-                    }
-                    else
-                    {
-                        this.pourPos = null;
-                    }
-                }
-
-                //Birch
-                else if (this.pourPos != null && Helpers.isBlock(level.getBlockState(logPos), AFCTags.Blocks.BIRCH_LOGS))
-                {
-                    final BlockEntity blockEntity = level.getBlockEntity(this.pourPos);
-                    //Needs to check if the block entity is removed every tick while pouring
-                    if (blockEntity != null)
-                    {
-                        //TODO: Reference recipe
-                        final FluidStack fluidStack = new FluidStack(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SAP).getSource(), 1);
-
-                        if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
-                            pour(cap, fluidStack)).orElse(false))
-                        {
-                            if (level.getGameTime() % 12 == 0 && level instanceof ServerLevel server)
-                            {
-                                final double offset = -0.2;
-                                final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
-                                final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
-                                final double x = pos.getX() + 0.5f + dx;
-                                final double y = pos.getY() + 0.125f;
-                                final double z = pos.getZ() + 0.5f + dz;
-
-                                Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
-                                server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
-                            }
-                        }
-                        else
-                        {
-                            this.pourPos = null;
-                        }
-                    }
-                    else
-                    {
-                        this.pourPos = null;
                     }
                 }
             }
         }
     }
-
-    private boolean hasRecipe(Level level, BlockState state)
-    {
-
-        TapInventory inventory = new TapInventory(state, (BlockIngredient) state);
-
-        Optional<TreeTapRecipe> match = level.getRecipeManager().getRecipeFor(TreeTapRecipe.Type.INSTANCE, inventory, level);
-
-        if (match.isPresent())
-        {
-            AFC.LOGGER.debug("We're matching, I guess");
-        } else {
-            AFC.LOGGER.debug("No match");
-        }
-        return match.isPresent();
-    }
-
 }

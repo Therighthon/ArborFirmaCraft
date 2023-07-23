@@ -1,8 +1,8 @@
 {
   "type": "afc:tree_tapping",
-  "input_block": "tfc:wood/log/birch",
+  "input_block": "tfc:wood/log/maple",
   "result_fluid": {
-    "fluid": "afc:birch_sap",
+    "fluid": "afc:maple_sap",
 	"amount": 1
   }
 }

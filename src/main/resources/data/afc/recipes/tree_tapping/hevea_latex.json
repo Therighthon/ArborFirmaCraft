@@ -1,0 +1,8 @@
+{
+  "type": "afc:tree_tapping",
+  "input_block": "afc:wood/log/hevea",
+  "result_fluid": {
+    "fluid": "afc:latex",
+	"amount": 2
+  }
+}
