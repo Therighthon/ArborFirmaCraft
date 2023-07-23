@@ -24,6 +24,7 @@ public enum UniqueLogs implements RegistryUniqueLogs
     BLACK_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
     GUM_ARABIC(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
     REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS),
+    RUBBER_FIG(MaterialColor.SAND, MaterialColor.STONE, AFCWood.FIG),
 
     ANCIENT_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
     ANCIENT_BAOBAB(MaterialColor.SAND, MaterialColor.STONE, AFCWood.BAOBAB),
@@ -57,7 +58,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
     ANCIENT_RAINBOW_EUCALYPTUS(MaterialColor.SAND, MaterialColor.STONE, AFCWood.EUCALYPTUS),
     ANCIENT_BLACK_OAK(MaterialColor.SAND, MaterialColor.STONE, Wood.OAK),
     ANCIENT_GUM_ARABIC(MaterialColor.SAND, MaterialColor.STONE, Wood.ACACIA),
-    ANCIENT_REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS);
+    ANCIENT_REDCEDAR(MaterialColor.SAND, MaterialColor.STONE, AFCWood.CYPRESS),
+    ANCIENT_RUBBER_FIG(MaterialColor.SAND, MaterialColor.STONE, AFCWood.FIG);
 
     public static final UniqueLogs[] VALUES = values();
     private final String serializedName;
