@@ -3,6 +3,7 @@ package com.therighthon.afc.common.recipe;
 import com.google.gson.JsonObject;
 import com.therighthon.afc.AFC;
 import javax.annotation.Nullable;
+import net.minecraft.core.NonNullList;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -12,43 +13,44 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
+import org.antlr.runtime.tree.Tree;
 
 import net.dries007.tfc.common.recipes.ISimpleRecipe;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredients;
 import net.dries007.tfc.util.JsonHelpers;
+import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.collections.IndirectHashCollection;
 
 public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 {
-    private static Boolean requiresNaturalLog;
+    private final Boolean requiresNaturalLog;
     private final ResourceLocation id;
     private final FluidStack output;
     private final BlockIngredient blockIngredient;
-//    private final NonNullList<Month> validMonths;
+    private final Boolean springOnly;
+    private final float minTemp;
+    private final float maxTemp;
 
-    //TODO: make work only during certain months
-    public TreeTapRecipe(ResourceLocation id, FluidStack output, BlockIngredient blockIngredient) //, NonNullList<Month> validMonths
+    public TreeTapRecipe(ResourceLocation id, FluidStack output, BlockIngredient blockIngredient, Boolean requiresNaturalLog, Boolean springOnly, float minTemp, float maxTemp) //, NonNullList<Month> validMonths
     {
         this.id = id;
         this.output = output;
         this.blockIngredient = blockIngredient;
-        requiresNaturalLog = Boolean.TRUE; //TODO: make custom per recipe
-//        this.validMonths = validMonths;
-    }
+        this.requiresNaturalLog = requiresNaturalLog;
+        this.springOnly = springOnly;
+        this.minTemp = minTemp;
+        this.maxTemp = maxTemp;
 
-    public BlockIngredient getBlockIngredient()
-    {
-        return this.blockIngredient;
     }
 
     public static final IndirectHashCollection<Block, TreeTapRecipe> CACHE = IndirectHashCollection.createForRecipe(recipe -> recipe.getBlockIngredient().getValidBlocks(), AFCRecipeTypes.TREE_TAPPING_RECIPE);
 
     public static TreeTapRecipe getRecipe(BlockState state)
     {
-        AFC.LOGGER.debug("Hello there!");
         for (TreeTapRecipe recipe : CACHE.getAll(state.getBlock()))
         {
+            //TODO: Remove loggers
             AFC.LOGGER.debug("Printing cache:");
             AFC.LOGGER.debug(state.getBlock().toString());
             if (recipe.matches(state))
@@ -70,14 +72,34 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
         return blockIngredient.test(state);
     }
 
+    public float getMinTemp()
+    {
+        return this.minTemp;
+    }
+
+    public float getMaxTemp()
+    {
+        return this.maxTemp;
+    }
+
+    public Boolean springOnly()
+    {
+        return this.springOnly;
+    }
+
+    public BlockIngredient getBlockIngredient()
+    {
+        return this.blockIngredient;
+    }
+
     public FluidStack getOutput()
     {
         return output;
     }
 
-    public static Boolean requiresNaturalLog()
+    public Boolean requiresNaturalLog()
     {
-        return requiresNaturalLog;
+        return this.requiresNaturalLog;
     }
 
     @Override
@@ -117,25 +139,37 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 
         @Override
         public TreeTapRecipe fromJson(ResourceLocation id, JsonObject json) {
-            AFC.LOGGER.debug("Loaded treetap recipe:");
-            AFC.LOGGER.debug(String.valueOf(id)); //Get an idea if the recipes are being loaded
             final FluidStack output = json.has("result_fluid") ? JsonHelpers.getFluidStack(json.getAsJsonObject("result_fluid")) : FluidStack.EMPTY;
+            final float minTemp = json.has("minimum_temperature") ? JsonHelpers.getAsFloat(json, "minimum_temperature") : -50f;
+            final float maxTemp = json.has("maximum_temperature") ? JsonHelpers.getAsFloat(json, "maximum_temperature") : 50f;
+            final Boolean requiresNaturalLog = json.has("requires_natural_log") ? JsonHelpers.getAsBoolean(json, "requires_natural_log") : Boolean.TRUE;
+            final Boolean springOnly = json.has("spring_only") ? JsonHelpers.getAsBoolean(json, "spring_only") : Boolean.FALSE;
+
             BlockIngredient blockIngredient = BlockIngredients.fromJson(JsonHelpers.get(json, "input_block"));
 
-            return new TreeTapRecipe(id, output, blockIngredient);
+            return new TreeTapRecipe(id, output, blockIngredient, requiresNaturalLog, springOnly, minTemp, maxTemp);
         }
 
         @Override
         public TreeTapRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
             final BlockIngredient recipeBlock = BlockIngredients.fromNetwork(buffer);
             final FluidStack output = buffer.readFluidStack();
-            return new TreeTapRecipe(id, output, recipeBlock);
+            final float minTemp = buffer.readFloat();
+            final float maxTemp = buffer.readFloat();
+            final Boolean springOnly = buffer.readBoolean();
+            final Boolean requiresNaturalLog = buffer.readBoolean();
+
+            return new TreeTapRecipe(id, output, recipeBlock, requiresNaturalLog, springOnly, minTemp, maxTemp);
         }
 
         @Override
         public void toNetwork(FriendlyByteBuf buffer, TreeTapRecipe recipe) {
            recipe.blockIngredient.toNetwork(buffer);
            buffer.writeFluidStack(recipe.output);
+           buffer.writeFloat(recipe.minTemp);
+           buffer.writeFloat(recipe.maxTemp);
+           buffer.writeBoolean(recipe.springOnly);
+           buffer.writeBoolean(recipe.requiresNaturalLog);
         }
 
         @Override

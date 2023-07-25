@@ -15,6 +15,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,6 +39,11 @@ import net.dries007.tfc.common.fluids.MixingFluid;
 import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.calendar.Calendar;
+import net.dries007.tfc.util.calendar.Calendars;
+import net.dries007.tfc.util.calendar.Month;
+import net.dries007.tfc.util.climate.Climate;
+import net.dries007.tfc.world.chunkdata.ChunkData;
 
 public class TapBlockEntity extends BlockEntity
 {
@@ -69,6 +75,17 @@ public class TapBlockEntity extends BlockEntity
         } else {
             return false;
         }
+    }
+
+    public static boolean isSpring(Level level) {
+        Month currentMonth = Calendars.SERVER.getCalendarMonthOfYear();
+        return (currentMonth==Month.FEBRUARY || currentMonth==Month.MARCH || currentMonth==Month.APRIL || currentMonth==Month.MAY || currentMonth==Month.JUNE);
+    }
+
+    public static boolean isTempOkay(Level level, BlockPos pos, float minTemp, float maxTemp)
+    {
+        final float currentTemp = Climate.getTemperature(level, pos);
+        return (currentTemp > minTemp && currentTemp < maxTemp);
     }
 
 
@@ -119,44 +136,63 @@ public class TapBlockEntity extends BlockEntity
                     });
                 }
 
-
-                if (this.pourPos != null)
+                //Print logic to check it all out:
+                if (recipe.requiresNaturalLog())
                 {
-                    final Boolean requireNaturalLog = TreeTapRecipe.requiresNaturalLog();
+                    AFC.LOGGER.debug("Recipe requires natural log. Recipe, valid log");
+                    AFC.LOGGER.debug(recipe.toString());
+                    AFC.LOGGER.debug(logState.getValue(LogBlock.NATURAL).toString());
+                }
+                if (isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp()))
+                {
+                    AFC.LOGGER.debug("Recipe is at appropriate temp. Min, Max:");
+                    AFC.LOGGER.debug(String.valueOf(recipe.getMinTemp()));
+                    AFC.LOGGER.debug(String.valueOf(recipe.getMaxTemp()));
+                }
+                if (recipe.springOnly())
+                {
+                    AFC.LOGGER.debug("Recipe is spring only. isSpring?:");
+                    AFC.LOGGER.debug(String.valueOf(isSpring(level)));
+                }
 
-                    //Check if the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
-                    if (requireNaturalLog ? logState.getValue(LogBlock.NATURAL) : Boolean.TRUE)
+                //Check that the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
+                //Also checks if the recipe requires it be spring, and if so, if it is spring
+                //Ternary is used (sloppily) to ensure that we don't ask for a "natural" logblock from a block that can't have it
+                //It's sloppy, because if someone doesn't write the recipe correctly, then it will crash the game, but it should be a helpful crash, so...
+                if (this.pourPos != null
+                    && (recipe.requiresNaturalLog() ? logState.getValue(LogBlock.NATURAL) : true)
+                    && isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp())
+                    && (!recipe.springOnly() || isSpring(level)))
+                {
+                    //Needs to check if the block entity is removed every tick while pouring to avoid a crash
+                    if (blockEntity != null)
                     {
-                        //Needs to check if the block entity is removed every tick while pouring to avoid a crash
-                        if (blockEntity != null)
+                        final FluidStack fluidStack = recipe.getOutput();
+
+                        if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
+                            pour(cap, fluidStack)).orElse(false))
                         {
-                            final FluidStack fluidStack = recipe.getOutput();
-
-                            if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
-                                pour(cap, fluidStack)).orElse(false))
+                            if (level.getGameTime() % 20 == 0 && level instanceof ServerLevel server)
                             {
-                                if (level.getGameTime() % 20 == 0 && level instanceof ServerLevel server)
-                                {
-                                    final double offset = -0.2;
-                                    final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
-                                    final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
-                                    final double x = pos.getX() + 0.5f + dx;
-                                    final double y = pos.getY() + 0.125f;
-                                    final double z = pos.getZ() + 0.5f + dz;
+                                final double offset = -0.2;
+                                final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
+                                final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
+                                final double x = pos.getX() + 0.5f + dx;
+                                final double y = pos.getY() + 0.125f;
+                                final double z = pos.getZ() + 0.5f + dz;
 
-                                    Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
-                                    server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
-                                }
-                            }
-                            else
-                            {
-                                this.pourPos = null;
+                                Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
+                                server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
                             }
                         }
                         else
                         {
                             this.pourPos = null;
                         }
+                    }
+                    else
+                    {
+                        this.pourPos = null;
                     }
                 }
             }

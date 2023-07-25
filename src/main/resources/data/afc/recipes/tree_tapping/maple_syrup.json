@@ -3,6 +3,10 @@
   "input_block": "tfc:wood/log/maple",
   "result_fluid": {
     "fluid": "afc:maple_sap",
-	"amount": 1
-  }
+	"amount": 10
+  },
+  "minimum_temperature": -3,
+  "maximum_temperature": 3,
+  "spring_only": true,
+  "requires_natural_log": true
 }

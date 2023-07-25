@@ -4,5 +4,6 @@
   "result_fluid": {
     "fluid": "afc:latex",
 	"amount": 1
-  }
+  },
+  "minimum_temperature": 10
 }
