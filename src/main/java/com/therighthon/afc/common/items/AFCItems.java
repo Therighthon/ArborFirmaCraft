@@ -20,6 +20,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.common.items.TFCBoatItem;
@@ -68,5 +69,10 @@ public class AFCItems
     public static final Map<SimpleAFCFluid, RegistryObject<BucketItem>> SIMPLE_AFC_FLUID_BUCKETS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
         register("bucket/" + fluid.getSerializedName(), () -> new BucketItem(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(MISC)))
     );
+
+    //Normal items
+    public static final RegistryObject<Item> RUBBER_BAR = register("rubber_bar", () -> new Item(new Item.Properties().tab(MISC)));
+    public static final RegistryObject<Item> MAPLE_SUGAR = register("maple_sugar", () -> new Item(new Item.Properties().tab(FOOD)));
+    public static final RegistryObject<Item> BIRCH_SUGAR = register("birch_sugar", () -> new Item(new Item.Properties().tab(FOOD)));
 }
 

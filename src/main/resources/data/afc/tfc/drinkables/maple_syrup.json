@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": {
+    "tag": "afc:syrups"
+  },
+  "thirst": 5,
+  "food": {
+    "hunger": 0,
+    "saturation": 0,
+    "fruit": 0.2,
+	"grain": 0.3
+  }
+}

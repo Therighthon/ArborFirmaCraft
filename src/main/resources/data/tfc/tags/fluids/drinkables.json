@@ -3,6 +3,7 @@
   "replace": false,
   "values": [
     "#afc:saps",
+	"#afc:concentrates",
 	"#afc:syrups"
   ]
 }

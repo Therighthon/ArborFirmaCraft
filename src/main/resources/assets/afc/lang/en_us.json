@@ -470,5 +470,15 @@
   "block.afc.wood.leaves.red_silk_cotton": "Red Silk Cotton Leaves",
   "block.afc.wood.sapling.red_silk_cotton": "Red Silk Cotton Sapling",
   
-  "block.afc.syrup_tap": "Tree Tap"
+  "block.afc.tree_tap": "Tree Tap",
+  "item.afc.rubber_bar": "Rubber Bar",
+  
+  "fluid.afc.maple_sap": "Maple Sap",
+  "fluid.afc.maple_sap_concentrate": "Maple Sap Concentrate",
+  "fluid.afc.maple_syrup": "Maple Syrup",
+  "fluid.afc.birch_sap": "Birch Sap",
+  "fluid.afc.birch_sap_concentrate": "Birch Sap Concentrate",
+  "fluid.afc.birch_syrup": "Birch Syrup",
+  "fluid.afc.latex": "Latex",
+  "fluid.afc.rubber": "Rubber"
 }

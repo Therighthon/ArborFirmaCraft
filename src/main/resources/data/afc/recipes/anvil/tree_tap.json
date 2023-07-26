@@ -1,0 +1,16 @@
+{
+    "type": "tfc:anvil",
+    "input": {
+        "item": "tfc:metal/sheet/wrought_iron"
+    },
+    "result": {
+        "item": "afc:tree_tap"
+    },
+    "tier": 3,
+    "rules": [
+        "hit_last",
+        "upset_second_last",
+        "upset_third_last"
+    ],
+    "apply_forging_bonus": false
+}

@@ -3,7 +3,7 @@
   "input_block": "tfc:wood/log/birch",
   "result_fluid": {
     "fluid": "afc:birch_sap",
-	"amount": 10
+	"amount": 5
   },
   "minimum_temperature": -2,
   "maximum_temperature": 2,

@@ -50,9 +50,6 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
     {
         for (TreeTapRecipe recipe : CACHE.getAll(state.getBlock()))
         {
-            //TODO: Remove loggers
-            AFC.LOGGER.debug("Printing cache:");
-            AFC.LOGGER.debug(state.getBlock().toString());
             if (recipe.matches(state))
             {
                 return recipe;

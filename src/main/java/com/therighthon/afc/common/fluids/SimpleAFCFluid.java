@@ -7,7 +7,9 @@ import net.minecraft.world.level.material.Fluid;
 public enum SimpleAFCFluid implements StringRepresentable
 {
     MAPLE_SAP(0xFFC39E37),
+    MAPLE_SAP_CONCENTRATE(0xFFC39E37),
     BIRCH_SAP(0xFFDCDCDC),
+    BIRCH_SAP_CONCENTRATE(0xFFDCDCDC),
     LATEX(0xFFB7D9BC),
     MAPLE_SYRUP(0xBBC39E37),
     BIRCH_SYRUP(0xBBDCDCDC),
@@ -36,6 +38,11 @@ public enum SimpleAFCFluid implements StringRepresentable
     public String getSerializedName()
     {
         return id;
+    }
+
+    public boolean isTransparent()
+    {
+        return true;
     }
 
 }

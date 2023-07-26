@@ -15,6 +15,7 @@ public class AFCTags
         public static final TagKey<Block> BIRCH_LOGS = create("birch_logs");
         public static final TagKey<Block> MAPLE_LOGS = create("maple_logs");
         public static final TagKey<Block> HEVEA_LOGS = create("hevea_logs");
+        public static final TagKey<Block> TREE_TAPS = create("tree_taps");
 
         private static TagKey<Block> create(String id)
         {

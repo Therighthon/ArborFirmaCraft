@@ -36,26 +36,13 @@ public final class AFCFluids
 
     public static final int ALPHA_MASK = 0xFF000000;
 
-//    public static final FlowingFluidRegistryObject<ForgeFlowingFluid> MAPLE_SAP = register(
-//        "maple_sap",
-//        "maple_sap",
-//        properties -> properties.block(AFCBlocks.MAPLE_SAP).bucket(TFCItems.FLUID_BUCKETS.get(FluidType.MAPLE_SAP)).canMultiply(),
-//        new FluidAttributes.Builder(WATER_STILL, WATER_FLOW, SaltWaterAttributes::new) {}
-//            .translationKey("fluid.tfc.salt_water")
-//            .overlay(WATER_OVERLAY)
-//            .color(ALPHA_MASK | 0x3F76E4)
-//            .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY),
-//        MixingFluid.Source::new,
-//        MixingFluid.Flowing::new
-//    );
-
     public static final Map<SimpleAFCFluid, FlowingFluidRegistryObject<ForgeFlowingFluid>> SIMPLE_AFC_FLUIDS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid -> register(
         fluid.getSerializedName(),
         "flowing_" + fluid.getSerializedName(),
         properties -> properties.block(AFCBlocks.SIMPLE_AFC_FLUIDS.get(fluid)).bucket(AFCItems.SIMPLE_AFC_FLUID_BUCKETS.get(fluid)),
         FluidAttributes.builder(WATER_STILL, WATER_FLOW)
             .translationKey("fluid.afc." + fluid.getSerializedName())
-            .color(fluid.getColor())
+            .color(fluid.isTransparent() ? ALPHA_MASK | fluid.getColor() : fluid.getColor())
             .overlay(WATER_OVERLAY)
             .sound(SoundEvents.BUCKET_FILL, SoundEvents.BUCKET_EMPTY),
         MixingFluid.Source::new,
