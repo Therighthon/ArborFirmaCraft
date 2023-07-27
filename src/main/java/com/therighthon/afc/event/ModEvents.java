@@ -92,9 +92,6 @@ public class ModEvents
         modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
         modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
         modifyWood(TFCBlockEntities.TOOL_RACK.get(), Wood.BlockType.TOOL_RACK);
-        //Disabled signs until they stop crashing
-        //modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN);
-        //modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN);
         modifyWood(TFCBlockEntities.LECTERN.get(), Wood.BlockType.LECTERN);
     }
 

@@ -4,8 +4,10 @@ import java.util.Arrays;
 import java.util.Locale;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.AFCSignRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
 import com.therighthon.afc.client.render.colors.ColorScheme;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.TreeSpecies;
@@ -182,6 +184,7 @@ public class ModEventClientBusEvents
         {
             event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
         }
+        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

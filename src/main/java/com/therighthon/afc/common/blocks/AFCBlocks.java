@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import com.therighthon.afc.common.items.AFCItems;
@@ -26,6 +27,8 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCMaterials;
+import net.dries007.tfc.common.blocks.wood.TFCStandingSignBlock;
+import net.dries007.tfc.common.blocks.wood.TFCWallSignBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.util.Helpers;
@@ -57,9 +60,23 @@ public class AFCBlocks
 
     public static final Map<AFCWood, Map<Wood.BlockType, RegistryObject<Block>>> WOODS = Helpers.mapOfKeys(AFCWood.class, wood ->
         Helpers.mapOfKeys(Wood.BlockType.class, type ->
-            register(type.nameFor(wood), type.create(wood), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+            register(type.nameFor(wood), createWood(wood, type), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+
         )
     );
+
+    public static Supplier<Block> createWood(AFCWood afcWood, Wood.BlockType blockType)
+    {
+        if (blockType == Wood.BlockType.SIGN)
+        {
+            return () -> new TFCStandingSignBlock(woodProperties(afcWood).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN));
+        }
+        if (blockType == Wood.BlockType.WALL_SIGN)
+        {
+            return () -> new TFCWallSignBlock(woodProperties(afcWood).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN));
+        }
+        return blockType.create(afcWood);
+    }
 
     public static final Map<TreeSpecies, Map<TreeSpecies.BlockType, RegistryObject<Block>>> TREE_SPECIES = Helpers.mapOfKeys(TreeSpecies.class, wood ->
         Helpers.mapOfKeys(TreeSpecies.BlockType.class, type ->
