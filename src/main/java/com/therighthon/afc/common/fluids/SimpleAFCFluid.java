@@ -12,8 +12,7 @@ public enum SimpleAFCFluid implements StringRepresentable
     BIRCH_SAP_CONCENTRATE(0xFFDCDCDC),
     LATEX(0xFFB7D9BC),
     MAPLE_SYRUP(0xBBC39E37),
-    BIRCH_SYRUP(0xBBDCDCDC),
-    RUBBER(0x552a3344);
+    BIRCH_SYRUP(0xBBDCDCDC);
 
     private final String id;
     private final int color;

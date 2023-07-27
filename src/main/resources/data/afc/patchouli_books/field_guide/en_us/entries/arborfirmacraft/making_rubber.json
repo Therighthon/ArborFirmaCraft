@@ -1,0 +1,14 @@
+{
+	"name": "Making Rubber",
+	"category": "afc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "By boiling latex in a pot with powdered sulfur, solid rubber can be formed. Now if only it were useful for something..."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}

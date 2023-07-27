@@ -80,28 +80,22 @@ public class TapBlockEntity extends BlockEntity
     public static int getTapCount(Level level, BlockPos pos)
     {
         int tapCount = 0;
-        AFC.LOGGER.debug("Tap Count = ");
-        AFC.LOGGER.debug(String.valueOf(tapCount));
         if (Helpers.isBlock(level.getBlockState(pos.north()), AFCTags.Blocks.TREE_TAPS))
         {
             tapCount++;
         }
-        AFC.LOGGER.debug(String.valueOf(tapCount));
         if (Helpers.isBlock(level.getBlockState(pos.east()), AFCTags.Blocks.TREE_TAPS))
         {
             tapCount++;
         }
-        AFC.LOGGER.debug(String.valueOf(tapCount));
         if (Helpers.isBlock(level.getBlockState(pos.south()), AFCTags.Blocks.TREE_TAPS))
         {
             tapCount++;
         }
-        AFC.LOGGER.debug(String.valueOf(tapCount));
         if (Helpers.isBlock(level.getBlockState(pos.west()), AFCTags.Blocks.TREE_TAPS))
         {
             tapCount++;
         }
-        AFC.LOGGER.debug(String.valueOf(tapCount));
         if (tapCount == 0)
         {
             return 1;
@@ -144,8 +138,6 @@ public class TapBlockEntity extends BlockEntity
             if (recipe != null)
             {
                 final int dripFrequency = 20*getTapCount(level, logPos);
-                AFC.LOGGER.debug("Drip Interval = ");
-                AFC.LOGGER.debug(String.valueOf(dripFrequency));
 
                 if (level.getGameTime() % dripFrequency == 0)
                 {

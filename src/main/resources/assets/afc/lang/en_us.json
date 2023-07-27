@@ -472,6 +472,16 @@
   
   "block.afc.tree_tap": "Tree Tap",
   "item.afc.rubber_bar": "Rubber Bar",
+  "item.afc.maple_sugar": "Maple Sugar",
+  "item.afc.birch_sugar": "Birch Sugar",
+  
+  "item.afc.bucket.maple_sap": "Bucket of Maple Sap",
+  "item.afc.bucket.maple_sap_concentrate": "Bucket of Maple Sap Concentrate",
+  "item.afc.bucket.maple_syrup": "Bucket of Maple Syrup",
+  "item.afc.bucket.birch_sap": "Bucket of Birch Sap",
+  "item.afc.bucket.birch_sap_concentrate": "Bucket of Birch Sap Concentrate",
+  "item.afc.bucket.birch_syrup": "Bucket of Birch Syrup",
+  "item.afc.bucket.latex": "Bucket of Latex",
   
   "fluid.afc.maple_sap": "Maple Sap",
   "fluid.afc.maple_sap_concentrate": "Maple Sap Concentrate",
