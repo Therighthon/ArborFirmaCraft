@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "firmalife:vat",
+  "input_item": {
+	  "ingredient": {
+		"item": "minecraft:stick"
+	  }
+  },
+  "output_item": {
+    "item": "minecraft:stick"
+  },
+  "input_fluid": {
+    "ingredient": "afc:maple_sap_concentrate",
+    "amount": 1000
+  },
+  "output_fluid": {
+    "fluid": "afc:maple_syrup",
+    "amount": 200
+  }
+}

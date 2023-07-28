@@ -5,8 +5,8 @@
     "fluid": "afc:birch_sap",
 	"amount": 5
   },
-  "minimum_temperature": -2,
-  "maximum_temperature": 2,
+  "minimum_temperature": -4,
+  "maximum_temperature": 6,
   "spring_only": true,
   "requires_natural_log": true
 }
