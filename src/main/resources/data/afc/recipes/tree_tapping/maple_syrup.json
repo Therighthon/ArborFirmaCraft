@@ -1,0 +1,12 @@
+{
+  "type": "afc:tree_tapping",
+  "input_block": "tfc:wood/log/maple",
+  "result_fluid": {
+    "fluid": "afc:maple_sap",
+	"amount": 5
+  },
+  "minimum_temperature": -3,
+  "maximum_temperature": 3,
+  "spring_only": true,
+  "requires_natural_log": true
+}

@@ -58,7 +58,7 @@ NORMAL_TREES = [
     Tree('weeping_cypress', 'random', 'nootka', 11, 'cypress', False),
     Tree('redcedar', 'random', 'fluffyconifer', 10, 'redcedar', False),
     Tree('bald_cypress', 'random', 'fir', 9, 'cypress', False),
-    Tree('rubber_fig', 'random', 'gnarled', 12, 'fig', False),
+    Tree('rubber_fig', 'random', 'gnarled', 12, 'rubber_fig', False),
     Tree('small_leaf_mahogany', 'random', 'medium_round', 5, 'mahogany', False),
     Tree('sapele_mahogany', 'random', 'canopy', 15, 'mahogany', False),
 

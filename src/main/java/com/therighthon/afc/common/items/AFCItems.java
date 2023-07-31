@@ -7,8 +7,12 @@ import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
+import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.fluids.SimpleAFCFluid;
+import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SignItem;
 import net.minecraft.world.item.StandingAndWallBlockItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -16,6 +20,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.dries007.tfc.common.TFCItemGroup;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.common.items.TFCBoatItem;
@@ -61,5 +66,13 @@ public class AFCItems
         return ITEMS.register(name.toLowerCase(Locale.ROOT), item);
     }
 
+    public static final Map<SimpleAFCFluid, RegistryObject<BucketItem>> SIMPLE_AFC_FLUID_BUCKETS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
+        register("bucket/" + fluid.getSerializedName(), () -> new BucketItem(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1).tab(MISC)))
+    );
+
+    //Normal items
+    public static final RegistryObject<Item> RUBBER_BAR = register("rubber_bar", () -> new Item(new Item.Properties().tab(MISC)));
+    public static final RegistryObject<Item> MAPLE_SUGAR = register("maple_sugar", () -> new Item(new Item.Properties().tab(FOOD)));
+    public static final RegistryObject<Item> BIRCH_SUGAR = register("birch_sugar", () -> new Item(new Item.Properties().tab(FOOD)));
 }
 

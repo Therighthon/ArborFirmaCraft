@@ -1,0 +1,9 @@
+{
+  "type": "afc:tree_tapping",
+  "input_block": "afc:wood/log/rubber_fig",
+  "result_fluid": {
+    "fluid": "afc:latex",
+	"amount": 1
+  },
+  "minimum_temperature": 12
+}

@@ -4,6 +4,9 @@ import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
+import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -11,22 +14,23 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-import org.antlr.runtime.tree.Tree;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCItemGroup;
-import net.dries007.tfc.common.blockentities.LoomBlockEntity;
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
-import net.dries007.tfc.common.blocks.wood.TFCLoomBlock;
+import net.dries007.tfc.common.blocks.TFCMaterials;
+import net.dries007.tfc.common.blocks.wood.TFCStandingSignBlock;
+import net.dries007.tfc.common.blocks.wood.TFCWallSignBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.common.items.TFCBoatItem;
+import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 import net.dries007.tfc.util.registry.RegistryWood;
@@ -56,9 +60,23 @@ public class AFCBlocks
 
     public static final Map<AFCWood, Map<Wood.BlockType, RegistryObject<Block>>> WOODS = Helpers.mapOfKeys(AFCWood.class, wood ->
         Helpers.mapOfKeys(Wood.BlockType.class, type ->
-            register(type.nameFor(wood), type.create(wood), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+            register(type.nameFor(wood), createWood(wood, type), type.createBlockItem(new Item.Properties().tab(TFCItemGroup.WOOD)))
+
         )
     );
+
+    public static Supplier<Block> createWood(AFCWood afcWood, Wood.BlockType blockType)
+    {
+        if (blockType == Wood.BlockType.SIGN)
+        {
+            return () -> new TFCStandingSignBlock(woodProperties(afcWood).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN));
+        }
+        if (blockType == Wood.BlockType.WALL_SIGN)
+        {
+            return () -> new TFCWallSignBlock(woodProperties(afcWood).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN));
+        }
+        return blockType.create(afcWood);
+    }
 
     public static final Map<TreeSpecies, Map<TreeSpecies.BlockType, RegistryObject<Block>>> TREE_SPECIES = Helpers.mapOfKeys(TreeSpecies.class, wood ->
         Helpers.mapOfKeys(TreeSpecies.BlockType.class, type ->
@@ -114,6 +132,13 @@ public class AFCBlocks
         TREE_SPECIES.forEach((wood, map) -> pot.addPlant(map.get(TreeSpecies.BlockType.SAPLING).getId(), map.get(TreeSpecies.BlockType.POTTED_SAPLING)));
     }
 
+    public static final RegistryObject<Block> TREE_TAP = registerBlock("tree_tap",
+        () -> new TapBlock(
+            BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL_FAN).noOcclusion()), TFCItemGroup.MISC);
+
+    public static final Map<SimpleAFCFluid, RegistryObject<LiquidBlock>> SIMPLE_AFC_FLUIDS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
+        register("fluid/" + fluid.getSerializedName(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), BlockBehaviour.Properties.of(Material.WATER).noCollission().strength(100f).noDrops()))
+    );
 }
 
 

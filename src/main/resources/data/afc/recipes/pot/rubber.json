@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:pot",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/sulfur"
+    }
+  ],
+  "fluid_ingredient": {
+    "ingredient": "afc:latex",
+    "amount": 1000
+  },
+  "duration": 2000,
+  "temperature": 600,
+  "fluid_output": {
+    "fluid": "afc:rubber",
+    "amount": 1000
+  }
+}

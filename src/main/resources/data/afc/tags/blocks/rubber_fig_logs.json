@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/ancient_rubber_fig",
+    "afc:wood/wood/ancient_rubber_fig",
+    "afc:wood/log/rubber_fig",
+    "afc:wood/wood/rubber_fig"
+  ]
+}

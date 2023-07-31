@@ -1,0 +1,22 @@
+{
+	"name": "Tapping Trees",
+	"category": "afc:arborfirmacraft",
+	"icon": "afc:tree_tap",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "Some types of trees can be tapped for useful fluids. By default, Maples and Birches can be tapped for sugary saps, and Rubber Figs and Hevea can be tapped for latex. Saps can be concentrated into syrup and used as a sweetener, while latex can be processed into rubber."
+	},
+	{
+		"type": "patchouli:text",
+		"text": "Three things are required to tap a tree: the tree itself, a tree tap, which must forged from wrought iron and placed in the middle of a trunk at least three blocks tall, and a barrel, which must be placed directly below the tap facing upward. If the conditions are right, your barrel will immediately begin to fill with sap."
+	},
+	{
+		"type": "patchouli:text",
+		"text": "Not all trees produce useful sap all of the time. Maple and Birch trees produce sap only from February to May, and only when the temperature is within 3°C of freezing. Hevea trees produce latex only when the temperature is above 22°C. Rubber Figs produce latex at 12°C or above, but produce more slowly than Hevea. Consider latitude, altitude, and local variation whenever tapping a tree."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 1
+}
