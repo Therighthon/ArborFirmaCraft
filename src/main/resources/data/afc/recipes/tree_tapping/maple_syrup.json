@@ -5,8 +5,8 @@
     "fluid": "afc:maple_sap",
 	"amount": 5
   },
-  "minimum_temperature": -3,
-  "maximum_temperature": 3,
+  "minimum_temperature": -4,
+  "maximum_temperature": 6,
   "spring_only": true,
   "requires_natural_log": true
 }

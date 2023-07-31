@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "tfc:fluid_item",
+      "fluid_ingredient": {
+        "ingredient": "afc:maple_syrup",
+        "amount": 1000
+      }
+    }
+  ],
+  "result": {
+    "item": "afc:maple_sugar",
+	"count": 10
+  }
+}

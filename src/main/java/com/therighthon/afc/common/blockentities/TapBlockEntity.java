@@ -66,7 +66,7 @@ public class TapBlockEntity extends BlockEntity
     public static boolean isTempOkay(Level level, BlockPos pos, float minTemp, float maxTemp)
     {
         final float currentTemp = Climate.getTemperature(level, pos);
-        return (currentTemp > minTemp && currentTemp < maxTemp);
+        return (currentTemp >= minTemp && currentTemp <= maxTemp);
     }
 
     public static boolean hasValidTrunk(Level level, BlockPos pos, BlockState state)

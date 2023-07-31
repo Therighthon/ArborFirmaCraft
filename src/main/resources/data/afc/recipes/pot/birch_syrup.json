@@ -12,7 +12,7 @@
     }
   ],
   "fluid_ingredient": {
-    "ingredient": "afc:birch_concentrate",
+    "ingredient": "afc:birch_sap_concentrate",
     "amount": 1000
   },
   "duration": 1200,

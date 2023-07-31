@@ -6,14 +6,15 @@
       "tag": "forge:dusts/sulfur"
     }
   ],
+  "item_output": [
+    {
+      "item": "afc:rubber_bar"
+    }
+  ],
   "fluid_ingredient": {
     "ingredient": "afc:latex",
     "amount": 1000
   },
   "duration": 2000,
-  "temperature": 600,
-  "fluid_output": {
-    "fluid": "afc:rubber",
-    "amount": 1000
-  }
+  "temperature": 600
 }

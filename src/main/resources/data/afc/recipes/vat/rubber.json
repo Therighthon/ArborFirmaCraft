@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "firmalife:vat",
+  "input_item": {
+	  "ingredient": {
+		"tag": "forge:dusts/sulfur"
+	  }
+  },
+  "output_item": {
+    "item": "afc:rubber_bar"
+  },
+  "input_fluid": {
+    "ingredient": "afc:latex",
+    "amount": 1000
+  }
+}

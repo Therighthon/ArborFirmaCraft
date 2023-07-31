@@ -5,12 +5,13 @@
     {
       "type": "tfc:fluid_item",
       "fluid_ingredient": {
-        "ingredient": "afc:maple_syrup",
-        "amount": 100
+        "ingredient": "afc:birch_syrup",
+        "amount": 1000
       }
     }
   ],
   "result": {
-    "item": "afc:birch_sugar"
+    "item": "afc:birch_sugar",
+	"count": 10
   }
 }
