@@ -7,6 +7,7 @@
     "afc:wood/log/eucalyptus",
     "afc:wood/wood/eucalyptus",
     "afc:wood/stripped_log/eucalyptus",
-    "afc:wood/stripped_wood/eucalyptus"
+    "afc:wood/stripped_wood/eucalyptus",
+    "#afc:rainbow_eucalyptus_logs"
   ]
 }

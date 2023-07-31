@@ -5,6 +5,7 @@
     "afc:wood/log/cypress",
     "afc:wood/wood/cypress",
     "afc:wood/stripped_log/cypress",
-    "afc:wood/stripped_wood/cypress"
+    "afc:wood/stripped_wood/cypress",
+    "#afc:redcedar_logs"
   ]
 }
