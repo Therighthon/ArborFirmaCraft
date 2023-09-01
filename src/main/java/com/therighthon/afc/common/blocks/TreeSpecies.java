@@ -13,8 +13,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.material.Material;
-import net.minecraft.world.level.material.MaterialColor;
+import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
@@ -152,18 +151,18 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public enum BlockType {
         LEAVES((self, wood) -> {
-            return TFCLeavesBlock.create(ExtendedProperties.of(Material.LEAVES, MaterialColor.COLOR_GREEN).strength(0.5F).sound(SoundType.GRASS).randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.maxDecayDistance());
+            return TFCLeavesBlock.create(ExtendedProperties.of(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.maxDecayDistance());
         }, false),
         SAPLING((self, wood) -> {
             TFCTreeGrower var10002 = wood.tree();
-            ExtendedProperties var10003 = ExtendedProperties.of(Material.PLANT).noCollission().randomTicks().strength(0.0F).sound(SoundType.GRASS).flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER);
+            ExtendedProperties var10003 = ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0.0F).sound(SoundType.GRASS).flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER);
             Objects.requireNonNull(wood);
             return new TFCSaplingBlock(var10002, var10003, wood::daysToGrow);
         }, false),
         POTTED_SAPLING((self, wood) -> {
             return new FlowerPotBlock(() -> {
                 return (FlowerPotBlock)Blocks.FLOWER_POT;
-            }, wood.getBlock(SAPLING), BlockBehaviour.Properties.of(Material.DECORATION).instabreak().noOcclusion());
+            }, wood.getBlock(SAPLING), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING));
         }, false);
 
         private final BiFunction<Block, net.minecraft.world.item.Item.Properties, ? extends BlockItem> blockItemFactory;
@@ -171,7 +170,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
         private final BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory;
 
         private static ExtendedProperties properties(RegistryTreeSpecies wood) {
-            return ExtendedProperties.of(Material.WOOD, MaterialColor.COLOR_GREEN).sound(SoundType.WOOD);
+            return ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD);
         }
 
 

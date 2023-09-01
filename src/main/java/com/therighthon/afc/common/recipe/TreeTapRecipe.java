@@ -4,6 +4,7 @@ import com.google.gson.JsonObject;
 import com.therighthon.afc.AFC;
 import javax.annotation.Nullable;
 import net.minecraft.core.NonNullList;
+import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
@@ -106,9 +107,9 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
     }
 
     @Override
-    public ItemStack getResultItem()
+    public ItemStack getResultItem(RegistryAccess pRegistryAccess)
     {
-        return ItemStack.EMPTY;
+        return null;
     }
 
     @Override
@@ -169,26 +170,6 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
            buffer.writeBoolean(recipe.requiresNaturalLog);
         }
 
-        @Override
-        public RecipeSerializer<?> setRegistryName(ResourceLocation name) {
-            return INSTANCE;
-        }
-
-        @Nullable
-        @Override
-        public ResourceLocation getRegistryName() {
-            return ID;
-        }
-
-        @Override
-        public Class<RecipeSerializer<?>> getRegistryType() {
-            return Serializer.castClass(RecipeSerializer.class);
-        }
-
-        @SuppressWarnings("unchecked") // Need this wrapper, because generics
-        private static <G> Class<G> castClass(Class<?> cls) {
-            return (Class<G>)cls;
-        }
     }
 
 }

@@ -6,9 +6,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.levelgen.feature.FeaturePlaceContext;
-import net.minecraft.world.level.levelgen.structure.templatesystem.StructureManager;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructurePlaceSettings;
 import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplate;
+import net.minecraft.world.level.levelgen.structure.templatesystem.StructureTemplateManager;
 
 import net.dries007.tfc.world.feature.tree.StackedTreeConfig;
 import net.dries007.tfc.world.feature.tree.StackedTreeFeature;
@@ -32,7 +32,7 @@ public class NoTrunkStackedTreeFeature extends StackedTreeFeature
 
         final ChunkPos chunkPos = new ChunkPos(pos);
         final BlockPos.MutableBlockPos mutablePos = new BlockPos.MutableBlockPos().set(pos);
-        final StructureManager manager = TreeHelpers.getStructureManager(level);
+        final StructureTemplateManager manager = TreeHelpers.getStructureManager(level);
         final StructurePlaceSettings settings = TreeHelpers.getPlacementSettings(level, chunkPos, random);
 
         if (TreeHelpers.isValidGround(level, pos, settings, config.placement()))

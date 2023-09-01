@@ -12,16 +12,23 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import net.dries007.tfc.common.entities.TFCBoat;
+import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.entities.misc.TFCBoat;
+import net.dries007.tfc.common.entities.misc.TFCChestBoat;
+import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
 
 public class AFCEntities
 {
-    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITIES, AFC.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITIES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, AFC.MOD_ID);
 
-    public static final Map<AFCWood, RegistryObject<EntityType<TFCBoat>>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood ->
-        register("boat/" + wood.name(), EntityType.Builder.<TFCBoat>of((type, level) -> new TFCBoat(type, level, AFCItems.BOATS.get(wood)), MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10))
+    public static final Map<AFCWood, RegistryObject<EntityType<TFCChestBoat>>> CHEST_BOATS = Helpers.mapOfKeys(AFCWood.class, wood ->
+        register("chest_boat/" + wood.name(), EntityType.Builder.<TFCChestBoat>of((type, level) -> new TFCChestBoat(type, level, TFCItems.BOATS.get(wood)), MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10))
     );
+    public static final Map<AFCWood, RegistryObject<EntityType<TFCBoat>>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood ->
+        register("boat/" + wood.name(), EntityType.Builder.<TFCBoat>of((type, level) -> new TFCBoat(type, level, CHEST_BOATS.get(wood), TFCItems.BOATS.get(wood)), MobCategory.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10))
+    );
+
 
     public static <E extends Entity> RegistryObject<EntityType<E>> register(String name, EntityType.Builder<E> builder)
     {

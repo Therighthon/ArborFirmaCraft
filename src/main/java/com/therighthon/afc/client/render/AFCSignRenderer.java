@@ -9,6 +9,6 @@ public class AFCSignRenderer extends TFCSignBlockEntityRenderer
 {
     public AFCSignRenderer(BlockEntityRendererProvider.Context context)
     {
-        super(context, AFCBlocks.WOODS.entrySet().stream().map((entry) -> new SignModelData("tfc", entry.getKey().getSerializedName(), entry.getValue().get(Wood.BlockType.SIGN).get(), entry.getValue().get(Wood.BlockType.WALL_SIGN).get())));
+        super(context, AFCBlocks.WOODS.keySet().stream().map(blockTypeRegistryObjectMap -> new SignModelData("tfc", blockTypeRegistryObjectMap.getSerializedName(), blockTypeRegistryObjectMap.getVanillaWoodType())));
     }
 }

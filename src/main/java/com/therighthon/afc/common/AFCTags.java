@@ -1,6 +1,7 @@
 package com.therighthon.afc.common;
 
 import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
@@ -19,7 +20,7 @@ public class AFCTags
 
         private static TagKey<Block> create(String id)
         {
-            return TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation("afc", id));
+            return TagKey.create(Registries.BLOCK, new ResourceLocation("afc", id));
         }
 
     }

@@ -12,18 +12,19 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.dries007.tfc.common.blockentities.LogPileBlockEntity;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
+import static net.dries007.tfc.TerraFirmaCraft.*;
+
 public class AFCBlockEntities
 {
-    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =
-        DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES, AFC.MOD_ID);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, AFC.MOD_ID);
 
-    public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP_BLOCK_ENTITY =
-        BLOCK_ENTITIES.register("tap_block_entity", () ->
-            BlockEntityType.Builder.of(TapBlockEntity::new,
-                AFCBlocks.TREE_TAP.get()).build(null));
+    public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP_BLOCK_ENTITY = register("tap_block_entity", TapBlockEntity::new, AFCBlocks.TREE_TAP);
+
 
     public static final RegistryObject<BlockEntityType<AFCSignBlockEntity>> SIGN = register("sign", AFCSignBlockEntity::new, AFCBlocks.WOODS.values().stream().flatMap(map -> Stream.of(Wood.BlockType.SIGN, Wood.BlockType.WALL_SIGN).map(map::get)));
 
@@ -34,5 +35,10 @@ public class AFCBlockEntities
 
     public static void register (IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
+    }
+
+    private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block> block)
+    {
+        return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, block);
     }
 }

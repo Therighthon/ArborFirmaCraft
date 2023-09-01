@@ -26,21 +26,18 @@ import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import org.antlr.runtime.tree.Tree;
-import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.RenderHelpers;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 
@@ -49,7 +46,7 @@ import static net.dries007.tfc.common.blocks.wood.Wood.BlockType.*;
 @Mod.EventBusSubscriber(modid = AFC.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents
 {
-    public static void registerColorHandlerBlocks(ColorHandlerEvent.Block event)
+    public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
     {
         final BlockColors registry = event.getBlockColors();
 //        final BlockColor grassColor = (state, level, pos, tintIndex) -> TFCColors.getGrassColor(pos, tintIndex);
@@ -93,7 +90,7 @@ public class ModEventClientBusEvents
             value.get(TreeSpecies.BlockType.LEAVES).get()));
     }
 
-    public static void registerColorHandlerItems(ColorHandlerEvent.Item event)
+    public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
     {
         final ItemColors registry = event.getItemColors();
 //        final ItemColor grassColor = (stack, tintIndex) -> TFCColors.getGrassColor(null, tintIndex);
@@ -152,30 +149,30 @@ public class ModEventClientBusEvents
 
     }
 
-    public static void onBlockColors(ColorHandlerEvent.Block event)
+    public static void onBlockColors(RegisterColorHandlersEvent.Block event)
     {
 
     }
 
-    public static void onTextureStitch(TextureStitchEvent.Pre event)
-    {
-        final ResourceLocation sheet = event.getAtlas().location();
-        if (sheet.equals(Sheets.CHEST_SHEET))
-        {
-            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> {
-                event.addSprite(Helpers.identifier("entity/chest/normal/" + name));
-                event.addSprite(Helpers.identifier("entity/chest/normal_left/" + name));
-                event.addSprite(Helpers.identifier("entity/chest/normal_right/" + name));
-                event.addSprite(Helpers.identifier("entity/chest/trapped/" + name));
-                event.addSprite(Helpers.identifier("entity/chest/trapped_left/" + name));
-                event.addSprite(Helpers.identifier("entity/chest/trapped_right/" + name));
-            });
-        }
-        else if (sheet.equals(Sheets.SIGN_SHEET))
-        {
-            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> event.addSprite(Helpers.identifier("entity/signs/" + name)));
-        }
-    }
+//    public static void onTextureStitch(TextureStitchEvent.Pre event)
+//    {
+//        final ResourceLocation sheet = event.getAtlas().location();
+//        if (sheet.equals(Sheets.CHEST_SHEET))
+//        {
+//            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> {
+//                event.addSprite(Helpers.identifier("entity/chest/normal/" + name));
+//                event.addSprite(Helpers.identifier("entity/chest/normal_left/" + name));
+//                event.addSprite(Helpers.identifier("entity/chest/normal_right/" + name));
+//                event.addSprite(Helpers.identifier("entity/chest/trapped/" + name));
+//                event.addSprite(Helpers.identifier("entity/chest/trapped_left/" + name));
+//                event.addSprite(Helpers.identifier("entity/chest/trapped_right/" + name));
+//            });
+//        }
+//        else if (sheet.equals(Sheets.SIGN_SHEET))
+//        {
+//            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> event.addSprite(Helpers.identifier("entity/signs/" + name)));
+//        }
+//    }
     //Uncomment this when boat entities are added
     public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
     {

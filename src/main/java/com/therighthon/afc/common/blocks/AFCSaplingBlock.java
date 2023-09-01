@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.state.BlockState;
 
 import net.dries007.tfc.common.blockentities.TickCounterBlockEntity;
@@ -34,7 +35,7 @@ public class AFCSaplingBlock extends TFCSaplingBlock
 
     @Override
     @SuppressWarnings("deprecation")
-    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, Random random)
+    public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random)
     {
         if (level.getMaxLocalRawBrightness(pos.above()) >= 9 && random.nextInt(7) == 0)
         {

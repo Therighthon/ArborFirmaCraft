@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
@@ -21,6 +22,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
+import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -38,12 +40,12 @@ public class AFC
         eventBus.addListener(this::setup);
         ModEvents.init();
 
-        AFCItems.register(eventBus);
-        AFCBlocks.register(eventBus);
+        AFCBlocks.BLOCKS.register(eventBus);
+        AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
-        AFCBlockEntities.register(eventBus);
+        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         AFCRecipes.register(eventBus);
@@ -58,7 +60,7 @@ public class AFC
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onItemColors);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onTextureStitch);
+//            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onTextureStitch);
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onParticlesRegister);
         }
 
@@ -73,7 +75,7 @@ public class AFC
     {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
-        LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
+
     }
 
     public static ResourceLocation treeIdentifier(String path)
