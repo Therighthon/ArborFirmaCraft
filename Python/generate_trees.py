@@ -57,7 +57,7 @@ NORMAL_TREES = [
     Tree('poplar', 'random', 'hickory', 10, 'aspen', False),
     Tree('jaggery_palm', 'random', 'mangrove', 12, 'palm', False),
     Tree('iroko_teak', 'random', 'canopy', 15, 'teak', False),
-    Tree('flame_of_the_forest' 'random', 'round', 23, 'teak', False),
+    Tree('flame_of_the_forest', 'random', 'round', 23, 'teak', False),
 
     Tree('rainbow_eucalyptus', 'random', 'stretched', 7, 'rainbow_eucalyptus', False),
     Tree('mountain_ash', 'random', 'tall_branches', 18, 'eucalyptus', False),
@@ -140,7 +140,7 @@ DEAD_TREES = [
     Tree('poplar', 'random', 'dead_tall', 6, 'aspen', False),
     Tree('jaggery_palm', 'random', 'dead_small', 6, 'palm', False),
     Tree('iroko_teak', 'random', 'dead_jungle', 4, 'teak', False),
-    Tree('flame_of_the_forest' 'random', 'dead_small', 6, 'teak', False),
+    Tree('flame_of_the_forest', 'random', 'dead_small', 6, 'teak', False),
     Tree('ironwood', 'random', 'dead_jungle', 4, 'ironwood', False),
     Tree('ipe', 'random', 'dead_small', 6, 'ipe', False)
 ]
@@ -192,6 +192,8 @@ def main():
     verify_center_trunk('bigleaf_large', 6)
     verify_center_trunk('sequoia_small', 1)
     verify_center_trunk('bigleaf_maple', 5)
+    verify_center_trunk('mangrove', 12)
+    verify_center_trunk('hickory', 10)
 
     print('Tree sapling drop chances:')
     for tree in NORMAL_TREES:
