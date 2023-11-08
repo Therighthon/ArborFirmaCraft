@@ -28,11 +28,11 @@ NORMAL_TREES = [
     Tree('mahogany', 'random', 'jungle', 17, 'mahogany', False),
     Tree('teak', 'random', 'jungle', 17, 'teak', False),
     Tree('tualang', 'random', 'emergent', 6, 'tualang', False),
-
+    Tree('ironwood', 'random', 'emergent', 6, 'ironwood', False),
+    Tree('ipe', 'random', 'mangrove', 12, 'ipe', False),
 
     Tree('gum_arabic', 'random', 'acacia', 35, 'gum_arabic', False),
     Tree('acacia_koa', 'random', 'koa', 12, 'acacia', False),
-    Tree('evergreen_ash', 'overlay', 'normal', 0, 'ash', False),
     Tree('mpingo_blackwood', 'random', 'acacia', 35, 'blackwood', False),
     Tree('mountain_fir', 'random', 'fir', 9, 'douglas_fir', False),
     Tree('balsam_fir', 'random', 'boreal', 9, 'douglas_fir', False),
@@ -53,6 +53,12 @@ NORMAL_TREES = [
     Tree('weeping_willow', 'random', 'willow_large', 14, 'willow', False),
     Tree('red_silk_cotton', 'random', 'canopy', 15, 'kapok', False),
 
+    Tree('horsetail_ironwood', 'random', 'mangrove', 12, 'ironwood', False),
+    Tree('poplar', 'random', 'hickory', 10, 'aspen', False),
+    Tree('jaggery_palm', 'random', 'mangrove', 12, 'palm', False),
+    Tree('iroko_teak', 'random', 'canopy', 15, 'teak', False),
+    Tree('flame_of_the_forest' 'random', 'round', 23, 'teak', False),
+
     Tree('rainbow_eucalyptus', 'random', 'stretched', 7, 'rainbow_eucalyptus', False),
     Tree('mountain_ash', 'random', 'tall_branches', 18, 'eucalyptus', False),
     Tree('weeping_cypress', 'random', 'nootka', 11, 'cypress', False),
@@ -61,23 +67,10 @@ NORMAL_TREES = [
     Tree('rubber_fig', 'random', 'gnarled', 12, 'rubber_fig', False),
     Tree('small_leaf_mahogany', 'random', 'medium_round', 5, 'mahogany', False),
     Tree('sapele_mahogany', 'random', 'canopy', 15, 'mahogany', False),
-
-    # Vanilla TFC Replacements
-    Tree('umbrella_thorn_acacia', 'random', 'acacia', 35, 'acacia', False),
-    Tree('black_ash', 'random', 'round', 23, 'ash', False),
-    Tree('mulga_blackwood', 'random', 'blackwood', 10, 'blackwood', False),
-    Tree('bitternut_hickory', 'random', 'round', 23, 'hickory', False),
-    Tree('quaking_aspen', 'random', 'aspen', 16, 'aspen', False),
-    Tree('paper_birch', 'random', 'aspen', 16, 'birch', False),
-    Tree('sugar_maple', 'random', 'round', 23, 'maple', False),
-    Tree('corkscrew_willow', 'random', 'willow', 7, 'willow', False),
-    Tree('shisham_rosewood', 'random', 'tall_branches', 18, 'rosewood', False),
-
 ]
 
 LARGE_TREES = [
     Tree('bigleaf_maple', 'random', 'bigleaf_large', 6, 'maple', True),
-    Tree('evergreen_ash', 'random', 'round', 14, 'ash', True),
     Tree('mountain_fir', 'random', 'fir_large', 5, 'douglas_fir', True),
     Tree('balsam_fir', 'random', 'tall_boreal', 11, 'douglas_fir', True),
     Tree('coast_redwood', 'stacked', 'conifer_large', (3, 3, 3), 'sequoia', True),
@@ -100,15 +93,7 @@ LARGE_TREES = [
     Tree('acacia_koa', 'random', 'kapok_large', 6, 'acacia', True),
     Tree('hevea', 'random', 'emergent', 6, 'hevea', True),
     Tree('rainbow_eucalyptus', 'random', 'stretched', 7, 'rainbow_eucalyptus', True),
-    Tree('gum_arabic', 'random', 'gnarled', 12, 'acacia', True),
-
-    Tree('mulga_blackwood', 'random', 'blackwood_large', 10, 'blackwood', True),
-    Tree('umbrella_thorn_acacia', 'random', 'kapok_large', 6, 'acacia', True),
-    Tree('black_ash', 'random', 'round_large', 6, 'ash', True),
-    Tree('bitternut_hickory', 'random', 'round_large', 6, 'hickory', True),
-    Tree('sugar_maple', 'random', 'medium_round', 5, 'maple', True),
-    Tree('shisham_rosewood', 'random', 'pin_oak', 8, 'rosewood', True),
-    Tree('corkscrew_willow', 'random', 'willow_large', 14, 'willow', True)
+    Tree('gum_arabic', 'random', 'gnarled', 12, 'acacia', True)
 ]
 
 DEAD_TREES = [
@@ -151,16 +136,13 @@ DEAD_TREES = [
     Tree('sapele_mahogany', 'random', 'dead_small', 6, 'mahogany', False),
     Tree('red_silk_cotton', 'random', 'dead_jungle', 4, 'kapok', False),
 
-    # TFC Replacements
-    Tree('umbrella_thorn_acacia', 'random', 'dead_small', 6, 'acacia', False),
-    Tree('black_ash', 'random', 'dead_small', 6, 'ash', False),
-    Tree('mulga_blackwood', 'random', 'dead_small', 6, 'blackwood', False),
-    Tree('bitternut_hickory', 'random', 'dead_small', 6, 'hickory', False),
-    Tree('quaking_aspen', 'random', 'dead_small', 6, 'aspen', False),
-    Tree('paper_birch', 'random', 'dead_small', 6, 'birch', False),
-    Tree('sugar_maple', 'random', 'dead_small', 6, 'maple', False),
-    Tree('corkscrew_willow', 'random', 'dead_small', 6, 'willow', False),
-    Tree('shisham_rosewood', 'random', 'dead_small', 6, 'rosewood', False),
+    Tree('horsetail_ironwood', 'random', 'dead_small', 6, 'ironwood', False),
+    Tree('poplar', 'random', 'dead_tall', 6, 'aspen', False),
+    Tree('jaggery_palm', 'random', 'dead_small', 6, 'palm', False),
+    Tree('iroko_teak', 'random', 'dead_jungle', 4, 'teak', False),
+    Tree('flame_of_the_forest' 'random', 'dead_small', 6, 'teak', False),
+    Tree('ironwood', 'random', 'dead_jungle', 4, 'ironwood', False),
+    Tree('ipe', 'random', 'dead_small', 6, 'ipe', False)
 ]
 
 

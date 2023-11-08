@@ -32,7 +32,6 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Acacia
     GUM_ARABIC(false, 8, 196),
     ACACIA_KOA(false, 16, 180),
-    FEVER_TREE(false, 9, 220),
     //Ash
     //Aspen
     POPLAR(false, 8, 250),
