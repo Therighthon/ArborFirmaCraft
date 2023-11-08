@@ -18,7 +18,6 @@ import org.antlr.runtime.tree.Tree;
 
 import net.dries007.tfc.common.recipes.ISimpleRecipe;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
-import net.dries007.tfc.common.recipes.ingredients.BlockIngredients;
 import net.dries007.tfc.util.JsonHelpers;
 import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.collections.IndirectHashCollection;
@@ -45,7 +44,7 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 
     }
 
-    public static final IndirectHashCollection<Block, TreeTapRecipe> CACHE = IndirectHashCollection.createForRecipe(recipe -> recipe.getBlockIngredient().getValidBlocks(), AFCRecipeTypes.TREE_TAPPING_RECIPE);
+    public static final IndirectHashCollection<Block, TreeTapRecipe> CACHE = IndirectHashCollection.createForRecipe(recipe -> recipe.getBlockIngredient().blocks(), AFCRecipeTypes.TREE_TAPPING_RECIPE);
 
     public static TreeTapRecipe getRecipe(BlockState state)
     {
@@ -143,14 +142,14 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
             final Boolean requiresNaturalLog = json.has("requires_natural_log") ? JsonHelpers.getAsBoolean(json, "requires_natural_log") : Boolean.TRUE;
             final Boolean springOnly = json.has("spring_only") ? JsonHelpers.getAsBoolean(json, "spring_only") : Boolean.FALSE;
 
-            BlockIngredient blockIngredient = BlockIngredients.fromJson(JsonHelpers.get(json, "input_block"));
+            BlockIngredient blockIngredient = BlockIngredient.fromJson(JsonHelpers.get(json, "input_block"));
 
             return new TreeTapRecipe(id, output, blockIngredient, requiresNaturalLog, springOnly, minTemp, maxTemp);
         }
 
         @Override
         public TreeTapRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
-            final BlockIngredient recipeBlock = BlockIngredients.fromNetwork(buffer);
+            final BlockIngredient recipeBlock = BlockIngredient.fromNetwork(buffer);
             final FluidStack output = buffer.readFluidStack();
             final float minTemp = buffer.readFloat();
             final float maxTemp = buffer.readFloat();

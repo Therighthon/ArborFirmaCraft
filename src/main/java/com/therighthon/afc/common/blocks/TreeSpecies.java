@@ -19,92 +19,96 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
+import net.dries007.tfc.common.blocks.wood.FallenLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
+import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
-    UMBRELLA_THORN_ACACIA(7, 8, ColorScheme.EVERGREEN),
-    GUM_ARABIC(7, 8, ColorScheme.EVERGREEN),
-    ACACIA_KOA(8, 16, ColorScheme.EVERGREEN),
+    GUM_ARABIC(false, 8, 196),
+    ACACIA_KOA(false, 16, 180),
+    FEVER_TREE(false, 9, 220),
     //Ash
-    BLACK_ASH(7, 7, ColorScheme.TRANSITIONAL_DECIDUOUS),
-    EVERGREEN_ASH(7, 9, ColorScheme.EVERGREEN),
     //Aspen
-    QUAKING_ASPEN(7, 8, ColorScheme.YELLOW_DECIDUOUS),
+    POPLAR(false, 8, 250),
     //Birch
-    PAPER_BIRCH(7, 7, ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS),
     //Blackwood
-    MULGA_BLACKWOOD(7, 7, ColorScheme.EVERGREEN),
-    MPINGO_BLACKWOOD(7, 11, ColorScheme.EVERGREEN),
+    MPINGO_BLACKWOOD(false, 11, 200),
     //Fir
-    MOUNTAIN_FIR( 7, 11, ColorScheme.EVERGREEN),
-    BALSAM_FIR( 7, 13, ColorScheme.EVERGREEN),
+    MOUNTAIN_FIR( true, 11, 0),
+    BALSAM_FIR( true, 13, 0),
     //Hickory
-    BITTERNUT_HICKORY(7, 10, ColorScheme.YELLOW_DECIDUOUS),
-    SCRUB_HICKORY( 7, 7, ColorScheme.EVERGREEN),
+    SCRUB_HICKORY( false, 7, 220),
     //Kapok
-    RED_SILK_COTTON(7, 18, ColorScheme.KAPOK),
+    RED_SILK_COTTON(false, 18, 150),
     //Maple
-    SUGAR_MAPLE(7, 7, ColorScheme.RED_DECIDUOUS),
-    BIGLEAF_MAPLE( 7, 9, ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS),
-    WEEPING_MAPLE( 7, 9, ColorScheme.EVERGREEN),
+    BIGLEAF_MAPLE( false, 9, 215),
+    WEEPING_MAPLE( true, 9, 0),
     //Oak
-    BLACK_OAK( 8, 14, ColorScheme.EVERGREEN),
-    LIVE_OAK( 7, 10, ColorScheme.EVERGREEN), //LIGHT_TRANSITIONAL_DECIDUOUS
+    BLACK_OAK( false, 14, 180),
+    LIVE_OAK( false, 10, 155),
+    //Palm
+    JAGGERY_PALM(false, 6, 249),
     //Pine
-    STONE_PINE( 7, 11, ColorScheme.EVERGREEN),
-    RED_PINE( 7, 7, ColorScheme.EVERGREEN),
-    TAMARACK(7, 10, ColorScheme.YELLOW_DECIDUOUS),
+    STONE_PINE( true, 11, 0),
+    RED_PINE( true, 7, 0),
+    TAMARACK(false, 10, 254),
 
     //Rosewood
-    SHISHAM_ROSEWOOD( 7, 8, ColorScheme.EVERGREEN),
-    GIANT_ROSEWOOD( 7, 16, ColorScheme.JACARANDA),
+    SHISHAM_ROSEWOOD( false, 8, 165),
+    GIANT_ROSEWOOD( false, 16, 190),
     //Sequoia
-    COAST_REDWOOD( 7, 10, ColorScheme.EVERGREEN),
+    COAST_REDWOOD( true, 10, 0),
     //Spruce
-    COAST_SPRUCE(7, 8, ColorScheme.EVERGREEN),
-    SITKA_SPRUCE( 7, 10, ColorScheme.EVERGREEN),
-    BLACK_SPRUCE(7, 12, ColorScheme.EVERGREEN),
+    COAST_SPRUCE(true, 8, 0),
+    SITKA_SPRUCE( true, 10, 0),
+    BLACK_SPRUCE(true, 12, 0),
     //Cedar
-    ATLAS_CEDAR( 7, 10, ColorScheme.EVERGREEN),
+    ATLAS_CEDAR( true, 10, 0),
     //Willow
-    CORKSCREW_WILLOW(7, 11, ColorScheme.YELLOW_DECIDUOUS),
-    WEEPING_WILLOW(7, 7, ColorScheme.EVERGREEN),
+    WEEPING_WILLOW(false, 7, 240),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(8, 16, ColorScheme.EVERGREEN),
-    MOUNTAIN_ASH(7, 13, ColorScheme.EVERGREEN),
+    RAINBOW_EUCALYPTUS(false, 16, 30),
+    MOUNTAIN_ASH(false, 13, 150),
     //Fig
-    RUBBER_FIG(7, 13, ColorScheme.EVERGREEN),
+    RUBBER_FIG(false, 13, 80),
     //Cypress
-    REDCEDAR(7, 10, ColorScheme.EVERGREEN),
-    WEEPING_CYPRESS(7, 7, ColorScheme.EVERGREEN),
-    BALD_CYPRESS(7, 7, ColorScheme.ORANGE_DECIDUOUS),
+    REDCEDAR(true, 10, 0),
+    WEEPING_CYPRESS(true, 7, 0),
+    BALD_CYPRESS(false, 7, 130),
     //Mahogany
-    SAPELE_MAHOGANY(7, 14, ColorScheme.EVERGREEN),
-    SMALL_LEAF_MAHOGANY(7, 11, ColorScheme.EVERGREEN);
+    SAPELE_MAHOGANY(false, 14, 170),
+    SMALL_LEAF_MAHOGANY(false, 11, 240),
+    //Teak
+    IROKO_TEAK(false, 13, 140),
+    FLAME_OF_THE_FOREST(false, 11, 0),
+    //Ironwood
+    LEBOMBO_IRONWOOD(false, 8, 230),
+    HORSETAIL_IRONWOOD(false, 10, 220);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
-    private final ColorScheme colorScheme;
+    private final int autumnIndex;
     private final TFCTreeGrower tree;
-    private final int maxDecayDistance;
     private final int daysToGrow;
+    private final boolean conifer;
 
-    TreeSpecies(int maxDecayDistance, int daysToGrow, ColorScheme colorScheme) {
+    TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
-        this.colorScheme = colorScheme;
+        this.autumnIndex = autumnIndex;
         this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
-        this.maxDecayDistance = maxDecayDistance;
+        this.conifer = conifer;
         this.daysToGrow = daysToGrow;
     }
 
-    public ColorScheme getColorScheme()
+    public int autumnIndex()
     {
-        return colorScheme;
+        return autumnIndex;
     }
 
     @Override
@@ -115,7 +119,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public boolean isConifer()
     {
-        return colorScheme==ColorScheme.EVERGREEN;
+        return conifer;
     }
 
     @Override
@@ -125,18 +129,10 @@ public enum TreeSpecies implements RegistryTreeSpecies
     }
 
     @Override
-    public int maxDecayDistance()
-    {
-        return maxDecayDistance;
-    }
-
-    @Override
     public int daysToGrow()
     {
         return defaultDaysToGrow();
     }
-
-
 
     public int defaultDaysToGrow()
     {
@@ -151,18 +147,17 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public enum BlockType {
         LEAVES((self, wood) -> {
-            return TFCLeavesBlock.create(ExtendedProperties.of(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.maxDecayDistance());
+            //TODO: Remove jank
+            return new TFCLeavesBlock(ExtendedProperties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).defaultInstrument().randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.autumnIndex(), wood.getBlock(self.fallenLeaves()), null) {};
         }, false),
-        SAPLING((self, wood) -> {
-            TFCTreeGrower var10002 = wood.tree();
-            ExtendedProperties var10003 = ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0.0F).sound(SoundType.GRASS).flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER);
-            Objects.requireNonNull(wood);
-            return new TFCSaplingBlock(var10002, var10003, wood::daysToGrow);
-        }, false),
-        POTTED_SAPLING((self, wood) -> {
-            return new FlowerPotBlock(() -> {
-                return (FlowerPotBlock)Blocks.FLOWER_POT;
-            }, wood.getBlock(SAPLING), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING));
+        SAPLING((self, wood) -> new TFCSaplingBlock(wood.tree(),
+            ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0).sound(SoundType.GRASS)
+                .flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER),
+            wood::daysToGrow, wood == TreeSpecies.JAGGERY_PALM), false),
+        POTTED_SAPLING((self, wood) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
+            wood.getBlock(SAPLING), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING)), false),
+        FALLEN_LEAVES((self, wood) -> {
+            return new FallenLeavesBlock(ExtendedProperties.of().strength(0.05F, 0.0F).noOcclusion().noCollission().isViewBlocking(TFCBlocks::never).sound(SoundType.CROP).flammableLikeWool(), wood.getBlock(self.leaves()));
         }, false);
 
         private final BiFunction<Block, net.minecraft.world.item.Item.Properties, ? extends BlockItem> blockItemFactory;
@@ -173,6 +168,13 @@ public enum TreeSpecies implements RegistryTreeSpecies
             return ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD);
         }
 
+        private TreeSpecies.BlockType fallenLeaves() {
+            return FALLEN_LEAVES;
+        }
+
+        private TreeSpecies.BlockType leaves() {
+            return LEAVES;
+        }
 
         private BlockType(BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory, boolean isPlanksVariant) {
             this(blockFactory, isPlanksVariant, BlockItem::new);
@@ -210,5 +212,10 @@ public enum TreeSpecies implements RegistryTreeSpecies
             return ("wood/" + this.name() + "/" + wood.getSerializedName()).toLowerCase(Locale.ROOT);
         }
 
+    }
+
+    public boolean hasBlossomingSeason ()
+    {
+        return (this.serializedName.equals("flame_of_the_forest") || this.serializedName.equals("giant_rosewood") || this.serializedName.equals("red_silk_cotton"));
     }
 }

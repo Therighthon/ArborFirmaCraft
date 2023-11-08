@@ -11,7 +11,7 @@ public interface RegistryTreeSpecies extends StringRepresentable
 {
     TFCTreeGrower tree();
 
-    int maxDecayDistance();
+    int autumnIndex();
 
     int daysToGrow();
     Supplier<Block> getBlock(TreeSpecies.BlockType var1);

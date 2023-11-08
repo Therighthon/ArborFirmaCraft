@@ -1,6 +1,7 @@
 package com.therighthon.afc.event;
 
 //Copied pretty directly from EERussianguy's Beneath
+
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;

@@ -27,7 +27,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.parchmentmc.librarian.forgegradle'
 apply plugin: 'org.spongepowered.mixin'
 
-version = '0.1.3-1.20.1'
+version = '1.0.0-1.20.1'
 group = 'com.therighthon.afc' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'afc'
 
@@ -219,8 +219,8 @@ dependencies {
 
     //TFC
 //    fg.deobf("curse.maven:tfc-302973:${4085585}")
-//    implementation fg.deobf("curse.maven:tfc-302973:4572444")
-    implementation fg.deobf("tfc:TerraFirmaCraft-Forge-${"1.20.1"}:${"0.0.0-indev"}")
+    implementation fg.deobf("curse.maven:tfc-302973:4845122")
+//    implementation fg.deobf("tfc:TerraFirmaCraft-Forge-${"1.20.1"}:${"0.0.0-indev"}")
 
     //patchouli
     implementation fg.deobf("curse.maven:patchouli-306770:4636277")

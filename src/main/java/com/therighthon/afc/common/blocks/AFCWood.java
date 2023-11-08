@@ -19,34 +19,36 @@ import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 public enum AFCWood implements RegistryWood
 {
     //Wood color, then bark color
-    BAOBAB(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    EUCALYPTUS(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    MAHOGANY( MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    HEVEA(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    TUALANG(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    TEAK(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    CYPRESS(MapColor.WOOD, MapColor.WOOD,7,10, ColorScheme.EVERGREEN),
-    FIG(MapColor.WOOD, MapColor.WOOD,7,12, ColorScheme.EVERGREEN);
+    BAOBAB(false, MapColor.WOOD, MapColor.WOOD,10, 212),
+    EUCALYPTUS(false, MapColor.WOOD, MapColor.WOOD,10, 150),
+    MAHOGANY( false, MapColor.WOOD, MapColor.WOOD,10, 10),
+    HEVEA(false, MapColor.WOOD, MapColor.WOOD,10, 130),
+    TUALANG(false, MapColor.WOOD, MapColor.WOOD,10, 226),
+    TEAK(false, MapColor.WOOD, MapColor.WOOD,10, 240),
+    CYPRESS(true, MapColor.WOOD, MapColor.WOOD,10, 0),
+    FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250),
+    IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200),
+    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254);
 
     public static final AFCWood[] VALUES = values();
 
     private final String serializedName;
-    private final ColorScheme colorScheme;
+    private final boolean conifer;
     private final MapColor woodColor;
     private final MapColor barkColor;
     private final TFCTreeGrower tree;
-    private final int maxDecayDistance;
     private final int defaultDaysToGrow;
     private final BlockSetType blockSet;
     private final WoodType woodType;
+    private final int autumnIndex;
 
-    AFCWood(MapColor woodColor, MapColor barkColor, int maxDecayDistance, int daysToGrow, ColorScheme colorScheme) {
+    AFCWood(boolean evergreen, MapColor woodColor, MapColor barkColor, int daysToGrow, int autumnIndex) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
+        this.conifer = evergreen;
         this.woodColor = woodColor;
-        this.colorScheme = colorScheme;
         this.barkColor = barkColor;
+        this.autumnIndex = autumnIndex;
         this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
-        this.maxDecayDistance = maxDecayDistance;
         this.defaultDaysToGrow = daysToGrow;
         this.blockSet = new BlockSetType(serializedName);
         this.woodType = new WoodType(Helpers.identifier(this.serializedName).toString(), this.blockSet);
@@ -60,12 +62,7 @@ public enum AFCWood implements RegistryWood
 
     public boolean isConifer()
     {
-        return colorScheme == ColorScheme.EVERGREEN;
-    }
-
-    public ColorScheme getColorScheme()
-    {
-        return colorScheme;
+        return conifer;
     }
 
     @Override
@@ -98,13 +95,16 @@ public enum AFCWood implements RegistryWood
     public TFCTreeGrower tree() {
         return tree;
     }
-    public int maxDecayDistance() {
-        return maxDecayDistance;
-    }
 
     public int daysToGrow() {
         //return (Integer)((ForgeConfigSpec.IntValue) AFCConfig.SERVER.saplingGrowthDays.get(this)).get();
         return defaultDaysToGrow();
+    }
+
+    @Override
+    public int autumnIndex()
+    {
+        return autumnIndex;
     }
 
     public int defaultDaysToGrow() {
@@ -118,6 +118,11 @@ public enum AFCWood implements RegistryWood
             BlockSetType.register(wood.blockSet);
             WoodType.register(wood.woodType);
         }
+    }
+
+    public WoodType getWoodType ()
+    {
+        return this.woodType;
     }
 
 }

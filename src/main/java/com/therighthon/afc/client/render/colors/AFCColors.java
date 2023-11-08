@@ -45,82 +45,32 @@ public final class AFCColors
     public AFCColors() {
     }
 
-    public static int getYellowDeciduousFoliageColor(@Nullable BlockPos pos, int tintIndex) {
-        if (pos != null && tintIndex == 0) {
-            switch(getAdjustedNoisySeason(pos)) {
-                case SPRING:
-                case SUMMER:
-                case WINTER:
-                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex);
-                case FALL:
-                    int index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_YELLOW_COLORS_CACHE[index & '\uffff'];
-            }
-        }
-
-        return -1;
-    }
-
-    public static int getOrangeDeciduousFoliageColor(@Nullable BlockPos pos, int tintIndex) {
-        if (pos != null && tintIndex == 0) {
-            switch(getAdjustedNoisySeason(pos)) {
-                case SPRING:
-                case SUMMER:
-                case WINTER:
-                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex);
-                case FALL:
-                    int index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_ORANGE_COLORS_CACHE[index & '\uffff'];
-            }
-        }
-
-        return -1;
-    }
-
-    public static int getRedDeciduousFoliageColor(@Nullable BlockPos pos, int tintIndex) {
-        if (pos != null && tintIndex == 0) {
-            switch(getAdjustedNoisySeason(pos)) {
-                case SPRING:
-                case SUMMER:
-                case WINTER:
-                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex);
-                case FALL:
-                    int index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_RED_COLORS_CACHE[index & '\uffff'];
-            }
-        }
-
-        return -1;
-    }
-
-    public static int getTamarackFoliageColor(@Nullable BlockPos pos, int tintIndex) {
+    public static int getYellowIpeFoliageColor(@Nullable BlockPos pos, int tintIndex, int autumnIndex) {
         if (pos != null && tintIndex == 0) {
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
+                case MARCH:
+                case APRIL:
+                    index = Helpers.hash(91273491823412341L, pos);
+                    return FOLIAGE_YELLOW_COLORS_CACHE[index & '\uffff'];
                 case DECEMBER:
                 case JANUARY:
                 case FEBRUARY:
-                case APRIL:
                 case MAY:
                 case JUNE:
                 case JULY:
                 case AUGUST:
-                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex);
-                case MARCH:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_JACARANDA_COLORS_CACHE[index & '\uffff'];
                 case SEPTEMBER:
                 case OCTOBER:
                 case NOVEMBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_YELLOW_COLORS_CACHE[index & '\uffff'];
+                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex, autumnIndex);
             }
         }
 
         return -1;
     }
 
-    public static int getJacarandaFoliageColor(@Nullable BlockPos pos, int tintIndex) {
+    public static int getJacarandaFoliageColor(@Nullable BlockPos pos, int tintIndex, int autumnIndex) {
         if (pos != null && tintIndex == 0) {
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
@@ -138,14 +88,14 @@ public final class AFCColors
                 case SEPTEMBER:
                 case OCTOBER:
                 case NOVEMBER:
-                    return TFCColors.getFoliageColor(pos, tintIndex);
+                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex, autumnIndex);
             }
         }
 
         return -1;
     }
 
-    public static int getKapokFoliageColor(@Nullable BlockPos pos, int tintIndex) {
+    public static int getKapokFoliageColor(@Nullable BlockPos pos, int tintIndex, int autumnIndex) {
         if (pos != null && tintIndex == 0) {
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
@@ -163,63 +113,32 @@ public final class AFCColors
                 case SEPTEMBER:
                 case OCTOBER:
                 case NOVEMBER:
-                    return TFCColors.getFoliageColor(pos, tintIndex);
+                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex, autumnIndex);
             }
         }
 
         return -1;
     }
 
-    public static int getTransitionalDeciduousFoliageColor(@Nullable BlockPos pos, int tintIndex) {
+    public static int getFlameOfTheForestFoliageColor(@Nullable BlockPos pos, int tintIndex, int autumnIndex) {
         if (pos != null && tintIndex == 0) {
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
+                case APRIL:
+                    index = Helpers.hash(91273491823412341L, pos);
+                    return FOLIAGE_ORANGE_COLORS_CACHE[index & '\uffff'];
                 case DECEMBER:
                 case JANUARY:
                 case FEBRUARY:
                 case MARCH:
-                case APRIL:
                 case MAY:
                 case JUNE:
                 case JULY:
                 case AUGUST:
-                    return TFCColors.getFoliageColor(pos, tintIndex);
-                case SEPTEMBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_YELLOW_COLORS_CACHE[index & '\uffff'];
-                case OCTOBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_ORANGE_COLORS_CACHE[index & '\uffff'];
-                case NOVEMBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_RED_COLORS_CACHE[index & '\uffff'];
-            }
-        }
-
-        return -1;
-    }
-
-    public static int getLightTransitionalDeciduousFoliageColor(@Nullable BlockPos pos, int tintIndex) {
-        if (pos != null && tintIndex == 0) {
-            int index;
-            switch(getAdjustedNoisyMonth(pos)) {
-                case DECEMBER:
-                case JANUARY:
-                case FEBRUARY:
-                case MARCH:
-                case APRIL:
-                case MAY:
-                case JUNE:
-                case JULY:
-                case AUGUST:
-                    return TFCColors.getFoliageColor(pos, tintIndex);
                 case SEPTEMBER:
                 case OCTOBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_YELLOW_COLORS_CACHE[index & '\uffff'];
                 case NOVEMBER:
-                    index = Helpers.hash(91273491823412341L, pos);
-                    return FOLIAGE_ORANGE_COLORS_CACHE[index & '\uffff'];
+                    return TFCColors.getSeasonalFoliageColor(pos, tintIndex, autumnIndex);
             }
         }
 

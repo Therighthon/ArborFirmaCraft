@@ -44,7 +44,8 @@ public class AFCItems
     public static final Map<AFCWood, RegistryObject<Item>> CHEST_MINECARTS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/chest_minecart/" + wood.name(), () -> new TFCMinecartItem(new Item.Properties(), TFCEntities.CHEST_MINECART, () -> AFCBlocks.WOODS.get(wood).get(Wood.BlockType.CHEST).get().asItem())));
 
     public static final Map<AFCWood, RegistryObject<Item>> SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/sign/" + wood.name(), () -> new SignItem(new Item.Properties(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_SIGN).get())));
-    public static final Map<AFCWood, RegistryObject<Item>> HANGING_SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/hanging_sign/" + wood.name(), () -> new HangingSignItem(AFCBlocks.WOODS.get(wood).get(Wood.BlockType.HANGING_SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_HANGING_SIGN).get(), new Item.Properties())));
+    //TODO: Hanging Signs
+    //public static final Map<AFCWood, RegistryObject<Item>> HANGING_SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/hanging_sign/" + wood.name(), () -> new HangingSignItem(AFCBlocks.WOODS.get(wood).get(Wood.BlockType.HANGING_SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_HANGING_SIGN).get(), new Item.Properties())));
 
     public static final Map<SimpleAFCFluid, RegistryObject<BucketItem>> SIMPLE_AFC_FLUID_BUCKETS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
         register("bucket/" + fluid.getSerializedName(), () -> new BucketItem(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), new Item.Properties()))

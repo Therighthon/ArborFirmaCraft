@@ -17,6 +17,7 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.client.TFCSounds;
 import net.dries007.tfc.client.particle.FluidParticleOption;
 import net.dries007.tfc.client.particle.TFCParticles;
+import net.dries007.tfc.common.blocks.wood.BranchDirection;
 import net.dries007.tfc.common.blocks.wood.LogBlock;
 import net.dries007.tfc.common.capabilities.Capabilities;
 import net.dries007.tfc.util.Helpers;
@@ -162,7 +163,7 @@ public class TapBlockEntity extends BlockEntity
                     //Ternary is used (sloppily) to ensure that we don't ask for a "natural" logblock from a block that can't have it
                     //It's sloppy, because if someone doesn't write the recipe correctly, then it will crash the game, but it should be a helpful crash, so...
                     if (this.pourPos != null
-                        && (recipe.requiresNaturalLog() ? logState.getValue(LogBlock.NATURAL) : true)
+                        && (!recipe.requiresNaturalLog() || !(logState.getValue(LogBlock.BRANCH_DIRECTION) == BranchDirection.NONE))
                         && isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp())
                         && (!recipe.springOnly() || isSpring(level))
                         && hasValidTrunk(level, logPos, logState))

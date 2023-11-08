@@ -20,9 +20,9 @@ public class AFCSaplingBlock extends TFCSaplingBlock
     private final ExtendedProperties properties;
     private final Supplier<Integer> daysToGrow;
 
-    public AFCSaplingBlock(TFCTreeGrower tree, ExtendedProperties properties, Supplier<Integer> days)
+    public AFCSaplingBlock(TFCTreeGrower tree, ExtendedProperties properties, Supplier<Integer> days, boolean sand)
     {
-        super(tree, properties, days);
+        super(tree, properties, days, sand);
         this.properties = properties;
         this.daysToGrow = days;
     }

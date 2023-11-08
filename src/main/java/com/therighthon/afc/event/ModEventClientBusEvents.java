@@ -48,46 +48,27 @@ public class ModEventClientBusEvents
 {
     public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
     {
-        final BlockColors registry = event.getBlockColors();
-//        final BlockColor grassColor = (state, level, pos, tintIndex) -> TFCColors.getGrassColor(pos, tintIndex);
-//        final BlockColor tallGrassColor = (state, level, pos, tintIndex) -> TFCColors.getTallGrassColor(pos, tintIndex);
         final BlockColor foliageColor = (state, level, pos, tintIndex) -> TFCColors.getFoliageColor(pos, tintIndex);
-        final BlockColor seasonalFoliageColor = (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex);
-        final BlockColor yellowDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getYellowDeciduousFoliageColor(pos, tintIndex);
-        final BlockColor orangeDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getOrangeDeciduousFoliageColor(pos, tintIndex);
-        final BlockColor redDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getRedDeciduousFoliageColor(pos, tintIndex);
-        final BlockColor transitionalDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getTransitionalDeciduousFoliageColor(pos, tintIndex);
-        final BlockColor lightTransitionalDeciduousFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getLightTransitionalDeciduousFoliageColor(pos, tintIndex);
-        final BlockColor kapokFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getKapokFoliageColor(pos, tintIndex);
-        final BlockColor jacarandaFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getJacarandaFoliageColor(pos, tintIndex);
-        final BlockColor tamarackFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getTamarackFoliageColor(pos, tintIndex);
+        final BlockColor kapokFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getKapokFoliageColor(pos, tintIndex, TreeSpecies.RED_SILK_COTTON.autumnIndex());
+        final BlockColor jacarandaFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getJacarandaFoliageColor(pos, tintIndex, TreeSpecies.GIANT_ROSEWOOD.autumnIndex());
+        final BlockColor yellowIpeFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getYellowIpeFoliageColor(pos, tintIndex, AFCWood.IPE.autumnIndex());
+        final BlockColor flameOfTheForestFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getFlameOfTheForestFoliageColor(pos, tintIndex, TreeSpecies.FLAME_OF_THE_FOREST.autumnIndex());
 
-        //ModBlocks.PLANTS.forEach((plant, reg) -> registry.register(plant.isTallGrass() ? tallGrassColor : plant.isSeasonal() ? seasonalFoliageColor : plant.isFoliage() ? foliageColor : grassColor, reg.get()));
-        //ModBlocks.POTTED_PLANTS.forEach((plant, reg) -> registry.register(grassColor, reg.get()));
-        AFCBlocks.WOODS.forEach((wood, reg) -> registry.register(
-            (wood.getColorScheme()== ColorScheme.EVERGREEN) ? foliageColor :
-            (wood.getColorScheme()== ColorScheme.TFC_DECIDUOUS) ? seasonalFoliageColor :
-            (wood.getColorScheme()== ColorScheme.YELLOW_DECIDUOUS) ? yellowDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.ORANGE_DECIDUOUS) ? orangeDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.RED_DECIDUOUS) ? redDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.TRANSITIONAL_DECIDUOUS) ? transitionalDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS) ? lightTransitionalDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.KAPOK) ? kapokFoliageColor :
-            (wood.getColorScheme()== ColorScheme.JACARANDA) ? jacarandaFoliageColor :
-                tamarackFoliageColor,
+//        ModBlocks.PLANTS.forEach((plant, reg) -> registry.register(plant.isTallGrass() ? tallGrassColor : plant.isSeasonal() ? seasonalFoliageColor : plant.isFoliage() ? foliageColor : grassColor, reg.get()));
+//        ModBlocks.POTTED_PLANTS.forEach((plant, reg) -> registry.register(grassColor, reg.get()));
+        AFCBlocks.WOODS.forEach((wood, reg) -> event.register(
+            wood.isConifer() ?
+                foliageColor : wood == AFCWood.IPE ? yellowIpeFoliageColor :
+                (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
             reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
-        AFCBlocks.TREE_SPECIES.forEach((wood, value) -> registry.register(
-            (wood.getColorScheme()== ColorScheme.EVERGREEN) ? foliageColor :
-            (wood.getColorScheme()== ColorScheme.TFC_DECIDUOUS) ? seasonalFoliageColor :
-            (wood.getColorScheme()== ColorScheme.YELLOW_DECIDUOUS) ? yellowDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.ORANGE_DECIDUOUS) ? orangeDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.RED_DECIDUOUS) ? redDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.TRANSITIONAL_DECIDUOUS) ? transitionalDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.LIGHT_TRANSITIONAL_DECIDUOUS) ? lightTransitionalDeciduousFoliageColor :
-            (wood.getColorScheme()== ColorScheme.KAPOK) ? kapokFoliageColor :
-            (wood.getColorScheme()== ColorScheme.JACARANDA) ? jacarandaFoliageColor :
-            tamarackFoliageColor,
-            value.get(TreeSpecies.BlockType.LEAVES).get()));
+
+        AFCBlocks.TREE_SPECIES.forEach((wood, reg) -> event.register(
+            wood.isConifer() ?
+                foliageColor : wood == TreeSpecies.RED_SILK_COTTON ? kapokFoliageColor :
+                wood == TreeSpecies.FLAME_OF_THE_FOREST ? flameOfTheForestFoliageColor :
+                wood == TreeSpecies.GIANT_ROSEWOOD ? jacarandaFoliageColor :
+                (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
+            reg.get(TreeSpecies.BlockType.LEAVES).get(), reg.get(TreeSpecies.BlockType.FALLEN_LEAVES).get()));
     }
 
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
@@ -101,7 +82,7 @@ public class ModEventClientBusEvents
 //                registry.register(plant.isSeasonal() ? seasonalFoliageColor : grassColor, reg.get());
 //        });
         AFCBlocks.WOODS.forEach((wood, reg) -> registry.register(seasonalFoliageColor, reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
-        AFCBlocks.TREE_SPECIES.forEach((key, value) -> registry.register(seasonalFoliageColor, value.get(TreeSpecies.BlockType.LEAVES).get()));
+        AFCBlocks.TREE_SPECIES.forEach((key, value) -> registry.register(seasonalFoliageColor, value.get(TreeSpecies.BlockType.LEAVES).get(), value.get(TreeSpecies.BlockType.FALLEN_LEAVES).get()));
     }
 
     public static void clientSetup(FMLClientSetupEvent event)
