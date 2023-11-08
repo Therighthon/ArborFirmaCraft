@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 3.2,
+      "max_temperature": 13.9,
+      "min_rainfall": 210,
+      "max_rainfall": 400
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/hickory"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/hickory"
+      }
+    ],
+    "normal_tree": "tfc:tree/hickory",
+    "dead_tree": "tfc:tree/hickory_dead",
+    "fallen_log": "tfc:wood/log/hickory",
+    "bush_log": {
+      "Name": "tfc:wood/wood/hickory",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/hickory"
+  }
+}

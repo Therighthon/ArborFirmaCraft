@@ -1,10 +1,8 @@
 package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
-import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
-import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
@@ -12,7 +10,6 @@ import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEvents;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -22,7 +19,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -44,7 +40,7 @@ public class AFC
         AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
-        AFCFeatures.FEATURES.register(eventBus);
+//        AFCFeatures.FEATURES.register(eventBus);
         AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);

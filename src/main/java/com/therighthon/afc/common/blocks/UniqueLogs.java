@@ -14,6 +14,7 @@ import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.wood.LogBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
@@ -24,6 +25,7 @@ public enum UniqueLogs implements RegistryUniqueLogs
     GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
     REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
     RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
+    POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN),
 
     ANCIENT_EUCALYPTUS(MapColor.WOOD, MapColor.WOOD, AFCWood.EUCALYPTUS),
     ANCIENT_BAOBAB(MapColor.WOOD, MapColor.WOOD, AFCWood.BAOBAB),
@@ -33,6 +35,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
     ANCIENT_TUALANG(MapColor.WOOD, MapColor.WOOD, AFCWood.TUALANG),
     ANCIENT_CYPRESS(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
     ANCIENT_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
+    ANCIENT_IRONWOOD(MapColor.WOOD, MapColor.WOOD, AFCWood.IRONWOOD),
+    ANCIENT_IPE(MapColor.WOOD, MapColor.WOOD, AFCWood.IPE),
 
     ANCIENT_ACACIA(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
     ANCIENT_ASH(MapColor.WOOD, MapColor.WOOD, Wood.ASH),
@@ -58,7 +62,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
     ANCIENT_BLACK_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK),
     ANCIENT_GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
     ANCIENT_REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
-    ANCIENT_RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG);
+    ANCIENT_RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
+    ANCIENT_POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN);
 
     public static final UniqueLogs[] VALUES = values();
     private final String serializedName;
@@ -128,7 +133,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
 
     public enum BlockType {
         LOG((self, unique_log) -> new LogBlock(ExtendedProperties.of(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? unique_log.woodColor() : unique_log.barkColor()).strength(8f).sound(SoundType.WOOD).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG))),
-        WOOD((self, unique_log) -> new LogBlock(properties(unique_log).strength(8f).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD)));
+        WOOD((self, unique_log) -> new LogBlock(properties(unique_log).strength(8f).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD))),
+        TWIG((self, unique_log) -> GroundcoverBlock.twig(ExtendedProperties.of().strength(0.05F, 0.0F).sound(SoundType.WOOD).noCollission().flammableLikeWool()));
 
         private static ExtendedProperties properties(RegistryUniqueLogs unique_log)
         {

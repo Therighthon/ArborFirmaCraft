@@ -235,7 +235,7 @@ def make_tree_structures(tree: Tree, suffix: str = '', il_booleano: bool = False
 
 def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log: str, wood_prefix: str):
     f = nbt.load('%s%s.nbt' % (TEMPLATES_DIR, template))
-    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress' or wood == 'black_oak' or wood == 'rubber_fig' or wood == 'sapele_mahogany' or wood == 'small_leaf_mahogany' or wood == 'black_oak' or wood == 'gum_arabic':
+    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress' or wood == 'black_oak' or wood == 'rubber_fig' or wood == 'sapele_mahogany' or wood == 'small_leaf_mahogany' or wood == 'black_oak' or wood == 'gum_arabic' or wood == 'poplar' or wood == 'ironwood' or wood == 'ipe':
         wood_prefix = 'afc'
     # print(wood_prefix + ":" + log)
     for block in f['palette']:

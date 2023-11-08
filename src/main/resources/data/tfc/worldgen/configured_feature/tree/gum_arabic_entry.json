@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 17.5,
+      "max_temperature": 40,
+      "min_rainfall": 90,
+      "max_rainfall": 275
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/gum_arabic"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/gum_arabic"
+      }
+    ],
+    "normal_tree": "tfc:tree/gum_arabic",
+    "dead_tree": "tfc:tree/gum_arabic_dead",
+    "fallen_tree_chance": 0,
+    "bush_log": {
+      "Name": "afc:wood/wood/gum_arabic",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/gum_arabic"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -3.9,
+      "max_temperature": 5,
+      "min_rainfall": 410,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/redcedar"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/redcedar"
+      }
+    ],
+    "normal_tree": "tfc:tree/redcedar",
+    "dead_tree": "tfc:tree/redcedar_dead",
+    "fallen_log": "afc:wood/log/redcedar",
+    "bush_log": {
+      "Name": "afc:wood/wood/redcedar",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/redcedar",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

@@ -147,6 +147,7 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
             return new TreeTapRecipe(id, output, blockIngredient, requiresNaturalLog, springOnly, minTemp, maxTemp);
         }
 
+        @Nullable
         @Override
         public TreeTapRecipe fromNetwork(ResourceLocation id, FriendlyByteBuf buffer) {
             final BlockIngredient recipeBlock = BlockIngredient.fromNetwork(buffer);
