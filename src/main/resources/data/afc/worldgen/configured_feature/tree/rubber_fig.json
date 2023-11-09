@@ -1,0 +1,38 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:rubber_fig/1",
+      "tfc:rubber_fig/2",
+      "tfc:rubber_fig/3",
+      "tfc:rubber_fig/4",
+      "tfc:rubber_fig/5",
+      "tfc:rubber_fig/6",
+      "tfc:rubber_fig/7",
+      "tfc:rubber_fig/8",
+      "tfc:rubber_fig/9",
+      "tfc:rubber_fig/10",
+      "tfc:rubber_fig/11",
+      "tfc:rubber_fig/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/rubber_fig",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 3,
+      "wide": false
+    }
+  }
+}

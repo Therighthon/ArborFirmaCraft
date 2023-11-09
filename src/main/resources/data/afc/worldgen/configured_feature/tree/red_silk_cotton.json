@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:red_silk_cotton/1",
+      "tfc:red_silk_cotton/2",
+      "tfc:red_silk_cotton/3",
+      "tfc:red_silk_cotton/4",
+      "tfc:red_silk_cotton/5",
+      "tfc:red_silk_cotton/6",
+      "tfc:red_silk_cotton/7",
+      "tfc:red_silk_cotton/8",
+      "tfc:red_silk_cotton/9",
+      "tfc:red_silk_cotton/10",
+      "tfc:red_silk_cotton/11",
+      "tfc:red_silk_cotton/12",
+      "tfc:red_silk_cotton/13",
+      "tfc:red_silk_cotton/14",
+      "tfc:red_silk_cotton/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

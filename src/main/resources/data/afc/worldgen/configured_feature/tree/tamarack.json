@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:tamarack/1",
+      "tfc:tamarack/2",
+      "tfc:tamarack/3",
+      "tfc:tamarack/4",
+      "tfc:tamarack/5",
+      "tfc:tamarack/6",
+      "tfc:tamarack/7",
+      "tfc:tamarack/8",
+      "tfc:tamarack/9",
+      "tfc:tamarack/10",
+      "tfc:tamarack/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

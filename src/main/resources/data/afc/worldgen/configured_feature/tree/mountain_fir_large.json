@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:mountain_fir_large/1",
+      "tfc:mountain_fir_large/2",
+      "tfc:mountain_fir_large/3",
+      "tfc:mountain_fir_large/4",
+      "tfc:mountain_fir_large/5"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": false
+    }
+  }
+}

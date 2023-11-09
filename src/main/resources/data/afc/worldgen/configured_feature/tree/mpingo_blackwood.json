@@ -1,0 +1,49 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:mpingo_blackwood/1",
+      "tfc:mpingo_blackwood/2",
+      "tfc:mpingo_blackwood/3",
+      "tfc:mpingo_blackwood/4",
+      "tfc:mpingo_blackwood/5",
+      "tfc:mpingo_blackwood/6",
+      "tfc:mpingo_blackwood/7",
+      "tfc:mpingo_blackwood/8",
+      "tfc:mpingo_blackwood/9",
+      "tfc:mpingo_blackwood/10",
+      "tfc:mpingo_blackwood/11",
+      "tfc:mpingo_blackwood/12",
+      "tfc:mpingo_blackwood/13",
+      "tfc:mpingo_blackwood/14",
+      "tfc:mpingo_blackwood/15",
+      "tfc:mpingo_blackwood/16",
+      "tfc:mpingo_blackwood/17",
+      "tfc:mpingo_blackwood/18",
+      "tfc:mpingo_blackwood/19",
+      "tfc:mpingo_blackwood/20",
+      "tfc:mpingo_blackwood/21",
+      "tfc:mpingo_blackwood/22",
+      "tfc:mpingo_blackwood/23",
+      "tfc:mpingo_blackwood/24",
+      "tfc:mpingo_blackwood/25",
+      "tfc:mpingo_blackwood/26",
+      "tfc:mpingo_blackwood/27",
+      "tfc:mpingo_blackwood/28",
+      "tfc:mpingo_blackwood/29",
+      "tfc:mpingo_blackwood/30",
+      "tfc:mpingo_blackwood/31",
+      "tfc:mpingo_blackwood/32",
+      "tfc:mpingo_blackwood/33",
+      "tfc:mpingo_blackwood/34",
+      "tfc:mpingo_blackwood/35"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

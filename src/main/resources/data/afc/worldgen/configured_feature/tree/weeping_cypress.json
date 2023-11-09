@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:weeping_cypress/1",
+      "tfc:weeping_cypress/2",
+      "tfc:weeping_cypress/3",
+      "tfc:weeping_cypress/4",
+      "tfc:weeping_cypress/5",
+      "tfc:weeping_cypress/6",
+      "tfc:weeping_cypress/7",
+      "tfc:weeping_cypress/8",
+      "tfc:weeping_cypress/9",
+      "tfc:weeping_cypress/10",
+      "tfc:weeping_cypress/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}
