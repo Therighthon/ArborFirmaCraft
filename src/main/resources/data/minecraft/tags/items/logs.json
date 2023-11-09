@@ -10,9 +10,12 @@
     "#afc:baobab_logs",
     "#afc:fig_logs",
     "#afc:mahogany_logs",
+    "#afc:ironwood_logs",
+    "#afc:ipe_logs",
     "#afc:rainbow_eucalyptus_logs",
     "#afc:redcedar_logs",
     "#afc:gum_arabic_logs",
-    "#afc:black_oak_logs"
+    "#afc:black_oak_logs",
+    "#afc:poplar_logs"
   ]
 }

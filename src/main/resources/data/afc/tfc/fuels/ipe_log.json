@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/ipe"
+    },
+    {
+      "item": "afc:wood/wood/ipe"
+    },
+    {
+      "item": "afc:wood/stripped_wood/ipe"
+    },
+    {
+      "item": "afc:wood/stripped_log/ipe"
+    }
+  ],
+  "duration": 1700,
+  "temperature": 710,
+  "purity": 0.95
+}

@@ -1,0 +1,14 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/poplar"
+    },
+    {
+      "item": "afc:wood/wood/poplar"
+    }
+  ],
+  "duration": 1200,
+  "temperature": 620,
+  "purity": 0.95
+}

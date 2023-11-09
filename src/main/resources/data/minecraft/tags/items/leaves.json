@@ -10,9 +10,10 @@
     "afc:wood/leaves/baobab",
     "afc:wood/leaves/fig",
     "afc:wood/leaves/mahogany",
+    "afc:wood/leaves/ironwood",
+    "afc:wood/leaves/ipe",
     "afc:wood/leaves/gum_arabic",
     "afc:wood/leaves/acacia_koa",
-    "afc:wood/leaves/evergreen_ash",
     "afc:wood/leaves/mpingo_blackwood",
     "afc:wood/leaves/mountain_fir",
     "afc:wood/leaves/balsam_fir",
@@ -34,6 +35,15 @@
     "afc:wood/leaves/mountain_ash",
     "afc:wood/leaves/weeping_cypress",
     "afc:wood/leaves/redcedar",
-    "afc:wood/leaves/bald_cypress"
+    "afc:wood/leaves/bald_cypress",
+    "afc:wood/leaves/rubber_fig",
+    "afc:wood/leaves/small_leaf_mahogany",
+    "afc:wood/leaves/sapele_mahogany",
+    "afc:wood/leaves/poplar",
+    "afc:wood/leaves/iroko_teak",
+    "afc:wood/leaves/flame_of_the_forest",
+    "afc:wood/leaves/lebombo_ironwood",
+    "afc:wood/leaves/horsetail_ironwood",
+    "afc:wood/leaves/jaggery_palm"
   ]
 }

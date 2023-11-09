@@ -99,7 +99,6 @@ LARGE_TREES = [
 DEAD_TREES = [
     Tree('gum_arabic', 'random', 'dead_small', 6, 'gum_arabic', False),
     Tree('acacia_koa', 'random', 'dead_jungle', 4, 'acacia', False),
-    Tree('evergreen_ash', 'random', 'dead_small', 6, 'ash', False),
     Tree('mpingo_blackwood', 'random', 'dead_small', 6, 'blackwood', False),
     Tree('mountain_fir', 'random', 'dead_tall', 6, 'douglas_fir', False),
     Tree('balsam_fir', 'random', 'dead_small', 6, 'douglas_fir', False),
@@ -248,6 +247,8 @@ def make_tree_structure(template: str, wood: str, dest: str, wood_dir: str, log:
         elif block['Name'] == 'minecraft:oak_leaves':
             block['Name'] = StringTag('afc:wood/leaves/%s' % wood)
             block['Properties']['persistent'] = StringTag('false')
+        elif block['Name'] == 'minecraft:air':
+            block['Name'] = StringTag('minecraft:structure_void')
         else:
             print('Structure: %s has an invalid block state \'%s\'' % (template, block['Name']))
 

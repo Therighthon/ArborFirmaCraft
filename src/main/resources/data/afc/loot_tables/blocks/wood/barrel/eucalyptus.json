@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "afc:wood/barrel/eucalyptus",
+              "name": "tfc:wood/barrel/eucalyptus",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "afc:wood/barrel/eucalyptus",
+                  "block": "tfc:wood/barrel/eucalyptus",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/barrel/eucalyptus"
+              "name": "tfc:wood/barrel/eucalyptus"
             }
           ]
         }

@@ -8,7 +8,9 @@
     "afc:wood/horizontal_support/eucalyptus",
     "afc:wood/horizontal_support/baobab",
     "afc:wood/horizontal_support/fig",
-    "afc:wood/horizontal_support/mahogany"
+    "afc:wood/horizontal_support/mahogany",
+    "afc:wood/horizontal_support/ironwood",
+    "afc:wood/horizontal_support/ipe"
   ],
   "support_up": 2,
   "support_down": 2,

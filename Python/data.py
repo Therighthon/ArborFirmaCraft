@@ -155,9 +155,7 @@ def generate(rm: ResourceManager):
         *['afc:wood/planks/%s_%s' % (wood, variant) for variant in ('bookshelf', 'door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs', 'tool_rack', 'workbench', 'sign') for wood in WOODS.keys()]
     ])
     rm.block_tag('tfc:mineable_with_sharp_tool', *[
-        *['afc:wood/%s/%s' % (variant, wood) for variant in ('leaves', 'sapling', 'fallen_leaves') for wood in WOODS.keys()],
-        *['afc:plant/%s' % plant for plant in PLANTS.keys()],
-        *['afc:plant/%s' % plant for plant in UNIQUE_PLANTS]
+        *['afc:wood/%s/%s' % (variant, wood) for variant in ('leaves', 'sapling', 'fallen_leaves') for wood in WOODS.keys()]
     ])
     rm.block_tag('tfc:mineable_with_blunt_tool',
                  *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood') for wood in WOODS.keys()]

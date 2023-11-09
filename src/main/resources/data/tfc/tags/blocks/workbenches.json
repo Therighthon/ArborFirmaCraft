@@ -9,6 +9,8 @@
     "afc:wood/planks/eucalyptus_workbench",
     "afc:wood/planks/baobab_workbench",
     "afc:wood/planks/fig_workbench",
-    "afc:wood/planks/mahogany_workbench"
+    "afc:wood/planks/mahogany_workbench",
+    "afc:wood/planks/ironwood_workbench",
+    "afc:wood/planks/ipe_workbench"
   ]
 }

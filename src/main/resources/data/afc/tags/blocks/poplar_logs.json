@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/ancient_poplar",
+    "afc:wood/wood/ancient_poplar",
+    "afc:wood/log/poplar",
+    "afc:wood/wood/poplar"
+  ]
+}

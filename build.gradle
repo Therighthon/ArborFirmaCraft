@@ -216,6 +216,17 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    // JEI
+    compileOnly(fg.deobf("mezz.jei:jei-1.20.1-forge-api:15.2.0.21"))
+    compileOnly(fg.deobf("mezz.jei:jei-1.20.1-common-api:15.2.0.21"))
+    runtimeOnly(fg.deobf("mezz.jei:jei-1.20.1-forge:15.2.0.21"))
+
+    // Only use Jade at runtime
+    runtimeOnly(fg.deobf("curse.maven:jade-324717:${4614153}"))
+    // runtimeOnly(fg.deobf("curse.maven:top-245211:${topVersion}"))
+
+    //Cyanide
+    runtimeOnly(fg.deobf("curse.maven:cyanide-forge-541676:4824162"))
 
     //TFC
 //    fg.deobf("curse.maven:tfc-302973:${4085585}")

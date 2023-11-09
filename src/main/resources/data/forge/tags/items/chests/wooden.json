@@ -17,6 +17,10 @@
     "afc:wood/chest/fig",
     "afc:wood/trapped_chest/fig",
     "afc:wood/chest/mahogany",
-    "afc:wood/trapped_chest/mahogany"
+    "afc:wood/trapped_chest/mahogany",
+    "afc:wood/chest/ironwood",
+    "afc:wood/trapped_chest/ironwood",
+    "afc:wood/chest/ipe",
+    "afc:wood/trapped_chest/ipe"
   ]
 }

@@ -9,6 +9,8 @@
     "afc:wood/planks/eucalyptus_button",
     "afc:wood/planks/baobab_button",
     "afc:wood/planks/fig_button",
-    "afc:wood/planks/mahogany_button"
+    "afc:wood/planks/mahogany_button",
+    "afc:wood/planks/ironwood_button",
+    "afc:wood/planks/ipe_button"
   ]
 }

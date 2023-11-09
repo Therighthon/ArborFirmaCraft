@@ -17,6 +17,10 @@
     "afc:wood/planks/fig_fence",
     "afc:wood/planks/fig_log_fence",
     "afc:wood/planks/mahogany_fence",
-    "afc:wood/planks/mahogany_log_fence"
+    "afc:wood/planks/mahogany_log_fence",
+    "afc:wood/planks/ironwood_fence",
+    "afc:wood/planks/ironwood_log_fence",
+    "afc:wood/planks/ipe_fence",
+    "afc:wood/planks/ipe_log_fence"
   ]
 }

@@ -399,7 +399,9 @@ WOODS: Dict[str, Wood] = {
     'eucalyptus': Wood(720, 2100),
     'baobab': Wood(707, 1000),
     'fig': Wood(715, 1900),
-    'mahogany': Wood(790, 1600)
+    'mahogany': Wood(790, 1600),
+    'ironwood': Wood(800, 1400),
+    'ipe': Wood(710, 1700)
     # 'acacia': Wood(650, 1000),
     # 'ash': Wood(696, 1250),
     # 'aspen': Wood(611, 1000),
@@ -425,13 +427,13 @@ UNIQUE_LOGS: Dict[str, Wood] = {
     'rainbow_eucalyptus': Wood(650, 1000),
     'redcedar': Wood(700, 1100),
     'gum_arabic': Wood(650, 1100),
-    'black_oak': Wood(700, 800)
+    'black_oak': Wood(700, 800),
+    'poplar': Wood(620, 1200)
 }
 
 TREE_VARIANTS: Dict[str, str] = {
     'gum_arabic': 'acacia',
     'acacia_koa': 'acacia',
-    'evergreen_ash': 'ash',
     'mpingo_blackwood': 'blackwood',
     'mountain_fir': 'douglas_fir',
     'balsam_fir': 'douglas_fir',
@@ -454,19 +456,17 @@ TREE_VARIANTS: Dict[str, str] = {
     'weeping_cypress': 'cypress',
     'redcedar': 'cypress',
     'bald_cypress': 'cypress',
-
     'rubber_fig': 'fig',
     'small_leaf_mahogany': 'mahogany',
     'sapele_mahogany': 'mahogany',
-    'black_ash': 'ash',
-    'mulga_blackwood': 'blackwood',
-    'shisham_rosewood': 'rosewood',
-    'umbrella_thorn_acacia': 'acacia',
-    'quaking_aspen': 'aspen',
-    'paper_birch': 'birch',
-    'bitternut_hickory': 'hickory',
-    'sugar_maple': 'maple',
-    'corkscrew_willow': 'willow'
+
+    'poplar': 'aspen',
+    'iroko_teak': 'teak',
+    'flame_of_the_forest': 'teak',
+    'lebombo_ironwood': 'ironwood',
+    'horsetail_ironwood': 'ironwood',
+    'jaggery_palm': 'palm'
+
 }
 
 # DO NOT EDIT DIRECTLY - Imported directly from spreadsheet
@@ -1574,6 +1574,4 @@ TREE_SAPLING_DROP_CHANCES = {
     'iroko_teak': 0.0101,
     'flame_of_the_forest': 0.0428,
     'jaggery_palm': 0.0486,
-
-
 }

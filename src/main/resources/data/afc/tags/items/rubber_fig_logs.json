@@ -3,8 +3,5 @@
   "replace": false,
   "values": [
     "afc:wood/log/rubber_fig",
-    "afc:wood/wood/rubber_fig",
-    "afc:wood/stripped_log/rubber_fig",
-    "afc:wood/stripped_wood/rubber_fig"
-  ]
+    "afc:wood/wood/rubber_fig"
 }

@@ -17,6 +17,10 @@
     "afc:wood/stripped_log/fig",
     "afc:wood/stripped_wood/fig",
     "afc:wood/stripped_log/mahogany",
-    "afc:wood/stripped_wood/mahogany"
+    "afc:wood/stripped_wood/mahogany",
+    "afc:wood/stripped_log/ironwood",
+    "afc:wood/stripped_wood/ironwood",
+    "afc:wood/stripped_log/ipe",
+    "afc:wood/stripped_wood/ipe"
   ]
 }

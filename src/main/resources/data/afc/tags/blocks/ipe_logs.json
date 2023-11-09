@@ -1,0 +1,10 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/log/ipe",
+    "afc:wood/wood/ipe",
+    "afc:wood/stripped_log/ipe",
+    "afc:wood/stripped_wood/ipe"
+  ]
+}

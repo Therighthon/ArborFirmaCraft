@@ -10,6 +10,8 @@
     "afc:wood/log/baobab",
     "afc:wood/log/fig",
     "afc:wood/log/mahogany",
+    "afc:wood/log/ironwood",
+    "afc:wood/log/ipe",
     "afc:wood/stripped_log/cypress",
     "afc:wood/stripped_log/tualang",
     "afc:wood/stripped_log/hevea",
@@ -18,6 +20,8 @@
     "afc:wood/stripped_log/baobab",
     "afc:wood/stripped_log/fig",
     "afc:wood/stripped_log/mahogany",
+    "afc:wood/stripped_log/ironwood",
+    "afc:wood/stripped_log/ipe",
     "afc:wood/wood/cypress",
     "afc:wood/wood/tualang",
     "afc:wood/wood/hevea",
@@ -26,6 +30,8 @@
     "afc:wood/wood/baobab",
     "afc:wood/wood/fig",
     "afc:wood/wood/mahogany",
+    "afc:wood/wood/ironwood",
+    "afc:wood/wood/ipe",
     "afc:wood/stripped_wood/cypress",
     "afc:wood/stripped_wood/tualang",
     "afc:wood/stripped_wood/hevea",
@@ -33,6 +39,8 @@
     "afc:wood/stripped_wood/eucalyptus",
     "afc:wood/stripped_wood/baobab",
     "afc:wood/stripped_wood/fig",
-    "afc:wood/stripped_wood/mahogany"
+    "afc:wood/stripped_wood/mahogany",
+    "afc:wood/stripped_wood/ironwood",
+    "afc:wood/stripped_wood/ipe"
   ]
 }

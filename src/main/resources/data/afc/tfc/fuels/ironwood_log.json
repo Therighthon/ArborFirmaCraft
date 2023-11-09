@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "ingredient": [
+    {
+      "item": "afc:wood/log/ironwood"
+    },
+    {
+      "item": "afc:wood/wood/ironwood"
+    },
+    {
+      "item": "afc:wood/stripped_wood/ironwood"
+    },
+    {
+      "item": "afc:wood/stripped_log/ironwood"
+    }
+  ],
+  "duration": 1400,
+  "temperature": 800,
+  "purity": 0.95
+}

@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 22.9,
+      "max_temperature": 40,
+      "min_rainfall": 215,
+      "max_rainfall": 330
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/teak"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/teak"
+      }
+    ],
+    "normal_tree": "tfc:tree/teak",
+    "dead_tree": "tfc:tree/teak_dead",
+    "fallen_log": "afc:wood/log/teak",
+    "bush_log": {
+      "Name": "afc:wood/wood/teak",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/teak",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}
