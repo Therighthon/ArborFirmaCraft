@@ -1,6 +1,7 @@
 package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
+import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
@@ -12,6 +13,7 @@ import com.therighthon.afc.event.ModEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -19,6 +21,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
+import net.dries007.tfc.common.TFCCreativeTabs;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -45,6 +48,7 @@ public class AFC
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         AFCRecipes.register(eventBus);
+        AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
