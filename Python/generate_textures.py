@@ -311,7 +311,7 @@ def create_hanging_sign(wood: str, metal: str):
 def main():
     # for wood in WOODS.keys():
     # Add wood type individually here before running
-    for wood in ['mahogany']:
+    for wood in ['ironwood']:
         overlay_image(path + 'block/wood/log_top/%s' % wood, path + 'block/wood/stripped_log/%s' % wood, path + 'block/wood/stripped_log_top/%s' % wood, templates + 'log_top_mask')
         for bench in ('workbench_front', 'workbench_side', 'workbench_top'):
             overlay_image(templates + bench, path + 'block/wood/planks/%s' % wood, path + 'block/wood/planks/%s_' % wood + bench)
@@ -319,9 +319,7 @@ def main():
         create_sign(wood)
         create_bookshelf(wood)
         plank_color = get_wood_colors('planks/%s' % wood)
-        print("Plank color = " + str(plank_color))
         log_color = get_wood_colors('log/%s' % wood)
-        print("Log color = " + str(log_color))
         create_horse_chest(wood, plank_color, log_color)
         create_chest_boat(wood)
         if wood != 'palm':
