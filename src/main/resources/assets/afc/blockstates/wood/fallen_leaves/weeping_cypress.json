@@ -1,22 +1,29 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
-    "": [
-      {
-        "model": "afc:block/wood/fallen_leaves/weeping_cypress",
-        "y": 90
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/weeping_cypress"
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/weeping_cypress",
-        "y": 180
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/weeping_cypress",
-        "y": 270
-      }
-    ]
+    "layers=1": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height2"
+    },
+    "layers=2": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height4"
+    },
+    "layers=3": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height6"
+    },
+    "layers=4": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height8"
+    },
+    "layers=5": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height10"
+    },
+    "layers=6": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height12"
+    },
+    "layers=7": {
+      "model": "afc:block/wood/fallen_leaves/weeping_cypress_height14"
+    },
+    "layers=8": {
+      "model": "afc:block/wood/leaves/weeping_cypress"
+    }
   }
 }

@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/groundcover/jaggery_palm",
+  "parent": "tfc:block/groundcover/fallen_leaves",
   "textures": {
     "all": "afc:block/wood/leaves/jaggery_palm"
   }

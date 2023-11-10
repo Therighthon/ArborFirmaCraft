@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/groundcover/rubber_fig",
+  "parent": "tfc:block/groundcover/fallen_leaves",
   "textures": {
     "all": "afc:block/wood/leaves/rubber_fig"
   }

@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/groundcover/flame_of_the_forest",
+  "parent": "tfc:block/groundcover/fallen_leaves",
   "textures": {
     "all": "afc:block/wood/leaves/flame_of_the_forest"
   }

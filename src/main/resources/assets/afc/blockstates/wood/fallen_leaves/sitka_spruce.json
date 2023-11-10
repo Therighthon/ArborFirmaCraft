@@ -1,22 +1,29 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
-    "": [
-      {
-        "model": "afc:block/wood/fallen_leaves/sitka_spruce",
-        "y": 90
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/sitka_spruce"
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/sitka_spruce",
-        "y": 180
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/sitka_spruce",
-        "y": 270
-      }
-    ]
+    "layers=1": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height2"
+    },
+    "layers=2": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height4"
+    },
+    "layers=3": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height6"
+    },
+    "layers=4": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height8"
+    },
+    "layers=5": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height10"
+    },
+    "layers=6": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height12"
+    },
+    "layers=7": {
+      "model": "afc:block/wood/fallen_leaves/sitka_spruce_height14"
+    },
+    "layers=8": {
+      "model": "afc:block/wood/leaves/sitka_spruce"
+    }
   }
 }

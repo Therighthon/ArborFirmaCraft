@@ -1,22 +1,29 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
-    "": [
-      {
-        "model": "afc:block/wood/fallen_leaves/gum_arabic",
-        "y": 90
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/gum_arabic"
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/gum_arabic",
-        "y": 180
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/gum_arabic",
-        "y": 270
-      }
-    ]
+    "layers=1": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height2"
+    },
+    "layers=2": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height4"
+    },
+    "layers=3": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height6"
+    },
+    "layers=4": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height8"
+    },
+    "layers=5": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height10"
+    },
+    "layers=6": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height12"
+    },
+    "layers=7": {
+      "model": "afc:block/wood/fallen_leaves/gum_arabic_height14"
+    },
+    "layers=8": {
+      "model": "afc:block/wood/leaves/gum_arabic"
+    }
   }
 }

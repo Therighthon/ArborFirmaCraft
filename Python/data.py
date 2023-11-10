@@ -109,6 +109,7 @@ def generate(rm: ResourceManager):
             return 'afc:wood/%s/%s' % (_variant, wood)
 
         block_and_item_tag(rm, 'minecraft:leaves', item('leaves'))
+        block_and_item_tag(rm, 'tfc:fallen_leaves', item('fallen_leaves'))
     # New
     for wood in UNIQUE_LOGS.keys():
         def item(_variant: str) -> str:

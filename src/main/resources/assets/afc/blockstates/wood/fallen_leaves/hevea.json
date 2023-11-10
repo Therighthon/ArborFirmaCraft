@@ -1,22 +1,29 @@
 {
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
-    "": [
-      {
-        "model": "afc:block/wood/fallen_leaves/hevea",
-        "y": 90
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/hevea"
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/hevea",
-        "y": 180
-      },
-      {
-        "model": "afc:block/wood/fallen_leaves/hevea",
-        "y": 270
-      }
-    ]
+    "layers=1": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height2"
+    },
+    "layers=2": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height4"
+    },
+    "layers=3": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height6"
+    },
+    "layers=4": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height8"
+    },
+    "layers=5": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height10"
+    },
+    "layers=6": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height12"
+    },
+    "layers=7": {
+      "model": "afc:block/wood/fallen_leaves/hevea_height14"
+    },
+    "layers=8": {
+      "model": "afc:block/wood/leaves/hevea"
+    }
   }
 }

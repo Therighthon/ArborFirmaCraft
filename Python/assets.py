@@ -131,13 +131,16 @@ def generate(rm: ResourceManager):
         flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant, 'afc:wood/sapling/%s' % variant)
 
         # Fallen Leaves
-        block = rm.blockstate('wood/fallen_leaves/%s' % variant, variants={"": four_ways('afc:block/wood/fallen_leaves/%s' % variant)}, use_default_model=False)
-        block.with_lang(lang('%s fallen_leaves' % variant)).with_tag('afc:single_block_replaceable')
+        block = rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
+        tex = {'all': 'afc:block/wood/leaves/%s' % variant}
+        # Left in but unused rn
+        if variant in ('mangrove', 'willow'):
+            tex['top'] = 'afc:block/wood/leaves/%s_top' % variant
+        for i in range(1, 8):
+            rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
+        rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
+        block.with_block_loot(*[{'name': 'afc:wood/fallen_leaves/%s' % variant, 'conditions': [loot_tables.block_state_property('afc:wood/fallen_leaves/%s[layers=%s]' % (variant, i))], 'functions': [loot_tables.set_count(i)]} for i in range(1, 9)])
 
-
-        block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='tfc:block/groundcover/%s' % variant)
-        rm.item_model('wood/fallen_leaves/%s' % (variant), 'afc:item/groundcover/fallen_leaves')
-        block.with_block_loot('afc:wood/fallen_leaves/%s' % (variant))
 
 
 
@@ -188,22 +191,23 @@ def generate(rm: ResourceManager):
         rm.item_tag('afc:minecarts', 'afc:wood/chest_minecart/' + wood)
 
         # Groundcover
-        for variant in ('twig', 'fallen_leaves'):
-            block = rm.blockstate('wood/%s/%s' % (variant, wood), variants={"": four_ways('afc:block/wood/%s/%s' % (variant, wood))}, use_default_model=False)
-            block.with_lang(lang('%s %s', wood, variant)).with_tag('afc:single_block_replaceable')
+        block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
+        block.with_lang(lang('%s twig', wood))
 
-            if variant == 'twig':
-                block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/%s' % variant)
-                rm.item_model('wood/%s/%s' % (variant, wood), 'afc:item/wood/twig/%s' % wood)
-                block.with_block_loot('afc:wood/twig/%s' % wood)
-            elif variant == 'fallen_leaves':
-                block.with_block_model('afc:block/wood/leaves/%s' % wood, parent='tfc:block/groundcover/%s' % variant)
-                rm.item_model('wood/%s/%s' % (variant, wood), 'afc:item/groundcover/fallen_leaves')
-                block.with_block_loot('afc:wood/%s/%s' % (variant, wood))
-            else:
-                block.with_item_model()
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
+        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig_%s' % wood, parent='item/handheld_rod')
+        block.with_block_loot('afc:wood/twig/%s' % wood)
 
-            block.with_tag('can_be_snow_piled')
+        block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', wood))
+        tex = {'all': 'afc:block/wood/leaves/%s' % wood}
+        #Leaving this in in case we want to use it for other stuff
+        if wood in ('mangrove', 'willow'):
+            tex['top'] = 'afc:block/wood/leaves/%s_top' % wood
+        for i in range(1, 8):
+            rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (wood, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
+        rm.item_model(('wood', 'fallen_leaves', wood), 'tfc:item/groundcover/fallen_leaves')
+        block.with_block_loot(*[{'name': 'afc:wood/fallen_leaves/%s' % wood, 'conditions': [loot_tables.block_state_property('afc:wood/fallen_leaves/%s[layers=%s]' % (wood, i))], 'functions': [loot_tables.set_count(i)]} for i in range(1, 9)])
+
 
         # Leaves
         block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s' % wood)

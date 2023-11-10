@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/groundcover/horsetail_ironwood",
+  "parent": "tfc:block/groundcover/fallen_leaves",
   "textures": {
     "all": "afc:block/wood/leaves/horsetail_ironwood"
   }
