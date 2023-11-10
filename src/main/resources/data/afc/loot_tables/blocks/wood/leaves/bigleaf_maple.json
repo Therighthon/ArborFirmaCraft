@@ -14,7 +14,7 @@
               "name": "afc:wood/leaves/bigleaf_maple",
               "conditions": [
                 {
-                  "condition": "minecraft:alternative",
+                  "condition": "minecraft:any_of",
                   "terms": [
                     {
                       "condition": "minecraft:match_tool",
@@ -48,7 +48,7 @@
                 },
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.0201
+                  "chance": 0.0175
                 }
               ]
             }

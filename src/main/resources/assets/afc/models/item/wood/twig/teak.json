@@ -1,7 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "item/generated",
+  "parent": "item/handheld_rod",
   "textures": {
-    "layer0": "afc:item/wood/twig/teak"
+    "layer0": "afc:item/wood/twig_teak"
   }
 }
