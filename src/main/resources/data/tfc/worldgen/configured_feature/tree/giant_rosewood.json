@@ -24,7 +24,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/giant_rosewood",
+        "Name": "tfc:wood/log/rosewood",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

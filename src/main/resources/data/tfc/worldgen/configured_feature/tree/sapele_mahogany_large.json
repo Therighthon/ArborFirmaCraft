@@ -21,7 +21,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/sapele_mahogany",
+        "Name": "afc:wood/log/ancient_mahogany",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

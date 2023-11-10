@@ -21,7 +21,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/coast_spruce",
+        "Name": "tfc:wood/log/spruce",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

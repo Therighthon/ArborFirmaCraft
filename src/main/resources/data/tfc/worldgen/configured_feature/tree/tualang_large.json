@@ -19,7 +19,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/tualang",
+        "Name": "afc:wood/log/ancient_tualang",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

@@ -17,7 +17,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/bigleaf_maple",
+        "Name": "tfc:wood/log/maple",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

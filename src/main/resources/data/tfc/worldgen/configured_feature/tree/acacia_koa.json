@@ -24,7 +24,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/acacia_koa",
+        "Name": "tfc:wood/log/acacia",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

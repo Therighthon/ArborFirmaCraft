@@ -18,7 +18,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/acacia_koa",
+        "Name": "afc:wood/log/ancient_acacia",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

@@ -19,7 +19,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/rainbow_eucalyptus",
+        "Name": "afc:wood/log/ancient_rainbow_eucalyptus",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

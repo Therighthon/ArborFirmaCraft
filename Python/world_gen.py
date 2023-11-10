@@ -156,13 +156,13 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'rainbow_eucalyptus_dead'), 'tfc:random_tree', random_config('rainbow_eucalyptus', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'eucalyptus'), 'tfc:random_tree', random_config('eucalyptus', 18, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'eucalyptus_dead'), 'tfc:random_tree', random_config('eucalyptus', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
-    configured_placed_feature(rm, ('tree', 'mountain_ash'), 'tfc:random_tree', random_config('mountain_ash', 18, 1, trunk=[4, 7, 1, 'eucalyptus'], place=tree_placement_config(1, 8, False)))
+    configured_placed_feature(rm, ('tree', 'mountain_ash'), 'tfc:random_tree', random_config('mountain_ash', 10, 1, trunk=[4, 7, 1, 'eucalyptus'], place=tree_placement_config(1, 8, False)))
     configured_placed_feature(rm, ('tree', 'mountain_ash_dead'), 'tfc:random_tree', random_config('mountain_ash', 6, 1, '_dead', place=tree_placement_config(1, 8, False)))
     configured_placed_feature(rm, ('tree', 'mountain_ash_large'), 'tfc:stacked_tree', stacked_config('mountain_ash', 5, 8, 2, [(1, 2, 12), (1, 2, 10), (1, 1, 4), (1, 1, 5)], 2, '_large', basic_wood = 'ancient_eucalyptus', place=tree_placement_config(2, 7)))
     configured_placed_feature(rm, ('tree', 'baobab'), 'tfc:random_tree', random_config('baobab', 7, 2, place=tree_placement_config(2, 4, True)))
     configured_placed_feature(rm, ('tree', 'baobab_dead'), 'tfc:random_tree', random_config('baobab', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'baobab_large'), 'tfc:random_tree', random_config('baobab', 7, 3, '_large', place=tree_placement_config(2, 4, True)))
-    configured_placed_feature(rm, ('tree', 'hevea'), 'tfc:random_tree', random_config('hevea', 18, 1, place=tree_placement_config(1, 2, True)))
+    configured_placed_feature(rm, ('tree', 'hevea'), 'tfc:random_tree', random_config('hevea', 6, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'hevea_dead'), 'tfc:random_tree', random_config('hevea', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'mahogany'), 'tfc:random_tree', random_config('mahogany', 12, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'mahogany_large'), 'tfc:random_tree', random_config('mahogany', 6, 1, '_large', trunk=[10, 14, 2, 'ancient_mahogany'], place=tree_placement_config(1, 2, True)))
@@ -491,7 +491,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
     if basic_wood.startswith('ancient_'):
         wood_prefix = 'afc'
 
-    block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, tree)
+    block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, basic_wood)
     tree += suffix
     cfg = {
         'structures': ['tfc:%s/%d' % (tree, i) for i in range(1, 1 + structure_count)],

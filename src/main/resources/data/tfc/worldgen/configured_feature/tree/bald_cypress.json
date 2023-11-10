@@ -21,7 +21,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/bald_cypress",
+        "Name": "afc:wood/log/ancient_cypress",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

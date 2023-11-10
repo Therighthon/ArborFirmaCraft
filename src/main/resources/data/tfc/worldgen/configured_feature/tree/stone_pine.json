@@ -31,7 +31,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/stone_pine",
+        "Name": "tfc:wood/log/pine",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

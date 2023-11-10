@@ -7,10 +7,13 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.colors.ColorScheme;
+import net.minecraft.core.Direction;
 import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -18,13 +21,17 @@ import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.FallenLeavesBlock;
+import net.dries007.tfc.common.blocks.wood.LogBlock;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
+
+import static com.therighthon.afc.common.blocks.UniqueLogs.BlockType.*;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
@@ -59,7 +66,6 @@ public enum TreeSpecies implements RegistryTreeSpecies
     TAMARACK(false, 10, 254),
 
     //Rosewood
-    SHISHAM_ROSEWOOD( false, 8, 165),
     GIANT_ROSEWOOD( false, 16, 190),
     //Sequoia
     COAST_REDWOOD( true, 10, 0),
@@ -164,6 +170,10 @@ public enum TreeSpecies implements RegistryTreeSpecies
         private final BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory;
 
         private static ExtendedProperties properties(RegistryTreeSpecies wood) {
+            return ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD);
+        }
+
+        private static ExtendedProperties properties(AFCWood wood) {
             return ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD);
         }
 
