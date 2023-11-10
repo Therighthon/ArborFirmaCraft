@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/groundcover/red_pine",
+  "textures": {
+    "all": "afc:block/wood/leaves/red_pine"
+  }
+}

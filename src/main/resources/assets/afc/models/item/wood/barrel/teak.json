@@ -1,12 +1,12 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/barrel/teak",
+  "parent": "tfc:block/wood/barrel/teak",
   "overrides": [
     {
       "predicate": {
         "tfc:sealed": 1.0
       },
-      "model": "afc:block/wood/barrel_sealed/teak"
+      "model": "tfc:block/wood/barrel_sealed/teak"
     }
   ]
 }

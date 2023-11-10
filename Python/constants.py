@@ -1574,4 +1574,6 @@ TREE_SAPLING_DROP_CHANCES = {
     'iroko_teak': 0.0101,
     'flame_of_the_forest': 0.0428,
     'jaggery_palm': 0.0486,
+    'ironwood': 0.069,
+    'ipe': 0.069
 }

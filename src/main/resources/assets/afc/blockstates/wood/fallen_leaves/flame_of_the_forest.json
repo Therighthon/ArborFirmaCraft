@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/fallen_leaves/flame_of_the_forest",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/flame_of_the_forest"
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/flame_of_the_forest",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/flame_of_the_forest",
+        "y": 270
+      }
+    ]
+  }
+}

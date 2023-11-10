@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/fallen_leaves/acacia_koa",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/acacia_koa"
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/acacia_koa",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/acacia_koa",
+        "y": 270
+      }
+    ]
+  }
+}

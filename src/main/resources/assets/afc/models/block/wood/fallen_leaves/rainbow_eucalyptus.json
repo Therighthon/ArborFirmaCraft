@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/groundcover/rainbow_eucalyptus",
+  "textures": {
+    "all": "afc:block/wood/leaves/rainbow_eucalyptus"
+  }
+}

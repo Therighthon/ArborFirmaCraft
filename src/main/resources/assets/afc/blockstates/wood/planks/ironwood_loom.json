@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "facing=east": {
+      "model": "afc:block/wood/planks/ironwood_loom",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "afc:block/wood/planks/ironwood_loom",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "afc:block/wood/planks/ironwood_loom"
+    },
+    "facing=west": {
+      "model": "afc:block/wood/planks/ironwood_loom",
+      "y": 90
+    }
+  }
+}

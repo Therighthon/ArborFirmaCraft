@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "afc:block/wood/log_top/ironwood",
+    "side": "afc:block/wood/log/ironwood"
+  }
+}

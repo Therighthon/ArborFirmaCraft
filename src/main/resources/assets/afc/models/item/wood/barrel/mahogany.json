@@ -1,12 +1,12 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/barrel/mahogany",
+  "parent": "tfc:block/wood/barrel/mahogany",
   "overrides": [
     {
       "predicate": {
         "tfc:sealed": 1.0
       },
-      "model": "afc:block/wood/barrel_sealed/mahogany"
+      "model": "tfc:block/wood/barrel_sealed/mahogany"
     }
   ]
 }

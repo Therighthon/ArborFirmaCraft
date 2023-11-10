@@ -108,7 +108,7 @@ def generate(rm: ResourceManager):
         block.with_tag('minecraft:leaves')
         block.with_block_loot(({
                                    'name': 'afc:wood/leaves/%s' % variant,
-                                   'conditions': [loot_tables.or_condition(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
+                                   'conditions': [loot_tables.any_of(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
                                }, {
                                    'name': 'afc:wood/sapling/%s' % variant,
                                    'conditions': ['minecraft:survives_explosion', loot_tables.random_chance(TREE_SAPLING_DROP_CHANCES[variant])] #Delete this bit to run for now, will fix itself when you run Generate trees.py because it will calc the sapling drop chances
@@ -130,6 +130,18 @@ def generate(rm: ResourceManager):
 
         flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant, 'afc:wood/sapling/%s' % variant)
 
+        # Fallen Leaves
+        block = rm.blockstate('wood/fallen_leaves/%s' % variant, variants={"": four_ways('afc:block/wood/fallen_leaves/%s' % variant)}, use_default_model=False)
+        block.with_lang(lang('%s fallen_leaves' % variant)).with_tag('afc:single_block_replaceable')
+
+
+        block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='tfc:block/groundcover/%s' % variant)
+        rm.item_model('wood/fallen_leaves/%s' % (variant), 'afc:item/groundcover/fallen_leaves')
+        block.with_block_loot('afc:wood/fallen_leaves/%s' % (variant))
+
+
+
+        block.with_tag('can_be_snow_piled')
 
     # Wood Blocks
     for wood in WOODS.keys():
@@ -200,7 +212,7 @@ def generate(rm: ResourceManager):
         block.with_tag('minecraft:leaves')
         block.with_block_loot(({
             'name': 'afc:wood/leaves/%s' % wood,
-            'conditions': [loot_tables.or_condition(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
+            'conditions': [loot_tables.any_of(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
         }, {
             'name': 'afc:wood/sapling/%s' % wood,
             'conditions': ['minecraft:survives_explosion', loot_tables.random_chance(TREE_SAPLING_DROP_CHANCES[wood])] #Delete this bit to run for now, will fix itself when you run Generate trees.py because it will calc the sapling drop chances

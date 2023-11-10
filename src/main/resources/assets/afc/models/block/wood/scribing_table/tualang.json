@@ -5,7 +5,7 @@
     "top": "afc:block/wood/scribing_table/tualang",
     "leg": "afc:block/wood/log/tualang",
     "side": "afc:block/wood/planks/tualang",
-    "misc": "tfc:block/wood/scribing_table/scribing_paraphernalia",
+    "misc": "afc:block/wood/scribing_table/scribing_paraphernalia",
     "particle": "afc:block/wood/planks/tualang"
   }
 }

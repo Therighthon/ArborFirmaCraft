@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/scribing_table",
+  "textures": {
+    "top": "afc:block/wood/scribing_table/ipe",
+    "leg": "afc:block/wood/log/ipe",
+    "side": "afc:block/wood/planks/ipe",
+    "misc": "afc:block/wood/scribing_table/scribing_paraphernalia",
+    "particle": "afc:block/wood/planks/ipe"
+  }
+}

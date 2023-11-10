@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/fallen_leaves/scrub_hickory",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/scrub_hickory"
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/scrub_hickory",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/fallen_leaves/scrub_hickory",
+        "y": 270
+      }
+    ]
+  }
+}
