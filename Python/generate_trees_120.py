@@ -598,6 +598,11 @@ def create_log_block_tag(wood: str, block_name: str, block_axis: StringTag, adj:
     wood_prefix = 'tfc'
     if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress' or wood == 'black_oak' or wood == 'rubber_fig' or wood == 'sapele_mahogany' or wood == 'small_leaf_mahogany' or wood == 'black_oak' or wood == 'gum_arabic' or wood == 'poplar' or wood == 'ironwood' or wood == 'ipe':
         wood_prefix = 'afc'
+    if "ancient_" in wood:
+        wood_prefix = 'afc'
+
+    # Check to make sure right blocks are being used
+    # print(wood_prefix + ":" + wood)
 
     if block_name == 'minecraft:oak_log':
         block_name = StringTag('%s:wood/log/%s' % (wood_prefix, wood))

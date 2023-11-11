@@ -16,20 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.util.Lazy;
 import net.minecraftforge.registries.DeferredRegister;
 
-import net.dries007.tfc.TerraFirmaCraft;
-import net.dries007.tfc.common.commands.AddTrimCommand;
-import net.dries007.tfc.common.commands.ClearWorldCommand;
-import net.dries007.tfc.common.commands.ClimateUpdateCommand;
-import net.dries007.tfc.common.commands.CountBlockCommand;
-import net.dries007.tfc.common.commands.ForgeCommand;
-import net.dries007.tfc.common.commands.HeatCommand;
-import net.dries007.tfc.common.commands.PlayerCommand;
-import net.dries007.tfc.common.commands.PropickCommand;
-import net.dries007.tfc.common.commands.TimeCommand;
-import net.dries007.tfc.common.commands.TreeCommand;
-import net.dries007.tfc.common.commands.WeatherCommand;
-import net.dries007.tfc.util.Helpers;
-
 public class AFCCommands
 {
     public static final DeferredRegister<ArgumentTypeInfo<?, ?>> ARGUMENT_TYPES = DeferredRegister.create(Registries.COMMAND_ARGUMENT_TYPE, AFC.MOD_ID);
