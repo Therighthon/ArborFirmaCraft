@@ -3,8 +3,8 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": 13.9,
-      "max_temperature": 22.9,
+      "min_temperature": 11.6,
+      "max_temperature": 20.7,
       "min_rainfall": 150,
       "max_rainfall": 330
     },
@@ -28,6 +28,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/black_oak"
+    "bush_leaves": "afc:wood/leaves/black_oak",
+    "old_growth_tree": "tfc:tree/black_oak_large"
   }
 }

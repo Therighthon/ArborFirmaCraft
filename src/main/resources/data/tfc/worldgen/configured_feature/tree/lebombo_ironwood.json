@@ -1,0 +1,36 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:lebombo_ironwood/1",
+      "tfc:lebombo_ironwood/2",
+      "tfc:lebombo_ironwood/3",
+      "tfc:lebombo_ironwood/4",
+      "tfc:lebombo_ironwood/5",
+      "tfc:lebombo_ironwood/6",
+      "tfc:lebombo_ironwood/7",
+      "tfc:lebombo_ironwood/8",
+      "tfc:lebombo_ironwood/9",
+      "tfc:lebombo_ironwood/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ironwood",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 2,
+      "wide": false
+    }
+  }
+}

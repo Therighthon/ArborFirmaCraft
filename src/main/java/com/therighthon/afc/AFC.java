@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.commands.AFCCommands;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
@@ -13,7 +14,7 @@ import com.therighthon.afc.event.ModEvents;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -21,7 +22,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-import net.dries007.tfc.common.TFCCreativeTabs;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -42,6 +42,7 @@ public class AFC
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
+        AFCCommands.ARGUMENT_TYPES.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
 //        AFCFeatures.FEATURES.register(eventBus);
         AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
@@ -64,11 +65,11 @@ public class AFC
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onParticlesRegister);
         }
 
-
-
+        final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+        forgeBus.addListener(AFC::registerCommands);
 
         // Register ourselves for server and other game events we are interested in
-        MinecraftForge.EVENT_BUS.register(this);
+        forgeBus.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -81,6 +82,12 @@ public class AFC
     public static ResourceLocation treeIdentifier(String path)
     {
         return new ResourceLocation("tfc", path);
+    }
+
+    public static void registerCommands(RegisterCommandsEvent event)
+    {
+        LOGGER.debug("Registering AFC Commands");
+        AFCCommands.registerCommands(event.getDispatcher(), event.getBuildContext());
     }
 
 }

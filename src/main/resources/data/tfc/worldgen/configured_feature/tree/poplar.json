@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:poplar/1",
+      "tfc:poplar/2",
+      "tfc:poplar/3",
+      "tfc:poplar/4",
+      "tfc:poplar/5",
+      "tfc:poplar/6",
+      "tfc:poplar/7",
+      "tfc:poplar/8",
+      "tfc:poplar/9",
+      "tfc:poplar/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

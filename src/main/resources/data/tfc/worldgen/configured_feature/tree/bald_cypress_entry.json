@@ -3,8 +3,8 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": 6.8,
-      "max_temperature": 19.3,
+      "min_temperature": -1.1,
+      "max_temperature": 15.3,
       "min_rainfall": 360,
       "max_rainfall": 500
     },
@@ -19,7 +19,6 @@
     "normal_tree": "tfc:tree/bald_cypress",
     "dead_tree": "tfc:tree/bald_cypress_dead",
     "old_growth_chance": 2,
-    "spoiler_old_growth_chance": 30,
     "fallen_log": "afc:wood/log/cypress",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",

@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 11.6,
+      "max_temperature": 20.7,
+      "min_rainfall": 340,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/ipe"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/ipe"
+      }
+    ],
+    "normal_tree": "tfc:tree/ipe",
+    "dead_tree": "tfc:tree/ipe_dead",
+    "fallen_log": "afc:wood/log/ipe",
+    "bush_log": {
+      "Name": "afc:wood/wood/ipe",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/ipe"
+  }
+}

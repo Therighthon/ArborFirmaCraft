@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 20.7,
+      "max_temperature": 26.2,
+      "min_rainfall": 400,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/palm"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/jaggery_palm"
+      }
+    ],
+    "normal_tree": "tfc:tree/jaggery_palm",
+    "dead_tree": "tfc:tree/jaggery_palm_dead",
+    "fallen_log": "tfc:wood/log/palm",
+    "bush_log": {
+      "Name": "tfc:wood/wood/palm",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/jaggery_palm",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

@@ -382,6 +382,15 @@ def generate(rm: ResourceManager):
         for variant in ('sapling', 'leaves'):
             rm.lang('block.afc.wood.' + variant + '.' + wood, lang('%s %s', wood, variant))
 
+    for wood in UNIQUE_LOGS:
+        # Twigs
+        block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
+        block.with_lang(lang('%s twig', wood))
+
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
+        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig_%s' % wood, parent='item/handheld_rod')
+        block.with_block_loot('afc:wood/twig/%s' % wood)
+
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
     rm.item_model('light', no_textures=True, parent='minecraft:item/light')
 

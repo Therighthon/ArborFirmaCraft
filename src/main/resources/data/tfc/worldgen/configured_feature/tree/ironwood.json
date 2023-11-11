@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:ironwood/1",
+      "tfc:ironwood/2",
+      "tfc:ironwood/3",
+      "tfc:ironwood/4",
+      "tfc:ironwood/5",
+      "tfc:ironwood/6",
+      "tfc:ironwood/7",
+      "tfc:ironwood/8",
+      "tfc:ironwood/9",
+      "tfc:ironwood/10",
+      "tfc:ironwood/11",
+      "tfc:ironwood/12",
+      "tfc:ironwood/13",
+      "tfc:ironwood/14",
+      "tfc:ironwood/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

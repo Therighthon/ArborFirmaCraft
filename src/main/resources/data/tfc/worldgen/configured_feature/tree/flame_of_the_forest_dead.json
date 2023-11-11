@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:flame_of_the_forest_dead/1",
+      "tfc:flame_of_the_forest_dead/2",
+      "tfc:flame_of_the_forest_dead/3",
+      "tfc:flame_of_the_forest_dead/4",
+      "tfc:flame_of_the_forest_dead/5",
+      "tfc:flame_of_the_forest_dead/6",
+      "tfc:flame_of_the_forest_dead/7",
+      "tfc:flame_of_the_forest_dead/8"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

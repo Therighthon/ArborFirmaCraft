@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:ipe/1",
+      "tfc:ipe/2",
+      "tfc:ipe/3",
+      "tfc:ipe/4",
+      "tfc:ipe/5",
+      "tfc:ipe/6",
+      "tfc:ipe/7",
+      "tfc:ipe/8",
+      "tfc:ipe/9",
+      "tfc:ipe/10",
+      "tfc:ipe/11",
+      "tfc:ipe/12",
+      "tfc:ipe/13",
+      "tfc:ipe/14",
+      "tfc:ipe/15",
+      "tfc:ipe/16",
+      "tfc:ipe/17"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

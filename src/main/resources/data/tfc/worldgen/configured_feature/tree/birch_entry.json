@@ -3,8 +3,8 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": -7.5,
-      "max_temperature": 10.4,
+      "min_temperature": -13.9,
+      "max_temperature": 2.5,
       "min_rainfall": 125,
       "max_rainfall": 310
     },
@@ -18,6 +18,7 @@
     ],
     "normal_tree": "tfc:tree/birch",
     "dead_tree": "tfc:tree/birch_dead",
+    "old_growth_chance": 1,
     "fallen_log": "tfc:wood/log/birch",
     "bush_log": {
       "Name": "tfc:wood/wood/birch",

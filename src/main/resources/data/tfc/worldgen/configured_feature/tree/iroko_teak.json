@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:iroko_teak/1",
+      "tfc:iroko_teak/2",
+      "tfc:iroko_teak/3",
+      "tfc:iroko_teak/4",
+      "tfc:iroko_teak/5",
+      "tfc:iroko_teak/6",
+      "tfc:iroko_teak/7",
+      "tfc:iroko_teak/8",
+      "tfc:iroko_teak/9",
+      "tfc:iroko_teak/10",
+      "tfc:iroko_teak/11",
+      "tfc:iroko_teak/12",
+      "tfc:iroko_teak/13",
+      "tfc:iroko_teak/14",
+      "tfc:iroko_teak/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

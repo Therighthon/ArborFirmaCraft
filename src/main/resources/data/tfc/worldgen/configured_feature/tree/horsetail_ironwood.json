@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:horsetail_ironwood/1",
+      "tfc:horsetail_ironwood/2",
+      "tfc:horsetail_ironwood/3",
+      "tfc:horsetail_ironwood/4",
+      "tfc:horsetail_ironwood/5",
+      "tfc:horsetail_ironwood/6",
+      "tfc:horsetail_ironwood/7",
+      "tfc:horsetail_ironwood/8",
+      "tfc:horsetail_ironwood/9",
+      "tfc:horsetail_ironwood/10",
+      "tfc:horsetail_ironwood/11",
+      "tfc:horsetail_ironwood/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    }
+  }
+}

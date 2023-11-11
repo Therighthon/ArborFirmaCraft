@@ -1,0 +1,38 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "tfc:jaggery_palm/1",
+      "tfc:jaggery_palm/2",
+      "tfc:jaggery_palm/3",
+      "tfc:jaggery_palm/4",
+      "tfc:jaggery_palm/5",
+      "tfc:jaggery_palm/6",
+      "tfc:jaggery_palm/7",
+      "tfc:jaggery_palm/8",
+      "tfc:jaggery_palm/9",
+      "tfc:jaggery_palm/10",
+      "tfc:jaggery_palm/11",
+      "tfc:jaggery_palm/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/palm",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 2,
+      "wide": false
+    }
+  }
+}

@@ -251,7 +251,8 @@ TREES: dict[str, Tree] = {
     'bald_cypress': Tree('fir', 'fir_large', 'dead_tall', 'cypress'),
     'fig': Tree('emergent', None, 'dead_jungle', 'fig'),
     'rubber_fig': Tree('gnarled', None, 'dead_chestnut', 'rubber_fig'),
-
+    'ipe': Tree('jungle', None, 'dead_jungle', 'ipe'),
+    'ironwood': Tree('canopy', None, 'dead_jungle', 'ironwood'),
     'horsetail_ironwood': Tree('mangrove', None, 'dead_stump', 'ironwood'),
     'lebombo_ironwood': Tree('blackwood_large', None, 'dead_small', 'ironwood'),
     'poplar': Tree('hickory', None, 'dead_branching', 'poplar'),
@@ -313,7 +314,7 @@ def make_tree(wood: str, wood_type: str, tree: str | None, suffix: str = '',  il
         prefix = 'afc'
         wood_type = 'ancient_' + wood_type
 
-    if wood_type == 'baobab' or wood_type == 'eucalyptus' or wood_type == 'rainbow_eucalyptus' or wood_type == 'hevea' or wood_type == 'mahogany' or wood_type == 'tualang' or wood_type == 'teak' or wood_type == 'cypress' or wood_type == 'fig' or wood_type == 'mountain_ash' or wood_type == 'redcedar' or wood_type == 'weeping_cypress' or wood_type == 'bald_cypress' or wood_type == 'black_oak' or wood_type == 'rubber_fig' or wood_type == 'sapele_mahogany' or wood_type == 'small_leaf_mahogany' or wood_type == 'black_oak' or wood_type == 'gum_arabic' or wood_type == 'poplar' or wood_type == 'ironwood_type' or wood_type == 'ipe':
+    if wood_type == 'baobab' or wood_type == 'eucalyptus' or wood_type == 'rainbow_eucalyptus' or wood_type == 'hevea' or wood_type == 'mahogany' or wood_type == 'tualang' or wood_type == 'teak' or wood_type == 'cypress' or wood_type == 'fig' or wood_type == 'mountain_ash' or wood_type == 'redcedar' or wood_type == 'weeping_cypress' or wood_type == 'bald_cypress' or wood_type == 'black_oak' or wood_type == 'rubber_fig' or wood_type == 'sapele_mahogany' or wood_type == 'small_leaf_mahogany' or wood_type == 'black_oak' or wood_type == 'gum_arabic' or wood_type == 'poplar' or wood_type == 'ironwood' or wood_type == 'ipe':
         prefix = 'afc'
 
     if tree is None:
