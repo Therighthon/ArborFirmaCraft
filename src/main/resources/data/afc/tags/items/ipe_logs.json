@@ -5,6 +5,8 @@
     "afc:wood/log/ipe",
     "afc:wood/wood/ipe",
     "afc:wood/stripped_log/ipe",
-    "afc:wood/stripped_wood/ipe"
+    "afc:wood/stripped_wood/ipe",
+    "afc:wood/log/ancient_ipe",
+    "afc:wood/wood/ancient_ipe"
   ]
 }

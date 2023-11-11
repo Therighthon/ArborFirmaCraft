@@ -428,7 +428,8 @@ UNIQUE_LOGS: Dict[str, Wood] = {
     'redcedar': Wood(700, 1100),
     'gum_arabic': Wood(650, 1100),
     'black_oak': Wood(700, 800),
-    'poplar': Wood(620, 1200)
+    'poplar': Wood(620, 1200),
+    'rubber_fig': Wood(700, 1300),
 }
 
 TREE_VARIANTS: Dict[str, str] = {

@@ -253,12 +253,12 @@ TREES: dict[str, Tree] = {
     'rubber_fig': Tree('gnarled', None, 'dead_chestnut', 'rubber_fig'),
     'ipe': Tree('jungle', None, 'dead_jungle', 'ipe'),
     'ironwood': Tree('canopy', None, 'dead_jungle', 'ironwood'),
-    'horsetail_ironwood': Tree('mangrove', None, 'dead_stump', 'ironwood'),
-    'lebombo_ironwood': Tree('blackwood_large', None, 'dead_small', 'ironwood'),
-    'poplar': Tree('hickory', None, 'dead_branching', 'poplar'),
+    'horsetail_ironwood': Tree('mangrove', None, 'dead_stump', 'ironwood'), #works
+    'lebombo_ironwood': Tree('blackwood_large', None, 'dead_small', 'ironwood'), #working correctly, but should have its own structure
+    'poplar': Tree('hickory', None, 'dead_branching', 'poplar'), #working correctly, should have a trunk though, 1-2 for normal, 3-6 for large
     'iroko_teak': Tree('canopy', None, 'dead_jungle', 'teak'),
     'flame_of_the_forest': Tree('aspen', None, 'dead_aspen', 'teak'),
-    'jaggery_palm': Tree('mangrove', None, 'dead_stump', 'palm'),
+    'jaggery_palm': Tree('mangrove', None, 'dead_stump', 'palm')
 }
 
 

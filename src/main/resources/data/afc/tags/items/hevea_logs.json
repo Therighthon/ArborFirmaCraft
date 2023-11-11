@@ -5,6 +5,8 @@
     "afc:wood/log/hevea",
     "afc:wood/wood/hevea",
     "afc:wood/stripped_log/hevea",
-    "afc:wood/stripped_wood/hevea"
+    "afc:wood/stripped_wood/hevea",
+    "afc:wood/log/ancient_hevea",
+    "afc:wood/wood/ancient_hevea"
   ]
 }

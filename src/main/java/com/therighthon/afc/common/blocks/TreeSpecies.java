@@ -76,7 +76,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Cedar
     ATLAS_CEDAR( true, 10, 0),
     //Willow
-    WEEPING_WILLOW(false, 7, 240),
+    WEEPING_WILLOW(false, 16, 240),
     //Eucalyptus
     RAINBOW_EUCALYPTUS(false, 16, 30),
     MOUNTAIN_ASH(false, 13, 150),

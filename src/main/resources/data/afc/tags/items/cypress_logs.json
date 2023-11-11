@@ -5,6 +5,8 @@
     "afc:wood/log/cypress",
     "afc:wood/wood/cypress",
     "afc:wood/stripped_log/cypress",
-    "afc:wood/stripped_wood/cypress"
+    "afc:wood/stripped_wood/cypress",
+    "afc:wood/log/ancient_cypress",
+    "afc:wood/wood/ancient_cypress"
   ]
 }

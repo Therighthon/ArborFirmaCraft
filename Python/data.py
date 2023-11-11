@@ -64,6 +64,9 @@ def generate(rm: ResourceManager):
         def plank(_variant: str) -> str:
             return 'afc:wood/planks/%s_%s' % (wood, _variant)
 
+        def ancient(_variant: str) -> str:
+            return 'afc:wood/%s/ancient_%s' % (_variant, wood)
+
         print(wood)
 
         rm.item_tag('tfc:lumber', item('lumber'))
@@ -93,12 +96,10 @@ def generate(rm: ResourceManager):
         block_and_item_tag(rm, 'forge:fence_gates/wooden', plank('fence_gate'))
         block_and_item_tag(rm, 'forge:stripped_logs', item('stripped_log'), item('stripped_wood'))
 
-        block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'))
+        block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'))
 
         rm.block_tag('lit_by_dropped_torch', item('fallen_leaves'))
         rm.block_tag('converts_to_humus', item('fallen_leaves'))
-        if wood in ('white_elm'):
-            rm.block_tag('seasonal_leaves', item('leaves'))
 
         if wood in TANNIN_WOOD_TYPES:
             rm.item_tag('makes_tannin', item('log'), item('wood'))
@@ -110,12 +111,16 @@ def generate(rm: ResourceManager):
 
         block_and_item_tag(rm, 'minecraft:leaves', item('leaves'))
         block_and_item_tag(rm, 'tfc:fallen_leaves', item('fallen_leaves'))
+
+
+
     # New
     for wood in UNIQUE_LOGS.keys():
         def item(_variant: str) -> str:
             return 'afc:wood/%s/%s' % (_variant, wood)
-
         block_and_item_tag(rm, 'minecraft:logs', '#afc:%s_logs' % wood)
+
+
 
 
 

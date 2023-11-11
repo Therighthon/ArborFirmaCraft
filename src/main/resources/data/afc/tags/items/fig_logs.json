@@ -5,6 +5,8 @@
     "afc:wood/log/fig",
     "afc:wood/wood/fig",
     "afc:wood/stripped_log/fig",
-    "afc:wood/stripped_wood/fig"
+    "afc:wood/stripped_wood/fig",
+    "afc:wood/log/ancient_fig",
+    "afc:wood/wood/ancient_fig"
   ]
 }
