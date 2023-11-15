@@ -134,7 +134,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'weeping_maple'), 'tfc:random_tree', random_config('weeping_maple', 10, 1, place=tree_placement_config(1, 2, False)))
     configured_placed_feature(rm, ('tree', 'weeping_maple_dead'), 'tfc:random_tree', random_config('weeping_maple', 6, 1, '_dead', place=tree_placement_config(1, 2, False)))
     configured_placed_feature(rm, ('tree', 'weeping_maple_large'), 'tfc:random_tree', random_config('weeping_maple', 7, 1, '_large', place=tree_placement_config(1, 2, False)))
-    configured_placed_feature(rm, ('tree', 'live_oak'), 'tfc:random_tree', random_config('live_oak', 23, 1, place=tree_placement_config(1, 2, True))) # Uses 23 because it uses X medium round structures and then the round structures that weren't overridden
+    configured_placed_feature(rm, ('tree', 'live_oak'), 'tfc:random_tree', random_config('live_oak', 5, 1, place=tree_placement_config(1, 2, True))) # Uses 23 because it uses X medium round structures and then the round structures that weren't overridden
     configured_placed_feature(rm, ('tree', 'live_oak_dead'), 'tfc:random_tree', random_config('live_oak', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'live_oak_large'), 'tfc:random_tree', random_config('live_oak', 5, 2, '_large', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'black_oak'), 'tfc:random_tree', random_config('black_oak', 15, 1, place=tree_placement_config(1, 2, True)))
