@@ -100,13 +100,13 @@ public final class AFCColors
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
                 case APRIL:
+                case MAY:
                     index = Helpers.hash(91273491823412341L, pos);
                     return FOLIAGE_RED_COLORS_CACHE[index & '\uffff'];
                 case DECEMBER:
                 case JANUARY:
                 case FEBRUARY:
                 case MARCH:
-                case MAY:
                 case JUNE:
                 case JULY:
                 case AUGUST:
@@ -124,13 +124,13 @@ public final class AFCColors
         if (pos != null && tintIndex == 0) {
             int index;
             switch(getAdjustedNoisyMonth(pos)) {
+                case MARCH:
                 case APRIL:
                     index = Helpers.hash(91273491823412341L, pos);
                     return FOLIAGE_ORANGE_COLORS_CACHE[index & '\uffff'];
                 case DECEMBER:
                 case JANUARY:
                 case FEBRUARY:
-                case MARCH:
                 case MAY:
                 case JUNE:
                 case JULY:

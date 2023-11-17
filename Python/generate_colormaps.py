@@ -9,7 +9,7 @@ SRC = '../src/main/resources/assets/afc/textures/colormap/'
 
 def main():
     make('foliage_green.png', (0, 0, '#1D6233'), (255, 0, '57776D'), (0, 255, '#8EA825'), (255, 255, '#9C8733'))
-    make('foliage_white.png', (0, 0, '#1D6233'), (255, 0, '57776D'), (0, 255, '#8EA825'), (255, 255, '#9C8733'))
+    # make('foliage_white.png', (0, 0, '#1D6233'), (255, 0, '57776D'), (0, 255, '#8EA825'), (255, 255, '#9C8733'))
     make('foliage_yellow.png', (0, 0, '#fbf236'), (255, 0, '#b1a145'))
     make('foliage_orange.png', (0, 0, '#1D6233'), (255, 0, '57776D'), (0, 255, '#8EA825'), (255, 255, '#9C8733'))
     make('foliage_red.png', (0, 0, '#1D6233'), (255, 0, '57776D'), (0, 255, '#8EA825'), (255, 255, '#9C8733'))
