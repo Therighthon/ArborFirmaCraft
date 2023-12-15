@@ -11,95 +11,6 @@ from constants import *
 
 def generate(rm: ResourceManager):
 
-
-
-    # Plants
-    # for plant, plant_data in PLANTS.items():
-    #     rm.lang('block.afc.plant.%s' % plant, lang(plant))
-    #     p = 'afc:plant/%s' % plant
-    #     lower_only = loot_tables.block_state_property(p + '[part=lower]')
-    #     if plant_data.type == 'short_grass':
-    #         rm.block_loot(p, ({
-    #             'name': p,
-    #             'conditions': [loot_tables.match_tag('forge:shears')],
-    #         }, {
-    #             'name': 'afc:straw',
-    #             'conditions': [loot_tables.match_tag('afc:sharp_tools')]
-    #         }))
-    #     elif plant_data.type == 'tall_grass':
-    #         rm.block_loot(p, ({
-    #             'name': p,
-    #             'conditions': [loot_tables.match_tag('forge:shears'), lower_only],
-    #         }, {
-    #             'name': 'afc:straw',
-    #             'conditions': [loot_tables.match_tag('afc:sharp_tools')]
-    #         }))
-    #     elif plant in SEAWEED:
-    #         rm.block_loot(p, (
-    #             {'name': 'afc:groundcover/seaweed', 'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.3)]},
-    #             {'name': p, 'conditions': [loot_tables.match_tag('forge:shears')]}
-    #         ))
-    #     elif plant_data.type in ('tall_plant', 'emergent', 'emergent_fresh', 'cactus'):
-    #         if plant == 'cattail':
-    #             rm.block_loot(p, (
-    #                 {'name': 'afc:food/cattail_root', 'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.3), lower_only]},
-    #                 {'name': p, 'conditions': [loot_tables.match_tag('forge:shears'), lower_only]}
-    #             ))
-    #         elif plant == 'water_taro':
-    #             rm.block_loot(p, (
-    #                 {'name': 'afc:food/taro_root', 'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.3), lower_only]},
-    #                 {'name': p, 'conditions': [loot_tables.match_tag('forge:shears'), lower_only]}
-    #             ))
-    #         else:
-    #             rm.block_loot(p, {'name': p, 'conditions': [loot_tables.match_tag('afc:sharp_tools'), lower_only]})
-    #     else:
-    #         rm.block_loot(p, {'name': p, 'conditions': [loot_tables.match_tag('afc:sharp_tools')]})
-    # # todo this is a mess
-    # for plant in ('hanging_vines', 'jungle_vines', 'ivy', 'liana', 'tree_fern', 'arundo', 'spanish_moss'):
-    #     rm.lang('block.afc.plant.%s' % plant, lang(plant))
-    # for plant in ('tree_fern', 'arundo', 'winged_kelp', 'leafy_kelp', 'giant_kelp_flower', 'dry_phragmite'):
-    #     rm.lang('block.afc.plant.%s' % plant, lang(plant))
-    #     rm.block_loot('afc:plant/%s' % plant, 'afc:plant/%s' % plant)
-    # for plant in ('tree_fern', 'arundo', 'winged_kelp', 'leafy_kelp', 'giant_kelp', 'hanging_vines', 'spanish_moss', 'liana', 'dry_phragmite'):
-    #     rm.lang('block.afc.plant.%s_plant' % plant, lang(plant))
-    # for plant in ('hanging_vines', 'ivy', 'jungle_vines', 'liana', 'spanish_moss'):
-    #     rm.block_loot('afc:plant/%s' % plant, {'name': 'afc:plant/%s' % plant, 'conditions': [loot_tables.match_tag('afc:sharp_tools')]})
-    #
-    # for plant, texture in FLOWERPOT_CROSS_PLANTS.items():
-    #     plant_folder = plant
-    #     if 'tulip' in plant:
-    #         plant_folder = 'tulip'
-    #     elif 'snapdragon' in plant:
-    #         plant_folder = 'snapdragon'
-    #     flower_pot_cross(rm, plant, 'afc:plant/potted/%s' % plant, 'plant/flowerpot/%s' % plant, 'afc:block/plant/%s/%s' % (plant_folder, texture), 'afc:plant/%s' % plant)
-    # for plant in MISC_POTTED_PLANTS:
-    #     rm.blockstate('plant/potted/%s' % plant, model='afc:block/plant/flowerpot/%s' % plant).with_lang(lang('potted %s', plant)).with_tag('minecraft:flower_pots').with_block_loot('afc:plant/%s' % plant, 'minecraft:flower_pot')
-    #     for plant, stages in SIMPLE_TALL_PLANTS.items():
-    #         for i in range(0, stages):
-    #             for part in ('lower', 'upper'):
-    #                 rm.block_model('plant/%s_%s_%s' % (plant, part, i), parent='minecraft:block/cross', textures={'cross': 'afc:block/plant/%s/%s_%s' % (plant, i, part)})
-    #     rm.blockstate('plant/%s' % plant, variants=dict(('stage=%d,part=%s' % (i, part), {'model': 'afc:block/plant/%s_%s_%s' % (plant, part, i)}) for i in range(0, stages) for part in ('lower', 'upper')))
-    # for plant, stages in SIMPLE_STAGE_PLANTS.items():
-    #     rm.blockstate('plant/%s' % plant, variants=dict({'stage=%d' % i: {'model': 'afc:block/plant/%s_%s' % (plant, i)} for i in range(0, stages)}))
-    # for plant in MODEL_PLANTS:
-    #     rm.blockstate('plant/%s' % plant, model='afc:block/plant/%s' % plant)
-    # for plant in SEAGRASS:
-    #     rm.blockstate('plant/%s' % plant, variants=dict({'age=%s' % i: {'model': 'afc:block/plant/%s_%s' % (plant, i)} for i in range(0, 4)}))
-    #     for i in range(0, 4):
-    #         rm.block_model('plant/%s_%s' % (plant, i), parent='minecraft:block/template_seagrass', textures={'texture': 'afc:block/plant/%s/%s' % (plant, i)})
-    # rm.blockstate('plant/dead_bush', variants={"": [{'model': 'afc:block/plant/dead_bush_large'}, *[{'model': 'afc:block/plant/dead_bush%s' % i} for i in range(0, 7)]]}, use_default_model=False)
-    # for i in range(0, 7):
-    #     rm.block_model('plant/dead_bush%s' % i, parent='minecraft:block/cross', textures={'cross': 'afc:block/plant/dead_bush/dead_bush%s' % i})
-    #
-    # rm.block('sea_pickle').with_lang(lang('sea pickle')).with_block_loot([{
-    #     'name': 'afc:sea_pickle',
-    #     'conditions': loot_tables.block_state_property('afc:sea_pickle[pickles=%d]' % i),
-    #     'functions': [loot_tables.set_count(i)]
-    # } for i in (1, 2, 3, 4)])
-    #
-    # for plant in ('duckweed', 'lotus', 'sargassum', 'water_lily'):
-    #     rm.block_model('plant/%s' % plant, parent='afc:block/plant/template_floating_tinted', textures={'pad': 'afc:block/plant/%s/%s' % (plant, plant)})
-
     for variant in TREE_VARIANTS.keys():
         # Leaves
         block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s' % variant)
@@ -195,7 +106,7 @@ def generate(rm: ResourceManager):
         block.with_lang(lang('%s twig', wood))
 
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
-        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig_%s' % wood, parent='item/handheld_rod')
+        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         block.with_block_loot('afc:wood/twig/%s' % wood)
 
         block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', wood))
@@ -212,6 +123,7 @@ def generate(rm: ResourceManager):
         # Leaves
         block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s' % wood)
         block.with_block_model('afc:block/wood/leaves/%s' % wood, parent='block/leaves')
+        block.with_item_model()
         block.with_item_model()
         block.with_tag('minecraft:leaves')
         block.with_block_loot(({
@@ -373,7 +285,7 @@ def generate(rm: ResourceManager):
         block.with_item_model().with_lang(lang("%s lectern" % wood)).with_block_loot('afc:wood/lectern/%s' % wood).with_tag('minecraft:mineable/axe')
         # Scribing Table
         block = rm.blockstate('afc:wood/scribing_table/%s' % wood, variants=four_rotations('afc:block/wood/scribing_table/%s' % wood, (90, None, 180, 270)))
-        block.with_block_model(textures={'top': 'afc:block/wood/scribing_table/%s' % wood, 'leg': 'afc:block/wood/log/%s' % wood, 'side' : 'afc:block/wood/planks/%s' % wood, 'misc': 'afc:block/wood/scribing_table/scribing_paraphernalia', 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/scribing_table')
+        block.with_block_model(textures={'top': 'afc:block/wood/scribing_table/%s' % wood, 'leg': 'afc:block/wood/log/%s' % wood, 'side' : 'afc:block/wood/planks/%s' % wood, 'misc': 'tfc:block/wood/scribing_table/scribing_paraphernalia', 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/scribing_table')
         block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_block_loot('afc:wood/scribing_table/%s' % wood).with_tag('minecraft:mineable/axe')
 
         # Lang
