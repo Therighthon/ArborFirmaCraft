@@ -5,7 +5,7 @@
     "top": "afc:block/wood/scribing_table/ironwood",
     "leg": "afc:block/wood/log/ironwood",
     "side": "afc:block/wood/planks/ironwood",
-    "misc": "afc:block/wood/scribing_table/scribing_paraphernalia",
+    "misc": "tfc:block/wood/scribing_table/scribing_paraphernalia",
     "particle": "afc:block/wood/planks/ironwood"
   }
 }

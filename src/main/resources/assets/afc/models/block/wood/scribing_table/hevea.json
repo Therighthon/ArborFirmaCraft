@@ -5,7 +5,7 @@
     "top": "afc:block/wood/scribing_table/hevea",
     "leg": "afc:block/wood/log/hevea",
     "side": "afc:block/wood/planks/hevea",
-    "misc": "afc:block/wood/scribing_table/scribing_paraphernalia",
+    "misc": "tfc:block/wood/scribing_table/scribing_paraphernalia",
     "particle": "afc:block/wood/planks/hevea"
   }
 }
