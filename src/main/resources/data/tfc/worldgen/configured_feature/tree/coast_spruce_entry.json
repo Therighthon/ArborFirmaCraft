@@ -18,6 +18,7 @@
     ],
     "normal_tree": "tfc:tree/coast_spruce",
     "dead_tree": "tfc:tree/coast_spruce_dead",
+    "old_growth_chance": 1,
     "fallen_log": "tfc:wood/log/spruce",
     "bush_log": {
       "Name": "tfc:wood/wood/spruce",

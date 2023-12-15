@@ -35,7 +35,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 210, 320, -8.4, 6.1, 'oak', 'oak', False)
     forest_config(rm, 0, 250, 17.1, 40, 'palm', 'palm', False)
 
-    forest_config(rm, 60, 270, -19.4, -3, 'pine', 'pine', True)
+    forest_config(rm, 60, 270, -19.4, -3, 'pine', 'pine', False)
     forest_config(rm, 140, 290, 2.5, 18.9, 'stone_pine', 'pine', True)
     forest_config(rm, 185, 320, -8.4, 4.3, 'red_pine', 'pine', False)
     forest_config(rm, 150, 500, -17.5, -1.1, 'tamarack', 'pine', True)
@@ -44,7 +44,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 320, 500, 4.3, 9.8, 'coast_redwood', 'sequoia', True, old_growth_chance=3)
     forest_config(rm, 320, 500, 0.7, 8, 'sequoia', 'sequoia', True, old_growth_chance=3)
 
-    forest_config(rm, 330, 500, -19.4, 2.5, 'spruce', 'spruce', True)
+    forest_config(rm, 330, 500, -19.4, 2.5, 'spruce', 'spruce', False)
     forest_config(rm, 320, 390, -12.1, 6.1, 'coast_spruce', 'spruce', False, old_growth_chance=1)
     forest_config(rm, 370, 500, 2.5, 8, 'sitka_spruce', 'spruce', True)
     forest_config(rm, 220, 360, -17.5, -1.1, 'black_spruce', 'spruce', True)
