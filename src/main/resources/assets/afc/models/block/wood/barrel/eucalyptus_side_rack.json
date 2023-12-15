@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/barrel_side_rack",
   "textures": {
-    "particle": "tfc:block/wood/planks/eucalyptus",
-    "planks": "tfc:block/wood/planks/eucalyptus",
-    "sheet": "tfc:block/wood/sheet/eucalyptus"
+    "particle": "afc:block/wood/planks/eucalyptus",
+    "planks": "afc:block/wood/planks/eucalyptus",
+    "sheet": "afc:block/wood/sheet/eucalyptus"
   }
 }

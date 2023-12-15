@@ -1,12 +1,12 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/wood/barrel/eucalyptus",
+  "parent": "afc:block/wood/barrel/eucalyptus",
   "overrides": [
     {
       "predicate": {
         "tfc:sealed": 1.0
       },
-      "model": "tfc:block/wood/barrel_sealed/eucalyptus"
+      "model": "afc:block/wood/barrel_sealed/eucalyptus"
     }
   ]
 }

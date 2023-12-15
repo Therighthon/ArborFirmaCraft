@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/barrel",
   "textures": {
-    "particle": "tfc:block/wood/planks/tualang",
-    "planks": "tfc:block/wood/planks/tualang",
-    "sheet": "tfc:block/wood/sheet/tualang"
+    "particle": "afc:block/wood/planks/tualang",
+    "planks": "afc:block/wood/planks/tualang",
+    "sheet": "afc:block/wood/sheet/tualang"
   }
 }

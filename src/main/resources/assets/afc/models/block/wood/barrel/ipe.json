@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/barrel",
   "textures": {
-    "particle": "tfc:block/wood/planks/ipe",
-    "planks": "tfc:block/wood/planks/ipe",
-    "sheet": "tfc:block/wood/sheet/ipe"
+    "particle": "afc:block/wood/planks/ipe",
+    "planks": "afc:block/wood/planks/ipe",
+    "sheet": "afc:block/wood/sheet/ipe"
   }
 }

@@ -4,7 +4,8 @@
 import itertools
 import os
 
-from mcresources import ResourceManager, ItemContext, utils, block_states, loot_tables
+from mcresources import ResourceManager, ItemContext, utils, block_states, loot_tables, BlockContext
+from mcresources.type_definitions import JsonObject
 
 from constants import *
 
@@ -254,17 +255,17 @@ def generate(rm: ResourceManager):
         rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood)).with_tag('minecraft:wall_signs')
 
         # Barrels
-        texture = 'tfc:block/wood/planks/%s' % wood
-        textures = {'particle': texture, 'planks': texture, 'sheet': 'tfc:block/wood/sheet/%s' % wood}
+        texture = 'afc:block/wood/planks/%s' % wood
+        textures = {'particle': texture, 'planks': texture, 'sheet': 'afc:block/wood/sheet/%s' % wood}
 
         faces = (('up', 0), ('east', 0), ('west', 180), ('south', 90), ('north', 270))
         seals = (('true', 'barrel_sealed'), ('false', 'barrel'))
         racks = (('true', '_rack'), ('false', ''))
         block = rm.blockstate(('wood', 'barrel', wood), variants=dict((
-                                                                          'facing=%s,rack=%s,sealed=%s' % (face, rack, is_seal), {'model': 'tfc:block/wood/%s/%s%s%s' % (seal_type, wood, '_side' if face != 'up' else '', suff if face != 'up' else ''), 'y': yrot if yrot != 0 else None}
-                                                                      ) for face, yrot in faces for rack, suff in racks for is_seal, seal_type in seals))
+                                                                          'facing=%s,rack=%s,sealed=%s' % (face, rack, is_seal), {'model': 'afc:block/wood/%s/%s%s%s' % (seal_type, wood, '_side' if face != 'up' else '', suffix if face != 'up' else ''), 'y': yrot if yrot != 0 else None}
+                                                                      ) for face, yrot in faces for rack, suffix in racks for is_seal, seal_type in seals))
 
-        item_model_property(rm, ('wood', 'barrel', wood), [{'predicate': {'tfc:sealed': 1.0}, 'model': 'tfc:block/wood/barrel_sealed/%s' % wood}], {'parent': 'tfc:block/wood/barrel/%s' % wood})
+        item_model_property(rm, ('wood', 'barrel', wood), [{'predicate': {'tfc:sealed': 1.0}, 'model': 'afc:block/wood/barrel_sealed/%s' % wood}], {'parent': 'afc:block/wood/barrel/%s' % wood})
         block.with_block_model(textures, 'tfc:block/barrel')
         rm.block_model(('wood', 'barrel', wood + '_side'), textures, 'tfc:block/barrel_side')
         rm.block_model(('wood', 'barrel', wood + '_side_rack'), textures, 'tfc:block/barrel_side_rack')
@@ -272,12 +273,11 @@ def generate(rm: ResourceManager):
         rm.block_model(('wood', 'barrel_sealed', wood), textures, 'tfc:block/barrel_sealed')
         rm.block_model(('wood', 'barrel_sealed', wood + '_side'), textures, 'tfc:block/barrel_side_sealed')
         block.with_lang(lang('%s barrel', wood))
-        block.with_tag('tfc:barrels').with_tag('minecraft:mineable/axe')
         block.with_block_loot(({
-                                   'name': 'tfc:wood/barrel/%s' % wood,
+                                   'name': 'afc:wood/barrel/%s' % wood,
                                    'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
-                                   'conditions': [loot_tables.block_state_property('tfc:wood/barrel/%s[sealed=true]' % wood)]
-                               }, 'tfc:wood/barrel/%s' % wood))
+                                   'conditions': [loot_tables.block_state_property('afc:wood/barrel/%s[sealed=true]' % wood)]
+                               }, 'afc:wood/barrel/%s' % wood))
 
         # Lecterns
         block = rm.blockstate('afc:wood/lectern/%s' % wood, variants=four_rotations('afc:block/wood/lectern/%s' % wood, (90, None, 180, 270)))
@@ -287,6 +287,9 @@ def generate(rm: ResourceManager):
         block = rm.blockstate('afc:wood/scribing_table/%s' % wood, variants=four_rotations('afc:block/wood/scribing_table/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'top': 'afc:block/wood/scribing_table/%s' % wood, 'leg': 'afc:block/wood/log/%s' % wood, 'side' : 'afc:block/wood/planks/%s' % wood, 'misc': 'tfc:block/wood/scribing_table/scribing_paraphernalia', 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/scribing_table')
         block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_block_loot('afc:wood/scribing_table/%s' % wood).with_tag('minecraft:mineable/axe')
+        # Jar shelf
+        block = rm.blockstate('wood/jar_shelf/%s' % wood, variants=four_rotations('afc:block/wood/jar_shelf/%s' % wood, (90, None, 180, 270)))
+        block.with_block_model(textures={'0': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/jar_shelf').with_item_model().with_lang(lang('%s jar shelf', wood)).with_block_loot('afc:wood/jar_shelf/%s' % wood)
 
         # Lang
         for variant in ('door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs'):
@@ -383,3 +386,67 @@ def slab_loot(rm: ResourceManager, loot: str):
             'add': False
         }]
     })
+
+def make_door(block_context: BlockContext, door_suffix: str = '_door', top_texture: Optional[str] = None, bottom_texture: Optional[str] = None) -> 'BlockContext':
+    """
+    Generates all blockstates and models required for a standard door
+    """
+    door = block_context.res.join() + door_suffix
+    block = block_context.res.join('block/') + door_suffix
+    bottom = block + '_bottom'
+    top = block + '_top'
+
+    if top_texture is None:
+        top_texture = top
+    if bottom_texture is None:
+        bottom_texture = bottom
+
+    block_context.rm.blockstate(door, variants=door_blockstate(block))
+    for model in ('bottom_left', 'bottom_left_open', 'bottom_right', 'bottom_right_open', 'top_left', 'top_left_open', 'top_right', 'top_right_open'):
+        block_context.rm.block_model(door + '_' + model, {'top': top_texture, 'bottom': bottom_texture}, parent='block/door_%s' % model)
+    block_context.rm.item_model(door)
+    return block_context
+
+def door_blockstate(base: str) -> JsonObject:
+    left = base + '_bottom_left'
+    left_open = base + '_bottom_left_open'
+    right = base + '_bottom_right'
+    right_open = base + '_bottom_right_open'
+    top_left = base + '_top_left'
+    top_left_open = base + '_top_left_open'
+    top_right = base + '_top_right'
+    top_right_open = base + '_top_right_open'
+    return {
+        'facing=east,half=lower,hinge=left,open=false': {'model': left},
+        'facing=east,half=lower,hinge=left,open=true': {'model': left_open, 'y': 90},
+        'facing=east,half=lower,hinge=right,open=false': {'model': right},
+        'facing=east,half=lower,hinge=right,open=true': {'model': right_open, 'y': 270},
+        'facing=east,half=upper,hinge=left,open=false': {'model': top_left},
+        'facing=east,half=upper,hinge=left,open=true': {'model': top_left_open, 'y': 90},
+        'facing=east,half=upper,hinge=right,open=false': {'model': top_right},
+        'facing=east,half=upper,hinge=right,open=true': {'model': top_right_open, 'y': 270},
+        'facing=north,half=lower,hinge=left,open=false': {'model': left, 'y': 270},
+        'facing=north,half=lower,hinge=left,open=true': {'model': left_open},
+        'facing=north,half=lower,hinge=right,open=false': {'model': right, 'y': 270},
+        'facing=north,half=lower,hinge=right,open=true': {'model': right_open, 'y': 180},
+        'facing=north,half=upper,hinge=left,open=false': {'model': top_left, 'y': 270},
+        'facing=north,half=upper,hinge=left,open=true': {'model': top_left_open},
+        'facing=north,half=upper,hinge=right,open=false': {'model': top_right, 'y': 270},
+        'facing=north,half=upper,hinge=right,open=true': {'model': top_right_open, 'y': 180},
+        'facing=south,half=lower,hinge=left,open=false': {'model': left, 'y': 90},
+        'facing=south,half=lower,hinge=left,open=true': {'model': left_open, 'y': 180},
+        'facing=south,half=lower,hinge=right,open=false': {'model': right, 'y': 90},
+        'facing=south,half=lower,hinge=right,open=true': {'model': right_open},
+        'facing=south,half=upper,hinge=left,open=false': {'model': top_left, 'y': 90},
+        'facing=south,half=upper,hinge=left,open=true': {'model': top_left_open, 'y': 180},
+        'facing=south,half=upper,hinge=right,open=false': {'model': top_right, 'y': 90},
+        'facing=south,half=upper,hinge=right,open=true': {'model': top_right_open},
+        'facing=west,half=lower,hinge=left,open=false': {'model': left, 'y': 180},
+        'facing=west,half=lower,hinge=left,open=true': {'model': left_open, 'y': 270},
+        'facing=west,half=lower,hinge=right,open=false': {'model': right, 'y': 180},
+        'facing=west,half=lower,hinge=right,open=true': {'model': right_open, 'y': 90},
+        'facing=west,half=upper,hinge=left,open=false': {'model': top_left, 'y': 180},
+        'facing=west,half=upper,hinge=left,open=true': {'model': top_left_open, 'y': 270},
+        'facing=west,half=upper,hinge=right,open=false': {'model': top_right, 'y': 180},
+        'facing=west,half=upper,hinge=right,open=true': {'model': top_right_open, 'y': 90}
+    }

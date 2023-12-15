@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/barrel_side_sealed",
   "textures": {
-    "particle": "tfc:block/wood/planks/teak",
-    "planks": "tfc:block/wood/planks/teak",
-    "sheet": "tfc:block/wood/sheet/teak"
+    "particle": "afc:block/wood/planks/teak",
+    "planks": "afc:block/wood/planks/teak",
+    "sheet": "afc:block/wood/sheet/teak"
   }
 }

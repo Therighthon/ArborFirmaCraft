@@ -1,12 +1,12 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/wood/barrel/hevea",
+  "parent": "afc:block/wood/barrel/hevea",
   "overrides": [
     {
       "predicate": {
         "tfc:sealed": 1.0
       },
-      "model": "tfc:block/wood/barrel_sealed/hevea"
+      "model": "afc:block/wood/barrel_sealed/hevea"
     }
   ]
 }

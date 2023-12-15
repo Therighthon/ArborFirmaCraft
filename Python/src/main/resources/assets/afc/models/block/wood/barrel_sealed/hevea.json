@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/barrel_sealed",
   "textures": {
-    "particle": "tfc:block/wood/planks/hevea",
-    "planks": "tfc:block/wood/planks/hevea",
-    "sheet": "tfc:block/wood/sheet/hevea"
+    "particle": "afc:block/wood/planks/hevea",
+    "planks": "afc:block/wood/planks/hevea",
+    "sheet": "afc:block/wood/sheet/hevea"
   }
 }
