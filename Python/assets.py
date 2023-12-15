@@ -149,7 +149,7 @@ def generate(rm: ResourceManager):
     # Wood Blocks
     for wood in WOODS.keys():
         # Logs
-        for variant in ('log', 'stripped_log', 'wood', 'stripped_wood'):
+        for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'ancient_log', 'ancient_wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
                 'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
                 'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
