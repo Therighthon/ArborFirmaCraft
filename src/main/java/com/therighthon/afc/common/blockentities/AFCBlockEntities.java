@@ -13,6 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import net.dries007.tfc.common.blockentities.LogPileBlockEntity;
+import net.dries007.tfc.common.blockentities.TFCSignBlockEntity;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -25,8 +26,10 @@ public class AFCBlockEntities
 
     public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP_BLOCK_ENTITY = register("tap_block_entity", TapBlockEntity::new, AFCBlocks.TREE_TAP);
 
-
-    public static final RegistryObject<BlockEntityType<AFCSignBlockEntity>> SIGN = register("sign", AFCSignBlockEntity::new, AFCBlocks.WOODS.values().stream().flatMap(map -> Stream.of(Wood.BlockType.SIGN, Wood.BlockType.WALL_SIGN).map(map::get)));
+    public static final RegistryObject<BlockEntityType<AFCSignBlockEntity>> SIGN = register("sign", AFCSignBlockEntity::new, Stream.concat(
+        woodBlocks(Wood.BlockType.SIGN),
+        woodBlocks(Wood.BlockType.WALL_SIGN)
+    ));
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)
     {
@@ -40,5 +43,10 @@ public class AFCBlockEntities
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Supplier<? extends Block> block)
     {
         return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, block);
+    }
+
+    private static Stream<? extends Supplier<? extends Block>> woodBlocks(Wood.BlockType type)
+    {
+        return AFCBlocks.WOODS.values().stream().map(map -> map.get(type));
     }
 }

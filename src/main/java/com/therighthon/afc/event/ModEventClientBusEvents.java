@@ -37,8 +37,10 @@ import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.RenderHelpers;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
+import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.util.Helpers;
@@ -56,8 +58,6 @@ public class ModEventClientBusEvents
         final BlockColor yellowIpeFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getYellowIpeFoliageColor(pos, tintIndex, AFCWood.IPE.autumnIndex());
         final BlockColor flameOfTheForestFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getFlameOfTheForestFoliageColor(pos, tintIndex, TreeSpecies.FLAME_OF_THE_FOREST.autumnIndex());
 
-//        ModBlocks.PLANTS.forEach((plant, reg) -> registry.register(plant.isTallGrass() ? tallGrassColor : plant.isSeasonal() ? seasonalFoliageColor : plant.isFoliage() ? foliageColor : grassColor, reg.get()));
-//        ModBlocks.POTTED_PLANTS.forEach((plant, reg) -> registry.register(grassColor, reg.get()));
         AFCBlocks.WOODS.forEach((wood, reg) -> event.register(
             wood.isConifer() ?
                 foliageColor : wood == AFCWood.IPE ? yellowIpeFoliageColor :
@@ -76,13 +76,8 @@ public class ModEventClientBusEvents
     public static void registerColorHandlerItems(RegisterColorHandlersEvent.Item event)
     {
         final ItemColors registry = event.getItemColors();
-//        final ItemColor grassColor = (stack, tintIndex) -> TFCColors.getGrassColor(null, tintIndex);
         final ItemColor seasonalFoliageColor = (stack, tintIndex) -> TFCColors.getFoliageColor(null, tintIndex);
 
-//        ModBlocks.PLANTS.forEach((plant, reg) -> {
-//            if (plant.isItemTinted())
-//                registry.register(plant.isSeasonal() ? seasonalFoliageColor : grassColor, reg.get());
-//        });
         AFCBlocks.WOODS.forEach((wood, reg) -> registry.register(seasonalFoliageColor, reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
         AFCBlocks.TREE_SPECIES.forEach((key, value) -> registry.register(seasonalFoliageColor, value.get(TreeSpecies.BlockType.LEAVES).get(), value.get(TreeSpecies.BlockType.FALLEN_LEAVES).get()));
     }
@@ -167,6 +162,7 @@ public class ModEventClientBusEvents
 //            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
         }
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignRenderer::new);
+        //TODO: Hanging signs, everything else
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

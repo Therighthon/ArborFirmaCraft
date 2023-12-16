@@ -3,10 +3,7 @@ package com.therighthon.afc.common.blocks;
 import java.util.Locale;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.client.render.colors.ColorScheme;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -37,7 +34,7 @@ public enum AFCWood implements RegistryWood
     private final MapColor woodColor;
     private final MapColor barkColor;
     private final TFCTreeGrower tree;
-    private final int defaultDaysToGrow;
+    private final int daysToGrow;
     private final BlockSetType blockSet;
     private final WoodType woodType;
     private final int autumnIndex;
@@ -49,7 +46,7 @@ public enum AFCWood implements RegistryWood
         this.barkColor = barkColor;
         this.autumnIndex = autumnIndex;
         this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
-        this.defaultDaysToGrow = daysToGrow;
+        this.daysToGrow = daysToGrow;
         this.blockSet = new BlockSetType(serializedName);
         this.woodType = new WoodType(Helpers.identifier(this.serializedName).toString(), this.blockSet);
     }
@@ -108,7 +105,7 @@ public enum AFCWood implements RegistryWood
     }
 
     public int defaultDaysToGrow() {
-        return defaultDaysToGrow;
+        return daysToGrow;
     }
 
     public static void registerBlockSetTypes()
@@ -118,11 +115,6 @@ public enum AFCWood implements RegistryWood
             BlockSetType.register(wood.blockSet);
             WoodType.register(wood.woodType);
         }
-    }
-
-    public WoodType getWoodType ()
-    {
-        return this.woodType;
     }
 
 }

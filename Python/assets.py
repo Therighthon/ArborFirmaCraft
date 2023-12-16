@@ -362,7 +362,6 @@ def make_javelin(rm: ResourceManager, name_parts: str, texture: str) -> 'ItemCon
     rm.item_model(name_parts + '_in_hand', {'particle': texture}, parent='minecraft:item/trident_in_hand')
     rm.item_model(name_parts + '_gui', texture)
     model = rm.domain + ':item/' + name_parts
-    # todo: 1.19 rename to forge:separate_transforms due to deprecation
     return rm.custom_item_model(name_parts, 'forge:separate-perspective', {
         'gui_light': 'front',
         'overrides': [{'predicate': {'afc:throwing': 1}, 'model': model + '_throwing'}],

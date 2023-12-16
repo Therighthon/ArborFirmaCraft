@@ -113,16 +113,6 @@ public class TapBlock extends BaseEntityBlock
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos,
                                  Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-//        if (!pLevel.isClientSide()) {
-//            BlockEntity entity = pLevel.getBlockEntity(pPos);
-//            if(entity instanceof TapBlockEntity) {
-//                NetworkHooks.openGui(((ServerPlayer)pPlayer), (TapBlockEntity)entity, pPos);
-//            } else {
-//                throw new IllegalStateException("Our Container provider is missing!");
-//            }
-//        }
-        //TODO: add something here that will allow us to interact with the slots without a GUI
-
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
     }
 

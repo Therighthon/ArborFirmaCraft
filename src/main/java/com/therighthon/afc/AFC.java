@@ -4,6 +4,7 @@ import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.commands.AFCCommands;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
@@ -11,6 +12,7 @@ import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEvents;
+import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -74,8 +76,9 @@ public class AFC
 
     private void setup(final FMLCommonSetupEvent event)
     {
-        // some preinit code
-        LOGGER.info("HELLO FROM PREINIT");
+        LOGGER.info("AFC COMMON SETUP");
+        //TODO: Enabling this double-registers signs for some reason, either remove or fix
+//        event.enqueueWork(AFCWood::registerBlockSetTypes);
 
     }
 

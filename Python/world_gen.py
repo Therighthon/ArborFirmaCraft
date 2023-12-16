@@ -837,7 +837,6 @@ def biome(rm: ResourceManager, name: str, category: str, boulders: bool = False,
     if 'river' in name:
         biome_tag(rm, 'is_river', name)
 
-    # todo: remove in 1.19
     feature_tags = [
         [tag[1:]]
         for tag in feature_tags

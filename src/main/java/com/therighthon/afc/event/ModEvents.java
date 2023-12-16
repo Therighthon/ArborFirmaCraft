@@ -40,6 +40,7 @@ public class ModEvents
         });
     }
 
+    //TODO: Resource load order
     //This is copied wholesale from FirmaLife
     //It is what allows the resources to load in the correct order, and needs to be rewritten for 1.20 unless things work out fo the box now.
 //    public static void onPackFinder(AddPackFindersEvent event)
@@ -80,7 +81,6 @@ public class ModEvents
         modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
         modifyWood(TFCBlockEntities.TRAPPED_CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
         modifyWood(TFCBlockEntities.LOOM.get(), Wood.BlockType.LOOM);
-        //modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
         modifyWood(TFCBlockEntities.BARREL.get(), Wood.BlockType.BARREL);
         modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
         modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
