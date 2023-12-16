@@ -291,6 +291,113 @@ def generate(rm: ResourceManager):
         block = rm.blockstate('wood/jar_shelf/%s' % wood, variants=four_rotations('afc:block/wood/jar_shelf/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'0': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/jar_shelf').with_item_model().with_lang(lang('%s jar shelf', wood)).with_block_loot('afc:wood/jar_shelf/%s' % wood)
 
+        # Axle
+        block = rm.blockstate('afc:wood/axle/%s' % wood, 'tfc:block/empty')
+        block.with_lang(lang('%s axle', wood))
+        block.with_block_loot('afc:wood/axle/%s' % wood)
+        block.with_block_model({'wood': 'afc:block/wood/sheet/%s' % wood}, 'tfc:block/axle')
+        rm.item_model('afc:wood/axle/%s' % wood, no_textures=True, parent='afc:block/wood/axle/%s' % wood)
+
+        # Bladed Axle
+        block = rm.blockstate('afc:wood/bladed_axle/%s' % wood, 'tfc:block/empty')
+        block.with_lang(lang('%s bladed axle', wood))
+        block.with_block_loot('afc:wood/bladed_axle/%s' % wood)
+        block.with_block_model({'wood': 'afc:block/wood/sheet/%s' % wood}, 'tfc:block/bladed_axle')
+        rm.item_model('afc:wood/bladed_axle/%s' % wood, no_textures=True, parent='afc:block/wood/bladed_axle/%s' % wood)
+
+        # Encased Axle
+        block = rm.blockstate(('wood', 'encased_axle', wood), variants={
+            'axis=x': {'model': 'afc:block/wood/encased_axle/%s' % wood, 'x': 90, 'y': 90},
+            'axis=y': {'model': 'afc:block/wood/encased_axle/%s' % wood},
+            'axis=z': {'model': 'afc:block/wood/encased_axle/%s' % wood, 'x': 90},
+        })
+        block.with_lang(lang('%s encased axle', wood))
+        block.with_block_loot('afc:wood/encased_axle/%s' % wood)
+        block.with_block_model({
+            'side': 'afc:block/wood/stripped_log/%s' % wood,
+            'end': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'tfc:block/axle_casing',
+            'overlay_end': 'tfc:block/axle_casing_front',
+            'particle': 'afc:block/wood/stripped_log/%s' % wood
+        }, parent='tfc:block/ore_column')
+        block.with_item_model()
+
+        # Clutch
+        block = rm.blockstate(('wood', 'clutch', wood), variants={
+            'axis=x,powered=false': {'model': 'afc:block/wood/clutch/%s' % wood, 'x': 90, 'y': 90},
+            'axis=x,powered=true': {'model': 'afc:block/wood/clutch/%s_powered' % wood, 'x': 90, 'y': 90},
+            'axis=y,powered=false': {'model': 'afc:block/wood/clutch/%s' % wood},
+            'axis=y,powered=true': {'model': 'afc:block/wood/clutch/%s_powered' % wood},
+            'axis=z,powered=false': {'model': 'afc:block/wood/clutch/%s' % wood, 'x': 90},
+            'axis=z,powered=true': {'model': 'afc:block/wood/clutch/%s_powered' % wood, 'x': 90},
+        })
+        block.with_lang(lang('%s clutch', wood))
+        block.with_block_loot('afc:wood/clutch/%s' % wood)
+        block.with_block_model({
+            'side': 'afc:block/wood/stripped_log/%s' % wood,
+            'end': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'afc:block/axle_casing_unpowered',
+            'overlay_end': 'afc:block/axle_casing_front',
+            'particle': 'afc:block/wood/stripped_log/%s' % wood
+        }, parent='tfc:block/ore_column')
+        rm.block_model(('wood', 'clutch', '%s_powered' % wood), {
+            'side': 'afc:block/wood/stripped_log/%s' % wood,
+            'end': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'afc:block/axle_casing_powered',
+            'overlay_end': 'afc:block/axle_casing_front',
+            'particle': 'afc:block/wood/stripped_log/%s' % wood
+        }, parent='tfc:block/ore_column')
+        block.with_item_model()
+
+        # Gearbox
+        gearbox_port = 'afc:block/wood/gear_box_port/%s' % wood
+        gearbox_face = 'afc:block/wood/gear_box_face/%s' % wood
+
+        block = rm.blockstate_multipart(
+            ('wood', 'gear_box', wood),
+            ({'north': True}, {'model': gearbox_port}),
+            ({'north': False}, {'model': gearbox_face}),
+            ({'south': True}, {'model': gearbox_port, 'y': 180}),
+            ({'south': False}, {'model': gearbox_face, 'y': 180}),
+            ({'east': True}, {'model': gearbox_port, 'y': 90}),
+            ({'east': False}, {'model': gearbox_face, 'y': 90}),
+            ({'west': True}, {'model': gearbox_port, 'y': 270}),
+            ({'west': False}, {'model': gearbox_face, 'y': 270}),
+            ({'down': True}, {'model': gearbox_port, 'x': 90}),
+            ({'down': False}, {'model': gearbox_face, 'x': 90}),
+            ({'up': True}, {'model': gearbox_port, 'x': 270}),
+            ({'up': False}, {'model': gearbox_face, 'x': 270}),
+        )
+        block.with_lang(lang('%s gear box', wood))
+        block.with_block_loot('afc:wood/gear_box/%s' % wood)
+
+        rm.block_model(('wood', 'gear_box_port', wood), {
+            'all': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'tfc:block/axle_casing_front',
+        }, parent='tfc:block/gear_box_port')
+        rm.block_model(('wood', 'gear_box_face', wood), {
+            'all': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'tfc:block/axle_casing_round'
+        }, parent='tfc:block/gear_box_face')
+
+        rm.item_model(('wood', 'gear_box', wood), {
+            'all': 'afc:block/wood/planks/%s' % wood,
+            'overlay': 'tfc:block/axle_casing_front'
+        }, parent='tfc:block/ore')
+
+        # Windmill
+        block = rm.blockstate('afc:wood/windmill/%s' % wood, 'tfc:block/empty')
+        block.with_lang(lang('%s windmill', wood))
+        block.with_block_loot('afc:wood/axle/%s' % wood,)
+
+        # Water Wheel
+        block = rm.blockstate('afc:wood/water_wheel/%s' % wood)
+        block.with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
+        block.with_lang(lang('%s water wheel', wood))
+        block.with_block_loot('afc:wood/water_wheel/%s' % wood)
+        rm.item_model('afc:wood/water_wheel/%s' % wood, 'afc:item/wood/water_wheel_%s' % wood)
+
+
         # Lang
         for variant in ('door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs'):
             rm.lang('block.afc.wood.planks.' + wood + '_' + variant, lang('%s %s', wood, variant))

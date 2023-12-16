@@ -1,0 +1,111 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "multipart": [
+    {
+      "when": {
+        "north": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak"
+      }
+    },
+    {
+      "when": {
+        "north": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak"
+      }
+    },
+    {
+      "when": {
+        "south": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "down": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "down": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "up": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/teak",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "up": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/teak",
+        "x": 270
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "multipart": [
+    {
+      "when": {
+        "north": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig"
+      }
+    },
+    {
+      "when": {
+        "north": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig"
+      }
+    },
+    {
+      "when": {
+        "south": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "down": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "down": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "up": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/fig",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "up": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/fig",
+        "x": 270
+      }
+    }
+  ]
+}

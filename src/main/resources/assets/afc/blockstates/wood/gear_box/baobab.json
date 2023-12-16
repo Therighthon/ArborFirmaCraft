@@ -1,0 +1,111 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "multipart": [
+    {
+      "when": {
+        "north": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab"
+      }
+    },
+    {
+      "when": {
+        "north": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab"
+      }
+    },
+    {
+      "when": {
+        "south": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "south": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab",
+        "y": 180
+      }
+    },
+    {
+      "when": {
+        "east": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "east": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab",
+        "y": 90
+      }
+    },
+    {
+      "when": {
+        "west": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "west": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab",
+        "y": 270
+      }
+    },
+    {
+      "when": {
+        "down": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "down": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab",
+        "x": 90
+      }
+    },
+    {
+      "when": {
+        "up": true
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_port/baobab",
+        "x": 270
+      }
+    },
+    {
+      "when": {
+        "up": false
+      },
+      "apply": {
+        "model": "afc:block/wood/gear_box_face/baobab",
+        "x": 270
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "axis=x,powered=false": {
+      "model": "afc:block/wood/clutch/cypress",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,powered=true": {
+      "model": "afc:block/wood/clutch/cypress_powered",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,powered=false": {
+      "model": "afc:block/wood/clutch/cypress"
+    },
+    "axis=y,powered=true": {
+      "model": "afc:block/wood/clutch/cypress_powered"
+    },
+    "axis=z,powered=false": {
+      "model": "afc:block/wood/clutch/cypress",
+      "x": 90
+    },
+    "axis=z,powered=true": {
+      "model": "afc:block/wood/clutch/cypress_powered",
+      "x": 90
+    }
+  }
+}

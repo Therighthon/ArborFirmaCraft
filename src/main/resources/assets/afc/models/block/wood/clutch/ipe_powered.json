@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/ore_column",
+  "textures": {
+    "side": "afc:block/wood/stripped_log/ipe",
+    "end": "afc:block/wood/planks/ipe",
+    "overlay": "afc:block/axle_casing_powered",
+    "overlay_end": "afc:block/axle_casing_front",
+    "particle": "afc:block/wood/stripped_log/ipe"
+  }
+}

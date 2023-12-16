@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "axis=x": {
+      "model": "afc:block/wood/encased_axle/baobab",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "afc:block/wood/encased_axle/baobab"
+    },
+    "axis=z": {
+      "model": "afc:block/wood/encased_axle/baobab",
+      "x": 90
+    }
+  }
+}
