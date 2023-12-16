@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "layers=1": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height2"
+    },
+    "layers=2": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height4"
+    },
+    "layers=3": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height6"
+    },
+    "layers=4": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height8"
+    },
+    "layers=5": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height10"
+    },
+    "layers=6": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height12"
+    },
+    "layers=7": {
+      "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height14"
+    },
+    "layers=8": {
+      "model": "afc:block/wood/leaves/red_silk_cotton"
+    }
+  }
+}
