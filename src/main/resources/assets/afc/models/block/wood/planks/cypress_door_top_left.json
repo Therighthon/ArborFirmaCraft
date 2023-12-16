@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/door_top_left",
+  "textures": {
+    "top": "afc:block/wood/planks/cypress_door_top",
+    "bottom": "afc:block/wood/planks/cypress_door_bottom"
+  }
+}

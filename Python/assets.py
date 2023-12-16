@@ -161,7 +161,7 @@ def generate(rm: ResourceManager):
         block.make_slab()
         block.make_stairs()
         block.make_button()
-        block.make_door()
+        make_door(block)
         block.make_pressure_plate()
         block.make_trapdoor()
         block.make_fence()

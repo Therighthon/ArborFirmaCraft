@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/door_bottom_right",
+  "textures": {
+    "top": "afc:block/wood/planks/ipe_door_top",
+    "bottom": "afc:block/wood/planks/ipe_door_bottom"
+  }
+}
