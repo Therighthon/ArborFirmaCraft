@@ -460,6 +460,8 @@ TREE_VARIANTS: Dict[str, str] = {
     'rubber_fig': 'fig',
     'small_leaf_mahogany': 'mahogany',
     'sapele_mahogany': 'mahogany',
+    'red_silk_cotton': 'kapok',
+    'coast_redwood': 'sequoia',
 
     'poplar': 'aspen',
     'iroko_teak': 'teak',
