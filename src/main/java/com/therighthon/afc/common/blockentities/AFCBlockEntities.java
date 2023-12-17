@@ -12,21 +12,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import net.dries007.tfc.common.blockentities.LogPileBlockEntity;
 import net.dries007.tfc.common.blockentities.TFCSignBlockEntity;
 import net.dries007.tfc.common.blockentities.rotation.AxleBlockEntity;
 import net.dries007.tfc.common.blockentities.rotation.BladedAxleBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.ClutchBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.EncasedAxleBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.GearBoxBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.HandWheelBlockEntity;
 import net.dries007.tfc.common.blockentities.rotation.WaterWheelBlockEntity;
 import net.dries007.tfc.common.blockentities.rotation.WindmillBlockEntity;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
-
-import static net.dries007.tfc.TerraFirmaCraft.*;
 
 public class AFCBlockEntities
 {
@@ -35,14 +28,14 @@ public class AFCBlockEntities
     public static final RegistryObject<BlockEntityType<TapBlockEntity>> TAP_BLOCK_ENTITY = register("tap_block_entity", TapBlockEntity::new, AFCBlocks.TREE_TAP);
 
     public static final RegistryObject<BlockEntityType<AFCSignBlockEntity>> SIGN = register("sign", AFCSignBlockEntity::new, Stream.concat(
-        woodBlocks(Wood.BlockType.SIGN),
-        woodBlocks(Wood.BlockType.WALL_SIGN)
+        afcWoodBlocks(Wood.BlockType.SIGN),
+        afcWoodBlocks(Wood.BlockType.WALL_SIGN)
     ));
-
-    public static final RegistryObject<BlockEntityType<AxleBlockEntity>> AXLE = register("axle", AxleBlockEntity::new, woodBlocks(Wood.BlockType.AXLE));
-    public static final RegistryObject<BlockEntityType<BladedAxleBlockEntity>> BLADED_AXLE = register("bladed_axle", BladedAxleBlockEntity::new, woodBlocks(Wood.BlockType.BLADED_AXLE));
-    public static final RegistryObject<BlockEntityType<WindmillBlockEntity>> WINDMILL = register("windmill", WindmillBlockEntity::new, woodBlocks(Wood.BlockType.WINDMILL));
-    public static final RegistryObject<BlockEntityType<AFCWaterWheelBlockEntity>> WATER_WHEEL = register("water_wheel", AFCWaterWheelBlockEntity::new, woodBlocks(Wood.BlockType.WATER_WHEEL));
+    //TODO: Hanging signs register
+    public static final RegistryObject<BlockEntityType<AFCHangingSignBlockEntity>> HANGING_SIGN = register("hanging_sign", AFCHangingSignBlockEntity::new, Stream.of(
+        TFCBlocks.CEILING_HANGING_SIGNS,
+        TFCBlocks.WALL_HANGING_SIGNS
+    ).flatMap(woodMap -> woodMap.values().stream().flatMap(metalMap -> metalMap.values().stream())));
 
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)
@@ -59,7 +52,7 @@ public class AFCBlockEntities
         return RegistrationHelpers.register(BLOCK_ENTITIES, name, factory, block);
     }
 
-    private static Stream<? extends Supplier<? extends Block>> woodBlocks(Wood.BlockType type)
+    private static Stream<? extends Supplier<? extends Block>> afcWoodBlocks(Wood.BlockType type)
     {
         return AFCBlocks.WOODS.values().stream().map(map -> map.get(type));
     }

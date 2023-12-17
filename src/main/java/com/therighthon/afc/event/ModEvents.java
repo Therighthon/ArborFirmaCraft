@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
@@ -86,6 +87,12 @@ public class ModEvents
         modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
         modifyWood(TFCBlockEntities.TOOL_RACK.get(), Wood.BlockType.TOOL_RACK);
         modifyWood(TFCBlockEntities.LECTERN.get(), Wood.BlockType.LECTERN);
+        modifyWood(TFCBlockEntities.AXLE.get(), Wood.BlockType.AXLE);
+        modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
+        modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
+        modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
+        //TODO: Right now, signs can exist in world but not render because the block entity is not being created. This may not be the spot to re-add the BE's for signs, but needs to happen somewhere
+//        modifySignBlockEntity();
     }
 
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
@@ -101,5 +108,18 @@ public class ModEvents
         blocks.addAll(extraBlocks.collect(Collectors.toList())); //Autocompleted, could cause problems?
         ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
     }
+
+//    private static void modifySignBlockEntity()
+//    {
+//        BlockEntityType<?> type = TFCBlockEntities.SIGN.get();
+//        Stream<Block> signs =  AFCBlocks.WOODS.values().stream().map(map -> map.get(Wood.BlockType.SIGN).get());
+//        Stream<Block> wallSigns =  AFCBlocks.WOODS.values().stream().map(map -> map.get(Wood.BlockType.WALL_SIGN).get());
+//        Set<Block> blocks = ((BlockEntityTypeAccessor) (Object) type).accessor$getValidBlocks();
+//        blocks = new HashSet<>(blocks);
+//
+//        blocks.addAll(signs.collect(Collectors.toList()));
+//        blocks.addAll(wallSigns.collect(Collectors.toList()));
+//        ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
+//    }
 
 }

@@ -12,6 +12,7 @@ import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEvents;
+import net.minecraft.client.renderer.Sheets;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -24,6 +25,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
+import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -61,7 +63,11 @@ public class AFC
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
+            for (AFCWood wood : AFCWood.VALUES)
+            {
+                Sheets.addWoodType(wood.getVanillaWoodType());
+            }
+//            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onItemColors);
 //            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onTextureStitch);
 //        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onParticlesRegister);
@@ -77,9 +83,7 @@ public class AFC
     private void setup(final FMLCommonSetupEvent event)
     {
         LOGGER.info("AFC COMMON SETUP");
-        //TODO: Enabling this double-registers signs for some reason, either remove or fix
-//        event.enqueueWork(AFCWood::registerBlockSetTypes);
-
+        event.enqueueWork(AFCWood::registerBlockSetTypes);
     }
 
     public static ResourceLocation treeIdentifier(String path)

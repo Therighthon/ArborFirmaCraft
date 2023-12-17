@@ -1,14 +1,9 @@
 package com.therighthon.afc.event;
 
-import java.util.Arrays;
-import java.util.Locale;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.client.render.AFCAxleBlockEntityRenderer;
-import com.therighthon.afc.client.render.AFCSignRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
-import com.therighthon.afc.client.render.colors.ColorScheme;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
@@ -16,40 +11,29 @@ import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.entities.AFCEntities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.color.block.BlockColor;
-import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.model.BoatModel;
+import net.minecraft.client.model.ChestBoatModel;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 import net.dries007.tfc.client.ColorMapReloadListener;
-import net.dries007.tfc.client.RenderHelpers;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
-import net.dries007.tfc.client.render.blockentity.AxleBlockEntityRenderer;
-import net.dries007.tfc.client.render.blockentity.BladedAxleBlockEntityRenderer;
-import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
-import net.dries007.tfc.client.render.blockentity.WaterWheelBlockEntityRenderer;
-import net.dries007.tfc.client.render.blockentity.WindmillBlockEntityRenderer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.util.Helpers;
 
 import static net.dries007.tfc.common.blocks.wood.Wood.BlockType.*;
@@ -122,59 +106,31 @@ public class ModEventClientBusEvents
         ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
     }
 
+    //Equiv to TFC's registerLayerDefinitions
     public static void onLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
     {
-        final LayerDefinition boatLayer = BoatModel.createBodyModel();
-        final LayerDefinition signLayer = SignRenderer.createSignLayer();
+        LayerDefinition boatLayer = BoatModel.createBodyModel();
+        LayerDefinition chestLayer = ChestBoatModel.createBodyModel();
         for (AFCWood wood : AFCWood.VALUES)
         {
             event.registerLayerDefinition(TFCBoatRenderer.boatName(wood.getSerializedName()), () -> boatLayer);
-            event.registerLayerDefinition(RenderHelpers.modelIdentifier("sign/" + wood.getSerializedName()), () -> signLayer);
+            event.registerLayerDefinition(TFCChestBoatRenderer.chestBoatName(wood.getSerializedName()), () -> chestLayer);
         }
 
     }
 
-    public static void onBlockColors(RegisterColorHandlersEvent.Block event)
-    {
-
-    }
-
-//    public static void onTextureStitch(TextureStitchEvent.Pre event)
-//    {
-//        final ResourceLocation sheet = event.getAtlas().location();
-//        if (sheet.equals(Sheets.CHEST_SHEET))
-//        {
-//            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> {
-//                event.addSprite(Helpers.identifier("entity/chest/normal/" + name));
-//                event.addSprite(Helpers.identifier("entity/chest/normal_left/" + name));
-//                event.addSprite(Helpers.identifier("entity/chest/normal_right/" + name));
-//                event.addSprite(Helpers.identifier("entity/chest/trapped/" + name));
-//                event.addSprite(Helpers.identifier("entity/chest/trapped_left/" + name));
-//                event.addSprite(Helpers.identifier("entity/chest/trapped_right/" + name));
-//            });
-//        }
-//        else if (sheet.equals(Sheets.SIGN_SHEET))
-//        {
-//            Arrays.stream(AFCWood.VALUES).map(AFCWood::getSerializedName).forEach(name -> event.addSprite(Helpers.identifier("entity/signs/" + name)));
-//        }
-//    }
-    //Uncomment this when boat entities are added
+    //Equiv to TFC ClientEventHandler.registerEntityRenderers
     public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
     {
-
         for (AFCWood wood : AFCWood.VALUES)
         {
             event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
-            //TODO: Chest boats
-//            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
+            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
         }
-        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignRenderer::new);
+
+        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
         //event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), TFCHangingSignBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(AFCBlockEntities.AXLE.get(), ctx -> new AxleBlockEntityRenderer());
-        event.registerBlockEntityRenderer(AFCBlockEntities.BLADED_AXLE.get(), ctx -> new BladedAxleBlockEntityRenderer());
-        event.registerBlockEntityRenderer(AFCBlockEntities.WATER_WHEEL.get(), WaterWheelBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(AFCBlockEntities.WINDMILL.get(), WindmillBlockEntityRenderer::new);
-        //TODO: Make things render
+        //TODO: Make things render, see also modifyBlockEntityTypes() in ModEvents
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
@@ -186,4 +142,5 @@ public class ModEventClientBusEvents
         event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageOrangeColors, AFCColors.FOLIAGE_ORANGE_COLORS_LOCATION));
         event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageRedColors, AFCColors.FOLIAGE_RED_COLORS_LOCATION));
     }
+
 }
