@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/ironwood",
+              "name": "afc:wood/barrel/ironwood",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/ironwood",
+                  "block": "afc:wood/barrel/ironwood",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/ironwood"
+              "name": "afc:wood/barrel/ironwood"
             }
           ]
         }

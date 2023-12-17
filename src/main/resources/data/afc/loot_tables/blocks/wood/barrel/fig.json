@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/fig",
+              "name": "afc:wood/barrel/fig",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/fig",
+                  "block": "afc:wood/barrel/fig",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/fig"
+              "name": "afc:wood/barrel/fig"
             }
           ]
         }

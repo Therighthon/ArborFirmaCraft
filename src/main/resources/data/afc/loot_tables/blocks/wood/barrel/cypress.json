@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/cypress",
+              "name": "afc:wood/barrel/cypress",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/cypress",
+                  "block": "afc:wood/barrel/cypress",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/cypress"
+              "name": "afc:wood/barrel/cypress"
             }
           ]
         }

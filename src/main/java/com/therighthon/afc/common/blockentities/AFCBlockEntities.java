@@ -41,11 +41,8 @@ public class AFCBlockEntities
 
     public static final RegistryObject<BlockEntityType<AxleBlockEntity>> AXLE = register("axle", AxleBlockEntity::new, woodBlocks(Wood.BlockType.AXLE));
     public static final RegistryObject<BlockEntityType<BladedAxleBlockEntity>> BLADED_AXLE = register("bladed_axle", BladedAxleBlockEntity::new, woodBlocks(Wood.BlockType.BLADED_AXLE));
-    public static final RegistryObject<BlockEntityType<AxleBlockEntity>> CLUTCH = register("clutch", ClutchBlockEntity::new, woodBlocks(Wood.BlockType.CLUTCH));
-    public static final RegistryObject<BlockEntityType<EncasedAxleBlockEntity>> ENCASED_AXLE = register("encased_axle", EncasedAxleBlockEntity::new, woodBlocks(Wood.BlockType.ENCASED_AXLE));
-    public static final RegistryObject<BlockEntityType<GearBoxBlockEntity>> GEAR_BOX = register("gear_box", GearBoxBlockEntity::new, woodBlocks(Wood.BlockType.GEAR_BOX));
     public static final RegistryObject<BlockEntityType<WindmillBlockEntity>> WINDMILL = register("windmill", WindmillBlockEntity::new, woodBlocks(Wood.BlockType.WINDMILL));
-    public static final RegistryObject<BlockEntityType<WaterWheelBlockEntity>> WATER_WHEEL = register("water_wheel", WaterWheelBlockEntity::new, woodBlocks(Wood.BlockType.WATER_WHEEL));
+    public static final RegistryObject<BlockEntityType<AFCWaterWheelBlockEntity>> WATER_WHEEL = register("water_wheel", AFCWaterWheelBlockEntity::new, woodBlocks(Wood.BlockType.WATER_WHEEL));
 
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)

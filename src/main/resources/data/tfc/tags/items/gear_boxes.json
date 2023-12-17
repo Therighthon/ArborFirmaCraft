@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/gear_box/cypress",
+    "afc:wood/gear_box/tualang",
+    "afc:wood/gear_box/hevea",
+    "afc:wood/gear_box/teak",
+    "afc:wood/gear_box/eucalyptus",
+    "afc:wood/gear_box/baobab",
+    "afc:wood/gear_box/fig",
+    "afc:wood/gear_box/mahogany",
+    "afc:wood/gear_box/ironwood",
+    "afc:wood/gear_box/ipe"
+  ]
+}

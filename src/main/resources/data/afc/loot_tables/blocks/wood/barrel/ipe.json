@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/ipe",
+              "name": "afc:wood/barrel/ipe",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/ipe",
+                  "block": "afc:wood/barrel/ipe",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/ipe"
+              "name": "afc:wood/barrel/ipe"
             }
           ]
         }

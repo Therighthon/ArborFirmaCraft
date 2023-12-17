@@ -57,6 +57,11 @@ def generate(rm: ResourceManager):
     for wood, wood_data in UNIQUE_LOGS.items():
         fuel_item(rm, wood + '_log', ['afc:wood/log/' + wood, 'afc:wood/wood/' + wood], wood_data.duration, wood_data.temp, 0.6 if wood == 'pine' else 0.95)
 
+    rm.item_tag('axles', *['afc:wood/axle/%s' % w for w in WOODS], *['afc:wood/encased_axle/%s' % w for w in WOODS])
+    rm.item_tag('gear_boxes', *['afc:wood/gear_box/%s' % w for w in WOODS])
+    rm.item_tag('clutches', *['afc:wood/clutch/%s' % w for w in WOODS])
+    rm.item_tag('water_wheels', *['afc:wood/water_wheel/%s' % w for w in WOODS])
+
     for wood in WOODS.keys():
         def item(_variant: str) -> str:
             return 'afc:wood/%s/%s' % (_variant, wood)
@@ -157,7 +162,7 @@ def generate(rm: ResourceManager):
 
 
     rm.block_tag('minecraft:mineable/axe', *[
-        *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest') for wood in WOODS.keys()],
+        *['afc:wood/%s/%s' % (variant, wood) for variant in ('log', 'stripped_log', 'wood', 'stripped_wood', 'planks', 'twig', 'vertical_support', 'horizontal_support', 'sluice', 'chest', 'trapped_chest', 'barrel', 'lectern', 'scribing_table', 'jar_shelf', 'axle', 'encased_axle', 'bladed_axle', 'clutch', 'gear_box', 'windmill', 'water_wheel') for wood in WOODS.keys()],
         *['afc:wood/planks/%s_%s' % (wood, variant) for variant in ('bookshelf', 'door', 'trapdoor', 'fence', 'log_fence', 'fence_gate', 'button', 'pressure_plate', 'slab', 'stairs', 'tool_rack', 'workbench', 'sign') for wood in WOODS.keys()]
     ])
     rm.block_tag('tfc:mineable_with_sharp_tool', *[

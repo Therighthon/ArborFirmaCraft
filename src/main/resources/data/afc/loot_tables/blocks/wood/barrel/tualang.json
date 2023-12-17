@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/tualang",
+              "name": "afc:wood/barrel/tualang",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/tualang",
+                  "block": "afc:wood/barrel/tualang",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/tualang"
+              "name": "afc:wood/barrel/tualang"
             }
           ]
         }

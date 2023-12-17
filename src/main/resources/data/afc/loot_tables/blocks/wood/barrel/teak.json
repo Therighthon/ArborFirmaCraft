@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/teak",
+              "name": "afc:wood/barrel/teak",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/teak",
+                  "block": "afc:wood/barrel/teak",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/teak"
+              "name": "afc:wood/barrel/teak"
             }
           ]
         }

@@ -11,11 +11,11 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/mahogany",
+              "name": "afc:wood/barrel/mahogany",
               "conditions": [
                 {
                   "condition": "minecraft:block_state_property",
-                  "block": "tfc:wood/barrel/mahogany",
+                  "block": "afc:wood/barrel/mahogany",
                   "properties": {
                     "sealed": "true"
                   }
@@ -41,7 +41,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "tfc:wood/barrel/mahogany"
+              "name": "afc:wood/barrel/mahogany"
             }
           ]
         }

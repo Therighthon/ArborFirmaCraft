@@ -5,6 +5,7 @@ import java.util.Locale;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.AFCAxleBlockEntityRenderer;
 import com.therighthon.afc.client.render.AFCSignRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
 import com.therighthon.afc.client.render.colors.ColorScheme;
