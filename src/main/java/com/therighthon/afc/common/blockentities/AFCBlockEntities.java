@@ -14,6 +14,14 @@ import net.minecraftforge.registries.RegistryObject;
 
 import net.dries007.tfc.common.blockentities.LogPileBlockEntity;
 import net.dries007.tfc.common.blockentities.TFCSignBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.AxleBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.BladedAxleBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.ClutchBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.EncasedAxleBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.GearBoxBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.HandWheelBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.WaterWheelBlockEntity;
+import net.dries007.tfc.common.blockentities.rotation.WindmillBlockEntity;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
@@ -30,6 +38,15 @@ public class AFCBlockEntities
         woodBlocks(Wood.BlockType.SIGN),
         woodBlocks(Wood.BlockType.WALL_SIGN)
     ));
+
+    public static final RegistryObject<BlockEntityType<AxleBlockEntity>> AXLE = register("axle", AxleBlockEntity::new, woodBlocks(Wood.BlockType.AXLE));
+    public static final RegistryObject<BlockEntityType<BladedAxleBlockEntity>> BLADED_AXLE = register("bladed_axle", BladedAxleBlockEntity::new, woodBlocks(Wood.BlockType.BLADED_AXLE));
+    public static final RegistryObject<BlockEntityType<AxleBlockEntity>> CLUTCH = register("clutch", ClutchBlockEntity::new, woodBlocks(Wood.BlockType.CLUTCH));
+    public static final RegistryObject<BlockEntityType<EncasedAxleBlockEntity>> ENCASED_AXLE = register("encased_axle", EncasedAxleBlockEntity::new, woodBlocks(Wood.BlockType.ENCASED_AXLE));
+    public static final RegistryObject<BlockEntityType<GearBoxBlockEntity>> GEAR_BOX = register("gear_box", GearBoxBlockEntity::new, woodBlocks(Wood.BlockType.GEAR_BOX));
+    public static final RegistryObject<BlockEntityType<WindmillBlockEntity>> WINDMILL = register("windmill", WindmillBlockEntity::new, woodBlocks(Wood.BlockType.WINDMILL));
+    public static final RegistryObject<BlockEntityType<WaterWheelBlockEntity>> WATER_WHEEL = register("water_wheel", WaterWheelBlockEntity::new, woodBlocks(Wood.BlockType.WATER_WHEEL));
+
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)
     {

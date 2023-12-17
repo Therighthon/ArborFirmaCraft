@@ -336,8 +336,8 @@ def generate(rm: ResourceManager):
         block.with_block_model({
             'side': 'afc:block/wood/stripped_log/%s' % wood,
             'end': 'afc:block/wood/planks/%s' % wood,
-            'overlay': 'afc:block/axle_casing_unpowered',
-            'overlay_end': 'afc:block/axle_casing_front',
+            'overlay': 'tfc:block/axle_casing_unpowered',
+            'overlay_end': 'tfc:block/axle_casing_front',
             'particle': 'afc:block/wood/stripped_log/%s' % wood
         }, parent='tfc:block/ore_column')
         rm.block_model(('wood', 'clutch', '%s_powered' % wood), {

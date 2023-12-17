@@ -2,6 +2,7 @@ package com.therighthon.afc.event;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.function.Predicate;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.AFCSignRenderer;
@@ -37,10 +38,15 @@ import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.RenderHelpers;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
+import net.dries007.tfc.client.render.blockentity.AxleBlockEntityRenderer;
+import net.dries007.tfc.client.render.blockentity.BladedAxleBlockEntityRenderer;
 import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
+import net.dries007.tfc.client.render.blockentity.WaterWheelBlockEntityRenderer;
+import net.dries007.tfc.client.render.blockentity.WindmillBlockEntityRenderer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.util.Helpers;
@@ -89,15 +95,17 @@ public class ModEventClientBusEvents
         final RenderType cutout = RenderType.cutout();
         final RenderType cutoutMipped = RenderType.cutoutMipped();
         final RenderType translucent = RenderType.translucent();
+        final Predicate<RenderType> ghostBlock = rt -> rt == cutoutMipped || rt == Sheets.translucentCullBlockSheet();
 
+        final Predicate<RenderType> leafPredicate = layer -> Minecraft.useFancyGraphics() ? layer == cutoutMipped : layer == solid;
         AFCBlocks.WOODS.values().forEach(map -> {
-            Stream.of(SAPLING, DOOR, TRAPDOOR, FENCE, FENCE_GATE, BUTTON, PRESSURE_PLATE, SLAB, STAIRS, TWIG, BARREL, SCRIBING_TABLE, POTTED_SAPLING).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), cutout));
-            Stream.of(LEAVES, FALLEN_LEAVES).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), layer -> Minecraft.useFancyGraphics() ? layer == cutoutMipped : layer == solid));
+            Stream.of(SAPLING, DOOR, TRAPDOOR, FENCE, FENCE_GATE, BUTTON, PRESSURE_PLATE, SLAB, STAIRS, TWIG, BARREL, SCRIBING_TABLE, JAR_SHELF, POTTED_SAPLING, ENCASED_AXLE, CLUTCH, GEAR_BOX).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), cutout));
+            Stream.of(LEAVES, FALLEN_LEAVES).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), leafPredicate));
         });
 
         AFCBlocks.TREE_SPECIES.values().forEach(map -> {
             Stream.of(TreeSpecies.BlockType.SAPLING, TreeSpecies.BlockType.POTTED_SAPLING).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), cutout));
-            Stream.of(TreeSpecies.BlockType.LEAVES).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), layer -> Minecraft.useFancyGraphics() ? layer == cutoutMipped : layer == solid));
+            Stream.of(TreeSpecies.BlockType.LEAVES, TreeSpecies.BlockType.FALLEN_LEAVES).forEach(type -> ItemBlockRenderTypes.setRenderLayer(map.get(type).get(), leafPredicate));
         });
 
         event.enqueueWork(() -> {
@@ -111,8 +119,6 @@ public class ModEventClientBusEvents
         });
 
         ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
-
-
     }
 
     public static void onLayers(EntityRenderersEvent.RegisterLayerDefinitions event)
@@ -162,7 +168,12 @@ public class ModEventClientBusEvents
 //            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
         }
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignRenderer::new);
-        //TODO: Hanging signs, everything else
+        //event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), TFCHangingSignBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(AFCBlockEntities.AXLE.get(), ctx -> new AxleBlockEntityRenderer());
+        event.registerBlockEntityRenderer(AFCBlockEntities.BLADED_AXLE.get(), ctx -> new BladedAxleBlockEntityRenderer());
+        event.registerBlockEntityRenderer(AFCBlockEntities.WATER_WHEEL.get(), WaterWheelBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(AFCBlockEntities.WINDMILL.get(), WindmillBlockEntityRenderer::new);
+        //TODO: Make things render
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
@@ -174,6 +185,4 @@ public class ModEventClientBusEvents
         event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageOrangeColors, AFCColors.FOLIAGE_ORANGE_COLORS_LOCATION));
         event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageRedColors, AFCColors.FOLIAGE_RED_COLORS_LOCATION));
     }
-
-
 }
