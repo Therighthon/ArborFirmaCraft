@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/clutch/cypress",
+    "afc:wood/clutch/tualang",
+    "afc:wood/clutch/hevea",
+    "afc:wood/clutch/teak",
+    "afc:wood/clutch/eucalyptus",
+    "afc:wood/clutch/baobab",
+    "afc:wood/clutch/fig",
+    "afc:wood/clutch/mahogany",
+    "afc:wood/clutch/ironwood",
+    "afc:wood/clutch/ipe"
+  ]
+}

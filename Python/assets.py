@@ -4,7 +4,7 @@
 import itertools
 import os
 
-from mcresources import ResourceManager, ItemContext, utils, block_states, loot_tables, BlockContext
+from mcresources import ResourceManager, ItemContext, utils, block_states, loot_tables, BlockContext, atlases
 from mcresources.type_definitions import JsonObject
 
 from constants import *
@@ -253,6 +253,11 @@ def generate(rm: ResourceManager):
 
         rm.blockstate(('wood', 'planks', '%s_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None).with_block_loot('afc:wood/sign/%s' % wood).with_tag('minecraft:standing_sings')
         rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood)).with_tag('minecraft:wall_signs')
+        for metal, metal_data in METALS.items():
+            if 'utility' in metal_data.types:
+                for variant in ('hanging_sign', 'wall_hanging_sign'):
+                    rm.blockstate(('wood', 'planks', variant, metal, wood), model='afc:block/wood/planks/%s_sign_particle' % wood).with_lang(lang('%s %s %s', metal, wood, variant)).with_block_loot('afc:wood/hanging_sign/%s/%s' % (metal, wood))
+
 
         # Barrels
         texture = 'afc:block/wood/planks/%s' % wood
@@ -415,6 +420,24 @@ def generate(rm: ResourceManager):
 
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
     rm.item_model('light', no_textures=True, parent='minecraft:item/light')
+
+    rm.atlas('minecraft:blocks',
+             atlases.palette(
+                 key='afc:color_palettes/wood/planks/palette',
+                 textures=['tfc:block/wood/planks/%s' % v for v in ('bookshelf_top', 'bookshelf_side')],
+                 permutations=dict((wood, 'afc:color_palettes/wood/planks/%s' % wood) for wood in WOODS.keys())
+             ),
+             atlases.palette(
+                 key='afc:color_palettes/wood/planks/palette',
+                 textures=['tfc:item/wood/%s' % v for v in ('twig', 'lumber', 'chest_minecart_cover', 'stripped_log', 'sign_head', 'hanging_sign_head', 'water_wheel')],
+                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in WOODS.keys())
+             ),
+             atlases.palette(
+                 key='afc:color_palettes/wood/planks/palette',
+                 textures=['tfc:item/wood/boat'],
+                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in WOODS.keys())
+             )
+             )
 
 
 
