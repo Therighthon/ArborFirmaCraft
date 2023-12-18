@@ -19,12 +19,14 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.common.fluids.FluidId;
 import net.dries007.tfc.common.items.TFCBoatItem;
 import net.dries007.tfc.common.items.TFCMinecartItem;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.Metal;
 
 
 public class AFCItems
@@ -45,8 +47,11 @@ public class AFCItems
 
     public static final Map<AFCWood, RegistryObject<Item>> SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/sign/" + wood.name(), () -> new SignItem(new Item.Properties(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_SIGN).get())));
     //TODO: Hanging Signs
-    //public static final Map<AFCWood, RegistryObject<Item>> HANGING_SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/hanging_sign/" + wood.name(), () -> new HangingSignItem(AFCBlocks.WOODS.get(wood).get(Wood.BlockType.HANGING_SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_HANGING_SIGN).get(), new Item.Properties())));
-
+    public static final Map<AFCWood, Map<Metal.Default, RegistryObject<Item>>> HANGING_SIGNS = Helpers.mapOfKeys(AFCWood.class, wood ->
+        Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasUtilities, metal ->
+            register("wood/hanging_sign/" + metal.name() + "/" + wood.name(), () -> new HangingSignItem(AFCBlocks.CEILING_HANGING_SIGNS.get(wood).get(metal).get(), AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal).get(), new Item.Properties()))
+        )
+    );
     public static final Map<SimpleAFCFluid, RegistryObject<BucketItem>> SIMPLE_AFC_FLUID_BUCKETS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->
         register("bucket/" + fluid.getSerializedName(), () -> new BucketItem(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), new Item.Properties()))
     );

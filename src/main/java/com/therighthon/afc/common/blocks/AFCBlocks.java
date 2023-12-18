@@ -68,8 +68,8 @@ public class AFCBlocks
     public static final DeferredRegister<Block> BLOCKS =
         DeferredRegister.create(ForgeRegistries.BLOCKS, AFC.MOD_ID);
 //TODO: Hanging signs
-//    public static final Map<Wood, Map<Metal.Default, RegistryObject<AFCHangingSignBlock>>> HANGING_SIGNS = registerHangingSigns("hanging_sign", AFCHangingSignBlock::new);
-//    public static final Map<Wood, Map<Metal.Default, RegistryObject<AFCWallHangingSignBlock>>> WALL_HANGING_SIGNS = registerHangingSigns("wall_hanging_sign", AFCWallHangingSignBlock::new);
+    public static final Map<AFCWood, Map<Metal.Default, RegistryObject<TFCCeilingHangingSignBlock>>> CEILING_HANGING_SIGNS = registerHangingSigns("hanging_sign", TFCCeilingHangingSignBlock::new);
+    public static final Map<AFCWood, Map<Metal.Default, RegistryObject<TFCWallHangingSignBlock>>> WALL_HANGING_SIGNS = registerHangingSigns("wall_hanging_sign", TFCWallHangingSignBlock::new);
 
     public static final Map<AFCWood, Map<Wood.BlockType, RegistryObject<Block>>> WOODS = Helpers.mapOfKeys(AFCWood.class, wood ->
         Helpers.mapOfKeys(Wood.BlockType.class, type ->
@@ -182,6 +182,17 @@ public class AFCBlocks
             .canPushEntity(true)
             .canSwim(true)
             .supportsBoating(true);
+    }
+
+    private static <B extends SignBlock> Map<AFCWood, Map<Metal.Default, RegistryObject<B>>> registerHangingSigns(String variant, BiFunction<ExtendedProperties, WoodType, B> factory)
+    {
+        return Helpers.mapOfKeys(AFCWood.class, wood ->
+            Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasUtilities, metal -> register(
+                "wood/planks/" + variant + "/" + metal.getSerializedName() + "/" + wood.getSerializedName(),
+                () -> factory.apply(ExtendedProperties.of(wood.woodColor()).sound(SoundType.WOOD).noCollission().strength(1F).flammableLikePlanks().blockEntity(AFCBlockEntities.HANGING_SIGN).ticks(SignBlockEntity::tick), wood.getVanillaWoodType()),
+                (Function<B, BlockItem>) null)
+            )
+        );
     }
 
 }
