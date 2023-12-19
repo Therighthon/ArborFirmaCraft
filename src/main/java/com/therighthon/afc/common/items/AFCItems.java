@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.AFCBlocks;
+import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import net.minecraft.core.Direction;
@@ -41,7 +42,7 @@ public class AFCItems
         register("wood/support/" + wood.name(), () -> new StandingAndWallBlockItem(AFCBlocks.WOODS.get(wood).get(Wood.BlockType.VERTICAL_SUPPORT).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.HORIZONTAL_SUPPORT).get(), new Item.Properties(), Direction.DOWN))
     );
 
-    public static final Map<AFCWood, RegistryObject<Item>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/boat/" + wood.name(), () -> new TFCBoatItem(TFCEntities.BOATS.get(wood), new Item.Properties())));
+    public static final Map<AFCWood, RegistryObject<Item>> BOATS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/boat/" + wood.name(), () -> new TFCBoatItem(AFCEntities.BOATS.get(wood), new Item.Properties())));
 
     public static final Map<AFCWood, RegistryObject<Item>> CHEST_MINECARTS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/chest_minecart/" + wood.name(), () -> new TFCMinecartItem(new Item.Properties(), TFCEntities.CHEST_MINECART, () -> AFCBlocks.WOODS.get(wood).get(Wood.BlockType.CHEST).get().asItem())));
 
