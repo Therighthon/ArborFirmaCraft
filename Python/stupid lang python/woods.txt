@@ -1,0 +1,10 @@
+baobab
+cypress
+eucalyptus
+fig
+hevea
+mahogany
+teak
+tualang
+ipe
+ironwood

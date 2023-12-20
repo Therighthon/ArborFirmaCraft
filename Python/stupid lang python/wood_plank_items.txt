@@ -1,0 +1,14 @@
+bookshelf
+door
+trapdoor
+fence
+log_fence
+fence_gate
+button
+pressure_plate
+slab
+stairs
+tool_rack
+workbench
+loom
+sign

@@ -1,0 +1,9 @@
+copper
+bronze
+black_bronze
+bismuth_bronze
+wrought_iron
+steel
+black_steel
+red_steel
+blue_steel

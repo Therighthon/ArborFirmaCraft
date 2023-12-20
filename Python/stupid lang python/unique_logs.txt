@@ -1,0 +1,6 @@
+black_oak
+redcedar
+rainbow_eucalyptus
+gum_arabic
+rubber_fig
+poplar
