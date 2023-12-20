@@ -271,10 +271,20 @@ def create_boat_texture(wood: str):
 
 def create_waterwheel_texture(wood: str):
     img = Image.open(templates + 'waterwheel.png').convert('RGBA')
+    item_img = Image.open(templates + 'water_wheel.png').convert('RGBA')
     palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
     palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
     manual_palette_swap(img, palette_key, palette)
-    img.save(path_tfc + 'entity/waterwheel/%s.png' % wood)
+    manual_palette_swap(item_img, palette_key, palette)
+    img.save(path_tfc + 'entity/water_wheel/%s.png' % wood)
+    item_img.save(path_afc + 'item/wood/water_wheel/%s.png' % wood)
+
+def create_sign_item_wood_texture(wood: str):
+    img = Image.open(templates + 'hanging_sign_head.png').convert('RGBA')
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'item/wood/hanging_sign/head_%s.png' % wood)
 
 def manual_palette_swap(img: Image, palette_key: Image, palette: Image) -> Image:
     data = {}
@@ -332,6 +342,7 @@ def main():
         create_horse_chest(wood, plank_color, log_color)
         create_chest_boat(wood)
         create_waterwheel_texture(wood)
+        create_sign_item_wood_texture(wood)
         if wood != 'palm':
             create_boat_texture(wood)
         for metal, metal_data in METALS.items():

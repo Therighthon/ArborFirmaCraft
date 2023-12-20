@@ -257,7 +257,9 @@ def generate(rm: ResourceManager):
             if 'utility' in metal_data.types:
                 for variant in ('hanging_sign', 'wall_hanging_sign'):
                     rm.blockstate(('wood', 'planks', variant, metal, wood), model='afc:block/wood/planks/%s_sign_particle' % wood).with_lang(lang('%s %s %s', metal, wood, variant)).with_block_loot('afc:wood/hanging_sign/%s/%s' % (metal, wood))
-
+        for metal, metal_data in METALS.items():
+            if 'utility' in metal_data.types:
+                rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign/head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('mahogany', 'cypress') else ''), 'tfc:item/metal/hanging_sign/%s' % metal).with_lang(lang('%s %s hanging sign', metal, wood))
 
         # Barrels
         texture = 'afc:block/wood/planks/%s' % wood
@@ -400,7 +402,7 @@ def generate(rm: ResourceManager):
         block.with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
         block.with_lang(lang('%s water wheel', wood))
         block.with_block_loot('afc:wood/water_wheel/%s' % wood)
-        rm.item_model('afc:wood/water_wheel/%s' % wood, 'afc:item/wood/water_wheel_%s' % wood)
+        rm.item_model('afc:wood/water_wheel/%s' % wood, 'afc:item/wood/water_wheel/%s' % wood)
 
 
         # Lang

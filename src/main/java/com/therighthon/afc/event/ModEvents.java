@@ -91,8 +91,6 @@ public class ModEvents
         modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
         modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
         modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
-        //TODO: Right now, signs can exist in world but not render because the block entity is not being created. This may not be the spot to re-add the BE's for signs, but needs to happen somewhere
-//        modifySignBlockEntity();
     }
 
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)

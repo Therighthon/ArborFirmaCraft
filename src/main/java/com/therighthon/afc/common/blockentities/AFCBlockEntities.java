@@ -31,7 +31,6 @@ public class AFCBlockEntities
         afcWoodBlocks(Wood.BlockType.SIGN),
         afcWoodBlocks(Wood.BlockType.WALL_SIGN)
     ));
-    //TODO: Hanging signs register
     public static final RegistryObject<BlockEntityType<AFCHangingSignBlockEntity>> HANGING_SIGN = register("hanging_sign", AFCHangingSignBlockEntity::new, Stream.of(
         TFCBlocks.CEILING_HANGING_SIGNS,
         TFCBlocks.WALL_HANGING_SIGNS

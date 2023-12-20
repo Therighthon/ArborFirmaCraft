@@ -19,6 +19,7 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
@@ -129,8 +130,7 @@ public class ModEventClientBusEvents
         }
 
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
-        //event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), TFCHangingSignBlockEntityRenderer::new);
-        //TODO: Make things render, see also modifyBlockEntityTypes() in ModEvents
+        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
