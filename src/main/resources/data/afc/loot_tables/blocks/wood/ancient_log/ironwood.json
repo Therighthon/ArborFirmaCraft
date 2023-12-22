@@ -16,7 +16,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "afc:hammers"
+                    "tag": "tfc:hammers"
                   }
                 }
               ],

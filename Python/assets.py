@@ -58,6 +58,46 @@ def generate(rm: ResourceManager):
 
         block.with_tag('can_be_snow_piled')
 
+    # TFC Ancient Wood Blocks
+    # Wood Blocks
+    for wood in WOODS.keys():
+        # Logs
+        for variant in ('ancient_log', 'ancient_wood'):
+            block = rm.blockstate(('wood', variant, wood), variants={
+                'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
+                'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
+                'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
+            }, use_default_model=False)
+
+            stick_with_hammer = {
+                'name': 'minecraft:stick',
+                'conditions': [loot_tables.match_tag('tfc:hammers')],
+                'functions': [loot_tables.set_count(1, 4)]
+            }
+            if variant == 'ancient_wood':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
+                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
+                    },
+                    {
+                        'name': 'afc:wood/ancient_wood/%s' % wood,
+                        'conditions': loot_tables.random_chance(0.6)
+                    }
+                ))
+                rm.item_model(('wood', variant, wood), 'afc:item/wood/wood/%s' % wood)
+            else:
+                block.with_block_loot((
+                    stick_with_hammer,
+                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                ))
+                rm.item_model(('wood', variant, wood), 'afc:item/wood/log/%s' % wood)
+
+            end = 'afc:block/wood/%s/%s' % (variant.replace('log', 'log_top').replace('wood', 'log'), wood)
+            side = 'afc:block/wood/%s/%s' % (variant.replace('wood', 'log'), wood)
+            block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
+
     # Wood Blocks
     for wood in WOODS.keys():
         # Logs
@@ -70,22 +110,42 @@ def generate(rm: ResourceManager):
 
             stick_with_hammer = {
                 'name': 'minecraft:stick',
-                'conditions': [loot_tables.match_tag('afc:hammers')],
+                'conditions': [loot_tables.match_tag('tfc:hammers')],
                 'functions': [loot_tables.set_count(1, 4)]
             }
             if variant == 'wood' or variant == 'stripped_wood':
                 block.with_block_loot((
                     stick_with_hammer,
-                    {  # wood blocks will only drop themselves if non-natural
+                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
                         'name': 'afc:wood/%s/%s' % (variant, wood),
-                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[natural=false]' % (variant, wood))
+                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     'afc:wood/%s/%s' % (variant.replace('wood', 'log'), wood)
+                ))
+            if variant == 'ancient_wood':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
+                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
+                    },
+                    {
+                       'name': 'afc:wood/ancient_wood/%s' % wood,
+                       'conditions': loot_tables.random_chance(0.6)
+                    }
+                ))
+            if variant == 'ancient_log':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
                 ))
             else:
                 block.with_block_loot((
                     stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                    { # ancient logs drop logs 60% of the time
+                        'name': 'afc:wood/ancient_log/%s' % wood,
+                        'conditions': loot_tables.random_chance(0.6)
+                    }
                 ))
 
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
@@ -411,7 +471,7 @@ def generate(rm: ResourceManager):
         for variant in ('sapling', 'leaves'):
             rm.lang('block.afc.wood.' + variant + '.' + wood, lang('%s %s', wood, variant))
 
-    for wood in UNIQUE_LOGS:
+    for wood in UNIQUE_LOGS.keys():
         # Twigs
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))
@@ -419,6 +479,53 @@ def generate(rm: ResourceManager):
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig_%s' % wood, parent='item/handheld_rod')
         block.with_block_loot('afc:wood/twig/%s' % wood)
+
+        for variant in ('log', 'wood', 'ancient_log', 'ancient_wood'):
+            block = rm.blockstate(('wood', variant, wood), variants={
+                'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
+                'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
+                'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
+            }, use_default_model=False)
+
+            stick_with_hammer = {
+                'name': 'minecraft:stick',
+                'conditions': [loot_tables.match_tag('tfc:hammers')],
+                'functions': [loot_tables.set_count(1, 4)]
+            }
+            if variant == 'wood' or variant == 'stripped_wood':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
+                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
+                    },
+                    'afc:wood/%s/%s' % (variant.replace('wood', 'log'), wood)
+                ))
+            if variant == 'ancient_wood':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
+                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
+                    },
+                    {
+                        'name': 'afc:wood/ancient_wood/%s' % wood,
+                        'conditions': loot_tables.random_chance(0.6)
+                    }
+                ))
+            if variant == 'ancient_log':
+                block.with_block_loot((
+                    stick_with_hammer,
+                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                ))
+            else:
+                block.with_block_loot((
+                    stick_with_hammer,
+                    { # ancient logs drop logs 60% of the time
+                        'name': 'afc:wood/ancient_log/%s' % wood,
+                        'conditions': loot_tables.random_chance(0.6)
+                    }
+                ))
 
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
     rm.item_model('light', no_textures=True, parent='minecraft:item/light')

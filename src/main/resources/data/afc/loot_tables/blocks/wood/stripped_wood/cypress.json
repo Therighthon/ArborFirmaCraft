@@ -16,7 +16,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "afc:hammers"
+                    "tag": "tfc:hammers"
                   }
                 }
               ],
@@ -33,20 +33,13 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/stripped_wood/cypress",
+              "name": "afc:wood/ancient_log/cypress",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
-                  "block": "afc:wood/stripped_wood/cypress",
-                  "properties": {
-                    "natural": "false"
-                  }
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
                 }
               ]
-            },
-            {
-              "type": "minecraft:item",
-              "name": "afc:wood/stripped_log/cypress"
             }
           ]
         }

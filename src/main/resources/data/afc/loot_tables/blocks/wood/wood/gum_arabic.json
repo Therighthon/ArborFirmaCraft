@@ -16,7 +16,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "afc:hammers"
+                    "tag": "tfc:hammers"
                   }
                 }
               ],
@@ -33,20 +33,13 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/wood/gum_arabic",
+              "name": "afc:wood/ancient_log/gum_arabic",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
-                  "block": "afc:wood/wood/gum_arabic",
-                  "properties": {
-                    "natural": "false"
-                  }
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
                 }
               ]
-            },
-            {
-              "type": "minecraft:item",
-              "name": "afc:wood/log/gum_arabic"
             }
           ]
         }

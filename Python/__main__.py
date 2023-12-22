@@ -17,7 +17,6 @@ import difflib
 
 import data
 import assets
-import format_lang
 import recipes
 import constants
 import world_gen
@@ -144,7 +143,7 @@ def resources(hotswap: str = None, do_assets: bool = False, do_data: bool = Fals
 
 def resources_at(rm: ResourceManager, do_assets: bool, do_data: bool, do_recipes: bool, do_worldgen: bool, do_advancements: bool):
     # do simple lang keys first, because it's ordered intentionally
-    rm.lang(constants.DEFAULT_LANG)
+    # rm.lang(constants.DEFAULT_LANG)
 
     # generic assets / data
     if do_assets:

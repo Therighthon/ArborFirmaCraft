@@ -16,7 +16,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "tag": "afc:hammers"
+                    "tag": "tfc:hammers"
                   }
                 }
               ],
@@ -33,7 +33,13 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_wood/eucalyptus"
+              "name": "afc:wood/ancient_log/eucalyptus",
+              "conditions": [
+                {
+                  "condition": "minecraft:random_chance",
+                  "chance": 0.6
+                }
+              ]
             }
           ]
         }
