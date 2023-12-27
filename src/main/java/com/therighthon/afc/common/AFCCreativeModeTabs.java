@@ -49,6 +49,7 @@ public final class AFCCreativeModeTabs
         out.accept(AFCItems.RUBBER_BAR.get());
         out.accept(AFCItems.MAPLE_SUGAR.get());
         out.accept(AFCItems.BIRCH_SUGAR.get());
+        out.accept(AFCBlocks.TREE_TAP.get());
         for (AFCWood wood : AFCWood.VALUES)
         {
             AFCBlocks.WOODS.get(wood).forEach((type, reg) -> {
@@ -80,6 +81,7 @@ public final class AFCCreativeModeTabs
         for (UniqueLogs wood : UniqueLogs.VALUES)
         {
             AFCBlocks.UNIQUE_LOGS.get(wood).forEach((type, reg) -> {
+                accept(out, reg);
             });
         }
 

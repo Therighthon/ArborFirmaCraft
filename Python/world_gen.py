@@ -174,7 +174,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'baobab'), 'tfc:random_tree', random_config('baobab', 7, 2, place=tree_placement_config(2, 4, True)))
     configured_placed_feature(rm, ('tree', 'baobab_dead'), 'tfc:random_tree', random_config('baobab', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'baobab_large'), 'tfc:random_tree', random_config('baobab', 7, 3, '_large', place=tree_placement_config(2, 4, True)))
-    configured_placed_feature(rm, ('tree', 'hevea'), 'tfc:random_tree', random_config('hevea', 6, 1, place=tree_placement_config(1, 2, True)))
+    configured_placed_feature(rm, ('tree', 'hevea'), 'tfc:random_tree', random_config('hevea', 6, 1, trunk=[2, 4, 1, 'hevea'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'hevea_dead'), 'tfc:random_tree', random_config('hevea', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'mahogany'), 'tfc:random_tree', random_config('mahogany', 12, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'mahogany_large'), 'tfc:random_tree', random_config('mahogany', 6, 1, '_large', trunk=[10, 14, 2, 'ancient_mahogany'], place=tree_placement_config(1, 2, True)))
@@ -201,7 +201,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'bald_cypress_large'), 'tfc:random_tree', random_config('bald_cypress', 5, 1, '_large', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'fig'), 'tfc:random_tree', random_config('fig', 6, 1, trunk=[3, 5, 1, 'fig'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'fig_dead'), 'tfc:random_tree', random_config('fig', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
-    configured_placed_feature(rm, ('tree', 'rubber_fig'), 'tfc:random_tree', random_config('rubber_fig', 12, 1, trunk=[1, 3, 1, 'fig'], place=tree_placement_config(1, 2, True)))
+    configured_placed_feature(rm, ('tree', 'rubber_fig'), 'tfc:random_tree', random_config('rubber_fig', 12, 1, trunk=[2, 3, 1, 'rubber_fig'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'rubber_fig_dead'), 'tfc:random_tree', random_config('rubber_fig', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
 
     configured_placed_feature(rm, ('tree', 'ipe'), 'tfc:random_tree', random_config('ipe', 17, 1, place=tree_placement_config(1, 2, True)))

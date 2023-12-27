@@ -24,13 +24,13 @@
     },
     "trunk": {
       "state": {
-        "Name": "afc:wood/log/fig",
+        "Name": "tfc:wood/log/rubber_fig",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"
         }
       },
-      "min_height": 1,
+      "min_height": 2,
       "max_height": 3,
       "wide": false
     }
