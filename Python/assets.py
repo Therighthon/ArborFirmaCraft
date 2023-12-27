@@ -424,7 +424,7 @@ def generate(rm: ResourceManager):
         block.with_lang(lang('%s twig', wood))
 
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
-        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig_%s' % wood, parent='item/handheld_rod')
+        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         block.with_block_loot('afc:wood/twig/%s' % wood)
 
         for variant in ('log', 'wood'):

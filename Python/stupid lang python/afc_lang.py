@@ -10,7 +10,7 @@ wood_items = open("wood_items.txt", 'r').read().split("\n")
 wood_blocks = open("wood_blocks.txt", 'r').read().split("\n")
 wood_plank_items = open("wood_plank_items.txt", 'r').read().split("\n")
 leaf_items = ["leaves", "sapling", "potted_sapling", "fallen_leaves"]
-unique_log_items = ["log", "wood"]
+unique_log_items = ["log", "wood", "twig"]
 
 
 string = """{
