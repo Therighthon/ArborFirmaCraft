@@ -32,8 +32,8 @@ public class AFCBlockEntities
         afcWoodBlocks(Wood.BlockType.WALL_SIGN)
     ));
     public static final RegistryObject<BlockEntityType<AFCHangingSignBlockEntity>> HANGING_SIGN = register("hanging_sign", AFCHangingSignBlockEntity::new, Stream.of(
-        TFCBlocks.CEILING_HANGING_SIGNS,
-        TFCBlocks.WALL_HANGING_SIGNS
+        AFCBlocks.CEILING_HANGING_SIGNS,
+        AFCBlocks.WALL_HANGING_SIGNS
     ).flatMap(woodMap -> woodMap.values().stream().flatMap(metalMap -> metalMap.values().stream())));
 
 

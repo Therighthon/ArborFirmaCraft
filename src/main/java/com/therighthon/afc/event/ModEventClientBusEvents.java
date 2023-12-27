@@ -3,7 +3,9 @@ package com.therighthon.afc.event;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.client.render.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
+import com.therighthon.afc.client.render.colors.AFCSignBlockEntityRenderer;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
@@ -32,6 +34,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
+import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blocks.wood.Wood;
@@ -130,7 +133,7 @@ public class ModEventClientBusEvents
         }
 
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
-        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), HangingSignRenderer::new);
+        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
