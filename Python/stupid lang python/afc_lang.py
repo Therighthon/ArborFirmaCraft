@@ -67,8 +67,14 @@ string = string + """  "block.afc.wood.%s.ancient_%s": "Ancient %s %s",
 string = string + """  "block.afc.tree_tap": "Tree Tap",
   "item.afc.rubber_bar": "Rubber Bar",
   "item.afc.maple_sugar": "Maple Sugar",
-  "item.afc.birch_sugar": "Birch Sugar"
-
+  "item.afc.birch_sugar": "Birch Sugar",
+  "fluid.afc.latex": "Latex",
+  "fluid.afc.maple_sap": "Maple Sap",
+  "fluid.afc.maple_sap_concentrate": "Concentrated Maple Sap",
+  "fluid.afc.maple_syrup": "Maple Syrup",
+  "fluid.afc.birch_sap": "Birch Sap",
+  "fluid.afc.birch_sap_concentrate": "Concentrated Birch Sap",
+  "fluid.afc.birch_syrup": "Birch Syrup"
 }"""
 
 with open("en_uk.json", 'w') as file:
