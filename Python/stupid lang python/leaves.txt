@@ -13,7 +13,6 @@ teak
 cypress
 fig
 acacia_koa
-evergreen_ash
 mpingo_blackwood
 mountain_fir
 scrub_hickory

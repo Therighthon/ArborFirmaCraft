@@ -3,6 +3,6 @@
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
     "plant": "afc:block/wood/sapling/coast_redwood",
-    "dirt": "afc:block/dirt/loam"
+    "dirt": "tfc:block/dirt/loam"
   }
 }

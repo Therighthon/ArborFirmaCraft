@@ -82,7 +82,7 @@ def generate(rm: ResourceManager):
                         'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     {
-                        'name': 'afc:wood/ancient_wood/%s' % wood,
+                        'name': 'afc:wood/wood/%s' % wood,
                         'conditions': loot_tables.random_chance(0.6)
                     }
                 ))
@@ -130,22 +130,24 @@ def generate(rm: ResourceManager):
                         'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     {
-                       'name': 'afc:wood/ancient_wood/%s' % wood,
+                       'name': 'afc:wood/wood/%s' % wood,
                        'conditions': loot_tables.random_chance(0.6)
                     }
                 ))
             if variant == 'ancient_log':
+
                 block.with_block_loot((
                     stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                    { # ancient logs drop logs 60% of the time
+                    'name': 'afc:wood/log/%s' % wood,
+                    'conditions': loot_tables.random_chance(0.6)
+                }
                 ))
             else:
                 block.with_block_loot((
                     stick_with_hammer,
-                    { # ancient logs drop logs 60% of the time
-                        'name': 'afc:wood/ancient_log/%s' % wood,
-                        'conditions': loot_tables.random_chance(0.6)
-                    }
+                    stick_with_hammer,
+                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
                 ))
 
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
@@ -509,22 +511,23 @@ def generate(rm: ResourceManager):
                         'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     {
-                        'name': 'afc:wood/ancient_wood/%s' % wood,
+                        'name': 'afc:wood/wood/%s' % wood,
                         'conditions': loot_tables.random_chance(0.6)
                     }
                 ))
             if variant == 'ancient_log':
                 block.with_block_loot((
                     stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                    { # ancient logs drop logs 60% of the time
+                        'name': 'afc:wood/log/%s' % wood,
+                        'conditions': loot_tables.random_chance(0.6)
+                    }
+
                 ))
             else:
                 block.with_block_loot((
                     stick_with_hammer,
-                    { # ancient logs drop logs 60% of the time
-                        'name': 'afc:wood/ancient_log/%s' % wood,
-                        'conditions': loot_tables.random_chance(0.6)
-                    }
+                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
                 ))
 
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
@@ -552,7 +555,7 @@ def generate(rm: ResourceManager):
 
 def flower_pot_cross(rm: ResourceManager, simple_name: str, name: str, model: str, texture: str, loot: str):
     rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name)).with_tag('minecraft:flower_pots').with_block_loot(loot, 'minecraft:flower_pot')
-    rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'afc:block/dirt/loam'})
+    rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/loam'})
 
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
     res = utils.resource_location(rm.domain, name_parts)

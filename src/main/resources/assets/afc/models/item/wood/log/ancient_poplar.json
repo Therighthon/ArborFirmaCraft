@@ -1,7 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "item/generated",
   "textures": {
-    "all": "afc:block/wood/leaves/evergreen_ash"
+    "layer0": "afc:item/wood/log/poplar"
   }
 }

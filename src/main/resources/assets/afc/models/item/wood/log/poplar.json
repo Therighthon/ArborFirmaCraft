@@ -1,7 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/cross",
+  "parent": "item/generated",
   "textures": {
-    "cross": "afc:block/wood/sapling/evergreen_ash"
+    "layer0": "afc:item/wood/log/poplar"
   }
 }

@@ -27,8 +27,8 @@ import generate_trees
 import generate_textures
 # import validate_assets
 
-BOOK_LANGUAGES = ('en_us', 'zh_cn', 'ko_kr', 'zh_tw')
-MOD_LANGUAGES = ('en_us', 'zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
+BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
+MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
 
 
 def main():
@@ -49,7 +49,7 @@ def main():
         'update_lang',  # useful to update localizations after a change to the base which renders some translations incorrect
         'textures',  # generate textures
     ))
-    parser.add_argument('--translate', type=str, default='en_us', help='Runs the book translation using a single provided language')
+    parser.add_argument('--translate', type=str, default='en_uk', help='Runs the book translation using a single provided language')
     parser.add_argument('--translate-all', action='store_true', dest='translate_all', help='Runs the book against all provided translations')
     parser.add_argument('--local', type=str, default=None, help='Points to a local minecraft instance. Used for \'book\', to generate a hot reloadable book, and used for \'clean\', to clean said instance\'s book')
     parser.add_argument('--hotswap', action='store_true', dest='hotswap', help='Causes resource generation to also generate to --hotswap-dir')

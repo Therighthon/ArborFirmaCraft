@@ -71,6 +71,6 @@ string = string + """  "block.afc.tree_tap": "Tree Tap",
 
 }"""
 
-with open("en_us.json", 'w') as file:
+with open("en_uk.json", 'w') as file:
     file.write(string)
     file.close()

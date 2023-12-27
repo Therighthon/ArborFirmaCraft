@@ -36,6 +36,6 @@ for wood in change_woods:
 
 string = string + """}"""
 
-with open("tfc_en_us.json", 'w') as file:
+with open("tfc_en_uk.json", 'w') as file:
     file.write(string)
     file.close()
