@@ -1,14 +1,15 @@
 {
+  "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "tfc:block/wood/log/ash"
+      "model": "afc:block/wood/log/ancient_ash"
     },
     "axis=z": {
-      "model": "tfc:block/wood/log/ash",
+      "model": "afc:block/wood/log/ancient_ash",
       "x": 90
     },
     "axis=x": {
-      "model": "tfc:block/wood/log/ash",
+      "model": "afc:block/wood/log/ancient_ash",
       "x": 90,
       "y": 90
     }

@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/twig/willow",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/twig/willow"
+      },
+      {
+        "model": "afc:block/wood/twig/willow",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/twig/willow",
+        "y": 270
+      }
+    ]
+  }
+}

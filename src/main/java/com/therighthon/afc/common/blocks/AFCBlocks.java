@@ -113,6 +113,17 @@ public class AFCBlocks
         return blockType.create(wood);
     }
 
+    public static final Map<AncientLogs, Map<AncientLogs.BlockType, RegistryObject<Block>>> ANCIENT_LOGS = Helpers.mapOfKeys(AncientLogs.class, wood ->
+        Helpers.mapOfKeys(AncientLogs.BlockType.class, type ->
+            register(type.nameFor(wood), createAncientLogs(wood, type), type.createBlockItem(new Item.Properties()))
+        )
+    );
+
+    public static Supplier<Block> createAncientLogs(AncientLogs wood, AncientLogs.BlockType blockType)
+    {
+        return blockType.create(wood);
+    }
+
     private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier, CreativeModeTab group) {
         return register(name, blockSupplier, (block) -> {
             return new BlockItem(block, (new Item.Properties()));

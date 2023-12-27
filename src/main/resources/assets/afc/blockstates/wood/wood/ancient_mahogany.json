@@ -1,14 +1,15 @@
 {
+  "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/mahogany"
+      "model": "afc:block/wood/wood/ancient_mahogany"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/mahogany",
+      "model": "afc:block/wood/wood/ancient_mahogany",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/mahogany",
+      "model": "afc:block/wood/wood/ancient_mahogany",
       "x": 90,
       "y": 90
     }

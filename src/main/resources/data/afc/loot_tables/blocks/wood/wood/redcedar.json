@@ -33,13 +33,20 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/redcedar",
+              "name": "afc:wood/wood/redcedar",
               "conditions": [
                 {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
+                  "condition": "minecraft:block_state_property",
+                  "block": "afc:wood/wood/redcedar",
+                  "properties": {
+                    "branch_direction": "none"
+                  }
                 }
               ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "afc:wood/log/redcedar"
             }
           ]
         }

@@ -33,13 +33,20 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/rubber_fig",
+              "name": "afc:wood/wood/rubber_fig",
               "conditions": [
                 {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
+                  "condition": "minecraft:block_state_property",
+                  "block": "afc:wood/wood/rubber_fig",
+                  "properties": {
+                    "branch_direction": "none"
+                  }
                 }
               ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "afc:wood/log/rubber_fig"
             }
           ]
         }

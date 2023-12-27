@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+  "afc:fluid/maple_syrup",
+  "afc:fluid/birch_syrup",
+  "afc:fluid/maple_sap_concentrate",
+  "afc:fluid/birch_sap_concentrate",
+  "afc:fluid/maple_sap",
+  "afc:fluid/birch_sap",
+  "afc:fluid/latex"
+  ]
+}

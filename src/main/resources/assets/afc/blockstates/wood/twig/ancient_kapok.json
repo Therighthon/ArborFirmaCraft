@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/twig/ancient_kapok",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_kapok"
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_kapok",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_kapok",
+        "y": 270
+      }
+    ]
+  }
+}

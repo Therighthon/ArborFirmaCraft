@@ -33,13 +33,20 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/hevea",
+              "name": "afc:wood/stripped_wood/hevea",
               "conditions": [
                 {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
+                  "condition": "minecraft:block_state_property",
+                  "block": "afc:wood/stripped_wood/hevea",
+                  "properties": {
+                    "branch_direction": "none"
+                  }
                 }
               ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "afc:wood/stripped_log/hevea"
             }
           ]
         }

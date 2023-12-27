@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "": [
+      {
+        "model": "afc:block/wood/twig/ancient_birch",
+        "y": 90
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_birch"
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_birch",
+        "y": 180
+      },
+      {
+        "model": "afc:block/wood/twig/ancient_birch",
+        "y": 270
+      }
+    ]
+  }
+}

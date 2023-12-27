@@ -33,13 +33,20 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/rainbow_eucalyptus",
+              "name": "afc:wood/wood/rainbow_eucalyptus",
               "conditions": [
                 {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
+                  "condition": "minecraft:block_state_property",
+                  "block": "afc:wood/wood/rainbow_eucalyptus",
+                  "properties": {
+                    "branch_direction": "none"
+                  }
                 }
               ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "afc:wood/log/rainbow_eucalyptus"
             }
           ]
         }

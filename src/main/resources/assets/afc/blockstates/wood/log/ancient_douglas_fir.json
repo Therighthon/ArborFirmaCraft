@@ -1,14 +1,15 @@
 {
+  "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "tfc:block/wood/log/douglas_fir"
+      "model": "afc:block/wood/log/ancient_douglas_fir"
     },
     "axis=z": {
-      "model": "tfc:block/wood/log/douglas_fir",
+      "model": "afc:block/wood/log/ancient_douglas_fir",
       "x": 90
     },
     "axis=x": {
-      "model": "tfc:block/wood/log/douglas_fir",
+      "model": "afc:block/wood/log/ancient_douglas_fir",
       "x": 90,
       "y": 90
     }

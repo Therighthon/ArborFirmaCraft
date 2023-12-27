@@ -1,14 +1,15 @@
 {
+  "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/eucalyptus"
+      "model": "afc:block/wood/wood/ancient_eucalyptus"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/eucalyptus",
+      "model": "afc:block/wood/wood/ancient_eucalyptus",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/eucalyptus",
+      "model": "afc:block/wood/wood/ancient_eucalyptus",
       "x": 90,
       "y": 90
     }

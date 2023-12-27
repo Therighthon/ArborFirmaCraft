@@ -33,13 +33,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/black_oak",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
+              "name": "afc:wood/log/black_oak"
             }
           ]
         }

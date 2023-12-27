@@ -33,13 +33,7 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/ancient_log/gum_arabic",
-              "conditions": [
-                {
-                  "condition": "minecraft:random_chance",
-                  "chance": 0.6
-                }
-              ]
+              "name": "afc:wood/log/gum_arabic"
             }
           ]
         }

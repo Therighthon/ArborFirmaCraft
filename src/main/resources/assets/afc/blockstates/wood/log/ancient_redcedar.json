@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/log/redcedar"
+      "model": "afc:block/wood/log/ancient_redcedar"
     },
     "axis=z": {
-      "model": "afc:block/wood/log/redcedar",
+      "model": "afc:block/wood/log/ancient_redcedar",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/log/redcedar",
+      "model": "afc:block/wood/log/ancient_redcedar",
       "x": 90,
       "y": 90
     }
