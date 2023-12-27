@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/ancient_acacia"
+      "model": "tfc:block/wood/wood/acacia"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/ancient_acacia",
+      "model": "tfc:block/wood/wood/acacia",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/ancient_acacia",
+      "model": "tfc:block/wood/wood/acacia",
       "x": 90,
       "y": 90
     }

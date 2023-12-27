@@ -184,14 +184,20 @@ def generate(rm: ResourceManager):
         block.with_item_model().with_lang(lang('%s loom', wood)).with_block_loot('afc:wood/planks/%s_loom' % wood).with_tag('minecraft:mineable/axe')
 
         # Bookshelf
-        block = rm.blockstate('afc:wood/planks/%s_bookshelf' % wood, variants=dict(
-            ('books_stored=%s,facing=%s' % (i, f), {'model': 'afc:block/wood/planks/%s_bookshelf_%s' % (wood, i), 'y': r})
-            for i in range(0, 7) for f, r in (('east', 90), ('north', None), ('south', 180), ('west', 270))
-        ), use_default_model=False)
-        for i in range(0, 7):
-            rm.block_model('afc:wood/planks/%s_bookshelf_%s' % (wood, i), parent='block/cube_column', textures={'north': 'afc:block/wood/planks/%s_bookshelf_stage%s' % (wood, i), 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood, 'end': 'afc:block/wood/planks/%s_bookshelf_top' % wood})
+        slot_types = (('top_right', 2), ('bottom_mid', 4), ('top_left', 0), ('bottom_right', 5), ('bottom_left', 3), ('top_mid', 1))
+        faces = (('east', 90), ('north', None), ('west', 270), ('south', 180))
+        occupations = (('empty', 'false'), ('occupied', 'true'))
+        shelf_mp = []
+        shelf_mp += [({'facing': face}, {'model': 'afc:block/wood/planks/%s_bookshelf' % wood, 'y': y, 'uvlock': True}) for face, y in faces]
+        shelf_mp += [({'AND': [{'facing': face}, {f'slot_{i}_occupied': is_occupied}]}, {'model': f'afc:block/wood/planks/{wood}_bookshelf_{occupation}_{slot_type}', 'y': y}) for face, y in faces for slot_type, i in slot_types for occupation, is_occupied in occupations]
+        block = rm.blockstate_multipart(('wood', 'planks', '%s_bookshelf' % wood), *shelf_mp)
+        rm.block_model(('wood', 'planks', '%s_bookshelf' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood}, parent='minecraft:block/chiseled_bookshelf')
         block.with_lang(lang('%s bookshelf', wood)).with_block_loot('afc:wood/planks/%s_bookshelf' % wood)
-        rm.item_model('afc:wood/planks/%s_bookshelf' % wood, parent='afc:block/wood/planks/%s_bookshelf_0' % wood, no_textures=True)
+        rm.block_model(('wood', 'planks', '%s_bookshelf_inventory' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood, 'front': 'afc:block/wood/planks/%s_bookshelf_empty' % wood}, parent='minecraft:block/chiseled_bookshelf_inventory')
+        rm.item_model('afc:wood/planks/%s_bookshelf' % wood, parent='afc:block/wood/planks/%s_bookshelf_inventory' % wood, no_textures=True)
+        for slot in ('bottom_left', 'bottom_mid', 'bottom_right', 'top_left', 'top_mid', 'top_right'):
+            for occupancy in ('empty', 'occupied'):
+                rm.block_model(('wood', 'planks', f'{wood}_bookshelf_{occupancy}_{slot}'), {'texture': f'afc:block/wood/planks/{wood}_bookshelf_{occupancy}'}, parent=f'minecraft:block/chiseled_bookshelf_{occupancy}_slot_{slot}')
 
         # Workbench
         rm.blockstate(('wood', 'planks', '%s_workbench' % wood)).with_block_model(parent='minecraft:block/cube', textures={
@@ -456,9 +462,9 @@ def generate(rm: ResourceManager):
             mod_id = 'afc'
         for variant in ('log', 'wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
-                'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
-                'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
-                'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
+                'axis=y': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood)},
+                'axis=z': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90},
+                'axis=x': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90, 'y': 90}
             }, use_default_model=False)
 
             stick_with_hammer = {

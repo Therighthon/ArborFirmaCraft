@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/ancient_white_cedar"
+      "model": "tfc:block/wood/wood/white_cedar"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/ancient_white_cedar",
+      "model": "tfc:block/wood/wood/white_cedar",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/ancient_white_cedar",
+      "model": "tfc:block/wood/wood/white_cedar",
       "x": 90,
       "y": 90
     }

@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/ancient_kapok"
+      "model": "tfc:block/wood/wood/kapok"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/ancient_kapok",
+      "model": "tfc:block/wood/wood/kapok",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/ancient_kapok",
+      "model": "tfc:block/wood/wood/kapok",
       "x": 90,
       "y": 90
     }

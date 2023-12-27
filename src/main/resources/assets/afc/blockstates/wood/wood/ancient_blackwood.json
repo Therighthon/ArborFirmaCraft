@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/ancient_blackwood"
+      "model": "tfc:block/wood/wood/blackwood"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/ancient_blackwood",
+      "model": "tfc:block/wood/wood/blackwood",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/ancient_blackwood",
+      "model": "tfc:block/wood/wood/blackwood",
       "x": 90,
       "y": 90
     }

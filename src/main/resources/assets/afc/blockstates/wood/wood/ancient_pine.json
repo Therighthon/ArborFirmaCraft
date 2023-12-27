@@ -2,14 +2,14 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "axis=y": {
-      "model": "afc:block/wood/wood/ancient_pine"
+      "model": "tfc:block/wood/wood/pine"
     },
     "axis=z": {
-      "model": "afc:block/wood/wood/ancient_pine",
+      "model": "tfc:block/wood/wood/pine",
       "x": 90
     },
     "axis=x": {
-      "model": "afc:block/wood/wood/ancient_pine",
+      "model": "tfc:block/wood/wood/pine",
       "x": 90,
       "y": 90
     }
