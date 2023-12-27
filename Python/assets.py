@@ -78,8 +78,8 @@ def generate(rm: ResourceManager):
                 block.with_block_loot((
                     stick_with_hammer,
                     {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
-                        'name': 'afc:wood/%s/%s' % (variant, wood),
-                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
+                        'name': 'afc:wood/log/%s' % (wood),
+                        'conditions': loot_tables.block_state_property('afc:wood/wood/ancient_%s[branch_direction=none]' % (wood))
                     },
                     {
                         'name': 'afc:wood/wood/%s' % wood,
@@ -90,7 +90,7 @@ def generate(rm: ResourceManager):
             else:
                 block.with_block_loot((
                     stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
+                    'afc:wood/log/%s' % (wood)  # logs drop themselves always
                 ))
                 rm.item_model(('wood', variant, wood), 'afc:item/wood/log/%s' % wood)
 
@@ -126,7 +126,7 @@ def generate(rm: ResourceManager):
                 block.with_block_loot((
                     stick_with_hammer,
                     {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
-                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'name': 'afc:wood/wood/%s' % (wood),
                         'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     {
@@ -507,7 +507,7 @@ def generate(rm: ResourceManager):
                 block.with_block_loot((
                     stick_with_hammer,
                     {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
-                        'name': 'afc:wood/%s/%s' % (variant, wood),
+                        'name': 'afc:wood/wood/%s' % (wood),
                         'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
                     },
                     {

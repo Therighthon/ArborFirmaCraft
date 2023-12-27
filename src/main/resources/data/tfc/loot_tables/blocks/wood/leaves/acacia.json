@@ -11,10 +11,10 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "afc:wood/leaves/shisham_rosewood",
+              "name": "tfc:wood/leaves/acacia",
               "conditions": [
                 {
-                  "condition": "minecraft:alternative",
+                  "condition": "minecraft:any_of",
                   "terms": [
                     {
                       "condition": "minecraft:match_tool",
@@ -41,14 +41,14 @@
             },
             {
               "type": "minecraft:item",
-              "name": "afc:wood/sapling/shisham_rosewood",
+              "name": "tfc:wood/sapling/acacia",
               "conditions": [
                 {
                   "condition": "minecraft:survives_explosion"
                 },
                 {
                   "condition": "minecraft:random_chance",
-                  "chance": 0.0103
+                  "chance": 0.0292
                 }
               ]
             }
@@ -113,6 +113,35 @@
                   }
                 }
               ]
+            }
+          ],
+          "conditions": [
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:any_of",
+                "terms": [
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "tag": "forge:shears"
+                    }
+                  },
+                  {
+                    "condition": "minecraft:match_tool",
+                    "predicate": {
+                      "enchantments": [
+                        {
+                          "enchantment": "minecraft:silk_touch",
+                          "levels": {
+                            "min": 1
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
             }
           ]
         }
