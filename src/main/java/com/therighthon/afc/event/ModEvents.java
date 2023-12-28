@@ -126,18 +126,4 @@ public class ModEvents
         blocks.addAll(extraBlocks.collect(Collectors.toList())); //Autocompleted, could cause problems?
         ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
     }
-
-//    private static void modifySignBlockEntity()
-//    {
-//        BlockEntityType<?> type = TFCBlockEntities.SIGN.get();
-//        Stream<Block> signs =  AFCBlocks.WOODS.values().stream().map(map -> map.get(Wood.BlockType.SIGN).get());
-//        Stream<Block> wallSigns =  AFCBlocks.WOODS.values().stream().map(map -> map.get(Wood.BlockType.WALL_SIGN).get());
-//        Set<Block> blocks = ((BlockEntityTypeAccessor) (Object) type).accessor$getValidBlocks();
-//        blocks = new HashSet<>(blocks);
-//
-//        blocks.addAll(signs.collect(Collectors.toList()));
-//        blocks.addAll(wallSigns.collect(Collectors.toList()));
-//        ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
-//    }
-
 }
