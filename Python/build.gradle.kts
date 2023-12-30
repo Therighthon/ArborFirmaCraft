@@ -17,7 +17,7 @@ val jeiVersion: String = "15.2.0.21"
 val patchouliVersion: String = "1.20.1-81-FORGE"
 val jadeVersion: String = "4614153"
 val topVersion: String = "4629624"
-val tfcVersion: String = "4915584"
+val tfcVersion: String = "4976574"
 
 val modId: String = "afc"
 
@@ -66,7 +66,6 @@ dependencies {
     runtimeOnly(fg.deobf("mezz.jei:jei-$minecraftVersion-forge:$jeiVersion"))
 
     // Patchouli
-    // We need to compile against the full JAR, not just the API, because we do some egregious hacks.
     compileOnly(fg.deobf("vazkii.patchouli:Patchouli:$patchouliVersion"))
     runtimeOnly(fg.deobf("vazkii.patchouli:Patchouli:$patchouliVersion"))
 
