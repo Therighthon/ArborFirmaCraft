@@ -6,7 +6,6 @@ stripped_log
 wood
 stripped_wood
 twig
-fallen_leaves
 chest
 trapped_chest
 sluice

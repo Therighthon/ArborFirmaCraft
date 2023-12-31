@@ -64,7 +64,32 @@ for wood in tfc_woods:
 string = string + """  "block.afc.wood.%s.ancient_%s": "Ancient %s %s",
 """ % (item, wood, wood.replace("_", " ").title(), item.replace("_", " ").title())
 
-string = string + """  "block.afc.tree_tap": "Tree Tap",
+string = string + """
+  "block.afc.wood.sapling.ipe": "Yellow Ipe Sapling",
+  "block.afc.wood.potted_sapling.ipe": "Yellow Ipe Potted Sapling",
+  "block.afc.wood.leaves.ipe": "Yellow Ipe Leaves",
+  "block.afc.wood.fallen_leaves.ipe": "Yellow Ipe Fallen Leaves",
+  "block.afc.wood.sapling.ironwood": "King Ironwood Sapling",
+  "block.afc.wood.potted_sapling.ironwood": "King Ironwood Potted Sapling",
+  "block.afc.wood.fallen_leaves.ironwood": "King Ironwood Fallen Leaves",
+  "block.afc.wood.leaves.ironwood": "King Ironwood Leaves",
+  "block.afc.wood.sapling.cypress": "Slender Cypress Sapling",
+  "block.afc.wood.potted_sapling.cypress": "Slender Cypress Potted Sapling",
+  "block.afc.wood.fallen_leaves.cypress": "Slender Cypress Fallen Leaves",
+  "block.afc.wood.leaves.cypress": "Slender Cypress Leaves",
+  "block.afc.wood.sapling.teak": "True Teak Sapling",
+  "block.afc.wood.potted_sapling.teak": "True Teak Potted Sapling",
+  "block.afc.wood.fallen_leaves.teak": "True Teak Fallen Leaves",
+  "block.afc.wood.leaves.teak": "True Teak Leaves",
+  "block.afc.wood.sapling.eucalyptus": "Blue Gum Sapling",
+  "block.afc.wood.potted_sapling.eucalyptus": "Blue Gum Potted Sapling",
+  "block.afc.wood.fallen_leaves.eucalyptus": "Blue Gum Fallen Leaves",
+  "block.afc.wood.leaves.eucalyptus": "Blue Gum Leaves",
+  "block.afc.wood.sapling.fig": "Rusty Fig Sapling",
+  "block.afc.wood.potted_sapling.fig": "Rusty Fig Potted Sapling",
+  "block.afc.wood.fallen_leaves.fig": "Rusty Fig Fallen Leaves",
+  "block.afc.wood.leaves.fig": "Rusty Fig Leaves",
+  "block.afc.tree_tap": "Tree Tap",
   "item.afc.rubber_bar": "Rubber Bar",
   "item.afc.maple_sugar": "Maple Sugar",
   "item.afc.birch_sugar": "Birch Sugar",
@@ -74,9 +99,10 @@ string = string + """  "block.afc.tree_tap": "Tree Tap",
   "fluid.afc.maple_syrup": "Maple Syrup",
   "fluid.afc.birch_sap": "Birch Sap",
   "fluid.afc.birch_sap_concentrate": "Concentrated Birch Sap",
-  "fluid.afc.birch_syrup": "Birch Syrup"
+  "fluid.afc.birch_syrup": "Birch Syrup",
+  "itemGroup.afc_creative_mode_tab": "ArborFirmaCraft"
 }"""
 
-with open("en_uk.json", 'w') as file:
+with open("en_us.json", 'w') as file:
     file.write(string)
     file.close()
