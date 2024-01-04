@@ -45,6 +45,12 @@
 	"tfc:tree/rubber_fig_entry",
 	"tfc:tree/sapele_mahogany_entry",
 	"tfc:tree/red_silk_cotton_entry",
-	"tfc:tree/small_leaf_mahogany_entry"
+	"tfc:tree/small_leaf_mahogany_entry",
+    "tfc:tree/ipe_entry",
+    "tfc:tree/ironwood_entry",
+    "tfc:tree/lebombo_ironwood_entry",
+    "tfc:tree/horsetail_ironwood_entry",
+    "tfc:tree/flame_of_the_forest_entry",
+    "tfc:tree/jaggery_palm_entry"
   ]
 }

@@ -94,7 +94,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'pine_large'), 'tfc:random_tree', random_config('pine', 5, 2, '_large', place=tree_placement_config(1, 5)))
     configured_placed_feature(rm, ('tree', 'pine_dead'), 'tfc:random_tree', random_config('pine', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
     configured_placed_feature(rm, ('tree', 'sequoia'), 'tfc:random_tree', random_config('sequoia', 5, place=tree_placement_config(1, 3)))
-    configured_placed_feature(rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 1, 5, [(1, 1, 7), (2, 3, 8), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
+    configured_placed_feature(rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 0, 5, [(1, 1, 7), (2, 3, 8), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
     configured_placed_feature(rm, ('tree', 'sequoia_dead'), 'tfc:random_tree', random_config('sequoia', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
     configured_placed_feature(rm, ('tree', 'spruce'), 'tfc:random_tree', random_config('spruce', 7, place=tree_placement_config(1, 3)))
     configured_placed_feature(rm, ('tree', 'spruce_large'), 'tfc:stacked_tree', stacked_config('spruce', 5, 7, 2, [(1, 2, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_spruce', place=tree_placement_config(2, 7)))
@@ -105,7 +105,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'acacia_koa'), 'tfc:random_tree', random_config('acacia_koa', 12, 1, trunk=[1, 7, 1, 'acacia'], place=tree_placement_config(1, 2, False)))
     configured_placed_feature(rm, ('tree', 'acacia_koa_large'), 'tfc:random_tree', random_config('acacia_koa', 6, 2, '_large', trunk=[10, 15, 2, 'ancient_acacia'], place=tree_placement_config(2, 15, True)))
     configured_placed_feature(rm, ('tree', 'acacia_koa_dead'), 'tfc:random_tree', random_config('acacia_koa', 4, 1, '_dead', place=tree_placement_config(1, 2, False)))
-    configured_placed_feature(rm, ('tree', 'ash'), 'tfc:random_tree', random_config('ash', 14, 1, place=tree_placement_config(1, 2, True)))
+    configured_placed_feature(rm, ('tree', 'ash'), 'tfc:random_tree', random_config('ash', 14, 1, trunk=[3, 5, 1, 'ash'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'coast_redwood'), 'tfc:random_tree', random_config('coast_redwood', 7, place=tree_placement_config(1, 3)))
     configured_placed_feature(rm, ('tree', 'coast_redwood_large'), 'tfc:stacked_tree', stacked_config('coast_redwood', 8, 16, 2, [(3, 4, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
     configured_placed_feature(rm, ('tree', 'coast_redwood_dead'), 'tfc:random_tree', random_config('coast_redwood', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
@@ -201,7 +201,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'bald_cypress_large'), 'tfc:random_tree', random_config('bald_cypress', 5, 1, '_large', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'fig'), 'tfc:random_tree', random_config('fig', 6, 1, trunk=[3, 5, 1, 'fig'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'fig_dead'), 'tfc:random_tree', random_config('fig', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
-    configured_placed_feature(rm, ('tree', 'rubber_fig'), 'tfc:random_tree', random_config('rubber_fig', 12, 1, trunk=[2, 3, 1, 'rubber_fig'], place=tree_placement_config(1, 2, True)))
+    configured_placed_feature(rm, ('tree', 'rubber_fig'), 'tfc:random_tree', random_config('rubber_fig', 12, 1, trunk=[2, 4, 1, 'rubber_fig'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'rubber_fig_dead'), 'tfc:random_tree', random_config('rubber_fig', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
 
     configured_placed_feature(rm, ('tree', 'ipe'), 'tfc:random_tree', random_config('ipe', 17, 1, place=tree_placement_config(1, 2, True)))
@@ -516,7 +516,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
     basic_wood = 'oak'
     if trunk is not None:
         basic_wood = trunk[3]
-    if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood':
+    if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rubber_fig' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak' or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood' or basic_wood == 'poplar':
         wood_prefix = 'afc'
     if basic_wood.startswith('ancient_'):
         wood_prefix = 'afc'

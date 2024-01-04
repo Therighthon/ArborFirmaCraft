@@ -2,6 +2,7 @@ package com.therighthon.afc;
 
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCCreativeModeTabs;
+import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
@@ -48,7 +49,7 @@ public class AFC
         AFCFluids.FLUIDS.register(eventBus);
         AFCCommands.ARGUMENT_TYPES.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
-//        AFCFeatures.FEATURES.register(eventBus);
+        AFCFeatures.FEATURES.register(eventBus);
         AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
@@ -67,10 +68,6 @@ public class AFC
             {
                 Sheets.addWoodType(wood.getVanillaWoodType());
             }
-//            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onBlockColors);
-//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onItemColors);
-//            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onTextureStitch);
-//        eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onParticlesRegister);
         }
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;

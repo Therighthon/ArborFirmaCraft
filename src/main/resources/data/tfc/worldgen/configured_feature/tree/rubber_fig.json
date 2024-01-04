@@ -24,7 +24,7 @@
     },
     "trunk": {
       "state": {
-        "Name": "tfc:wood/log/rubber_fig",
+        "Name": "afc:wood/log/rubber_fig",
         "Properties": {
           "axis": "y",
           "branch_direction": "none"

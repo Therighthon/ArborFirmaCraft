@@ -38,6 +38,9 @@
 	"tfc:tree/tamarack_entry",
 	"tfc:tree/black_spruce_entry",
 	"tfc:tree/coast_redwood_entry",
-	"tfc:tree/red_silk_cotton_entry"
+	"tfc:tree/red_silk_cotton_entry",
+    "tfc:tree/lebombo_ironwood_entry",
+    "tfc:tree/iroko_teak_entry",
+    "tfc:tree/poplar_entry"
   ]
 }

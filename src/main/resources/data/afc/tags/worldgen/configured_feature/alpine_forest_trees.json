@@ -34,6 +34,8 @@
 	"tfc:tree/black_spruce_entry",
 	"tfc:tree/balsam_fir_entry",
 	"tfc:tree/rubber_fig_entry",
-	"tfc:tree/sapele_mahogany_entry"
+	"tfc:tree/sapele_mahogany_entry",
+    "tfc:tree/ipe_entry",
+    "tfc:tree/ironwood_entry"
   ]
 }

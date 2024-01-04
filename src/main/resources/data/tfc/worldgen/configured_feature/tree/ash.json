@@ -23,6 +23,18 @@
       "width": 1,
       "height": 2,
       "allow_submerged": true
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/ash",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 5,
+      "wide": false
     }
   }
 }
