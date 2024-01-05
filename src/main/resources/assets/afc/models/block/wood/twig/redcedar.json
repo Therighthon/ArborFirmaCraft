@@ -3,6 +3,6 @@
   "parent": "tfc:block/groundcover/twig",
   "textures": {
     "side": "afc:block/wood/log/redcedar",
-    "top": "afc:block/wood/log_top/redcedar"
+    "top": "afc:block/wood/log_top/cypress"
   }
 }

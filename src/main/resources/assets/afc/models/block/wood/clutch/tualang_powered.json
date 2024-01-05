@@ -4,8 +4,8 @@
   "textures": {
     "side": "afc:block/wood/stripped_log/tualang",
     "end": "afc:block/wood/planks/tualang",
-    "overlay": "afc:block/axle_casing_powered",
-    "overlay_end": "afc:block/axle_casing_front",
+    "overlay": "tfc:block/axle_casing_powered",
+    "overlay_end": "tfc:block/axle_casing_front",
     "particle": "afc:block/wood/stripped_log/tualang"
   }
 }

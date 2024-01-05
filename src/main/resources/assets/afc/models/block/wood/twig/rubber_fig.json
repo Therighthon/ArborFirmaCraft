@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/groundcover/twig",
   "textures": {
-    "side": "afc:block/wood/log/rubber_fig",
-    "top": "afc:block/wood/log_top/rubber_fig"
+    "side": "afc:block/wood/log/fig",
+    "top": "afc:block/wood/log_top/fig"
   }
 }

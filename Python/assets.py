@@ -423,6 +423,7 @@ def generate(rm: ResourceManager):
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))
         prefix = 'afc'
+        wood_or_fig = wood
         if wood == 'rainbow_eucalyptus':
             wood_top = 'eucalyptus'
         elif wood == 'black_oak':
@@ -434,13 +435,14 @@ def generate(rm: ResourceManager):
         elif wood == 'redcedar':
             wood_top = 'cypress'
         elif wood == 'rubber_fig':
-            wood_top == 'fig'
+            wood_top = 'fig'
+            wood_or_fig = 'fig'
         elif wood == 'gum_arabic':
             wood_top = 'acacia'
             prefix = 'tfc'
         else:
             wood_top = wood
-        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         block.with_block_loot('afc:wood/twig/%s' % wood)
 

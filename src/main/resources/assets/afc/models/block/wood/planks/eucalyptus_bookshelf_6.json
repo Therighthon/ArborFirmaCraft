@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "block/cube_column",
+  "textures": {
+    "north": "afc:block/wood/planks/eucalyptus_bookshelf_stage6",
+    "side": "afc:block/wood/planks/eucalyptus_bookshelf_side",
+    "end": "afc:block/wood/planks/eucalyptus_bookshelf_top"
+  }
+}
