@@ -103,8 +103,6 @@ public class TapBlock extends BaseEntityBlock
     }
 
     /* BLOCK ENTITY */
-
-    //TODO: Enabling this just makes it show a missing model instead of not rendering. Easier to test function with not rendering.
     @Override
     public @NotNull RenderShape getRenderShape(BlockState state) {
         return RenderShape.MODEL;

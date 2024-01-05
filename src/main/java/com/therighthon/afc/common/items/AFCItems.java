@@ -47,7 +47,7 @@ public class AFCItems
     public static final Map<AFCWood, RegistryObject<Item>> CHEST_MINECARTS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/chest_minecart/" + wood.name(), () -> new TFCMinecartItem(new Item.Properties(), TFCEntities.CHEST_MINECART, () -> AFCBlocks.WOODS.get(wood).get(Wood.BlockType.CHEST).get().asItem())));
 
     public static final Map<AFCWood, RegistryObject<Item>> SIGNS = Helpers.mapOfKeys(AFCWood.class, wood -> register("wood/sign/" + wood.name(), () -> new SignItem(new Item.Properties(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.SIGN).get(), AFCBlocks.WOODS.get(wood).get(Wood.BlockType.WALL_SIGN).get())));
-    //TODO: Hanging Signs
+
     public static final Map<AFCWood, Map<Metal.Default, RegistryObject<Item>>> HANGING_SIGNS = Helpers.mapOfKeys(AFCWood.class, wood ->
         Helpers.mapOfKeys(Metal.Default.class, Metal.Default::hasUtilities, metal ->
             register("wood/hanging_sign/" + metal.name() + "/" + wood.name(), () -> new HangingSignItem(AFCBlocks.CEILING_HANGING_SIGNS.get(wood).get(metal).get(), AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal).get(), new Item.Properties()))

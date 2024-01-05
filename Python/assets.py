@@ -357,8 +357,8 @@ def generate(rm: ResourceManager):
         rm.block_model(('wood', 'clutch', '%s_powered' % wood), {
             'side': 'afc:block/wood/stripped_log/%s' % wood,
             'end': 'afc:block/wood/planks/%s' % wood,
-            'overlay': 'afc:block/axle_casing_powered',
-            'overlay_end': 'afc:block/axle_casing_front',
+            'overlay': 'tfc:block/axle_casing_powered',
+            'overlay_end': 'tfc:block/axle_casing_front',
             'particle': 'afc:block/wood/stripped_log/%s' % wood
         }, parent='tfc:block/ore_column')
         block.with_item_model()
@@ -422,8 +422,25 @@ def generate(rm: ResourceManager):
         # Twigs
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))
-
-        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
+        prefix = 'afc'
+        if wood == 'rainbow_eucalyptus':
+            wood_top = 'eucalyptus'
+        elif wood == 'black_oak':
+            wood_top = 'oak'
+            prefix = 'tfc'
+        elif wood == 'poplar':
+            wood_top = 'aspen'
+            prefix = 'tfc'
+        elif wood == 'redcedar':
+            wood_top = 'cypress'
+        elif wood == 'rubber_fig':
+            wood_top == 'fig'
+        elif wood == 'gum_arabic':
+            wood_top = 'acacia'
+            prefix = 'tfc'
+        else:
+            wood_top = wood
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         block.with_block_loot('afc:wood/twig/%s' % wood)
 

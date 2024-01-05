@@ -45,9 +45,6 @@ public class AFCHangingSignBlockEntityRenderer extends HangingSignRenderer
         final WoodType type = reg.get().type();
         final ResourceLocation woodName = new ResourceLocation(type.name());
         final ResourceLocation metalName = Helpers.identifier(metal.getSerializedName());
-        //TODO: Remove
-        AFC.LOGGER.debug("Searchable");
-        AFC.LOGGER.debug(type.name());
         return new AFCHangingSignBlockEntityRenderer.HangingSignModelData(
             new Material(Sheets.SIGN_SHEET, new ResourceLocation(woodName.getNamespace(), "entity/signs/hanging/" + metalName.getPath() + "/" + woodName.getPath())),
             new ResourceLocation(type.name() + ".png").withPrefix("textures/gui/hanging_signs/" + metalName.getPath() + "/")

@@ -45,7 +45,6 @@ public final class AFCCreativeModeTabs
 
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
-        //TODO: Misc items
         out.accept(AFCItems.RUBBER_BAR.get());
         out.accept(AFCItems.MAPLE_SUGAR.get());
         out.accept(AFCItems.BIRCH_SUGAR.get());
@@ -63,7 +62,6 @@ public final class AFCCreativeModeTabs
             accept(out, AFCItems.SUPPORTS, wood);
             accept(out, AFCItems.CHEST_MINECARTS, wood);
             accept(out, AFCItems.SIGNS, wood);
-            //TODO: Hanging signs
             for (Metal.Default metal : Metal.Default.values())
             {
                 accept(out, AFCItems.HANGING_SIGNS.get(wood), metal);

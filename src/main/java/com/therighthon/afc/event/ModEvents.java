@@ -55,7 +55,6 @@ public class ModEvents
         });
     }
 
-    //TODO: Resource load order
     //This is copied wholesale from FirmaLife
     //It is what allows the resources to load in the correct order, and needs to be rewritten for 1.20 unless things work out fo the box now.
     public static void onPackFinder(AddPackFindersEvent event)

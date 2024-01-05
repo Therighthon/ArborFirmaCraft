@@ -152,7 +152,6 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public enum BlockType {
         LEAVES((self, wood) -> {
-            //TODO: Remove jank
             return new TFCLeavesBlock(ExtendedProperties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).defaultInstrument().randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.autumnIndex(), wood.getBlock(self.fallenLeaves()), null) {};
         }, false),
         SAPLING((self, wood) -> new TFCSaplingBlock(wood.tree(),
