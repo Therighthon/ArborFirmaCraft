@@ -6,6 +6,7 @@ import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.commands.AFCCommands;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
@@ -20,8 +21,11 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
+import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -56,6 +60,10 @@ public class AFC
         AFCRecipes.register(eventBus);
         AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
+        if (ModList.get().isLoaded("firmalife"))
+        {
+            FLCompatBlocks.BLOCKS.register(eventBus);
+        }
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);

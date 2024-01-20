@@ -61,6 +61,12 @@ dependencies {
     // Only use Jade at runtime
     runtimeOnly(fg.deobf("curse.maven:jade-324717:${jade_version}"))
 
+    // FirmaLife
+    compileOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
+
+    // Only use FirmaLife at runtime
+    runtimeOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
+
 }
 
 processResources {
