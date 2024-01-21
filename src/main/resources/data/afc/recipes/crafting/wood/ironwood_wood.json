@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/log/ironwood"
+    }
+  },
+  "result": {
+    "item": "afc:wood/wood/ironwood",
+    "count": 3
+  }
+}

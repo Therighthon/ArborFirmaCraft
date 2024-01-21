@@ -107,12 +107,12 @@ def generate(rm: ResourceManager):
         block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90))).with_tag('food_shelves').with_item_tag('food_shelves')
         block.with_block_loot('afc:wood/food_shelf/%s' % wood).with_lang(lang('%s food shelf', wood)).with_tag('minecraft:mineable/axe')
         rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
-        rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'firmalife:block/wood/food_shelf/%s' % wood}})
+        rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
         rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
 
         block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood).with_tag('hangers').with_item_tag('hangers')
         block.with_block_loot('afc:wood/hanger/%s' % wood).with_lang(lang('%s hanger' % wood)).with_tag('minecraft:mineable/axe')
-        rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'firmalife:block/wood/hanger/%s' % wood}})
+        rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
         rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
         rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
 

@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "firmalife:block/hanger_base",
+  "textures": {
+    "wood": "afc:block/wood/planks/ipe",
+    "string": "minecraft:block/white_wool"
+  }
+}

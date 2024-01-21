@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -13.9,
+      "max_temperature": 4.3,
+      "min_rainfall": 100,
+      "max_rainfall": 220
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/white_cedar"
+      },
+      {
+        "block": "tfc:wood/fallen_leaves/white_cedar"
+      }
+    ],
+    "normal_tree": "tfc:tree/white_cedar",
+    "dead_tree": "tfc:tree/white_cedar_dead",
+    "fallen_log": "tfc:wood/log/white_cedar",
+    "bush_log": {
+      "Name": "tfc:wood/wood/white_cedar",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "tfc:wood/leaves/white_cedar",
+    "old_growth_tree": "tfc:tree/white_cedar_large"
+  }
+}

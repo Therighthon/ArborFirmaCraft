@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XYX",
+    "XYX"
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/log/ironwood"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/ironwood"
+    }
+  },
+  "result": {
+    "item": "afc:wood/planks/ironwood_log_fence",
+    "count": 8
+  }
+}

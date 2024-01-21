@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "YYY",
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/planks/eucalyptus"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/eucalyptus"
+    }
+  },
+  "result": {
+    "item": "afc:wood/food_shelf/eucalyptus"
+  }
+}

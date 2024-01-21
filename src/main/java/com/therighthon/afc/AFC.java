@@ -13,24 +13,21 @@ import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
+import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import net.minecraftforge.fml.loading.FMLEnvironment;
 
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -75,6 +72,10 @@ public class AFC
             for (AFCWood wood : AFCWood.VALUES)
             {
                 Sheets.addWoodType(wood.getVanillaWoodType());
+            }
+            if (ModList.get().isLoaded("firmalife"))
+            {
+                eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
             }
         }
 

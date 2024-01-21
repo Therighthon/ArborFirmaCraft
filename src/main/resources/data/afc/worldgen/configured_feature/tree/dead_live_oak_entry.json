@@ -1,0 +1,36 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 0.7,
+      "max_temperature": 13.4,
+      "min_rainfall": 390,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/oak"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/live_oak"
+      }
+    ],
+    "normal_tree": "tfc:tree/live_oak",
+    "dead_tree": "tfc:tree/live_oak_dead",
+    "old_growth_chance": 8,
+    "spoiler_old_growth_chance": 50,
+    "fallen_log": "tfc:wood/log/oak",
+    "bush_log": {
+      "Name": "tfc:wood/wood/oak",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/live_oak",
+    "old_growth_tree": "tfc:tree/live_oak_large",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

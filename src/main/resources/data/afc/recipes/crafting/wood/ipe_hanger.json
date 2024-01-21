@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    " Y ",
+    " Y "
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/planks/ipe"
+    },
+    "Y": {
+      "tag": "forge:string"
+    }
+  },
+  "result": {
+    "item": "afc:wood/hanger/ipe"
+  }
+}

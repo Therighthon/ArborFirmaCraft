@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 2.5,
+      "max_temperature": 8,
+      "min_rainfall": 370,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/spruce"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/sitka_spruce"
+      }
+    ],
+    "normal_tree": "tfc:tree/sitka_spruce",
+    "dead_tree": "tfc:tree/sitka_spruce_dead",
+    "fallen_log": "tfc:wood/log/spruce",
+    "bush_log": {
+      "Name": "tfc:wood/wood/spruce",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/sitka_spruce",
+    "old_growth_tree": "tfc:tree/sitka_spruce_large"
+  }
+}

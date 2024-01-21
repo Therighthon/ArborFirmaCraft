@@ -20,3 +20,6 @@ encased_axle
 gear_box
 sign
 jar_shelf
+jarbnet
+hanger
+food_shelf

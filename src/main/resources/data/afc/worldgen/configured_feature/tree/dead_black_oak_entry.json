@@ -1,0 +1,36 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 11.6,
+      "max_temperature": 20.7,
+      "min_rainfall": 150,
+      "max_rainfall": 330
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/black_oak"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/black_oak"
+      }
+    ],
+    "normal_tree": "tfc:tree/black_oak",
+    "dead_tree": "tfc:tree/black_oak_dead",
+    "old_growth_chance": 1,
+    "spoiler_old_growth_chance": 50,
+    "fallen_log": "afc:wood/log/black_oak",
+    "bush_log": {
+      "Name": "afc:wood/wood/black_oak",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/black_oak",
+    "old_growth_tree": "tfc:tree/black_oak_large",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

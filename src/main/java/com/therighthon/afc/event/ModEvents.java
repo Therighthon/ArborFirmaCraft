@@ -2,7 +2,6 @@ package com.therighthon.afc.event;
 
 //Copied pretty directly from EERussianguy's Beneath
 
-import java.awt.TextComponent;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.HashSet;
@@ -10,11 +9,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
-import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
-import javax.annotation.Nonnull;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.PackType;
 import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
@@ -27,13 +23,13 @@ import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.forgespi.locating.IModFile;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.resource.PathPackResources;
 import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Helpers;
 
 public class ModEvents
 {

@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -1.1,
+      "max_temperature": 15.3,
+      "min_rainfall": 360,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/cypress"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/bald_cypress"
+      }
+    ],
+    "normal_tree": "tfc:tree/bald_cypress",
+    "dead_tree": "tfc:tree/bald_cypress_dead",
+    "old_growth_chance": 2,
+    "fallen_log": "afc:wood/log/cypress",
+    "bush_log": {
+      "Name": "afc:wood/wood/cypress",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/bald_cypress",
+    "old_growth_tree": "tfc:tree/bald_cypress_large"
+  }
+}

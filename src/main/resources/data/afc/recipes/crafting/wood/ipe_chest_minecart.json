@@ -1,0 +1,15 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "afc:wood/chest/ipe"
+    },
+    {
+      "item": "minecraft:minecart"
+    }
+  ],
+  "result": {
+    "item": "afc:wood/chest_minecart/ipe"
+  }
+}

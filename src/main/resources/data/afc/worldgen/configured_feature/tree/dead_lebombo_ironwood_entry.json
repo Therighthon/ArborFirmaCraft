@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 20.7,
+      "max_temperature": 40,
+      "min_rainfall": 150,
+      "max_rainfall": 230
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/ironwood"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/lebombo_ironwood"
+      }
+    ],
+    "normal_tree": "tfc:tree/lebombo_ironwood",
+    "dead_tree": "tfc:tree/lebombo_ironwood_dead",
+    "fallen_log": "afc:wood/log/ironwood",
+    "bush_log": {
+      "Name": "afc:wood/wood/ironwood",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/lebombo_ironwood",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

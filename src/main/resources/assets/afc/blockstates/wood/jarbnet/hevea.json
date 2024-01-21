@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "facing=east,open=true": {
+      "model": "afc:block/wood/jarbnet/hevea_dynamic",
+      "y": 90
+    },
+    "facing=north,open=true": {
+      "model": "afc:block/wood/jarbnet/hevea_dynamic"
+    },
+    "facing=south,open=true": {
+      "model": "afc:block/wood/jarbnet/hevea_dynamic",
+      "y": 180
+    },
+    "facing=west,open=true": {
+      "model": "afc:block/wood/jarbnet/hevea_dynamic",
+      "y": 270
+    },
+    "facing=east,open=false": {
+      "model": "afc:block/wood/jarbnet/hevea_shut_dynamic",
+      "y": 90
+    },
+    "facing=north,open=false": {
+      "model": "afc:block/wood/jarbnet/hevea_shut_dynamic"
+    },
+    "facing=south,open=false": {
+      "model": "afc:block/wood/jarbnet/hevea_shut_dynamic",
+      "y": 180
+    },
+    "facing=west,open=false": {
+      "model": "afc:block/wood/jarbnet/hevea_shut_dynamic",
+      "y": 270
+    }
+  }
+}

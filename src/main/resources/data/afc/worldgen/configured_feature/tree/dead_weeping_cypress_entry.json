@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -8.4,
+      "max_temperature": 4.3,
+      "min_rainfall": 290,
+      "max_rainfall": 415
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/cypress"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/weeping_cypress"
+      }
+    ],
+    "normal_tree": "tfc:tree/weeping_cypress",
+    "dead_tree": "tfc:tree/weeping_cypress_dead",
+    "fallen_log": "afc:wood/log/cypress",
+    "bush_log": {
+      "Name": "afc:wood/wood/cypress",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/weeping_cypress",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

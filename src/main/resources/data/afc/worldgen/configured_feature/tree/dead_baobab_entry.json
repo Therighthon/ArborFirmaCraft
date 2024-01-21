@@ -1,0 +1,36 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 15.3,
+      "max_temperature": 26.2,
+      "min_rainfall": 30,
+      "max_rainfall": 190
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/baobab"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/baobab"
+      }
+    ],
+    "normal_tree": "tfc:tree/baobab",
+    "dead_tree": "tfc:tree/baobab_dead",
+    "old_growth_chance": 2,
+    "spoiler_old_growth_chance": 10,
+    "fallen_log": "afc:wood/log/baobab",
+    "bush_log": {
+      "Name": "afc:wood/wood/baobab",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/baobab",
+    "old_growth_tree": "tfc:tree/baobab_large",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

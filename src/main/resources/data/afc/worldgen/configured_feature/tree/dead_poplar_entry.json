@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -15.7,
+      "max_temperature": -6.6,
+      "min_rainfall": 170,
+      "max_rainfall": 310
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/aspen"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/poplar"
+      }
+    ],
+    "normal_tree": "tfc:tree/poplar",
+    "dead_tree": "tfc:tree/poplar_dead",
+    "fallen_log": "tfc:wood/log/aspen",
+    "bush_log": {
+      "Name": "tfc:wood/wood/aspen",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/poplar",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

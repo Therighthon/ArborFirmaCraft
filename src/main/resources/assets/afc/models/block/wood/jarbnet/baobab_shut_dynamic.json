@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "firmalife:jarbnet",
+  "base": {
+    "parent": "afc:block/wood/jarbnet/baobab_shut"
+  }
+}

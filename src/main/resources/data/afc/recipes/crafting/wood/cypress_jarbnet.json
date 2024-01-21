@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "X  ",
+    "ZYY",
+    "X  "
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/log/cypress"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/cypress"
+    },
+    "Z": {
+      "tag": "forge:rods/brass"
+    }
+  },
+  "result": {
+    "item": "afc:wood/jarbnet/cypress",
+    "count": 2
+  }
+}

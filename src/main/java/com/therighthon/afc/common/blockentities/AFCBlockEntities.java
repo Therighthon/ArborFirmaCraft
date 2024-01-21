@@ -2,6 +2,7 @@ package com.therighthon.afc.common.blockentities;
 
 import java.util.function.Supplier;
 import java.util.stream.Stream;
+import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import net.minecraft.world.level.block.Block;
@@ -12,12 +13,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import net.dries007.tfc.common.blockentities.TFCSignBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.AxleBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.BladedAxleBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.WaterWheelBlockEntity;
-import net.dries007.tfc.common.blockentities.rotation.WindmillBlockEntity;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
@@ -35,7 +30,6 @@ public class AFCBlockEntities
         AFCBlocks.CEILING_HANGING_SIGNS,
         AFCBlocks.WALL_HANGING_SIGNS
     ).flatMap(woodMap -> woodMap.values().stream().flatMap(metalMap -> metalMap.values().stream())));
-
 
     private static <T extends BlockEntity> RegistryObject<BlockEntityType<T>> register(String name, BlockEntityType.BlockEntitySupplier<T> factory, Stream<? extends Supplier<? extends Block>> blocks)
     {

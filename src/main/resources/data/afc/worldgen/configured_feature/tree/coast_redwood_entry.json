@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 4.3,
+      "max_temperature": 9.8,
+      "min_rainfall": 320,
+      "max_rainfall": 500
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/sequoia"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/coast_redwood"
+      }
+    ],
+    "normal_tree": "tfc:tree/coast_redwood",
+    "dead_tree": "tfc:tree/coast_redwood_dead",
+    "old_growth_chance": 3,
+    "fallen_log": "tfc:wood/log/sequoia",
+    "bush_log": {
+      "Name": "tfc:wood/wood/sequoia",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/coast_redwood",
+    "old_growth_tree": "tfc:tree/coast_redwood_large"
+  }
+}

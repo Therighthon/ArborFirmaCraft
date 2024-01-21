@@ -2,6 +2,10 @@ package com.therighthon.afc.event;
 
 import java.util.function.Predicate;
 import java.util.stream.Stream;
+import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
+import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
+import com.eerussianguy.firmalife.client.model.HangerBlockModel;
+import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
@@ -9,6 +13,7 @@ import com.therighthon.afc.client.render.colors.AFCSignBlockEntityRenderer;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.entities.AFCEntities;
 import net.minecraft.client.Minecraft;
@@ -21,7 +26,6 @@ import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
-import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraftforge.api.distmarker.Dist;
@@ -34,7 +38,6 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
-import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blocks.wood.Wood;
@@ -108,6 +111,23 @@ public class ModEventClientBusEvents
         });
 
         ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
+    }
+
+    public static void clientFLCompatSetup(FMLClientSetupEvent event)
+    {
+        // Render Types
+        final RenderType cutout = RenderType.cutout();
+
+        FLCompatBlocks.JARBNETS.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
+        FLCompatBlocks.FOOD_SHELVES.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
+        FLCompatBlocks.HANGERS.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
+
     }
 
     //Equiv to TFC's registerLayerDefinitions

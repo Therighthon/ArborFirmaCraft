@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "firmalife:hanger",
+  "base": {
+    "parent": "afc:block/wood/hanger/eucalyptus"
+  }
+}

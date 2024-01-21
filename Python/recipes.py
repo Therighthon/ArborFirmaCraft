@@ -144,6 +144,11 @@ def generate(rm: ResourceManager):
         rm.crafting_shaped('crafting/wood/%s_scribing_table' % wood, ['F B', 'XXX', 'Y Y'], {'F': '#forge:feathers', 'B': 'minecraft:black_dye', 'X': plank('slab'), 'Y': item('planks')}, item('scribing_table')).with_advancement(item('planks'))
         rm.crafting_shaped('crafting/wood/%s_wood' % wood, ['XX', 'XX'], {'X': item('log')}, (3, item('wood'))).with_advancement(item('log'))
         rm.crafting_shapeless('crafting/wood/%s_chest_minecart' % wood, (item('chest'), 'minecraft:minecart'), item('chest_minecart'))
+
+
+        rm.crafting_shaped('crafting/wood/%s_hanger' % wood, ['XXX', ' Y ', ' Y ', ], {'X': 'afc:wood/planks/%s' % wood, 'Y': '#forge:string'}, 'afc:wood/hanger/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
+        rm.crafting_shaped('crafting/wood/%s_shelf' % wood, ['XXX', 'YYY', 'XXX'], {'X': 'afc:wood/planks/%s' % wood, 'Y': 'afc:wood/lumber/%s' % wood}, 'afc:wood/food_shelf/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
+        rm.crafting_shaped('crafting/wood/%s_jarbnet' % wood, ['X  ', 'ZYY', 'X  '], {'X': 'afc:wood/log/%s' % wood, 'Y': 'afc:wood/lumber/%s' % wood, 'Z': '#forge:rods/brass'}, '2 afc:wood/jarbnet/%s' % wood).with_advancement('afc:wood/lumber/%s' % wood)
     #
     # for soil in SOIL_BLOCK_VARIANTS:
     #     craft_decorations('crafting/soil/%s_mud_bricks' % soil, 'tfc:mud_bricks/%s' % soil)

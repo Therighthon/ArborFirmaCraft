@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
@@ -18,6 +19,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -82,8 +84,18 @@ public final class AFCCreativeModeTabs
                 accept(out, reg);
             });
         }
+        if (ModList.get().isLoaded("firmalife"))
+        {
+            for (AFCWood wood : AFCWood.VALUES)
+            {
+                accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
+                accept(out, FLCompatBlocks.HANGERS, wood);
+                accept(out, FLCompatBlocks.JARBNETS, wood);
+            }
+        }
 
     }
+
 
     //Helpers from TFC
     private static <T extends ItemLike, R extends Supplier<T>, K1, K2> void accept(CreativeModeTab.Output out, Map<K1, Map<K2, R>> map, K1 key1, K2 key2)

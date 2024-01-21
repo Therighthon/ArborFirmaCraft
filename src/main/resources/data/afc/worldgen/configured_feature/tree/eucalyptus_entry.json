@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 8,
+      "max_temperature": 18.9,
+      "min_rainfall": 170,
+      "max_rainfall": 325
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/eucalyptus"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/eucalyptus"
+      }
+    ],
+    "normal_tree": "tfc:tree/eucalyptus",
+    "dead_tree": "tfc:tree/eucalyptus_dead",
+    "fallen_log": "afc:wood/log/eucalyptus",
+    "bush_log": {
+      "Name": "afc:wood/wood/eucalyptus",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/eucalyptus"
+  }
+}

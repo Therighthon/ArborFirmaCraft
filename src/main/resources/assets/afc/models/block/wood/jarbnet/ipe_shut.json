@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "firmalife:block/jarbnet_shut",
+  "textures": {
+    "planks": "afc:block/wood/planks/ipe",
+    "sheet": "afc:block/wood/sheet/ipe",
+    "log": "afc:block/wood/log/ipe"
+  }
+}

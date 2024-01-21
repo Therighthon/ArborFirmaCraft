@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -12.1,
+      "max_temperature": 6.1,
+      "min_rainfall": 320,
+      "max_rainfall": 390
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/spruce"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/coast_spruce"
+      }
+    ],
+    "normal_tree": "tfc:tree/coast_spruce",
+    "dead_tree": "tfc:tree/coast_spruce_dead",
+    "old_growth_chance": 1,
+    "fallen_log": "tfc:wood/log/spruce",
+    "bush_log": {
+      "Name": "tfc:wood/wood/spruce",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/coast_spruce"
+  }
+}
