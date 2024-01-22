@@ -60,6 +60,7 @@ public class AFC
         if (ModList.get().isLoaded("firmalife"))
         {
             FLCompatBlocks.BLOCKS.register(eventBus);
+            ModEvents.initFLCompat();
         }
         if (FMLEnvironment.dist == Dist.CLIENT)
         {

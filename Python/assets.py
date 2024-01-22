@@ -103,30 +103,30 @@ def generate(rm: ResourceManager):
         rm.item_tag('minecraft:signs', 'afc:wood/sign/' + wood)
         rm.item_tag('afc:minecarts', 'afc:wood/chest_minecart/' + wood)
 
-
-        block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90))).with_tag('food_shelves').with_item_tag('food_shelves')
-        block.with_block_loot('afc:wood/food_shelf/%s' % wood).with_lang(lang('%s food shelf', wood)).with_tag('minecraft:mineable/axe')
-        rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
-        rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
-        rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
-
-        block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood).with_tag('hangers').with_item_tag('hangers')
-        block.with_block_loot('afc:wood/hanger/%s' % wood).with_lang(lang('%s hanger' % wood)).with_tag('minecraft:mineable/axe')
-        rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
-        rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
-        rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
-
-        block = rm.blockstate('afc:wood/jarbnet/%s' % wood, variants={
-            **four_rotations('afc:block/wood/jarbnet/%s_dynamic' % wood, (90, None, 180, 270), suffix=',open=true'),
-            **four_rotations('afc:block/wood/jarbnet/%s_shut_dynamic' % wood, (90, None, 180, 270), suffix=',open=false'),
-        })
-        block.with_block_loot('afc:wood/jarbnet/%s' % wood).with_lang(lang('%s jarbnet', wood)).with_tag('minecraft:mineable/axe').with_tag('jarbnets').with_item_tag('jarbnets')
-        rm.item_model('afc:wood/jarbnet/%s' % wood, parent='afc:block/wood/jarbnet/%s' % wood, no_textures=True)
-        textures = {'planks': 'afc:block/wood/planks/%s' % wood, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'log': 'afc:block/wood/log/%s' % wood}
-        rm.block_model('afc:wood/jarbnet/%s' % wood, parent='firmalife:block/jarbnet', textures=textures)
-        rm.block_model('afc:wood/jarbnet/%s_shut' % wood, parent='firmalife:block/jarbnet_shut', textures=textures)
-        rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
-        rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
+        # Commented out because they will generate into the wrong directories, needs to be rewritten to write to the override pack
+        # block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90))).with_tag('food_shelves').with_item_tag('food_shelves')
+        # block.with_block_loot('afc:wood/food_shelf/%s' % wood).with_lang(lang('%s food shelf', wood)).with_tag('minecraft:mineable/axe')
+        # rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
+        # rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
+        # rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
+        #
+        # block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood).with_tag('hangers').with_item_tag('hangers')
+        # block.with_block_loot('afc:wood/hanger/%s' % wood).with_lang(lang('%s hanger' % wood)).with_tag('minecraft:mineable/axe')
+        # rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
+        # rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
+        # rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
+        #
+        # block = rm.blockstate('afc:wood/jarbnet/%s' % wood, variants={
+        #     **four_rotations('afc:block/wood/jarbnet/%s_dynamic' % wood, (90, None, 180, 270), suffix=',open=true'),
+        #     **four_rotations('afc:block/wood/jarbnet/%s_shut_dynamic' % wood, (90, None, 180, 270), suffix=',open=false'),
+        # })
+        # block.with_block_loot('afc:wood/jarbnet/%s' % wood).with_lang(lang('%s jarbnet', wood)).with_tag('minecraft:mineable/axe').with_tag('jarbnets').with_item_tag('jarbnets')
+        # rm.item_model('afc:wood/jarbnet/%s' % wood, parent='afc:block/wood/jarbnet/%s' % wood, no_textures=True)
+        # textures = {'planks': 'afc:block/wood/planks/%s' % wood, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'log': 'afc:block/wood/log/%s' % wood}
+        # rm.block_model('afc:wood/jarbnet/%s' % wood, parent='firmalife:block/jarbnet', textures=textures)
+        # rm.block_model('afc:wood/jarbnet/%s_shut' % wood, parent='firmalife:block/jarbnet_shut', textures=textures)
+        # rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
+        # rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
 
 
         # Groundcover

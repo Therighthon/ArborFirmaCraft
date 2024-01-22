@@ -41,12 +41,19 @@ public class ModEvents
         bus.addListener(ModEvents::onPackFinder);
     }
 
+    public static void initFLCompat()
+    {
+        final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        bus.addListener(ModEvents::onFLCompatPackFinder);
+        bus.addListener(ModEvents::onFLCompatDataPackFinder);
+
+    }
+
     private static void setup(FMLCommonSetupEvent event)
     {
         event.enqueueWork(() -> {
             AFCBlocks.registerFlowerPotFlowers();
-            //AFCWood.registerBlockSetTypes();
-
             modifyBlockEntityTypes();
         });
     }
@@ -82,7 +89,58 @@ public class ModEvents
                         );
                     }
                 }
+            }
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
 
+    public static void onFLCompatPackFinder(AddPackFindersEvent event)
+    {
+        try
+        {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES)
+            {
+                final Path resourcePath = ModList.get().getModFileById(AFC.MOD_ID).getFile().findResource("firmalife_compat_assets");
+                try (PathPackResources pack = new PathPackResources("firmalife_compat_assets", true, resourcePath))
+                {
+                    final PackMetadataSection metadata = pack.getMetadataSection(PackMetadataSection.TYPE);
+                    if (metadata != null)
+                    {
+                        AFC.LOGGER.info("Adding FirmaLife compatibility resource pack");
+                        event.addRepositorySource(consumer ->
+                            consumer.accept(Pack.readMetaAndCreate("firmalife_compat_assets", Component.literal("FirmaLife Compat Resources"), true, id -> pack, PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN))
+                        );
+                    }
+                }
+            }
+        }
+        catch (IOException e)
+        {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void onFLCompatDataPackFinder(AddPackFindersEvent event)
+    {
+        try
+        {
+            if (event.getPackType() == PackType.SERVER_DATA)
+            {
+                final Path resourcePath = ModList.get().getModFileById(AFC.MOD_ID).getFile().findResource("firmalife_compat_data");
+                try (PathPackResources pack = new PathPackResources("firmalife_compat_data", true, resourcePath))
+                {
+                    final PackMetadataSection metadata = pack.getMetadataSection(PackMetadataSection.TYPE);
+                    if (metadata != null)
+                    {
+                        AFC.LOGGER.info("Adding FirmaLife compatibility data pack");
+                        event.addRepositorySource(consumer ->
+                            consumer.accept(Pack.readMetaAndCreate("firmalife_compat_data", Component.literal("FirmaLife Compat Data"), true, id -> pack, PackType.SERVER_DATA, Pack.Position.TOP, PackSource.BUILT_IN))
+                        );
+                    }
+                }
             }
         }
         catch (IOException e)
