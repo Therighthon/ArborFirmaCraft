@@ -3,7 +3,6 @@ package com.therighthon.afc.common.recipe;
 import com.google.gson.JsonObject;
 import com.therighthon.afc.AFC;
 import javax.annotation.Nullable;
-import net.minecraft.core.NonNullList;
 import net.minecraft.core.RegistryAccess;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
@@ -14,12 +13,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fluids.FluidStack;
-import org.antlr.runtime.tree.Tree;
 
 import net.dries007.tfc.common.recipes.ISimpleRecipe;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
+import net.dries007.tfc.common.recipes.outputs.ItemStackProvider;
 import net.dries007.tfc.util.JsonHelpers;
-import net.dries007.tfc.util.calendar.Month;
 import net.dries007.tfc.util.collections.IndirectHashCollection;
 
 public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
@@ -106,9 +104,9 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
     }
 
     @Override
-    public ItemStack getResultItem(RegistryAccess pRegistryAccess)
+    public ItemStack getResultItem(RegistryAccess registryAccess)
     {
-        return null;
+        return ItemStack.EMPTY;
     }
 
     @Override
