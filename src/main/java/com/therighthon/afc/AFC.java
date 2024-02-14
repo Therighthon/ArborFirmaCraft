@@ -13,7 +13,6 @@ import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
-import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
