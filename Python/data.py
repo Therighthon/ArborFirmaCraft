@@ -100,8 +100,14 @@ def generate(rm: ResourceManager):
         block_and_item_tag(rm, 'forge:chests/wooden', item('chest'), item('trapped_chest'))
         block_and_item_tag(rm, 'forge:fence_gates/wooden', plank('fence_gate'))
         block_and_item_tag(rm, 'forge:stripped_logs', item('stripped_log'), item('stripped_wood'))
-
-        block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'))
+        if wood in 'cypress':
+            block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'), '#afc:redcedar_logs')
+        elif wood in 'eucalyptus':
+            block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'), '#afc:rainbow_eucalyptus_logs')
+        elif wood in 'fig':
+            block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'), '#afc:rubber_fig_logs')
+        else:
+            block_and_item_tag(rm, '%s_logs' % wood, item('log'), item('wood'), item('stripped_log'), item('stripped_wood'), ancient('log'), ancient('wood'))
 
         rm.block_tag('lit_by_dropped_torch', item('fallen_leaves'))
         rm.block_tag('converts_to_humus', item('fallen_leaves'))

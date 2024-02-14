@@ -108,6 +108,12 @@ def generate(rm: ResourceManager):
     #
     # rm.crafting_shapeless('crafting/wood/stick_from_twigs', ('#tfc:twigs', ), 'minecraft:stick').with_advancement('#tfc:twigs')
 
+    for wood in UNIQUE_LOGS.keys():
+        def item(thing: str):
+            return 'afc:wood/%s/%s' % (thing, wood)
+
+        rm.crafting_shaped('crafting/wood/%s_wood' % wood, ['XX', 'XX'], {'X': item('log')}, (3, item('wood'))).with_advancement(item('log'))
+
     for wood in WOODS.keys():
         def item(thing: str):
             return 'afc:wood/%s/%s' % (thing, wood)

@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XX",
+    "XX"
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/log/poplar"
+    }
+  },
+  "result": {
+    "item": "afc:wood/wood/poplar",
+    "count": 3
+  }
+}
