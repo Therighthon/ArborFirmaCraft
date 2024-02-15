@@ -110,6 +110,11 @@ public class ModEventClientBusEvents
             });
         });
 
+        for (AFCWood wood : AFCWood.VALUES)
+        {
+            Sheets.addWoodType(wood.getVanillaWoodType());
+        }
+
         ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
     }
 

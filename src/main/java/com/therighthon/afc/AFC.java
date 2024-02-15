@@ -69,10 +69,7 @@ public class AFC
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
-            for (AFCWood wood : AFCWood.VALUES)
-            {
-                Sheets.addWoodType(wood.getVanillaWoodType());
-            }
+
             if (ModList.get().isLoaded("firmalife"))
             {
                 eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
