@@ -3,7 +3,6 @@ package com.therighthon.afc.common.fluids;
 import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
-import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.items.AFCItems;
@@ -18,14 +17,11 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.fluids.ExtendedFluidType;
-import net.dries007.tfc.common.fluids.FluidId;
 import net.dries007.tfc.common.fluids.FluidRegistryObject;
 import net.dries007.tfc.common.fluids.FluidTypeClientProperties;
 import net.dries007.tfc.common.fluids.MixingFluid;
 import net.dries007.tfc.common.fluids.TFCFluids;
-import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
