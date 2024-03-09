@@ -1,6 +1,5 @@
 package com.therighthon.afc.common.blockentities;
 
-import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.TapBlock;
 import com.therighthon.afc.common.recipe.TreeTapRecipe;
@@ -36,7 +35,7 @@ public class TapBlockEntity extends BlockEntity
         super(AFCBlockEntities.TAP_BLOCK_ENTITY.get(), pPos, pBlockState);
     }
 
-    public static void tick(Level level, BlockPos pos, BlockState state, TapBlockEntity tap) {
+    public static void serverTick(Level level, BlockPos pos, BlockState state, TapBlockEntity tap) {
         final Direction facing = state.getValue(TapBlock.FACING);
         tap.tickPouring(level, pos, facing);
     }
@@ -117,20 +116,14 @@ public class TapBlockEntity extends BlockEntity
             final BlockEntity blockEntity = level.getBlockEntity(pourPos);
 
             //Get the position of the log block
-            BlockPos logPos;
-            switch(facing)
-            {
-                case NORTH: logPos = pos.south();
-                    break;
-                case SOUTH: logPos = pos.north();
-                    break;
-                case EAST: logPos = pos.west();
-                    break;
-                case WEST: logPos = pos.east();
-                    break;
-                default:
-                    throw new IllegalStateException("Unexpected value: " + facing);
-            }
+            BlockPos logPos = switch (facing)
+                {
+                    case NORTH -> pos.south();
+                    case SOUTH -> pos.north();
+                    case EAST -> pos.west();
+                    case WEST -> pos.east();
+                    default -> throw new IllegalStateException("Unexpected value: " + facing);
+                };
 
             //Check for a valid recipe for said log block before worrying about blockentities and nonsense
             BlockState logState = level.getBlockState(logPos);

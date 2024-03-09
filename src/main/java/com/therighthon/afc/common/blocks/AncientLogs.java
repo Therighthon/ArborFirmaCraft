@@ -104,11 +104,13 @@ public enum AncientLogs implements RegistryAncientLogs
         return barkColor;
     }
 
+    @Nullable
     public AFCWood AFCWoodType()
     {
         return AFCWoodType;
     }
 
+    @Nullable
     public Wood TFCWoodType()
     {
         return TFCWoodType;
@@ -156,7 +158,6 @@ public enum AncientLogs implements RegistryAncientLogs
             return () -> (Block)this.blockFactory.apply(this, ancient_log);
         }
 
-        @Nullable
         public Function<Block, BlockItem> createBlockItem(net.minecraft.world.item.Item.Properties properties) {
             return (block) -> (BlockItem)this.blockItemFactory.apply(block, properties);
         }

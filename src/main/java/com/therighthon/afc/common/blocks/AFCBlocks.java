@@ -7,12 +7,12 @@ import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
+import com.therighthon.afc.common.blockentities.TapBlockEntity;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
@@ -32,34 +32,23 @@ import net.minecraftforge.common.SoundActions;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fluids.FluidType;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
-import net.minecraftforge.fml.ModList;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.TFCCeilingHangingSignBlock;
 import net.dries007.tfc.common.blocks.wood.TFCStandingSignBlock;
 import net.dries007.tfc.common.blocks.wood.TFCWallHangingSignBlock;
 import net.dries007.tfc.common.blocks.wood.TFCWallSignBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.fluids.ExtendedFluidType;
-import net.dries007.tfc.common.fluids.FluidId;
 import net.dries007.tfc.common.fluids.FluidRegistryObject;
 import net.dries007.tfc.common.fluids.FluidTypeClientProperties;
-import net.dries007.tfc.common.fluids.MixingFluid;
-import net.dries007.tfc.common.fluids.SimpleFluid;
-import net.dries007.tfc.common.fluids.TFCFluids;
-import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
-import net.dries007.tfc.util.registry.RegistryWood;
-
-import static net.dries007.tfc.TerraFirmaCraft.*;
 
 public class AFCBlocks
 {
@@ -125,12 +114,6 @@ public class AFCBlocks
         return blockType.create(wood);
     }
 
-    private static <T extends Block> RegistryObject<T> register(String name, Supplier<T> blockSupplier, CreativeModeTab group) {
-        return register(name, blockSupplier, (block) -> {
-            return new BlockItem(block, (new Item.Properties()));
-        });
-    }
-
     public static void registerFlowerPotFlowers()
     {
         FlowerPotBlock pot = (FlowerPotBlock) Blocks.FLOWER_POT;
@@ -140,7 +123,7 @@ public class AFCBlocks
 
     public static final RegistryObject<Block> TREE_TAP = register("tree_tap",
         () -> new TapBlock(
-            BlockBehaviour.Properties.copy(Blocks.BRAIN_CORAL_FAN).noOcclusion()
+            ExtendedProperties.of(Blocks.BRAIN_CORAL_FAN).noOcclusion().blockEntity(AFCBlockEntities.TAP_BLOCK_ENTITY).serverTicks(TapBlockEntity::serverTick)
         ));
 
     public static final Map<SimpleAFCFluid, RegistryObject<LiquidBlock>> SIMPLE_AFC_FLUIDS = Helpers.mapOfKeys(SimpleAFCFluid.class, fluid ->

@@ -58,9 +58,9 @@ public class AFCItems
     );
 
     //Normal items
-    public static final RegistryObject<Item> RUBBER_BAR = register("rubber_bar", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> MAPLE_SUGAR = register("maple_sugar", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> BIRCH_SUGAR = register("birch_sugar", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> RUBBER_BAR = register("rubber_bar");
+    public static final RegistryObject<Item> MAPLE_SUGAR = register("maple_sugar");
+    public static final RegistryObject<Item> BIRCH_SUGAR = register("birch_sugar");
 
     private static RegistryObject<Item> register(String name)
     {

@@ -4,6 +4,7 @@ import java.util.function.Supplier;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.blocks.wood.Wood;
 
@@ -13,8 +14,10 @@ public interface RegistryAncientLogs extends StringRepresentable
 
     MapColor barkColor();
 
+    @Nullable
     AFCWood AFCWoodType();
 
+    @Nullable
     Wood TFCWoodType();
 
     boolean isAFCWoodType();

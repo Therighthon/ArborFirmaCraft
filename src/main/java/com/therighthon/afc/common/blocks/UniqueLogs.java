@@ -73,11 +73,13 @@ public enum UniqueLogs implements RegistryUniqueLogs
         return barkColor;
     }
 
+    @Nullable
     public AFCWood AFCWoodType()
     {
         return AFCWoodType;
     }
 
+    @Nullable
     public Wood TFCWoodType()
     {
         return TFCWoodType;

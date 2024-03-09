@@ -12,10 +12,8 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.entities.misc.TFCBoat;
 import net.dries007.tfc.common.entities.misc.TFCChestBoat;
-import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Helpers;
 
 public class AFCEntities
