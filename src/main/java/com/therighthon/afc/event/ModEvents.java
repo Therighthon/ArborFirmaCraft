@@ -23,26 +23,15 @@ public class ModEvents
 {
     public static void init()
     {
-        final IEventBus bus = NeoForge.EVENT_BUS;
-
-        bus.addListener(ModEvents::setup);
-        bus.addListener(ModEvents::onPackFinder);
+        //TODO: Probably get rid of most of this file/move to AFC?
     }
 
     public static void initFLCompat()
     {
-        final IEventBus bus = NeoForge.EVENT_BUS;
+//        final IEventBus bus = NeoForge.EVENT_BUS;
 //TODO: Firmalife
 //        bus.addListener(ModEvents::onFLCompatPackFinder);
 //        bus.addListener(ModEvents::onFLCompatDataPackFinder);
-    }
-
-    private static void setup(FMLCommonSetupEvent event)
-    {
-        event.enqueueWork(() -> {
-            AFCBlocks.registerFlowerPotFlowers();
-            modifyBlockEntityTypes();
-        });
     }
 
     //This is copied wholesale from FirmaLife
@@ -139,33 +128,7 @@ public class ModEvents
 //    }
 
 
-    private static void modifyBlockEntityTypes()
-    {
-        modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
-        modifyWood(TFCBlockEntities.TRAPPED_CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
-        modifyWood(TFCBlockEntities.LOOM.get(), Wood.BlockType.LOOM);
-        modifyWood(TFCBlockEntities.BARREL.get(), Wood.BlockType.BARREL);
-        modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
-        modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
-        modifyWood(TFCBlockEntities.TOOL_RACK.get(), Wood.BlockType.TOOL_RACK);
-        modifyWood(TFCBlockEntities.LECTERN.get(), Wood.BlockType.LECTERN);
-        modifyWood(TFCBlockEntities.AXLE.get(), Wood.BlockType.AXLE);
-        modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
-        modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
-        modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
-    }
 
-    private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
-    {
-        modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(blockType).get()));
-    }
 
-    private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks)
-    {
-        Set<Block> blocks = ((BlockEntityTypeAccessor) (Object) type).accessor$getValidBlocks();
-        blocks = new HashSet<>(blocks);
 
-        blocks.addAll(extraBlocks.collect(Collectors.toList())); //Autocompleted, could cause problems?
-        ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
-    }
 }

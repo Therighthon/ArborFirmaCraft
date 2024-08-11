@@ -1,5 +1,9 @@
 package com.therighthon.afc;
 
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.AFCFeatures;
@@ -13,6 +17,9 @@ import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
 
+import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
@@ -20,8 +27,12 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
+
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.wood.Wood;
 
 @Mod(AFC.MOD_ID)
 public final class AFC
@@ -35,26 +46,28 @@ public final class AFC
     {
         // Register the setup method for modloading
 
-        eventBus.addListener(this::setup);
-        ModEvents.init();
+//        eventBus.addListener(this::setup);
+//        ModEvents.init();
 
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
         //TODO: Fluids
 //        AFCFluids.FLUIDS.register(eventBus);
         AFCCommands.ARGUMENT_TYPES.register(eventBus);
-        AFCEntities.ENTITIES.register(eventBus);
+        //TODO: Boats
+//        AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
         //TODO: Tree taps
 //        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
 //        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
 //        TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
-        AFCRecipes.register(eventBus);
-        AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
+//        AFCRecipes.register(eventBus);
+//        AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
         if (ModList.get().isLoaded("firmalife"))
         {
-            FLCompatBlocks.BLOCKS.register(eventBus);
+            //TODO: FirmaLife
+//            FLCompatBlocks.BLOCKS.register(eventBus);
             ModEvents.initFLCompat();
         }
         if (FMLEnvironment.dist == Dist.CLIENT)
@@ -68,15 +81,17 @@ public final class AFC
 
             if (ModList.get().isLoaded("firmalife"))
             {
-                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
+                //TODO: FirmaLife
+//                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
             }
         }
 
         //TODO: Whatever replaces this
-//        final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-//        forgeBus.addListener(AFC::registerCommands);
+        final IEventBus forgeBus = NeoForge.EVENT_BUS;
+        forgeBus.addListener(AFC::registerCommands);
 
-        // Register ourselves for server and other game events we are interested in
+        //TODO: Maybe re-enable, maybe was causing failure to start
+//         Register ourselves for server and other game events we are interested in
 //        forgeBus.register(this);
     }
 
@@ -84,6 +99,10 @@ public final class AFC
     {
         LOGGER.info("AFC COMMON SETUP");
         event.enqueueWork(AFCWood::registerBlockSetTypes);
+        event.enqueueWork(() -> {
+            AFCBlocks.registerFlowerPotFlowers();
+            modifyBlockEntityTypes();
+        });
     }
 
     //TODO: Maybe need this?
@@ -96,6 +115,36 @@ public final class AFC
     {
         LOGGER.debug("Registering AFC Commands");
         AFCCommands.registerCommands(event.getDispatcher(), event.getBuildContext());
+    }
+
+    private static void modifyBlockEntityTypes()
+    {
+        modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
+        modifyWood(TFCBlockEntities.TRAPPED_CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
+        modifyWood(TFCBlockEntities.LOOM.get(), Wood.BlockType.LOOM);
+        modifyWood(TFCBlockEntities.BARREL.get(), Wood.BlockType.BARREL);
+        modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
+        modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
+        modifyWood(TFCBlockEntities.TOOL_RACK.get(), Wood.BlockType.TOOL_RACK);
+        modifyWood(TFCBlockEntities.LECTERN.get(), Wood.BlockType.LECTERN);
+        modifyWood(TFCBlockEntities.AXLE.get(), Wood.BlockType.AXLE);
+        modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
+        modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
+        modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
+    }
+
+    private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
+    {
+        modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(blockType).get()));
+    }
+
+    private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks)
+    {
+        Set<Block> blocks = ((BlockEntityTypeAccessor) (Object) type).accessor$getValidBlocks();
+        blocks = new HashSet<>(blocks);
+
+        blocks.addAll(extraBlocks.collect(Collectors.toList())); //Autocompleted, could cause problems?
+        ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
     }
 
 }
