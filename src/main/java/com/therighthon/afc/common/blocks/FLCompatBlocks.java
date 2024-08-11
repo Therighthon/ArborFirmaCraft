@@ -1,6 +1,5 @@
 package com.therighthon.afc.common.blocks;
 
-import java.util.Map;
 //import com.eerussianguy.firmalife.common.blockentities.BarrelPressBlockEntity;
 //import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
 //import com.eerussianguy.firmalife.common.blocks.BarrelPressBlock;
@@ -14,13 +13,7 @@ import java.util.Map;
 import com.therighthon.afc.AFC;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.material.PushReaction;
-import net.neoforged.neoforge.registries.DeferredRegister;
-
-import net.dries007.tfc.common.blocks.ExtendedProperties;
-import net.dries007.tfc.common.blocks.TFCBlocks;
-import net.dries007.tfc.util.Helpers;
+    import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class FLCompatBlocks
 {

@@ -1,22 +1,9 @@
 package com.therighthon.afc.common.fluids;
 
-import java.util.Map;
-import java.util.function.Consumer;
-import java.util.function.Function;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.blocks.AFCBlocks;
-import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import net.dries007.tfc.common.fluids.MixingFluid;
-import net.dries007.tfc.common.fluids.TFCFluids;
-import net.dries007.tfc.util.Helpers;
-import net.dries007.tfc.util.registry.RegistrationHelpers;
 
 public final class AFCFluids
 {

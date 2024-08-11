@@ -1,27 +1,9 @@
 package com.therighthon.afc.common.recipe;
 
-import java.util.Optional;
-import java.util.function.BiFunction;
-import com.google.gson.JsonObject;
-import com.therighthon.afc.AFC;
-import javax.annotation.Nullable;
-import net.minecraft.core.RegistryAccess;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.fluids.FluidStack;
 
-import net.dries007.tfc.common.recipes.BlockRecipe;
-import net.dries007.tfc.common.recipes.ISimpleRecipe;
-import net.dries007.tfc.common.recipes.RecipeSerializerImpl;
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
-import net.dries007.tfc.common.recipes.outputs.ItemStackProvider;
-import net.dries007.tfc.util.collections.IndirectHashCollection;
 
 //TODO: Tree taps
 public class TreeTapRecipe // implements ISimpleRecipe<TapInventory>

@@ -11,7 +11,6 @@ import com.mojang.serialization.Codec;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import net.dries007.tfc.world.feature.TFCFeatures;
 import net.dries007.tfc.world.feature.tree.*;
 
 public class AFCFeatures

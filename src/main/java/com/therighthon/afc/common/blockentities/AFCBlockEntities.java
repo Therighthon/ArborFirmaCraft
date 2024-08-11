@@ -1,21 +1,8 @@
 package com.therighthon.afc.common.blockentities;
 
-import java.util.function.Supplier;
-import java.util.stream.Stream;
 //import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
-import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.blocks.AFCBlocks;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.neoforged.bus.api.IEventBus;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.util.registry.RegistrationHelpers;
 
 public class AFCBlockEntities
 {

@@ -1,19 +1,9 @@
 package com.therighthon.afc.common.entities;
 
-import java.util.Locale;
-import java.util.Map;
 import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.blocks.AFCWood;
-import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.neoforged.neoforge.registries.DeferredRegister;
-
-import net.dries007.tfc.common.entities.TFCEntities;
-import net.dries007.tfc.common.entities.misc.TFCBoat;
-import net.dries007.tfc.common.entities.misc.TFCChestBoat;
-import net.dries007.tfc.util.Helpers;
 
 public class AFCEntities
 {

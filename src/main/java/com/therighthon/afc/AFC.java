@@ -3,19 +3,15 @@ package com.therighthon.afc;
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.AFCFeatures;
-import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.commands.AFCCommands;
 import com.therighthon.afc.common.entities.AFCEntities;
-import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
-import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
-import net.minecraft.resources.ResourceLocation;
 
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
@@ -27,13 +23,11 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 
-import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
-
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod(AFC.MOD_ID)
-public class AFC
+public final class AFC
 {
     public static final String MOD_ID = "afc";
+    public static final String MOD_NAME = "ArborFirmaCraft";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 

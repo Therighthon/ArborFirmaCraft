@@ -1,33 +1,8 @@
 package com.therighthon.afc.client.render;
 
-import java.util.Map;
-import java.util.Objects;
-import java.util.function.Supplier;
-import java.util.stream.Stream;
-import com.google.common.collect.ImmutableMap;
-import com.mojang.blaze3d.vertex.PoseStack;
-import com.mojang.blaze3d.vertex.VertexConsumer;
-import com.therighthon.afc.AFC;
-import com.therighthon.afc.client.render.colors.AFCSignBlockEntityRenderer;
-import com.therighthon.afc.common.blocks.AFCBlocks;
-import net.minecraft.client.model.Model;
-import net.minecraft.client.model.geom.ModelLayerLocation;
-import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.HangingSignRenderer;
-import net.minecraft.client.resources.model.Material;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SignBlock;
-import net.minecraft.world.level.block.entity.SignBlockEntity;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.WoodType;
-import org.jetbrains.annotations.Nullable;
 
-import net.dries007.tfc.TerraFirmaCraft;
-import net.dries007.tfc.mixin.client.accessor.SignRendererAccessor;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 
 public class AFCHangingSignBlockEntityRenderer extends HangingSignRenderer

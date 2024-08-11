@@ -3,7 +3,6 @@ package com.therighthon.afc.common.blocks;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.function.Supplier;
-import com.therighthon.afc.AFC;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;

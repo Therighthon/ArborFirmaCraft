@@ -3,7 +3,6 @@ package com.therighthon.afc.common.commands;
 import java.util.function.Supplier;
 import com.google.common.base.Suppliers;
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.suggestion.SuggestionProvider;
 import com.therighthon.afc.AFC;
 import net.minecraft.commands.CommandBuildContext;
@@ -13,7 +12,6 @@ import net.minecraft.commands.SharedSuggestionProvider;
 import net.minecraft.commands.synchronization.ArgumentTypeInfo;
 import net.minecraft.commands.synchronization.SuggestionProviders;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.resources.ResourceLocation;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 import net.dries007.tfc.util.Helpers;

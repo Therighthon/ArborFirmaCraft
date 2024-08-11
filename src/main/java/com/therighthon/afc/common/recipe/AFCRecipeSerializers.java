@@ -1,19 +1,5 @@
 package com.therighthon.afc.common.recipe;
 
-import java.util.function.Supplier;
-import com.mojang.serialization.MapCodec;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.RegistryFriendlyByteBuf;
-import net.minecraft.network.codec.StreamCodec;
-import net.minecraft.world.item.crafting.Recipe;
-import net.minecraft.world.item.crafting.RecipeSerializer;
-import net.neoforged.neoforge.registries.DeferredRegister;
-
-
-import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
-
-import static com.therighthon.afc.AFC.MOD_ID;
-
 public class AFCRecipeSerializers
 {
     //TODO: Tree taps

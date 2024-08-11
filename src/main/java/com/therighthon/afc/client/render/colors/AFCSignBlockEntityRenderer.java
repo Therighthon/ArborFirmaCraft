@@ -1,17 +1,7 @@
 package com.therighthon.afc.client.render.colors;
 
-import java.util.Map;
-import java.util.stream.Stream;
-import com.google.common.collect.ImmutableMap;
-import com.therighthon.afc.AFC;
-import com.therighthon.afc.common.blocks.AFCBlocks;
-import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.block.state.properties.WoodType;
-
-import net.dries007.tfc.client.render.blockentity.TFCSignBlockEntityRenderer;
 
 public class AFCSignBlockEntityRenderer extends SignRenderer
 {

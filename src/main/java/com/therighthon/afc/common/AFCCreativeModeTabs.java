@@ -1,20 +1,16 @@
 package com.therighthon.afc.common;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
-import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
@@ -23,15 +19,13 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.common.TFCCreativeTabs;
 
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.SelfTests;
 
 public final class AFCCreativeModeTabs
 {
-    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, com.therighthon.afc.AFC.MOD_ID);
+    public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AFC.MOD_ID);
 
     public static final TFCCreativeTabs.Id AFC_TAB = register("arborfirmacraft", () -> new ItemStack(AFCBlocks.TREE_SPECIES.get(TreeSpecies.TAMARACK).get(TreeSpecies.BlockType.SAPLING).get()), AFCCreativeModeTabs::fillTab);
 

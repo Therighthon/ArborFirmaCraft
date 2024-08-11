@@ -5,9 +5,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import net.neoforged.neoforge.registries.NeoForgeRegistries;
-
-import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
 public class AFCRecipes
 {
