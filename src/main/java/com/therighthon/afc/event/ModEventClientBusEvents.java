@@ -2,10 +2,11 @@ package com.therighthon.afc.event;
 
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
-import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
-import com.eerussianguy.firmalife.client.model.HangerBlockModel;
-import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
+//TODO: FirmaLife
+//import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
+//import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
+//import com.eerussianguy.firmalife.client.model.HangerBlockModel;
+//import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
@@ -28,12 +29,12 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
 import net.minecraft.client.renderer.blockentity.SignRenderer;
 import net.minecraft.client.renderer.item.ItemProperties;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.event.EntityRenderersEvent;
-import net.minecraftforge.client.event.RegisterClientReloadListenersEvent;
-import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
+import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
+
 
 import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.TFCColors;
@@ -45,7 +46,8 @@ import net.dries007.tfc.util.Helpers;
 
 import static net.dries007.tfc.common.blocks.wood.Wood.BlockType.*;
 
-@Mod.EventBusSubscriber(modid = AFC.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+//TODO: Probably important and I can't just comment it out to fix it
+//@Mod.EventBusSubscriber(modid = AFC.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEventClientBusEvents
 {
     public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
@@ -101,7 +103,8 @@ public class ModEventClientBusEvents
         });
 
         event.enqueueWork(() -> {
-            AFCBlocks.WOODS.values().forEach(map -> ItemProperties.register(map.get(BARREL).get().asItem(), Helpers.identifier("sealed"), (stack, level, entity, unused) -> stack.hasTag() ? 1.0f : 0f));
+//            TODO: Maybe important?
+//            AFCBlocks.WOODS.values().forEach(map -> ItemProperties.register(map.get(BARREL).get().asItem(), Helpers.identifier("sealed"), (stack, level, entity, unused) -> stack.hasTag() ? 1.0f : 0f));
 
             AFCBlocks.WOODS.forEach((wood, map) -> {
                 HorseChestLayer.registerChest(map.get(CHEST).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
@@ -115,7 +118,8 @@ public class ModEventClientBusEvents
             Sheets.addWoodType(wood.getVanillaWoodType());
         }
 
-        ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
+        //TODO: Tree tap
+//        ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
     }
 
     public static void clientFLCompatSetup(FMLClientSetupEvent event)
@@ -123,15 +127,16 @@ public class ModEventClientBusEvents
         // Render Types
         final RenderType cutout = RenderType.cutout();
 
-        FLCompatBlocks.JARBNETS.values().forEach(map -> {
-            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-        });
-        FLCompatBlocks.FOOD_SHELVES.values().forEach(map -> {
-            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-        });
-        FLCompatBlocks.HANGERS.values().forEach(map -> {
-            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-        });
+        //TODO: FirmaLife
+//        FLCompatBlocks.JARBNETS.values().forEach(map -> {
+//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+//        });
+//        FLCompatBlocks.FOOD_SHELVES.values().forEach(map -> {
+//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+//        });
+//        FLCompatBlocks.HANGERS.values().forEach(map -> {
+//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+//        });
 
     }
 
@@ -153,12 +158,13 @@ public class ModEventClientBusEvents
     {
         for (AFCWood wood : AFCWood.VALUES)
         {
-            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
-            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
+//TODO: Boats
+            //            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
+//            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
         }
-
-        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
-        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
+//TODO: Hanging Signs
+//        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
+//        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

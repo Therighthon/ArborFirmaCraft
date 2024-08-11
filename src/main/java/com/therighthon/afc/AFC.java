@@ -13,19 +13,19 @@ import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import com.therighthon.afc.common.recipe.AFCRecipes;
+import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
-import net.minecraft.client.renderer.Sheets;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.fml.loading.FMLEnvironment;
+import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
-import net.minecraftforge.fml.loading.FMLEnvironment;
 
 import net.dries007.tfc.common.recipes.TFCRecipeSerializers;
 
@@ -37,22 +37,24 @@ public class AFC
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public AFC()
+    public AFC(ModContainer modContainer, IEventBus eventBus)
     {
         // Register the setup method for modloading
-        IEventBus eventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
         eventBus.addListener(this::setup);
         ModEvents.init();
 
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
-        AFCFluids.FLUIDS.register(eventBus);
+        //TODO: Fluids
+//        AFCFluids.FLUIDS.register(eventBus);
         AFCCommands.ARGUMENT_TYPES.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
-        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
-        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
-        TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
+        //TODO: Tree taps
+//        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
+//        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
+//        TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
         AFCRecipes.register(eventBus);
         AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
@@ -63,24 +65,25 @@ public class AFC
         }
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientSetup);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerClientReloadListeners);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderers);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
-            eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
+            eventBus.addListener(ModEventClientBusEvents::clientSetup);
+            eventBus.addListener(ModEventClientBusEvents::registerClientReloadListeners);
+            eventBus.addListener(ModEventClientBusEvents::onEntityRenderers);
+            eventBus.addListener(ModEventClientBusEvents::registerColorHandlerBlocks);
+            eventBus.addListener(ModEventClientBusEvents::registerColorHandlerItems);
+            eventBus.addListener(ModEventClientBusEvents::onLayers);
 
             if (ModList.get().isLoaded("firmalife"))
             {
-                eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
+                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
             }
         }
 
-        final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
-        forgeBus.addListener(AFC::registerCommands);
+        //TODO: Whatever replaces this
+//        final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
+//        forgeBus.addListener(AFC::registerCommands);
 
         // Register ourselves for server and other game events we are interested in
-        forgeBus.register(this);
+//        forgeBus.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)
@@ -89,10 +92,11 @@ public class AFC
         event.enqueueWork(AFCWood::registerBlockSetTypes);
     }
 
-    public static ResourceLocation treeIdentifier(String path)
-    {
-        return new ResourceLocation("tfc", path);
-    }
+    //TODO: Maybe need this?
+//    public static ResourceLocation treeIdentifier(String path)
+//    {
+//        return new ResourceLocation("tfc", path);
+//    }
 
     public static void registerCommands(RegisterCommandsEvent event)
     {

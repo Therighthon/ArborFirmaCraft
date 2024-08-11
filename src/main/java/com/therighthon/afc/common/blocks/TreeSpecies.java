@@ -1,15 +1,19 @@
 package com.therighthon.afc.common.blocks;
 
 import java.util.Locale;
+import java.util.Optional;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.Nullable;
@@ -20,7 +24,7 @@ import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.FallenLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
-import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
+import net.dries007.tfc.util.Helpers;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
@@ -88,14 +92,19 @@ public enum TreeSpecies implements RegistryTreeSpecies
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
     private final int autumnIndex;
-    private final TFCTreeGrower tree;
+    private final TreeGrower tree;
     private final int daysToGrow;
     private final boolean conifer;
 
     TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.autumnIndex = autumnIndex;
-        this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
+        this.tree = new TreeGrower(
+            Helpers.identifier(this.serializedName).toString(),
+            Optional.empty(),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, Helpers.identifier("tree/" + this.serializedName))),
+            Optional.empty()
+        );
         this.conifer = conifer;
         this.daysToGrow = daysToGrow;
     }
@@ -117,7 +126,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     }
 
     @Override
-    public TFCTreeGrower tree()
+    public TreeGrower tree()
     {
         return tree;
     }
@@ -148,7 +157,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
                 .flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER),
             wood::daysToGrow, wood == TreeSpecies.JAGGERY_PALM), false),
         POTTED_SAPLING((self, wood) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
-            wood.getBlock(SAPLING), BlockBehaviour.Properties.copy(Blocks.POTTED_ACACIA_SAPLING)), false),
+            wood.getBlock(SAPLING), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING)), false),
         FALLEN_LEAVES((self, wood) -> {
             return new FallenLeavesBlock(ExtendedProperties.of().strength(0.05F, 0.0F).noOcclusion().noCollission().isViewBlocking(TFCBlocks::never).sound(SoundType.CROP).flammableLikeWool(), wood.getBlock(self.leaves()));
         }, false);

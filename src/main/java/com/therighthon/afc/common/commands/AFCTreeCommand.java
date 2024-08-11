@@ -10,10 +10,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraftforge.server.command.EnumArgument;
-
-import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
+import net.neoforged.neoforge.server.command.EnumArgument;
 
 
 //Copies from TFC TreeCommand.java
@@ -35,10 +34,11 @@ public final class AFCTreeCommand
 
     private static int placeTree(ServerLevel world, BlockPos pos, AFCWood wood, Variant variant)
     {
-        TFCTreeGrower tree = wood.tree();
+        TreeGrower tree = wood.tree();
         Registry<ConfiguredFeature<?, ?>> registry = world.registryAccess().registryOrThrow(Registries.CONFIGURED_FEATURE);
-        ConfiguredFeature<?, ?> feature = variant == Variant.NORMAL ? tree.getNormalFeature(registry) : tree.getOldGrowthFeature(registry);
-        feature.place(world, world.getChunkSource().getGenerator(), world.getRandom(), pos);
+        //TODO: Commands
+//        ConfiguredFeature<?, ?> feature = variant == Variant.NORMAL ? tree.getNormalFeature(registry) : tree.getOldGrowthFeature(registry);
+//        feature.place(world, world.getChunkSource().getGenerator(), world.getRandom(), pos);
         return Command.SINGLE_SUCCESS;
     }
 

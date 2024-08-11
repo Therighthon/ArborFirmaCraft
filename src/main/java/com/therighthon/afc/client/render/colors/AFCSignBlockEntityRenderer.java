@@ -15,29 +15,35 @@ import net.dries007.tfc.client.render.blockentity.TFCSignBlockEntityRenderer;
 
 public class AFCSignBlockEntityRenderer extends SignRenderer
 {
-    private final Map<WoodType, SignModel> signModels;
-
+    //TODO: Remove generic constructor
     public AFCSignBlockEntityRenderer(BlockEntityRendererProvider.Context context)
     {
-        this(context, AFCBlocks.WOODS.keySet()
-            .stream()
-            .map(map -> new AFCSignBlockEntityRenderer.SignModelData(
-                AFC.MOD_ID,
-                map.getSerializedName(),
-                map.getVanillaWoodType()
-            )));
-    }
-
-    public AFCSignBlockEntityRenderer(BlockEntityRendererProvider.Context context, Stream<AFCSignBlockEntityRenderer.SignModelData> blocks)
-    {
         super(context);
-
-        ImmutableMap.Builder<WoodType, SignModel> modelBuilder = ImmutableMap.builder();
-        blocks.forEach(data -> {
-            modelBuilder.put(data.type, new SignModel(context.bakeLayer(new ModelLayerLocation(new ResourceLocation(data.domain, "sign/" + data.name), "main"))));
-        });
-        this.signModels = modelBuilder.build();
     }
+    //TODO: Hanging Signs
+//    private final Map<WoodType, SignModel> signModels;
 
-    public record SignModelData(String domain, String name, WoodType type) {}
+//    public AFCSignBlockEntityRenderer(BlockEntityRendererProvider.Context context)
+//    {
+//        this(context, AFCBlocks.WOODS.keySet()
+//            .stream()
+//            .map(map -> new AFCSignBlockEntityRenderer.SignModelData(
+//                AFC.MOD_ID,
+//                map.getSerializedName(),
+//                map.getVanillaWoodType()
+//            )));
+//    }
+
+//    public AFCSignBlockEntityRenderer(BlockEntityRendererProvider.Context context, Stream<AFCSignBlockEntityRenderer.SignModelData> blocks)
+//    {
+//        super(context);
+//
+//        ImmutableMap.Builder<WoodType, SignModel> modelBuilder = ImmutableMap.builder();
+//        blocks.forEach(data -> {
+//            modelBuilder.put(data.type, new SignModel(context.bakeLayer(new ModelLayerLocation(new ResourceLocation(data.domain, "sign/" + data.name), "main"))));
+//        });
+//        this.signModels = modelBuilder.build();
+//    }
+//
+//    public record SignModelData(String domain, String name, WoodType type) {}
 }

@@ -5,8 +5,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeType;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
+
+import net.dries007.tfc.common.recipes.TFCRecipeTypes;
 
 import static com.therighthon.afc.AFC.MOD_ID;
 
@@ -14,16 +15,17 @@ public class AFCRecipeTypes
 {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, MOD_ID);
 
-    public static final RegistryObject<RecipeType<TreeTapRecipe>> TREE_TAPPING_RECIPE = register("tree_tapping");
+    //TODO: Tree taps
+//    public static final TFCRecipeTypes.Id<TreeTapRecipe> TREE_TAPPING_RECIPE = register("tree_tapping");
 
-    private static <R extends Recipe<?>> RegistryObject<RecipeType<R>> register(String name)
+    private static <R extends Recipe<?>> TFCRecipeTypes.Id<R> register(String name)
     {
-        return RECIPE_TYPES.register(name, () -> new RecipeType<>() {
+        return new TFCRecipeTypes.Id<>(RECIPE_TYPES.register(name, () -> new RecipeType<>() {
             @Override
             public String toString()
             {
-                return new ResourceLocation(MOD_ID, name).toString();
+                return name;
             }
-        });
+        }));
     }
 }

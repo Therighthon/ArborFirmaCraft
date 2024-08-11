@@ -13,9 +13,10 @@ public class AFCHangingSignBlockEntity extends SignBlockEntity
         super(pos, state);
     }
 
-    @Override
-    public BlockEntityType<?> getType()
-    {
-        return AFCBlockEntities.HANGING_SIGN.get();
-    }
+    //TODO: Hanging signs
+//    @Override
+//    public BlockEntityType<?> getType()
+//    {
+//        return AFCBlockEntities.HANGING_SIGN.get();
+//    }
 }

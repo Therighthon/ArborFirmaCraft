@@ -12,16 +12,17 @@ public class AFCTags
 {
     public static class Blocks
     {
-        public static final TagKey<Block> TAPPABLE_LOGS = create("tappable_logs");
-        public static final TagKey<Block> BIRCH_LOGS = create("birch_logs");
-        public static final TagKey<Block> MAPLE_LOGS = create("maple_logs");
-        public static final TagKey<Block> HEVEA_LOGS = create("hevea_logs");
-        public static final TagKey<Block> TREE_TAPS = create("tree_taps");
+        public static final TagKey<Block> TAPPABLE_LOGS = tag("tappable_logs");
+        public static final TagKey<Block> BIRCH_LOGS = tag("birch_logs");
+        public static final TagKey<Block> MAPLE_LOGS = tag("maple_logs");
+        public static final TagKey<Block> HEVEA_LOGS = tag("hevea_logs");
+        public static final TagKey<Block> TREE_TAPS = tag("tree_taps");
 
-        private static TagKey<Block> create(String id)
+        private static TagKey<Block> tag(String name)
         {
-            return TagKey.create(Registries.BLOCK, new ResourceLocation("afc", id));
+            return TagKey.create(Registries.BLOCK, Helpers.identifier(name));
         }
+
 
     }
 }

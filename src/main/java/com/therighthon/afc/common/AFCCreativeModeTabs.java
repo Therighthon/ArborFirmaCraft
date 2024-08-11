@@ -18,17 +18,13 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
-import net.minecraftforge.fml.ModList;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.common.TFCCreativeTabs;
-import net.dries007.tfc.common.blocks.DecorationBlockRegistryObject;
+
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.common.capabilities.food.FoodCapability;
 import net.dries007.tfc.common.items.TFCItems;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.SelfTests;
@@ -37,20 +33,15 @@ public final class AFCCreativeModeTabs
 {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, com.therighthon.afc.AFC.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> AFC_TAB = CREATIVE_TABS.register("arborfirmacraft",
-        () -> CreativeModeTab.builder()
-            .title(Component.translatable("itemGroup.afc_creative_mode_tab"))
-            .icon(() -> new ItemStack(AFCBlocks.TREE_SPECIES.get(TreeSpecies.TAMARACK).get(TreeSpecies.BlockType.SAPLING).get()))
-            .displayItems(AFCCreativeModeTabs::fillTab)
-            .build()
-    );
+    public static final TFCCreativeTabs.Id AFC_TAB = register("arborfirmacraft", () -> new ItemStack(AFCBlocks.TREE_SPECIES.get(TreeSpecies.TAMARACK).get(TreeSpecies.BlockType.SAPLING).get()), AFCCreativeModeTabs::fillTab);
 
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
         out.accept(AFCItems.RUBBER_BAR.get());
         out.accept(AFCItems.MAPLE_SUGAR.get());
         out.accept(AFCItems.BIRCH_SUGAR.get());
-        out.accept(AFCBlocks.TREE_TAP.get());
+        //TODO: tree taps
+//        out.accept(AFCBlocks.TREE_TAP.get());
         for (AFCWood wood : AFCWood.VALUES)
         {
             AFCBlocks.WOODS.get(wood).forEach((type, reg) -> {
@@ -60,14 +51,16 @@ public final class AFCCreativeModeTabs
                 }
             });
             accept(out, AFCItems.LUMBER, wood);
-            accept(out, AFCItems.BOATS, wood);
+            //TODO: Boats
+//            accept(out, AFCItems.BOATS, wood);
             accept(out, AFCItems.SUPPORTS, wood);
             accept(out, AFCItems.CHEST_MINECARTS, wood);
             accept(out, AFCItems.SIGNS, wood);
-            for (Metal.Default metal : Metal.Default.values())
-            {
-                accept(out, AFCItems.HANGING_SIGNS.get(wood), metal);
-            }
+            //TODO: Hanging signs
+//            for (Metal metal : Metal.values())
+//            {
+//                accept(out, AFCItems.HANGING_SIGNS.get(wood), metal);
+//            }
         }
         for (TreeSpecies wood : TreeSpecies.VALUES)
         {
@@ -84,24 +77,35 @@ public final class AFCCreativeModeTabs
                 accept(out, reg);
             });
         }
-        if (ModList.get().isLoaded("firmalife"))
-        {
-            for (AFCWood wood : AFCWood.VALUES)
-            {
-                accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
-                accept(out, FLCompatBlocks.HANGERS, wood);
-                accept(out, FLCompatBlocks.JARBNETS, wood);
-                accept(out, FLCompatBlocks.BIG_BARRELS, wood);
-                accept(out, FLCompatBlocks.STOMPING_BARRELS, wood);
-                accept(out, FLCompatBlocks.BARREL_PRESSES, wood);
-                accept(out, FLCompatBlocks.WINE_SHELVES, wood);
-            }
-        }
+        //TODO: Firmalife
+//        if (ModList.get().isLoaded("firmalife"))
+//        {
+//            for (AFCWood wood : AFCWood.VALUES)
+//            {
+//                accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
+//                accept(out, FLCompatBlocks.HANGERS, wood);
+//                accept(out, FLCompatBlocks.JARBNETS, wood);
+//                accept(out, FLCompatBlocks.BIG_BARRELS, wood);
+//                accept(out, FLCompatBlocks.STOMPING_BARRELS, wood);
+//                accept(out, FLCompatBlocks.BARREL_PRESSES, wood);
+//                accept(out, FLCompatBlocks.WINE_SHELVES, wood);
+//            }
+//        }
 
     }
 
 
     //Helpers from TFC
+    private static TFCCreativeTabs.Id register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
+    {
+        final var holder = CREATIVE_TABS.register(name, () -> CreativeModeTab.builder()
+            .icon(icon)
+            .title(Component.translatable("tfc.creative_tab." + name))
+            .displayItems(displayItems)
+            .build());
+        return new TFCCreativeTabs.Id(holder, displayItems);
+    }
+
     private static <T extends ItemLike, R extends Supplier<T>, K1, K2> void accept(CreativeModeTab.Output out, Map<K1, Map<K2, R>> map, K1 key1, K2 key2)
     {
         if (map.containsKey(key1) && map.get(key1).containsKey(key2))

@@ -2,14 +2,13 @@ package com.therighthon.afc.common.blocks;
 
 import java.util.function.Supplier;
 
-import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
-
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.grower.TreeGrower;
 
 public interface RegistryTreeSpecies extends StringRepresentable
 {
-    TFCTreeGrower tree();
+    TreeGrower tree();
 
     int autumnIndex();
 

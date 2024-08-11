@@ -9,14 +9,20 @@ import net.dries007.tfc.common.blockentities.TFCSignBlockEntity;
 
 public class AFCSignBlockEntity extends SignBlockEntity
 {
-    public AFCSignBlockEntity(BlockPos pos, BlockState state)
+    //TODO: Delete generic constructor
+    public AFCSignBlockEntity(BlockPos pos, BlockState blockState)
     {
-        super(AFCBlockEntities.SIGN.get(), pos, state);
+        super(pos, blockState);
     }
-
-    @Override
-    public BlockEntityType<?> getType()
-    {
-        return AFCBlockEntities.SIGN.get();
-    }
+    //TODO: Signs
+//    public AFCSignBlockEntity(BlockPos pos, BlockState state)
+//    {
+//        super(AFCBlockEntities.SIGN.get(), pos, state);
+//    }
+//
+//    @Override
+//    public BlockEntityType<?> getType()
+//    {
+//        return AFCBlockEntities.SIGN.get();
+//    }
 }

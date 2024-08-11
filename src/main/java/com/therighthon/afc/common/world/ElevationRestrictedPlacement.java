@@ -2,6 +2,7 @@ package com.therighthon.afc.common.world;
 
 import java.util.stream.Stream;
 import com.mojang.serialization.Codec;
+import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
@@ -9,9 +10,14 @@ import net.minecraft.world.level.levelgen.placement.PlacementContext;
 import net.minecraft.world.level.levelgen.placement.PlacementModifier;
 import net.minecraft.world.level.levelgen.placement.PlacementModifierType;
 
+import net.dries007.tfc.world.Codecs;
+import net.dries007.tfc.world.placement.NoSolidNeighborsPlacement;
+import net.dries007.tfc.world.placement.ShallowWaterPlacement;
+
+
 public class ElevationRestrictedPlacement extends PlacementModifier
 {
-    public static final Codec<ElevationRestrictedPlacement> PLACEMENT_CODEC = RecordCodecBuilder.create(instance -> instance.group(
+    public static final MapCodec<ElevationRestrictedPlacement> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(
         Codec.INT.optionalFieldOf("min_elevation", Integer.MIN_VALUE).forGetter(c -> c.minElev),
         Codec.INT.optionalFieldOf("max_elevation", Integer.MAX_VALUE).forGetter(c -> c.maxElev)
     ).apply(instance, ElevationRestrictedPlacement::new));
@@ -25,14 +31,10 @@ public class ElevationRestrictedPlacement extends PlacementModifier
         this.maxElev = maxElev;
     }
 
-    public int getMinElev()
+    @Override
+    public Stream<BlockPos> getPositions(PlacementContext context, RandomSource random, BlockPos pos)
     {
-        return this.minElev;
-    }
-
-    public int getMaxElev()
-    {
-        return this.maxElev;
+        return isValid(pos) ? Stream.of(pos) : Stream.empty();
     }
 
     @Override
@@ -45,11 +47,5 @@ public class ElevationRestrictedPlacement extends PlacementModifier
     {
         final int elev = pos.getY();
         return (elev >= this.minElev && elev <= this.maxElev);
-    }
-
-    @Override
-    public Stream<BlockPos> getPositions(PlacementContext context, RandomSource random, BlockPos pos)
-    {
-        return isValid(pos) ? Stream.of(pos) : Stream.empty();
     }
 }

@@ -1,9 +1,13 @@
 package com.therighthon.afc.common.blocks;
 
 import java.util.Locale;
+import java.util.Optional;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
@@ -11,7 +15,6 @@ import net.minecraft.world.level.material.MapColor;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistryWood;
-import net.dries007.tfc.world.feature.tree.TFCTreeGrower;
 
 public enum AFCWood implements RegistryWood
 {
@@ -33,7 +36,7 @@ public enum AFCWood implements RegistryWood
     private final boolean conifer;
     private final MapColor woodColor;
     private final MapColor barkColor;
-    private final TFCTreeGrower tree;
+    private final TreeGrower tree;
     private final int daysToGrow;
     private final BlockSetType blockSet;
     private final WoodType woodType;
@@ -45,7 +48,12 @@ public enum AFCWood implements RegistryWood
         this.woodColor = woodColor;
         this.barkColor = barkColor;
         this.autumnIndex = autumnIndex;
-        this.tree = new TFCTreeGrower(AFC.treeIdentifier("tree/" + this.serializedName), AFC.treeIdentifier("tree/" + this.serializedName + "_large"));
+        this.tree = new TreeGrower(
+            Helpers.identifier(this.serializedName).toString(),
+            Optional.empty(),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, Helpers.identifier("tree/" + this.serializedName))),
+            Optional.empty()
+        );
         this.daysToGrow = daysToGrow;
         this.blockSet = new BlockSetType(serializedName);
         this.woodType = new WoodType(Helpers.identifier(this.serializedName).toString(), this.blockSet);
@@ -89,7 +97,7 @@ public enum AFCWood implements RegistryWood
         return woodType;
     }
 
-    public TFCTreeGrower tree() {
+    public TreeGrower tree() {
         return tree;
     }
 
