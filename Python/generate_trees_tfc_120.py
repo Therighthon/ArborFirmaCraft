@@ -207,7 +207,7 @@ STACKED = 'stacked'
 
 # The data version used by DFU
 # Keep this up-to-date with the version in SharedConstants.VERSION
-DATA_VERSION = 3465
+DATA_VERSION = 3953
 
 TEMPLATES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/Python/structure_templates/'
 STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources/data/tfc/structures'
