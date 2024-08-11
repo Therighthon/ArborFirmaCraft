@@ -46,7 +46,9 @@ public final class AFC
     {
         // Register the setup method for modloading
 
+        //TODO: Try un-commenting
 //        eventBus.addListener(this::setup);
+
 //        ModEvents.init();
 
         AFCBlocks.BLOCKS.register(eventBus);
