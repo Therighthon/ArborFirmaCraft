@@ -29,7 +29,6 @@ import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.util.Helpers;
 
 public class ModEvents
 {

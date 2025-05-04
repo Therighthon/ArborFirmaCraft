@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/big_barrel/cypress",
+    "afc:wood/big_barrel/tualang",
+    "afc:wood/big_barrel/hevea",
+    "afc:wood/big_barrel/teak",
+    "afc:wood/big_barrel/eucalyptus",
+    "afc:wood/big_barrel/baobab",
+    "afc:wood/big_barrel/fig",
+    "afc:wood/big_barrel/mahogany",
+    "afc:wood/big_barrel/ironwood",
+    "afc:wood/big_barrel/ipe"
+  ]
+}

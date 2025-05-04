@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/barrel_press/cypress",
+    "afc:wood/barrel_press/tualang",
+    "afc:wood/barrel_press/hevea",
+    "afc:wood/barrel_press/teak",
+    "afc:wood/barrel_press/eucalyptus",
+    "afc:wood/barrel_press/baobab",
+    "afc:wood/barrel_press/fig",
+    "afc:wood/barrel_press/mahogany",
+    "afc:wood/barrel_press/ironwood",
+    "afc:wood/barrel_press/ipe"
+  ]
+}

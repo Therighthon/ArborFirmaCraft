@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/food_shelf/cypress",
+    "afc:wood/food_shelf/tualang",
+    "afc:wood/food_shelf/hevea",
+    "afc:wood/food_shelf/teak",
+    "afc:wood/food_shelf/eucalyptus",
+    "afc:wood/food_shelf/baobab",
+    "afc:wood/food_shelf/fig",
+    "afc:wood/food_shelf/mahogany",
+    "afc:wood/food_shelf/ironwood",
+    "afc:wood/food_shelf/ipe"
+  ]
+}

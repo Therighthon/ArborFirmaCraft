@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/stomping_barrel/cypress",
+    "afc:wood/stomping_barrel/tualang",
+    "afc:wood/stomping_barrel/hevea",
+    "afc:wood/stomping_barrel/teak",
+    "afc:wood/stomping_barrel/eucalyptus",
+    "afc:wood/stomping_barrel/baobab",
+    "afc:wood/stomping_barrel/fig",
+    "afc:wood/stomping_barrel/mahogany",
+    "afc:wood/stomping_barrel/ironwood",
+    "afc:wood/stomping_barrel/ipe"
+  ]
+}

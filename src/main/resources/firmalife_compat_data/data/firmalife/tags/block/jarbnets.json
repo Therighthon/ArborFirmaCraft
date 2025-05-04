@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/jarbnet/cypress",
+    "afc:wood/jarbnet/tualang",
+    "afc:wood/jarbnet/hevea",
+    "afc:wood/jarbnet/teak",
+    "afc:wood/jarbnet/eucalyptus",
+    "afc:wood/jarbnet/baobab",
+    "afc:wood/jarbnet/fig",
+    "afc:wood/jarbnet/mahogany",
+    "afc:wood/jarbnet/ironwood",
+    "afc:wood/jarbnet/ipe"
+  ]
+}

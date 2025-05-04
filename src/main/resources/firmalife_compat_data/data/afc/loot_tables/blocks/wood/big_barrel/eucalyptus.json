@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "loot_pool",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "afc:wood/big_barrel/eucalyptus",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+			  "block": "afc:wood/big_barrel/eucalyptus",
+              "properties": {
+                "barrel_part": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "Y Y",
+    "Z Z"
+  ],
+  "key": {
+    "X": {
+      "item": "afc:wood/planks/ipe"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/ipe"
+    },
+    "Z": {
+      "tag": "forge:rods/wooden"
+    }
+  },
+  "result": {
+    "item": "afc:wood/jar_shelf/ipe",
+    "count": 2
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/hanger/cypress",
+    "afc:wood/hanger/tualang",
+    "afc:wood/hanger/hevea",
+    "afc:wood/hanger/teak",
+    "afc:wood/hanger/eucalyptus",
+    "afc:wood/hanger/baobab",
+    "afc:wood/hanger/fig",
+    "afc:wood/hanger/mahogany",
+    "afc:wood/hanger/ironwood",
+    "afc:wood/hanger/ipe"
+  ]
+}

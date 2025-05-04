@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "loot_pool",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "afc:wood/big_barrel/ipe",
+          "conditions": [
+            {
+              "condition": "minecraft:block_state_property",
+              "block": "afc:wood/big_barrel/ipe",
+              "properties": {
+                "barrel_part": "0"
+              }
+            }
+          ]
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

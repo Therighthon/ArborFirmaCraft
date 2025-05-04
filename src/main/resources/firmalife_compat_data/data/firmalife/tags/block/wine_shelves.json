@@ -1,0 +1,15 @@
+{
+  "replace": false,
+  "values": [
+    "afc:wood/wine_shelf/cypress",
+    "afc:wood/wine_shelf/tualang",
+    "afc:wood/wine_shelf/hevea",
+    "afc:wood/wine_shelf/teak",
+    "afc:wood/wine_shelf/eucalyptus",
+    "afc:wood/wine_shelf/baobab",
+    "afc:wood/wine_shelf/fig",
+    "afc:wood/wine_shelf/mahogany",
+    "afc:wood/wine_shelf/ironwood",
+    "afc:wood/wine_shelf/ipe"
+  ]
+}
