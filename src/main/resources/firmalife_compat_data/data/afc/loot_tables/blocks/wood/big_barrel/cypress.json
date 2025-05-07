@@ -11,7 +11,7 @@
           "conditions": [
             {
               "condition": "minecraft:block_state_property",
-			  "name": "afc:wood/big_barrel/cypress",
+			  "block": "afc:wood/big_barrel/cypress",
               "properties": {
                 "barrel_part": "0"
               }
