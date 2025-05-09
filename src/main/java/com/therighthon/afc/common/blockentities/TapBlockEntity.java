@@ -1,6 +1,7 @@
 package com.therighthon.afc.common.blockentities;
 
 import com.therighthon.afc.common.AFCTags;
+import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.TapBlock;
 import com.therighthon.afc.common.recipe.TreeTapRecipe;
 import net.minecraft.core.BlockPos;
@@ -112,11 +113,14 @@ public class TapBlockEntity extends BlockEntity
         //Every 20 ticks...
         if (level.getGameTime() % 20 == 0)
         {
-            final BlockPos pourPos = pos.below();
-            final BlockEntity blockEntity = level.getBlockEntity(pourPos);
+            final BlockState tapState = level.getBlockState(pos);
+            if (tapState.canSurvive(level, pos)) // This should stop the Pandas Falling Trees crash
+            {
+                final BlockPos pourPos = pos.below();
+                final BlockEntity blockEntity = level.getBlockEntity(pourPos);
 
-            //Get the position of the log block
-            BlockPos logPos = switch (facing)
+                //Get the position of the log block
+                BlockPos logPos = switch (facing)
                 {
                     case NORTH -> pos.south();
                     case SOUTH -> pos.north();
@@ -125,61 +129,66 @@ public class TapBlockEntity extends BlockEntity
                     default -> throw new IllegalStateException("Unexpected value: " + facing);
                 };
 
-            //Check for a valid recipe for said log block before worrying about blockentities and nonsense
-            BlockState logState = level.getBlockState(logPos);
-            final TreeTapRecipe recipe = TreeTapRecipe.getRecipe(logState);
+                //Check for a valid recipe for said log block before worrying about blockentities and nonsense
+                BlockState logState = level.getBlockState(logPos);
+                final TreeTapRecipe recipe = TreeTapRecipe.getRecipe(logState);
 
-            if (recipe != null)
-            {
-                final int dripFrequency = 20*getTapCount(level, logPos);
-
-                if (level.getGameTime() % dripFrequency == 0)
+                if (recipe != null)
                 {
-                    if (blockEntity != null)
-                    {
-                        blockEntity.getCapability(Capabilities.FLUID, Direction.UP).ifPresent(cap -> {
-                            if (canPour(cap, recipe.getOutput()))
-                            {
-                                this.pourPos = pourPos;
-                            }
-                            else
-                            {
-                                //Makes sure it won't visually pour into a sealed barrel
-                                this.pourPos = null;
-                            }
-                        });
-                    }
+                    final int dripFrequency = 20*getTapCount(level, logPos);
 
-                    //Check that the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
-                    //Also checks if the recipe requires it be spring, and if so, if it is spring
-                    //Also checks that the tap is attached to a trunk with at least one log block above and at least one below.
-                    //Ternary is used (sloppily) to ensure that we don't ask for a "natural" logblock from a block that can't have it
-                    //It's sloppy, because if someone doesn't write the recipe correctly, then it will crash the game, but it should be a helpful crash, so...
-                    if (this.pourPos != null
-                        && (!recipe.requiresNaturalLog() || !(logState.getValue(LogBlock.BRANCH_DIRECTION) == BranchDirection.NONE))
-                        && isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp())
-                        && (!recipe.springOnly() || isSpring(level))
-                        && hasValidTrunk(level, logPos, logState))
+                    if (level.getGameTime() % dripFrequency == 0)
                     {
-                        //Needs to check if the block entity is removed every tick while pouring to avoid a crash
                         if (blockEntity != null)
                         {
-                            final FluidStack fluidStack = recipe.getOutput();
-
-                            if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
-                                pour(cap, fluidStack)).orElse(false))
-                            {
-                                if (level instanceof ServerLevel server)
+                            blockEntity.getCapability(Capabilities.FLUID, Direction.UP).ifPresent(cap -> {
+                                if (canPour(cap, recipe.getOutput()))
                                 {
-                                    final double offset = -0.2;
-                                    final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
-                                    final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
-                                    final double x = pos.getX() + 0.5f + dx;
-                                    final double y = pos.getY() + 0.125f;
-                                    final double z = pos.getZ() + 0.5f + dz;
+                                    this.pourPos = pourPos;
+                                }
+                                else
+                                {
+                                    //Makes sure it won't visually pour into a sealed barrel
+                                    this.pourPos = null;
+                                }
+                            });
+                        }
 
-                                    Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
-                                    server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
+                        //Check that the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
+                        //Also checks if the recipe requires it be spring, and if so, if it is spring
+                        //Also checks that the tap is attached to a trunk with at least one log block above and at least one below.
+                        //Ternary is used (sloppily) to ensure that we don't ask for a "natural" logblock from a block that can't have it
+                        //It's sloppy, because if someone doesn't write the recipe correctly, then it will crash the game, but it should be a helpful crash, so...
+                        if (this.pourPos != null
+                            && (!recipe.requiresNaturalLog() || !(logState.getValue(LogBlock.BRANCH_DIRECTION) == BranchDirection.NONE))
+                            && isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp())
+                            && (!recipe.springOnly() || isSpring(level))
+                            && hasValidTrunk(level, logPos, logState))
+                        {
+                            //Needs to check if the block entity is removed every tick while pouring to avoid a crash
+                            if (blockEntity != null)
+                            {
+                                final FluidStack fluidStack = recipe.getOutput();
+
+                                if (blockEntity.getCapability(Capabilities.FLUID, Direction.UP).map(cap ->
+                                    pour(cap, fluidStack)).orElse(false))
+                                {
+                                    if (level instanceof ServerLevel server)
+                                    {
+                                        final double offset = -0.2;
+                                        final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;
+                                        final double dz = facing.getStepZ() > 0 ? offset : facing.getStepZ() < 0 ? -offset : 0;
+                                        final double x = pos.getX() + 0.5f + dx;
+                                        final double y = pos.getY() + 0.125f;
+                                        final double z = pos.getZ() + 0.5f + dz;
+
+                                        Helpers.playSound(level, pos, TFCSounds.BARREL_DRIP.get());
+                                        server.sendParticles(new FluidParticleOption(TFCParticles.BARREL_DRIP.get(), fluidStack.getFluid()), x, y, z, 1, 0, 0, 0, 1f);
+                                    }
+                                }
+                                else
+                                {
+                                    this.pourPos = null;
                                 }
                             }
                             else
@@ -187,12 +196,12 @@ public class TapBlockEntity extends BlockEntity
                                 this.pourPos = null;
                             }
                         }
-                        else
-                        {
-                            this.pourPos = null;
-                        }
                     }
                 }
+            }
+            else
+            {
+                level.destroyBlock(pos, true);
             }
         }
     }
