@@ -62,9 +62,9 @@ dependencies {
     runtimeOnly(fg.deobf("curse.maven:jade-324717:${jade_version}"))
 
     // Only use Pandas Falling Trees at runtime
-    runtimeOnly(fg.deobf("curse.maven:architectury-419699:${5137938}"))
-    runtimeOnly(fg.deobf("curse.maven:pandalib-975460:${5653131}"))
-    runtimeOnly(fg.deobf("curse.maven:pandas-falling-trees-880630:${5653236}"))
+//    runtimeOnly(fg.deobf("curse.maven:architectury-419699:${5137938}"))
+//    runtimeOnly(fg.deobf("curse.maven:pandalib-975460:${5653131}"))
+//    runtimeOnly(fg.deobf("curse.maven:pandas-falling-trees-880630:${5653236}"))
 
     // FirmaLife
     compileOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
@@ -72,7 +72,9 @@ dependencies {
     // Only use FirmaLife at runtime
     runtimeOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
 
-    // JEI
+    //JEI
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}"))
+    compileOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"))
     runtimeOnly(fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}"))
 
 }

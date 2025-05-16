@@ -852,6 +852,6 @@
   "fluid.afc.birch_sap": "Birch Sap",
   "fluid.afc.birch_sap_concentrate": "Concentrated Birch Sap",
   "fluid.afc.birch_syrup": "Birch Syrup",
-  "itemGroup.afc_creative_mode_tab": "ArborFirmaCraft"
-
+  "itemGroup.afc_creative_mode_tab": "ArborFirmaCraft",
+  "tfc.jei.tree_tap": "Tree Tapping"
 }
