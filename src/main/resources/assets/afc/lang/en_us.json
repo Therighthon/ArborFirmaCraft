@@ -853,5 +853,13 @@
   "fluid.afc.birch_sap_concentrate": "Concentrated Birch Sap",
   "fluid.afc.birch_syrup": "Birch Syrup",
   "itemGroup.afc_creative_mode_tab": "ArborFirmaCraft",
-  "tfc.jei.tree_tap": "Tree Tapping"
+  "tfc.jei.tree_tap": "Tree Tapping",
+  "tooltip.afc.tap.no_recipe": "No recipe found for this log",
+  "tooltip.afc.tap.fluid": "Fluid: ",
+  "tooltip.afc.tap.amount": "Amount: ",
+  "tooltip.afc.tap.temp_range": "Temperature Range: ",
+  "tooltip.afc.tap.spring": "Spring: ",
+  "tooltip.afc.tap.current_temp": "Current Temperature: %s",
+  "tooltip.afc.tap.efficiency": "Efficiency: ",
+  "config.jade.plugin_afc.tap": "AFC Tree Tap Jade Information"
 }
