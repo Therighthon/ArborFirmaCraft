@@ -1,5 +1,9 @@
 package com.therighthon.afc.event;
 
+import com.eerussianguy.firmalife.client.render.BarrelPressBlockEntityRenderer;
+import com.eerussianguy.firmalife.client.render.StompingBarrelBlockEntityRenderer;
+import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
+import com.therighthon.afc.common.blockentities.FLCompatBlockEntities;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
@@ -132,6 +136,9 @@ public class ModEventClientBusEvents
         FLCompatBlocks.HANGERS.values().forEach(map -> {
             ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
         });
+        FLCompatBlocks.BARREL_PRESSES.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
 
     }
 
@@ -159,6 +166,13 @@ public class ModEventClientBusEvents
 
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
+    }
+
+    //Equiv to TFC ClientEventHandler.registerEntityRenderers
+    public static void onEntityRenderersFLCompat(EntityRenderersEvent.RegisterRenderers event)
+    {
+        event.registerBlockEntityRenderer(FLCompatBlockEntities.STOMPING_BARREL.get(), ctx -> new StompingBarrelBlockEntityRenderer());
+        event.registerBlockEntityRenderer(FLCompatBlockEntities.BARREL_PRESS.get(), ctx -> new BarrelPressBlockEntityRenderer());
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

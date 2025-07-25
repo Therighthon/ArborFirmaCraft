@@ -73,6 +73,7 @@ public class AFC
             if (ModList.get().isLoaded("firmalife"))
             {
                 eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
+                eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderersFLCompat);
             }
         }
 

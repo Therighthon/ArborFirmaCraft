@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was manually created by a dumbass who can't use python to save his life",
+  "replace": false,
+  "values": [
+	"afc:wood/support/cypress",
+    "afc:wood/support/tualang",
+    "afc:wood/support/hevea",
+    "afc:wood/support/teak",
+    "afc:wood/support/eucalyptus",
+    "afc:wood/support/baobab",
+    "afc:wood/support/fig",
+    "afc:wood/support/mahogany",
+    "afc:wood/support/ipe",
+    "afc:wood/support/ironwood"
+	
+  ]
+}
