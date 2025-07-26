@@ -1,19 +1,10 @@
 package com.therighthon.afc.event;
 
-import com.eerussianguy.firmalife.client.render.BarrelPressBlockEntityRenderer;
-import com.eerussianguy.firmalife.client.render.StompingBarrelBlockEntityRenderer;
-import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
-import com.therighthon.afc.common.blockentities.FLCompatBlockEntities;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
-import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
-import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
-import com.eerussianguy.firmalife.client.model.HangerBlockModel;
-import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.client.render.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.colors.AFCColors;
-import com.therighthon.afc.client.render.colors.AFCSignBlockEntityRenderer;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
@@ -139,6 +130,9 @@ public class ModEventClientBusEvents
         FLCompatBlocks.BARREL_PRESSES.values().forEach(map -> {
             ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
         });
+        FLCompatBlocks.STOMPING_BARRELS.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
 
     }
 
@@ -166,13 +160,6 @@ public class ModEventClientBusEvents
 
         event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
         event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
-    }
-
-    //Equiv to TFC ClientEventHandler.registerEntityRenderers
-    public static void onEntityRenderersFLCompat(EntityRenderersEvent.RegisterRenderers event)
-    {
-        event.registerBlockEntityRenderer(FLCompatBlockEntities.STOMPING_BARREL.get(), ctx -> new StompingBarrelBlockEntityRenderer());
-        event.registerBlockEntityRenderer(FLCompatBlockEntities.BARREL_PRESS.get(), ctx -> new BarrelPressBlockEntityRenderer());
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

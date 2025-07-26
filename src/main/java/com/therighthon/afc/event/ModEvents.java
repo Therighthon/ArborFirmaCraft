@@ -2,8 +2,13 @@ package com.therighthon.afc.event;
 
 //Copied pretty directly from EERussianguy's Beneath
 
+import com.eerussianguy.firmalife.common.blockentities.FLBlockEntities;
+import com.eerussianguy.firmalife.common.blocks.FLBlocks;
+import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -18,10 +23,12 @@ import net.minecraft.server.packs.repository.Pack;
 import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.fml.loading.FMLEnvironment;
 import net.minecraftforge.forgespi.locating.IModFile;
 import net.minecraftforge.event.AddPackFindersEvent;
 import net.minecraftforge.resource.PathPackResources;
@@ -44,8 +51,14 @@ public class ModEvents
     {
         final IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        bus.addListener(ModEvents::setupFLCompat);
         bus.addListener(ModEvents::onFLCompatPackFinder);
         bus.addListener(ModEvents::onFLCompatDataPackFinder);
+
+        if (FMLEnvironment.dist == Dist.CLIENT)
+        {
+            bus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
+        }
     }
 
     private static void setup(FMLCommonSetupEvent event)
@@ -53,6 +66,13 @@ public class ModEvents
         event.enqueueWork(() -> {
             AFCBlocks.registerFlowerPotFlowers();
             modifyBlockEntityTypes();
+        });
+    }
+
+    private static void setupFLCompat(FMLCommonSetupEvent event)
+    {
+        event.enqueueWork(() -> {
+            modifyFLBlockEntityTypes();
         });
     }
 
@@ -167,6 +187,33 @@ public class ModEvents
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
     {
         modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(blockType).get()));
+    }
+
+    private static void modifyFLBlockEntityTypes()
+    {
+        // TODO: Someday, I should learn how streams work, because this is just embarrassing
+        
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.BAOBAB).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.EUCALYPTUS).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.MAHOGANY).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.HEVEA).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.TUALANG).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.TEAK).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.CYPRESS).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.FIG).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.IRONWOOD).get()));
+        modifyBlockEntityType(FLBlockEntities.STOMPING_BARREL.get(), Stream.of(FLCompatBlocks.STOMPING_BARRELS.get(AFCWood.IPE).get()));
+
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.BAOBAB).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.EUCALYPTUS).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.MAHOGANY).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.HEVEA).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.TUALANG).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.TEAK).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.CYPRESS).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.FIG).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.IRONWOOD).get()));
+        modifyBlockEntityType(FLBlockEntities.BARREL_PRESS.get(), Stream.of(FLCompatBlocks.BARREL_PRESSES.get(AFCWood.IPE).get()));
     }
 
     private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks)

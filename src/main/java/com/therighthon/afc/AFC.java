@@ -69,12 +69,6 @@ public class AFC
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onLayers);
-
-            if (ModList.get().isLoaded("firmalife"))
-            {
-                eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::clientFLCompatSetup);
-                eventBus.addListener(com.therighthon.afc.event.ModEventClientBusEvents::onEntityRenderersFLCompat);
-            }
         }
 
         final IEventBus forgeBus = MinecraftForge.EVENT_BUS;
