@@ -79,7 +79,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 340, 500, 13.4, 24.4, 'flame_of_the_forest', 'teak', False)
     forest_config(rm, 400, 500, 20.7, 26.2, 'jaggery_palm', 'palm', False)
     forest_config(rm, 170, 310, -15.7, -6.6, 'poplar', 'aspen', False)
-    # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
+    # # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
 
 
 
