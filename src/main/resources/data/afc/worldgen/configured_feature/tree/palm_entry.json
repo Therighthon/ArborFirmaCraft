@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 17.1,
       "max_temperature": 40,
-      "min_rainfall": 0,
-      "max_rainfall": 250
+      "min_groundwater": 0,
+      "max_groundwater": 250,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -15,6 +18,7 @@
     ],
     "normal_tree": "tfc:tree/palm",
     "dead_tree": "tfc:tree/palm_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/palm"
   }
 }

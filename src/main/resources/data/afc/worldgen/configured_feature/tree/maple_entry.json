@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -8.4,
       "max_temperature": 8,
-      "min_rainfall": 260,
-      "max_rainfall": 360
+      "min_groundwater": 260,
+      "max_groundwater": 360,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/maple",
     "dead_tree": "tfc:tree/maple_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/maple",
     "bush_log": {
       "Name": "tfc:wood/wood/maple",

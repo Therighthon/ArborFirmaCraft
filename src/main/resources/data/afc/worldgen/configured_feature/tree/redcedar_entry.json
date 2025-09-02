@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -4.8,
       "max_temperature": 9.8,
-      "min_rainfall": 410,
-      "max_rainfall": 500
+      "min_groundwater": 410,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/redcedar",
     "dead_tree": "tfc:tree/redcedar_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/redcedar",
     "bush_log": {
       "Name": "afc:wood/wood/redcedar",

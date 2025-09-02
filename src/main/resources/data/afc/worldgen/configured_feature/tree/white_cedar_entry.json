@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -13.9,
       "max_temperature": 4.3,
-      "min_rainfall": 100,
-      "max_rainfall": 220
+      "min_groundwater": 100,
+      "max_groundwater": 220,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/white_cedar",
     "dead_tree": "tfc:tree/white_cedar_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/white_cedar",
     "bush_log": {
       "Name": "tfc:wood/wood/white_cedar",

@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 11.6,
       "max_temperature": 40,
-      "min_rainfall": 90,
-      "max_rainfall": 275
+      "min_groundwater": 90,
+      "max_groundwater": 275,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/gum_arabic",
     "dead_tree": "tfc:tree/gum_arabic_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_tree_chance": 0,
     "bush_log": {
       "Name": "afc:wood/wood/gum_arabic",

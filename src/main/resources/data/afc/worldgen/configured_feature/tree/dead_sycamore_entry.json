@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -6.6,
       "max_temperature": 11.6,
-      "min_rainfall": 330,
-      "max_rainfall": 480
+      "min_groundwater": 330,
+      "max_groundwater": 480,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/sycamore",
     "dead_tree": "tfc:tree/sycamore_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/sycamore",
     "old_growth_tree": "tfc:tree/sycamore_large",
     "dead_chance": 1,

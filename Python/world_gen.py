@@ -230,28 +230,6 @@ def configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifie
     rm.configured_feature(res, feature, config)
     rm.placed_feature(res, res, *placements)
 
-
-def tall_plant_config(state1: str, state2: str, tries: int, radius: int, min_height: int, max_height: int) -> Json:
-    return {
-        'body': state1,
-        'head': state2,
-        'tries': tries,
-        'radius': radius,
-        'min_height': min_height,
-        'max_height': max_height
-    }
-
-
-def vine_config(state: str, tries: int, radius: int, min_height: int, max_height: int) -> Json:
-    return {
-        'state': state,
-        'tries': tries,
-        'radius': radius,
-        'min_height': min_height,
-        'max_height': max_height
-    }
-
-
 class PlantConfig(NamedTuple):
     block: str
     y_spread: int
@@ -401,40 +379,11 @@ def simple_state_provider(name: str) -> Dict[str, Any]:
     return {'type': 'minecraft:simple_state_provider', 'state': utils.block_state(name)}
 
 
-# Vein Helper Functions
-
-def vein_ore_blocks(vein: Vein, rock: str) -> List[Dict[str, Any]]:
-    ore_blocks = [{
-        'weight': vein.poor,
-        'block': 'tfc:ore/poor_%s/%s' % (vein.ore, rock)
-    }, {
-        'weight': vein.normal,
-        'block': 'tfc:ore/normal_%s/%s' % (vein.ore, rock)
-    }, {
-        'weight': vein.rich,
-        'block': 'tfc:ore/rich_%s/%s' % (vein.ore, rock)
-    }]
-    if vein.spoiler_ore is not None and rock in vein.spoiler_rocks:
-        p = vein.spoiler_rarity * 0.01  # as a percentage of the overall vein
-        ore_blocks.append({
-            'weight': int(100 * p / (1 - p)),
-            'block': 'tfc:ore/%s/%s' % (vein.spoiler_ore, rock)
-        })
-    elif vein.deposits:
-        ore_blocks.append({
-            'weight': 10,
-            'block': 'tfc:deposit/%s/%s' % (vein.ore, rock)
-        })
-    return ore_blocks
-
-def vein_density(density: int) -> float:
-    assert 0 <= density <= 100, 'Invalid density: %s' % str(density)
-    return round(density * 0.01, 2)
-
 
 # Tree Helper Functions
 
-def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None):
+# TODO: rainvar shouldn't be optionals
+def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None, podzol: bool = False, alfisol: bool = False, min_rain_var: float = -1, max_rain_var: float = 1, rain_var_absolute: bool = False):
 
     wood_prefix = 'tfc'
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood':
@@ -464,13 +413,17 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
         'climate': {
             'min_temperature': min_temp,
             'max_temperature': max_temp,
-            'min_rainfall': min_rain,
-            'max_rainfall': max_rain
+            'min_groundwater': min_rain,
+            'max_groundwater': max_rain,
+            'min_rain_variance': min_rain_var,
+            'max_rain_variance': max_rain_var,
+            'rain_variance_absolute': rain_var_absolute
         },
         'groundcover': [{'block': '%s:wood/twig/%s' % (wood_prefix, adv_wood)}],
         'normal_tree': 'tfc:tree/%s' % tree,
         'dead_tree': 'tfc:tree/%s_dead' % tree,
         'krummholz': None if not krum else '%s:tree/%s_krummholz' % (wood_prefix, basic_wood),
+        'soil_disc': 'tfc:alfisol_disc' if alfisol else 'tfc:podzol_disc' if podzol else None if floating else 'tfc:duff_disc',
         'old_growth_chance': old_growth_chance,
         'spoiler_old_growth_chance': spoiler_chance,
     }
@@ -636,8 +589,8 @@ def decorate_climate(min_temp: Optional[float] = None, max_temp: Optional[float]
         'type': 'tfc:climate',
         'min_temperature': min_temp,
         'max_temperature': max_temp,
-        'min_rainfall': min_rain,
-        'max_rainfall': max_rain,
+        'min_groundwater': min_rain,
+        'max_groundwater': max_rain,
         'min_forest': 'normal' if needs_forest else min_forest,
         'max_forest': max_forest,
         'fuzzy': fuzzy
@@ -741,129 +694,6 @@ def height_provider(min_y: VerticalAnchor, max_y: VerticalAnchor, height_type: H
         'min_inclusive': utils.as_vertical_anchor(min_y),
         'max_inclusive': utils.as_vertical_anchor(max_y)
     }
-
-
-def biome(rm: ResourceManager, name: str, category: str, boulders: bool = False, spawnable: bool = True, ocean_features: Union[bool, Literal['both']] = False, lake_features: Union[bool, Literal['default']] = 'default', volcano_features: bool = False, reef_features: bool = False, hot_spring_features: Union[bool, Literal['empty']] = False):
-    spawners = {}
-    soil_discs = []
-    large_features = []
-    surface_decorations = []
-    costs = {}
-
-    if ocean_features == 'both':  # Both applies both ocean + land features. True or False applies only one
-        land_features = True
-        ocean_features = True
-    else:
-        land_features = not ocean_features
-    if lake_features == 'default':  # Default = Lakes are on all non-ocean biomes. True/False to force either way
-        lake_features = not ocean_features
-
-    if boulders:
-        large_features.append('#tfc:feature/boulders')
-
-    # Oceans
-    if ocean_features:
-        large_features.append('#tfc:feature/icebergs')
-        surface_decorations.append('#tfc:feature/ocean_plants')
-
-        if name == 'shore':
-            surface_decorations.append('#tfc:feature/shore_decorations')
-            spawners['creature'] = [entity for entity in SHORE_CREATURES.values()]
-        else:
-            surface_decorations.append('#tfc:feature/ocean_decorations')
-
-        spawners['water_ambient'] = [entity for entity in OCEAN_AMBIENT.values()]
-        spawners['water_creature'] = [entity for entity in OCEAN_CREATURES.values()]
-        spawners['underground_water_creature'] = [entity for entity in UNDERGROUND_WATER_CREATURES.values()]
-        costs['tfc:octopoteuthis'] = {'energy_budget': 0.12, 'charge': 1.0}
-
-    if category == 'river':
-        spawners['water_ambient'] = [entity for entity in LAKE_AMBIENT.values()]
-        soil_discs.append('#tfc:feature/ore_deposits')
-
-    if category in ('river', 'lake', 'swamp'):
-        surface_decorations.append('tfc:plant/dry_phragmite')
-
-    if name == 'deep_ocean_trench':
-        large_features.append('tfc:lava_hot_spring')
-
-    if 'lake' in name:
-        spawners['water_creature'] = [entity for entity in LAKE_CREATURES.values()]
-    spawners['monster'] = [entity for entity in VANILLA_MONSTERS.values()]
-
-    if reef_features:
-        large_features.append('tfc:coral_reef')
-
-    # Continental / Land Features
-    if land_features:
-        soil_discs.append('#tfc:feature/soil_discs')
-        large_features += ['tfc:forest', 'tfc:bamboo', 'tfc:cave_vegetation']
-        surface_decorations.append('#tfc:feature/land_plants')
-        spawners['creature'] = [entity for entity in LAND_CREATURES.values()]
-
-    if volcano_features:
-        large_features.append('#tfc:feature/volcanoes')
-
-    if hot_spring_features:  # can be True, 'empty'
-        if hot_spring_features == 'empty':
-            large_features.append('tfc:random_empty_hot_spring')
-        else:
-            large_features.append('tfc:random_active_hot_spring')
-
-    # Feature Tags
-    # We don't directly use vanilla's generation step, but we line this up *approximately* with it, so that mods that add features add them in roughly the right location
-    feature_tags = [
-        '#tfc:in_biome/erosion',  # Raw Generation
-        '#tfc:in_biome/all_lakes' if lake_features else '#tfc:in_biome/underground_lakes',  # Lakes
-        '#tfc:in_biome/soil_discs/%s' % name,  # Local Modifications
-        '#tfc:in_biome/underground_structures',  # Underground Structures
-        '#tfc:in_biome/surface_structures',  # Surface Structures
-        '#tfc:in_biome/strongholds',  # Strongholds
-        '#tfc:in_biome/veins',  # Underground Ores
-        '#tfc:in_biome/underground_decoration',  # Underground Decoration
-        '#tfc:in_biome/large_features/%s' % name,  # Fluid Springs (we co-opt this as they likely won't interfere and it's in the right order)
-        '#tfc:in_biome/surface_decoration/%s' % name,  # Vegetal Decoration
-        '#tfc:in_biome/top_layer_modification'  # Top Layer Modification
-    ]
-
-    placed_feature_118_hack(rm, ('in_biome/soil_discs', name), *soil_discs)
-    placed_feature_118_hack(rm, ('in_biome/large_features', name), *large_features)
-    placed_feature_118_hack(rm, ('in_biome/surface_decoration', name), *surface_decorations)
-
-    if volcano_features:
-        biome_tag(rm, 'is_volcanic', name)
-    if 'lake' in name:
-        biome_tag(rm, 'is_lake', name)
-    if 'river' in name:
-        biome_tag(rm, 'is_river', name)
-
-    feature_tags = [
-        [tag[1:]]
-        for tag in feature_tags
-    ]
-
-    rm.lang('biome.tfc.%s' % name, lang(name))
-    rm.biome(
-        name_parts=name,
-        precipitation='rain',  # Hardcode to rain to make some mixins redundant since they do a == rain check.
-        category=category,
-        temperature=0.5,
-        downfall=0.5,
-        effects={
-            'fog_color': 0xC0D8FF,
-            'sky_color': 0x84E6FF,
-            'water_color': 0x3F76E4,
-            'water_fog_color': 0x050533
-        },
-        spawners=spawners,
-        air_carvers=['tfc:cave', 'tfc:canyon'],
-        water_carvers=[],
-        features=feature_tags,
-        player_spawn_friendly=spawnable,
-        creature_spawn_probability=0.08,
-        spawn_costs=costs
-    )
-
 
 # Tags
 

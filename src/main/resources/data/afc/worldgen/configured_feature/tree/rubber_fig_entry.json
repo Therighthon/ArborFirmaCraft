@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 9.8,
       "max_temperature": 20.7,
-      "min_rainfall": 290,
-      "max_rainfall": 400
+      "min_groundwater": 290,
+      "max_groundwater": 400,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/rubber_fig",
     "dead_tree": "tfc:tree/rubber_fig_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/fig",
     "bush_log": {
       "Name": "afc:wood/wood/fig",

@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 13.4,
       "max_temperature": 24.4,
-      "min_rainfall": 360,
-      "max_rainfall": 500
+      "min_groundwater": 360,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/kapok",
     "dead_tree": "tfc:tree/kapok_dead",
+    "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 8,
     "spoiler_old_growth_chance": 120,
     "fallen_log": "tfc:wood/log/kapok",

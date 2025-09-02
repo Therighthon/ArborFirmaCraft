@@ -5,15 +5,10 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.mojang.logging.LogUtils;
-import com.therighthon.afc.common.AFCCreativeModeTabs;
-import com.therighthon.afc.common.AFCFeatures;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
-import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.commands.AFCCommands;
-import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.items.AFCItems;
-import com.therighthon.afc.common.recipe.AFCRecipes;
 import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
 
@@ -58,7 +53,6 @@ public final class AFC
         AFCCommands.ARGUMENT_TYPES.register(eventBus);
         //TODO: Boats
 //        AFCEntities.ENTITIES.register(eventBus);
-        AFCFeatures.FEATURES.register(eventBus);
         //TODO: Tree taps
 //        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
 //        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);

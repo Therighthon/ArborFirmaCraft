@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 15.3,
       "max_temperature": 26.2,
-      "min_rainfall": 30,
-      "max_rainfall": 190
+      "min_groundwater": 30,
+      "max_groundwater": 190,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/baobab",
     "dead_tree": "tfc:tree/baobab_dead",
+    "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 2,
     "spoiler_old_growth_chance": 10,
     "fallen_log": "afc:wood/log/baobab",

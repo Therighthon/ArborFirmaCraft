@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -15.7,
       "max_temperature": -1.1,
-      "min_rainfall": 350,
-      "max_rainfall": 500
+      "min_groundwater": 350,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -19,6 +22,7 @@
     "normal_tree": "tfc:tree/aspen",
     "dead_tree": "tfc:tree/aspen_dead",
     "krummholz": "tfc:tree/aspen_krummholz",
+    "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 1,
     "fallen_log": "tfc:wood/log/aspen",
     "bush_log": {

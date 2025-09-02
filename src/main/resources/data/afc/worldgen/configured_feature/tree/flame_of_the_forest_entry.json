@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 13.4,
       "max_temperature": 24.4,
-      "min_rainfall": 340,
-      "max_rainfall": 500
+      "min_groundwater": 340,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/flame_of_the_forest",
     "dead_tree": "tfc:tree/flame_of_the_forest_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/teak",
     "bush_log": {
       "Name": "afc:wood/wood/teak",

@@ -1,6 +1,6 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "type": "afc:trunkless_stacked_tree",
+  "type": "tfc:stacked_tree",
   "config": {
     "trunk": {
       "state": {
@@ -11,7 +11,7 @@
         }
       },
       "min_height": 0,
-      "max_height": 1,
+      "max_height": 0,
       "wide": true
     },
     "layers": [

@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 2.5,
       "max_temperature": 15.3,
-      "min_rainfall": 100,
-      "max_rainfall": 260
+      "min_groundwater": 100,
+      "max_groundwater": 260,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/cypress",
     "dead_tree": "tfc:tree/cypress_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/cypress",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",

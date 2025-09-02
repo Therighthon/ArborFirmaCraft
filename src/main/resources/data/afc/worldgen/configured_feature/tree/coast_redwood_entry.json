@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 4.3,
       "max_temperature": 9.8,
-      "min_rainfall": 320,
-      "max_rainfall": 500
+      "min_groundwater": 320,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/coast_redwood",
     "dead_tree": "tfc:tree/coast_redwood_dead",
+    "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 3,
     "fallen_log": "tfc:wood/log/sequoia",
     "bush_log": {

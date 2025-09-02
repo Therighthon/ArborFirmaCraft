@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -6.6,
       "max_temperature": 9.8,
-      "min_rainfall": 330,
-      "max_rainfall": 500
+      "min_groundwater": 330,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/willow",
     "dead_tree": "tfc:tree/willow_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_tree_chance": 0,
     "bush_log": {
       "Name": "tfc:wood/wood/willow",

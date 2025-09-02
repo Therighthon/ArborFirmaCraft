@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": -19.4,
       "max_temperature": -3,
-      "min_rainfall": 60,
-      "max_rainfall": 270
+      "min_groundwater": 60,
+      "max_groundwater": 270,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/pine",
     "dead_tree": "tfc:tree/pine_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/pine",
     "bush_log": {
       "Name": "tfc:wood/wood/pine",

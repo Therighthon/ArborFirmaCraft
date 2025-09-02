@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 20.7,
       "max_temperature": 40,
-      "min_rainfall": 320,
-      "max_rainfall": 430
+      "min_groundwater": 320,
+      "max_groundwater": 430,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/ironwood",
     "dead_tree": "tfc:tree/ironwood_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ironwood",
     "bush_log": {
       "Name": "afc:wood/wood/ironwood",

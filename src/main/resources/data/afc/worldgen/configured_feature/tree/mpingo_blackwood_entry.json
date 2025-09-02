@@ -5,8 +5,11 @@
     "climate": {
       "min_temperature": 13.4,
       "max_temperature": 22.5,
-      "min_rainfall": 85,
-      "max_rainfall": 285
+      "min_groundwater": 85,
+      "max_groundwater": 285,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
     },
     "groundcover": [
       {
@@ -18,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/mpingo_blackwood",
     "dead_tree": "tfc:tree/mpingo_blackwood_dead",
+    "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/blackwood",
     "bush_log": {
       "Name": "tfc:wood/wood/blackwood",
