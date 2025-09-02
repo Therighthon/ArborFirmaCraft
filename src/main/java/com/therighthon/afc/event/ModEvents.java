@@ -2,30 +2,44 @@ package com.therighthon.afc.event;
 
 //Copied pretty directly from EERussianguy's Beneath
 
+import com.therighthon.afc.AFC;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackLocationInfo;
+import net.minecraft.server.packs.PackResources;
+import net.minecraft.server.packs.PackSelectionConfig;
 import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.PathPackResources;
+import net.minecraft.server.packs.metadata.pack.PackMetadataSection;
+import net.minecraft.server.packs.repository.KnownPack;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
+import net.neoforged.neoforgespi.locating.IModFile;
+import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Helpers;
 
 public class ModEvents
 {
-    public static void init()
-    {
-        //TODO: Probably get rid of most of this file/move to AFC?
-    }
-
     public static void initFLCompat()
     {
 //        final IEventBus bus = NeoForge.EVENT_BUS;
@@ -34,44 +48,15 @@ public class ModEvents
 //        bus.addListener(ModEvents::onFLCompatDataPackFinder);
     }
 
-    //This is copied wholesale from FirmaLife
-    //It is what allows the resources to load in the correct order, and needs to be rewritten for 1.20 unless things work out fo the box now.
+    //This is what allows the resources to load in the correct order, and needs to be rewritten for 1.20 unless things work out fo the box now.
+    @SubscribeEvent
     public static void onPackFinder(AddPackFindersEvent event)
     {
-        //TODO: Assets override
-//        try
-//        {
-//            if (event.getPackType() == PackType.CLIENT_RESOURCES)
-//            {
-//                final IModFile modFile = ModList.get().getModFileById(AFC.MOD_ID).getFile();
-//                final Path resourcePath = modFile.getFilePath();
-//                try (PathPackResources pack = new PathPackResources(modFile.getFileName() + ":overload", true, resourcePath){
-//
-//                    private final IModFile file = ModList.get().getModFileById(AFC.MOD_ID).getFile();
-//
-//                    @NotNull
-//                    @Override
-//                    protected Path resolve(String @NotNull ... paths)
-//                    {
-//                        return file.findResource(paths);
-//                    }
-//                })
-//                {
-//                    final PackMetadataSection metadata = pack.getMetadataSection(PackMetadataSection.TYPE);
-//                    if (metadata != null)
-//                    {
-//                        AFC.LOGGER.info("Injecting ArborFirmaCraft override pack");
-//                        event.addRepositorySource(consumer ->
-//                            consumer.accept(Pack.readMetaAndCreate("afc_data", Component.literal("ArborFirmaCraft Resources"), true, id -> pack, PackType.CLIENT_RESOURCES, Pack.Position.TOP, PackSource.BUILT_IN))
-//                        );
-//                    }
-//                }
-//            }
-//        }
-//        catch (IOException e)
-//        {
-//            throw new RuntimeException(e);
-//        }
+        if (event.getPackType() == PackType.SERVER_DATA)
+        {
+            final ResourceLocation location = Helpers.resourceLocation(AFC.MOD_ID, "data");
+            event.addPackFinders(location, PackType.SERVER_DATA, Component.literal("AFC: Data Overload"), PackSource.DEFAULT, true, Pack.Position.TOP);
+        }
     }
 
     //TODO: Firmalife

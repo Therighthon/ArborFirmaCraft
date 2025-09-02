@@ -44,7 +44,8 @@ public final class AFC
         //TODO: Try un-commenting
 //        eventBus.addListener(this::setup);
 
-//        ModEvents.init();
+        // Data overload
+        eventBus.addListener(ModEvents::onPackFinder);
 
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
