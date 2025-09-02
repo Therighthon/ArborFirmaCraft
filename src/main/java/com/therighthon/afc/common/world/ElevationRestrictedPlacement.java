@@ -14,7 +14,7 @@ import net.dries007.tfc.world.Codecs;
 import net.dries007.tfc.world.placement.NoSolidNeighborsPlacement;
 import net.dries007.tfc.world.placement.ShallowWaterPlacement;
 
-
+// TODO: Can get rid of this, I think
 public class ElevationRestrictedPlacement extends PlacementModifier
 {
     public static final MapCodec<ElevationRestrictedPlacement> CODEC = RecordCodecBuilder.mapCodec(instance -> instance.group(

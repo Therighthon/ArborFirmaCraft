@@ -12,7 +12,9 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.config.TFCConfig;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.calendar.Calendar;
 import net.dries007.tfc.util.registry.RegistryWood;
 
 public enum AFCWood implements RegistryWood
@@ -98,6 +100,11 @@ public enum AFCWood implements RegistryWood
 
     public TreeGrower tree() {
         return tree;
+    }
+
+    // TODO: Make sure this is actually what should happen
+    public Supplier<Integer> ticksToGrow() {
+        return () -> daysToGrow() * Calendar.CALENDAR_TICKS_IN_DAY;
     }
 
     public int daysToGrow() {

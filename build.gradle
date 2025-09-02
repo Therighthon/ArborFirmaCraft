@@ -172,7 +172,7 @@ dependencies {
 //    fg.deobf("curse.maven:terrafirmacraft-302973:${tfc_version}")
 //    implementation fg.deobf("curse.maven:terrafirmacraft-302973:${tfc_version}")
 
-    implementation files("libs/TerraFirmaCraft-NeoForge-1.21-0.0.0-indev.jar")
+    implementation files("libs/TerraFirmaCraft-NeoForge-1.21.1-0.0.0-indev.jar")
 
     // TODO: FirmaLife
 //    compileOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
