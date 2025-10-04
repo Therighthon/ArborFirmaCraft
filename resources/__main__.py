@@ -17,13 +17,11 @@ import difflib
 
 import data
 import assets
-import recipes
 import constants
 import world_gen
 # import format_lang
 # import advancements
 # import generate_book
-import generate_trees
 import generate_textures
 # import validate_assets
 
@@ -150,12 +148,8 @@ def resources_at(rm: ResourceManager, do_assets: bool, do_data: bool, do_recipes
         assets.generate(rm)
     if do_data:
         data.generate(rm)
-    if do_recipes:
-        recipes.generate(rm)
     if do_worldgen:
         world_gen.generate(rm)
-    # if do_advancements:
-    #     advancements.generate(rm)
 
     if all((do_assets, do_data, do_worldgen, do_recipes, do_advancements)):
         # Only generate this when generating all, as it's shared

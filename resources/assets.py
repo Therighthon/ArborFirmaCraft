@@ -313,11 +313,12 @@ def generate(rm: ResourceManager):
         rm.block_model(('wood', 'barrel_sealed', wood), textures, 'tfc:block/barrel_sealed')
         rm.block_model(('wood', 'barrel_sealed', wood + '_side'), textures, 'tfc:block/barrel_side_sealed')
         block.with_lang(lang('%s barrel', wood))
-        block.with_block_loot(({
-                                   'name': 'afc:wood/barrel/%s' % wood,
-                                   'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
-                                   'conditions': [loot_tables.block_state_property('afc:wood/barrel/%s[sealed=true]' % wood)]
-                               }, 'afc:wood/barrel/%s' % wood))
+        # TODO: Add loot tables
+        # block.with_block_loot(({
+        #                            'name': 'afc:wood/barrel/%s' % wood,
+        #                            'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
+        #                            'conditions': [loot_tables.block_state_property('afc:wood/barrel/%s[sealed=true]' % wood)]
+        #                        }, 'afc:wood/barrel/%s' % wood))
 
         # Lecterns
         block = rm.blockstate('afc:wood/lectern/%s' % wood, variants=four_rotations('afc:block/wood/lectern/%s' % wood, (90, None, 180, 270)))

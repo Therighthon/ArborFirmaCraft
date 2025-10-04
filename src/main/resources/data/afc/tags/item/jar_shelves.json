@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/jar_shelf/cypress",
+    "afc:wood/jar_shelf/tualang",
+    "afc:wood/jar_shelf/hevea",
+    "afc:wood/jar_shelf/teak",
+    "afc:wood/jar_shelf/eucalyptus",
+    "afc:wood/jar_shelf/baobab",
+    "afc:wood/jar_shelf/fig",
+    "afc:wood/jar_shelf/mahogany",
+    "afc:wood/jar_shelf/ironwood",
+    "afc:wood/jar_shelf/ipe"
+  ]
+}

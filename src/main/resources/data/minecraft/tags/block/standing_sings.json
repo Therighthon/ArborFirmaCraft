@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/planks/cypress_sign",
+    "afc:wood/planks/tualang_sign",
+    "afc:wood/planks/hevea_sign",
+    "afc:wood/planks/teak_sign",
+    "afc:wood/planks/eucalyptus_sign",
+    "afc:wood/planks/baobab_sign",
+    "afc:wood/planks/fig_sign",
+    "afc:wood/planks/mahogany_sign",
+    "afc:wood/planks/ironwood_sign",
+    "afc:wood/planks/ipe_sign"
+  ]
+}

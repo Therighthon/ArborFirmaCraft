@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/axle/cypress",
+    "afc:wood/axle/tualang",
+    "afc:wood/axle/hevea",
+    "afc:wood/axle/teak",
+    "afc:wood/axle/eucalyptus",
+    "afc:wood/axle/baobab",
+    "afc:wood/axle/fig",
+    "afc:wood/axle/mahogany",
+    "afc:wood/axle/ironwood",
+    "afc:wood/axle/ipe",
+    "afc:wood/encased_axle/cypress",
+    "afc:wood/encased_axle/tualang",
+    "afc:wood/encased_axle/hevea",
+    "afc:wood/encased_axle/teak",
+    "afc:wood/encased_axle/eucalyptus",
+    "afc:wood/encased_axle/baobab",
+    "afc:wood/encased_axle/fig",
+    "afc:wood/encased_axle/mahogany",
+    "afc:wood/encased_axle/ironwood",
+    "afc:wood/encased_axle/ipe"
+  ]
+}

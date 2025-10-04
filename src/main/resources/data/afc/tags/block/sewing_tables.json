@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/sewing_table/cypress",
+    "afc:wood/sewing_table/tualang",
+    "afc:wood/sewing_table/hevea",
+    "afc:wood/sewing_table/teak",
+    "afc:wood/sewing_table/eucalyptus",
+    "afc:wood/sewing_table/baobab",
+    "afc:wood/sewing_table/fig",
+    "afc:wood/sewing_table/mahogany",
+    "afc:wood/sewing_table/ironwood",
+    "afc:wood/sewing_table/ipe"
+  ]
+}

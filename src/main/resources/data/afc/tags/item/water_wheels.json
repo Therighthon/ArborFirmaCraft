@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "replace": false,
+  "values": [
+    "afc:wood/water_wheel/cypress",
+    "afc:wood/water_wheel/tualang",
+    "afc:wood/water_wheel/hevea",
+    "afc:wood/water_wheel/teak",
+    "afc:wood/water_wheel/eucalyptus",
+    "afc:wood/water_wheel/baobab",
+    "afc:wood/water_wheel/fig",
+    "afc:wood/water_wheel/mahogany",
+    "afc:wood/water_wheel/ironwood",
+    "afc:wood/water_wheel/ipe"
+  ]
+}
