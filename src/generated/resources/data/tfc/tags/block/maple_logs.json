@@ -1,0 +1,16 @@
+{
+  "values": [
+    "tfc:wood/log/maple",
+    "tfc:wood/wood/maple",
+    "tfc:wood/stripped_log/maple",
+    "tfc:wood/stripped_wood/maple",
+    "afc:wood/log/ancient_maple",
+    "afc:wood/wood/ancient_maple",
+    "tfc:wood/log/willow",
+    "tfc:wood/wood/willow",
+    "tfc:wood/stripped_log/willow",
+    "tfc:wood/stripped_wood/willow",
+    "afc:wood/log/ancient_willow",
+    "afc:wood/wood/ancient_willow"
+  ]
+}

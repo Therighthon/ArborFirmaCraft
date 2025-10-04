@@ -1,0 +1,10 @@
+{
+  "values": [
+    "tfc:wood/log/sequoia",
+    "tfc:wood/wood/sequoia",
+    "tfc:wood/stripped_log/sequoia",
+    "tfc:wood/stripped_wood/sequoia",
+    "afc:wood/log/ancient_sequoia",
+    "afc:wood/wood/ancient_sequoia"
+  ]
+}

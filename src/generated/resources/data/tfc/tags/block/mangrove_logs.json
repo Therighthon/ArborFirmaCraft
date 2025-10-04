@@ -1,0 +1,10 @@
+{
+  "values": [
+    "tfc:wood/log/mangrove",
+    "tfc:wood/wood/mangrove",
+    "tfc:wood/stripped_log/mangrove",
+    "tfc:wood/stripped_wood/mangrove",
+    "afc:wood/log/ancient_mangrove",
+    "afc:wood/wood/ancient_mangrove"
+  ]
+}

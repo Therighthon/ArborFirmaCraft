@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-04T12:32:16.578397	Loot Tables
+// 1.21.1	2025-10-04T14:07:25.6989376	Loot Tables
 64f0f8843b536664677995622f903ef0f0f953d1 data/afc/loot_table/blocks/wood/axle/baobab.json
 3032d2b54518ca0b1cd80260153d9dc4126fc4e2 data/afc/loot_table/blocks/wood/axle/cypress.json
 d9471b3c2fc50caad059b8f5d53ae1524c3f62a3 data/afc/loot_table/blocks/wood/axle/eucalyptus.json
@@ -248,6 +248,7 @@ ad2cf9aed1986ddcf96ff8b19e1e90b695cf52d2 data/afc/loot_table/blocks/wood/log/anc
 f41c3edcb07a4b4cee9ed0a3a1576d1e1e6b5c7b data/afc/loot_table/blocks/wood/log/ancient_ironwood.json
 5e3642993c4983a9e4612f8501cf472bf742228d data/afc/loot_table/blocks/wood/log/ancient_kapok.json
 81c84b5ed29852d96b23eed1e715e39ba52506bf data/afc/loot_table/blocks/wood/log/ancient_mahogany.json
+708465acf8980783f8ea01c0a76ceb20d6d97bce data/afc/loot_table/blocks/wood/log/ancient_mangrove.json
 ad77ebfc267a1abc612ee42d83828df98fa1416b data/afc/loot_table/blocks/wood/log/ancient_maple.json
 3621ad67c68d1cd5cb21ee4bef3fb497859718df data/afc/loot_table/blocks/wood/log/ancient_oak.json
 7d5bc635a8ccef110b7da5177e4174322519e096 data/afc/loot_table/blocks/wood/log/ancient_palm.json
@@ -595,6 +596,7 @@ bdd5b9d544b28b850f23257adb2633511019d220 data/afc/loot_table/blocks/wood/wood/an
 2b5f5eef68caf9a3529582b205a9942e00ab771c data/afc/loot_table/blocks/wood/wood/ancient_ironwood.json
 1c55bebc460fa080d9d0fc1e4fdea63268fec06e data/afc/loot_table/blocks/wood/wood/ancient_kapok.json
 3e79e7db743c58c2b35345f12a06d248cedc8913 data/afc/loot_table/blocks/wood/wood/ancient_mahogany.json
+42633b9940342ef30b4b00c17ad11ec86e48df46 data/afc/loot_table/blocks/wood/wood/ancient_mangrove.json
 c286eaf0b2be307af569913cc71f32c29b4e595c data/afc/loot_table/blocks/wood/wood/ancient_maple.json
 fa96ab7f2aaa70785ae9743af0750a72c71840c3 data/afc/loot_table/blocks/wood/wood/ancient_oak.json
 1d49fae02ce4738216a01b821bff654e5ecbfec2 data/afc/loot_table/blocks/wood/wood/ancient_palm.json

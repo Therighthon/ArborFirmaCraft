@@ -40,6 +40,7 @@ public enum AncientLogs implements RegistryAncientLogs
     ANCIENT_DOUGLAS_FIR(MapColor.WOOD, MapColor.WOOD, Wood.DOUGLAS_FIR),
     ANCIENT_HICKORY(MapColor.WOOD, MapColor.WOOD, Wood.HICKORY),
     ANCIENT_KAPOK(MapColor.WOOD, MapColor.WOOD, Wood.KAPOK),
+    ANCIENT_MANGROVE(MapColor.WOOD, MapColor.WOOD, Wood.MANGROVE),
     ANCIENT_MAPLE(MapColor.WOOD, MapColor.WOOD, Wood.MAPLE),
     ANCIENT_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK),
     ANCIENT_PALM(MapColor.WOOD, MapColor.WOOD, Wood.PALM),
