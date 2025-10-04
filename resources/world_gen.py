@@ -10,11 +10,12 @@ from constants import *
 
 def generate(rm: ResourceManager):
 
+    # TODO: When run, this does NOT delete stale files
     # Trees / Forests
     forest_config(rm, 90, 325, 13.4, 40, 0.5, 1, True, 'acacia', 'acacia', True, old_growth_chance=12)
     forest_config(rm, 90, 325, 11.6, 40, 0.5, 1, True, 'gum_arabic', 'gum_arabic', False)
     forest_config(rm, 325, 500, 15.3, 24.4, -0.6, 0.6, False, 'acacia_koa', 'acacia', False)
-    forest_config(rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 'black_ash', 'ash', True)
+    forest_config(rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 'ash', 'ash', True)
     forest_config(rm, 350, 500, -15.7, -1.1, -0.9, 0.25, False, 'aspen', 'aspen', False, old_growth_chance=1, krum=True)
     forest_config(rm, 125, 310, -13.9, 2.5, -0.5, 0.35, False, 'birch', 'birch', False, old_growth_chance=1)
     forest_config(rm, 35, 150, 9.8, 20.7, -1, 1, False, 'blackwood', 'blackwood', True)
@@ -27,7 +28,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 365, 500, 11.6, 17.1, -0.4, 0.4, False, 'scrub_hickory', 'hickory', True)
     forest_config(rm, 280, 500, 13.4, 24.4, -0.45, 0.45, False, 'kapok', 'kapok', True, old_growth_chance=8)
     forest_config(rm, 300, 500, 13.4, 24.4, 0.4, 1, False, 'red_silk_cotton', 'kapok', False)
-    forest_config(rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 'sugar_maple', 'maple', True)
+    forest_config(rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 'maple', 'maple', True)
     forest_config(rm, 260, 500, -4.8, 11.6, -1, -0.5, False, 'bigleaf_maple', 'maple', False, old_growth_chance=4)
     forest_config(rm, 240, 500, 0.7, 4.3, 0.2, 1, False, 'weeping_maple', 'maple', True)
     forest_config(rm, 390, 500, 0.7, 13.4, -0.5, 0.5, False, 'live_oak', 'oak', True, old_growth_chance=8)
