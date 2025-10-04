@@ -168,11 +168,8 @@ dependencies {
     // Jade
     implementation("curse.maven:jade-324717:$jade_version")
 
-    // TODO: TFC
-//    fg.deobf("curse.maven:terrafirmacraft-302973:${tfc_version}")
-//    implementation fg.deobf("curse.maven:terrafirmacraft-302973:${tfc_version}")
+    implementation("curse.maven:terrafirmacraft-302973:${tfc_version}")
 
-    implementation files("libs/TerraFirmaCraft-NeoForge-1.21.1-0.0.0-indev.jar")
     implementation("curse.maven:cyanide-541676:$cyanide_version")
 
     // TODO: FirmaLife

@@ -8,6 +8,7 @@ import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.client.ClientHelpers;
 import net.dries007.tfc.client.TFCColors;
+import net.dries007.tfc.client.overworld.SolarCalculator;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.Calendars;
 import net.dries007.tfc.util.calendar.Month;
@@ -126,7 +127,8 @@ public final class AFCColors
     }
 
     private static Season getAdjustedNoisySeason(BlockPos pos) {
-        Month currentMonth = Calendars.CLIENT.getCalendarMonthOfYear();
+        assert ClientHelpers.getLevel() != null;
+        Month currentMonth = Calendars.CLIENT.getHemispheralCalendarMonthOfYear(SolarCalculator.getInNorthernHemisphere(pos, ClientHelpers.getLevel()));
         Season season = currentMonth.getSeason();
         float seasonDelta = 0.0F;
         float monthDelta = Calendars.CLIENT.getCalendarFractionOfMonth();
@@ -149,7 +151,8 @@ public final class AFCColors
     }
 
     private static Month getAdjustedNoisyMonth(BlockPos pos) {
-        Month month = Calendars.CLIENT.getCalendarMonthOfYear();
+        assert ClientHelpers.getLevel() != null;
+        Month month = Calendars.CLIENT.getHemispheralCalendarMonthOfYear(SolarCalculator.getInNorthernHemisphere(pos, ClientHelpers.getLevel()));
         float monthT = Calendars.CLIENT.getCalendarFractionOfMonth() - 0.5f;
         float monthDelta = 16*(monthT*monthT*monthT*monthT);
 
