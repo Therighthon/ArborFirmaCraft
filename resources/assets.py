@@ -4,7 +4,7 @@
 import itertools
 import os
 
-from mcresources import ResourceManager, ItemContext, utils, block_states, loot_tables, BlockContext, atlases
+from mcresources import ResourceManager, ItemContext, utils, block_states, BlockContext, atlases
 from mcresources.type_definitions import JsonObject
 
 from constants import *
@@ -18,29 +18,13 @@ def generate(rm: ResourceManager):
         block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='block/leaves')
         block.with_item_model()
         block.with_tag('minecraft:leaves')
-        block.with_block_loot(({
-                                   'name': 'afc:wood/leaves/%s' % variant,
-                                   'conditions': [loot_tables.any_of(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
-                               }, {
-                                   'name': 'afc:wood/sapling/%s' % variant,
-                                   'conditions': ['minecraft:survives_explosion', loot_tables.random_chance(TREE_SAPLING_DROP_CHANCES[variant])] #Delete this bit to run for now, will fix itself when you run Generate trees.py because it will calc the sapling drop chances
-                               }), ({
-                                        'name': 'minecraft:stick',
-                                        'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.2)],
-                                        'functions': [loot_tables.set_count(1, 2)]
-                                    }, {
-                                        'name': 'minecraft:stick',
-                                        'conditions': [loot_tables.random_chance(0.05)],
-                                        'functions': [loot_tables.set_count(1, 2)]
-                                    }))
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
         block.with_block_model({'cross': 'afc:block/wood/sapling/%s' % variant}, 'block/cross')
-        block.with_block_loot('afc:wood/sapling/%s' % variant)
         rm.item_model(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
 
-        flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant, 'afc:wood/sapling/%s' % variant)
+        flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant)
 
         # Fallen Leaves
         block = rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
@@ -51,9 +35,6 @@ def generate(rm: ResourceManager):
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
-        block.with_block_loot(*[{'name': 'afc:wood/fallen_leaves/%s' % variant, 'conditions': [loot_tables.block_state_property('afc:wood/fallen_leaves/%s[layers=%s]' % (variant, i))], 'functions': [loot_tables.set_count(i)]} for i in range(1, 9)])
-
-
 
 
         block.with_tag('can_be_snow_piled')
@@ -67,27 +48,6 @@ def generate(rm: ResourceManager):
                 'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
                 'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
             }, use_default_model=False)
-
-            stick_with_hammer = {
-                'name': 'minecraft:stick',
-                'conditions': [loot_tables.match_tag('tfc:hammers')],
-                'functions': [loot_tables.set_count(1, 4)]
-            }
-            if variant == 'wood' or variant == 'stripped_wood':
-                block.with_block_loot((
-                    stick_with_hammer,
-                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
-                        'name': 'afc:wood/%s/%s' % (variant, wood),
-                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
-                    },
-                    'afc:wood/%s/%s' % (variant.replace('wood', 'log'), wood)
-                ))
-            else:
-                block.with_block_loot((
-                    stick_with_hammer,
-                    stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
-                ))
 
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
 
@@ -103,6 +63,7 @@ def generate(rm: ResourceManager):
         rm.item_tag('minecraft:signs', 'afc:wood/sign/' + wood)
         rm.item_tag('afc:minecarts', 'afc:wood/chest_minecart/' + wood)
 
+        # TODO: Firmalife. Also, this might be a valid place to keep using python loot tables
         # Commented out because they will generate into the wrong directories, needs to be rewritten to write to the override pack
         # block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90))).with_tag('food_shelves').with_item_tag('food_shelves')
         # block.with_block_loot('afc:wood/food_shelf/%s' % wood).with_lang(lang('%s food shelf', wood)).with_tag('minecraft:mineable/axe')
@@ -128,14 +89,12 @@ def generate(rm: ResourceManager):
         # rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
         # rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
 
-
         # Groundcover
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))
 
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
-        block.with_block_loot('afc:wood/twig/%s' % wood)
 
         block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', wood))
         tex = {'all': 'afc:block/wood/leaves/%s' % wood}
@@ -145,8 +104,6 @@ def generate(rm: ResourceManager):
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (wood, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', wood), 'tfc:item/groundcover/fallen_leaves')
-        block.with_block_loot(*[{'name': 'afc:wood/fallen_leaves/%s' % wood, 'conditions': [loot_tables.block_state_property('afc:wood/fallen_leaves/%s[layers=%s]' % (wood, i))], 'functions': [loot_tables.set_count(i)]} for i in range(1, 9)])
-
 
         # Leaves
         block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s' % wood)
@@ -154,36 +111,19 @@ def generate(rm: ResourceManager):
         block.with_item_model()
         block.with_item_model()
         block.with_tag('minecraft:leaves')
-        block.with_block_loot(({
-            'name': 'afc:wood/leaves/%s' % wood,
-            'conditions': [loot_tables.any_of(loot_tables.match_tag('forge:shears'), loot_tables.silk_touch())]
-        }, {
-            'name': 'afc:wood/sapling/%s' % wood,
-            'conditions': ['minecraft:survives_explosion', loot_tables.random_chance(TREE_SAPLING_DROP_CHANCES[wood])] #Delete this bit to run for now, will fix itself when you run Generate trees.py because it will calc the sapling drop chances
-        }), ({
-            'name': 'minecraft:stick',
-            'conditions': [loot_tables.match_tag('afc:sharp_tools'), loot_tables.random_chance(0.2)],
-            'functions': [loot_tables.set_count(1, 2)]
-        }, {
-            'name': 'minecraft:stick',
-            'conditions': [loot_tables.random_chance(0.05)],
-            'functions': [loot_tables.set_count(1, 2)]
-        }))
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', wood), 'afc:block/wood/sapling/%s' % wood)
         block.with_block_model({'cross': 'afc:block/wood/sapling/%s' % wood}, 'block/cross')
-        block.with_block_loot('afc:wood/sapling/%s' % wood)
         rm.item_model(('wood', 'sapling', wood), 'afc:block/wood/sapling/%s' % wood)
 
-        flower_pot_cross(rm, '%s sapling' % wood, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood, 'afc:wood/sapling/%s' % wood)
+        flower_pot_cross(rm, '%s sapling' % wood, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood)
 
         # Planks and variant blocks
         block = rm.block(('wood', 'planks', wood))
         block.with_blockstate()
         block.with_block_model()
         block.with_item_model()
-        block.with_block_loot('afc:wood/planks/%s' % wood)
         block.with_lang(lang('%s planks', wood))
         block.make_slab()
         block.make_stairs()
@@ -194,20 +134,16 @@ def generate(rm: ResourceManager):
         block.make_fence()
         block.make_fence_gate()
 
-        for block_type in ('button', 'fence', 'fence_gate', 'pressure_plate', 'stairs', 'trapdoor'):
-            rm.block_loot('wood/planks/%s_%s' % (wood, block_type), 'afc:wood/planks/%s_%s' % (wood, block_type))
-        slab_loot(rm, 'afc:wood/planks/%s_slab' % wood)
-
         # Tool Rack
         rack_namespace = 'afc:wood/planks/%s_tool_rack' % wood
         block = rm.blockstate(rack_namespace, model='afc:block/wood/planks/%s_tool_rack' % wood, variants=four_rotations('afc:block/wood/planks/%s_tool_rack' % wood, (270, 180, None, 90)))
         block.with_block_model(textures={'texture': 'afc:block/wood/planks/%s' % wood, 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/tool_rack')
-        block.with_lang(lang('%s Tool Rack', wood)).with_block_loot(rack_namespace).with_item_model()
+        block.with_lang(lang('%s Tool Rack', wood)).with_item_model()
 
         # Loom
         block = rm.blockstate('afc:wood/planks/%s_loom' % wood, model='afc:block/wood/planks/%s_loom' % wood, variants=four_rotations('afc:block/wood/planks/%s_loom' % wood, (270, 180, None, 90)))
         block.with_block_model(textures={'texture': 'afc:block/wood/planks/%s' % wood, 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/loom')
-        block.with_item_model().with_lang(lang('%s loom', wood)).with_block_loot('afc:wood/planks/%s_loom' % wood).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang('%s loom', wood)).with_tag('minecraft:mineable/axe')
 
         # Bookshelf
         slot_types = (('top_right', 2), ('bottom_mid', 4), ('top_left', 0), ('bottom_right', 5), ('bottom_left', 3), ('top_mid', 1))
@@ -218,7 +154,7 @@ def generate(rm: ResourceManager):
         shelf_mp += [({'AND': [{'facing': face}, {f'slot_{i}_occupied': is_occupied}]}, {'model': f'afc:block/wood/planks/{wood}_bookshelf_{occupation}_{slot_type}', 'y': y}) for face, y in faces for slot_type, i in slot_types for occupation, is_occupied in occupations]
         block = rm.blockstate_multipart(('wood', 'planks', '%s_bookshelf' % wood), *shelf_mp)
         rm.block_model(('wood', 'planks', '%s_bookshelf' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood}, parent='minecraft:block/chiseled_bookshelf')
-        block.with_lang(lang('%s bookshelf', wood)).with_block_loot('afc:wood/planks/%s_bookshelf' % wood)
+        block.with_lang(lang('%s bookshelf', wood))
         rm.block_model(('wood', 'planks', '%s_bookshelf_inventory' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood, 'front': 'afc:block/wood/planks/%s_bookshelf_empty' % wood}, parent='minecraft:block/chiseled_bookshelf_inventory')
         rm.item_model('afc:wood/planks/%s_bookshelf' % wood, parent='afc:block/wood/planks/%s_bookshelf_inventory' % wood, no_textures=True)
         for slot in ('bottom_left', 'bottom_mid', 'bottom_right', 'top_left', 'top_mid', 'top_right'):
@@ -234,11 +170,10 @@ def generate(rm: ResourceManager):
             'west': 'afc:block/wood/planks/%s_workbench_front' % wood,
             'up': 'afc:block/wood/planks/%s_workbench_top' % wood,
             'down': 'afc:block/wood/planks/%s' % wood
-        }).with_item_model().with_lang(lang('%s Workbench', wood)).with_tag('afc:workbenches').with_block_loot('afc:wood/planks/%s_workbench' % wood)
+        }).with_item_model().with_lang(lang('%s Workbench', wood)).with_tag('afc:workbenches')
 
         # Doors
         rm.item_model('afc:wood/planks/%s_door' % wood, 'afc:item/wood/planks/%s_door' % wood)
-        rm.block_loot('wood/planks/%s_door' % wood, {'name': 'afc:wood/planks/%s_door' % wood, 'conditions': [loot_tables.block_state_property('afc:wood/planks/%s_door[half=lower]' % wood)]})
 
         # Log Fences
         log_fence_namespace = 'afc:wood/planks/' + wood + '_log_fence'
@@ -247,7 +182,6 @@ def generate(rm: ResourceManager):
         rm.block_model(log_fence_namespace + '_side', textures={'texture': 'afc:block/wood/planks/' + wood}, parent='block/fence_side')
         rm.block_model(log_fence_namespace + '_inventory', textures={'log': 'afc:block/wood/log/' + wood, 'planks': 'afc:block/wood/planks/' + wood}, parent='tfc:block/log_fence_inventory')
         rm.item_model('afc:wood/planks/' + wood + '_log_fence', parent='afc:block/wood/planks/' + wood + '_log_fence_inventory', no_textures=True)
-        rm.block_loot(log_fence_namespace, log_fence_namespace)
 
         texture = 'afc:block/wood/sheet/%s' % wood
         connection = 'afc:block/wood/support/%s_connection' % wood
@@ -257,14 +191,7 @@ def generate(rm: ResourceManager):
             ({'east': True}, {'model': connection}),
             ({'south': True}, {'model': connection, 'y': 90}),
             ({'west': True}, {'model': connection, 'y': 180}),
-        ).with_tag('afc:support_beam').with_lang(lang('%s Support', wood)).with_block_loot('afc:wood/support/' + wood)
-        rm.blockstate_multipart(('wood', 'horizontal_support', wood),
-            {'model': 'afc:block/wood/support/%s_horizontal' % wood},
-            ({'north': True}, {'model': connection, 'y': 270}),
-            ({'east': True}, {'model': connection}),
-            ({'south': True}, {'model': connection, 'y': 90}),
-            ({'west': True}, {'model': connection, 'y': 180}),
-        ).with_tag('afc:support_beam').with_lang(lang('%s Support', wood)).with_block_loot('afc:wood/support/' + wood)
+        ).with_tag('afc:support_beam').with_lang(lang('%s Support', wood))
 
         rm.block_model('afc:wood/support/%s_inventory' % wood, textures={'texture': texture}, parent='tfc:block/wood/support/inventory')
         rm.block_model('afc:wood/support/%s_vertical' % wood, textures={'texture': texture, 'particle': texture}, parent='tfc:block/wood/support/vertical')
@@ -276,20 +203,17 @@ def generate(rm: ResourceManager):
             rm.blockstate(('wood', chest, wood), model='afc:block/wood/%s/%s' % (chest, wood)).with_lang(lang('%s %s', wood, chest)).with_tag('minecraft:features_cannot_replace').with_tag('minecraft:lava_pool_stone_cannot_replace')
             rm.block_model(('wood', chest, wood), textures={'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
             rm.item_model(('wood', chest, wood), {'particle': 'afc:block/wood/planks/%s' % wood}, parent='minecraft:item/chest')
-            rm.block_loot(('wood', chest, wood), {'name': 'afc:wood/%s/%s'%(chest,wood)})
 
         rm.block_model('wood/sluice/%s_upper' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_upper')
         rm.block_model('wood/sluice/%s_lower' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_lower')
-        block = rm.blockstate(('wood', 'sluice', wood), variants={**four_rotations('afc:block/wood/sluice/%s_upper' % wood, (90, 0, 180, 270), suffix=',upper=true'), **four_rotations('afc:block/wood/sluice/%s_lower' % wood, (90, 0, 180, 270), suffix=',upper=false')}).with_lang(lang('%s sluice', wood))
-        block.with_block_loot({'name': 'afc:wood/sluice/%s' % wood, 'conditions': [loot_tables.block_state_property('afc:wood/sluice/%s[upper=true]' % wood)]})
         rm.item_model(('wood', 'sluice', wood), parent='afc:block/wood/sluice/%s_lower' % wood, no_textures=True)
 
-        rm.blockstate(('wood', 'planks', '%s_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None).with_block_loot('afc:wood/sign/%s' % wood).with_tag('minecraft:standing_sings')
+        rm.blockstate(('wood', 'planks', '%s_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
         rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood)).with_tag('minecraft:wall_signs')
         for metal, metal_data in METALS.items():
             if 'utility' in metal_data.types:
                 for variant in ('hanging_sign', 'wall_hanging_sign'):
-                    rm.blockstate(('wood', 'planks', variant, metal, wood), model='afc:block/wood/planks/%s_sign_particle' % wood).with_lang(lang('%s %s %s', metal, wood, variant)).with_block_loot('afc:wood/hanging_sign/%s/%s' % (metal, wood))
+                    rm.blockstate(('wood', 'planks', variant, metal, wood), model='afc:block/wood/planks/%s_sign_particle' % wood).with_lang(lang('%s %s %s', metal, wood, variant))
         for metal, metal_data in METALS.items():
             if 'utility' in metal_data.types:
                 rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign/head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('mahogany', 'cypress') else ''), 'tfc:item/metal/hanging_sign/%s' % metal).with_lang(lang('%s %s hanging sign', metal, wood))
@@ -313,41 +237,33 @@ def generate(rm: ResourceManager):
         rm.block_model(('wood', 'barrel_sealed', wood), textures, 'tfc:block/barrel_sealed')
         rm.block_model(('wood', 'barrel_sealed', wood + '_side'), textures, 'tfc:block/barrel_side_sealed')
         block.with_lang(lang('%s barrel', wood))
-        # TODO: Add loot tables
-        # block.with_block_loot(({
-        #                            'name': 'afc:wood/barrel/%s' % wood,
-        #                            'functions': [loot_tables.copy_block_entity_name(), loot_tables.copy_block_entity_nbt()],
-        #                            'conditions': [loot_tables.block_state_property('afc:wood/barrel/%s[sealed=true]' % wood)]
-        #                        }, 'afc:wood/barrel/%s' % wood))
 
         # Lecterns
         block = rm.blockstate('afc:wood/lectern/%s' % wood, variants=four_rotations('afc:block/wood/lectern/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'bottom': 'afc:block/wood/planks/%s' % wood, 'base': 'afc:block/wood/lectern/%s/base' % wood, 'front': 'afc:block/wood/lectern/%s/front' % wood, 'sides': 'afc:block/wood/lectern/%s/sides' % wood, 'top': 'afc:block/wood/lectern/%s/top' % wood, 'particle': 'afc:block/wood/lectern/%s/sides' % wood}, parent='minecraft:block/lectern')
-        block.with_item_model().with_lang(lang("%s lectern" % wood)).with_block_loot('afc:wood/lectern/%s' % wood).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang("%s lectern" % wood)).with_tag('minecraft:mineable/axe')
         # Scribing Table
         block = rm.blockstate('afc:wood/scribing_table/%s' % wood, variants=four_rotations('afc:block/wood/scribing_table/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'top': 'afc:block/wood/scribing_table/%s' % wood, 'leg': 'afc:block/wood/log/%s' % wood, 'side' : 'afc:block/wood/planks/%s' % wood, 'misc': 'tfc:block/wood/scribing_table/scribing_paraphernalia', 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/scribing_table')
-        block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_block_loot('afc:wood/scribing_table/%s' % wood).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_tag('minecraft:mineable/axe')
         # Sewing Table
         block = rm.blockstate('wood/sewing_table/%s' % wood, variants=four_rotations('afc:block/wood/sewing_table/%s' % wood, (90, None, 180, 270))).with_item_model()
         rm.block_model(('wood', 'sewing_table', wood), {'0': 'afc:block/wood/log/%s' % wood, '1': 'afc:block/wood/planks/%s' % wood}, 'tfc:block/sewing_table')
-        block.with_lang(lang('%s sewing table', wood)).with_block_loot('afc:wood/sewing_table/%s' % wood)
+        block.with_lang(lang('%s sewing table', wood))
 
         # Jar shelf
         block = rm.blockstate('wood/jar_shelf/%s' % wood, variants=four_rotations('afc:block/wood/jar_shelf/%s' % wood, (90, None, 180, 270)))
-        block.with_block_model(textures={'0': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/jar_shelf').with_item_model().with_lang(lang('%s jar shelf', wood)).with_block_loot('afc:wood/jar_shelf/%s' % wood)
+        block.with_block_model(textures={'0': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/jar_shelf').with_item_model().with_lang(lang('%s jar shelf', wood))
 
         # Axle
         block = rm.blockstate('afc:wood/axle/%s' % wood, 'tfc:block/empty')
         block.with_lang(lang('%s axle', wood))
-        block.with_block_loot('afc:wood/axle/%s' % wood)
         block.with_block_model({'wood': 'afc:block/wood/sheet/%s' % wood}, 'tfc:block/axle')
         rm.item_model('afc:wood/axle/%s' % wood, no_textures=True, parent='afc:block/wood/axle/%s' % wood)
 
         # Bladed Axle
         block = rm.blockstate('afc:wood/bladed_axle/%s' % wood, 'tfc:block/empty')
         block.with_lang(lang('%s bladed axle', wood))
-        block.with_block_loot('afc:wood/bladed_axle/%s' % wood)
         block.with_block_model({'wood': 'afc:block/wood/sheet/%s' % wood}, 'tfc:block/bladed_axle')
         rm.item_model('afc:wood/bladed_axle/%s' % wood, no_textures=True, parent='afc:block/wood/bladed_axle/%s' % wood)
 
@@ -358,7 +274,6 @@ def generate(rm: ResourceManager):
             'axis=z': {'model': 'afc:block/wood/encased_axle/%s' % wood, 'x': 90},
         })
         block.with_lang(lang('%s encased axle', wood))
-        block.with_block_loot('afc:wood/encased_axle/%s' % wood)
         block.with_block_model({
             'side': 'afc:block/wood/stripped_log/%s' % wood,
             'end': 'afc:block/wood/planks/%s' % wood,
@@ -378,7 +293,6 @@ def generate(rm: ResourceManager):
             'axis=z,powered=true': {'model': 'afc:block/wood/clutch/%s_powered' % wood, 'x': 90},
         })
         block.with_lang(lang('%s clutch', wood))
-        block.with_block_loot('afc:wood/clutch/%s' % wood)
         block.with_block_model({
             'side': 'afc:block/wood/stripped_log/%s' % wood,
             'end': 'afc:block/wood/planks/%s' % wood,
@@ -415,7 +329,6 @@ def generate(rm: ResourceManager):
             ({'up': False}, {'model': gearbox_face, 'x': 270}),
         )
         block.with_lang(lang('%s gear box', wood))
-        block.with_block_loot('afc:wood/gear_box/%s' % wood)
 
         rm.block_model(('wood', 'gear_box_port', wood), {
             'all': 'afc:block/wood/planks/%s' % wood,
@@ -434,13 +347,11 @@ def generate(rm: ResourceManager):
         # Windmill
         block = rm.blockstate('afc:wood/windmill/%s' % wood, 'tfc:block/empty')
         block.with_lang(lang('%s windmill', wood))
-        block.with_block_loot('afc:wood/axle/%s' % wood,)
 
         # Water Wheel
         block = rm.blockstate('afc:wood/water_wheel/%s' % wood)
         block.with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
         block.with_lang(lang('%s water wheel', wood))
-        block.with_block_loot('afc:wood/water_wheel/%s' % wood)
         rm.item_model('afc:wood/water_wheel/%s' % wood, 'afc:item/wood/water_wheel/%s' % wood)
 
 
@@ -477,34 +388,6 @@ def generate(rm: ResourceManager):
             wood_top = wood
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
-        block.with_block_loot('afc:wood/twig/%s' % wood)
-
-        for variant in ('log', 'wood'):
-            block = rm.blockstate(('wood', variant, wood), variants={
-                'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
-                'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
-                'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
-            }, use_default_model=False)
-
-            stick_with_hammer = {
-                'name': 'minecraft:stick',
-                'conditions': [loot_tables.match_tag('tfc:hammers')],
-                'functions': [loot_tables.set_count(1, 4)]
-            }
-            if variant == 'wood':
-                block.with_block_loot((
-                    stick_with_hammer,
-                    {  # wood blocks will only drop themselves if non-natural (aka branch_direction=none)
-                        'name': 'afc:wood/%s/%s' % (variant, wood),
-                        'conditions': loot_tables.block_state_property('afc:wood/%s/%s[branch_direction=none]' % (variant, wood))
-                    },
-                    'afc:wood/%s/%s' % (variant.replace('wood', 'log'), wood)
-                ))
-            else:
-                block.with_block_loot((
-                    stick_with_hammer,
-                    'afc:wood/%s/%s' % (variant, wood)  # logs drop themselves always
-                ))
 
     for wood in ANCIENT_LOGS.keys():
         base_wood = wood.replace('ancient_', '')
@@ -518,29 +401,6 @@ def generate(rm: ResourceManager):
                 'axis=z': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90},
                 'axis=x': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90, 'y': 90}
             }, use_default_model=False)
-
-            stick_with_hammer = {
-                'name': 'minecraft:stick',
-                'conditions': [loot_tables.match_tag('tfc:hammers')],
-                'functions': [loot_tables.set_count(1, 4)]
-            }
-            if variant == 'wood':
-                block.with_block_loot((
-                    stick_with_hammer,
-                    {
-                        'name': '%s:wood/log/%s' % (mod_id, base_wood),
-                        'conditions': loot_tables.random_chance(0.6)
-                    }
-
-                ))
-            else:
-                block.with_block_loot((
-                    stick_with_hammer,
-                    {
-                        'name': '%s:wood/log/%s' % (mod_id, base_wood),
-                        'conditions': loot_tables.random_chance(0.6)
-                    }
-                ))
 
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
     rm.item_model('light', no_textures=True, parent='minecraft:item/light')
@@ -565,8 +425,8 @@ def generate(rm: ResourceManager):
 
 
 
-def flower_pot_cross(rm: ResourceManager, simple_name: str, name: str, model: str, texture: str, loot: str):
-    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name)).with_tag('minecraft:flower_pots').with_block_loot(loot, 'minecraft:flower_pot')
+def flower_pot_cross(rm: ResourceManager, simple_name: str, name: str, model: str, texture: str):
+    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name)).with_tag('minecraft:flower_pots')
     rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/loam'})
 
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
@@ -626,18 +486,6 @@ def make_javelin(rm: ResourceManager, name_parts: str, texture: str) -> 'ItemCon
             'ground': {'parent': model + '_gui'},
             'gui': {'parent': model + '_gui'}
         }
-    })
-
-
-def slab_loot(rm: ResourceManager, loot: str):
-    return rm.block_loot(loot, {
-        'name': loot,
-        'functions': [{
-            'function': 'minecraft:set_count',
-            'conditions': [loot_tables.block_state_property(loot + '[type=double]')],
-            'count': 2,
-            'add': False
-        }]
     })
 
 def make_door(block_context: BlockContext, door_suffix: str = '_door', top_texture: Optional[str] = None, bottom_texture: Optional[str] = None) -> 'BlockContext':

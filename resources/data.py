@@ -3,7 +3,7 @@
 
 from enum import Enum, auto
 
-from mcresources import ResourceManager, utils, loot_tables
+from mcresources import ResourceManager, utils
 from mcresources.type_definitions import ResourceIdentifier
 
 from constants import *
