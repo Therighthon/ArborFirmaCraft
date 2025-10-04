@@ -3,12 +3,12 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": -20,
-      "max_temperature": 30,
-      "min_groundwater": 0,
+      "min_temperature": -19.4,
+      "max_temperature": 2.5,
+      "min_groundwater": 330,
       "max_groundwater": 500,
-      "min_rain_variance": -1,
-      "max_rain_variance": 1,
+      "min_rain_variance": -0.5,
+      "max_rain_variance": 0.6,
       "rain_variance_absolute": false
     },
     "groundcover": [
@@ -31,6 +31,7 @@
       }
     },
     "bush_leaves": "tfc:wood/leaves/spruce",
+    "old_growth_tree": "tfc:tree/spruce_large",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }

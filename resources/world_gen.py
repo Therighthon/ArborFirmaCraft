@@ -52,6 +52,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 130, 260, 8, 13.4, -1, -0.3, False, 'atlas_cedar', 'white_cedar', False)
     forest_config(rm, 330, 500, -6.6, 9.8, -0.4, 0.55, False, 'willow', 'willow', True)
     forest_config(rm, 355, 500, -3, 11.6, 0.1, 1, False, 'weeping_willow', 'willow', False)
+
     forest_config(rm, 300, 500, 15.3, 24.4, -0.4, 1, False, 'rainbow_eucalyptus', 'rainbow_eucalyptus', False, old_growth_chance=1)
     forest_config(rm, 170, 360, 8, 18.9, -0.1, 0.7, False, 'eucalyptus', 'eucalyptus', False)
     forest_config(rm, 390, 500, 9.8, 18.9, -0.2, 0.65, False, 'mountain_ash', 'eucalyptus', True, old_growth_chance=3)
@@ -62,7 +63,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 330, 500, 13.4, 26.2, -0.75, 0.75, False, 'sapele_mahogany', 'mahogany', True)
     forest_config(rm, 320, 500, 20.7, 40, -0.3, 0.3, False, 'tualang', 'tualang', True)
     forest_config(rm, 215, 500, 13.4, 26.2, 0.4, 1, True, 'teak', 'teak', False)
-    forest_config(rm, 100, 260, 2.5, 15.3, , , False, 'cypress', 'cypress', False)
+    forest_config(rm, 100, 260, 2.5, 15.3, -0.5, -1, False, 'cypress', 'cypress', False)
     forest_config(rm, 235, 405, -8.4, 4.3, -1, -0.7, False, 'weeping_cypress', 'cypress', False)
     forest_config(rm, 410, 500, -4.8, 9.8, -1, -0.65, False, 'redcedar', 'redcedar', False)
     forest_config(rm, 360, 500, -1.1, 15.3, -0.45, 0.55, False, 'bald_cypress', 'cypress', True, old_growth_chance=2)

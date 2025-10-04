@@ -3,12 +3,12 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": -20,
-      "max_temperature": 30,
-      "min_groundwater": 0,
+      "min_temperature": -15.7,
+      "max_temperature": -1.1,
+      "min_groundwater": 350,
       "max_groundwater": 500,
-      "min_rain_variance": -1,
-      "max_rain_variance": 1,
+      "min_rain_variance": -0.9,
+      "max_rain_variance": 0.25,
       "rain_variance_absolute": false
     },
     "groundcover": [
@@ -32,7 +32,6 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "tfc:wood/leaves/aspen",
-    "old_growth_tree": "tfc:tree/aspen_large"
+    "bush_leaves": "tfc:wood/leaves/aspen"
   }
 }

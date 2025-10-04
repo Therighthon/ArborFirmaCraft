@@ -3,12 +3,12 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": 0.7,
-      "max_temperature": 4.3,
-      "min_groundwater": 240,
-      "max_groundwater": 500,
-      "min_rain_variance": 0.2,
-      "max_rain_variance": 1,
+      "min_temperature": -8.4,
+      "max_temperature": 8,
+      "min_groundwater": 280,
+      "max_groundwater": 420,
+      "min_rain_variance": -0.5,
+      "max_rain_variance": 0.45,
       "rain_variance_absolute": false
     },
     "groundcover": [
@@ -16,11 +16,11 @@
         "block": "tfc:wood/twig/maple"
       },
       {
-        "block": "afc:wood/fallen_leaves/weeping_maple"
+        "block": "afc:wood/fallen_leaves/sugar_maple"
       }
     ],
-    "normal_tree": "tfc:tree/weeping_maple",
-    "dead_tree": "tfc:tree/weeping_maple_dead",
+    "normal_tree": "tfc:tree/sugar_maple",
+    "dead_tree": "tfc:tree/sugar_maple_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/maple",
     "bush_log": {
@@ -30,7 +30,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "afc:wood/leaves/weeping_maple",
-    "old_growth_tree": "tfc:tree/weeping_maple_large"
+    "bush_leaves": "afc:wood/leaves/sugar_maple",
+    "old_growth_tree": "tfc:tree/sugar_maple_large"
   }
 }

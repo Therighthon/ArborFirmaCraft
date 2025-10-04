@@ -3,12 +3,12 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": -20,
-      "max_temperature": 30,
-      "min_groundwater": 0,
-      "max_groundwater": 500,
-      "min_rain_variance": -1,
-      "max_rain_variance": 1,
+      "min_temperature": -13.9,
+      "max_temperature": 4.3,
+      "min_groundwater": 100,
+      "max_groundwater": 340,
+      "min_rain_variance": -0.4,
+      "max_rain_variance": 0.6,
       "rain_variance_absolute": false
     },
     "groundcover": [
@@ -21,6 +21,7 @@
     ],
     "normal_tree": "tfc:tree/white_cedar",
     "dead_tree": "tfc:tree/white_cedar_dead",
+    "krummholz": "tfc:tree/white_cedar_krummholz",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/white_cedar",
     "bush_log": {

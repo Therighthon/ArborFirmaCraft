@@ -3,11 +3,11 @@
   "type": "tfc:forest_entry",
   "config": {
     "climate": {
-      "min_temperature": -20,
-      "max_temperature": 30,
-      "min_groundwater": 0,
-      "max_groundwater": 500,
-      "min_rain_variance": -1,
+      "min_temperature": -19.4,
+      "max_temperature": -3,
+      "min_groundwater": 60,
+      "max_groundwater": 300,
+      "min_rain_variance": 0.2,
       "max_rain_variance": 1,
       "rain_variance_absolute": false
     },
@@ -24,6 +24,7 @@
     ],
     "normal_tree": "tfc:tree/pine",
     "dead_tree": "tfc:tree/pine_dead",
+    "krummholz": "tfc:tree/pine_krummholz",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/pine",
     "bush_log": {
@@ -33,6 +34,7 @@
         "axis": "y"
       }
     },
-    "bush_leaves": "tfc:wood/leaves/pine"
+    "bush_leaves": "tfc:wood/leaves/pine",
+    "old_growth_tree": "tfc:tree/pine_large"
   }
 }
