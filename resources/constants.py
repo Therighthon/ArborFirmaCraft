@@ -73,31 +73,12 @@ WOODS: Dict[str, Wood] = {
     'mahogany': Wood(790, 1600),
     'ironwood': Wood(800, 1400),
     'ipe': Wood(710, 1700)
-    # 'acacia': Wood(650, 1000),
-    # 'ash': Wood(696, 1250),
-    # 'aspen': Wood(611, 1000),
-    # 'birch': Wood(652, 1750),
-    # 'blackwood': Wood(720, 1750),
-    # 'chestnut': Wood(651, 1500),
-    # 'douglas_fir': Wood(707, 1500),
-    # 'hickory': Wood(762, 2000),
-    # 'kapok': Wood(645, 1000),
-    # 'maple': Wood(745, 2000),
-    # 'oak': Wood(728, 2250),
-    # 'palm': Wood(730, 1250),
-    # 'pine': Wood(627, 1250),
-    # 'rosewood': Wood(640, 1500),
-    # 'sequoia': Wood(612, 1750),
-    # 'spruce': Wood(608, 1500),
-    # 'sycamore': Wood(653, 1750),
-    # 'white_cedar': Wood(625, 1500),
-    # 'willow': Wood(603, 1000)
 }
 
 TFC_WOODS: Dict[str, Wood] = {
     'acacia': Wood(650, 1000),
     'ash': Wood(696, 1250),
-    'aspen': Wood(611, 1000),
+    'aspen': Wood(620, 1200),
     'birch': Wood(652, 1750),
     'blackwood': Wood(720, 1750),
     'chestnut': Wood(651, 1500),
@@ -117,12 +98,12 @@ TFC_WOODS: Dict[str, Wood] = {
 }
 
 UNIQUE_LOGS: Dict[str, Wood] = {
-    'rainbow_eucalyptus': Wood(650, 1000),
-    'redcedar': Wood(700, 1100),
-    'gum_arabic': Wood(650, 1100),
-    'black_oak': Wood(700, 800),
+    'rainbow_eucalyptus': Wood(720, 2100),
+    'redcedar': Wood(650, 1000),
+    'gum_arabic': Wood(650, 1000),
+    'black_oak': Wood(728, 2250),
     'poplar': Wood(620, 1200),
-    'rubber_fig': Wood(700, 1300),
+    'rubber_fig': Wood(715, 1900),
 }
 
 ANCIENT_LOGS: Dict[str, Wood] = {
