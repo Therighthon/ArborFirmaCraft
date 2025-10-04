@@ -1,0 +1,37 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -20,
+      "max_temperature": 30,
+      "min_groundwater": 0,
+      "max_groundwater": 500,
+      "min_rain_variance": -1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/rosewood"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/giant_rosewood"
+      }
+    ],
+    "normal_tree": "tfc:tree/giant_rosewood",
+    "dead_tree": "tfc:tree/giant_rosewood_dead",
+    "soil_disc": "tfc:duff_disc",
+    "fallen_log": "tfc:wood/log/rosewood",
+    "bush_log": {
+      "Name": "tfc:wood/wood/rosewood",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/giant_rosewood",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}
