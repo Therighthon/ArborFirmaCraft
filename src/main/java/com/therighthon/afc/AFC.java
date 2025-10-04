@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
-import com.therighthon.afc.common.commands.AFCCommands;
 import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
@@ -51,7 +50,6 @@ public final class AFC
         AFCItems.ITEMS.register(eventBus);
         //TODO: Fluids
 //        AFCFluids.FLUIDS.register(eventBus);
-        AFCCommands.ARGUMENT_TYPES.register(eventBus);
         //TODO: Boats
 //        AFCEntities.ENTITIES.register(eventBus);
         //TODO: Tree taps
@@ -85,7 +83,6 @@ public final class AFC
 
         //TODO: Whatever replaces this
         final IEventBus forgeBus = NeoForge.EVENT_BUS;
-        forgeBus.addListener(AFC::registerCommands);
 
         //TODO: Maybe re-enable, maybe was causing failure to start
 //         Register ourselves for server and other game events we are interested in
@@ -107,12 +104,6 @@ public final class AFC
 //    {
 //        return new ResourceLocation("tfc", path);
 //    }
-
-    public static void registerCommands(RegisterCommandsEvent event)
-    {
-        LOGGER.debug("Registering AFC Commands");
-        AFCCommands.registerCommands(event.getDispatcher(), event.getBuildContext());
-    }
 
     private static void modifyBlockEntityTypes()
     {
