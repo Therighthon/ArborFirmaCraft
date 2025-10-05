@@ -1,6 +1,9 @@
 package com.therighthon.afc.datagen;
 
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.datagen.providers.AFCBlockLootProvider;
+import com.therighthon.afc.datagen.providers.AFCBlockTagProvider;
+import com.therighthon.afc.datagen.providers.AFCItemTagProvider;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;

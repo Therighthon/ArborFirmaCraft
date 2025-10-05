@@ -1,28 +1,21 @@
-package com.therighthon.afc.datagen;
+package com.therighthon.afc.datagen.providers;
 
-import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
-import java.util.EnumSet;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.TagKey;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.common.items.TFCItems;
 
 import static net.dries007.tfc.common.TFCTags.Items.*;
 

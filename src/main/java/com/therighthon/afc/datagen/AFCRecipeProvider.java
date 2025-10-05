@@ -12,6 +12,7 @@ package com.therighthon.afc.datagen;
 import com.therighthon.afc.datagen.recipes.AnvilRecipes;
 import com.therighthon.afc.datagen.recipes.CraftingRecipes;
 import com.therighthon.afc.datagen.recipes.PotRecipes;
+import java.util.List;
 import java.util.Locale;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
@@ -29,6 +30,7 @@ public final class AFCRecipeProvider extends VanillaRecipeProvider implements
     PotRecipes
 {
     final CompletableFuture<?> before;
+    final List<BuiltinItemHeat.MeltingRecipe> meltingRecipes;
 
     RecipeOutput output;
     HolderLookup.Provider lookup;

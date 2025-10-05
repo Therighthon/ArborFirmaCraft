@@ -1,4 +1,4 @@
-package com.therighthon.afc.datagen;
+package com.therighthon.afc.datagen.providers;
 
 import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.AFCBlocks;
@@ -18,7 +18,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
 public class AFCBlockTagProvider extends BlockTagsProvider

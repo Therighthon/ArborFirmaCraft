@@ -1,4 +1,4 @@
-package com.therighthon.afc.datagen;
+package com.therighthon.afc.datagen.providers;
 
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
