@@ -26,15 +26,19 @@ public class DataGenerators
         ExistingFileHelper existingFileHelper = event.getExistingFileHelper();
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
+        // Loot
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
             List.of(new LootTableProvider.SubProviderEntry(AFCBlockLootProvider::new, LootContextParamSets.BLOCK)),
             lookupProvider)
         );
-        generator.addProvider(event.includeServer(), new AFCRecipeProvider(packOutput, lookupProvider));
 
+        // Tags
         BlockTagsProvider blockTagsProvider = new AFCBlockTagProvider(packOutput, lookupProvider, AFC.MOD_ID, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new AFCItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AFC.MOD_ID, existingFileHelper));
+
+        // Recipes
+        generator.addProvider(event.includeServer(), new AFCRecipeProvider(packOutput, lookupProvider));
 
     }
 }

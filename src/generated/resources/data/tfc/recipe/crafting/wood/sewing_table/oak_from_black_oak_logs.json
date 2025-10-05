@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "afc:wood/log/black_oak"
+    },
+    "L": {
+      "tag": "c:leathers"
+    },
+    "P": {
+      "item": "tfc:wood/planks/oak"
+    },
+    "S": {
+      "tag": "c:tools/shear"
+    }
+  },
+  "pattern": [
+    " LS",
+    "PPP",
+    "G G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfc:wood/sewing_table/oak"
+  }
+}
