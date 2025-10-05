@@ -159,10 +159,9 @@ dependencies {
     // JEI
     compileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}")
-    //runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
+    runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:${jei_version}")
 
     // Patchouli
-    // We need to compile against the full JAR, not just the API, because we do some egregious hacks.
     implementation("vazkii.patchouli:Patchouli:$patchouli_version")
 
     // Jade

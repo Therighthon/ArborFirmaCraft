@@ -2,6 +2,7 @@ package com.therighthon.afc.datagen;
 
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
 import java.util.Locale;
 import java.util.Objects;
@@ -38,6 +39,8 @@ import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import static net.dries007.tfc.util.DataGenerationHelpers.Builder;
 
+// Much of this class was reproduced from TerraFirmaCraft's data generation
+// Reproduced and modified from the original work on Oct 5, 2025
 public class AFCRecipeProvider extends RecipeProvider implements IConditionBuilder
 {
     RecipeOutput output;
@@ -49,7 +52,7 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     @Override
-    public CompletableFuture<?> run(@NotNull CachedOutput cachedOutput, HolderLookup.Provider lookup)
+    public @NotNull CompletableFuture<?> run(@NotNull CachedOutput cachedOutput, HolderLookup.@NotNull Provider lookup)
     {
         this.lookup = lookup;
         return super.run(cachedOutput, lookup);
@@ -257,6 +260,52 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
 //                        .shaped(AFCItems.HANGING_SIGNS.get(wood).get(metal), 3);
 //                }
         }
+
+        // Unique Logs
+        for (UniqueLogs uLog : UniqueLogs.values())
+        {
+            final var uBlocks = AFCBlocks.UNIQUE_LOGS.get(uLog);
+
+            final var sBlocks = uLog.isAFCWoodType()
+                ? AFCBlocks.WOODS.get(uLog.AFCWoodType())
+                : TFCBlocks.WOODS.get(uLog.TFCWoodType());
+            final var lumber = uLog.isAFCWoodType()
+                ? AFCItems.LUMBER.get(uLog.AFCWoodType()).asItem()
+                : TFCItems.LUMBER.get(uLog.TFCWoodType()).get().asItem();
+            final var planks = uLog.isAFCWoodType()
+                ? AFCBlocks.WOODS.get(uLog.AFCWoodType()).get(Wood.BlockType.PLANKS).asItem()
+                : TFCBlocks.WOODS.get(uLog.TFCWoodType()).get(Wood.BlockType.PLANKS).asItem();
+            final var supports = uLog.isAFCWoodType()
+                ? AFCItems.SUPPORTS.get(uLog.AFCWoodType()).asItem()
+                : TFCItems.SUPPORTS.get(uLog.TFCWoodType()).get().asItem();
+
+            // TODO: Log fences for unique logs?
+//            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
+//                .input('P', blocks.get(Wood.BlockType.LOG))
+//                .input('L', lumber)
+//                .pattern("PLP", "PLP")
+//                .shaped(blocks.get(Wood.BlockType.LOG_FENCE), 8);
+            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
+                .inputIsPrimary(TFCTags.Items.TOOLS_SAW)
+                .input(uniqueLogsTagOf(Registries.ITEM, uLog))
+                .damageInputs()
+                .shapeless(lumber, 8);
+            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
+                .input('S', Tags.Items.TOOLS_SHEAR)
+                .input('L', Tags.Items.LEATHERS)
+                .input('P', planks)
+                .input('G', uBlocks.get(UniqueLogs.BlockType.LOG))
+                .pattern(" LS", "PPP", "G G")
+                .shaped(sBlocks.get(Wood.BlockType.SEWING_TABLE));
+            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
+                .input('L', uniqueLogsTagOf(Registries.ITEM, uLog))
+                .input('S', TFCTags.Items.TOOLS_SAW)
+                .pattern("LS", "L ")
+                .damageInputs()
+                .source(0, 1)
+                .shaped(supports, 8);
+            recipe().to2x2(uBlocks.get(UniqueLogs.BlockType.LOG), uBlocks.get(UniqueLogs.BlockType.WOOD), 3);
+        }
     }
 
     private Ingredient ingredientOf(Metal metal, Metal.BlockType type)
@@ -286,6 +335,11 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
     }
 
     private <T> TagKey<T> woodLogsTagOf(ResourceKey<Registry<T>> registry, AFCWood wood)
+    {
+        return TagKey.create(registry, Helpers.identifier(wood.getSerializedName() + "_logs"));
+    }
+
+    private <T> TagKey<T> uniqueLogsTagOf(ResourceKey<Registry<T>> registry, UniqueLogs wood)
     {
         return TagKey.create(registry, Helpers.identifier(wood.getSerializedName() + "_logs"));
     }

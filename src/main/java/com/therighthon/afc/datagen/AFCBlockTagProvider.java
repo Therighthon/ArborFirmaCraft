@@ -18,7 +18,6 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCTags;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
 public class AFCBlockTagProvider extends BlockTagsProvider
@@ -212,7 +211,6 @@ public class AFCBlockTagProvider extends BlockTagsProvider
 
     private void makeUniqueLogTag(UniqueLogs logType, AncientLogs ancient, TagKey<Block> blockTag)
     {
-        String name = logType.getSerializedName();
         tag(blockTag)
             .add(logType.getBlock(UniqueLogs.BlockType.LOG).get())
             .add(logType.getBlock(UniqueLogs.BlockType.WOOD).get())
