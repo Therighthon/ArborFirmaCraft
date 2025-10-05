@@ -3,11 +3,13 @@ package com.therighthon.afc.datagen;
 import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.AncientLogs;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
 import java.util.EnumSet;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -23,6 +25,7 @@ import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCItems;
+import net.dries007.tfc.util.Helpers;
 
 import static net.dries007.tfc.common.TFCTags.Items.*;
 
@@ -36,6 +39,34 @@ public class AFCItemTagProvider extends ItemTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
+        // AFC Woods
+        // TODO: Araucaria makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Items.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Items.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.CYPRESS, AncientLogs.ANCIENT_CYPRESS, AFCTags.Items.CYPRESS_LOGS);
+        makeStandardLogTag(AFCWood.EUCALYPTUS, AncientLogs.ANCIENT_EUCALYPTUS, AFCTags.Items.EUCALYPTUS_LOGS);
+        makeStandardLogTag(AFCWood.FIG, AncientLogs.ANCIENT_FIG, AFCTags.Items.FIG_LOGS);
+        makeStandardLogTag(AFCWood.HEVEA, AncientLogs.ANCIENT_HEVEA, AFCTags.Items.HEVEA_LOGS);
+        makeStandardLogTag(AFCWood.IPE, AncientLogs.ANCIENT_IPE, AFCTags.Items.IPE_LOGS);
+        makeStandardLogTag(AFCWood.IRONWOOD, AncientLogs.ANCIENT_IRONWOOD, AFCTags.Items.IRONWOOD_LOGS);
+        makeStandardLogTag(AFCWood.MAHOGANY, AncientLogs.ANCIENT_MAHOGANY, AFCTags.Items.MAHOGANY_LOGS);
+        makeStandardLogTag(AFCWood.TEAK, AncientLogs.ANCIENT_TEAK, AFCTags.Items.TEAK_LOGS);
+        makeStandardLogTag(AFCWood.TUALANG, AncientLogs.ANCIENT_TUALANG, AFCTags.Items.TUALANG_LOGS);
+
+        // Unique logs - Also add to base wood tags
+        makeUniqueLogTag(UniqueLogs.BLACK_OAK, AncientLogs.ANCIENT_BLACK_OAK, AFCTags.Items.BLACK_OAK_LOGS);
+        tag(TagKey.create(Registries.ITEM, Helpers.identifier("oak_logs"))).addTag(AFCTags.Items.BLACK_OAK_LOGS);
+        makeUniqueLogTag(UniqueLogs.GUM_ARABIC, AncientLogs.ANCIENT_GUM_ARABIC, AFCTags.Items.GUM_ARABIC_LOGS);
+        tag(TagKey.create(Registries.ITEM, Helpers.identifier("acacia_logs"))).addTag(AFCTags.Items.GUM_ARABIC_LOGS);
+        makeUniqueLogTag(UniqueLogs.POPLAR, AncientLogs.ANCIENT_POPLAR, AFCTags.Items.POPLAR_LOGS);
+        tag(TagKey.create(Registries.ITEM, Helpers.identifier("aspen_logs"))).addTag(AFCTags.Items.POPLAR_LOGS);
+
+        makeUniqueLogTag(UniqueLogs.RAINBOW_EUCALYPTUS, AncientLogs.ANCIENT_RAINBOW_EUCALYPTUS, AFCTags.Items.RAINBOW_EUCALYPTUS_LOGS);
+        tag(AFCTags.Items.EUCALYPTUS_LOGS).addTag(AFCTags.Items.RAINBOW_EUCALYPTUS_LOGS);
+        makeUniqueLogTag(UniqueLogs.REDCEDAR, AncientLogs.ANCIENT_REDCEDAR, AFCTags.Items.REDCEDAR_LOGS);
+        tag(AFCTags.Items.CYPRESS_LOGS).addTag(AFCTags.Items.REDCEDAR_LOGS);
+        makeUniqueLogTag(UniqueLogs.RUBBER_FIG, AncientLogs.ANCIENT_RUBBER_FIG, AFCTags.Items.RUBBER_FIG_LOGS);
+        tag(AFCTags.Items.FIG_LOGS).addTag(AFCTags.Items.RUBBER_FIG_LOGS);
+        
         AFCItems.SUPPORTS.forEach(
             (w, i) -> tag(TFCTags.Items.SUPPORT_BEAMS).add(i.asItem())
         );
@@ -80,5 +111,23 @@ public class AFCItemTagProvider extends ItemTagsProvider
 
     }
 
+    private void makeStandardLogTag(AFCWood logType, AncientLogs ancient, TagKey<Item> itemTag)
+    {
+        tag(itemTag)
+            .add(logType.getBlock(Wood.BlockType.LOG).get().asItem())
+            .add(logType.getBlock(Wood.BlockType.WOOD).get().asItem())
+            .add(logType.getBlock(Wood.BlockType.STRIPPED_LOG).get().asItem())
+            .add(logType.getBlock(Wood.BlockType.STRIPPED_WOOD).get().asItem())
+            .add(ancient.getBlock(AncientLogs.BlockType.LOG).get().asItem())
+            .add(ancient.getBlock(AncientLogs.BlockType.WOOD).get().asItem());
+    }
 
+    private void makeUniqueLogTag(UniqueLogs logType, AncientLogs ancient, TagKey<Item> itemTag)
+    {
+        tag(itemTag)
+            .add(logType.getBlock(UniqueLogs.BlockType.LOG).get().asItem())
+            .add(logType.getBlock(UniqueLogs.BlockType.WOOD).get().asItem())
+            .add(ancient.getBlock(AncientLogs.BlockType.LOG).get().asItem())
+            .add(ancient.getBlock(AncientLogs.BlockType.WOOD).get().asItem());
+    }
 }
