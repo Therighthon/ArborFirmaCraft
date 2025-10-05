@@ -9,13 +9,16 @@ import com.therighthon.afc.common.blocks.UniqueLogs;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
 public class AFCBlockTagProvider extends BlockTagsProvider
@@ -29,8 +32,11 @@ public class AFCBlockTagProvider extends BlockTagsProvider
     @Override
     protected void addTags(HolderLookup.Provider provider)
     {
-        AFCBlocks.TREE_SPECIES.forEach(
-            (s, m) -> tag(TFCTags.Blocks.CAN_BE_SNOW_PILED).add(s.getBlock(TreeSpecies.BlockType.FALLEN_LEAVES).get())
+        tag(AFCTags.Blocks.TAPPABLE_LOGS).addTags(
+            AFCTags.Blocks.MAPLE_LOGS,
+            AFCTags.Blocks.BIRCH_LOGS,
+            AFCTags.Blocks.HEVEA_LOGS,
+            AFCTags.Blocks.RUBBER_FIG_LOGS
         );
 
         // Register tags for Vanilla TFC Wood to help tree-tap recipe makers etc.
@@ -82,7 +88,104 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         makeUniqueLogTag(UniqueLogs.RUBBER_FIG, AncientLogs.ANCIENT_RUBBER_FIG, AFCTags.Blocks.RUBBER_FIG_LOGS);
         tag(AFCTags.Blocks.FIG_LOGS).addTag(AFCTags.Blocks.RUBBER_FIG_LOGS);
 
+        tag(BlockTags.OVERWORLD_NATURAL_LOGS).addTags(
+            AFCTags.Blocks.BAOBAB_LOGS,
+            AFCTags.Blocks.CYPRESS_LOGS,
+            AFCTags.Blocks.EUCALYPTUS_LOGS,
+            AFCTags.Blocks.FIG_LOGS,
+            AFCTags.Blocks.HEVEA_LOGS,
+            AFCTags.Blocks.IPE_LOGS,
+            AFCTags.Blocks.IRONWOOD_LOGS,
+            AFCTags.Blocks.MAHOGANY_LOGS,
+            AFCTags.Blocks.TEAK_LOGS,
+            AFCTags.Blocks.TUALANG_LOGS
+        );
+        tag(BlockTags.LOGS_THAT_BURN).addTags(
+            AFCTags.Blocks.BAOBAB_LOGS,
+            AFCTags.Blocks.CYPRESS_LOGS,
+            AFCTags.Blocks.EUCALYPTUS_LOGS,
+            AFCTags.Blocks.FIG_LOGS,
+            AFCTags.Blocks.HEVEA_LOGS,
+            AFCTags.Blocks.IPE_LOGS,
+            AFCTags.Blocks.IRONWOOD_LOGS,
+            AFCTags.Blocks.MAHOGANY_LOGS,
+            AFCTags.Blocks.TEAK_LOGS,
+            AFCTags.Blocks.TUALANG_LOGS
+        );
 
+        // Stuff without individual tags that still needs to be mineable with an axe
+        addAllAFCWoods(Wood.BlockType.BOOKSHELF, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.TOOL_RACK, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.TWIG, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.LOOM, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.SLUICE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.BARREL, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.LECTERN, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.SCRIBING_TABLE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.SEWING_TABLE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.SHELF, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.AXLE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.BLADED_AXLE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.ENCASED_AXLE, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.CLUTCH, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.GEAR_BOX, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.HORIZONTAL_SUPPORT, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.VERTICAL_SUPPORT, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.WATER_WHEEL, BlockTags.MINEABLE_WITH_AXE);
+
+        // For all true wood types
+        addAllAFCWoods(Wood.BlockType.PLANKS, BlockTags.PLANKS);
+        addAllAFCWoods(Wood.BlockType.DOOR, BlockTags.WOODEN_DOORS); // doors? mob interactable doors? added automatically from this?
+        addAllAFCWoods(Wood.BlockType.TRAPDOOR, BlockTags.WOODEN_TRAPDOORS);
+        addAllAFCWoods(Wood.BlockType.FENCE, Tags.Blocks.FENCES_WOODEN);
+        addAllAFCWoods(Wood.BlockType.LOG_FENCE, Tags.Blocks.FENCES_WOODEN);
+        addAllAFCWoods(Wood.BlockType.FENCE_GATE, Tags.Blocks.FENCE_GATES_WOODEN); // unstable bottom center?
+        addAllAFCWoods(Wood.BlockType.BUTTON, BlockTags.WOODEN_BUTTONS);
+        addAllAFCWoods(Wood.BlockType.PRESSURE_PLATE, BlockTags.WOODEN_PRESSURE_PLATES); // Wall post overrides?
+        addAllAFCWoods(Wood.BlockType.SLAB, BlockTags.WOODEN_SLABS);
+        addAllAFCWoods(Wood.BlockType.STAIRS, BlockTags.WOODEN_STAIRS);
+        addAllAFCWoods(Wood.BlockType.WORKBENCH, TFCTags.Blocks.WORKBENCHES);
+        addAllAFCWoods(Wood.BlockType.CHEST, Tags.Blocks.CHESTS_WOODEN); // tfc Pet sits on
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Blocks.CHESTS_WOODEN);
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Blocks.CHESTS_TRAPPED);
+        addAllAFCWoods(Wood.BlockType.HORIZONTAL_SUPPORT, TFCTags.Blocks.SUPPORT_BEAMS);
+        addAllAFCWoods(Wood.BlockType.VERTICAL_SUPPORT, TFCTags.Blocks.SUPPORT_BEAMS);
+        addAllAFCWoods(Wood.BlockType.SIGN, BlockTags.STANDING_SIGNS);
+        addAllAFCWoods(Wood.BlockType.WALL_SIGN, BlockTags.WALL_SIGNS);
+
+        // For every tree species
+        addAllAFCSpecies(TreeSpecies.BlockType.SAPLING, Wood.BlockType.SAPLING, BlockTags.SAPLINGS);
+        addAllAFCSpecies(TreeSpecies.BlockType.POTTED_SAPLING, Wood.BlockType.POTTED_SAPLING, BlockTags.FLOWER_POTS);
+        addAllAFCSpecies(TreeSpecies.BlockType.FALLEN_LEAVES, Wood.BlockType.FALLEN_LEAVES, TFCTags.Blocks.FALLEN_LEAVES); // Lots to check
+        addAllAFCSpecies(TreeSpecies.BlockType.LEAVES, Wood.BlockType.LEAVES, BlockTags.LEAVES); // Lots to check
+
+        // Breakable by Sharp tools
+        breakableBySharps(TreeSpecies.BlockType.LEAVES, Wood.BlockType.LEAVES);
+        breakableBySharps(TreeSpecies.BlockType.FALLEN_LEAVES, Wood.BlockType.FALLEN_LEAVES);
+        breakableBySharps(TreeSpecies.BlockType.SAPLING, Wood.BlockType.SAPLING);
+
+    }
+
+    private void breakableBySharps(TreeSpecies.BlockType species, Wood.BlockType wood)
+    {
+        addAllAFCSpecies(species, wood, BlockTags.MINEABLE_WITH_HOE);
+        addAllAFCSpecies(species, wood, TFCTags.Blocks.MINEABLE_WITH_KNIFE);
+        addAllAFCSpecies(species, wood, TFCTags.Blocks.MINEABLE_WITH_SCYTHE);
+    }
+
+    private void addAllAFCWoods(Wood.BlockType type, TagKey<Block> tagKey)
+    {
+        AFCBlocks.WOODS.forEach(
+            (s, m) -> tag(tagKey).add(s.getBlock(type).get())
+        );
+    }
+
+    private void addAllAFCSpecies(TreeSpecies.BlockType type, Wood.BlockType woodType, TagKey<Block> tagKey)
+    {
+        AFCBlocks.TREE_SPECIES.forEach(
+            (s, m) -> tag(tagKey).add(s.getBlock(type).get())
+        );
+        addAllAFCWoods(woodType, tagKey);
     }
 
     private void makeVanillaLogTag(Wood logType, AncientLogs ancient, TagKey<Block> blockTag)
