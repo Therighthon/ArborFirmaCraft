@@ -17,6 +17,7 @@ import net.dries007.tfc.util.climate.Climate;
 
 public final class AFCColors
 {
+    // TODO: Either rip these out, or move the resource location to be under the afc namespace at least
     public static final ResourceLocation FOLIAGE_JACARANDA_COLORS_LOCATION = Helpers.identifier("textures/colormap/foliage_jacaranda.png");
 
     public static final ResourceLocation FOLIAGE_YELLOW_COLORS_LOCATION = Helpers.identifier("textures/colormap/foliage_yellow.png");

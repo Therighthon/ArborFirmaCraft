@@ -1,5 +1,6 @@
 package com.therighthon.afc.datagen;
 
+import com.therighthon.afc.AFCHelpers;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.UniqueLogs;
@@ -35,7 +36,6 @@ import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCItems;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import static net.dries007.tfc.util.DataGenerationHelpers.Builder;
 
@@ -336,12 +336,12 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private <T> TagKey<T> woodLogsTagOf(ResourceKey<Registry<T>> registry, AFCWood wood)
     {
-        return TagKey.create(registry, Helpers.identifier(wood.getSerializedName() + "_logs"));
+        return TagKey.create(registry, AFCHelpers.identifier(wood.getSerializedName() + "_logs"));
     }
 
     private <T> TagKey<T> uniqueLogsTagOf(ResourceKey<Registry<T>> registry, UniqueLogs wood)
     {
-        return TagKey.create(registry, Helpers.identifier(wood.getSerializedName() + "_logs"));
+        return TagKey.create(registry, AFCHelpers.identifier(wood.getSerializedName() + "_logs"));
     }
 
     /**
@@ -379,7 +379,7 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void add(String prefix, String name, Recipe<?> recipe)
     {
-        output.accept(Helpers.identifier((prefix + "/" + name).toLowerCase(Locale.ROOT)), recipe, null);
+        output.accept(AFCHelpers.identifier((prefix + "/" + name).toLowerCase(Locale.ROOT)), recipe, null);
     }
 
     private String nameOf(Recipe<?> recipe)

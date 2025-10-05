@@ -1,5 +1,6 @@
 package com.therighthon.afc.common;
 
+import com.therighthon.afc.AFCHelpers;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -57,12 +58,11 @@ public class AFCTags
         public static final TagKey<Block> REDCEDAR_LOGS = tag("redcedar_logs");
         public static final TagKey<Block> RUBBER_FIG_LOGS = tag("rubber_fig_logs");
 
-
         public static final TagKey<Block> TREE_TAPS = tag("tree_taps");
 
         private static TagKey<Block> tag(String name)
         {
-            return TagKey.create(Registries.BLOCK, Helpers.identifier(name));
+            return TagKey.create(Registries.BLOCK, AFCHelpers.identifier(name));
         }
 
 

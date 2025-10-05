@@ -1,14 +1,14 @@
 {
   "values": [
-    "#tfc:baobab_logs",
-    "#tfc:cypress_logs",
-    "#tfc:eucalyptus_logs",
-    "#tfc:fig_logs",
-    "#tfc:hevea_logs",
-    "#tfc:ipe_logs",
-    "#tfc:ironwood_logs",
-    "#tfc:mahogany_logs",
-    "#tfc:teak_logs",
-    "#tfc:tualang_logs"
+    "#afc:baobab_logs",
+    "#afc:cypress_logs",
+    "#afc:eucalyptus_logs",
+    "#afc:fig_logs",
+    "#afc:hevea_logs",
+    "#afc:ipe_logs",
+    "#afc:ironwood_logs",
+    "#afc:mahogany_logs",
+    "#afc:teak_logs",
+    "#afc:tualang_logs"
   ]
 }
