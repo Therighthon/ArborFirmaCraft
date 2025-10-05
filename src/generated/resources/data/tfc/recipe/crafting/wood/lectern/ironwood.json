@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "afc:wood/bookshelf/ironwood"
+    },
+    "L": {
+      "item": "afc:wood/lumber/ironwood"
+    }
+  },
+  "pattern": [
+    "LLL",
+    " B ",
+    " L "
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/lectern/ironwood"
+  }
+}

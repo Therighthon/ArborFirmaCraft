@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/ipe"
+    },
+    "L": {
+      "item": "afc:wood/lumber/ipe"
+    },
+    "P": {
+      "item": "afc:wood/planks/ipe"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "PAP",
+    "LPL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/water_wheel/ipe"
+  }
+}

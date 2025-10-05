@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/hevea"
+    },
+    "L": {
+      "item": "afc:wood/lumber/hevea"
+    },
+    "S": {
+      "item": "afc:wood/stripped_log/hevea"
+    }
+  },
+  "pattern": [
+    " S ",
+    "LAL",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/encased_axle/hevea"
+  }
+}

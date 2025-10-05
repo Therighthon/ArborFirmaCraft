@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/hevea"
+    },
+    "P": {
+      "item": "afc:wood/planks/hevea"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "L L",
+    "S S"
+  ],
+  "result": {
+    "count": 2,
+    "id": "afc:wood/shelf/hevea"
+  }
+}

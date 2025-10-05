@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "afc:wood/log/ipe"
+    },
+    "L": {
+      "tag": "c:leathers"
+    },
+    "P": {
+      "item": "afc:wood/planks/ipe"
+    },
+    "S": {
+      "tag": "c:tools/shear"
+    }
+  },
+  "pattern": [
+    " LS",
+    "PPP",
+    "G G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/sewing_table/ipe"
+  }
+}

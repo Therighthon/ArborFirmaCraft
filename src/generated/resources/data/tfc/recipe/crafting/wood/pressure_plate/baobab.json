@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/baobab"
+    }
+  },
+  "pattern": [
+    "LL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/pressure_plate/baobab"
+  }
+}

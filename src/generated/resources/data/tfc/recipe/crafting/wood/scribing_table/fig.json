@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "tag": "c:dyes/black"
+    },
+    "F": {
+      "tag": "c:feathers"
+    },
+    "S": {
+      "item": "afc:wood/planks/fig_slab"
+    },
+    "W": {
+      "item": "afc:wood/planks/fig"
+    }
+  },
+  "pattern": [
+    "F D",
+    "SSS",
+    "W W"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/scribing_table/fig"
+  }
+}

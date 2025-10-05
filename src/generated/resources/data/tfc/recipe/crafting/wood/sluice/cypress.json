@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/cypress"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "  S",
+    " SL",
+    "SLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/sluice/cypress"
+  }
+}

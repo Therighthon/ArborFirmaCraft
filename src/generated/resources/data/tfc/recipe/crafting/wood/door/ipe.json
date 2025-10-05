@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/ipe"
+    }
+  },
+  "pattern": [
+    "LL",
+    "LL",
+    "LL"
+  ],
+  "result": {
+    "count": 2,
+    "id": "afc:wood/door/ipe"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/mahogany"
+    },
+    "L": {
+      "item": "afc:wood/lumber/mahogany"
+    },
+    "P": {
+      "item": "afc:wood/planks/mahogany"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "PAP",
+    "LPL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/water_wheel/mahogany"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/eucalyptus"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LLL",
+    " S "
+  ],
+  "result": {
+    "count": 3,
+    "id": "afc:wood/sign/eucalyptus"
+  }
+}

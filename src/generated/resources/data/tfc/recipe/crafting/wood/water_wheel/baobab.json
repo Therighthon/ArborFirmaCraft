@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/baobab"
+    },
+    "L": {
+      "item": "afc:wood/lumber/baobab"
+    },
+    "P": {
+      "item": "afc:wood/planks/baobab"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "PAP",
+    "LPL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/water_wheel/baobab"
+  }
+}

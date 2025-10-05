@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/mahogany"
+    },
+    "L": {
+      "item": "afc:wood/lumber/mahogany"
+    },
+    "S": {
+      "item": "afc:wood/stripped_log/mahogany"
+    }
+  },
+  "pattern": [
+    " S ",
+    "LAL",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/encased_axle/mahogany"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "afc:wood/bookshelf/baobab"
+    },
+    "L": {
+      "item": "afc:wood/lumber/baobab"
+    }
+  },
+  "pattern": [
+    "LLL",
+    " B ",
+    " L "
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/lectern/baobab"
+  }
+}

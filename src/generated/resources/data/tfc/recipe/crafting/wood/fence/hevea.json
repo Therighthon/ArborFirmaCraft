@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/hevea"
+    },
+    "P": {
+      "item": "afc:wood/planks/hevea"
+    }
+  },
+  "pattern": [
+    "PLP",
+    "PLP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "afc:wood/fence/hevea"
+  }
+}

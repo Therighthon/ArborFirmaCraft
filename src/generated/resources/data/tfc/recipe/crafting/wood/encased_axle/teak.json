@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/teak"
+    },
+    "L": {
+      "item": "afc:wood/lumber/teak"
+    },
+    "S": {
+      "item": "afc:wood/stripped_log/teak"
+    }
+  },
+  "pattern": [
+    " S ",
+    "LAL",
+    " S "
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/encased_axle/teak"
+  }
+}

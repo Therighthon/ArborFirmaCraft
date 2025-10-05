@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "afc:wood/bookshelf/tualang"
+    },
+    "L": {
+      "item": "afc:wood/lumber/tualang"
+    }
+  },
+  "pattern": [
+    "LLL",
+    " B ",
+    " L "
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/lectern/tualang"
+  }
+}

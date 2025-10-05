@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/baobab"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LSL",
+    "L L"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/loom/baobab"
+  }
+}

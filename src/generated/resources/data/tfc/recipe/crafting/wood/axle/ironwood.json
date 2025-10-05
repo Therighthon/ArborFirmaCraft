@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "tfc:glue"
+    },
+    "W": {
+      "item": "afc:wood/stripped_log/ironwood"
+    }
+  },
+  "pattern": [
+    "WGW"
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/axle/ironwood"
+  }
+}
