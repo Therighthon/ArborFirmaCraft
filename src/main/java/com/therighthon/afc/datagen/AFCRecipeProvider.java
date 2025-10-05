@@ -336,12 +336,12 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private <T> TagKey<T> woodLogsTagOf(ResourceKey<Registry<T>> registry, AFCWood wood)
     {
-        return TagKey.create(registry, AFCHelpers.identifier(wood.getSerializedName() + "_logs"));
+        return TagKey.create(registry, AFCHelpers.modIdentifier(wood.getSerializedName() + "_logs"));
     }
 
     private <T> TagKey<T> uniqueLogsTagOf(ResourceKey<Registry<T>> registry, UniqueLogs wood)
     {
-        return TagKey.create(registry, AFCHelpers.identifier(wood.getSerializedName() + "_logs"));
+        return TagKey.create(registry, AFCHelpers.modIdentifier(wood.getSerializedName() + "_logs"));
     }
 
     /**
@@ -379,7 +379,7 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
 
     private void add(String prefix, String name, Recipe<?> recipe)
     {
-        output.accept(AFCHelpers.identifier((prefix + "/" + name).toLowerCase(Locale.ROOT)), recipe, null);
+        output.accept(AFCHelpers.modIdentifier((prefix + "/" + name).toLowerCase(Locale.ROOT)), recipe, null);
     }
 
     private String nameOf(Recipe<?> recipe)

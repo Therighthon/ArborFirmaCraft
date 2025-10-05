@@ -53,6 +53,13 @@ public class AFCItemTagProvider extends ItemTagsProvider
             (w, m) -> tag(Tags.Items.BARRELS_WOODEN).add(w.getBlock(Wood.BlockType.BARREL).get().asItem())
         );
 
+        AFCBlocks.WOODS.forEach(
+            (w, i) -> tag(CARRIED_BY_HORSE)
+                .add(w.getBlock(Wood.BlockType.BARREL).get().asItem())
+                .add(w.getBlock(Wood.BlockType.CHEST).get().asItem())
+                .add(w.getBlock(Wood.BlockType.TRAPPED_CHEST).get().asItem())
+        );
+
         tag(TANNIN_LOGS)
             .add(AFCWood.CYPRESS.getBlock(Wood.BlockType.LOG).get().asItem())
             .add(AFCWood.CYPRESS.getBlock(Wood.BlockType.WOOD).get().asItem())

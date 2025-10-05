@@ -6,7 +6,7 @@ import static net.dries007.tfc.util.Helpers.*;
 
 public class AFCHelpers
 {
-    public static ResourceLocation identifier(String name) {
+    public static ResourceLocation modIdentifier(String name) {
         return resourceLocation("afc", name);
     }
 }

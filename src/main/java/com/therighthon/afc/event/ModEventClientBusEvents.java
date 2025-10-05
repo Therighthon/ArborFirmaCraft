@@ -1,5 +1,6 @@
 package com.therighthon.afc.event;
 
+import com.therighthon.afc.AFCHelpers;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 //TODO: FirmaLife
@@ -33,7 +34,6 @@ import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.util.Helpers;
 
 import static net.dries007.tfc.common.blocks.wood.Wood.BlockType.*;
 
@@ -95,12 +95,12 @@ public class ModEventClientBusEvents
 
         event.enqueueWork(() -> {
 //            TODO: Maybe important?
-//            AFCBlocks.WOODS.values().forEach(map -> ItemProperties.register(map.get(BARREL).get().asItem(), Helpers.identifier("sealed"), (stack, level, entity, unused) -> stack.hasTag() ? 1.0f : 0f));
+//            AFCBlocks.WOODS.values().forEach(map -> ItemProperties.register(map.get(BARREL).get().asItem(), AFC?Helpers.identifier("sealed"), (stack, level, entity, unused) -> stack.hasTag() ? 1.0f : 0f));
 
             AFCBlocks.WOODS.forEach((wood, map) -> {
-                HorseChestLayer.registerChest(map.get(CHEST).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
-                HorseChestLayer.registerChest(map.get(TRAPPED_CHEST).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
-                HorseChestLayer.registerChest(map.get(BARREL).get().asItem(), Helpers.identifier("textures/entity/chest/horse/" + wood.getSerializedName() + "_barrel.png"));
+                HorseChestLayer.registerChest(map.get(CHEST).get().asItem(), AFCHelpers.modIdentifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
+                HorseChestLayer.registerChest(map.get(TRAPPED_CHEST).get().asItem(), AFCHelpers.modIdentifier("textures/entity/chest/horse/" + wood.getSerializedName() + ".png"));
+                HorseChestLayer.registerChest(map.get(BARREL).get().asItem(), AFCHelpers.modIdentifier("textures/entity/chest/horse/" + wood.getSerializedName() + "_barrel.png"));
             });
         });
 

@@ -1,5 +1,6 @@
 package com.therighthon.afc.common.blocks;
 
+import com.therighthon.afc.AFCHelpers;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.function.Supplier;
@@ -12,8 +13,6 @@ import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.config.TFCConfig;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.Calendar;
 import net.dries007.tfc.util.registry.RegistryWood;
 
@@ -50,14 +49,14 @@ public enum AFCWood implements RegistryWood
         this.barkColor = barkColor;
         this.autumnIndex = autumnIndex;
         this.tree = new TreeGrower(
-            Helpers.identifier(this.serializedName).toString(),
+            AFCHelpers.modIdentifier(this.serializedName).toString(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, Helpers.identifier("tree/" + this.serializedName))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, AFCHelpers.modIdentifier("tree/" + this.serializedName))),
             Optional.empty()
         );
         this.daysToGrow = daysToGrow;
         this.blockSet = new BlockSetType(serializedName);
-        this.woodType = new WoodType(Helpers.identifier(this.serializedName).toString(), this.blockSet);
+        this.woodType = new WoodType(AFCHelpers.modIdentifier(this.serializedName).toString(), this.blockSet);
     }
 
     @Override
