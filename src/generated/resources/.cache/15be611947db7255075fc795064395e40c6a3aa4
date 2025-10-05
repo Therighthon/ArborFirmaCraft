@@ -1,1 +1,8 @@
-// 1.21.1	2025-10-04T13:00:24.7925739	Tags for minecraft:item mod id afc
+// 1.21.1	2025-10-04T19:40:20.570044	Tags for minecraft:item mod id afc
+d05e9697c97fb12ab9402f2ec603adfd769f9d80 data/c/tags/item/barrels/wooden.json
+6f25e4eb6a7feaab451a97c2e813dc9d172e5646 data/c/tags/item/minecarts.json
+bdad3e3dc6dd02e4c9e8016bb0cfab57faefa176 data/minecraft/tags/item/signs.json
+ffaab7c78843be0f996bd8ccaada8995a4d49b68 data/tfc/tags/item/foods/sweeteners.json
+187bbb68255742c5273c30bebc26d75d009936c8 data/tfc/tags/item/lumber.json
+7ec2ff2f050ff581e6c017f9720b3af66ab9ee41 data/tfc/tags/item/support_beams.json
+b2c91ae2d9396eccc72752f935ef275448d237a7 data/tfc/tags/item/tannin_logs.json
