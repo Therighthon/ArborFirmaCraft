@@ -31,6 +31,7 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
+import net.dries007.tfc.client.ClientEventHandler;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
@@ -78,6 +79,7 @@ public final class AFC
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(ModEventClientBusEvents::onLayers);
+            eventBus.addListener(ModEventClientBusEvents::registerExtensions);
 
             if (ModList.get().isLoaded("firmalife"))
             {

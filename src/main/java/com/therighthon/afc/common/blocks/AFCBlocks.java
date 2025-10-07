@@ -49,10 +49,6 @@ import net.dries007.tfc.util.registry.RegistrationHelpers;
 
 public class AFCBlocks
 {
-    // TODO: Fluids
-    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, AFC.MOD_ID);
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, AFC.MOD_ID);
-
     public static final DeferredRegister<Block> BLOCKS =
         DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
 
@@ -62,7 +58,6 @@ public class AFCBlocks
     public static final Map<AFCWood, Map<Wood.BlockType, TFCBlocks.Id<Block>>> WOODS = Helpers.mapOf(AFCWood.class, wood ->
         Helpers.mapOf(Wood.BlockType.class, type ->
             register(type.nameFor(wood), createWood(wood, type), type.createBlockItem(wood, new Item.Properties()))
-
         )
     );
 
@@ -152,33 +147,6 @@ public class AFCBlocks
     {
         return new TFCBlocks.Id<>(RegistrationHelpers.registerBlock(AFCBlocks.BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory));
     }
-
-    //TODO: Fluids
-//    private static <F extends FlowingFluid> FluidRegistryObject<F> register(String name, Consumer<ForgeFlowingFluid.Properties> builder, FluidType.Properties typeProperties, FluidTypeClientProperties clientProperties, Function<ForgeFlowingFluid.Properties, F> sourceFactory, Function<ForgeFlowingFluid.Properties, F> flowingFactory)
-//    {
-//        // Names `metal/foo` to `metal/flowing_foo`
-//        final int index = name.lastIndexOf('/');
-//        final String flowingName = index == -1 ? "flowing_" + name : name.substring(0, index) + "/flowing_" + name.substring(index + 1);
-//
-//        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new ExtendedFluidType(typeProperties, clientProperties), sourceFactory, flowingFactory);
-//    }
-
-    private static FluidType.Properties waterLike()
-    {
-        return FluidType.Properties.create()
-            //TODO: Fluids (Though does it really matter for this if it's never placed in world? (Well you could crash the game with a mis-click so yeah))
-//            .adjacentPathType(BlockPathTypes.WATER)
-            .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
-            .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
-            .canConvertToSource(true)
-            .canDrown(true)
-            .canExtinguish(true)
-            .canHydrate(false)
-            .canPushEntity(true)
-            .canSwim(true)
-            .supportsBoating(true);
-    }
-
 
     private static <B extends SignBlock> Map<AFCWood, Map<Metal, TFCBlocks.Id<B>>> registerHangingSigns(String variant, BiFunction<ExtendedProperties, WoodType, B> factory)
     {

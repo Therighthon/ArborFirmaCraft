@@ -17,10 +17,7 @@ import net.neoforged.neoforge.fluids.FluidType;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-// TODO: Reliance on TFC Blocks is probably part of what's crashing this
-
 import net.dries007.tfc.common.fluids.FluidHolder;
-import net.dries007.tfc.common.fluids.MixingFluid;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
@@ -47,8 +44,8 @@ public final class AFCFluids
         waterLike()
             .descriptionId("fluid.tfc." + fluid.getId())
             .canConvertToSource(false),
-        MixingFluid.Source::new,
-        MixingFluid.Flowing::new
+        BaseFlowingFluid.Source::new,
+        BaseFlowingFluid.Flowing::new
     ));
 
     private static <F extends FlowingFluid> FluidHolder<F> register(String name, Consumer<BaseFlowingFluid.Properties> builder, FluidType.Properties typeProperties, Function<BaseFlowingFluid.Properties, F> sourceFactory, Function<BaseFlowingFluid.Properties, F> flowingFactory)

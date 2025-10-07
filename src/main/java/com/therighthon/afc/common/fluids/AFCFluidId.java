@@ -1,6 +1,5 @@
 package com.therighthon.afc.common.fluids;
 
-import com.therighthon.afc.AFC;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
