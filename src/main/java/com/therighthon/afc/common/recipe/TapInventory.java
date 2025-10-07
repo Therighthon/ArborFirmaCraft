@@ -1,13 +1,14 @@
 package com.therighthon.afc.common.recipe;
 
 
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeInput;
 import net.minecraft.world.level.block.state.BlockState;
 
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
-//import net.dries007.tfc.common.recipes.inventory.EmptyInventory;
 
-//TODO: Tree taps
-public class TapInventory //implements EmptyInventory
+//TODO: Tree taps - implementing RecipeInput may not be the move here?
+public class TapInventory implements RecipeInput
 {
     protected final BlockState state;
     protected final BlockIngredient recipeBlock;
@@ -27,4 +28,15 @@ public class TapInventory //implements EmptyInventory
         return state;
     }
 
+    @Override
+    public ItemStack getItem(int i)
+    {
+        return null;
+    }
+
+    @Override
+    public int size()
+    {
+        return 0;
+    }
 }

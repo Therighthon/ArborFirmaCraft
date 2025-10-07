@@ -1,6 +1,11 @@
 package com.therighthon.afc.common.blocks;
 
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
+import com.therighthon.afc.common.blockentities.TapBlockEntity;
+import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.fluids.SimpleAFCFluid;
 import java.util.Map;
+import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
@@ -12,8 +17,16 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
+import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.SignBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.SignBlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.SoundActions;
 import net.neoforged.neoforge.fluids.FluidType;
@@ -21,23 +34,30 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 import org.jetbrains.annotations.Nullable;
 
+import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
+import net.dries007.tfc.common.blocks.wood.TFCCeilingHangingSignBlock;
+import net.dries007.tfc.common.blocks.wood.TFCStandingSignBlock;
+import net.dries007.tfc.common.blocks.wood.TFCWallHangingSignBlock;
+import net.dries007.tfc.common.blocks.wood.TFCWallSignBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.fluids.SimpleFluid;
+import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
 public class AFCBlocks
 {
+    // TODO: Fluids
     public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(NeoForgeRegistries.Keys.FLUID_TYPES, AFC.MOD_ID);
     public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Registries.FLUID, AFC.MOD_ID);
 
     public static final DeferredRegister<Block> BLOCKS =
         DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
 
-    //TODO: Hanging Signs
-//    public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCCeilingHangingSignBlock>>> CEILING_HANGING_SIGNS = registerHangingSigns("hanging_sign", TFCCeilingHangingSignBlock::new);
-//    public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCWallHangingSignBlock>>> WALL_HANGING_SIGNS = registerHangingSigns("wall_hanging_sign", TFCWallHangingSignBlock::new);
+    public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCCeilingHangingSignBlock>>> CEILING_HANGING_SIGNS = registerHangingSigns("hanging_sign", TFCCeilingHangingSignBlock::new);
+    public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCWallHangingSignBlock>>> WALL_HANGING_SIGNS = registerHangingSigns("wall_hanging_sign", TFCWallHangingSignBlock::new);
 
     public static final Map<AFCWood, Map<Wood.BlockType, TFCBlocks.Id<Block>>> WOODS = Helpers.mapOf(AFCWood.class, wood ->
         Helpers.mapOf(Wood.BlockType.class, type ->
@@ -48,15 +68,14 @@ public class AFCBlocks
 
     public static Supplier<Block> createWood(AFCWood afcWood, Wood.BlockType blockType)
     {
-        //TODO: Signs
-//        if (blockType == Wood.BlockType.SIGN)
-//        {
-//            return () -> new TFCStandingSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
-//        }
-//        if (blockType == Wood.BlockType.WALL_SIGN)
-//        {
-//            return () -> new TFCWallSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
-//        }
+        if (blockType == Wood.BlockType.SIGN)
+        {
+            return () -> new TFCStandingSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
+        }
+        if (blockType == Wood.BlockType.WALL_SIGN)
+        {
+            return () -> new TFCWallSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
+        }
         return blockType.create(afcWood);
     }
 
@@ -99,16 +118,15 @@ public class AFCBlocks
         WOODS.forEach((wood, map) -> pot.addPlant(map.get(Wood.BlockType.SAPLING).getId(), map.get(Wood.BlockType.POTTED_SAPLING)));
         TREE_SPECIES.forEach((wood, map) -> pot.addPlant(map.get(TreeSpecies.BlockType.SAPLING).getId(), map.get(TreeSpecies.BlockType.POTTED_SAPLING)));
     }
-    //TODO: Treetap/fluids
-//    public static final TFCBlocks.Id<Block> TREE_TAP = register("tree_tap",
-//        () -> new TapBlock(
-//            ExtendedProperties.of(Blocks.BRAIN_CORAL_FAN).noOcclusion().blockEntity(AFCBlockEntities.TAP_BLOCK_ENTITY).serverTicks(TapBlockEntity::serverTick)
-//        ));
 
-    //TODO: Treetap/fluids
-//    public static final Map<SimpleAFCFluid, TFCBlocks.Id<LiquidBlock>> SIMPLE_AFC_FLUIDS = Helpers.mapOf(SimpleAFCFluid.class, fluid ->
-//        registerNoItem("fluid/" + fluid.getId(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).source(), BlockBehaviour.Properties.copy(Blocks.WATER).noLootTable()))
-//    );
+    public static final TFCBlocks.Id<Block> TREE_TAP = register("tree_tap",
+        () -> new TapBlock(
+            ExtendedProperties.of(Blocks.BRAIN_CORAL_FAN).noOcclusion().blockEntity(AFCBlockEntities.TAP_BLOCK_ENTITY).serverTicks(TapBlockEntity::serverTick)
+        ));
+
+    public static final Map<SimpleAFCFluid, TFCBlocks.Id<LiquidBlock>> SIMPLE_FLUIDS = Helpers.mapOf(SimpleAFCFluid.class, fluid ->
+        registerNoItem("fluid/" + fluid.getId(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).getSource(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()))
+    );
 
     private static <T extends Block> TFCBlocks.Id<T> registerNoItem(String name, Supplier<T> blockSupplier)
     {
@@ -148,7 +166,7 @@ public class AFCBlocks
     private static FluidType.Properties waterLike()
     {
         return FluidType.Properties.create()
-            //TODO: Fluids (Though does it really matter for this if it's never placed in world?)
+            //TODO: Fluids (Though does it really matter for this if it's never placed in world? (Well you could crash the game with a mis-click so yeah))
 //            .adjacentPathType(BlockPathTypes.WATER)
             .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL)
             .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY)
@@ -161,17 +179,17 @@ public class AFCBlocks
             .supportsBoating(true);
     }
 
-    //TODO: Hanging Signs
-//    private static <B extends SignBlock> Map<AFCWood, Map<Metal, TFCBlocks.Id<B>>> registerHangingSigns(String variant, BiFunction<ExtendedProperties, WoodType, B> factory)
-//    {
-//        return Helpers.mapOf(AFCWood.class, wood ->
-//            Helpers.mapOf(Metal.class, Metal::hasUtilities, metal -> register(
-//                "wood/planks/" + variant + "/" + metal.getSerializedName() + "/" + wood.getSerializedName(),
-//                () -> factory.apply(ExtendedProperties.of(wood.woodColor()).sound(SoundType.WOOD).noCollission().strength(1F).flammableLikePlanks().blockEntity(AFCBlockEntities.HANGING_SIGN).ticks(SignBlockEntity::tick), wood.getVanillaWoodType()),
-//                (Function<B, BlockItem>) null)
-//            )
-//        );
-//    }
+
+    private static <B extends SignBlock> Map<AFCWood, Map<Metal, TFCBlocks.Id<B>>> registerHangingSigns(String variant, BiFunction<ExtendedProperties, WoodType, B> factory)
+    {
+        return Helpers.mapOf(AFCWood.class, wood ->
+            Helpers.mapOf(Metal.class, Metal::allParts, metal -> register(
+                "wood/planks/" + variant + "/" + metal.getSerializedName() + "/" + wood.getSerializedName(),
+                () -> factory.apply(ExtendedProperties.of(wood.woodColor()).sound(SoundType.WOOD).noCollission().strength(1F).flammableLikePlanks().blockEntity(AFCBlockEntities.HANGING_SIGN).ticks(SignBlockEntity::tick), wood.getVanillaWoodType()),
+                (Function<B, BlockItem>) null)
+            )
+        );
+    }
 
 }
 

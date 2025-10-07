@@ -13,8 +13,7 @@ public class AFCRecipeTypes
 {
     public static final DeferredRegister<RecipeType<?>> RECIPE_TYPES = DeferredRegister.create(Registries.RECIPE_TYPE, MOD_ID);
 
-    //TODO: Tree taps
-//    public static final TFCRecipeTypes.Id<TreeTapRecipe> TREE_TAPPING_RECIPE = register("tree_tapping");
+    public static final TFCRecipeTypes.Id<TreeTapRecipe> TREE_TAPPING_RECIPE = register("tree_tapping");
 
     private static <R extends Recipe<?>> TFCRecipeTypes.Id<R> register(String name)
     {

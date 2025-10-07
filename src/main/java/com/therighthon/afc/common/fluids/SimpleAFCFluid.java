@@ -4,7 +4,7 @@ import java.util.Locale;
 import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.material.Fluid;
 
-public enum SimpleAFCFluid implements StringRepresentable
+public enum SimpleAFCFluid
 {
     MAPLE_SAP(0xFFC39E37),
     MAPLE_SAP_CONCENTRATE(0xFFC39E37),
@@ -33,11 +33,6 @@ public enum SimpleAFCFluid implements StringRepresentable
         return color;
     }
 
-    @Override
-    public String getSerializedName()
-    {
-        return id;
-    }
 
     public boolean isTransparent()
     {

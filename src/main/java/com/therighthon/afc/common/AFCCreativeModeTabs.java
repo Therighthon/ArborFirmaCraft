@@ -1,5 +1,6 @@
 package com.therighthon.afc.common;
 
+import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.Map;
 import java.util.function.Supplier;
 import com.therighthon.afc.AFC;
@@ -19,7 +20,6 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 import net.dries007.tfc.TerraFirmaCraft;
 import net.dries007.tfc.common.TFCCreativeTabs;
 
-import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.SelfTests;
 
@@ -34,8 +34,8 @@ public final class AFCCreativeModeTabs
         out.accept(AFCItems.RUBBER_BAR.get());
         out.accept(AFCItems.MAPLE_SUGAR.get());
         out.accept(AFCItems.BIRCH_SUGAR.get());
-        //TODO: tree taps
-//        out.accept(AFCBlocks.TREE_TAP.get());
+        out.accept(AFCBlocks.TREE_TAP.get());
+        AFCFluids.FLUIDS.getEntries().forEach(fluid -> out.accept(fluid.value().getBucket()));
         for (AFCWood wood : AFCWood.VALUES)
         {
             AFCBlocks.WOODS.get(wood).forEach((type, reg) -> {

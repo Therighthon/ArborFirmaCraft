@@ -1,5 +1,12 @@
 package com.therighthon.afc;
 
+import com.therighthon.afc.common.AFCCreativeModeTabs;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
+import com.therighthon.afc.common.entities.AFCEntities;
+import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.recipe.AFCRecipeSerializers;
+import com.therighthon.afc.common.recipe.AFCRecipeTypes;
+import com.therighthon.afc.common.recipe.AFCRecipes;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -22,7 +29,6 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
-import net.neoforged.neoforge.event.RegisterCommandsEvent;
 import org.slf4j.Logger;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
@@ -48,16 +54,15 @@ public final class AFC
 
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
-        //TODO: Fluids
-//        AFCFluids.FLUIDS.register(eventBus);
+        AFCFluids.FLUID_TYPES.register(eventBus);
+        AFCFluids.FLUIDS.register(eventBus);
         //TODO: Boats
 //        AFCEntities.ENTITIES.register(eventBus);
-        //TODO: Tree taps
-//        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
-//        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
-//        TFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
-//        AFCRecipes.register(eventBus);
-//        AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
+        AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
+        AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
+        AFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
+        AFCRecipes.register(eventBus);
+        AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
         if (ModList.get().isLoaded("firmalife"))
         {
