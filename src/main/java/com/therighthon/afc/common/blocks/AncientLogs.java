@@ -20,44 +20,44 @@ import net.dries007.tfc.common.blocks.wood.Wood;
 
 public enum AncientLogs implements RegistryAncientLogs
 {
-    ANCIENT_EUCALYPTUS(MapColor.WOOD, MapColor.WOOD, AFCWood.EUCALYPTUS),
-    ANCIENT_BAOBAB(MapColor.WOOD, MapColor.WOOD, AFCWood.BAOBAB),
-    ANCIENT_MAHOGANY(MapColor.WOOD, MapColor.WOOD, AFCWood.MAHOGANY),
-    ANCIENT_HEVEA(MapColor.WOOD, MapColor.WOOD, AFCWood.HEVEA),
-    ANCIENT_TEAK(MapColor.WOOD, MapColor.WOOD, AFCWood.TEAK),
-    ANCIENT_TUALANG(MapColor.WOOD, MapColor.WOOD, AFCWood.TUALANG),
-    ANCIENT_CYPRESS(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
-    ANCIENT_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
-    ANCIENT_IRONWOOD(MapColor.WOOD, MapColor.WOOD, AFCWood.IRONWOOD),
-    ANCIENT_IPE(MapColor.WOOD, MapColor.WOOD, AFCWood.IPE),
+    ANCIENT_EUCALYPTUS(MapColor.WOOD, MapColor.WOOD, AFCWood.EUCALYPTUS, 0.7f),
+    ANCIENT_BAOBAB(MapColor.WOOD, MapColor.WOOD, AFCWood.BAOBAB, 0.75f),
+    ANCIENT_MAHOGANY(MapColor.WOOD, MapColor.WOOD, AFCWood.MAHOGANY, 0.7f),
+    ANCIENT_HEVEA(MapColor.WOOD, MapColor.WOOD, AFCWood.HEVEA, 0.9f),
+    ANCIENT_TEAK(MapColor.WOOD, MapColor.WOOD, AFCWood.TEAK, 0.75f),
+    ANCIENT_TUALANG(MapColor.WOOD, MapColor.WOOD, AFCWood.TUALANG, 0.9f),
+    ANCIENT_CYPRESS(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS, 0.9f),
+    ANCIENT_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG, 0.9f),
+    ANCIENT_IRONWOOD(MapColor.WOOD, MapColor.WOOD, AFCWood.IRONWOOD, 0.8f),
+    ANCIENT_IPE(MapColor.WOOD, MapColor.WOOD, AFCWood.IPE, 0.9f),
 
-    ANCIENT_ACACIA(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
-    ANCIENT_ASH(MapColor.WOOD, MapColor.WOOD, Wood.ASH),
-    ANCIENT_ASPEN(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN),
-    ANCIENT_BIRCH(MapColor.WOOD, MapColor.WOOD, Wood.BIRCH),
-    ANCIENT_BLACKWOOD(MapColor.WOOD, MapColor.WOOD, Wood.BLACKWOOD),
-    ANCIENT_CHESTNUT(MapColor.WOOD, MapColor.WOOD, Wood.CHESTNUT),
-    ANCIENT_DOUGLAS_FIR(MapColor.WOOD, MapColor.WOOD, Wood.DOUGLAS_FIR),
-    ANCIENT_HICKORY(MapColor.WOOD, MapColor.WOOD, Wood.HICKORY),
-    ANCIENT_KAPOK(MapColor.WOOD, MapColor.WOOD, Wood.KAPOK),
-    ANCIENT_MANGROVE(MapColor.WOOD, MapColor.WOOD, Wood.MANGROVE),
-    ANCIENT_MAPLE(MapColor.WOOD, MapColor.WOOD, Wood.MAPLE),
-    ANCIENT_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK),
-    ANCIENT_PALM(MapColor.WOOD, MapColor.WOOD, Wood.PALM),
-    ANCIENT_PINE(MapColor.WOOD, MapColor.WOOD, Wood.PINE),
-    ANCIENT_ROSEWOOD(MapColor.WOOD, MapColor.WOOD, Wood.ROSEWOOD),
-    ANCIENT_SEQUOIA(MapColor.WOOD, MapColor.WOOD, Wood.SEQUOIA),
-    ANCIENT_SPRUCE(MapColor.WOOD, MapColor.WOOD, Wood.SPRUCE),
-    ANCIENT_SYCAMORE(MapColor.WOOD, MapColor.WOOD, Wood.SYCAMORE),
-    ANCIENT_WHITE_CEDAR(MapColor.WOOD, MapColor.WOOD, Wood.WHITE_CEDAR),
-    ANCIENT_WILLOW(MapColor.WOOD, MapColor.WOOD, Wood.WILLOW),
+    ANCIENT_ACACIA(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA, 0.7f),
+    ANCIENT_ASH(MapColor.WOOD, MapColor.WOOD, Wood.ASH, 0.7f),
+    ANCIENT_ASPEN(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN, 0.9f),
+    ANCIENT_BIRCH(MapColor.WOOD, MapColor.WOOD, Wood.BIRCH, 0.9f),
+    ANCIENT_BLACKWOOD(MapColor.WOOD, MapColor.WOOD, Wood.BLACKWOOD, 0.9f),
+    ANCIENT_CHESTNUT(MapColor.WOOD, MapColor.WOOD, Wood.CHESTNUT, 0.7f),
+    ANCIENT_DOUGLAS_FIR(MapColor.WOOD, MapColor.WOOD, Wood.DOUGLAS_FIR, 0.7f),
+    ANCIENT_HICKORY(MapColor.WOOD, MapColor.WOOD, Wood.HICKORY, 0.7f),
+    ANCIENT_KAPOK(MapColor.WOOD, MapColor.WOOD, Wood.KAPOK, 0.6f),
+    ANCIENT_MANGROVE(MapColor.WOOD, MapColor.WOOD, Wood.MANGROVE, 0.9f),
+    ANCIENT_MAPLE(MapColor.WOOD, MapColor.WOOD, Wood.MAPLE, 0.7f),
+    ANCIENT_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK, 0.7f),
+    ANCIENT_PALM(MapColor.WOOD, MapColor.WOOD, Wood.PALM, 0.9f),
+    ANCIENT_PINE(MapColor.WOOD, MapColor.WOOD, Wood.PINE, 0.9f),
+    ANCIENT_ROSEWOOD(MapColor.WOOD, MapColor.WOOD, Wood.ROSEWOOD, 0.7f),
+    ANCIENT_SEQUOIA(MapColor.WOOD, MapColor.WOOD, Wood.SEQUOIA, 0.5f),
+    ANCIENT_SPRUCE(MapColor.WOOD, MapColor.WOOD, Wood.SPRUCE, 0.7f),
+    ANCIENT_SYCAMORE(MapColor.WOOD, MapColor.WOOD, Wood.SYCAMORE, 0.7f),
+    ANCIENT_WHITE_CEDAR(MapColor.WOOD, MapColor.WOOD, Wood.WHITE_CEDAR, 0.9f),
+    ANCIENT_WILLOW(MapColor.WOOD, MapColor.WOOD, Wood.WILLOW, 0.75f),
 
-    ANCIENT_RAINBOW_EUCALYPTUS(MapColor.WOOD, MapColor.WOOD, AFCWood.EUCALYPTUS),
-    ANCIENT_BLACK_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK),
-    ANCIENT_GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
-    ANCIENT_REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
-    ANCIENT_RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
-    ANCIENT_POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN);
+    ANCIENT_RAINBOW_EUCALYPTUS(MapColor.WOOD, MapColor.WOOD, AFCWood.EUCALYPTUS, 0.75f),
+    ANCIENT_BLACK_OAK(MapColor.WOOD, MapColor.WOOD, Wood.OAK, 0.9f),
+    ANCIENT_GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA, 0.9f),
+    ANCIENT_REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS, 0.7f),
+    ANCIENT_RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG, 0.9f),
+    ANCIENT_POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN, 0.9f);
 
     public static final AncientLogs[] VALUES = values();
     private final String serializedName;
@@ -68,23 +68,26 @@ public enum AncientLogs implements RegistryAncientLogs
     @Nullable
     private final Wood TFCWoodType;
     private final boolean hasAFCWoodType;
+    private final float dropChance;
 
-    AncientLogs(MapColor woodColor, MapColor barkColor, Wood WoodType) {
+    AncientLogs(MapColor woodColor, MapColor barkColor, Wood WoodType, float dropChance) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.woodColor = woodColor;
         this.barkColor = barkColor;
         this.hasAFCWoodType = false;
         this.TFCWoodType = WoodType;
         this.AFCWoodType = null;
+        this.dropChance = dropChance;
     }
 
-    AncientLogs(MapColor woodColor, MapColor barkColor, AFCWood AFCWoodType) {
+    AncientLogs(MapColor woodColor, MapColor barkColor, AFCWood AFCWoodType, float dropChance) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.woodColor = woodColor;
         this.barkColor = barkColor;
         this.hasAFCWoodType = true;
         this.TFCWoodType = null;
         this.AFCWoodType = AFCWoodType;
+        this.dropChance = dropChance;
     }
 
     @Override
@@ -120,6 +123,11 @@ public enum AncientLogs implements RegistryAncientLogs
     public boolean isAFCWoodType()
     {
         return hasAFCWoodType;
+    }
+
+    public float getDropChance()
+    {
+        return dropChance;
     }
 
     @Override
