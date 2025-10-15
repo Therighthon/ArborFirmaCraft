@@ -19,16 +19,16 @@ import net.dries007.tfc.util.registry.RegistryWood;
 public enum AFCWood implements RegistryWood
 {
     //Wood color, then bark color
-    BAOBAB(false, MapColor.WOOD, MapColor.WOOD,10, 212),
-    EUCALYPTUS(false, MapColor.WOOD, MapColor.WOOD,10, 150),
-    MAHOGANY( false, MapColor.WOOD, MapColor.WOOD,10, 10),
-    HEVEA(false, MapColor.WOOD, MapColor.WOOD,10, 130),
-    TUALANG(false, MapColor.WOOD, MapColor.WOOD,10, 226),
-    TEAK(false, MapColor.WOOD, MapColor.WOOD,10, 240),
-    CYPRESS(true, MapColor.WOOD, MapColor.WOOD,10, 0),
-    FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250),
-    IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200),
-    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254);
+    BAOBAB(false, MapColor.WOOD, MapColor.WOOD,10, 212, 0.0506f),
+    EUCALYPTUS(false, MapColor.WOOD, MapColor.WOOD,10, 150, 0.0193f),
+    MAHOGANY( false, MapColor.WOOD, MapColor.WOOD,10, 10, 0.0115f),
+    HEVEA(false, MapColor.WOOD, MapColor.WOOD,10, 130, 0.0133f),
+    TUALANG(false, MapColor.WOOD, MapColor.WOOD,10, 226, 0.0133f),
+    TEAK(false, MapColor.WOOD, MapColor.WOOD,10, 240, 0.0115f),
+    CYPRESS(true, MapColor.WOOD, MapColor.WOOD,10, 0, 0.0795f),
+    FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0133f),
+    IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0089f),
+    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0115f);
 
     public static final AFCWood[] VALUES = values();
 
@@ -41,8 +41,9 @@ public enum AFCWood implements RegistryWood
     private final BlockSetType blockSet;
     private final WoodType woodType;
     private final int autumnIndex;
+    private final float saplingDropRate;
 
-    AFCWood(boolean evergreen, MapColor woodColor, MapColor barkColor, int daysToGrow, int autumnIndex) {
+    AFCWood(boolean evergreen, MapColor woodColor, MapColor barkColor, int daysToGrow, int autumnIndex, float saplingDropRate) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.conifer = evergreen;
         this.woodColor = woodColor;
@@ -57,6 +58,7 @@ public enum AFCWood implements RegistryWood
         this.daysToGrow = daysToGrow;
         this.blockSet = new BlockSetType(serializedName);
         this.woodType = new WoodType(AFCHelpers.modIdentifier(this.serializedName).toString(), this.blockSet);
+        this.saplingDropRate = saplingDropRate;
     }
 
     @Override
@@ -117,6 +119,11 @@ public enum AFCWood implements RegistryWood
         return autumnIndex;
     }
 
+    public float getSaplingDropRate()
+    {
+        return saplingDropRate;
+    }
+
     public int defaultDaysToGrow() {
         return daysToGrow;
     }
@@ -129,5 +136,6 @@ public enum AFCWood implements RegistryWood
             WoodType.register(wood.woodType);
         }
     }
+
 
 }

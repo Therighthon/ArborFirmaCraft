@@ -29,64 +29,64 @@ public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
-    GUM_ARABIC(false, 8, 196),
-    ACACIA_KOA(false, 16, 180),
+    GUM_ARABIC(false, 8, 196, 0.0292f),
+    ACACIA_KOA(false, 16, 180, 0.0193f),
     //Ash
     //Aspen
-    POPLAR(false, 8, 250),
+    POPLAR(false, 8, 250, 0.0140f),
     //Birch
     //Blackwood
-    MPINGO_BLACKWOOD(false, 11, 200),
+    MPINGO_BLACKWOOD(false, 11, 200, 0.0292f),
     //Fir
-    MOUNTAIN_FIR( true, 11, 0),
-    BALSAM_FIR( true, 13, 0),
+    MOUNTAIN_FIR( true, 11, 0, 0.0543f),
+    BALSAM_FIR( true, 13, 0, 0.0511f),
     //Hickory
-    SCRUB_HICKORY( false, 7, 220),
+    SCRUB_HICKORY( false, 7, 220, 0.078f),
     //Kapok
-    RED_SILK_COTTON(false, 18, 150),
+    RED_SILK_COTTON(false, 18, 150, 0.0089f),
     //Maple
-    BIGLEAF_MAPLE( false, 9, 215),
-    WEEPING_MAPLE( true, 9, 0),
+    BIGLEAF_MAPLE( false, 9, 215, 0.0175f),
+    WEEPING_MAPLE( true, 9, 0, 0.0545f),
     //Oak
-    BLACK_OAK( false, 14, 180),
-    LIVE_OAK( false, 10, 155),
+    BLACK_OAK( false, 14, 180, 0.0174f),
+    LIVE_OAK( false, 10, 155, 0.0175f),
     //Palm
-    JAGGERY_PALM(false, 6, 249),
+    JAGGERY_PALM(false, 6, 249, 0.0447f),
     //Pine
-    STONE_PINE( true, 11, 0),
-    RED_PINE( true, 7, 0),
-    TAMARACK(false, 10, 254),
+    STONE_PINE( true, 11, 0, 0.0283f),
+    RED_PINE( true, 7, 0, 0.0248f),
+    TAMARACK(false, 10, 254, 0.0511f),
 
     //Rosewood
-    GIANT_ROSEWOOD( false, 16, 190),
+    GIANT_ROSEWOOD( false, 16, 190, 0.0127f),
     //Sequoia
-    COAST_REDWOOD( true, 10, 0),
+    COAST_REDWOOD( true, 10, 0, 0.0132f),
     //Spruce
-    COAST_SPRUCE(true, 8, 0),
-    SITKA_SPRUCE( true, 10, 0),
-    BLACK_SPRUCE(true, 12, 0),
+    COAST_SPRUCE(true, 8, 0, 0.0238f),
+    SITKA_SPRUCE( true, 10, 0, 0.0543f),
+    BLACK_SPRUCE(true, 12, 0, 0.0318f),
     //Cedar
-    ATLAS_CEDAR( true, 10, 0),
+    ATLAS_CEDAR( true, 10, 0, 0.0210f),
     //Willow
-    WEEPING_WILLOW(false, 16, 240),
+    WEEPING_WILLOW(false, 16, 240, 0.0107f),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(false, 16, 30),
-    MOUNTAIN_ASH(false, 13, 150),
+    RAINBOW_EUCALYPTUS(false, 16, 30, 0.0145f),
+    MOUNTAIN_ASH(false, 13, 150, 0.0140f),
     //Fig
-    RUBBER_FIG(false, 13, 80),
+    RUBBER_FIG(false, 13, 80, 0.0127f),
     //Cypress
-    REDCEDAR(true, 10, 0),
-    WEEPING_CYPRESS(true, 7, 0),
-    BALD_CYPRESS(false, 7, 130),
+    REDCEDAR(true, 10, 0, 0.0132f),
+    WEEPING_CYPRESS(true, 7, 0, 0.0591f),
+    BALD_CYPRESS(false, 7, 130, 0.0543f),
     //Mahogany
-    SAPELE_MAHOGANY(false, 14, 170),
-    SMALL_LEAF_MAHOGANY(false, 11, 240),
+    SAPELE_MAHOGANY(false, 14, 170, 0.0089f),
+    SMALL_LEAF_MAHOGANY(false, 11, 240, 0.0175f),
     //Teak
-    IROKO_TEAK(false, 13, 140),
-    FLAME_OF_THE_FOREST(false, 11, 0),
+    IROKO_TEAK(false, 13, 140, 0.0089f),
+    FLAME_OF_THE_FOREST(false, 11, 0, 0.0428f),
     //Ironwood
-    LEBOMBO_IRONWOOD(false, 8, 230),
-    HORSETAIL_IRONWOOD(false, 10, 220);
+    LEBOMBO_IRONWOOD(false, 8, 230, 0.0472f),
+    HORSETAIL_IRONWOOD(false, 10, 220, 0.0447f);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
@@ -94,7 +94,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     private final TreeGrower tree;
     private final int daysToGrow;
     private final boolean conifer;
-    private final float saplingDropChance;
+    private final float saplingDropRate;
 
     TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex, float saplingDropChance) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
@@ -107,12 +107,17 @@ public enum TreeSpecies implements RegistryTreeSpecies
         );
         this.conifer = conifer;
         this.daysToGrow = daysToGrow;
-        this.saplingDropChance = saplingDropChance;
+        this.saplingDropRate = saplingDropChance;
     }
 
     public int autumnIndex()
     {
         return autumnIndex;
+    }
+
+    public float getSaplingDropRate()
+    {
+        return saplingDropRate;
     }
 
     @Override

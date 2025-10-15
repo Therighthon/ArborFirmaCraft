@@ -6,7 +6,6 @@ import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.recipe.AFCRecipeSerializers;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
-import com.therighthon.afc.common.recipe.AFCRecipes;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -54,6 +53,7 @@ public final class AFC
         eventBus.addListener(ModEvents::onPackFinder);
 
         AFCBlocks.BLOCKS.register(eventBus);
+        AFCBlocks.FLUID_BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUID_TYPES.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
@@ -62,7 +62,6 @@ public final class AFC
         AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         AFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
-        AFCRecipes.register(eventBus);
         AFCCreativeModeTabs.CREATIVE_TABS.register(eventBus);
 
         if (ModList.get().isLoaded("firmalife"))

@@ -271,8 +271,9 @@ STACKED = 'stacked'
 # Keep this up-to-date with the version in SharedConstants.VERSION
 DATA_VERSION = 3953
 
-TEMPLATES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/Python/structure_templates/'
-STRUCTURES_DIR = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources/data/tfc/structure'
+# TODO: Should learn to make better directories for these that do not include the C:/ drive of my PC in the address
+TEMPLATES_DIR = 'C:/GitHub/ArborFirmaCraft/resources/structure_templates/'
+STRUCTURES_DIR = 'C:/GitHub/ArborFirmaCraft/src/main/resources/data/tfc/structure'
 
 # If `STRICT_MODE` is true, it performs some additional checks on the structure of trees that may not hold in general
 # These should be used to help while making tree structures and only ignored if they're catching false positives.

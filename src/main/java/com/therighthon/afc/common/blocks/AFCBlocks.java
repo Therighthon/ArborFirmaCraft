@@ -52,6 +52,10 @@ public class AFCBlocks
     public static final DeferredRegister<Block> BLOCKS =
         DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
 
+    // These are separate because they make the BlockLootProvider very angry when I try to pass them in
+    public static final DeferredRegister<Block> FLUID_BLOCKS =
+        DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
+
     public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCCeilingHangingSignBlock>>> CEILING_HANGING_SIGNS = registerHangingSigns("hanging_sign", TFCCeilingHangingSignBlock::new);
     public static final Map<AFCWood, Map<Metal, TFCBlocks.Id<TFCWallHangingSignBlock>>> WALL_HANGING_SIGNS = registerHangingSigns("wall_hanging_sign", TFCWallHangingSignBlock::new);
 
@@ -119,15 +123,6 @@ public class AFCBlocks
             ExtendedProperties.of(Blocks.BRAIN_CORAL_FAN).noOcclusion().blockEntity(AFCBlockEntities.TAP_BLOCK_ENTITY).serverTicks(TapBlockEntity::serverTick)
         ));
 
-    public static final Map<SimpleAFCFluid, TFCBlocks.Id<LiquidBlock>> SIMPLE_FLUIDS = Helpers.mapOf(SimpleAFCFluid.class, fluid ->
-        registerNoItem("fluid/" + fluid.getId(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).getSource(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()))
-    );
-
-    private static <T extends Block> TFCBlocks.Id<T> registerNoItem(String name, Supplier<T> blockSupplier)
-    {
-        return register(name, blockSupplier, (Function<T, ? extends BlockItem>) null);
-    }
-
     public static void register(IEventBus eventBus)
     {
         BLOCKS.register(eventBus);
@@ -159,6 +154,19 @@ public class AFCBlocks
         );
     }
 
+    public static final Map<SimpleAFCFluid, TFCBlocks.Id<LiquidBlock>> SIMPLE_FLUIDS = Helpers.mapOf(SimpleAFCFluid.class, fluid ->
+        registerFluidNoItem("fluid/" + fluid.getId(), () -> new LiquidBlock(AFCFluids.SIMPLE_AFC_FLUIDS.get(fluid).getSource(), BlockBehaviour.Properties.ofFullCopy(Blocks.WATER).noLootTable()))
+    );
+
+    private static <T extends Block> TFCBlocks.Id<T> registerFluidNoItem(String name, Supplier<T> blockSupplier)
+    {
+        return registerFluid(name, blockSupplier, (Function<T, ? extends BlockItem>) null);
+    }
+
+    private static <T extends Block> TFCBlocks.Id<T> registerFluid(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
+    {
+        return new TFCBlocks.Id<>(RegistrationHelpers.registerBlock(AFCBlocks.FLUID_BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory));
+    }
 }
 
 
