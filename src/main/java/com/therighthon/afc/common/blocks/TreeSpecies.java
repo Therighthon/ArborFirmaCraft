@@ -94,8 +94,9 @@ public enum TreeSpecies implements RegistryTreeSpecies
     private final TreeGrower tree;
     private final int daysToGrow;
     private final boolean conifer;
+    private final float saplingDropChance;
 
-    TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex) {
+    TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex, float saplingDropChance) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.autumnIndex = autumnIndex;
         this.tree = new TreeGrower(
@@ -106,6 +107,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
         );
         this.conifer = conifer;
         this.daysToGrow = daysToGrow;
+        this.saplingDropChance = saplingDropChance;
     }
 
     public int autumnIndex()

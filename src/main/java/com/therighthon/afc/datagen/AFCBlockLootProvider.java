@@ -22,7 +22,7 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
     protected void generate()
     {
         // TODO: Block loot
-        AFCBlocks.BLOCKS.getEntries().forEach(b -> dropSelf(b.get()));
+//        AFCBlocks.BLOCKS.getEntries().forEach(b -> dropSelf(b.get()));
 
         AFCBlocks.TREE_SPECIES.forEach(
             (species, map) -> add(species.getBlock(TreeSpecies.BlockType.LEAVES).get(),

@@ -45,16 +45,14 @@ public final class AFCCreativeModeTabs
                 }
             });
             accept(out, AFCItems.LUMBER, wood);
-            //TODO: Boats
-//            accept(out, AFCItems.BOATS, wood);
+            accept(out, AFCItems.BOATS, wood);
             accept(out, AFCItems.SUPPORTS, wood);
             accept(out, AFCItems.CHEST_MINECARTS, wood);
             accept(out, AFCItems.SIGNS, wood);
-            //TODO: Hanging signs
-//            for (Metal metal : Metal.values())
-//            {
-//                accept(out, AFCItems.HANGING_SIGNS.get(wood), metal);
-//            }
+            for (Metal metal : Metal.values())
+            {
+                accept(out, AFCItems.HANGING_SIGNS.get(wood), metal);
+            }
         }
         for (TreeSpecies wood : TreeSpecies.VALUES)
         {
