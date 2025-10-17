@@ -9,7 +9,9 @@
       "max_groundwater": 300,
       "min_rain_variance": -0.5,
       "max_rain_variance": 0.5,
-      "rain_variance_absolute": false
+      "rain_variance_absolute": false,
+      "min_elevation": 75,
+      "max_elevation": 150
     },
     "groundcover": [
       {

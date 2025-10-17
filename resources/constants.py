@@ -121,6 +121,25 @@ UNMODIFIED_TFC_WOODS = {
     'willow'
 }
 
+AFC_LOG_TYPES = {
+    'baobab',
+    'eucalyptus',
+    'rainbow_eucalyptus',
+    'hevea',
+    'mahogany',
+    'tualang',
+    'teak',
+    'cypress',
+    'fig',
+    'black_oak' ,
+    'redcedar',
+    'gum_arabic',
+    'ipe',
+    'ironwood',
+    'poplar',
+    'rubber_fig'
+}
+
 UNIQUE_LOGS: Dict[str, Wood] = {
     'rainbow_eucalyptus': Wood(720, 2100),
     'redcedar': Wood(650, 1000),

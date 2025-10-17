@@ -9,11 +9,13 @@
       "max_groundwater": 500,
       "min_rain_variance": 0.35,
       "max_rain_variance": 1,
-      "rain_variance_absolute": true
+      "rain_variance_absolute": true,
+      "min_elevation": 80,
+      "max_elevation": 140
     },
     "groundcover": [
       {
-        "block": "afc:wood/twig/fig"
+        "block": "afc:wood/twig/rubber_fig"
       },
       {
         "block": "afc:wood/fallen_leaves/rubber_fig"
@@ -22,9 +24,9 @@
     "normal_tree": "afc:tree/rubber_fig",
     "dead_tree": "afc:tree/rubber_fig_dead",
     "soil_disc": "tfc:duff_disc",
-    "fallen_log": "afc:wood/log/fig",
+    "fallen_log": "afc:wood/log/rubber_fig",
     "bush_log": {
-      "Name": "afc:wood/wood/fig",
+      "Name": "afc:wood/wood/rubber_fig",
       "Properties": {
         "natural": "true",
         "axis": "y"

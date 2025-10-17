@@ -12,74 +12,74 @@ def generate(rm: ResourceManager):
 
     # TODO: When run, this does NOT delete stale files
     # Trees / Forests
-    forest_config(rm, 90, 325, 13.4, 40, 0.5, 1, True, 'acacia', 'acacia', True, old_growth_chance=12)
-    forest_config(rm, 90, 325, 11.6, 40, 0.5, 1, True, 'gum_arabic', 'gum_arabic', False)
-    forest_config(rm, 325, 500, 15.3, 24.4, -0.6, 0.6, False, 'acacia_koa', 'acacia', False)
-    forest_config(rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 'ash', 'ash', True)
-    forest_config(rm, 350, 500, -15.7, -1.1, -0.9, 0.25, False, 'aspen', 'aspen', False, old_growth_chance=1, krum=True)
-    forest_config(rm, 125, 310, -13.9, 2.5, -0.5, 0.35, False, 'birch', 'birch', False, old_growth_chance=1)
-    forest_config(rm, 35, 150, 9.8, 20.7, -1, 1, False, 'blackwood', 'blackwood', True)
-    forest_config(rm, 85, 285, 13.4, 22.5, 0.3, 1, True, 'mpingo_blackwood', 'blackwood', False)
-    forest_config(rm, 150, 300, -6.6, 11.6, -0.5, 0.5, False, 'chestnut', 'chestnut', False)
-    forest_config(rm, 280, 500, -10.3, 6.1, -1, -0.2, False, 'douglas_fir', 'douglas_fir', True, krum=True)
-    forest_config(rm, 220, 345, -1.1, 11.6, -0.2, 1, False, 'mountain_fir', 'douglas_fir', True)
-    forest_config(rm, 210, 500, -13.9, -1.1, -0.55, 0.45, False, 'balsam_fir', 'douglas_fir', True)
-    forest_config(rm, 210, 400, -6.6, 11.6, -0.45, 0.5, False, 'hickory', 'hickory', False)
-    forest_config(rm, 365, 500, 11.6, 17.1, -0.4, 0.4, False, 'scrub_hickory', 'hickory', True)
-    forest_config(rm, 280, 500, 13.4, 24.4, -0.45, 0.45, False, 'kapok', 'kapok', True, old_growth_chance=8)
-    forest_config(rm, 300, 500, 13.4, 24.4, 0.4, 1, False, 'red_silk_cotton', 'kapok', False)
-    forest_config(rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 'maple', 'maple', True)
-    forest_config(rm, 260, 500, -4.8, 11.6, -1, -0.5, False, 'bigleaf_maple', 'maple', False, old_growth_chance=4)
-    forest_config(rm, 240, 500, 0.7, 4.3, 0.2, 1, False, 'weeping_maple', 'maple', True)
-    forest_config(rm, 390, 500, 0.7, 13.4, -0.5, 0.5, False, 'live_oak', 'oak', True, old_growth_chance=8)
-    forest_config(rm, 150, 330, 11.6, 20.7, 0.2, 1, False, 'black_oak', 'black_oak', False, old_growth_chance=1)
-    forest_config(rm, 210, 380, -8.4, 6.1, -0.3, 0.45, False, 'oak', 'oak', False)
-    forest_config(rm, 70, 265, 17.1, 40, -0.5, 0.5, False, 'palm', 'palm', False)
-    forest_config(rm, 270, 420, 11.6, 26.2, 0.25, 1, False, 'jaggery_palm', 'palm', False)
-    forest_config(rm, 60, 300, -19.4, -3, 0.2, 1, False, 'pine', 'pine', True, krum=True)
-    forest_config(rm, 140, 290, 4.3, 20.7, -1, -0.4, False, 'stone_pine', 'pine', True)
-    forest_config(rm, 210, 500, -8.4, 4.3, 0.3, 1, False, 'red_pine', 'pine', False)
-    forest_config(rm, 135, 340, -17.5, -1.1, -0.8, 0.65, False, 'tamarack', 'pine', True)
-    forest_config(rm, 240, 445, 15.3, 24.4, 0.5, 1, False, 'rosewood', 'rosewood', False)
-    forest_config(rm, 330, 500, 15.3, 22.5, 0.35, 1, False, 'giant_rosewood', 'rosewood', False)
-    forest_config(rm, 310, 500, 0.7, 8, -1, -0.4, False, 'sequoia', 'sequoia', True, old_growth_chance=3)
-    forest_config(rm, 320, 500, 4.3, 13.4, -1, -0.55, False, 'coast_redwood', 'sequoia', True, old_growth_chance=3)
-    forest_config(rm, 330, 500, -19.4, 2.5, -0.5, 0.6, False, 'spruce', 'spruce', True)
-    forest_config(rm, 320, 390, -12.1, 6.1, -0.55, 0.5, False, 'coast_spruce', 'spruce', False)
-    forest_config(rm, 285, 465, -3, 8, -1, -0.45, False, 'sitka_spruce', 'spruce', True)
-    forest_config(rm, 190, 460, -17.5, -1.1, -0.55, 0.55, False, 'black_spruce', 'spruce', True, krum=True)
-    forest_config(rm, 330, 500, -6.6, 11.6, -0.5, 0.4, False, 'sycamore', 'sycamore', True)
-    forest_config(rm, 100, 340, -13.9, 4.3, -0.4, 0.6, False, 'white_cedar', 'white_cedar', True, krum=True)
-    forest_config(rm, 130, 260, 8, 13.4, -1, -0.3, False, 'atlas_cedar', 'white_cedar', False)
-    forest_config(rm, 330, 500, -6.6, 9.8, -0.4, 0.55, False, 'willow', 'willow', True)
-    forest_config(rm, 355, 500, -3, 11.6, 0.1, 1, False, 'weeping_willow', 'willow', False)
+    forest_config(rm, 90, 325, 13.4, 40, 0.5, 1, True, 60, 85, 'acacia', 'acacia', True, old_growth_chance=12)
+    forest_config(rm, 90, 325, 11.6, 40, 0.5, 1, True, 80, 130, 'gum_arabic', 'gum_arabic', False)
+    forest_config(rm, 325, 500, 15.3, 24.4, -0.6, 0.6, False, 70, 150, 'acacia_koa', 'acacia', False)
+    forest_config(rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 60, 120, 'ash', 'ash', True)
+    forest_config(rm, 350, 500, -15.7, -1.1, -0.9, 0.25, False, 60, 170, 'aspen', 'aspen', False, old_growth_chance=1, krum=True)
+    forest_config(rm, 125, 310, -13.9, 2.5, -0.5, 0.35, False, 60, 170, 'birch', 'birch', False, old_growth_chance=1)
+    forest_config(rm, 35, 150, 9.8, 20.7, -1, 1, False, 80, 170, 'blackwood', 'blackwood', True)
+    forest_config(rm, 85, 285, 13.4, 22.5, 0.3, 1, True, 60, 85, 'mpingo_blackwood', 'blackwood', False)
+    forest_config(rm, 150, 300, -6.6, 11.6, -0.5, 0.5, False, 75, 150, 'chestnut', 'chestnut', False)
+    forest_config(rm, 280, 500, -10.3, 6.1, -1, -0.2, False, 60, 170, 'douglas_fir', 'douglas_fir', True, krum=True)
+    forest_config(rm, 220, 345, -1.1, 11.6, -0.2, 1, False, 85, 170, 'mountain_fir', 'douglas_fir', True)
+    forest_config(rm, 210, 500, -13.9, -1.1, -0.55, 0.45, False, 60, 170, 'balsam_fir', 'douglas_fir', True)
+    forest_config(rm, 210, 400, -6.6, 11.6, -0.45, 0.5, False, 60, 120, 'hickory', 'hickory', False)
+    forest_config(rm, 365, 500, 11.6, 17.1, -0.4, 0.4, False, 60, 80, 'scrub_hickory', 'hickory', True)
+    forest_config(rm, 280, 500, 13.4, 24.4, -0.45, 0.45, False, 60, 160, 'kapok', 'kapok', True, old_growth_chance=8)
+    forest_config(rm, 300, 500, 13.4, 24.4, 0.4, 1, False, 60, 85, 'red_silk_cotton', 'kapok', False)
+    forest_config(rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 60, 85, 'maple', 'maple', True)
+    forest_config(rm, 260, 500, -4.8, 11.6, -1, -0.5, False, 60, 120, 'bigleaf_maple', 'maple', False, old_growth_chance=4)
+    forest_config(rm, 240, 500, 0.7, 4.3, 0.2, 1, False, 60, 140, 'weeping_maple', 'maple', True)
+    forest_config(rm, 390, 500, 0.7, 13.4, -0.5, 0.5, False, 60, 75, 'live_oak', 'oak', True, old_growth_chance=8)
+    forest_config(rm, 150, 330, 11.6, 20.7, 0.2, 1, False, 60, 85, 'black_oak', 'black_oak', False, old_growth_chance=1)
+    forest_config(rm, 210, 380, -8.4, 6.1, -0.3, 0.45, False, 60, 85, 'oak', 'oak', False)
+    forest_config(rm, 70, 265, 17.1, 40, -0.5, 0.5, False, 60, 95, 'palm', 'palm', False)
+    forest_config(rm, 270, 420, 11.6, 26.2, 0.25, 1, False, 70, 130, 'jaggery_palm', 'palm', False)
+    forest_config(rm, 60, 300, -19.4, -3, 0.2, 1, False, 60, 145, 'pine', 'pine', True, krum=True)
+    forest_config(rm, 140, 290, 4.3, 20.7, -1, -0.4, False, 60, 170, 'stone_pine', 'pine', True)
+    forest_config(rm, 210, 500, -8.4, 4.3, 0.3, 1, False, 75, 170, 'red_pine', 'pine', False)
+    forest_config(rm, 135, 340, -17.5, -1.1, -0.8, 0.65, False, 60, 140, 'tamarack', 'pine', True)
+    forest_config(rm, 240, 445, 15.3, 24.4, 0.5, 1, False, 60, 120, 'rosewood', 'rosewood', False)
+    forest_config(rm, 330, 500, 15.3, 22.5, 0.35, 1, False, 60, 120, 'giant_rosewood', 'rosewood', False)
+    forest_config(rm, 310, 500, 0.7, 8, -1, -0.4, False, 85, 130, 'sequoia', 'sequoia', True, old_growth_chance=3)
+    forest_config(rm, 320, 500, 4.3, 13.4, -1, -0.55, False, 60, 90, 'coast_redwood', 'sequoia', True, old_growth_chance=3)
+    forest_config(rm, 330, 500, -19.4, 2.5, -0.5, 0.6, False, 85, 170, 'spruce', 'spruce', True)
+    forest_config(rm, 320, 390, -12.1, 6.1, -0.55, 0.5, False, 60, 170, 'coast_spruce', 'spruce', False)
+    forest_config(rm, 285, 465, -3, 8, -1, -0.45, False, 60, 90, 'sitka_spruce', 'spruce', True)
+    forest_config(rm, 190, 460, -17.5, -1.1, -0.55, 0.55, False, 60, 85, 'black_spruce', 'spruce', True, krum=True)
+    forest_config(rm, 330, 500, -6.6, 11.6, -0.5, 0.4, False, 60, 75, 'sycamore', 'sycamore', True)
+    forest_config(rm, 100, 340, -13.9, 4.3, -0.4, 0.6, False, 60, 120, 'white_cedar', 'white_cedar', True, krum=True)
+    forest_config(rm, 130, 260, 8, 13.4, -1, -0.3, False, 85, 160, 'atlas_cedar', 'white_cedar', False)
+    forest_config(rm, 330, 500, -6.6, 9.8, -0.4, 0.55, False, 60, 120, 'willow', 'willow', True)
+    forest_config(rm, 355, 500, -3, 11.6, 0.1, 1, False, 60, 120, 'weeping_willow', 'willow', False)
 
-    forest_config(rm, 300, 500, 15.3, 24.4, -0.4, 1, False, 'rainbow_eucalyptus', 'rainbow_eucalyptus', False, old_growth_chance=1)
-    forest_config(rm, 170, 360, 8, 18.9, -0.1, 0.7, False, 'eucalyptus', 'eucalyptus', False)
-    forest_config(rm, 390, 500, 9.8, 18.9, -0.2, 0.65, False, 'mountain_ash', 'eucalyptus', True, old_growth_chance=3)
-    forest_config(rm, 55, 215, 15.3, 26.2, 0.6, 1, True, 'baobab', 'baobab', True, old_growth_chance=2)
-    forest_config(rm, 365, 500, 17.1, 26.2, -0.45, 0.45, False, 'hevea', 'hevea', False)
-    forest_config(rm, 280, 460, 15.3, 26.2, -0.65, 0.65, False, 'mahogany', 'mahogany', False)
-    forest_config(rm, 300, 500, 11.6, 18.9, -0.4, 0.6, False, 'small_leaf_mahogany', 'mahogany', False)
-    forest_config(rm, 330, 500, 13.4, 26.2, -0.75, 0.75, False, 'sapele_mahogany', 'mahogany', True)
-    forest_config(rm, 320, 500, 20.7, 40, -0.3, 0.3, False, 'tualang', 'tualang', True)
-    forest_config(rm, 215, 500, 13.4, 26.2, 0.4, 1, True, 'teak', 'teak', False)
-    forest_config(rm, 100, 260, 2.5, 15.3, -0.5, -1, False, 'cypress', 'cypress', False)
-    forest_config(rm, 235, 405, -8.4, 4.3, -1, -0.7, False, 'weeping_cypress', 'cypress', False)
-    forest_config(rm, 410, 500, -4.8, 9.8, -1, -0.65, False, 'redcedar', 'redcedar', False)
-    forest_config(rm, 360, 500, -1.1, 15.3, -0.45, 0.55, False, 'bald_cypress', 'cypress', True, old_growth_chance=2)
-    forest_config(rm, 340, 500, 18.9, 26.2, -0.55, 0.55, False, 'fig', 'fig', False)
-    forest_config(rm, 290, 500, 9.8, 20.7, 0.35, 1, True, 'rubber_fig', 'fig', False)
+    forest_config(rm, 300, 500, 15.3, 24.4, -0.4, 1, False, 60, 95, 'rainbow_eucalyptus', 'rainbow_eucalyptus', False, old_growth_chance=1)
+    forest_config(rm, 170, 360, 8, 18.9, -0.1, 0.7, False, 60, 120, 'eucalyptus', 'eucalyptus', False)
+    forest_config(rm, 390, 500, 9.8, 18.9, -0.2, 0.65, False, 80, 140, 'mountain_ash', 'eucalyptus', True, old_growth_chance=3)
+    forest_config(rm, 55, 215, 15.3, 26.2, 0.6, 1, True, 60, 95, 'baobab', 'baobab', True, old_growth_chance=2)
+    forest_config(rm, 365, 500, 17.1, 26.2, -0.45, 0.45, False, 60, 80, 'hevea', 'hevea', False)
+    forest_config(rm, 280, 460, 15.3, 26.2, -0.65, 0.65, False, 60, 120, 'mahogany', 'mahogany', False)
+    forest_config(rm, 300, 500, 11.6, 18.9, -0.4, 0.6, False, 60, 120, 'small_leaf_mahogany', 'mahogany', False)
+    forest_config(rm, 330, 500, 13.4, 26.2, -0.75, 0.75, False, 75, 130, 'sapele_mahogany', 'mahogany', True)
+    forest_config(rm, 320, 500, 20.7, 40, -0.3, 0.3, False, 60, 120, 'tualang', 'tualang', True)
+    forest_config(rm, 215, 500, 13.4, 26.2, 0.4, 1, True, 60, 80, 'teak', 'teak', False)
+    forest_config(rm, 100, 260, 2.5, 15.3, -0.5, -1, False, 60, 170, 'cypress', 'cypress', False)
+    forest_config(rm, 235, 405, -8.4, 4.3, -1, -0.7, False, 70, 135, 'weeping_cypress', 'cypress', False)
+    forest_config(rm, 410, 500, -4.8, 9.8, -1, -0.65, False, 60, 170, 'redcedar', 'redcedar', False)
+    forest_config(rm, 360, 500, -1.1, 15.3, -0.45, 0.55, False, 60, 80, 'bald_cypress', 'cypress', True, old_growth_chance=2)
+    forest_config(rm, 340, 500, 18.9, 26.2, -0.55, 0.55, False, 60, 120, 'fig', 'fig', False)
+    forest_config(rm, 290, 500, 9.8, 20.7, 0.35, 1, True, 80, 140, 'rubber_fig', 'rubber_fig', False)
 
-    forest_config(rm, 330, 500, 15.3, 24.4, 0.3, 1, True, 'ipe', 'ipe', False)
-    forest_config(rm, 320, 430, 20.7, 40, -0.6, 0.6, False, 'ironwood', 'ironwood', False)
-    forest_config(rm, 135, 280, 20.7, 40, -0.5, 0.5, False, 'lebombo_ironwood', 'ironwood', False)
-    forest_config(rm, 340, 500, 9.8, 20.7, 0.45, 0.85, True, 'horsetail_ironwood', 'ironwood', False)
-    forest_config(rm, 190, 340, 17.1, 40, -0.5, 0.5, False, 'iroko_teak', 'teak', False)
-    forest_config(rm, 280, 450, 13.4, 24.4, 0.4, 0.8, True, 'flame_of_the_forest', 'teak', False)
-    forest_config(rm, 400, 500, 20.7, 26.2, -0.4, 0.4, False, 'jaggery_palm', 'palm', False)
-    forest_config(rm, 170, 360, -15.7, -3, -0.2, 0.7, False, 'poplar', 'aspen', False)
-    # # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
+    forest_config(rm, 330, 500, 15.3, 24.4, 0.3, 1, True, 60, 170, 'ipe', 'ipe', False)
+    forest_config(rm, 320, 430, 20.7, 40, -0.6, 0.6, False, 70, 170, 'ironwood', 'ironwood', False)
+    forest_config(rm, 135, 280, 20.7, 40, -0.5, 0.5, False, 60, 120, 'lebombo_ironwood', 'ironwood', False)
+    forest_config(rm, 340, 500, 9.8, 20.7, 0.45, 0.85, True, 60, 85, 'horsetail_ironwood', 'ironwood', False)
+    forest_config(rm, 190, 340, 17.1, 40, -0.5, 0.5, False, 60, 130, 'iroko_teak', 'teak', False)
+    forest_config(rm, 280, 450, 13.4, 24.4, 0.4, 0.8, True, 60, 100, 'flame_of_the_forest', 'teak', False)
+    forest_config(rm, 400, 500, 20.7, 26.2, -0.4, 0.4, False, 60, 90, 'jaggery_palm', 'palm', False)
+    forest_config(rm, 170, 360, -15.7, -3, -0.2, 0.7, False, 60, 120, 'poplar', 'poplar', False)
+# # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
 
 
 
@@ -381,14 +381,14 @@ def simple_state_provider(name: str) -> Dict[str, Any]:
 
 # Tree Helper Functions
 
-def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, min_rain_var: float, max_rain_var: float, rain_var_absolute: bool, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None, podzol: bool = False, alfisol: bool = False):
+def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, min_rain_var: float, max_rain_var: float, rain_var_absolute: bool, min_elev: int, max_elev: int, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None, podzol: bool = False, alfisol: bool = False):
 
     tree_prefix = 'afc'
     if tree in UNMODIFIED_TFC_WOODS:
         tree_prefix = 'tfc'
 
     wood_prefix = 'tfc'
-    if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood':
+    if basic_wood in AFC_LOG_TYPES:
         wood_prefix = 'afc'
 
     leaf_prefix = 'afc'
@@ -403,7 +403,9 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
             'max_groundwater': max_rain,
             'min_rain_variance': min_rain_var,
             'max_rain_variance': max_rain_var,
-            'rain_variance_absolute': rain_var_absolute
+            'rain_variance_absolute': rain_var_absolute,
+            'min_elevation': min_elev,
+            'max_elevation': max_elev
         },
         'groundcover': [{'block': '%s:wood/twig/%s' % (wood_prefix, basic_wood)}],
         'normal_tree': '%s:tree/%s' % (tree_prefix, tree),
