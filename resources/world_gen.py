@@ -36,7 +36,7 @@ def generate(rm: ResourceManager):
     forest_config(rm, 210, 380, -8.4, 6.1, -0.3, 0.45, False, 60, 85, 'oak', 'oak', False)
     forest_config(rm, 70, 265, 17.1, 40, -0.5, 0.5, False, 60, 95, 'palm', 'palm', False)
     forest_config(rm, 270, 420, 11.6, 26.2, 0.25, 1, False, 70, 130, 'jaggery_palm', 'palm', False)
-    forest_config(rm, 60, 300, -19.4, -3, 0.2, 1, False, 60, 145, 'pine', 'pine', True, krum=True)
+    forest_config(rm, 60, 300, -19.4, -3, 0.2, 1, False, 60, 145, 'pine', 'pine', False, krum=True)
     forest_config(rm, 140, 290, 4.3, 20.7, -1, -0.4, False, 60, 170, 'stone_pine', 'pine', True)
     forest_config(rm, 210, 500, -8.4, 4.3, 0.3, 1, False, 75, 170, 'red_pine', 'pine', False)
     forest_config(rm, 135, 340, -17.5, -1.1, -0.8, 0.65, False, 60, 140, 'tamarack', 'pine', True)
