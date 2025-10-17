@@ -21,7 +21,7 @@ import world_gen
 BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
 MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
 RESOURCE_DIR = 'src/main/resources'
-EXCLUDE_PATHS: set[str] = ('src/main/resources/firmalife_compat_data', 'src/main/resources/firmalife_compat_assets', 'src/main/resources/assets')
+EXCLUDE_PATHS: set[str] = {'firmalife_compat_data', 'firmalife_compat_assets', 'assets'}
 
 
 def main():
@@ -50,26 +50,7 @@ def main():
                 TempResourceManager('afc', resource_dir=RESOURCE_DIR),
                 TempResourceManager('tfc', resource_dir=RESOURCE_DIR)
             )
-            touched |= EXCLUDE_PATHS
-            print('Removed Stale =', utils.clean_generated_resources(RESOURCE_DIR, touched))
-
-
-def clean(local: Optional[str]):
-    """ Cleans all generated resources files """
-    clean_at(RESOURCE_DIR)
-    if local:
-        clean_at(local)
-
-def clean_at(location: str):
-    for tries in range(1, 1 + 3):
-        try:
-            utils.clean_generated_resources(location, )
-            print('Clean %s' % location)
-            return
-        except OSError:
-            print('Failed, retrying (%d / 3)' % tries)
-    print('Clean Aborted')
-
+            print('Removed Stale =', clean_generated_resources(RESOURCE_DIR, touched))
 
 def validate_resources():
     """ Validates all resources are unchanged. """
@@ -95,9 +76,9 @@ def validate_resources():
     assert not error, 'Validation Errors Were Present'
 
 def resources_at(
-        rm: ResourceManager,
-        tfc_rm: ResourceManager
-    ) -> set[str]:
+    rm: ResourceManager,
+    tfc_rm: ResourceManager
+) -> set[str]:
 
     world_gen.generate(rm)
 
@@ -139,6 +120,40 @@ class ValidatingResourceManager(ResourceManager):
         except Exception as e:
             self.on_error(path, e)
             self.error_files += 1
+
+def clean_generated_resources(path: str, exclude: set[str]) -> int:
+    """
+    Modified from the mcresources version to allow exclusion of folders
+
+    Recursively removes all files generated using by mcresources, as identified by the inserted comment. Removes empty directories
+    :param path: The initial path to search through
+    :param exclude: A set of paths to exclude from removal. Typically obtained from `ResourceManager.written_files`
+    :return: The number of removed files
+    """
+    removed: int = 0
+    for subdir in os.listdir(path):
+        if not any(ex in subdir for ex in EXCLUDE_PATHS):
+            sub_path = os.path.join(path, subdir)
+            if os.path.isfile(sub_path):
+                # File, check if valid and then delete
+                sub_path = os.path.normpath(sub_path)
+                if subdir.endswith('.json') and sub_path not in exclude:
+                    delete = False
+                    with open(sub_path, 'r', encoding='utf-8') as file:
+                        if '"__comment__": "This file was automatically created by mcresources"' in file.read():
+                            delete = True
+                    if delete:
+                        os.remove(sub_path)
+                        removed += 1
+            else:
+                # Folder, search recursively
+                removed += clean_generated_resources(sub_path, exclude)
+
+    if not os.listdir(path):
+        # Delete empty folder
+        os.rmdir(path)
+
+    return removed
 
 class TempResourceManager(ResourceManager):
 
