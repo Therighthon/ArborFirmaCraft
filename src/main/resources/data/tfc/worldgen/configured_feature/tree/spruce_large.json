@@ -17,27 +17,27 @@
     "layers": [
       {
         "templates": [
-          "afc:spruce_large/layer1_1",
-          "afc:spruce_large/layer1_2",
-          "afc:spruce_large/layer1_3"
+          "tfc:spruce_large/layer1_1",
+          "tfc:spruce_large/layer1_2",
+          "tfc:spruce_large/layer1_3"
         ],
         "min_count": 1,
         "max_count": 2
       },
       {
         "templates": [
-          "afc:spruce_large/layer2_1",
-          "afc:spruce_large/layer2_2",
-          "afc:spruce_large/layer2_3"
+          "tfc:spruce_large/layer2_1",
+          "tfc:spruce_large/layer2_2",
+          "tfc:spruce_large/layer2_3"
         ],
         "min_count": 1,
         "max_count": 2
       },
       {
         "templates": [
-          "afc:spruce_large/layer3_1",
-          "afc:spruce_large/layer3_2",
-          "afc:spruce_large/layer3_3"
+          "tfc:spruce_large/layer3_1",
+          "tfc:spruce_large/layer3_2",
+          "tfc:spruce_large/layer3_3"
         ],
         "min_count": 1,
         "max_count": 1

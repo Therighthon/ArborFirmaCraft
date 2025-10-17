@@ -17,30 +17,30 @@
     "layers": [
       {
         "templates": [
-          "afc:kapok_large/layer1_1",
-          "afc:kapok_large/layer1_2",
-          "afc:kapok_large/layer1_3",
-          "afc:kapok_large/layer1_4",
-          "afc:kapok_large/layer1_5"
+          "tfc:kapok_large/layer1_1",
+          "tfc:kapok_large/layer1_2",
+          "tfc:kapok_large/layer1_3",
+          "tfc:kapok_large/layer1_4",
+          "tfc:kapok_large/layer1_5"
         ],
         "min_count": 1,
         "max_count": 1
       },
       {
         "templates": [
-          "afc:kapok_large/layer2_1"
+          "tfc:kapok_large/layer2_1"
         ],
         "min_count": 14,
         "max_count": 22
       },
       {
         "templates": [
-          "afc:kapok_large/layer3_1",
-          "afc:kapok_large/layer3_2",
-          "afc:kapok_large/layer3_3",
-          "afc:kapok_large/layer3_4",
-          "afc:kapok_large/layer3_5",
-          "afc:kapok_large/layer3_6"
+          "tfc:kapok_large/layer3_1",
+          "tfc:kapok_large/layer3_2",
+          "tfc:kapok_large/layer3_3",
+          "tfc:kapok_large/layer3_4",
+          "tfc:kapok_large/layer3_5",
+          "tfc:kapok_large/layer3_6"
         ],
         "min_count": 1,
         "max_count": 1

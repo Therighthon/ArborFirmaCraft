@@ -196,7 +196,7 @@ TREES: dict[str, Tree] = {
     'kapok': Tree('canopy', 'kapok', 'dead_jungle'),
     'pine': Tree('siberian', None, 'pine_snag'),
     'sequoia': Tree('fir', 'sequoia', 'dead_tall'),
-    'spruce': Tree('conifer', None, 'dead_tall')
+    'spruce': Tree('conifer', 'fluffy_old_conifer', 'dead_tall')
 }
 
 
