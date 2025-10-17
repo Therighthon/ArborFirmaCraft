@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:pine/1",
+      "afc:pine/2",
+      "afc:pine/3",
+      "afc:pine/4",
+      "afc:pine/5",
+      "afc:pine/6",
+      "afc:pine/7",
+      "afc:pine/8",
+      "afc:pine/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 3
+    }
+  }
+}

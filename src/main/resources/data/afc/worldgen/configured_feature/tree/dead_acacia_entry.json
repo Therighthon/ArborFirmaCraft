@@ -21,8 +21,8 @@
         "block": "tfc:wood/fallen_leaves/acacia"
       }
     ],
-    "normal_tree": "afc:tree/acacia",
-    "dead_tree": "afc:tree/acacia_dead",
+    "normal_tree": "tfc:tree/acacia",
+    "dead_tree": "tfc:tree/acacia_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 12,
     "fallen_tree_chance": 8,
@@ -34,7 +34,7 @@
       }
     },
     "bush_leaves": "tfc:wood/leaves/acacia",
-    "old_growth_tree": "afc:tree/acacia_large",
+    "old_growth_tree": "tfc:tree/acacia_large",
     "dead_chance": 1
   }
 }

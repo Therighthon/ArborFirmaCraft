@@ -24,8 +24,8 @@
         "block": "tfc:wood/fallen_leaves/pine"
       }
     ],
-    "normal_tree": "afc:tree/pine",
-    "dead_tree": "afc:tree/pine_dead",
+    "normal_tree": "tfc:tree/pine",
+    "dead_tree": "tfc:tree/pine_dead",
     "krummholz": "tfc:tree/pine_krummholz",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/pine",

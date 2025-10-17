@@ -21,8 +21,8 @@
         "block": "tfc:wood/fallen_leaves/sequoia"
       }
     ],
-    "normal_tree": "afc:tree/sequoia",
-    "dead_tree": "afc:tree/sequoia_dead",
+    "normal_tree": "tfc:tree/sequoia",
+    "dead_tree": "tfc:tree/sequoia_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 3,
     "fallen_log": "tfc:wood/log/sequoia",
@@ -34,7 +34,7 @@
       }
     },
     "bush_leaves": "tfc:wood/leaves/sequoia",
-    "old_growth_tree": "afc:tree/sequoia_large",
+    "old_growth_tree": "tfc:tree/sequoia_large",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }
