@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/mahogany"
       }
     ],
-    "normal_tree": "tfc:tree/mahogany",
-    "dead_tree": "tfc:tree/mahogany_dead",
+    "normal_tree": "afc:tree/mahogany",
+    "dead_tree": "afc:tree/mahogany_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/mahogany",
     "bush_log": {

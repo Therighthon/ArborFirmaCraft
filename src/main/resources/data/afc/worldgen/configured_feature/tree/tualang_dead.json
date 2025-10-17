@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:tualang_dead/1",
+      "afc:tualang_dead/2",
+      "afc:tualang_dead/3",
+      "afc:tualang_dead/4",
+      "afc:tualang_dead/5",
+      "afc:tualang_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 5,
+      "ground_type": "shallow_water"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:bald_cypress/1",
+      "afc:bald_cypress/2",
+      "afc:bald_cypress/3",
+      "afc:bald_cypress/4",
+      "afc:bald_cypress/5",
+      "afc:bald_cypress/6",
+      "afc:bald_cypress/7",
+      "afc:bald_cypress/8",
+      "afc:bald_cypress/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ancient_cypress",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 6,
+      "wide": false
+    }
+  }
+}

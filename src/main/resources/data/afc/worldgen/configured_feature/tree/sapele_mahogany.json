@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:sapele_mahogany/1",
+      "afc:sapele_mahogany/2",
+      "afc:sapele_mahogany/3",
+      "afc:sapele_mahogany/4",
+      "afc:sapele_mahogany/5",
+      "afc:sapele_mahogany/6",
+      "afc:sapele_mahogany/7",
+      "afc:sapele_mahogany/8",
+      "afc:sapele_mahogany/9",
+      "afc:sapele_mahogany/10",
+      "afc:sapele_mahogany/11",
+      "afc:sapele_mahogany/12",
+      "afc:sapele_mahogany/13",
+      "afc:sapele_mahogany/14",
+      "afc:sapele_mahogany/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

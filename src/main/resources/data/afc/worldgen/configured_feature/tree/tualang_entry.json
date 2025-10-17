@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/tualang"
       }
     ],
-    "normal_tree": "tfc:tree/tualang",
-    "dead_tree": "tfc:tree/tualang_dead",
+    "normal_tree": "afc:tree/tualang",
+    "dead_tree": "afc:tree/tualang_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/tualang",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/tualang",
-    "old_growth_tree": "tfc:tree/tualang_large"
+    "old_growth_tree": "afc:tree/tualang_large"
   }
 }

@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/gum_arabic"
       }
     ],
-    "normal_tree": "tfc:tree/gum_arabic",
-    "dead_tree": "tfc:tree/gum_arabic_dead",
+    "normal_tree": "afc:tree/gum_arabic",
+    "dead_tree": "afc:tree/gum_arabic_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_tree_chance": 8,
     "bush_log": {

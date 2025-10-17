@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:coast_spruce/1",
+      "afc:coast_spruce/2",
+      "afc:coast_spruce/3",
+      "afc:coast_spruce/4",
+      "afc:coast_spruce/5",
+      "afc:coast_spruce/6",
+      "afc:coast_spruce/7",
+      "afc:coast_spruce/8",
+      "afc:coast_spruce/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 4,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/spruce",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 7,
+      "wide": false
+    }
+  }
+}

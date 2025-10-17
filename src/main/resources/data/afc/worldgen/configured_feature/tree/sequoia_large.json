@@ -1,0 +1,71 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:stacked_tree",
+  "config": {
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ancient_sequoia",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 0,
+      "max_height": 0,
+      "wide": true
+    },
+    "layers": [
+      {
+        "templates": [
+          "afc:sequoia_large/layer1_1",
+          "afc:sequoia_large/layer1_2",
+          "afc:sequoia_large/layer1_3",
+          "afc:sequoia_large/layer1_4",
+          "afc:sequoia_large/layer1_5",
+          "afc:sequoia_large/layer1_6",
+          "afc:sequoia_large/layer1_7"
+        ],
+        "min_count": 1,
+        "max_count": 1
+      },
+      {
+        "templates": [
+          "afc:sequoia_large/layer2_1",
+          "afc:sequoia_large/layer2_2",
+          "afc:sequoia_large/layer2_3",
+          "afc:sequoia_large/layer2_4",
+          "afc:sequoia_large/layer2_5",
+          "afc:sequoia_large/layer2_6",
+          "afc:sequoia_large/layer2_7"
+        ],
+        "min_count": 2,
+        "max_count": 3
+      },
+      {
+        "templates": [
+          "afc:sequoia_large/layer3_1",
+          "afc:sequoia_large/layer3_2",
+          "afc:sequoia_large/layer3_3",
+          "afc:sequoia_large/layer3_4"
+        ],
+        "min_count": 3,
+        "max_count": 4
+      },
+      {
+        "templates": [
+          "afc:sequoia_large/layer4_1",
+          "afc:sequoia_large/layer4_2",
+          "afc:sequoia_large/layer4_3",
+          "afc:sequoia_large/layer4_4"
+        ],
+        "min_count": 1,
+        "max_count": 1
+      }
+    ],
+    "radius": 2,
+    "placement": {
+      "width": 2,
+      "height": 7
+    }
+  }
+}

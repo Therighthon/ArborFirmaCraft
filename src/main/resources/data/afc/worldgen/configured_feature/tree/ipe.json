@@ -1,0 +1,31 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:ipe/1",
+      "afc:ipe/2",
+      "afc:ipe/3",
+      "afc:ipe/4",
+      "afc:ipe/5",
+      "afc:ipe/6",
+      "afc:ipe/7",
+      "afc:ipe/8",
+      "afc:ipe/9",
+      "afc:ipe/10",
+      "afc:ipe/11",
+      "afc:ipe/12",
+      "afc:ipe/13",
+      "afc:ipe/14",
+      "afc:ipe/15",
+      "afc:ipe/16",
+      "afc:ipe/17"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:tualang/1",
+      "afc:tualang/2",
+      "afc:tualang/3",
+      "afc:tualang/4",
+      "afc:tualang/5",
+      "afc:tualang/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 14,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/tualang",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 13,
+      "max_height": 18,
+      "wide": false
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:weeping_maple/1",
+      "afc:weeping_maple/2",
+      "afc:weeping_maple/3",
+      "afc:weeping_maple/4",
+      "afc:weeping_maple/5",
+      "afc:weeping_maple/6",
+      "afc:weeping_maple/7",
+      "afc:weeping_maple/8",
+      "afc:weeping_maple/9",
+      "afc:weeping_maple/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}

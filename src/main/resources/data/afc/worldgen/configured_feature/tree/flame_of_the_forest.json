@@ -1,0 +1,42 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:flame_of_the_forest/1",
+      "afc:flame_of_the_forest/2",
+      "afc:flame_of_the_forest/3",
+      "afc:flame_of_the_forest/4",
+      "afc:flame_of_the_forest/5",
+      "afc:flame_of_the_forest/6",
+      "afc:flame_of_the_forest/7",
+      "afc:flame_of_the_forest/8",
+      "afc:flame_of_the_forest/9",
+      "afc:flame_of_the_forest/10",
+      "afc:flame_of_the_forest/11",
+      "afc:flame_of_the_forest/12",
+      "afc:flame_of_the_forest/13",
+      "afc:flame_of_the_forest/14",
+      "afc:flame_of_the_forest/15",
+      "afc:flame_of_the_forest/16"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/teak",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 5,
+      "wide": false
+    }
+  }
+}

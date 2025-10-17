@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/weeping_cypress"
       }
     ],
-    "normal_tree": "tfc:tree/weeping_cypress",
-    "dead_tree": "tfc:tree/weeping_cypress_dead",
+    "normal_tree": "afc:tree/weeping_cypress",
+    "dead_tree": "afc:tree/weeping_cypress_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/cypress",
     "bush_log": {

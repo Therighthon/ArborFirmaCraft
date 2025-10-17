@@ -1,0 +1,44 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:stone_pine/1",
+      "afc:stone_pine/2",
+      "afc:stone_pine/3",
+      "afc:stone_pine/4",
+      "afc:stone_pine/5",
+      "afc:stone_pine/6",
+      "afc:stone_pine/7",
+      "afc:stone_pine/8",
+      "afc:stone_pine/9",
+      "afc:stone_pine/10",
+      "afc:stone_pine/11",
+      "afc:stone_pine/12",
+      "afc:stone_pine/13",
+      "afc:stone_pine/14",
+      "afc:stone_pine/15",
+      "afc:stone_pine/16",
+      "afc:stone_pine/17",
+      "afc:stone_pine/18",
+      "afc:stone_pine/19"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/pine",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 6,
+      "wide": false
+    }
+  }
+}

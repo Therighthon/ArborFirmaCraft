@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/horsetail_ironwood"
       }
     ],
-    "normal_tree": "tfc:tree/horsetail_ironwood",
-    "dead_tree": "tfc:tree/horsetail_ironwood_dead",
+    "normal_tree": "afc:tree/horsetail_ironwood",
+    "dead_tree": "afc:tree/horsetail_ironwood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ironwood",
     "bush_log": {

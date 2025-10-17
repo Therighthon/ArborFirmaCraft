@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:douglas_fir/1",
+      "afc:douglas_fir/2",
+      "afc:douglas_fir/3",
+      "afc:douglas_fir/4",
+      "afc:douglas_fir/5",
+      "afc:douglas_fir/6",
+      "afc:douglas_fir/7",
+      "afc:douglas_fir/8",
+      "afc:douglas_fir/9",
+      "afc:douglas_fir/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

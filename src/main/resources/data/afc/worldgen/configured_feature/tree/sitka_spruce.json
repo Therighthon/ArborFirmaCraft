@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:sitka_spruce/1",
+      "afc:sitka_spruce/2",
+      "afc:sitka_spruce/3",
+      "afc:sitka_spruce/4",
+      "afc:sitka_spruce/5",
+      "afc:sitka_spruce/6",
+      "afc:sitka_spruce/7",
+      "afc:sitka_spruce/8",
+      "afc:sitka_spruce/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

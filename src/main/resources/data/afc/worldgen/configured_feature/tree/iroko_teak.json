@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:iroko_teak/1",
+      "afc:iroko_teak/2",
+      "afc:iroko_teak/3",
+      "afc:iroko_teak/4",
+      "afc:iroko_teak/5",
+      "afc:iroko_teak/6",
+      "afc:iroko_teak/7",
+      "afc:iroko_teak/8",
+      "afc:iroko_teak/9",
+      "afc:iroko_teak/10",
+      "afc:iroko_teak/11",
+      "afc:iroko_teak/12",
+      "afc:iroko_teak/13",
+      "afc:iroko_teak/14",
+      "afc:iroko_teak/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

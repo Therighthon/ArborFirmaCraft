@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:coast_spruce_dead/1",
+      "afc:coast_spruce_dead/2",
+      "afc:coast_spruce_dead/3",
+      "afc:coast_spruce_dead/4",
+      "afc:coast_spruce_dead/5",
+      "afc:coast_spruce_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 3,
+      "ground_type": "shallow_water"
+    }
+  }
+}

@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/flame_of_the_forest"
       }
     ],
-    "normal_tree": "tfc:tree/flame_of_the_forest",
-    "dead_tree": "tfc:tree/flame_of_the_forest_dead",
+    "normal_tree": "afc:tree/flame_of_the_forest",
+    "dead_tree": "afc:tree/flame_of_the_forest_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/teak",
     "bush_log": {

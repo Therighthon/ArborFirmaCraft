@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/ironwood"
       }
     ],
-    "normal_tree": "tfc:tree/ironwood",
-    "dead_tree": "tfc:tree/ironwood_dead",
+    "normal_tree": "afc:tree/ironwood",
+    "dead_tree": "afc:tree/ironwood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ironwood",
     "bush_log": {

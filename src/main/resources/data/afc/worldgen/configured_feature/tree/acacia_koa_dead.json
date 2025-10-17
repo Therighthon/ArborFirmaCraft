@@ -1,0 +1,17 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:acacia_koa_dead/1",
+      "afc:acacia_koa_dead/2",
+      "afc:acacia_koa_dead/3",
+      "afc:acacia_koa_dead/4"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}

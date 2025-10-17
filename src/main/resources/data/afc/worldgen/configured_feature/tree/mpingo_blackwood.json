@@ -1,0 +1,49 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:mpingo_blackwood/1",
+      "afc:mpingo_blackwood/2",
+      "afc:mpingo_blackwood/3",
+      "afc:mpingo_blackwood/4",
+      "afc:mpingo_blackwood/5",
+      "afc:mpingo_blackwood/6",
+      "afc:mpingo_blackwood/7",
+      "afc:mpingo_blackwood/8",
+      "afc:mpingo_blackwood/9",
+      "afc:mpingo_blackwood/10",
+      "afc:mpingo_blackwood/11",
+      "afc:mpingo_blackwood/12",
+      "afc:mpingo_blackwood/13",
+      "afc:mpingo_blackwood/14",
+      "afc:mpingo_blackwood/15",
+      "afc:mpingo_blackwood/16",
+      "afc:mpingo_blackwood/17",
+      "afc:mpingo_blackwood/18",
+      "afc:mpingo_blackwood/19",
+      "afc:mpingo_blackwood/20",
+      "afc:mpingo_blackwood/21",
+      "afc:mpingo_blackwood/22",
+      "afc:mpingo_blackwood/23",
+      "afc:mpingo_blackwood/24",
+      "afc:mpingo_blackwood/25",
+      "afc:mpingo_blackwood/26",
+      "afc:mpingo_blackwood/27",
+      "afc:mpingo_blackwood/28",
+      "afc:mpingo_blackwood/29",
+      "afc:mpingo_blackwood/30",
+      "afc:mpingo_blackwood/31",
+      "afc:mpingo_blackwood/32",
+      "afc:mpingo_blackwood/33",
+      "afc:mpingo_blackwood/34",
+      "afc:mpingo_blackwood/35"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

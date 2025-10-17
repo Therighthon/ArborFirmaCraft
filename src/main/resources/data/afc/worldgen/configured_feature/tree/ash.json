@@ -1,0 +1,40 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:ash/1",
+      "afc:ash/2",
+      "afc:ash/3",
+      "afc:ash/4",
+      "afc:ash/5",
+      "afc:ash/6",
+      "afc:ash/7",
+      "afc:ash/8",
+      "afc:ash/9",
+      "afc:ash/10",
+      "afc:ash/11",
+      "afc:ash/12",
+      "afc:ash/13",
+      "afc:ash/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/ash",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 5,
+      "wide": false
+    }
+  }
+}

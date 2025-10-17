@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/sapele_mahogany"
       }
     ],
-    "normal_tree": "tfc:tree/sapele_mahogany",
-    "dead_tree": "tfc:tree/sapele_mahogany_dead",
+    "normal_tree": "afc:tree/sapele_mahogany",
+    "dead_tree": "afc:tree/sapele_mahogany_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/mahogany",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/sapele_mahogany",
-    "old_growth_tree": "tfc:tree/sapele_mahogany_large"
+    "old_growth_tree": "afc:tree/sapele_mahogany_large"
   }
 }

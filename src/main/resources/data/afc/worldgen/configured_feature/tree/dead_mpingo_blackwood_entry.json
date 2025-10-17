@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/mpingo_blackwood"
       }
     ],
-    "normal_tree": "tfc:tree/mpingo_blackwood",
-    "dead_tree": "tfc:tree/mpingo_blackwood_dead",
+    "normal_tree": "afc:tree/mpingo_blackwood",
+    "dead_tree": "afc:tree/mpingo_blackwood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/blackwood",
     "bush_log": {

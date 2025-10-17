@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:tamarack/1",
+      "afc:tamarack/2",
+      "afc:tamarack/3",
+      "afc:tamarack/4",
+      "afc:tamarack/5",
+      "afc:tamarack/6",
+      "afc:tamarack/7",
+      "afc:tamarack/8",
+      "afc:tamarack/9",
+      "afc:tamarack/10",
+      "afc:tamarack/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

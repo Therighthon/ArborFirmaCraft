@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:red_silk_cotton_dead/1",
+      "afc:red_silk_cotton_dead/2",
+      "afc:red_silk_cotton_dead/3",
+      "afc:red_silk_cotton_dead/4"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

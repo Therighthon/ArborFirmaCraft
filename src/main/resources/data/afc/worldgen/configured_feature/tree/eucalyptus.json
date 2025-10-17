@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:eucalyptus/1",
+      "afc:eucalyptus/2",
+      "afc:eucalyptus/3",
+      "afc:eucalyptus/4",
+      "afc:eucalyptus/5",
+      "afc:eucalyptus/6",
+      "afc:eucalyptus/7",
+      "afc:eucalyptus/8",
+      "afc:eucalyptus/9",
+      "afc:eucalyptus/10",
+      "afc:eucalyptus/11",
+      "afc:eucalyptus/12",
+      "afc:eucalyptus/13",
+      "afc:eucalyptus/14",
+      "afc:eucalyptus/15",
+      "afc:eucalyptus/16",
+      "afc:eucalyptus/17",
+      "afc:eucalyptus/18"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

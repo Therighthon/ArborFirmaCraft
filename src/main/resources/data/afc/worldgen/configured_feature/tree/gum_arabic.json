@@ -1,0 +1,48 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:gum_arabic/1",
+      "afc:gum_arabic/2",
+      "afc:gum_arabic/3",
+      "afc:gum_arabic/4",
+      "afc:gum_arabic/5",
+      "afc:gum_arabic/6",
+      "afc:gum_arabic/7",
+      "afc:gum_arabic/8",
+      "afc:gum_arabic/9",
+      "afc:gum_arabic/10",
+      "afc:gum_arabic/11",
+      "afc:gum_arabic/12",
+      "afc:gum_arabic/13",
+      "afc:gum_arabic/14",
+      "afc:gum_arabic/15",
+      "afc:gum_arabic/16",
+      "afc:gum_arabic/17",
+      "afc:gum_arabic/18",
+      "afc:gum_arabic/19",
+      "afc:gum_arabic/20",
+      "afc:gum_arabic/21",
+      "afc:gum_arabic/22",
+      "afc:gum_arabic/23",
+      "afc:gum_arabic/24",
+      "afc:gum_arabic/25",
+      "afc:gum_arabic/26",
+      "afc:gum_arabic/27",
+      "afc:gum_arabic/28",
+      "afc:gum_arabic/29",
+      "afc:gum_arabic/30",
+      "afc:gum_arabic/31",
+      "afc:gum_arabic/32",
+      "afc:gum_arabic/33",
+      "afc:gum_arabic/34",
+      "afc:gum_arabic/35"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 3
+    }
+  }
+}

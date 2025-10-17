@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:mahogany/1",
+      "afc:mahogany/2",
+      "afc:mahogany/3",
+      "afc:mahogany/4",
+      "afc:mahogany/5",
+      "afc:mahogany/6",
+      "afc:mahogany/7",
+      "afc:mahogany/8",
+      "afc:mahogany/9",
+      "afc:mahogany/10",
+      "afc:mahogany/11",
+      "afc:mahogany/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

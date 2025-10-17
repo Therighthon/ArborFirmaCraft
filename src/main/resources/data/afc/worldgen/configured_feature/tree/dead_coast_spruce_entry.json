@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/coast_spruce"
       }
     ],
-    "normal_tree": "tfc:tree/coast_spruce",
-    "dead_tree": "tfc:tree/coast_spruce_dead",
+    "normal_tree": "afc:tree/coast_spruce",
+    "dead_tree": "afc:tree/coast_spruce_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/spruce",
     "bush_log": {

@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:rainbow_eucalyptus_large/1",
+      "afc:rainbow_eucalyptus_large/2",
+      "afc:rainbow_eucalyptus_large/3",
+      "afc:rainbow_eucalyptus_large/4",
+      "afc:rainbow_eucalyptus_large/5",
+      "afc:rainbow_eucalyptus_large/6",
+      "afc:rainbow_eucalyptus_large/7"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ancient_rainbow_eucalyptus",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 8,
+      "max_height": 12,
+      "wide": false
+    }
+  }
+}

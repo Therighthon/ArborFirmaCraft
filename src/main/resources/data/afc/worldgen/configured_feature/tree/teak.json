@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:teak/1",
+      "afc:teak/2",
+      "afc:teak/3",
+      "afc:teak/4",
+      "afc:teak/5",
+      "afc:teak/6",
+      "afc:teak/7",
+      "afc:teak/8",
+      "afc:teak/9",
+      "afc:teak/10",
+      "afc:teak/11",
+      "afc:teak/12",
+      "afc:teak/13",
+      "afc:teak/14",
+      "afc:teak/15",
+      "afc:teak/16",
+      "afc:teak/17"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}

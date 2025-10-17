@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/scrub_hickory"
       }
     ],
-    "normal_tree": "tfc:tree/scrub_hickory",
-    "dead_tree": "tfc:tree/scrub_hickory_dead",
+    "normal_tree": "afc:tree/scrub_hickory",
+    "dead_tree": "afc:tree/scrub_hickory_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/hickory",
     "bush_log": {
@@ -31,7 +31,7 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/scrub_hickory",
-    "old_growth_tree": "tfc:tree/scrub_hickory_large",
+    "old_growth_tree": "afc:tree/scrub_hickory_large",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }

@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/mountain_fir"
       }
     ],
-    "normal_tree": "tfc:tree/mountain_fir",
-    "dead_tree": "tfc:tree/mountain_fir_dead",
+    "normal_tree": "afc:tree/mountain_fir",
+    "dead_tree": "afc:tree/mountain_fir_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/douglas_fir",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/mountain_fir",
-    "old_growth_tree": "tfc:tree/mountain_fir_large"
+    "old_growth_tree": "afc:tree/mountain_fir_large"
   }
 }

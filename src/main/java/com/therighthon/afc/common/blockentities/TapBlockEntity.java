@@ -117,7 +117,7 @@ public class TapBlockEntity extends BlockEntity
             BlockState logState = level.getBlockState(logPos);
             final TreeTapRecipe recipe = TreeTapRecipe.getRecipe(logState);
 
-            // TODO: Remove all errors
+            // TODO: Remove all error messages that shouldn't be in on release
             AFC.LOGGER.error("Every 20 ticks");
 
             if (recipe != null)

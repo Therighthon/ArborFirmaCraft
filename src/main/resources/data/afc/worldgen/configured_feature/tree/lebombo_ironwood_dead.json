@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:lebombo_ironwood_dead/1",
+      "afc:lebombo_ironwood_dead/2",
+      "afc:lebombo_ironwood_dead/3",
+      "afc:lebombo_ironwood_dead/4",
+      "afc:lebombo_ironwood_dead/5",
+      "afc:lebombo_ironwood_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

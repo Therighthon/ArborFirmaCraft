@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/bald_cypress"
       }
     ],
-    "normal_tree": "tfc:tree/bald_cypress",
-    "dead_tree": "tfc:tree/bald_cypress_dead",
+    "normal_tree": "afc:tree/bald_cypress",
+    "dead_tree": "afc:tree/bald_cypress_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 2,
     "fallen_log": "afc:wood/log/cypress",
@@ -32,6 +32,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/bald_cypress",
-    "old_growth_tree": "tfc:tree/bald_cypress_large"
+    "old_growth_tree": "afc:tree/bald_cypress_large"
   }
 }

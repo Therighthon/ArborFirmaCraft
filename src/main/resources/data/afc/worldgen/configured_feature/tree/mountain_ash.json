@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:mountain_ash/1",
+      "afc:mountain_ash/2",
+      "afc:mountain_ash/3",
+      "afc:mountain_ash/4",
+      "afc:mountain_ash/5",
+      "afc:mountain_ash/6",
+      "afc:mountain_ash/7",
+      "afc:mountain_ash/8",
+      "afc:mountain_ash/9",
+      "afc:mountain_ash/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 8
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/eucalyptus",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 4,
+      "max_height": 7,
+      "wide": false
+    }
+  }
+}

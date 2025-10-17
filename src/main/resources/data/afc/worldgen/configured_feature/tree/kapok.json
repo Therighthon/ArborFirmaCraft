@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:kapok/1",
+      "afc:kapok/2",
+      "afc:kapok/3",
+      "afc:kapok/4",
+      "afc:kapok/5",
+      "afc:kapok/6",
+      "afc:kapok/7",
+      "afc:kapok/8",
+      "afc:kapok/9",
+      "afc:kapok/10",
+      "afc:kapok/11",
+      "afc:kapok/12",
+      "afc:kapok/13",
+      "afc:kapok/14",
+      "afc:kapok/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

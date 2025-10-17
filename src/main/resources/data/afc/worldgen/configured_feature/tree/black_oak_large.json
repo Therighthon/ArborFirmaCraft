@@ -1,0 +1,23 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:black_oak_large/1",
+      "afc:black_oak_large/2",
+      "afc:black_oak_large/3",
+      "afc:black_oak_large/4",
+      "afc:black_oak_large/5",
+      "afc:black_oak_large/6",
+      "afc:black_oak_large/7",
+      "afc:black_oak_large/8",
+      "afc:black_oak_large/9"
+    ],
+    "radius": 2,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

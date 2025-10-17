@@ -122,7 +122,7 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'scrub_hickory_dead'), 'tfc:random_tree', random_config('scrub_hickory', 6, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'scrub_hickory_large'), 'tfc:random_tree', random_config('scrub_hickory', 10, 1, '_large', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'kapok'), 'tfc:random_tree', random_config('kapok', 15, 1, place=tree_placement_config(1, 2, True)))
-    configured_placed_feature(rm, ('tree', 'kapok_large'), 'tfc:random_tree', random_config('kapok', 6, 2, '_large', trunk=[15, 21, 2, 'ancient_kapok'], place=tree_placement_config(2, 15, True)))
+    configured_placed_feature(rm, ('tree', 'kapok_dead'), 'tfc:random_tree', random_config('kapok', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'kapok_large'), 'tfc:stacked_tree', stacked_config('kapok', 0, 1, 4, [(1, 1, 5), (14, 22, 1), (1, 1, 6)], 2, '_large', basic_wood= 'ancient_kapok', place=tree_placement_config(2, 7)))
     configured_placed_feature(rm, ('tree', 'red_silk_cotton'), 'tfc:random_tree', random_config('red_silk_cotton', 15, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'red_silk_cotton_dead'), 'tfc:random_tree', random_config('red_silk_cotton', 4, 1, '_dead', place=tree_placement_config(1, 2, True)))
@@ -223,7 +223,7 @@ def generate(rm: ResourceManager):
 
 
 def configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifier, feature: Optional[ResourceIdentifier] = None, config: JsonObject = None, *placements: Json):
-    res = utils.resource_location('tfc', name_parts)
+    res = utils.resource_location('afc', name_parts)
     if feature is None:
         feature = res
     rm.configured_feature(res, feature, config)
@@ -383,6 +383,10 @@ def simple_state_provider(name: str) -> Dict[str, Any]:
 
 def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, min_rain_var: float, max_rain_var: float, rain_var_absolute: bool, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None, podzol: bool = False, alfisol: bool = False):
 
+    tree_prefix = 'afc'
+    if tree in UNMODIFIED_TFC_WOODS:
+        tree_prefix = 'tfc'
+
     wood_prefix = 'tfc'
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood':
         wood_prefix = 'afc'
@@ -402,8 +406,8 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
             'rain_variance_absolute': rain_var_absolute
         },
         'groundcover': [{'block': '%s:wood/twig/%s' % (wood_prefix, basic_wood)}],
-        'normal_tree': 'tfc:tree/%s' % tree,
-        'dead_tree': 'tfc:tree/%s_dead' % tree,
+        'normal_tree': '%s:tree/%s' % (tree_prefix, tree),
+        'dead_tree': '%s:tree/%s_dead' % (tree_prefix, tree),
         'krummholz': None if not krum else '%s:tree/%s_krummholz' % (wood_prefix, basic_wood),
         'soil_disc': 'tfc:alfisol_disc' if alfisol else 'tfc:podzol_disc' if podzol else None if floating else 'tfc:duff_disc',
         'old_growth_chance': old_growth_chance,
@@ -414,7 +418,7 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
         cfg['groundcover'] += [{'block': 'tfc:groundcover/pinecone'}]
     if basic_wood != 'palm':
         cfg['groundcover'] += [{'block': '%s:wood/fallen_leaves/%s' % (leaf_prefix, tree)}]
-    if tree not in ('acacia', 'willow', 'gum_arabic'): # TODO: Expand?
+    if tree not in ('acacia', 'willow', 'gum_arabic', 'baobab'): # TODO: Expand?
         cfg['fallen_log'] = '%s:wood/log/%s' % (wood_prefix, basic_wood)
     else:
         cfg['fallen_tree_chance'] = 0
@@ -422,13 +426,12 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
         cfg['bush_log'] = utils.block_state('%s:wood/wood/%s[natural=true,axis=y]' % (wood_prefix, basic_wood))
         cfg['bush_leaves'] = '%s:wood/leaves/%s' % (leaf_prefix, tree)
     if old_growth:
-        cfg['old_growth_tree'] = 'tfc:tree/%s_large' % tree
-    rm.configured_feature('tree/%s_entry' % tree, 'tfc:forest_entry', cfg)
+        cfg['old_growth_tree'] = '%s:tree/%s_large' % (tree_prefix, tree)
+    rm.configured_feature('tree/%s_entry' % tree, 'tfc:forest_entry', cfg) # TODO: Custom AFC Forest entries
     cfg['dead_chance'] = 1
     cfg['fallen_tree_chance'] = 8
     cfg['floating'] = None
     rm.configured_feature('tree/dead_%s_entry' % tree, 'tfc:forest_entry', cfg)
-
 
 def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, radius: int = 1, suffix: str = '', basic_wood: str = 'oak', place = None, roots=None):
     wood_prefix = 'tfc'
@@ -439,8 +442,8 @@ def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, 
     block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, basic_wood)
     tree += suffix
     return {
-        'base': 'tfc:%s/base' % tree,
-        'overlay': 'tfc:%s/overlay' % tree,
+        'base': 'afc:%s/base' % tree,
+        'overlay': 'afc:%s/overlay' % tree,
         'trunk': trunk_config(block, min_height, max_height, width),
         'radius': radius,
         'placement': place,
@@ -461,7 +464,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
     block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, basic_wood)
     tree += suffix
     cfg = {
-        'structures': ['tfc:%s/%d' % (tree, i) for i in range(1, 1 + structure_count)],
+        'structures': ['afc:%s/%d' % (tree, i) for i in range(1, 1 + structure_count)],
         'radius': radius,
         'placement': place,
         'root_system': roots
@@ -488,7 +491,7 @@ def stacked_config(tree: str, min_height: int, max_height: int, width: int, laye
     return {
         'trunk': trunk_config(block, min_height, max_height, width),
         'layers': [{
-            'templates': ['tfc:%s/layer%d_%d' % (tree, 1 + i, j) for j in range(1, 1 + layer[2])],
+            'templates': ['afc:%s/layer%d_%d' % (tree, 1 + i, j) for j in range(1, 1 + layer[2])],
             'min_count': layer[0],
             'max_count': layer[1]
         } for i, layer in enumerate(layers)],
@@ -683,12 +686,6 @@ def height_provider(min_y: VerticalAnchor, max_y: VerticalAnchor, height_type: H
 
 def placed_feature_tag(rm: ResourceManager, name_parts: ResourceIdentifier, *values: ResourceIdentifier):
     return rm.tag(name_parts, 'worldgen/placed_feature', *values)
-
-
-def placed_feature_118_hack(rm, name_parts: ResourceIdentifier, *values: ResourceIdentifier):
-    placed_feature_tag(rm, name_parts, *values)
-    configured_placed_feature(rm, name_parts, 'tfc:multiple', {'features': '#' + utils.resource_location(rm.domain, name_parts).join()})
-
 
 def configured_feature_tag(rm: ResourceManager, name_parts: ResourceIdentifier, *values: ResourceIdentifier):
     return rm.tag(name_parts, 'worldgen/configured_feature', *values)

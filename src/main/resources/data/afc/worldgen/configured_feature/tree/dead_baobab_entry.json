@@ -19,11 +19,11 @@
         "block": "afc:wood/fallen_leaves/baobab"
       }
     ],
-    "normal_tree": "tfc:tree/baobab",
-    "dead_tree": "tfc:tree/baobab_dead",
+    "normal_tree": "afc:tree/baobab",
+    "dead_tree": "afc:tree/baobab_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 2,
-    "fallen_log": "afc:wood/log/baobab",
+    "fallen_tree_chance": 8,
     "bush_log": {
       "Name": "afc:wood/wood/baobab",
       "Properties": {
@@ -32,8 +32,7 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/baobab",
-    "old_growth_tree": "tfc:tree/baobab_large",
-    "dead_chance": 1,
-    "fallen_tree_chance": 8
+    "old_growth_tree": "afc:tree/baobab_large",
+    "dead_chance": 1
   }
 }

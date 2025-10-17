@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/weeping_maple"
       }
     ],
-    "normal_tree": "tfc:tree/weeping_maple",
-    "dead_tree": "tfc:tree/weeping_maple_dead",
+    "normal_tree": "afc:tree/weeping_maple",
+    "dead_tree": "afc:tree/weeping_maple_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/maple",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/weeping_maple",
-    "old_growth_tree": "tfc:tree/weeping_maple_large"
+    "old_growth_tree": "afc:tree/weeping_maple_large"
   }
 }

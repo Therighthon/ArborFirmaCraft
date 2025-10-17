@@ -19,8 +19,8 @@
         "block": "tfc:wood/fallen_leaves/kapok"
       }
     ],
-    "normal_tree": "tfc:tree/kapok",
-    "dead_tree": "tfc:tree/kapok_dead",
+    "normal_tree": "afc:tree/kapok",
+    "dead_tree": "afc:tree/kapok_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 8,
     "fallen_log": "tfc:wood/log/kapok",
@@ -32,6 +32,6 @@
       }
     },
     "bush_leaves": "tfc:wood/leaves/kapok",
-    "old_growth_tree": "tfc:tree/kapok_large"
+    "old_growth_tree": "afc:tree/kapok_large"
   }
 }

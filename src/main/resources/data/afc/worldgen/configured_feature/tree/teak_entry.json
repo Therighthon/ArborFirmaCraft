@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/teak"
       }
     ],
-    "normal_tree": "tfc:tree/teak",
-    "dead_tree": "tfc:tree/teak_dead",
+    "normal_tree": "afc:tree/teak",
+    "dead_tree": "afc:tree/teak_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/teak",
     "bush_log": {

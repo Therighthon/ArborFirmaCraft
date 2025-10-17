@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:balsam_fir_large/1",
+      "afc:balsam_fir_large/2",
+      "afc:balsam_fir_large/3",
+      "afc:balsam_fir_large/4",
+      "afc:balsam_fir_large/5",
+      "afc:balsam_fir_large/6",
+      "afc:balsam_fir_large/7",
+      "afc:balsam_fir_large/8",
+      "afc:balsam_fir_large/9",
+      "afc:balsam_fir_large/10",
+      "afc:balsam_fir_large/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 1
+    }
+  }
+}

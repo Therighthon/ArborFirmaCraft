@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:sapele_mahogany_large/1",
+      "afc:sapele_mahogany_large/2",
+      "afc:sapele_mahogany_large/3",
+      "afc:sapele_mahogany_large/4",
+      "afc:sapele_mahogany_large/5",
+      "afc:sapele_mahogany_large/6",
+      "afc:sapele_mahogany_large/7",
+      "afc:sapele_mahogany_large/8",
+      "afc:sapele_mahogany_large/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/ancient_mahogany",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 4,
+      "max_height": 8,
+      "wide": true
+    }
+  }
+}

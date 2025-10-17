@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/hevea"
       }
     ],
-    "normal_tree": "tfc:tree/hevea",
-    "dead_tree": "tfc:tree/hevea_dead",
+    "normal_tree": "afc:tree/hevea",
+    "dead_tree": "afc:tree/hevea_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/hevea",
     "bush_log": {

@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/giant_rosewood"
       }
     ],
-    "normal_tree": "tfc:tree/giant_rosewood",
-    "dead_tree": "tfc:tree/giant_rosewood_dead",
+    "normal_tree": "afc:tree/giant_rosewood",
+    "dead_tree": "afc:tree/giant_rosewood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/rosewood",
     "bush_log": {

@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/redcedar"
       }
     ],
-    "normal_tree": "tfc:tree/redcedar",
-    "dead_tree": "tfc:tree/redcedar_dead",
+    "normal_tree": "afc:tree/redcedar",
+    "dead_tree": "afc:tree/redcedar_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/redcedar",
     "bush_log": {

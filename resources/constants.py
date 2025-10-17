@@ -98,6 +98,29 @@ TFC_WOODS: Dict[str, Wood] = {
     'willow': Wood(603, 1000)
 }
 
+UNMODIFIED_TFC_WOODS = {
+    # 'acacia',
+    'ash',
+    'aspen',
+    'birch',
+    'blackwood',
+    'chestnut',
+    'douglas_fir',
+    'hickory',
+    # 'kapok',
+    'mangrove',
+    'maple',
+    'oak',
+    'palm',
+    # 'pine',
+    'rosewood',
+    # 'sequoia',
+    # 'spruce',
+    'sycamore',
+    'white_cedar',
+    'willow'
+}
+
 UNIQUE_LOGS: Dict[str, Wood] = {
     'rainbow_eucalyptus': Wood(720, 2100),
     'redcedar': Wood(650, 1000),

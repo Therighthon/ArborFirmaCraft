@@ -1,0 +1,26 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:horsetail_ironwood/1",
+      "afc:horsetail_ironwood/2",
+      "afc:horsetail_ironwood/3",
+      "afc:horsetail_ironwood/4",
+      "afc:horsetail_ironwood/5",
+      "afc:horsetail_ironwood/6",
+      "afc:horsetail_ironwood/7",
+      "afc:horsetail_ironwood/8",
+      "afc:horsetail_ironwood/9",
+      "afc:horsetail_ironwood/10",
+      "afc:horsetail_ironwood/11",
+      "afc:horsetail_ironwood/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

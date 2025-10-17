@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/ipe"
       }
     ],
-    "normal_tree": "tfc:tree/ipe",
-    "dead_tree": "tfc:tree/ipe_dead",
+    "normal_tree": "afc:tree/ipe",
+    "dead_tree": "afc:tree/ipe_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ipe",
     "bush_log": {

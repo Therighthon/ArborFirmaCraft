@@ -19,8 +19,8 @@
         "block": "tfc:wood/fallen_leaves/spruce"
       }
     ],
-    "normal_tree": "tfc:tree/spruce",
-    "dead_tree": "tfc:tree/spruce_dead",
+    "normal_tree": "afc:tree/spruce",
+    "dead_tree": "afc:tree/spruce_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/spruce",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "tfc:wood/leaves/spruce",
-    "old_growth_tree": "tfc:tree/spruce_large"
+    "old_growth_tree": "afc:tree/spruce_large"
   }
 }

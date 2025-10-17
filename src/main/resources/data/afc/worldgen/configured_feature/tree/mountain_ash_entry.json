@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/mountain_ash"
       }
     ],
-    "normal_tree": "tfc:tree/mountain_ash",
-    "dead_tree": "tfc:tree/mountain_ash_dead",
+    "normal_tree": "afc:tree/mountain_ash",
+    "dead_tree": "afc:tree/mountain_ash_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 3,
     "fallen_log": "afc:wood/log/eucalyptus",
@@ -32,6 +32,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/mountain_ash",
-    "old_growth_tree": "tfc:tree/mountain_ash_large"
+    "old_growth_tree": "afc:tree/mountain_ash_large"
   }
 }

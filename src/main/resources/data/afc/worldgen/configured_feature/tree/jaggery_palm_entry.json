@@ -16,8 +16,8 @@
         "block": "tfc:wood/twig/palm"
       }
     ],
-    "normal_tree": "tfc:tree/jaggery_palm",
-    "dead_tree": "tfc:tree/jaggery_palm_dead",
+    "normal_tree": "afc:tree/jaggery_palm",
+    "dead_tree": "afc:tree/jaggery_palm_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/palm",
     "bush_log": {

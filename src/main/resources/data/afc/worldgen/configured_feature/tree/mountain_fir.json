@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:mountain_fir/1",
+      "afc:mountain_fir/2",
+      "afc:mountain_fir/3",
+      "afc:mountain_fir/4",
+      "afc:mountain_fir/5",
+      "afc:mountain_fir/6",
+      "afc:mountain_fir/7",
+      "afc:mountain_fir/8",
+      "afc:mountain_fir/9"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}

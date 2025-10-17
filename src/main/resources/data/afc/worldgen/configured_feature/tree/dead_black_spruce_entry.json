@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/black_spruce"
       }
     ],
-    "normal_tree": "tfc:tree/black_spruce",
-    "dead_tree": "tfc:tree/black_spruce_dead",
+    "normal_tree": "afc:tree/black_spruce",
+    "dead_tree": "afc:tree/black_spruce_dead",
     "krummholz": "tfc:tree/spruce_krummholz",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/spruce",
@@ -32,7 +32,7 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/black_spruce",
-    "old_growth_tree": "tfc:tree/black_spruce_large",
+    "old_growth_tree": "afc:tree/black_spruce_large",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }

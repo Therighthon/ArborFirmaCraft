@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:weeping_cypress/1",
+      "afc:weeping_cypress/2",
+      "afc:weeping_cypress/3",
+      "afc:weeping_cypress/4",
+      "afc:weeping_cypress/5",
+      "afc:weeping_cypress/6",
+      "afc:weeping_cypress/7",
+      "afc:weeping_cypress/8",
+      "afc:weeping_cypress/9",
+      "afc:weeping_cypress/10",
+      "afc:weeping_cypress/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

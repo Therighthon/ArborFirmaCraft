@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/rubber_fig"
       }
     ],
-    "normal_tree": "tfc:tree/rubber_fig",
-    "dead_tree": "tfc:tree/rubber_fig_dead",
+    "normal_tree": "afc:tree/rubber_fig",
+    "dead_tree": "afc:tree/rubber_fig_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/fig",
     "bush_log": {

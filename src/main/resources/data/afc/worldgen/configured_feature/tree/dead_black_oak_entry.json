@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/black_oak"
       }
     ],
-    "normal_tree": "tfc:tree/black_oak",
-    "dead_tree": "tfc:tree/black_oak_dead",
+    "normal_tree": "afc:tree/black_oak",
+    "dead_tree": "afc:tree/black_oak_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/black_oak",

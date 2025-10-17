@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:atlas_cedar/1",
+      "afc:atlas_cedar/2",
+      "afc:atlas_cedar/3",
+      "afc:atlas_cedar/4",
+      "afc:atlas_cedar/5",
+      "afc:atlas_cedar/6",
+      "afc:atlas_cedar/7",
+      "afc:atlas_cedar/8",
+      "afc:atlas_cedar/9",
+      "afc:atlas_cedar/10",
+      "afc:atlas_cedar/11",
+      "afc:atlas_cedar/12",
+      "afc:atlas_cedar/13",
+      "afc:atlas_cedar/14",
+      "afc:atlas_cedar/15",
+      "afc:atlas_cedar/16",
+      "afc:atlas_cedar/17"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 3
+    }
+  }
+}

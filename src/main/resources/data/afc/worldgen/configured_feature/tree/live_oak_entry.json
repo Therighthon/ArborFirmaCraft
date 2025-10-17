@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/live_oak"
       }
     ],
-    "normal_tree": "tfc:tree/live_oak",
-    "dead_tree": "tfc:tree/live_oak_dead",
+    "normal_tree": "afc:tree/live_oak",
+    "dead_tree": "afc:tree/live_oak_dead",
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 8,
     "fallen_log": "tfc:wood/log/oak",
@@ -32,6 +32,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/live_oak",
-    "old_growth_tree": "tfc:tree/live_oak_large"
+    "old_growth_tree": "afc:tree/live_oak_large"
   }
 }

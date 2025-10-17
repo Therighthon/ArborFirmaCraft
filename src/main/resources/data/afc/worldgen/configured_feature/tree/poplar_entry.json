@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/poplar"
       }
     ],
-    "normal_tree": "tfc:tree/poplar",
-    "dead_tree": "tfc:tree/poplar_dead",
+    "normal_tree": "afc:tree/poplar",
+    "dead_tree": "afc:tree/poplar_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/aspen",
     "bush_log": {

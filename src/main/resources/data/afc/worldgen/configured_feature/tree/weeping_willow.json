@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:weeping_willow/1",
+      "afc:weeping_willow/2",
+      "afc:weeping_willow/3",
+      "afc:weeping_willow/4",
+      "afc:weeping_willow/5",
+      "afc:weeping_willow/6",
+      "afc:weeping_willow/7",
+      "afc:weeping_willow/8",
+      "afc:weeping_willow/9",
+      "afc:weeping_willow/10",
+      "afc:weeping_willow/11",
+      "afc:weeping_willow/12",
+      "afc:weeping_willow/13",
+      "afc:weeping_willow/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

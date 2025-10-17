@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:hickory/1",
+      "afc:hickory/2",
+      "afc:hickory/3",
+      "afc:hickory/4",
+      "afc:hickory/5",
+      "afc:hickory/6",
+      "afc:hickory/7",
+      "afc:hickory/8",
+      "afc:hickory/9",
+      "afc:hickory/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

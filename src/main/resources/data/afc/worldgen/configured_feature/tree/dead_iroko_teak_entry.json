@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/iroko_teak"
       }
     ],
-    "normal_tree": "tfc:tree/iroko_teak",
-    "dead_tree": "tfc:tree/iroko_teak_dead",
+    "normal_tree": "afc:tree/iroko_teak",
+    "dead_tree": "afc:tree/iroko_teak_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/teak",
     "bush_log": {

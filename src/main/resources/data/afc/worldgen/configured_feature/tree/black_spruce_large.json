@@ -1,0 +1,25 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:black_spruce_large/1",
+      "afc:black_spruce_large/2",
+      "afc:black_spruce_large/3",
+      "afc:black_spruce_large/4",
+      "afc:black_spruce_large/5",
+      "afc:black_spruce_large/6",
+      "afc:black_spruce_large/7",
+      "afc:black_spruce_large/8",
+      "afc:black_spruce_large/9",
+      "afc:black_spruce_large/10",
+      "afc:black_spruce_large/11"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 6,
+      "ground_type": "shallow_water"
+    }
+  }
+}

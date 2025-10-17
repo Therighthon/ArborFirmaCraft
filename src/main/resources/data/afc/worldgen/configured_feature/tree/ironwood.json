@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:ironwood/1",
+      "afc:ironwood/2",
+      "afc:ironwood/3",
+      "afc:ironwood/4",
+      "afc:ironwood/5",
+      "afc:ironwood/6",
+      "afc:ironwood/7",
+      "afc:ironwood/8",
+      "afc:ironwood/9",
+      "afc:ironwood/10",
+      "afc:ironwood/11",
+      "afc:ironwood/12",
+      "afc:ironwood/13",
+      "afc:ironwood/14",
+      "afc:ironwood/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:redcedar/1",
+      "afc:redcedar/2",
+      "afc:redcedar/3",
+      "afc:redcedar/4",
+      "afc:redcedar/5",
+      "afc:redcedar/6",
+      "afc:redcedar/7",
+      "afc:redcedar/8",
+      "afc:redcedar/9",
+      "afc:redcedar/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

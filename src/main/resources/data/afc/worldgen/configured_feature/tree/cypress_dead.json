@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:cypress_dead/1",
+      "afc:cypress_dead/2",
+      "afc:cypress_dead/3",
+      "afc:cypress_dead/4",
+      "afc:cypress_dead/5",
+      "afc:cypress_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}

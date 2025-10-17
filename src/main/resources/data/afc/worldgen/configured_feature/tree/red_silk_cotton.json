@@ -1,0 +1,29 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:red_silk_cotton/1",
+      "afc:red_silk_cotton/2",
+      "afc:red_silk_cotton/3",
+      "afc:red_silk_cotton/4",
+      "afc:red_silk_cotton/5",
+      "afc:red_silk_cotton/6",
+      "afc:red_silk_cotton/7",
+      "afc:red_silk_cotton/8",
+      "afc:red_silk_cotton/9",
+      "afc:red_silk_cotton/10",
+      "afc:red_silk_cotton/11",
+      "afc:red_silk_cotton/12",
+      "afc:red_silk_cotton/13",
+      "afc:red_silk_cotton/14",
+      "afc:red_silk_cotton/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

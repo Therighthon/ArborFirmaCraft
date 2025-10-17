@@ -1,0 +1,22 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:flame_of_the_forest_dead/1",
+      "afc:flame_of_the_forest_dead/2",
+      "afc:flame_of_the_forest_dead/3",
+      "afc:flame_of_the_forest_dead/4",
+      "afc:flame_of_the_forest_dead/5",
+      "afc:flame_of_the_forest_dead/6",
+      "afc:flame_of_the_forest_dead/7",
+      "afc:flame_of_the_forest_dead/8"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

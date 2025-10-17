@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/sitka_spruce"
       }
     ],
-    "normal_tree": "tfc:tree/sitka_spruce",
-    "dead_tree": "tfc:tree/sitka_spruce_dead",
+    "normal_tree": "afc:tree/sitka_spruce",
+    "dead_tree": "afc:tree/sitka_spruce_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/spruce",
     "bush_log": {
@@ -31,6 +31,6 @@
       }
     },
     "bush_leaves": "afc:wood/leaves/sitka_spruce",
-    "old_growth_tree": "tfc:tree/sitka_spruce_large"
+    "old_growth_tree": "afc:tree/sitka_spruce_large"
   }
 }

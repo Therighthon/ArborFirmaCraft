@@ -1,0 +1,38 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:rubber_fig/1",
+      "afc:rubber_fig/2",
+      "afc:rubber_fig/3",
+      "afc:rubber_fig/4",
+      "afc:rubber_fig/5",
+      "afc:rubber_fig/6",
+      "afc:rubber_fig/7",
+      "afc:rubber_fig/8",
+      "afc:rubber_fig/9",
+      "afc:rubber_fig/10",
+      "afc:rubber_fig/11",
+      "afc:rubber_fig/12"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/rubber_fig",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 2,
+      "max_height": 4,
+      "wide": false
+    }
+  }
+}

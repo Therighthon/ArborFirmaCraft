@@ -19,8 +19,8 @@
         "block": "afc:wood/fallen_leaves/eucalyptus"
       }
     ],
-    "normal_tree": "tfc:tree/eucalyptus",
-    "dead_tree": "tfc:tree/eucalyptus_dead",
+    "normal_tree": "afc:tree/eucalyptus",
+    "dead_tree": "afc:tree/eucalyptus_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/eucalyptus",
     "bush_log": {

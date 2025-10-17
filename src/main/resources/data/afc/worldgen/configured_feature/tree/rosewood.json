@@ -1,0 +1,32 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:rosewood/1",
+      "afc:rosewood/2",
+      "afc:rosewood/3",
+      "afc:rosewood/4",
+      "afc:rosewood/5",
+      "afc:rosewood/6",
+      "afc:rosewood/7",
+      "afc:rosewood/8",
+      "afc:rosewood/9",
+      "afc:rosewood/10",
+      "afc:rosewood/11",
+      "afc:rosewood/12",
+      "afc:rosewood/13",
+      "afc:rosewood/14",
+      "afc:rosewood/15",
+      "afc:rosewood/16",
+      "afc:rosewood/17",
+      "afc:rosewood/18"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "shallow_water"
+    }
+  }
+}

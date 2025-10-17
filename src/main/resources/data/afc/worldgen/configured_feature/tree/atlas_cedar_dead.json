@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:atlas_cedar_dead/1",
+      "afc:atlas_cedar_dead/2",
+      "afc:atlas_cedar_dead/3",
+      "afc:atlas_cedar_dead/4",
+      "afc:atlas_cedar_dead/5",
+      "afc:atlas_cedar_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    }
+  }
+}
