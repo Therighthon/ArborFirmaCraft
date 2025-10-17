@@ -8,7 +8,8 @@ Where actions can be any list of actions to take.
 
 from argparse import ArgumentParser
 from mcresources import ResourceManager, utils
-from typing import Optional
+from mcresources.type_definitions import ResourceIdentifier, Json
+from typing import Optional, Dict, Sequence
 
 import os
 import sys
@@ -27,25 +28,16 @@ import generate_textures
 
 BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
 MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
+RESOURCE_DIR = 'src/main/resources'
+EXCLUDE_PATHS: set[str] = ('src/main/resources/firmalife_compat_data', 'src/main/resources/firmalife_compat_assets', 'src/main/resources/assets')
 
 
 def main():
     parser = ArgumentParser(description='Entrypoint for all common scripting infrastructure.')
     parser.add_argument('actions', nargs='+', choices=(
-        'clean',  # clean all resources (assets / data), including book
         'validate',  # validate no resources are changed when re-running
-        'validate_assets',  # manual validation for certain important resources
-        'all',  # generate all resources (assets / data)
-        'assets',  # only assets.py
-        'data',  # only data.py
-        'recipes',  # only recipes.py
         'worldgen',  # only world gen data (excluding tags)
-        'advancements',  # only advancements.py (which excludes recipe advancements)
-        'book',  # generate the book
-        'trees',  # generate tree NBT structures from templates
-        'format_lang',  # format language files
-        'update_lang',  # useful to update localizations after a change to the base which renders some translations incorrect
-        'textures',  # generate textures
+        # 'trees',  # generate tree NBT structures from templates RUN TREES SCRIPTS DIRECTLY
     ))
     parser.add_argument('--translate', type=str, default='en_uk', help='Runs the book translation using a single provided language')
     parser.add_argument('--translate-all', action='store_true', dest='translate_all', help='Runs the book against all provided translations')
@@ -57,50 +49,28 @@ def main():
     hotswap = args.hotswap_dir if args.hotswap else None
 
     for action in args.actions:
-        if action == 'clean':
-            clean(args.local)
-        elif action == 'validate':
-            validate_resources()
+        if action == 'validate':
+            print('You need to write this section if you want it to do anything')
         # elif action == 'validate_assets':
         #     validate_assets.main()
-        elif action == 'all':
-            resources(hotswap=hotswap, do_assets=True, do_data=True, do_recipes=True, do_worldgen=True, do_advancements=True)
-        elif action == 'assets':
-            resources(hotswap=hotswap, do_assets=True)
-        elif action == 'data':
-            resources(hotswap=hotswap, do_data=True)
-        elif action == 'recipes':
-            resources(hotswap=hotswap, do_recipes=True)
         elif action == 'worldgen':
-            resources(hotswap=hotswap, do_worldgen=True)
-        elif action == 'advancements':
-            resources(hotswap=hotswap, do_advancements=True)
-        elif action == 'textures':
-            generate_textures.main()
-        # elif action == 'book':
-        #     if args.translate_all:
-        #         for lang in BOOK_LANGUAGES:
-        #             generate_book.main(lang, args.local, False)
-        #     else:
-        #         generate_book.main(args.translate, args.local, False)
-        elif action == 'trees':
-            generate_trees.main()
-        elif action == 'format_lang':
-            format_lang.main(False, MOD_LANGUAGES)
-        elif action == 'update_lang':
-            format_lang.update(MOD_LANGUAGES)
+            touched: set[str] = resources_at(
+                TempResourceManager('afc', resource_dir=RESOURCE_DIR),
+                TempResourceManager('tfc', resource_dir=RESOURCE_DIR)
+            )
+            print('Removed Stale =', utils.clean_generated_resources(RESOURCE_DIR, touched))
 
 
 def clean(local: Optional[str]):
     """ Cleans all generated resources files """
-    clean_at('E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources')
+    clean_at(RESOURCE_DIR)
     if local:
         clean_at(local)
 
 def clean_at(location: str):
     for tries in range(1, 1 + 3):
         try:
-            utils.clean_generated_resources(location)
+            utils.clean_generated_resources(location, )
             print('Clean %s' % location)
             return
         except OSError:
@@ -110,7 +80,7 @@ def clean_at(location: str):
 
 def validate_resources():
     """ Validates all resources are unchanged. """
-    rm = ValidatingResourceManager('tfc', 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources')
+    rm = ValidatingResourceManager('tfc', RESOURCE_DIR)
     resources_at(rm, True, True, True, True, True)
     error = rm.error_files != 0
 
@@ -131,31 +101,24 @@ def validate_resources():
 
     assert not error, 'Validation Errors Were Present'
 
+def resources_at(
+        rm: ResourceManager,
+        tfc_rm: ResourceManager
+    ) -> set[str]:
 
-def resources(hotswap: str = None, do_assets: bool = False, do_data: bool = False, do_recipes: bool = False, do_worldgen: bool = False, do_advancements: bool = False):
-    """ Generates resource files, or a subset of them """
-    resources_at(ResourceManager('afc', resource_dir='./src/main/resources'), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
-    if hotswap:
-        resources_at(ResourceManager('afc', resource_dir=hotswap), do_assets, do_data, do_recipes, do_worldgen, do_advancements)
+    world_gen.generate(rm)
 
+    # Flush
+    rm.flush()
+    tfc_rm.flush()
 
-def resources_at(rm: ResourceManager, do_assets: bool, do_data: bool, do_recipes: bool, do_worldgen: bool, do_advancements: bool):
-    # do simple lang keys first, because it's ordered intentionally
-    # rm.lang(constants.DEFAULT_LANG)
+    print('New = %d, Modified = %d, Unchanged = %d, Errors = %d' % (
+        rm.new_files + tfc_rm.new_files,
+        rm.modified_files + tfc_rm.modified_files,
+        rm.unchanged_files + tfc_rm.unchanged_files,
+        rm.error_files + tfc_rm.error_files))
 
-    # generic assets / data
-    if do_assets:
-        assets.generate(rm)
-    if do_data:
-        data.generate(rm)
-    if do_worldgen:
-        world_gen.generate(rm)
-
-    if all((do_assets, do_data, do_worldgen, do_recipes, do_advancements)):
-        # Only generate this when generating all, as it's shared
-        rm.flush()
-
-    print('New = %d, Modified = %d, Unchanged = %d, Errors = %d' % (rm.new_files, rm.modified_files, rm.unchanged_files, rm.error_files))
+    return rm.written_files | tfc_rm.written_files
 
 
 class ValidatingResourceManager(ResourceManager):
@@ -184,6 +147,10 @@ class ValidatingResourceManager(ResourceManager):
             self.on_error(path, e)
             self.error_files += 1
 
+class TempResourceManager(ResourceManager):
+
+    def __init__(self, domain: str, resource_dir):
+        super().__init__(domain, resource_dir)
 
 if __name__ == '__main__':
     main()

@@ -85,19 +85,19 @@ def generate(rm: ResourceManager):
 
     # Only need to put trees in this section if we are changing them from vanilla TFC/or they are new
 
-    configured_placed_feature(rm, ('tree', 'acacia'), 'tfc:random_tree', random_config('acacia', 35, place=tree_placement_config(2, 3)))
-    configured_placed_feature(rm, ('tree', 'acacia_large'), 'tfc:random_tree', random_config('acacia', 6, 2, '_large', place=tree_placement_config(2, 5)))
-    configured_placed_feature(rm, ('tree', 'acacia_dead'), 'tfc:random_tree', random_config('acacia', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'acacia'), 'tfc:random_tree', random_config('acacia', 35, place=tree_placement_config(2, 3)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'acacia_large'), 'tfc:random_tree', random_config('acacia', 6, 2, '_large', place=tree_placement_config(2, 5)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'acacia_dead'), 'tfc:random_tree', random_config('acacia', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'pine'), 'tfc:random_tree', random_config('pine', 9, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'pine_dead'), 'tfc:random_tree', random_config('pine', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia'), 'tfc:random_tree', random_config('sequoia', 5, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 0, 5, [(1, 1, 7), (2, 3, 7), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia_dead'), 'tfc:random_tree', random_config('sequoia', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'spruce'), 'tfc:random_tree', random_config('spruce', 7, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'spruce_large'), 'tfc:stacked_tree', stacked_config('spruce', 5, 7, 2, [(1, 2, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_spruce', place=tree_placement_config(2, 7)))
+    tfc_override_configured_placed_feature(rm, ('tree', 'spruce_dead'), 'tfc:random_tree', random_config('spruce', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
 
-    configured_placed_feature(rm, ('tree', 'pine'), 'tfc:random_tree', random_config('pine', 9, place=tree_placement_config(1, 3)))
-    configured_placed_feature(rm, ('tree', 'pine_dead'), 'tfc:random_tree', random_config('pine', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-    configured_placed_feature(rm, ('tree', 'sequoia'), 'tfc:random_tree', random_config('sequoia', 5, place=tree_placement_config(1, 3)))
-    configured_placed_feature(rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 0, 5, [(1, 1, 7), (2, 3, 7), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
-    configured_placed_feature(rm, ('tree', 'sequoia_dead'), 'tfc:random_tree', random_config('sequoia', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-    configured_placed_feature(rm, ('tree', 'spruce'), 'tfc:random_tree', random_config('spruce', 7, place=tree_placement_config(1, 3)))
-    configured_placed_feature(rm, ('tree', 'spruce_large'), 'tfc:stacked_tree', stacked_config('spruce', 5, 7, 2, [(1, 2, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_spruce', place=tree_placement_config(2, 7)))
-    configured_placed_feature(rm, ('tree', 'spruce_dead'), 'tfc:random_tree', random_config('spruce', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-
+    # Typical AFC trees below
     configured_placed_feature(rm, ('tree', 'gum_arabic'), 'tfc:random_tree', random_config('gum_arabic', 35, 1, place=tree_placement_config(2, 3, False)))
     configured_placed_feature(rm, ('tree', 'gum_arabic_dead'), 'tfc:random_tree', random_config('gum_arabic', 6, 1, '_dead', place=tree_placement_config(1, 2, False)))
     configured_placed_feature(rm, ('tree', 'acacia_koa'), 'tfc:random_tree', random_config('acacia_koa', 12, 1, trunk=[1, 7, 1, 'acacia'], place=tree_placement_config(1, 2, False)))
@@ -220,6 +220,12 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'poplar'), 'tfc:random_tree', random_config('poplar', 10, 1, place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'poplar_dead'), 'tfc:random_tree', random_config('poplar', 7, 1, '_dead', place=tree_placement_config(1, 2, True)))
 
+def tfc_override_configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifier, feature: Optional[ResourceIdentifier] = None, config: JsonObject = None, *placements: Json):
+    res = utils.resource_location('tfc', name_parts)
+    if feature is None:
+        feature = res
+    rm.configured_feature(res, feature, config)
+    rm.placed_feature(res, res, *placements)
 
 def configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifier, feature: Optional[ResourceIdentifier] = None, config: JsonObject = None, *placements: Json):
     res = utils.resource_location('afc', name_parts)
@@ -383,7 +389,7 @@ def simple_state_provider(name: str) -> Dict[str, Any]:
 def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_temp: float, max_temp: float, min_rain_var: float, max_rain_var: float, rain_var_absolute: bool, min_elev: int, max_elev: int, tree: str, basic_wood: str, old_growth: bool, old_growth_chance: int = None, spoiler_chance: int = None, krum: bool = False, floating: bool = None, podzol: bool = False, alfisol: bool = False):
 
     tree_prefix = 'afc'
-    if tree in UNMODIFIED_TFC_WOODS:
+    if tree in TFC_WOODS.keys():
         tree_prefix = 'tfc'
 
     wood_prefix = 'tfc'
