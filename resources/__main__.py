@@ -80,7 +80,7 @@ def resources_at(
     tfc_rm: ResourceManager
 ) -> set[str]:
 
-    world_gen.generate(rm)
+    world_gen.generate(rm, tfc_rm)
 
     # Flush
     rm.flush()

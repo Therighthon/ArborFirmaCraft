@@ -8,50 +8,49 @@ from mcresources.type_definitions import ResourceIdentifier, JsonObject, Json, V
 from constants import *
 
 
-def generate(rm: ResourceManager):
+def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
-    # TODO: When run, this does NOT delete stale files
     # Trees / Forests
-    forest_config(rm, 90, 325, 13.4, 40, 0.5, 1, True, 60, 85, 'acacia', 'acacia', True, old_growth_chance=12)
+    forest_config(tfc_rm, 90, 325, 13.4, 40, 0.5, 1, True, 60, 85, 'acacia', 'acacia', True, old_growth_chance=12)
     forest_config(rm, 90, 325, 11.6, 40, 0.5, 1, True, 80, 130, 'gum_arabic', 'gum_arabic', False)
     forest_config(rm, 325, 500, 15.3, 24.4, -0.6, 0.6, False, 70, 150, 'acacia_koa', 'acacia', False)
-    forest_config(rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 60, 120, 'ash', 'ash', True)
-    forest_config(rm, 350, 500, -15.7, -1.1, -0.9, 0.25, False, 60, 170, 'aspen', 'aspen', False, old_growth_chance=1, krum=True)
-    forest_config(rm, 125, 310, -13.9, 2.5, -0.5, 0.35, False, 60, 170, 'birch', 'birch', False, old_growth_chance=1)
-    forest_config(rm, 35, 150, 9.8, 20.7, -1, 1, False, 80, 170, 'blackwood', 'blackwood', True)
+    forest_config(tfc_rm, 60, 240, -13.9, 0.7, -0.3, 0.6, False, 60, 120, 'ash', 'ash', True)
+    forest_config(tfc_rm, 350, 500, -15.7, -1.1, -0.9, 0.25, False, 60, 170, 'aspen', 'aspen', False, old_growth_chance=1, krum=True)
+    forest_config(tfc_rm, 125, 310, -13.9, 2.5, -0.5, 0.35, False, 60, 170, 'birch', 'birch', False, old_growth_chance=1)
+    forest_config(tfc_rm, 35, 150, 9.8, 20.7, -1, 1, False, 80, 170, 'blackwood', 'blackwood', True)
     forest_config(rm, 85, 285, 13.4, 22.5, 0.3, 1, True, 60, 85, 'mpingo_blackwood', 'blackwood', False)
-    forest_config(rm, 150, 300, -6.6, 11.6, -0.5, 0.5, False, 75, 150, 'chestnut', 'chestnut', False)
-    forest_config(rm, 280, 500, -10.3, 6.1, -1, -0.2, False, 60, 170, 'douglas_fir', 'douglas_fir', True, krum=True)
+    forest_config(tfc_rm, 150, 300, -6.6, 11.6, -0.5, 0.5, False, 75, 150, 'chestnut', 'chestnut', False)
+    forest_config(tfc_rm, 280, 500, -10.3, 6.1, -1, -0.2, False, 60, 170, 'douglas_fir', 'douglas_fir', True, krum=True)
     forest_config(rm, 220, 345, -1.1, 11.6, -0.2, 1, False, 85, 170, 'mountain_fir', 'douglas_fir', True)
     forest_config(rm, 210, 500, -13.9, -1.1, -0.55, 0.45, False, 60, 170, 'balsam_fir', 'douglas_fir', True)
-    forest_config(rm, 210, 400, -6.6, 11.6, -0.45, 0.5, False, 60, 120, 'hickory', 'hickory', False)
+    forest_config(tfc_rm, 210, 400, -6.6, 11.6, -0.45, 0.5, False, 60, 120, 'hickory', 'hickory', False)
     forest_config(rm, 365, 500, 11.6, 17.1, -0.4, 0.4, False, 60, 80, 'scrub_hickory', 'hickory', True)
-    forest_config(rm, 280, 500, 13.4, 24.4, -0.45, 0.45, False, 60, 160, 'kapok', 'kapok', True, old_growth_chance=8)
+    forest_config(tfc_rm, 280, 500, 13.4, 24.4, -0.45, 0.45, False, 60, 160, 'kapok', 'kapok', True, old_growth_chance=8)
     forest_config(rm, 300, 500, 13.4, 24.4, 0.4, 1, False, 60, 85, 'red_silk_cotton', 'kapok', False)
-    forest_config(rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 60, 85, 'maple', 'maple', True)
+    forest_config(tfc_rm, 280, 420, -8.4, 8, -0.5, 0.45, False, 60, 85, 'maple', 'maple', True)
     forest_config(rm, 260, 500, -4.8, 11.6, -1, -0.5, False, 60, 120, 'bigleaf_maple', 'maple', False, old_growth_chance=4)
     forest_config(rm, 240, 500, 0.7, 4.3, 0.2, 1, False, 60, 140, 'weeping_maple', 'maple', True)
     forest_config(rm, 390, 500, 0.7, 13.4, -0.5, 0.5, False, 60, 75, 'live_oak', 'oak', True, old_growth_chance=8)
     forest_config(rm, 150, 330, 11.6, 20.7, 0.2, 1, False, 60, 85, 'black_oak', 'black_oak', False, old_growth_chance=1)
-    forest_config(rm, 210, 380, -8.4, 6.1, -0.3, 0.45, False, 60, 85, 'oak', 'oak', False)
-    forest_config(rm, 70, 265, 17.1, 40, -0.5, 0.5, False, 60, 95, 'palm', 'palm', False)
+    forest_config(tfc_rm, 210, 380, -8.4, 6.1, -0.3, 0.45, False, 60, 85, 'oak', 'oak', False)
+    forest_config(tfc_rm, 70, 265, 17.1, 40, -0.5, 0.5, False, 60, 95, 'palm', 'palm', False)
     forest_config(rm, 270, 420, 11.6, 26.2, 0.25, 1, False, 70, 130, 'jaggery_palm', 'palm', False)
-    forest_config(rm, 60, 300, -19.4, -3, 0.2, 1, False, 60, 145, 'pine', 'pine', False, krum=True)
+    forest_config(tfc_rm, 60, 300, -19.4, -3, 0.2, 1, False, 60, 145, 'pine', 'pine', True, krum=True)
     forest_config(rm, 140, 290, 4.3, 20.7, -1, -0.4, False, 60, 170, 'stone_pine', 'pine', True)
     forest_config(rm, 210, 500, -8.4, 4.3, 0.3, 1, False, 75, 170, 'red_pine', 'pine', False)
     forest_config(rm, 135, 340, -17.5, -1.1, -0.8, 0.65, False, 60, 140, 'tamarack', 'pine', True)
-    forest_config(rm, 240, 445, 15.3, 24.4, 0.5, 1, False, 60, 120, 'rosewood', 'rosewood', False)
+    forest_config(tfc_rm, 240, 445, 15.3, 24.4, 0.5, 1, False, 60, 120, 'rosewood', 'rosewood', False)
     forest_config(rm, 330, 500, 15.3, 22.5, 0.35, 1, False, 60, 120, 'giant_rosewood', 'rosewood', False)
-    forest_config(rm, 310, 500, 0.7, 8, -1, -0.4, False, 85, 130, 'sequoia', 'sequoia', True, old_growth_chance=3)
+    forest_config(tfc_rm, 310, 500, 0.7, 8, -1, -0.4, False, 85, 130, 'sequoia', 'sequoia', True, old_growth_chance=3)
     forest_config(rm, 320, 500, 4.3, 13.4, -1, -0.55, False, 60, 90, 'coast_redwood', 'sequoia', True, old_growth_chance=3)
-    forest_config(rm, 330, 500, -19.4, 2.5, -0.5, 0.6, False, 85, 170, 'spruce', 'spruce', True)
+    forest_config(tfc_rm, 330, 500, -19.4, 2.5, -0.5, 0.6, False, 85, 170, 'spruce', 'spruce', True)
     forest_config(rm, 320, 390, -12.1, 6.1, -0.55, 0.5, False, 60, 170, 'coast_spruce', 'spruce', False)
     forest_config(rm, 285, 465, -3, 8, -1, -0.45, False, 60, 90, 'sitka_spruce', 'spruce', True)
     forest_config(rm, 190, 460, -17.5, -1.1, -0.55, 0.55, False, 60, 85, 'black_spruce', 'spruce', True, krum=True)
-    forest_config(rm, 330, 500, -6.6, 11.6, -0.5, 0.4, False, 60, 75, 'sycamore', 'sycamore', True)
-    forest_config(rm, 100, 340, -13.9, 4.3, -0.4, 0.6, False, 60, 120, 'white_cedar', 'white_cedar', True, krum=True)
+    forest_config(tfc_rm, 330, 500, -6.6, 11.6, -0.5, 0.4, False, 60, 75, 'sycamore', 'sycamore', True)
+    forest_config(tfc_rm, 100, 340, -13.9, 4.3, -0.4, 0.6, False, 60, 120, 'white_cedar', 'white_cedar', True, krum=True)
     forest_config(rm, 130, 260, 8, 13.4, -1, -0.3, False, 85, 160, 'atlas_cedar', 'white_cedar', False)
-    forest_config(rm, 330, 500, -6.6, 9.8, -0.4, 0.55, False, 60, 120, 'willow', 'willow', True)
+    forest_config(tfc_rm, 330, 500, -6.6, 9.8, -0.4, 0.55, False, 60, 120, 'willow', 'willow', True)
     forest_config(rm, 355, 500, -3, 11.6, 0.1, 1, False, 60, 120, 'weeping_willow', 'willow', False)
 
     forest_config(rm, 300, 500, 15.3, 24.4, -0.4, 1, False, 60, 95, 'rainbow_eucalyptus', 'rainbow_eucalyptus', False, old_growth_chance=1)
@@ -79,23 +78,24 @@ def generate(rm: ResourceManager):
     forest_config(rm, 280, 450, 13.4, 24.4, 0.4, 0.8, True, 60, 100, 'flame_of_the_forest', 'teak', False)
     forest_config(rm, 400, 500, 20.7, 26.2, -0.4, 0.4, False, 60, 90, 'jaggery_palm', 'palm', False)
     forest_config(rm, 170, 360, -15.7, -3, -0.2, 0.7, False, 60, 120, 'poplar', 'poplar', False)
-# # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
+
+    # # flat: acacia, ash, chestnut, maple, sequoia, spruce, willow
 
 
 
     # Only need to put trees in this section if we are changing them from vanilla TFC/or they are new
 
-    tfc_override_configured_placed_feature(rm, ('tree', 'acacia'), 'tfc:random_tree', random_config('acacia', 35, place=tree_placement_config(2, 3)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'acacia_large'), 'tfc:random_tree', random_config('acacia', 6, 2, '_large', place=tree_placement_config(2, 5)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'acacia_dead'), 'tfc:random_tree', random_config('acacia', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'pine'), 'tfc:random_tree', random_config('pine', 9, place=tree_placement_config(1, 3)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'pine_dead'), 'tfc:random_tree', random_config('pine', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia'), 'tfc:random_tree', random_config('sequoia', 5, place=tree_placement_config(1, 3)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 0, 5, [(1, 1, 7), (2, 3, 7), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'sequoia_dead'), 'tfc:random_tree', random_config('sequoia', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'spruce'), 'tfc:random_tree', random_config('spruce', 7, place=tree_placement_config(1, 3)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'spruce_large'), 'tfc:stacked_tree', stacked_config('spruce', 5, 7, 2, [(1, 2, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_spruce', place=tree_placement_config(2, 7)))
-    tfc_override_configured_placed_feature(rm, ('tree', 'spruce_dead'), 'tfc:random_tree', random_config('spruce', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'acacia'), 'tfc:random_tree', random_config('acacia', 35, place=tree_placement_config(2, 3)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'acacia_large'), 'tfc:random_tree', random_config('acacia', 6, 2, '_large', place=tree_placement_config(2, 5)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'acacia_dead'), 'tfc:random_tree', random_config('acacia', 6, 1, '_dead', place=tree_placement_config(1, 6, True)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'pine'), 'tfc:random_tree', random_config('pine', 9, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'pine_dead'), 'tfc:random_tree', random_config('pine', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'sequoia'), 'tfc:random_tree', random_config('sequoia', 5, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'sequoia_large'), 'tfc:stacked_tree', stacked_config('sequoia', 0, 0, 5, [(1, 1, 7), (2, 3, 7), (3, 4, 4), (1, 1, 4)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'sequoia_dead'), 'tfc:random_tree', random_config('sequoia', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'spruce'), 'tfc:random_tree', random_config('spruce', 7, place=tree_placement_config(1, 3)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'spruce_large'), 'tfc:stacked_tree', stacked_config('spruce', 5, 7, 2, [(1, 2, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_spruce', place=tree_placement_config(2, 7)))
+    tfc_override_configured_placed_feature(tfc_rm, ('tree', 'spruce_dead'), 'tfc:random_tree', random_config('spruce', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
 
     # Typical AFC trees below
     configured_placed_feature(rm, ('tree', 'gum_arabic'), 'tfc:random_tree', random_config('gum_arabic', 35, 1, place=tree_placement_config(2, 3, False)))
@@ -103,7 +103,6 @@ def generate(rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'acacia_koa'), 'tfc:random_tree', random_config('acacia_koa', 12, 1, trunk=[1, 7, 1, 'acacia'], place=tree_placement_config(1, 2, False)))
     configured_placed_feature(rm, ('tree', 'acacia_koa_large'), 'tfc:random_tree', random_config('acacia_koa', 6, 2, '_large', trunk=[10, 15, 2, 'ancient_acacia'], place=tree_placement_config(2, 15, True)))
     configured_placed_feature(rm, ('tree', 'acacia_koa_dead'), 'tfc:random_tree', random_config('acacia_koa', 4, 1, '_dead', place=tree_placement_config(1, 2, False)))
-    configured_placed_feature(rm, ('tree', 'ash'), 'tfc:random_tree', random_config('ash', 14, 1, trunk=[3, 5, 1, 'ash'], place=tree_placement_config(1, 2, True)))
     configured_placed_feature(rm, ('tree', 'coast_redwood'), 'tfc:random_tree', random_config('coast_redwood', 7, place=tree_placement_config(1, 3)))
     configured_placed_feature(rm, ('tree', 'coast_redwood_large'), 'tfc:stacked_tree', stacked_config('coast_redwood', 8, 16, 2, [(3, 4, 3), (1, 2, 3), (1, 1, 3)], 2, '_large', basic_wood= 'ancient_sequoia', place=tree_placement_config(2, 7)))
     configured_placed_feature(rm, ('tree', 'coast_redwood_dead'), 'tfc:random_tree', random_config('coast_redwood', 6, 1, '_dead', place=tree_placement_config(1, 9, True)))
@@ -434,7 +433,7 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
         cfg['bush_leaves'] = '%s:wood/leaves/%s' % (leaf_prefix, tree)
     if old_growth:
         cfg['old_growth_tree'] = '%s:tree/%s_large' % (tree_prefix, tree)
-    rm.configured_feature('tree/%s_entry' % tree, 'tfc:forest_entry', cfg) # TODO: Custom AFC Forest entries
+    rm.configured_feature('tree/%s_entry' % tree, 'tfc:forest_entry', cfg)
     cfg['dead_chance'] = 1
     cfg['fallen_tree_chance'] = 8
     cfg['floating'] = None
