@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf_inventory",
   "textures": {
-    "top": "afc:block/wood/bookshelf/top_ipe",
-    "side": "afc:block/wood/bookshelf/side_ipe",
-    "front": "afc:block/wood/bookshelf/ipe_empty"
+    "top": "afc:block/wood/bookshelf/ipe_bookshelf_top",
+    "side": "afc:block/wood/bookshelf/ipe_bookshelf_side",
+    "front": "afc:block/wood/bookshelf/ipe_bookshelf_empty"
   }
 }

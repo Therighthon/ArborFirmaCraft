@@ -1,0 +1,11 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "powered=false": {
+      "model": "afc:block/wood/pressure_plate/ironwood"
+    },
+    "powered=true": {
+      "model": "afc:block/wood/pressure_plate/ironwood_down"
+    }
+  }
+}

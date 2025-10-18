@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf",
   "textures": {
-    "top": "afc:block/wood/bookshelf/top_teak",
-    "side": "afc:block/wood/bookshelf/side_teak"
+    "top": "afc:block/wood/bookshelf/teak_bookshelf_top",
+    "side": "afc:block/wood/bookshelf/teak_bookshelf_side"
   }
 }

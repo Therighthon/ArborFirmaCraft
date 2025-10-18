@@ -15,19 +15,17 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
-import net.dries007.tfc.TerraFirmaCraft;
-import net.dries007.tfc.common.TFCCreativeTabs;
 
 import net.dries007.tfc.util.Metal;
-import net.dries007.tfc.util.SelfTests;
 
 public final class AFCCreativeModeTabs
 {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AFC.MOD_ID);
 
-    public static final TFCCreativeTabs.Id AFC_TAB = register("arborfirmacraft", () -> new ItemStack(AFCBlocks.TREE_SPECIES.get(TreeSpecies.TAMARACK).get(TreeSpecies.BlockType.SAPLING).get()), AFCCreativeModeTabs::fillTab);
+    public static final Id AFC_TAB = register("arborfirmacraft", () -> new ItemStack(AFCBlocks.TREE_SPECIES.get(TreeSpecies.TAMARACK).get(TreeSpecies.BlockType.SAPLING).get()), AFCCreativeModeTabs::fillTab);
 
     private static void fillTab(CreativeModeTab.ItemDisplayParameters parameters, CreativeModeTab.Output out)
     {
@@ -88,14 +86,14 @@ public final class AFCCreativeModeTabs
 
 
     //Helpers from TFC
-    private static TFCCreativeTabs.Id register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
+    private static Id register(String name, Supplier<ItemStack> icon, CreativeModeTab.DisplayItemsGenerator displayItems)
     {
         final var holder = CREATIVE_TABS.register(name, () -> CreativeModeTab.builder()
             .icon(icon)
             .title(Component.translatable("tfc.creative_tab." + name))
             .displayItems(displayItems)
             .build());
-        return new TFCCreativeTabs.Id(holder, displayItems);
+        return new Id(holder, displayItems);
     }
 
     private static <T extends ItemLike, R extends Supplier<T>, K1, K2> void accept(CreativeModeTab.Output out, Map<K1, Map<K2, R>> map, K1 key1, K2 key2)
@@ -118,11 +116,25 @@ public final class AFCCreativeModeTabs
     {
         if (reg.get().asItem() == Items.AIR)
         {
-            TerraFirmaCraft.LOGGER.error("BlockItem with no Item added to creative tab: " + reg);
-            SelfTests.reportExternalError();
+            AFC.LOGGER.error("BlockItem with no Item added to creative tab: " + reg);
             return;
         }
         out.accept(reg.get());
+    }
+
+    public static record Id(DeferredHolder<CreativeModeTab, CreativeModeTab> tab, CreativeModeTab.DisplayItemsGenerator generator) {
+        public Id(DeferredHolder<CreativeModeTab, CreativeModeTab> tab, CreativeModeTab.DisplayItemsGenerator generator) {
+            this.tab = tab;
+            this.generator = generator;
+        }
+
+        public DeferredHolder<CreativeModeTab, CreativeModeTab> tab() {
+            return this.tab;
+        }
+
+        public CreativeModeTab.DisplayItemsGenerator generator() {
+            return this.generator;
+        }
     }
 
 }

@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf",
   "textures": {
-    "top": "afc:block/wood/bookshelf/top_hevea",
-    "side": "afc:block/wood/bookshelf/side_hevea"
+    "top": "afc:block/wood/bookshelf/hevea_bookshelf_top",
+    "side": "afc:block/wood/bookshelf/hevea_bookshelf_side"
   }
 }

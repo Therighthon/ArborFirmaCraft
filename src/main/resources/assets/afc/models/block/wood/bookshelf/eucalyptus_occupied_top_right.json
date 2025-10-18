@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf_occupied_slot_top_right",
   "textures": {
-    "texture": "afc:block/wood/bookshelf/eucalyptus_occupied"
+    "texture": "afc:block/wood/bookshelf/eucalyptus_bookshelf_occupied"
   }
 }
