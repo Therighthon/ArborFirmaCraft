@@ -42,7 +42,7 @@ public final class AFCFluids
             .block(AFCBlocks.SIMPLE_FLUIDS.get(fluid))
             .bucket(AFCItems.FLUID_BUCKETS.get(AFCFluidId.asType(fluid))),
         waterLike()
-            .descriptionId("fluid.tfc." + fluid.getId())
+            .descriptionId("fluid.afc." + fluid.getId())
             .canConvertToSource(false),
         BaseFlowingFluid.Source::new,
         BaseFlowingFluid.Flowing::new

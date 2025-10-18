@@ -90,7 +90,7 @@ public final class AFCCreativeModeTabs
     {
         final var holder = CREATIVE_TABS.register(name, () -> CreativeModeTab.builder()
             .icon(icon)
-            .title(Component.translatable("tfc.creative_tab." + name))
+            .title(Component.translatable("afc.creative_tab." + name))
             .displayItems(displayItems)
             .build());
         return new Id(holder, displayItems);

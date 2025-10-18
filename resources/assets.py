@@ -12,22 +12,44 @@ from constants import *
 
 def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
-    # TODO: Lang keys for creative tab etc.
-    lang("afc.creative_tab.arborfirmacraft")
-    lang()
+    rm.lang("afc.creative_tab.arborfirmacraft", "ArborFirmaCraft")
+    rm.lang("item.afc.rubber_bar", "Rubber Bar")
+    rm.lang("item.afc.maple_sugar", "Maple Sugar")
+    rm.lang("item.afc.birch_sugar", "Birch Sugar")
+
+    rm.lang("item.afc.bucket.maple_sap", "Maple Sap Bucket")
+    rm.lang("item.afc.bucket.maple_sap_concentrate", "Maple Sap Concentrate Bucket")
+    rm.lang("item.afc.bucket.maple_syrup", "Maple Syrup Bucket")
+    rm.lang("item.afc.bucket.birch_sap", "Birch Sap Bucket")
+    rm.lang("item.afc.bucket.birch_sap_concentrate", "Birch Sap Concentrate Bucket")
+    rm.lang("item.afc.bucket.birch_syrup", "Birch Syrup Bucket")
+    rm.lang("item.afc.bucket.latex", "Latex Bucket")
+
+    rm.lang("block.afc.tree_tap", "Tree Tap")
+
+    rm.lang("fluid.afc.maple_sap", "Maple Sap")
+    rm.lang("fluid.afc.maple_sap_concentrate", "Maple Sap Concentrate")
+    rm.lang("fluid.afc.maple_syrup", "Maple Syrup")
+    rm.lang("fluid.afc.birch_sap", "Birch Sap")
+    rm.lang("fluid.afc.birch_sap_concentrate", "Birch Sap Concentrate")
+    rm.lang("fluid.afc.birch_syrup", "Birch Syrup")
+    rm.lang("fluid.afc.latex", "Latex")
 
     for variant in TREE_VARIANTS.keys():
         # Leaves
         block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s' % variant)
         block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='block/leaves')
         block.with_item_model()
+        block.with_lang(lang('%s leaves', variant))
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
         block.with_block_model({'cross': 'afc:block/wood/sapling/%s' % variant}, 'block/cross')
         rm.item_model(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
+        block.with_lang(lang('%s sapling', variant))
 
         flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant)
+        block.with_lang(lang('potted %s sapling', variant))
 
         # Fallen Leaves
         rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
@@ -38,6 +60,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
+        block.with_lang(lang('fallen %s leaves', variant))
 
     # Wood Blocks
     for wood in WOODS.keys():
