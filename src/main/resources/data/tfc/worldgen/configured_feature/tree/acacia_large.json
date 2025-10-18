@@ -3,12 +3,12 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "afc:acacia_large/1",
-      "afc:acacia_large/2",
-      "afc:acacia_large/3",
-      "afc:acacia_large/4",
-      "afc:acacia_large/5",
-      "afc:acacia_large/6"
+      "tfc:acacia_large/1",
+      "tfc:acacia_large/2",
+      "tfc:acacia_large/3",
+      "tfc:acacia_large/4",
+      "tfc:acacia_large/5",
+      "tfc:acacia_large/6"
     ],
     "radius": 2,
     "placement": {

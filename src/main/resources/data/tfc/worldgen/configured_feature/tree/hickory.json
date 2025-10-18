@@ -3,16 +3,16 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "afc:hickory/1",
-      "afc:hickory/2",
-      "afc:hickory/3",
-      "afc:hickory/4",
-      "afc:hickory/5",
-      "afc:hickory/6",
-      "afc:hickory/7",
-      "afc:hickory/8",
-      "afc:hickory/9",
-      "afc:hickory/10"
+      "tfc:hickory/1",
+      "tfc:hickory/2",
+      "tfc:hickory/3",
+      "tfc:hickory/4",
+      "tfc:hickory/5",
+      "tfc:hickory/6",
+      "tfc:hickory/7",
+      "tfc:hickory/8",
+      "tfc:hickory/9",
+      "tfc:hickory/10"
     ],
     "radius": 1,
     "placement": {

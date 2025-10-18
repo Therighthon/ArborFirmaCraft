@@ -442,6 +442,9 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
     rm.configured_feature('tree/dead_%s_entry' % tree, 'tfc:forest_entry', cfg)
 
 def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, radius: int = 1, suffix: str = '', basic_wood: str = 'oak', place = None, roots=None):
+    structure_prefix = 'afc'
+    if tree in TFC_WOODS.keys():
+        structure_prefix = 'tfc'
     wood_prefix = 'tfc'
     if basic_wood == 'baobab' or basic_wood == 'eucalyptus' or basic_wood == 'rainbow_eucalyptus' or basic_wood == 'hevea' or basic_wood == 'mahogany' or basic_wood == 'tualang' or basic_wood == 'teak' or basic_wood == 'cypress' or basic_wood == 'fig' or basic_wood == 'black_oak'  or basic_wood == 'redcedar' or basic_wood == 'gum_arabic' or basic_wood == 'ipe' or basic_wood == 'ironwood':
         wood_prefix = 'afc'
@@ -450,8 +453,8 @@ def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, 
     block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, basic_wood)
     tree += suffix
     return {
-        'base': 'afc:%s/base' % tree,
-        'overlay': 'afc:%s/overlay' % tree,
+        'base': '%s:%s/base' % (structure_prefix, tree),
+        'overlay': '%s:%s/overlay' % (structure_prefix, tree),
         'trunk': trunk_config(block, min_height, max_height, width),
         'radius': radius,
         'placement': place,
@@ -460,6 +463,10 @@ def overlay_config(tree: str, min_height: int, max_height: int, width: int = 1, 
 
 
 def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str = '', trunk: List = None, place=None, roots=None):
+    structure_prefix = 'afc'
+    if tree in TFC_WOODS.keys():
+        structure_prefix = 'tfc'
+
     wood_prefix = 'tfc'
     basic_wood = 'oak'
     if trunk is not None:
@@ -472,7 +479,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
     block = '%s:wood/log/%s[axis=y,branch_direction=none]' % (wood_prefix, basic_wood)
     tree += suffix
     cfg = {
-        'structures': ['afc:%s/%d' % (tree, i) for i in range(1, 1 + structure_count)],
+        'structures': ['%s:%s/%d' % (structure_prefix, tree, i) for i in range(1, 1 + structure_count)],
         'radius': radius,
         'placement': place,
         'root_system': roots
@@ -485,7 +492,7 @@ def random_config(tree: str, structure_count: int, radius: int = 1, suffix: str 
 def stacked_config(tree: str, min_height: int, max_height: int, width: int, layers: List[Tuple[int, int, int]], radius: int = 1, suffix: str = '', basic_wood: str = 'oak', place: Json = None, roots=None) -> JsonObject:
     # layers consists of each layer, which is a (min_count, max_count, total_templates)
     structure_prefix = 'afc'
-    if (tree in TFC_WOODS.keys()):
+    if tree in TFC_WOODS.keys():
         structure_prefix = 'tfc'
 
     wood_prefix = 'tfc'

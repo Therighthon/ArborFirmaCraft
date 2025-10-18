@@ -3,12 +3,12 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "afc:spruce_dead/1",
-      "afc:spruce_dead/2",
-      "afc:spruce_dead/3",
-      "afc:spruce_dead/4",
-      "afc:spruce_dead/5",
-      "afc:spruce_dead/6"
+      "tfc:spruce_dead/1",
+      "tfc:spruce_dead/2",
+      "tfc:spruce_dead/3",
+      "tfc:spruce_dead/4",
+      "tfc:spruce_dead/5",
+      "tfc:spruce_dead/6"
     ],
     "radius": 1,
     "placement": {

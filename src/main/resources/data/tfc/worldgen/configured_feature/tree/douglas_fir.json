@@ -3,16 +3,16 @@
   "type": "tfc:random_tree",
   "config": {
     "structures": [
-      "afc:douglas_fir/1",
-      "afc:douglas_fir/2",
-      "afc:douglas_fir/3",
-      "afc:douglas_fir/4",
-      "afc:douglas_fir/5",
-      "afc:douglas_fir/6",
-      "afc:douglas_fir/7",
-      "afc:douglas_fir/8",
-      "afc:douglas_fir/9",
-      "afc:douglas_fir/10"
+      "tfc:douglas_fir/1",
+      "tfc:douglas_fir/2",
+      "tfc:douglas_fir/3",
+      "tfc:douglas_fir/4",
+      "tfc:douglas_fir/5",
+      "tfc:douglas_fir/6",
+      "tfc:douglas_fir/7",
+      "tfc:douglas_fir/8",
+      "tfc:douglas_fir/9",
+      "tfc:douglas_fir/10"
     ],
     "radius": 1,
     "placement": {
