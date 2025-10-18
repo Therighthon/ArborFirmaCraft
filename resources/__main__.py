@@ -17,18 +17,18 @@ import json
 import difflib
 
 import world_gen
+import assets
 
 BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
 MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
 RESOURCE_DIR = 'src/main/resources'
-EXCLUDE_PATHS: set[str] = {'firmalife_compat_data', 'firmalife_compat_assets', 'assets'}
-
+EXCLUDE_PATHS: set[str] = {'firmalife_compat_data', 'firmalife_compat_assets'}
 
 def main():
     parser = ArgumentParser(description='Entrypoint for all common scripting infrastructure.')
     parser.add_argument('actions', nargs='+', choices=(
         'validate',  # validate no resources are changed when re-running
-        'worldgen',  # only world gen data (excluding tags)
+        'all', # everything that's still in python
         # 'trees',  # generate tree NBT structures from templates RUN TREES SCRIPTS DIRECTLY
     ))
     parser.add_argument('--translate', type=str, default='en_uk', help='Runs the book translation using a single provided language')
@@ -45,7 +45,7 @@ def main():
             print('You need to write this section if you want it to do anything')
         # elif action == 'validate_assets':
         #     validate_assets.main()
-        elif action == 'worldgen':
+        elif action == 'all':
             touched: set[str] = resources_at(
                 TempResourceManager('afc', resource_dir=RESOURCE_DIR),
                 TempResourceManager('tfc', resource_dir=RESOURCE_DIR)
@@ -81,6 +81,7 @@ def resources_at(
 ) -> set[str]:
 
     world_gen.generate(rm, tfc_rm)
+    assets.generate(rm, tfc_rm)
 
     # Flush
     rm.flush()

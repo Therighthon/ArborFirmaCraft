@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/chiseled_bookshelf_inventory",
+  "textures": {
+    "top": "afc:block/wood/bookshelf/top_eucalyptus",
+    "side": "afc:block/wood/bookshelf/side_eucalyptus",
+    "front": "afc:block/wood/bookshelf/eucalyptus_empty"
+  }
+}

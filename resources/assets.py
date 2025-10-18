@@ -10,14 +10,13 @@ from mcresources.type_definitions import JsonObject
 from constants import *
 
 
-def generate(rm: ResourceManager):
+def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
     for variant in TREE_VARIANTS.keys():
         # Leaves
         block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s' % variant)
         block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='block/leaves')
         block.with_item_model()
-        block.with_tag('minecraft:leaves')
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', variant), 'afc:block/wood/sapling/%s' % variant)
@@ -27,17 +26,14 @@ def generate(rm: ResourceManager):
         flower_pot_cross(rm, '%s sapling' % variant, 'afc:wood/potted_sapling/%s' % variant, 'wood/potted_sapling/%s' % variant, 'afc:block/wood/sapling/%s' % variant)
 
         # Fallen Leaves
-        block = rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
+        rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
         tex = {'all': 'afc:block/wood/leaves/%s' % variant}
-        # Left in but unused rn
+        # Replace this with any AFC leaves that should have different top textures
         if variant in ('mangrove', 'willow'):
             tex['top'] = 'afc:block/wood/leaves/%s_top' % variant
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
-
-
-        block.with_tag('can_be_snow_piled')
 
     # Wood Blocks
     for wood in WOODS.keys():
@@ -60,19 +56,17 @@ def generate(rm: ResourceManager):
                 block.with_lang(lang('%s %s', wood, variant))
         for item_type in ('lumber', 'sign', 'chest_minecart', 'boat'):
             rm.item_model(('wood', item_type, wood)).with_lang(lang('%s %s', wood, item_type))
-        rm.item_tag('minecraft:signs', 'afc:wood/sign/' + wood)
-        rm.item_tag('afc:minecarts', 'afc:wood/chest_minecart/' + wood)
 
-        # TODO: Firmalife. Also, this might be a valid place to keep using python loot tables
+        # TODO: Firmalife. Also, this might be a valid place to keep using python l00t tables
         # Commented out because they will generate into the wrong directories, needs to be rewritten to write to the override pack
-        # block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90))).with_tag('food_shelves').with_item_tag('food_shelves')
-        # block.with_block_loot('afc:wood/food_shelf/%s' % wood).with_lang(lang('%s food shelf', wood)).with_tag('minecraft:mineable/axe')
+        # block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90)))
+        # block.with_lang(lang('%s food shelf', wood))
         # rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
         # rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
         # rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
         #
-        # block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood).with_tag('hangers').with_item_tag('hangers')
-        # block.with_block_loot('afc:wood/hanger/%s' % wood).with_lang(lang('%s hanger' % wood)).with_tag('minecraft:mineable/axe')
+        # block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood)
+        # block.with_lang(lang('%s hanger' % wood))
         # rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
         # rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
         # rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
@@ -81,7 +75,7 @@ def generate(rm: ResourceManager):
         #     **four_rotations('afc:block/wood/jarbnet/%s_dynamic' % wood, (90, None, 180, 270), suffix=',open=true'),
         #     **four_rotations('afc:block/wood/jarbnet/%s_shut_dynamic' % wood, (90, None, 180, 270), suffix=',open=false'),
         # })
-        # block.with_block_loot('afc:wood/jarbnet/%s' % wood).with_lang(lang('%s jarbnet', wood)).with_tag('minecraft:mineable/axe').with_tag('jarbnets').with_item_tag('jarbnets')
+        # block.with_lang(lang('%s jarbnet', wood))
         # rm.item_model('afc:wood/jarbnet/%s' % wood, parent='afc:block/wood/jarbnet/%s' % wood, no_textures=True)
         # textures = {'planks': 'afc:block/wood/planks/%s' % wood, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'log': 'afc:block/wood/log/%s' % wood}
         # rm.block_model('afc:wood/jarbnet/%s' % wood, parent='firmalife:block/jarbnet', textures=textures)
@@ -98,7 +92,7 @@ def generate(rm: ResourceManager):
 
         block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', wood))
         tex = {'all': 'afc:block/wood/leaves/%s' % wood}
-        #Leaving this in in case we want to use it for other stuff
+        #Leaving this in, in case we want to use it for other stuff
         if wood in ('mangrove', 'willow'):
             tex['top'] = 'afc:block/wood/leaves/%s_top' % wood
         for i in range(1, 8):
@@ -109,8 +103,6 @@ def generate(rm: ResourceManager):
         block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s' % wood)
         block.with_block_model('afc:block/wood/leaves/%s' % wood, parent='block/leaves')
         block.with_item_model()
-        block.with_item_model()
-        block.with_tag('minecraft:leaves')
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', wood), 'afc:block/wood/sapling/%s' % wood)
@@ -143,23 +135,38 @@ def generate(rm: ResourceManager):
         # Loom
         block = rm.blockstate('afc:wood/planks/%s_loom' % wood, model='afc:block/wood/planks/%s_loom' % wood, variants=four_rotations('afc:block/wood/planks/%s_loom' % wood, (270, 180, None, 90)))
         block.with_block_model(textures={'texture': 'afc:block/wood/planks/%s' % wood, 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/loom')
-        block.with_item_model().with_lang(lang('%s loom', wood)).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang('%s loom', wood))
 
         # Bookshelf
-        slot_types = (('top_right', 2), ('bottom_mid', 4), ('top_left', 0), ('bottom_right', 5), ('bottom_left', 3), ('top_mid', 1))
         faces = (('east', 90), ('north', None), ('west', 270), ('south', 180))
-        occupations = (('empty', 'false'), ('occupied', 'true'))
-        shelf_mp = []
-        shelf_mp += [({'facing': face}, {'model': 'afc:block/wood/planks/%s_bookshelf' % wood, 'y': y, 'uvlock': True}) for face, y in faces]
-        shelf_mp += [({'AND': [{'facing': face}, {f'slot_{i}_occupied': is_occupied}]}, {'model': f'afc:block/wood/planks/{wood}_bookshelf_{occupation}_{slot_type}', 'y': y}) for face, y in faces for slot_type, i in slot_types for occupation, is_occupied in occupations]
-        block = rm.blockstate_multipart(('wood', 'planks', '%s_bookshelf' % wood), *shelf_mp)
-        rm.block_model(('wood', 'planks', '%s_bookshelf' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood}, parent='minecraft:block/chiseled_bookshelf')
+        parts = [
+                    ({'facing': face}, {'model': 'afc:block/wood/bookshelf/%s' % wood, 'y': y, 'uvlock': True})
+                    for face, y in faces
+                ] + [
+                    ({'AND': [{'facing': face}, {f'slot_{i}_occupied': is_occupied}]}, {'model': f'afc:block/wood/bookshelf/{wood}_{occupation}_{slot_type}', 'y': y})
+                    for face, y in faces
+                    for slot_type, i in (('top_right', 2), ('bottom_mid', 4), ('top_left', 0), ('bottom_right', 5), ('bottom_left', 3), ('top_mid', 1))
+                    for occupation, is_occupied in (('empty', 'false'), ('occupied', 'true'))
+                ]
+
+        block = rm.blockstate_multipart(('wood', 'bookshelf', wood), *parts)
         block.with_lang(lang('%s bookshelf', wood))
-        rm.block_model(('wood', 'planks', '%s_bookshelf_inventory' % wood), {'top': 'afc:block/wood/planks/%s_bookshelf_top' % wood, 'side': 'afc:block/wood/planks/%s_bookshelf_side' % wood, 'front': 'afc:block/wood/planks/%s_bookshelf_empty' % wood}, parent='minecraft:block/chiseled_bookshelf_inventory')
-        rm.item_model('afc:wood/planks/%s_bookshelf' % wood, parent='afc:block/wood/planks/%s_bookshelf_inventory' % wood, no_textures=True)
+        rm.block_model(('wood', 'bookshelf', wood), {
+            'top': 'afc:block/wood/bookshelf/top_%s' % wood,
+            'side': 'afc:block/wood/bookshelf/side_%s' % wood
+        }, parent='minecraft:block/chiseled_bookshelf')
+        rm.block_model('wood/bookshelf/%s_inventory' % wood, {
+            'top': 'afc:block/wood/bookshelf/top_%s' % wood,
+            'side': 'afc:block/wood/bookshelf/side_%s' % wood,
+            'front': 'afc:block/wood/bookshelf/%s_empty' % wood
+        }, parent='minecraft:block/chiseled_bookshelf_inventory')
+        rm.item_model('afc:wood/bookshelf/%s' % wood, parent='afc:block/wood/bookshelf/%s_inventory' % wood, no_textures=True)
+
         for slot in ('bottom_left', 'bottom_mid', 'bottom_right', 'top_left', 'top_mid', 'top_right'):
             for occupancy in ('empty', 'occupied'):
-                rm.block_model(('wood', 'planks', f'{wood}_bookshelf_{occupancy}_{slot}'), {'texture': f'afc:block/wood/planks/{wood}_bookshelf_{occupancy}'}, parent=f'minecraft:block/chiseled_bookshelf_{occupancy}_slot_{slot}')
+                rm.block_model(f'wood/bookshelf/{wood}_{occupancy}_{slot}', {
+                    'texture': f'afc:block/wood/bookshelf/{wood}_{occupancy}'
+                }, parent=f'minecraft:block/chiseled_bookshelf_{occupancy}_slot_{slot}')
 
         # Workbench
         rm.blockstate(('wood', 'planks', '%s_workbench' % wood)).with_block_model(parent='minecraft:block/cube', textures={
@@ -170,7 +177,7 @@ def generate(rm: ResourceManager):
             'west': 'afc:block/wood/planks/%s_workbench_front' % wood,
             'up': 'afc:block/wood/planks/%s_workbench_top' % wood,
             'down': 'afc:block/wood/planks/%s' % wood
-        }).with_item_model().with_lang(lang('%s Workbench', wood)).with_tag('afc:workbenches')
+        }).with_item_model().with_lang(lang('%s Workbench', wood))
 
         # Doors
         rm.item_model('afc:wood/planks/%s_door' % wood, 'afc:item/wood/planks/%s_door' % wood)
@@ -183,33 +190,42 @@ def generate(rm: ResourceManager):
         rm.block_model(log_fence_namespace + '_inventory', textures={'log': 'afc:block/wood/log/' + wood, 'planks': 'afc:block/wood/planks/' + wood}, parent='tfc:block/log_fence_inventory')
         rm.item_model('afc:wood/planks/' + wood + '_log_fence', parent='afc:block/wood/planks/' + wood + '_log_fence_inventory', no_textures=True)
 
+        # Support Beams
         texture = 'afc:block/wood/sheet/%s' % wood
         connection = 'afc:block/wood/support/%s_connection' % wood
         rm.blockstate_multipart(('wood', 'vertical_support', wood),
-            {'model': 'afc:block/wood/support/%s_vertical' % wood},
-            ({'north': True}, {'model': connection, 'y': 270}),
-            ({'east': True}, {'model': connection}),
-            ({'south': True}, {'model': connection, 'y': 90}),
-            ({'west': True}, {'model': connection, 'y': 180}),
-        ).with_tag('afc:support_beam').with_lang(lang('%s Support', wood))
+                                {'model': 'afc:block/wood/support/%s_vertical' % wood},
+                                ({'north': True}, {'model': connection, 'y': 270}),
+                                ({'east': True}, {'model': connection}),
+                                ({'south': True}, {'model': connection, 'y': 90}),
+                                ({'west': True}, {'model': connection, 'y': 180}),
+                                ).with_lang(lang('%s Support', wood))
+        rm.blockstate_multipart(('wood', 'horizontal_support', wood),
+                                {'model': 'afc:block/wood/support/%s_horizontal' % wood},
+                                ({'north': True}, {'model': connection, 'y': 270}),
+                                ({'east': True}, {'model': connection}),
+                                ({'south': True}, {'model': connection, 'y': 90}),
+                                ({'west': True}, {'model': connection, 'y': 180}),
+                                ).with_lang(lang('%s Support', wood))
 
         rm.block_model('afc:wood/support/%s_inventory' % wood, textures={'texture': texture}, parent='tfc:block/wood/support/inventory')
         rm.block_model('afc:wood/support/%s_vertical' % wood, textures={'texture': texture, 'particle': texture}, parent='tfc:block/wood/support/vertical')
         rm.block_model('afc:wood/support/%s_connection' % wood, textures={'texture': texture, 'particle': texture}, parent='tfc:block/wood/support/connection')
         rm.block_model('afc:wood/support/%s_horizontal' % wood, textures={'texture': texture, 'particle': texture}, parent='tfc:block/wood/support/horizontal')
-        rm.item_model(('wood', 'support', wood), no_textures=True, parent='afc:block/wood/support/%s_inventory' % wood).with_lang(lang('%s Support', wood))
+        rm.item_model(('wood', 'support', wood), no_textures=True, parent='tfc:block/wood/support/%s_inventory' % wood).with_lang(lang('%s Support', wood))
 
         for chest in ('chest', 'trapped_chest'):
-            rm.blockstate(('wood', chest, wood), model='afc:block/wood/%s/%s' % (chest, wood)).with_lang(lang('%s %s', wood, chest)).with_tag('minecraft:features_cannot_replace').with_tag('minecraft:lava_pool_stone_cannot_replace')
+            rm.blockstate(('wood', chest, wood), model='afc:block/wood/%s/%s' % (chest, wood)).with_lang(lang('%s %s', wood, chest))
             rm.block_model(('wood', chest, wood), textures={'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
             rm.item_model(('wood', chest, wood), {'particle': 'afc:block/wood/planks/%s' % wood}, parent='minecraft:item/chest')
 
         rm.block_model('wood/sluice/%s_upper' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_upper')
         rm.block_model('wood/sluice/%s_lower' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_lower')
+        rm.blockstate(('wood', 'sluice', wood), variants={**four_rotations('afc:block/wood/sluice/%s_upper' % wood, (90, 0, 180, 270), suffix=',upper=true'), **four_rotations('afc:block/wood/sluice/%s_lower' % wood, (90, 0, 180, 270), suffix=',upper=false')}).with_lang(lang('%s sluice', wood))
         rm.item_model(('wood', 'sluice', wood), parent='afc:block/wood/sluice/%s_lower' % wood, no_textures=True)
 
         rm.blockstate(('wood', 'planks', '%s_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
-        rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood)).with_tag('minecraft:wall_signs')
+        rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood))
         for metal, metal_data in METALS.items():
             if 'utility' in metal_data.types:
                 for variant in ('hanging_sign', 'wall_hanging_sign'):
@@ -241,11 +257,11 @@ def generate(rm: ResourceManager):
         # Lecterns
         block = rm.blockstate('afc:wood/lectern/%s' % wood, variants=four_rotations('afc:block/wood/lectern/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'bottom': 'afc:block/wood/planks/%s' % wood, 'base': 'afc:block/wood/lectern/%s/base' % wood, 'front': 'afc:block/wood/lectern/%s/front' % wood, 'sides': 'afc:block/wood/lectern/%s/sides' % wood, 'top': 'afc:block/wood/lectern/%s/top' % wood, 'particle': 'afc:block/wood/lectern/%s/sides' % wood}, parent='minecraft:block/lectern')
-        block.with_item_model().with_lang(lang("%s lectern" % wood)).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang("%s lectern" % wood))
         # Scribing Table
         block = rm.blockstate('afc:wood/scribing_table/%s' % wood, variants=four_rotations('afc:block/wood/scribing_table/%s' % wood, (90, None, 180, 270)))
         block.with_block_model(textures={'top': 'afc:block/wood/scribing_table/%s' % wood, 'leg': 'afc:block/wood/log/%s' % wood, 'side' : 'afc:block/wood/planks/%s' % wood, 'misc': 'tfc:block/wood/scribing_table/scribing_paraphernalia', 'particle': 'afc:block/wood/planks/%s' % wood}, parent='tfc:block/scribing_table')
-        block.with_item_model().with_lang(lang("%s scribing table" % wood)).with_tag('minecraft:mineable/axe')
+        block.with_item_model().with_lang(lang("%s scribing table" % wood))
         # Sewing Table
         block = rm.blockstate('wood/sewing_table/%s' % wood, variants=four_rotations('afc:block/wood/sewing_table/%s' % wood, (90, None, 180, 270))).with_item_model()
         rm.block_model(('wood', 'sewing_table', wood), {'0': 'afc:block/wood/log/%s' % wood, '1': 'afc:block/wood/planks/%s' % wood}, 'tfc:block/sewing_table')
@@ -366,6 +382,7 @@ def generate(rm: ResourceManager):
         # Twigs
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))
+        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         prefix = 'afc'
         wood_or_fig = wood
         if wood == 'rainbow_eucalyptus':
@@ -386,8 +403,16 @@ def generate(rm: ResourceManager):
             prefix = 'tfc'
         else:
             wood_top = wood
-        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
-        rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
+        for variant in ('log', 'wood'):
+            block = rm.blockstate(('wood', variant, wood), variants={
+                'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
+                'axis=z': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90},
+                'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
+            }, use_default_model=False)
+
+            end = '%s:block/wood/%s/%s' % (prefix, variant.replace('log', 'log_top').replace('wood', 'log'), wood_top)
+            side = '%s:block/wood/%s/%s' % (prefix, variant.replace('wood', 'log'), wood_or_fig)
+            block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
 
     for wood in ANCIENT_LOGS.keys():
         base_wood = wood.replace('ancient_', '')
@@ -426,7 +451,7 @@ def generate(rm: ResourceManager):
 
 
 def flower_pot_cross(rm: ResourceManager, simple_name: str, name: str, model: str, texture: str):
-    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name)).with_tag('minecraft:flower_pots')
+    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name))
     rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/loam'})
 
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
