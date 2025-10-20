@@ -1,0 +1,15 @@
+{
+	"name": "制作橡胶",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "将乳胶与硫粉一起在陶罐中煮沸，可得到固体橡胶。要是它还有更多妙用就好了……"
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}
+
