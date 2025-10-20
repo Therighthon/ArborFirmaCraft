@@ -50,6 +50,7 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
 
     public static final IndirectHashCollection<Block, TreeTapRecipe> CACHE = IndirectHashCollection.createForRecipe(recipe -> recipe.getIngredient().blocks(), AFCRecipeTypes.TREE_TAPPING_RECIPE);
 
+    @Nullable
     public static TreeTapRecipe getRecipe(BlockState state)
     {
         for (TreeTapRecipe recipe : CACHE.getAll(state.getBlock()))
@@ -133,10 +134,10 @@ public class TreeTapRecipe implements ISimpleRecipe<TapInventory>
         public static final MapCodec<TreeTapRecipe> CODEC = RecordCodecBuilder.mapCodec(i -> i.group(
             FluidStack.CODEC.fieldOf("result_fluid").forGetter(c -> c.output),
             BlockIngredient.CODEC.fieldOf("input_block").forGetter(c -> c.ingredient),
-            Codec.BOOL.fieldOf("require_natural_log").forGetter(c -> c.requireNaturalLog),
-            Codec.BOOL.fieldOf("spring_only").forGetter(c -> c.springOnly),
-            Codec.FLOAT.fieldOf("minimum_temperature").forGetter(c -> c.minTemp),
-            Codec.FLOAT.fieldOf("maximum_temperature").forGetter(c -> c.maxTemp)
+            Codec.BOOL.optionalFieldOf("requires_natural_log", Boolean.TRUE).forGetter(c -> c.requireNaturalLog),
+            Codec.BOOL.optionalFieldOf("spring_only", Boolean.FALSE).forGetter(c -> c.springOnly),
+            Codec.FLOAT.optionalFieldOf("minimum_temperature", Float.MIN_VALUE).forGetter(c -> c.minTemp),
+            Codec.FLOAT.optionalFieldOf("maximum_temperature", Float.MAX_VALUE).forGetter(c -> c.maxTemp)
             ).apply(i, TreeTapRecipe::new)
         );
 

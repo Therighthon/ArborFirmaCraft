@@ -1,6 +1,5 @@
 package com.therighthon.afc.common.blockentities;
 
-import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.TapBlock;
 import com.therighthon.afc.common.recipe.TreeTapRecipe;
@@ -9,7 +8,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.capabilities.Capabilities;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -22,7 +20,6 @@ import net.dries007.tfc.client.particle.FluidParticleOption;
 import net.dries007.tfc.client.particle.TFCParticles;
 import net.dries007.tfc.common.blocks.wood.BranchDirection;
 import net.dries007.tfc.common.blocks.wood.LogBlock;
-import net.dries007.tfc.common.fluids.FluidHelpers;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.Calendars;
 import net.dries007.tfc.util.calendar.Month;
@@ -100,8 +97,6 @@ public class TapBlockEntity extends BlockEntity
         //Every 20 ticks...
         if (level.getGameTime() % 20 == 0)
         {
-            final BlockPos pourPos = pos.below();
-            final BlockEntity blockEntity = level.getBlockEntity(pourPos);
 
             //Get the position of the log block
             BlockPos logPos = switch (facing)
@@ -117,20 +112,18 @@ public class TapBlockEntity extends BlockEntity
             BlockState logState = level.getBlockState(logPos);
             final TreeTapRecipe recipe = TreeTapRecipe.getRecipe(logState);
 
-            // TODO: Remove all error messages that shouldn't be in on release
-            AFC.LOGGER.error("Every 20 ticks");
-
             if (recipe != null)
             {
-                AFC.LOGGER.error("Found recipe");
                 final int dripPeriod = 20 * getTapCount(level, logPos);
 
                 if (level.getGameTime() % dripPeriod == 0)
                 {
+                    final BlockPos pourPos = pos.below();
+                    final BlockEntity blockEntity = level.getBlockEntity(pourPos);
+
                     //Needs to check if the block entity is removed every tick while pouring to avoid a crash
                     if (blockEntity != null)
                     {
-                        AFC.LOGGER.error("Found block entity");
                         final @Nullable IFluidHandler fluidHandler = level.getCapability(Capabilities.FluidHandler.BLOCK, pourPos, Direction.UP);
 
                         //Check that the block the tap is on is natural, if required by the recipe. The idea is to support blocks other than TFC logs
@@ -144,14 +137,11 @@ public class TapBlockEntity extends BlockEntity
                             && (!recipe.springOnly() || isSpring(level, pos))
                             && hasValidTrunk(level, logPos, logState))
                         {
-
-                            AFC.LOGGER.error("Passed checks");
                             final FluidStack fluidStack = recipe.getOutput();
 
                             if (level instanceof ServerLevel server)
                             {
-                                AFC.LOGGER.error("On server");
-                                fluidHandler.fill(fluidStack, IFluidHandler.FluidAction.SIMULATE);
+                                fluidHandler.fill(fluidStack, IFluidHandler.FluidAction.EXECUTE);
 
                                 final double offset = -0.2;
                                 final double dx = facing.getStepX() > 0 ? offset : facing.getStepX() < 0 ? -offset : 0;

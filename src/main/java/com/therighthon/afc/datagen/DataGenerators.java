@@ -36,6 +36,7 @@ public class DataGenerators
         BlockTagsProvider blockTagsProvider = new AFCBlockTagProvider(packOutput, lookupProvider, AFC.MOD_ID, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagsProvider);
         generator.addProvider(event.includeServer(), new AFCItemTagProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), AFC.MOD_ID, existingFileHelper));
+        generator.addProvider(event.includeServer(), new AFCFluidTagProvider(packOutput, lookupProvider, AFC.MOD_ID, existingFileHelper));
 
         // Recipes
         generator.addProvider(event.includeServer(), new AFCRecipeProvider(packOutput, lookupProvider));

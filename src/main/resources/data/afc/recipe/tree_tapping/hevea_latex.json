@@ -1,0 +1,14 @@
+{
+  "type": "afc:tree_tapping",
+  "input_block": [
+    "afc:wood/log/hevea"
+  ],
+  "result_fluid": {
+    "id": "afc:latex",
+	"amount": 2
+  },
+  "minimum_temperature": 14,
+  "maximum_temperature": 50,
+  "spring_only": false,
+  "requires_natural_log": true
+}
