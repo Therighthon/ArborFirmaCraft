@@ -425,11 +425,11 @@ def forest_config(rm: ResourceManager, min_rain: float, max_rain: float, min_tem
         cfg['groundcover'] += [{'block': 'tfc:groundcover/pinecone'}]
     if basic_wood != 'palm':
         cfg['groundcover'] += [{'block': '%s:wood/fallen_leaves/%s' % (leaf_prefix, tree)}]
-    if tree not in ('acacia', 'willow', 'gum_arabic', 'baobab'): # TODO: Expand?
+    if tree not in ('acacia', 'willow', 'gum_arabic', 'baobab', 'blackwood', 'mpingo_blackwood'):
         cfg['fallen_log'] = '%s:wood/log/%s' % (wood_prefix, basic_wood)
     else:
         cfg['fallen_tree_chance'] = 0
-    if tree not in ('palm', 'rosewood', 'sycamore'): # TODO: Expand?
+    if tree not in ('palm', 'rosewood', 'sycamore'):
         cfg['bush_log'] = utils.block_state('%s:wood/wood/%s[natural=true,axis=y]' % (wood_prefix, basic_wood))
         cfg['bush_leaves'] = '%s:wood/leaves/%s' % (leaf_prefix, tree)
     if old_growth:

@@ -484,7 +484,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         else:
             wood_top = wood
 
-        block.with_block_model({'side': 'tfc:block/wood/log/%s' % wood_or_fig, 'top': 'tfc:block/wood/log_top/%s' % wood_or_fig}, parent='tfc:block/groundcover/twig')
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': 'afc:block/wood/log_top/%s' % wood_top}, parent='tfc:block/groundcover/twig')
         for variant in ('log', 'wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
                 'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
