@@ -19,7 +19,7 @@ public class FLCompatBlocks
 {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
 
-    //TODO: Frmalife
+    //TODO: Firmalife
 //    public static final Map<AFCWood, TFCBlocks.Id<Block>> FOOD_SHELVES = Helpers.mapOf(AFCWood.class, wood -> AFCBlocks.register("wood/food_shelf/" + wood.getSerializedName(), () -> new FoodShelfBlock(FLBlocks.shelfProperties().mapColor(wood.woodColor()))));
 //    public static final Map<AFCWood, TFCBlocks.Id<Block>> HANGERS = Helpers.mapOf(AFCWood.class, wood -> AFCBlocks.register("wood/hanger/" + wood.getSerializedName(), () -> new HangerBlock(FLBlocks.hangerProperties().mapColor(wood.woodColor()))));
 //    public static final Map<AFCWood, TFCBlocks.Id<Block>> JARBNETS = Helpers.mapOf(AFCWood.class, wood -> AFCBlocks.register("wood/jarbnet/" + wood.getSerializedName(), () -> new JarbnetBlock(FLBlocks.jarbnetProperties().mapColor(wood.woodColor()))));

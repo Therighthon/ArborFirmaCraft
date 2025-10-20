@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "tfc:metal/chain/bronze"
+    },
+    "L": {
+      "item": "afc:wood/lumber/cypress"
+    }
+  },
+  "pattern": [
+    "C C",
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "count": 3,
+    "id": "afc:wood/hanging_sign/bronze/cypress"
+  }
+}

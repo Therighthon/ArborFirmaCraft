@@ -103,7 +103,6 @@ public enum AFCWood implements RegistryWood
         return tree;
     }
 
-    // TODO: Make sure this is actually what should happen
     public Supplier<Integer> ticksToGrow() {
         return () -> daysToGrow() * Calendar.CALENDAR_TICKS_IN_DAY;
     }

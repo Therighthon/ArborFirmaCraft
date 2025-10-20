@@ -80,13 +80,6 @@ public final class AFC
 //                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
             }
         }
-
-        //TODO: Whatever replaces this
-        final IEventBus forgeBus = NeoForge.EVENT_BUS;
-
-        //TODO: Maybe re-enable, maybe was causing failure to start
-//         Register ourselves for server and other game events we are interested in
-//        forgeBus.register(this);
     }
 
     private void setup(final FMLCommonSetupEvent event)

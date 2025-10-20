@@ -34,7 +34,6 @@ repositories {
             includeGroup "curse.maven"
         }
     }
-    //TODO for TFC and FL?
 }
 
 base {

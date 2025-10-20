@@ -89,11 +89,10 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
                 .input(blocks.get(Wood.BlockType.AXLE))
                 .input(ingredientOf(Metal.STEEL, Metal.ItemType.INGOT))
                 .shapeless(blocks.get(Wood.BlockType.BLADED_AXLE));
-            // TODO: Boats
-//            recipe()
-//                .input('P', planks)
-//                .pattern("P P", "PPP")
-//                .shaped(AFCItems.BOATS.get(wood));
+            recipe()
+                .input('P', planks)
+                .pattern("P P", "PPP")
+                .shaped(AFCItems.BOATS.get(wood));
             recipe()
                 .input('L', lumber)
                 .input('S', Tags.Items.RODS_WOODEN)
@@ -249,16 +248,15 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
             recipe().to2x2(blocks.get(Wood.BlockType.LOG), blocks.get(Wood.BlockType.WOOD), 3);
             recipe().to2x2(planks, blocks.get(Wood.BlockType.WORKBENCH), 1);
 
-            // TODO: Hanging Signs
-//            for (Metal metal : Metal.values())
-//                if (metal.allParts())
-//                {
-//                    recipe()
-//                        .input('L', AFCItems.LUMBER.get(wood))
-//                        .input('C', ingredientOf(metal, Metal.BlockType.CHAIN))
-//                        .pattern("C C", "LLL", "LLL")
-//                        .shaped(AFCItems.HANGING_SIGNS.get(wood).get(metal), 3);
-//                }
+            for (Metal metal : Metal.values())
+                if (metal.allParts())
+                {
+                    recipe()
+                        .input('L', AFCItems.LUMBER.get(wood))
+                        .input('C', ingredientOf(metal, Metal.BlockType.CHAIN))
+                        .pattern("C C", "LLL", "LLL")
+                        .shaped(AFCItems.HANGING_SIGNS.get(wood).get(metal), 3);
+                }
         }
 
         // Unique Logs
