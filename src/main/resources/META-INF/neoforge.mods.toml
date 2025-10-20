@@ -11,6 +11,8 @@ authors="Therighthon" #optional
 description='''
 An addon for TerraFirmaCraft centered around new species of trees.
 '''
+[[mixins]]
+config="afc.mixins.json"
 [[dependencies.afc]]
     modId="tfc"
     mandatory=true

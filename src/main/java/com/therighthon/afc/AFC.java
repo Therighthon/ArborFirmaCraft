@@ -6,9 +6,9 @@ import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.recipe.AFCRecipeSerializers;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
+import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
 import java.util.HashSet;
 import java.util.Set;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import com.mojang.logging.LogUtils;
 import com.therighthon.afc.common.blocks.AFCBlocks;
@@ -17,7 +17,6 @@ import com.therighthon.afc.common.items.AFCItems;
 import com.therighthon.afc.event.ModEventClientBusEvents;
 import com.therighthon.afc.event.ModEvents;
 
-import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.neoforged.api.distmarker.Dist;
@@ -30,7 +29,6 @@ import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
-import net.dries007.tfc.client.ClientEventHandler;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
@@ -44,10 +42,7 @@ public final class AFC
 
     public AFC(ModContainer modContainer, IEventBus eventBus)
     {
-        // Register the setup method for modloading
-
-        //TODO: Try un-commenting
-//        eventBus.addListener(this::setup);
+        eventBus.addListener(this::setup);
 
         // Data overload
         eventBus.addListener(ModEvents::onPackFinder);
@@ -57,8 +52,7 @@ public final class AFC
         AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUID_TYPES.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
-        //TODO: Boats
-//        AFCEntities.ENTITIES.register(eventBus);
+        AFCEntities.ENTITIES.register(eventBus);
         AFCBlockEntities.BLOCK_ENTITIES.register(eventBus);
         AFCRecipeTypes.RECIPE_TYPES.register(eventBus);
         AFCRecipeSerializers.RECIPE_SERIALIZERS.register(eventBus);
@@ -105,12 +99,6 @@ public final class AFC
         });
     }
 
-    //TODO: Maybe need this?
-//    public static ResourceLocation treeIdentifier(String path)
-//    {
-//        return new ResourceLocation("tfc", path);
-//    }
-
     private static void modifyBlockEntityTypes()
     {
         modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
@@ -125,6 +113,8 @@ public final class AFC
         modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
         modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
         modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
+        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN);
+        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN);
     }
 
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
@@ -134,11 +124,11 @@ public final class AFC
 
     private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks)
     {
-        Set<Block> blocks = ((BlockEntityTypeAccessor) (Object) type).accessor$getValidBlocks();
+        Set<Block> blocks = type.getValidBlocks();
         blocks = new HashSet<>(blocks);
 
-        blocks.addAll(extraBlocks.collect(Collectors.toList())); //Autocompleted, could cause problems?
-        ((BlockEntityTypeAccessor) (Object) type).accessor$setValidBlocks(blocks);
+        blocks.addAll(extraBlocks.toList());
+        ((BlockEntityTypeAccessor) type).accessor$setValidBlocks(blocks);
     }
 
 }
