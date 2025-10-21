@@ -24,7 +24,7 @@
     "normal_tree": "tfc:tree/blackwood",
     "dead_tree": "tfc:tree/blackwood_dead",
     "soil_disc": "tfc:duff_disc",
-    "fallen_log": "tfc:wood/log/blackwood",
+    "fallen_tree_chance": 8,
     "bush_log": {
       "Name": "tfc:wood/wood/blackwood",
       "Properties": {
@@ -34,7 +34,6 @@
     },
     "bush_leaves": "tfc:wood/leaves/blackwood",
     "old_growth_tree": "tfc:tree/blackwood_large",
-    "dead_chance": 1,
-    "fallen_tree_chance": 8
+    "dead_chance": 1
   }
 }

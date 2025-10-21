@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "item/generated",
   "textures": {
-    "layer0": "afc:item/wood/sign/ipe"
+    "layer0": "afc:item/wood/sign/ipe",
+    "layer1": "afc:item/wood/sign_head_ipe",
+    "layer2": "tfc:item/wood/sign_head_overlay"
   }
 }

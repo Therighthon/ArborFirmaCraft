@@ -138,6 +138,24 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
         flower_pot_cross(rm, '%s sapling' % wood, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood)
 
+        # Signs + Hanging Signs
+        rm.item_model(('wood', 'sign', wood), 'afc:item/wood/sign/%s' % wood, 'afc:item/wood/sign_head_%s' % wood, 'tfc:item/wood/sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''))
+        for metal in SIGN_METALS:
+            rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign_head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''), 'tfc:item/metal/hanging_sign/%s' % metal).with_lang(lang('%s %s hanging sign', metal, wood))
+
+        rm.block_model('wood/sign/%s_particle' % wood, {
+            'particle': 'afc:block/wood/planks/%s' % wood
+        }, parent=None)
+
+        for variant in ('sign', 'wall_sign'):
+            block = rm.blockstate(('wood', variant, wood), model='afc:block/wood/sign/%s_particle' % wood)
+            block.with_lang(lang('%s %s', wood, variant))
+
+        for metal in SIGN_METALS:
+            for variant in ('hanging_sign', 'wall_hanging_sign'):
+                block = rm.blockstate(('wood', variant, metal, wood), model='afc:block/wood/sign/%s_particle' % wood)
+                block.with_lang(lang('%s %s %s', metal, wood, variant))
+
         # Planks and variant blocks
         block = rm.block(('wood', 'planks', wood))
         block.with_blockstate()
@@ -299,16 +317,6 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         rm.block_model('wood/sluice/%s_lower' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_lower')
         rm.blockstate(('wood', 'sluice', wood), variants={**four_rotations('afc:block/wood/sluice/%s_upper' % wood, (90, 0, 180, 270), suffix=',upper=true'), **four_rotations('afc:block/wood/sluice/%s_lower' % wood, (90, 0, 180, 270), suffix=',upper=false')}).with_lang(lang('%s sluice', wood))
         rm.item_model(('wood', 'sluice', wood), parent='afc:block/wood/sluice/%s_lower' % wood, no_textures=True)
-
-        rm.blockstate(('wood', 'planks', '%s_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_block_model({'particle': 'afc:block/wood/planks/%s' % wood}, parent=None)
-        rm.blockstate(('wood', 'planks', '%s_wall_sign' % wood), model='afc:block/wood/planks/%s_sign' % wood).with_lang(lang('%s Sign', wood)).with_lang(lang('%s Sign', wood))
-        for metal, metal_data in METALS.items():
-            if 'utility' in metal_data.types:
-                for variant in ('hanging_sign', 'wall_hanging_sign'):
-                    rm.blockstate(('wood', 'planks', variant, metal, wood), model='afc:block/wood/planks/%s_sign_particle' % wood).with_lang(lang('%s %s %s', metal, wood, variant))
-        for metal, metal_data in METALS.items():
-            if 'utility' in metal_data.types:
-                rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign/head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('mahogany', 'cypress') else ''), 'tfc:item/metal/hanging_sign/%s' % metal).with_lang(lang('%s %s hanging sign', metal, wood))
 
         # Barrels
         texture = 'afc:block/wood/planks/%s' % wood

@@ -1,6 +1,9 @@
 package com.therighthon.afc.event;
 
 import com.therighthon.afc.AFCHelpers;
+import com.therighthon.afc.client.render.blockentities.AFCHangingSignBlockEntityRenderer;
+import com.therighthon.afc.client.render.blockentities.AFCSignBlockEntityRenderer;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.function.Function;
@@ -160,20 +163,13 @@ public final class ModEventClientBusEvents
             event.registerLayerDefinition(TFCBoatRenderer.boatName(wood.getSerializedName()), () -> boatLayer);
             event.registerLayerDefinition(TFCChestBoatRenderer.chestBoatName(wood.getSerializedName()), () -> chestLayer);
         }
-
     }
 
-    //Equiv to TFC ClientEventHandler.registerEntityRenderers
-    public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
+    public static void registerEntityLayers(EntityRenderersEvent.RegisterRenderers event)
     {
-        for (AFCWood wood : AFCWood.VALUES)
-        {
-            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
-            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
-        }
-//TODO: Hanging Signs
-//        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
-//        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
+        // Hanging Signs
+        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

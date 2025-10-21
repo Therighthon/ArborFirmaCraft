@@ -2,6 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "item/generated",
   "textures": {
-    "layer0": "afc:item/wood/sign/cypress"
+    "layer0": "afc:item/wood/sign/cypress",
+    "layer1": "afc:item/wood/sign_head_cypress",
+    "layer2": "tfc:item/wood/sign_head_overlay"
   }
 }

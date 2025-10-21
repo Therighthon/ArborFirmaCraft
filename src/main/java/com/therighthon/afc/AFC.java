@@ -31,6 +31,7 @@ import org.slf4j.Logger;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Metal;
 
 @Mod(AFC.MOD_ID)
 public final class AFC
@@ -68,7 +69,7 @@ public final class AFC
         {
             eventBus.addListener(ModEventClientBusEvents::clientSetup);
             eventBus.addListener(ModEventClientBusEvents::registerClientReloadListeners);
-            eventBus.addListener(ModEventClientBusEvents::onEntityRenderers);
+            eventBus.addListener(ModEventClientBusEvents::registerEntityLayers);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(ModEventClientBusEvents::onLayers);
@@ -106,8 +107,7 @@ public final class AFC
         modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
         modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
         modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
-        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN);
-        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN);
+        modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
     }
 
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)

@@ -29,6 +29,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.Nullable;
 
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.TFCCeilingHangingSignBlock;
@@ -60,14 +61,15 @@ public class AFCBlocks
 
     public static Supplier<Block> createWood(AFCWood afcWood, Wood.BlockType blockType)
     {
-        if (blockType == Wood.BlockType.SIGN)
-        {
-            return () -> new TFCStandingSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
-        }
-        if (blockType == Wood.BlockType.WALL_SIGN)
-        {
-            return () -> new TFCWallSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
-        }
+        // TODO: Hopefully delete
+//        if (blockType == Wood.BlockType.SIGN)
+//        {
+//            return () -> new TFCStandingSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
+//        }
+//        if (blockType == Wood.BlockType.WALL_SIGN)
+//        {
+//            return () -> new TFCWallSignBlock(ExtendedProperties.of(MapColor.WOOD).sound(SoundType.WOOD).instrument(NoteBlockInstrument.BASS).noCollission().strength(1.0F).dropsLike(afcWood.getBlock(Wood.BlockType.SIGN)).flammableLikePlanks().blockEntity(AFCBlockEntities.SIGN), afcWood.getVanillaWoodType());
+//        }
         return blockType.create(afcWood);
     }
 
@@ -141,7 +143,7 @@ public class AFCBlocks
         return Helpers.mapOf(AFCWood.class, wood ->
             Helpers.mapOf(Metal.class, Metal::allParts, metal -> register(
                 "wood/planks/" + variant + "/" + metal.getSerializedName() + "/" + wood.getSerializedName(),
-                () -> factory.apply(ExtendedProperties.of(wood.woodColor()).sound(SoundType.WOOD).noCollission().strength(1F).flammableLikePlanks().blockEntity(AFCBlockEntities.HANGING_SIGN).ticks(SignBlockEntity::tick), wood.getVanillaWoodType()),
+                () -> factory.apply(ExtendedProperties.of(wood.woodColor()).sound(SoundType.WOOD).noCollission().strength(1F).flammableLikePlanks().blockEntity(TFCBlockEntities.HANGING_SIGN).ticks(SignBlockEntity::tick), wood.getVanillaWoodType()),
                 (Function<B, BlockItem>) null)
             )
         );
