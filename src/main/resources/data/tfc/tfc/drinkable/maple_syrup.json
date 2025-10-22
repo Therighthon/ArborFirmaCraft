@@ -1,0 +1,16 @@
+{
+  "effects": [
+    {
+      "amplifier": 1,
+      "chance": 1,
+      "duration": 2400,
+      "effect": "minecraft:speed"
+    }
+  ],
+  "ingredient": [
+    {
+      "fluid": "afc:maple_syrup"
+    }
+  ],
+  "water": 3.0
+}

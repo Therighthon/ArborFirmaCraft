@@ -1,0 +1,11 @@
+{
+  "ingredient": [
+    {
+      "fluid": "afc:maple_sap"
+    },
+    {
+      "fluid": "afc:maple_sap_concentrate"
+    }
+  ],
+  "water": 10.0
+}
