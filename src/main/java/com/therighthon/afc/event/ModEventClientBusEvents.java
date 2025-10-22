@@ -47,6 +47,7 @@ import net.dries007.tfc.client.extensions.ItemRendererExtension;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.client.render.blockentity.ChestItemRenderer;
@@ -168,8 +169,9 @@ public final class ModEventClientBusEvents
     public static void registerEntityLayers(EntityRenderersEvent.RegisterRenderers event)
     {
         // Hanging Signs
-        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
-        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
+        // The trick here ended up being that we can register our own block entity renderers for existing block entities, and only apply them to our blocks
+        event.registerBlockEntityRenderer(TFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)

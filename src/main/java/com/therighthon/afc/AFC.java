@@ -108,6 +108,20 @@ public final class AFC
         modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
         modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
         modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
+        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN);
+        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN);
+
+        for (Metal metal : Metal.values())
+        {
+            if (metal.allParts())
+            {
+                for (AFCWood wood : AFCWood.values())
+                {
+                    modifyBlockEntityType(TFCBlockEntities.HANGING_SIGN.get(), Stream.of(AFCBlocks.CEILING_HANGING_SIGNS.get(wood).get(metal).get()));
+                    modifyBlockEntityType(TFCBlockEntities.HANGING_SIGN.get(), Stream.of(AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal).get()));
+                }
+            }
+        }
     }
 
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
@@ -123,5 +137,4 @@ public final class AFC
         blocks.addAll(extraBlocks.toList());
         ((BlockEntityTypeAccessor) type).accessor$setValidBlocks(blocks);
     }
-
 }

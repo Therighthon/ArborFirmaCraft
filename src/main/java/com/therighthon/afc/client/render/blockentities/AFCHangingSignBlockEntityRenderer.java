@@ -21,6 +21,8 @@ import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.client.RenderHelpers;
+import net.dries007.tfc.client.render.blockentity.TFCHangingSignBlockEntityRenderer;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.mixin.client.accessor.SignRendererAccessor;
 import net.dries007.tfc.util.Helpers;
 
@@ -39,6 +41,19 @@ public class AFCHangingSignBlockEntityRenderer extends HangingSignRenderer
 
             map.accept(block, model);
             map.accept(AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal), model);
+        }));
+        TFCBlocks.CEILING_HANGING_SIGNS.forEach((wood, m) -> m.forEach((metal, block) -> {
+            final var model = new AFCHangingSignBlockEntityRenderer.Provider<Function<BlockEntityRendererProvider.Context, HangingSignModel>>(
+                new Material(
+                    Sheets.SIGN_SHEET,
+                    Helpers.identifier("entity/signs/hanging/" + metal.getSerializedName() + "/" + wood.getSerializedName())
+                ),
+                Helpers.resourceLocation(wood.getSerializedName() + ".png").withPrefix("textures/gui/hanging_signs/" + metal.getSerializedName() + "/"),
+                context -> new HangingSignModel(context.bakeLayer(RenderHelpers.layerId("hanging_sign/" + wood.getSerializedName())))
+            );
+
+            map.accept(block, model);
+            map.accept(TFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal), model);
         }));
     });
 

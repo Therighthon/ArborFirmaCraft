@@ -139,9 +139,12 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         flower_pot_cross(rm, '%s sapling' % wood, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood)
 
         # Signs + Hanging Signs
-        rm.item_model(('wood', 'sign', wood), 'afc:item/wood/sign/%s' % wood, 'afc:item/wood/sign_head_%s' % wood, 'tfc:item/wood/sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''))
+        rm.item_model(('wood', 'sign', wood), 'afc:item/wood/sign/%s' % wood, 'tfc:item/wood/sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''))
         for metal in SIGN_METALS:
-            rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign_head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''), 'tfc:item/metal/hanging_sign/%s' % metal).with_lang(lang('%s %s hanging sign', metal, wood))
+            rm.item_model(('wood', 'hanging_sign', metal, wood), 'afc:item/wood/hanging_sign/head_%s' % wood, 'tfc:item/wood/hanging_sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''), 'tfc:item/metal/hanging_sign/%s' % metal)
+            metal_name = str.title(metal)
+            wood_name = str.title(wood)
+            rm.lang("block.afc.wood.planks.hanging_sign.%s.%s" % (metal, wood), "%s %s Hanging Sign" % (metal_name.replace("_", " "), wood_name.replace("_", " ")))
 
         rm.block_model('wood/sign/%s_particle' % wood, {
             'particle': 'afc:block/wood/planks/%s' % wood

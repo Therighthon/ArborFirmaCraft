@@ -3,7 +3,6 @@
   "parent": "item/generated",
   "textures": {
     "layer0": "afc:item/wood/sign/tualang",
-    "layer1": "afc:item/wood/sign_head_tualang",
-    "layer2": "tfc:item/wood/sign_head_overlay"
+    "layer1": "tfc:item/wood/sign_head_overlay"
   }
 }

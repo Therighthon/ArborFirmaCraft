@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.WoodType;
 
 import net.dries007.tfc.client.RenderHelpers;
+import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.mixin.client.accessor.SignRendererAccessor;
 import net.dries007.tfc.util.Helpers;
 
@@ -25,6 +26,11 @@ public class AFCSignBlockEntityRenderer extends SignRenderer
             map.accept(
                 wood::getVanillaWoodType,
                 context -> new SignRenderer.SignModel(context.bakeLayer(AFCHelpers.layerId("sign/" + wood.getSerializedName())))
+            );
+        for (Wood wood : Wood.values())
+            map.accept(
+                wood::getVanillaWoodType,
+                context -> new SignModel(context.bakeLayer(RenderHelpers.layerId("sign/" + wood.getSerializedName())))
             );
     });
 
