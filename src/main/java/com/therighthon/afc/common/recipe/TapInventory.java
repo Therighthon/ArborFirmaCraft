@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.state.BlockState;
 
 import net.dries007.tfc.common.recipes.ingredients.BlockIngredient;
 
-//TODO: Tree taps - implementing RecipeInput may not be the move here?
 public class TapInventory implements RecipeInput
 {
     protected final BlockState state;
