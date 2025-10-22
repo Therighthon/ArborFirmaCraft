@@ -2,6 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "item/generated",
   "textures": {
-    "layer0": "afc:item/wood/sign/teak"
+    "layer0": "afc:item/wood/sign/teak",
+    "layer1": "tfc:item/wood/sign_head_overlay"
   }
 }

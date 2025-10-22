@@ -1,6 +1,9 @@
 package com.therighthon.afc.event;
 
 import com.therighthon.afc.AFCHelpers;
+import com.therighthon.afc.client.render.blockentities.AFCHangingSignBlockEntityRenderer;
+import com.therighthon.afc.client.render.blockentities.AFCSignBlockEntityRenderer;
+import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.function.Function;
@@ -44,6 +47,7 @@ import net.dries007.tfc.client.extensions.ItemRendererExtension;
 import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.client.render.blockentity.ChestItemRenderer;
@@ -160,20 +164,14 @@ public final class ModEventClientBusEvents
             event.registerLayerDefinition(TFCBoatRenderer.boatName(wood.getSerializedName()), () -> boatLayer);
             event.registerLayerDefinition(TFCChestBoatRenderer.chestBoatName(wood.getSerializedName()), () -> chestLayer);
         }
-
     }
 
-    //Equiv to TFC ClientEventHandler.registerEntityRenderers
-    public static void onEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
+    public static void registerEntityLayers(EntityRenderersEvent.RegisterRenderers event)
     {
-        for (AFCWood wood : AFCWood.VALUES)
-        {
-            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
-            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
-        }
-//TODO: Hanging Signs
-//        event.registerBlockEntityRenderer(AFCBlockEntities.SIGN.get(), SignRenderer::new);
-//        event.registerBlockEntityRenderer(AFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
+        // Hanging Signs
+        // The trick here ended up being that we can register our own block entity renderers for existing block entities, and only apply them to our blocks
+        event.registerBlockEntityRenderer(TFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
+        event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
     }
 
     public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
