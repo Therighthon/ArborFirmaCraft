@@ -25,6 +25,7 @@ SIGN_METALS: List[str] = [
     'black_bronze',
     'bronze',
     'copper',
+    'wrought_iron',
     'steel',
     'black_steel',
     'blue_steel',
