@@ -18,6 +18,7 @@ import difflib
 
 import world_gen
 import assets
+from resources import generate_textures
 
 BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
 MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
@@ -29,6 +30,7 @@ def main():
     parser.add_argument('actions', nargs='+', choices=(
         'validate',  # validate no resources are changed when re-running
         'all', # everything that's still in python
+        'textures' # just generate textures
         # 'trees',  # generate tree NBT structures from templates RUN TREES SCRIPTS DIRECTLY
     ))
     parser.add_argument('--translate', type=str, default='en_uk', help='Runs the book translation using a single provided language')
@@ -42,7 +44,7 @@ def main():
 
     for action in args.actions:
         if action == 'validate':
-            print('You need to write this section if you want it to do anything')
+            print('You need to write this section if you expect it to do anything')
         # elif action == 'validate_assets':
         #     validate_assets.main()
         elif action == 'all':
@@ -51,6 +53,9 @@ def main():
                 TempResourceManager('tfc', resource_dir=RESOURCE_DIR)
             )
             print('Removed Stale =', clean_generated_resources(RESOURCE_DIR, touched))
+        elif action == 'textures':
+            generate_textures.main()
+
 
 def validate_resources():
     """ Validates all resources are unchanged. """

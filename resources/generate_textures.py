@@ -4,11 +4,11 @@ from PIL.Image import Transpose
 import colorsys
 from constants import *
 
-path_afc = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources/assets/afc/textures/'
-path_tfc = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/src/main/resources/assets/tfc/textures/'
-mc_path = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft./src/main/resources/assets/minecraft/textures/'
-templates = 'E:/Documents/GitHub/Therighthon/ArborFirmaCraft/Python/texture_templates/'
-
+# TODO: Define paths from the project folder
+path_afc = 'C:/GitHub/ArborFirmaCraft/src/main/resources/assets/afc/textures/'
+path_tfc = 'C:/GitHub/ArborFirmaCraft/src/main/resources/assets/tfc/textures/'
+mc_path = 'C:/GitHub/ArborFirmaCraft./src/main/resources/assets/minecraft/textures/'
+templates = 'C:/GitHub/ArborFirmaCraft/resources/texture_templates/'
 
 def overlay_image(front_file_dir, back_file_dir, result_dir, mask: str = None):
     foreground = Image.open(front_file_dir + '.png').convert('RGBA')
@@ -163,7 +163,7 @@ def create_sign(wood: str):
     for coord in ((0, 0), (16, 0), (32, 0), (48, 0)):
         image.paste(planks, coord)
     image.paste(log, (0, 16))
-    image.save(path_tfc + 'entity/signs/%s.png' % wood)
+    image.save(path_afc + 'entity/signs/%s.png' % wood)
 
 def create_sign_item(wood: str, plank_color, log_color):
     head = Image.open(templates + 'sign_head.png')
@@ -228,8 +228,8 @@ def create_bookshelf(wood: str):
     filled = Image.open(templates + 'chiseled_bookshelf_occupied.png').convert('RGBA')
     empty.paste(planks, mask=mask)
     filled.paste(planks, mask=mask)
-    empty.save(path_afc + 'block/wood/planks/%s_bookshelf_empty.png' % wood)
-    filled.save(path_afc + 'block/wood/planks/%s_bookshelf_occupied.png' % wood)
+    empty.save(path_afc + 'block/wood/bookshelf/%s_bookshelf_empty.png' % wood)
+    filled.save(path_afc + 'block/wood/bookshelf/%s_bookshelf_occupied.png' % wood)
 
 def create_horse_chest(wood: str, plank_color, log_color):
     for variant in ('chest', 'barrel'):
@@ -243,9 +243,9 @@ def create_horse_chest(wood: str, plank_color, log_color):
         image.paste(body, (26, 21), body)
         image.paste(overlay, (26, 21), overlay)
         if variant == 'chest':
-            image.save(path_tfc + 'entity/chest/horse/%s.png' % wood)
+            image.save(path_afc + 'entity/chest/horse/%s.png' % wood)
         elif variant == 'barrel':
-            image.save(path_tfc + 'entity/chest/horse/%s_barrel.png' % wood)
+            image.save(path_afc + 'entity/chest/horse/%s_barrel.png' % wood)
 
 def create_chest_boat(wood: str):
     log = Image.open(path_afc + 'block/wood/log/%s.png' % wood).convert('RGBA')
@@ -319,7 +319,7 @@ def create_hanging_sign(wood: str, metal: str):
     big_smooth = fill_image(smooth, 64, 32, 16, 16)
     chain_mask = Image.open(templates + 'hanging_sign_chains.png').convert('L')
     img.paste(big_smooth, mask=chain_mask)
-    img.save(path_tfc + 'entity/signs/hanging/%s/%s.png' % (metal, wood))
+    img.save(path_afc + 'entity/signs/hanging/%s/%s.png' % (metal, wood))
 
     img = Image.new('RGBA', (16, 16))
     img.paste(sheet, mask=Image.open(templates + 'hanging_sign_edit.png').convert('L'))
@@ -332,8 +332,8 @@ def main():
     # for wood in ['baobab']:
     for wood in WOODS.keys():
         overlay_image(path_afc + 'block/wood/log_top/%s' % wood, path_afc + 'block/wood/stripped_log/%s' % wood, path_afc + 'block/wood/stripped_log_top/%s' % wood, templates + 'log_top_mask')
-        for bench in ('workbench_front', 'workbench_side', 'workbench_top'):
-            overlay_image(templates + bench, path_afc + 'block/wood/planks/%s' % wood, path_afc + 'block/wood/planks/%s_' % wood + bench)
+        for bench in ('_front', '_side', '_top'):
+            overlay_image(templates + 'workbench' + bench, path_afc + 'block/wood/planks/%s' % wood, path_afc + 'block/wood/workbench/%s' % (wood + bench))
         create_chest(wood)
         create_sign(wood)
         create_bookshelf(wood)
@@ -345,9 +345,8 @@ def main():
         create_sign_item_wood_texture(wood)
         if wood != 'palm':
             create_boat_texture(wood)
-        for metal, metal_data in METALS.items():
-            if 'utility' in metal_data.types:
-                create_hanging_sign(wood, metal)
+        for metal in SIGN_METALS:
+            create_hanging_sign(wood, metal)
 
 
 if __name__ == '__main__':
