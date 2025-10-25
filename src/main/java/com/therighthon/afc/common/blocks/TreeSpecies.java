@@ -38,7 +38,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Blackwood
     MPINGO_BLACKWOOD(false, 11, 200, 0.0292f),
     //Chestnut
-    HARDY_CHESTNUT(false, 8, 180, 0.05f), // TODO: Sapling drops
+    HARDY_CHESTNUT(false, 8, 180, 0.0179f),
     //Fir
     MOUNTAIN_FIR( true, 11, 0, 0.0543f),
     BALSAM_FIR( true, 13, 0, 0.0511f),
@@ -58,13 +58,13 @@ public enum TreeSpecies implements RegistryTreeSpecies
     STONE_PINE( true, 11, 0, 0.0283f),
     RED_PINE( true, 8, 0, 0.0248f),
     TAMARACK(false, 8, 254, 0.0511f),
-    HUANGSHAN_PINE(true, 9, 0, 0.05f), // TODO: Saplings
+    HUANGSHAN_PINE(true, 9, 0, 0.0541f),
 
     //Rosewood
     GIANT_ROSEWOOD( false, 16, 190, 0.0127f),
     //Sequoia
     COAST_REDWOOD( true, 10, 0, 0.0132f),
-    DAWN_REDWOOD(true, 9, 0, 0.05f), // TODO: Saplings
+    DAWN_REDWOOD(true, 9, 0, 0.0248f),
     //Spruce
     COAST_SPRUCE(true, 8, 0, 0.0238f),
     SITKA_SPRUCE( true, 10, 0, 0.0543f),
@@ -82,7 +82,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
     REDCEDAR(true, 10, 0, 0.0132f),
     WEEPING_CYPRESS(true, 7, 0, 0.0591f),
     BALD_CYPRESS(false, 7, 130, 0.0543f),
-    JUNIPER(true, 8, 0, 0.05f), // TODO: Sapling drops
+    JUNIPER(true, 8, 0, 0.0474f),
     //Mahogany
     SAPELE_MAHOGANY(false, 14, 170, 0.0089f),
     SMALL_LEAF_MAHOGANY(false, 11, 240, 0.0175f),
@@ -93,13 +93,13 @@ public enum TreeSpecies implements RegistryTreeSpecies
     LEBOMBO_IRONWOOD(false, 8, 230, 0.0472f),
     HORSETAIL_IRONWOOD(false, 10, 220, 0.0447f),
     //Araucaria
-    KAURI(true, 22, 0, 0.05f), // TODO: Sapling drop chances
-    COLUMNAR_ARAUCARIA(true, 9, 0, 0.05f),
-    PARANA(true, 11, 0, 0.05f),
+    KAURI(true, 22, 0, 0.0240f),
+    COLUMNAR_ARAUCARIA(true, 9, 0, 0.0305f),
+    PARANA(true, 11, 0, 0.0554f),
     //Beech
-    RAULI_BEECH(false, 10, 40, 0.05f),
-    BLACK_BEECH(false, 10, 200, 0.05f),
-    CHINQUAPIN(false, 7, 130, 0.05f);
+    RAULI_BEECH(false, 10, 40, 0.0209f),
+    BLACK_BEECH(false, 10, 200, 0.0201f),
+    CHINQUAPIN(false, 7, 130, 0.0350f);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;

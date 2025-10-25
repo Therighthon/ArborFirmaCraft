@@ -6,6 +6,8 @@ from typing import NamedTuple
 from nbtlib import nbt, File as RootTag
 from nbtlib.tag import String as StringTag, Int as IntTag, List as ListTag, Compound as CompoundTag
 
+from resources.constants import TFC_WOODS
+
 
 class Tree(NamedTuple):
     normal: str
@@ -238,7 +240,7 @@ TREES: dict[str, Tree] = {
     'rainbow_eucalyptus': Tree('stretched', 'stretched', 'dead_jungle', 'rainbow_eucalyptus'),
     'eucalyptus': Tree('tall_branches', None, 'dead_tall', 'eucalyptus'),
     'mountain_ash': Tree('hickory', 'mountain_ash', 'dead_aspen', 'eucalyptus'),
-    'baobab': Tree('old_baobab', 'great_baobab', 'dead_small', 'baobab'),
+    'baobab': Tree('baobab', 'old_baobab', 'dead_baobab', 'baobab'),
     'hevea': Tree('emergent', 'emergent', 'dead_tall', 'hevea'),
     'mahogany': Tree('jungle', 'round_large', 'dead_jungle', 'mahogany'),
     'small_leaf_mahogany': Tree('medium_round', None, 'dead_small', 'mahogany'),
@@ -258,7 +260,21 @@ TREES: dict[str, Tree] = {
     'poplar': Tree('hickory', None, 'dead_branching', 'poplar'), #working correctly, should have a trunk though, 1-2 for normal, 3-6 for large
     'iroko_teak': Tree('canopy', None, 'dead_jungle', 'teak'),
     'flame_of_the_forest': Tree('aspen', None, 'dead_aspen', 'teak'),
-    'jaggery_palm': Tree('mangrove', None, 'dead_stump', 'palm')
+    'jaggery_palm': Tree('mangrove', None, 'dead_stump', 'palm'),
+    'araucaria': Tree('pewen', 'pewen_large', 'dead_tall', 'araucaria'),
+    'kauri': Tree('kauri', 'kauri_large', 'dead_kauri', 'kauri'),
+    'columnar_araucaria': Tree('cook_pine', 'cook_pine', 'dead_tall', 'araucaria'),
+    'parana': Tree('parana', None, 'dead_tall', 'araucaria'),
+    'huangshan_pine': Tree('huangshan', None, 'dead_small', 'pine'),
+    'dawn_redwood': Tree('red_pine', 'red_pine', 'dead_tall', 'sequoia'),
+    'hardy_chestnut': Tree('small_round', None, 'dead_small', 'chestnut'),
+    'ginkgo': Tree('small_cone', None, 'dead_small', 'ginkgo'),
+    'mahoe': Tree('small_round', None, 'dead_small', 'mahoe'),
+    'beech': Tree('hickory', None, 'dead_small', 'beech'),
+    'rauli_beech': Tree('small_cone', None, 'dead_small', 'beech'),
+    'black_beech': Tree('round', None, 'dead_small', 'beech'),
+    'chinquapin': Tree('blackwood_large', 'small_round', 'dead_small', 'beech'),
+    'juniper': Tree('juniper', None, 'dead_small', 'cypress')
 }
 
 
@@ -310,13 +326,15 @@ def make_tree(wood: str, wood_type: str, tree: str | None, suffix: str = '',  il
     :param suffix: The suffix to use for the tree structure
     :return: The number of leaves (average) in the normal structure variant
     """
-    prefix = 'tfc'
+    prefix = 'afc'
+
+    if wood_type in TFC_WOODS.keys():
+        prefix = 'tfc'
+
     if il_booleano:
         prefix = 'afc'
         wood_type = 'ancient_' + wood_type
 
-    if wood_type == 'baobab' or wood_type == 'eucalyptus' or wood_type == 'rainbow_eucalyptus' or wood_type == 'hevea' or wood_type == 'mahogany' or wood_type == 'tualang' or wood_type == 'teak' or wood_type == 'cypress' or wood_type == 'fig' or wood_type == 'mountain_ash' or wood_type == 'redcedar' or wood_type == 'weeping_cypress' or wood_type == 'bald_cypress' or wood_type == 'black_oak' or wood_type == 'rubber_fig' or wood_type == 'sapele_mahogany' or wood_type == 'small_leaf_mahogany' or wood_type == 'black_oak' or wood_type == 'gum_arabic' or wood_type == 'poplar' or wood_type == 'ironwood' or wood_type == 'ipe':
-        prefix = 'afc'
 
     if tree is None:
         return 0  # Nothing to do
