@@ -40,14 +40,17 @@ public class AFCItemTagProvider extends ItemTagsProvider
     protected void addTags(HolderLookup.Provider provider)
     {
         // AFC Woods
-        // TODO: Araucaria makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Items.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.ARAUCARIA, AncientLogs.ANCIENT_ARAUCARIA, AFCTags.Items.ARAUCARIA_LOGS);
         makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Items.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.BEECH, AncientLogs.ANCIENT_BEECH, AFCTags.Items.BEECH_LOGS);
         makeStandardLogTag(AFCWood.CYPRESS, AncientLogs.ANCIENT_CYPRESS, AFCTags.Items.CYPRESS_LOGS);
         makeStandardLogTag(AFCWood.EUCALYPTUS, AncientLogs.ANCIENT_EUCALYPTUS, AFCTags.Items.EUCALYPTUS_LOGS);
         makeStandardLogTag(AFCWood.FIG, AncientLogs.ANCIENT_FIG, AFCTags.Items.FIG_LOGS);
+        makeStandardLogTag(AFCWood.GINKGO, AncientLogs.ANCIENT_GINKGO, AFCTags.Items.GINKGO_LOGS);
         makeStandardLogTag(AFCWood.HEVEA, AncientLogs.ANCIENT_HEVEA, AFCTags.Items.HEVEA_LOGS);
         makeStandardLogTag(AFCWood.IPE, AncientLogs.ANCIENT_IPE, AFCTags.Items.IPE_LOGS);
         makeStandardLogTag(AFCWood.IRONWOOD, AncientLogs.ANCIENT_IRONWOOD, AFCTags.Items.IRONWOOD_LOGS);
+        makeStandardLogTag(AFCWood.MAHOE, AncientLogs.ANCIENT_MAHOE, AFCTags.Items.MAHOE_LOGS);
         makeStandardLogTag(AFCWood.MAHOGANY, AncientLogs.ANCIENT_MAHOGANY, AFCTags.Items.MAHOGANY_LOGS);
         makeStandardLogTag(AFCWood.TEAK, AncientLogs.ANCIENT_TEAK, AFCTags.Items.TEAK_LOGS);
         makeStandardLogTag(AFCWood.TUALANG, AncientLogs.ANCIENT_TUALANG, AFCTags.Items.TUALANG_LOGS);

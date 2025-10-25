@@ -9,6 +9,10 @@
     "afc:wood/button/cypress",
     "afc:wood/button/fig",
     "afc:wood/button/ironwood",
-    "afc:wood/button/ipe"
+    "afc:wood/button/ipe",
+    "afc:wood/button/araucaria",
+    "afc:wood/button/beech",
+    "afc:wood/button/ginkgo",
+    "afc:wood/button/mahoe"
   ]
 }

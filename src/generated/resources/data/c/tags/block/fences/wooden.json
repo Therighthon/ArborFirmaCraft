@@ -10,6 +10,10 @@
     "afc:wood/fence/fig",
     "afc:wood/fence/ironwood",
     "afc:wood/fence/ipe",
+    "afc:wood/fence/araucaria",
+    "afc:wood/fence/beech",
+    "afc:wood/fence/ginkgo",
+    "afc:wood/fence/mahoe",
     "afc:wood/log_fence/baobab",
     "afc:wood/log_fence/eucalyptus",
     "afc:wood/log_fence/mahogany",
@@ -19,6 +23,10 @@
     "afc:wood/log_fence/cypress",
     "afc:wood/log_fence/fig",
     "afc:wood/log_fence/ironwood",
-    "afc:wood/log_fence/ipe"
+    "afc:wood/log_fence/ipe",
+    "afc:wood/log_fence/araucaria",
+    "afc:wood/log_fence/beech",
+    "afc:wood/log_fence/ginkgo",
+    "afc:wood/log_fence/mahoe"
   ]
 }

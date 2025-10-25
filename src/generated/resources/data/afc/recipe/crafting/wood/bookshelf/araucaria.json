@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/araucaria"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "SSS",
+    "LLL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/bookshelf/araucaria"
+  }
+}

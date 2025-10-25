@@ -9,6 +9,10 @@
     "afc:wood/pressure_plate/cypress",
     "afc:wood/pressure_plate/fig",
     "afc:wood/pressure_plate/ironwood",
-    "afc:wood/pressure_plate/ipe"
+    "afc:wood/pressure_plate/ipe",
+    "afc:wood/pressure_plate/araucaria",
+    "afc:wood/pressure_plate/beech",
+    "afc:wood/pressure_plate/ginkgo",
+    "afc:wood/pressure_plate/mahoe"
   ]
 }

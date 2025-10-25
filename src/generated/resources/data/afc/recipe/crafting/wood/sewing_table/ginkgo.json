@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "afc:wood/log/ginkgo"
+    },
+    "L": {
+      "tag": "c:leathers"
+    },
+    "P": {
+      "item": "afc:wood/planks/ginkgo"
+    },
+    "S": {
+      "tag": "c:tools/shear"
+    }
+  },
+  "pattern": [
+    " LS",
+    "PPP",
+    "G G"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/sewing_table/ginkgo"
+  }
+}

@@ -9,6 +9,10 @@
     "afc:wood/planks/cypress_stairs",
     "afc:wood/planks/fig_stairs",
     "afc:wood/planks/ironwood_stairs",
-    "afc:wood/planks/ipe_stairs"
+    "afc:wood/planks/ipe_stairs",
+    "afc:wood/planks/araucaria_stairs",
+    "afc:wood/planks/beech_stairs",
+    "afc:wood/planks/ginkgo_stairs",
+    "afc:wood/planks/mahoe_stairs"
   ]
 }

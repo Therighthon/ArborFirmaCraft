@@ -39,12 +39,15 @@ public class AFCTags
         // AFC Standard trees
         public static final TagKey<Block> ARAUCARIA_LOGS = blockTag("araucaria_logs");
         public static final TagKey<Block> BAOBAB_LOGS = blockTag("baobab_logs");
+        public static final TagKey<Block> BEECH_LOGS = blockTag("beech_logs");
         public static final TagKey<Block> CYPRESS_LOGS = blockTag("cypress_logs");
         public static final TagKey<Block> EUCALYPTUS_LOGS = blockTag("eucalyptus_logs");
         public static final TagKey<Block> FIG_LOGS = blockTag("fig_logs");
+        public static final TagKey<Block> GINKGO_LOGS = blockTag("ginkgo_logs");
         public static final TagKey<Block> HEVEA_LOGS = blockTag("hevea_logs");
         public static final TagKey<Block> IPE_LOGS = blockTag("ipe_logs");
         public static final TagKey<Block> IRONWOOD_LOGS = blockTag("ironwood_logs");
+        public static final TagKey<Block> MAHOE_LOGS = blockTag("mahoe_logs");
         public static final TagKey<Block> MAHOGANY_LOGS = blockTag("mahogany_logs");
         public static final TagKey<Block> TEAK_LOGS = blockTag("teak_logs");
         public static final TagKey<Block> TUALANG_LOGS = blockTag("tualang_logs");
@@ -75,12 +78,15 @@ public class AFCTags
     {
         public static final TagKey<Item> ARAUCARIA_LOGS = itemTag("araucaria_logs");
         public static final TagKey<Item> BAOBAB_LOGS = itemTag("baobab_logs");
+        public static final TagKey<Item> BEECH_LOGS = itemTag("beech_logs");
         public static final TagKey<Item> CYPRESS_LOGS = itemTag("cypress_logs");
         public static final TagKey<Item> EUCALYPTUS_LOGS = itemTag("eucalyptus_logs");
         public static final TagKey<Item> FIG_LOGS = itemTag("fig_logs");
+        public static final TagKey<Item> GINKGO_LOGS = itemTag("ginkgo_logs");
         public static final TagKey<Item> HEVEA_LOGS = itemTag("hevea_logs");
         public static final TagKey<Item> IPE_LOGS = itemTag("ipe_logs");
         public static final TagKey<Item> IRONWOOD_LOGS = itemTag("ironwood_logs");
+        public static final TagKey<Item> MAHOE_LOGS = itemTag("mahoe_logs");
         public static final TagKey<Item> MAHOGANY_LOGS = itemTag("mahogany_logs");
         public static final TagKey<Item> TEAK_LOGS = itemTag("teak_logs");
         public static final TagKey<Item> TUALANG_LOGS = itemTag("tualang_logs");

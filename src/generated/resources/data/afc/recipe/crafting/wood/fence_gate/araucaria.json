@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/araucaria"
+    },
+    "P": {
+      "item": "afc:wood/planks/araucaria"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "LPL"
+  ],
+  "result": {
+    "count": 2,
+    "id": "afc:wood/fence_gate/araucaria"
+  }
+}

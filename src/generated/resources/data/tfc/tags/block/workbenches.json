@@ -9,6 +9,10 @@
     "afc:wood/workbench/cypress",
     "afc:wood/workbench/fig",
     "afc:wood/workbench/ironwood",
-    "afc:wood/workbench/ipe"
+    "afc:wood/workbench/ipe",
+    "afc:wood/workbench/araucaria",
+    "afc:wood/workbench/beech",
+    "afc:wood/workbench/ginkgo",
+    "afc:wood/workbench/mahoe"
   ]
 }

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "B": {
+      "item": "afc:wood/bookshelf/ginkgo"
+    },
+    "L": {
+      "item": "afc:wood/lumber/ginkgo"
+    }
+  },
+  "pattern": [
+    "LLL",
+    " B ",
+    " L "
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/lectern/ginkgo"
+  }
+}

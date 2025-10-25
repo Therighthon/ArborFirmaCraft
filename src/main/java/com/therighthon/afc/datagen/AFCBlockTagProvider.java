@@ -61,14 +61,17 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         makeVanillaLogTag(Wood.WILLOW, AncientLogs.ANCIENT_WILLOW, AFCTags.Blocks.WILLOW_LOGS);
 
         // AFC Woods
-        // TODO: Araucaria makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Blocks.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.ARAUCARIA, AncientLogs.ANCIENT_ARAUCARIA, AFCTags.Blocks.ARAUCARIA_LOGS);
         makeStandardLogTag(AFCWood.BAOBAB, AncientLogs.ANCIENT_BAOBAB, AFCTags.Blocks.BAOBAB_LOGS);
+        makeStandardLogTag(AFCWood.BEECH, AncientLogs.ANCIENT_BEECH, AFCTags.Blocks.BEECH_LOGS);
         makeStandardLogTag(AFCWood.CYPRESS, AncientLogs.ANCIENT_CYPRESS, AFCTags.Blocks.CYPRESS_LOGS);
         makeStandardLogTag(AFCWood.EUCALYPTUS, AncientLogs.ANCIENT_EUCALYPTUS, AFCTags.Blocks.EUCALYPTUS_LOGS);
         makeStandardLogTag(AFCWood.FIG, AncientLogs.ANCIENT_FIG, AFCTags.Blocks.FIG_LOGS);
+        makeStandardLogTag(AFCWood.GINKGO, AncientLogs.ANCIENT_GINKGO, AFCTags.Blocks.GINKGO_LOGS);
         makeStandardLogTag(AFCWood.HEVEA, AncientLogs.ANCIENT_HEVEA, AFCTags.Blocks.HEVEA_LOGS);
         makeStandardLogTag(AFCWood.IPE, AncientLogs.ANCIENT_IPE, AFCTags.Blocks.IPE_LOGS);
         makeStandardLogTag(AFCWood.IRONWOOD, AncientLogs.ANCIENT_IRONWOOD, AFCTags.Blocks.IRONWOOD_LOGS);
+        makeStandardLogTag(AFCWood.MAHOE, AncientLogs.ANCIENT_MAHOE, AFCTags.Blocks.MAHOE_LOGS);
         makeStandardLogTag(AFCWood.MAHOGANY, AncientLogs.ANCIENT_MAHOGANY, AFCTags.Blocks.MAHOGANY_LOGS);
         makeStandardLogTag(AFCWood.TEAK, AncientLogs.ANCIENT_TEAK, AFCTags.Blocks.TEAK_LOGS);
         makeStandardLogTag(AFCWood.TUALANG, AncientLogs.ANCIENT_TUALANG, AFCTags.Blocks.TUALANG_LOGS);

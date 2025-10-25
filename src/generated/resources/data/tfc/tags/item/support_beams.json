@@ -9,6 +9,10 @@
     "afc:wood/support/cypress",
     "afc:wood/support/fig",
     "afc:wood/support/ironwood",
-    "afc:wood/support/ipe"
+    "afc:wood/support/ipe",
+    "afc:wood/support/araucaria",
+    "afc:wood/support/beech",
+    "afc:wood/support/ginkgo",
+    "afc:wood/support/mahoe"
   ]
 }

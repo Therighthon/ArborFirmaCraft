@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/mahoe"
+    }
+  },
+  "pattern": [
+    "LLL",
+    "LLL"
+  ],
+  "result": {
+    "count": 2,
+    "id": "afc:wood/trapdoor/mahoe"
+  }
+}

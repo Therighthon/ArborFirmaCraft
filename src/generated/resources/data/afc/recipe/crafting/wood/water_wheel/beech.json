@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "item": "afc:wood/axle/beech"
+    },
+    "L": {
+      "item": "afc:wood/lumber/beech"
+    },
+    "P": {
+      "item": "afc:wood/planks/beech"
+    }
+  },
+  "pattern": [
+    "LPL",
+    "PAP",
+    "LPL"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/water_wheel/beech"
+  }
+}

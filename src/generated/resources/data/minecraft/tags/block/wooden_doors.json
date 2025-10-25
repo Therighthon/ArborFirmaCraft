@@ -9,6 +9,10 @@
     "afc:wood/door/cypress",
     "afc:wood/door/fig",
     "afc:wood/door/ironwood",
-    "afc:wood/door/ipe"
+    "afc:wood/door/ipe",
+    "afc:wood/door/araucaria",
+    "afc:wood/door/beech",
+    "afc:wood/door/ginkgo",
+    "afc:wood/door/mahoe"
   ]
 }

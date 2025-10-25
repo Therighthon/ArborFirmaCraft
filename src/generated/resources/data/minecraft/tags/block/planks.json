@@ -9,6 +9,10 @@
     "afc:wood/planks/cypress",
     "afc:wood/planks/fig",
     "afc:wood/planks/ironwood",
-    "afc:wood/planks/ipe"
+    "afc:wood/planks/ipe",
+    "afc:wood/planks/araucaria",
+    "afc:wood/planks/beech",
+    "afc:wood/planks/ginkgo",
+    "afc:wood/planks/mahoe"
   ]
 }
