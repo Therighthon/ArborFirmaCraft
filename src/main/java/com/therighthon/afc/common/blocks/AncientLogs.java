@@ -30,6 +30,10 @@ public enum AncientLogs implements RegistryAncientLogs
     ANCIENT_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG, 0.9f),
     ANCIENT_IRONWOOD(MapColor.WOOD, MapColor.WOOD, AFCWood.IRONWOOD, 0.8f),
     ANCIENT_IPE(MapColor.WOOD, MapColor.WOOD, AFCWood.IPE, 0.9f),
+    ANCIENT_ARAUCARIA(MapColor.WOOD, MapColor.WOOD, AFCWood.ARAUCARIA, 0.9f),
+    ANCIENT_BEECH(MapColor.WOOD, MapColor.WOOD, AFCWood.BEECH, 0.9f),
+    ANCIENT_GINKGO(MapColor.WOOD, MapColor.WOOD, AFCWood.GINKGO, 0.9f),
+    ANCIENT_MAHOE(MapColor.WOOD, MapColor.WOOD, AFCWood.MAHOE, 0.9f),
 
     ANCIENT_ACACIA(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA, 0.7f),
     ANCIENT_ASH(MapColor.WOOD, MapColor.WOOD, Wood.ASH, 0.7f),
@@ -57,7 +61,8 @@ public enum AncientLogs implements RegistryAncientLogs
     ANCIENT_GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA, 0.9f),
     ANCIENT_REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS, 0.7f),
     ANCIENT_RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG, 0.9f),
-    ANCIENT_POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN, 0.9f);
+    ANCIENT_POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN, 0.9f),
+    ANCIENT_KAURI(MapColor.WOOD, MapColor.WOOD, AFCWood.ARAUCARIA, 0.7f);
 
     public static final AncientLogs[] VALUES = values();
     private final String serializedName;

@@ -25,7 +25,8 @@ public enum UniqueLogs implements RegistryUniqueLogs
     GUM_ARABIC(MapColor.WOOD, MapColor.WOOD, Wood.ACACIA),
     REDCEDAR(MapColor.WOOD, MapColor.WOOD, AFCWood.CYPRESS),
     RUBBER_FIG(MapColor.WOOD, MapColor.WOOD, AFCWood.FIG),
-    POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN);
+    POPLAR(MapColor.WOOD, MapColor.WOOD, Wood.ASPEN),
+    KAURI(MapColor.WOOD, MapColor.WOOD, AFCWood.ARAUCARIA);
 
     public static final UniqueLogs[] VALUES = values();
     private final String serializedName;

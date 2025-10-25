@@ -28,7 +28,11 @@ public enum AFCWood implements RegistryWood
     CYPRESS(true, MapColor.WOOD, MapColor.WOOD,10, 0, 0.0795f),
     FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0133f),
     IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0089f),
-    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0115f);
+    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0115f),
+    ARAUCARIA(true, MapColor.WOOD, MapColor.WOOD, 12, 0, 0.0115f), // TODO: Saplings
+    BEECH(false, MapColor.WOOD, MapColor.WOOD, 11, 110, 0.0115f),
+    GINKGO(false, MapColor.WOOD, MapColor.WOOD, 11, 245, 0.0115f),
+    MAHOE(false, MapColor.WOOD, MapColor.WOOD, 11, 212, 0.0115f);
 
     public static final AFCWood[] VALUES = values();
 
