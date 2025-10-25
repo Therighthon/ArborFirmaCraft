@@ -1,0 +1,41 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 10.4,
+      "max_temperature": 23.0,
+      "min_groundwater": 230,
+      "max_groundwater": 500,
+      "min_rain_variance": -0.3,
+      "max_rain_variance": 0.65,
+      "rain_variance_absolute": false,
+      "min_elevation": 60,
+      "max_elevation": 140
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/araucaria"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/columnar_araucaria"
+      }
+    ],
+    "normal_tree": "afc:tree/columnar_araucaria",
+    "dead_tree": "afc:tree/columnar_araucaria_dead",
+    "soil_disc": "tfc:duff_disc",
+    "old_growth_chance": 1,
+    "fallen_log": "afc:wood/log/araucaria",
+    "bush_log": {
+      "Name": "afc:wood/wood/araucaria",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/columnar_araucaria",
+    "old_growth_tree": "afc:tree/columnar_araucaria_large",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

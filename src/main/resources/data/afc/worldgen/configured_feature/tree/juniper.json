@@ -1,0 +1,28 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:juniper/1",
+      "afc:juniper/2",
+      "afc:juniper/3",
+      "afc:juniper/4",
+      "afc:juniper/5",
+      "afc:juniper/6",
+      "afc:juniper/7",
+      "afc:juniper/8",
+      "afc:juniper/9",
+      "afc:juniper/10",
+      "afc:juniper/11",
+      "afc:juniper/12",
+      "afc:juniper/13",
+      "afc:juniper/14",
+      "afc:juniper/15"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 2
+    }
+  }
+}

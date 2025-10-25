@@ -1,0 +1,37 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:dawn_redwood_large/1",
+      "afc:dawn_redwood_large/2",
+      "afc:dawn_redwood_large/3",
+      "afc:dawn_redwood_large/4",
+      "afc:dawn_redwood_large/5",
+      "afc:dawn_redwood_large/6",
+      "afc:dawn_redwood_large/7",
+      "afc:dawn_redwood_large/8",
+      "afc:dawn_redwood_large/9",
+      "afc:dawn_redwood_large/10",
+      "afc:dawn_redwood_large/11",
+      "afc:dawn_redwood_large/12"
+    ],
+    "radius": 2,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/sequoia",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 6,
+      "wide": false
+    }
+  }
+}

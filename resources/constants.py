@@ -107,7 +107,12 @@ AFC_LOG_TYPES = {
     'ipe',
     'ironwood',
     'poplar',
-    'rubber_fig'
+    'rubber_fig',
+    'araucaria',
+    'kauri',
+    'beech',
+    'ginkgo',
+    'mahoe'
 }
 
 UNIQUE_LOGS: Dict[str, Wood] = {

@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:araucaria/1",
+      "afc:araucaria/2",
+      "afc:araucaria/3",
+      "afc:araucaria/4",
+      "afc:araucaria/5",
+      "afc:araucaria/6",
+      "afc:araucaria/7",
+      "afc:araucaria/8",
+      "afc:araucaria/9",
+      "afc:araucaria/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/araucaria",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 3,
+      "max_height": 6,
+      "wide": false
+    }
+  }
+}

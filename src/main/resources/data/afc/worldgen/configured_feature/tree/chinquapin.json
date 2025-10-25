@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:chinquapin/1",
+      "afc:chinquapin/2",
+      "afc:chinquapin/3",
+      "afc:chinquapin/4",
+      "afc:chinquapin/5",
+      "afc:chinquapin/6",
+      "afc:chinquapin/7",
+      "afc:chinquapin/8",
+      "afc:chinquapin/9",
+      "afc:chinquapin/10"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/beech",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 2,
+      "max_height": 5,
+      "wide": false
+    }
+  }
+}

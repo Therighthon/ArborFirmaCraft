@@ -1,0 +1,39 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:black_beech/1",
+      "afc:black_beech/2",
+      "afc:black_beech/3",
+      "afc:black_beech/4",
+      "afc:black_beech/5",
+      "afc:black_beech/6",
+      "afc:black_beech/7",
+      "afc:black_beech/8",
+      "afc:black_beech/9",
+      "afc:black_beech/10",
+      "afc:black_beech/11",
+      "afc:black_beech/12",
+      "afc:black_beech/13",
+      "afc:black_beech/14"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/beech",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 2,
+      "wide": false
+    }
+  }
+}

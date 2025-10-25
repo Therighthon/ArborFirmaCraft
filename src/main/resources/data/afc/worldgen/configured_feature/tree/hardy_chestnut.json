@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:hardy_chestnut/1",
+      "afc:hardy_chestnut/2",
+      "afc:hardy_chestnut/3",
+      "afc:hardy_chestnut/4",
+      "afc:hardy_chestnut/5"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/chestnut",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 2,
+      "max_height": 4,
+      "wide": false
+    }
+  }
+}

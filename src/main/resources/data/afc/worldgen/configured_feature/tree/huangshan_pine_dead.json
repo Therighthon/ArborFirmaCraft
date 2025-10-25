@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:huangshan_pine_dead/1",
+      "afc:huangshan_pine_dead/2",
+      "afc:huangshan_pine_dead/3",
+      "afc:huangshan_pine_dead/4",
+      "afc:huangshan_pine_dead/5",
+      "afc:huangshan_pine_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 2,
+      "height": 2,
+      "ground_type": "submerged"
+    }
+  }
+}

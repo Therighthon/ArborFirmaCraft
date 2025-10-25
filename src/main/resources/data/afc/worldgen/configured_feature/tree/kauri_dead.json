@@ -1,0 +1,18 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:kauri_dead/1",
+      "afc:kauri_dead/2",
+      "afc:kauri_dead/3",
+      "afc:kauri_dead/4"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "submerged"
+    }
+  }
+}

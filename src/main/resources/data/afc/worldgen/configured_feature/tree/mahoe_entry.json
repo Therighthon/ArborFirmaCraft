@@ -1,0 +1,37 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 23.0,
+      "max_temperature": 40,
+      "min_groundwater": 300,
+      "max_groundwater": 500,
+      "min_rain_variance": 0.4,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": true,
+      "min_elevation": 60,
+      "max_elevation": 180
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/mahoe"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/mahoe"
+      }
+    ],
+    "normal_tree": "afc:tree/mahoe",
+    "dead_tree": "afc:tree/mahoe_dead",
+    "soil_disc": "tfc:duff_disc",
+    "fallen_log": "afc:wood/log/mahoe",
+    "bush_log": {
+      "Name": "afc:wood/wood/mahoe",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/mahoe"
+  }
+}

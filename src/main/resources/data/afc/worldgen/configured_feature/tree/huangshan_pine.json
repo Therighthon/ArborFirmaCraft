@@ -1,0 +1,41 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:huangshan_pine/1",
+      "afc:huangshan_pine/2",
+      "afc:huangshan_pine/3",
+      "afc:huangshan_pine/4",
+      "afc:huangshan_pine/5",
+      "afc:huangshan_pine/6",
+      "afc:huangshan_pine/7",
+      "afc:huangshan_pine/8",
+      "afc:huangshan_pine/9",
+      "afc:huangshan_pine/10",
+      "afc:huangshan_pine/11",
+      "afc:huangshan_pine/12",
+      "afc:huangshan_pine/13",
+      "afc:huangshan_pine/14",
+      "afc:huangshan_pine/15",
+      "afc:huangshan_pine/16"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 3,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "tfc:wood/log/pine",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 0,
+      "max_height": 2,
+      "wide": false
+    }
+  }
+}

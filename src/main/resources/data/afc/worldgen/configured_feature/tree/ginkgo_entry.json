@@ -1,0 +1,37 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -7.6,
+      "max_temperature": 10.4,
+      "min_groundwater": 180,
+      "max_groundwater": 360,
+      "min_rain_variance": 0.25,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false,
+      "min_elevation": 60,
+      "max_elevation": 170
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/ginkgo"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/ginkgo"
+      }
+    ],
+    "normal_tree": "afc:tree/ginkgo",
+    "dead_tree": "afc:tree/ginkgo_dead",
+    "soil_disc": "tfc:duff_disc",
+    "fallen_log": "afc:wood/log/ginkgo",
+    "bush_log": {
+      "Name": "afc:wood/wood/ginkgo",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/ginkgo"
+  }
+}

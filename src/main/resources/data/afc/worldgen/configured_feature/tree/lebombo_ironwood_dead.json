@@ -14,7 +14,7 @@
     "placement": {
       "width": 1,
       "height": 2,
-      "ground_type": "shallow_water"
+      "ground_type": "submerged"
     }
   }
 }

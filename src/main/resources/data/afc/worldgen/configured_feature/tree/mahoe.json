@@ -1,0 +1,30 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:mahoe/1",
+      "afc:mahoe/2",
+      "afc:mahoe/3",
+      "afc:mahoe/4",
+      "afc:mahoe/5"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/mahoe",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 3,
+      "wide": false
+    }
+  }
+}

@@ -65,6 +65,20 @@
 	"afc:tree/iroko_teak_entry",
 	"afc:tree/flame_of_the_forest_entry",
 	"afc:tree/jaggery_palm_entry",
-	"afc:tree/poplar_entry"
+	"afc:tree/poplar_entry",
+	"afc:tree/araucaria_entry",
+	"afc:tree/kauri_entry",
+	"afc:tree/columnar_araucaria_entry",
+	"afc:tree/parana_entry",
+	"afc:tree/huangshan_pine_entry",
+	"afc:tree/dawn_redwood_entry",
+	"afc:tree/hardy_chestnut_entry",
+	"afc:tree/ginkgo_entry",
+	"afc:tree/mahoe_entry",
+	"afc:tree/beech_entry",
+	"afc:tree/rauli_beech_entry",
+	"afc:tree/black_beech_entry",
+	"afc:tree/chinquapin_entry",
+	"afc:tree/juniper_entry"
   ]
 }

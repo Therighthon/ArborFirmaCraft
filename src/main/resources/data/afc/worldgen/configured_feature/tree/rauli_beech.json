@@ -1,0 +1,33 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:rauli_beech/1",
+      "afc:rauli_beech/2",
+      "afc:rauli_beech/3",
+      "afc:rauli_beech/4",
+      "afc:rauli_beech/5",
+      "afc:rauli_beech/6",
+      "afc:rauli_beech/7",
+      "afc:rauli_beech/8"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/beech",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 1,
+      "max_height": 3,
+      "wide": false
+    }
+  }
+}

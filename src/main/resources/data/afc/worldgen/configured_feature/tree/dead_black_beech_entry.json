@@ -1,0 +1,39 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": -0.4,
+      "max_temperature": 14.0,
+      "min_groundwater": 240,
+      "max_groundwater": 460,
+      "min_rain_variance": -0.1,
+      "max_rain_variance": 0.6,
+      "rain_variance_absolute": false,
+      "min_elevation": 60,
+      "max_elevation": 170
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/beech"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/black_beech"
+      }
+    ],
+    "normal_tree": "afc:tree/black_beech",
+    "dead_tree": "afc:tree/black_beech_dead",
+    "soil_disc": "tfc:duff_disc",
+    "fallen_log": "afc:wood/log/beech",
+    "bush_log": {
+      "Name": "afc:wood/wood/beech",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/black_beech",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

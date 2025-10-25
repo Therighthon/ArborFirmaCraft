@@ -1,0 +1,39 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 6.8,
+      "max_temperature": 19.4,
+      "min_groundwater": 260,
+      "max_groundwater": 500,
+      "min_rain_variance": 0.1,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false,
+      "min_elevation": 72,
+      "max_elevation": 140
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/araucaria"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/kauri"
+      }
+    ],
+    "normal_tree": "afc:tree/kauri",
+    "dead_tree": "afc:tree/kauri_dead",
+    "soil_disc": "tfc:duff_disc",
+    "old_growth_chance": 4,
+    "fallen_log": "afc:wood/log/araucaria",
+    "bush_log": {
+      "Name": "afc:wood/wood/araucaria",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/kauri",
+    "old_growth_tree": "afc:tree/kauri_large"
+  }
+}

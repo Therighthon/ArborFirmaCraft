@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:dawn_redwood_dead/1",
+      "afc:dawn_redwood_dead/2",
+      "afc:dawn_redwood_dead/3",
+      "afc:dawn_redwood_dead/4",
+      "afc:dawn_redwood_dead/5",
+      "afc:dawn_redwood_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "submerged"
+    }
+  }
+}

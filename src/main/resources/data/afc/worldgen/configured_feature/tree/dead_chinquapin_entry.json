@@ -1,0 +1,41 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 1.4,
+      "max_temperature": 21.2,
+      "min_groundwater": 400,
+      "max_groundwater": 500,
+      "min_rain_variance": 0,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false,
+      "min_elevation": 60,
+      "max_elevation": 170
+    },
+    "groundcover": [
+      {
+        "block": "afc:wood/twig/beech"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/chinquapin"
+      }
+    ],
+    "normal_tree": "afc:tree/chinquapin",
+    "dead_tree": "afc:tree/chinquapin_dead",
+    "soil_disc": "tfc:duff_disc",
+    "old_growth_chance": 1,
+    "fallen_log": "afc:wood/log/beech",
+    "bush_log": {
+      "Name": "afc:wood/wood/beech",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/chinquapin",
+    "old_growth_tree": "afc:tree/chinquapin_large",
+    "dead_chance": 1,
+    "fallen_tree_chance": 8
+  }
+}

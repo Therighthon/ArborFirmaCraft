@@ -1,0 +1,39 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:forest_entry",
+  "config": {
+    "climate": {
+      "min_temperature": 1.4,
+      "max_temperature": 17.6,
+      "min_groundwater": 240,
+      "max_groundwater": 500,
+      "min_rain_variance": 0.45,
+      "max_rain_variance": 1,
+      "rain_variance_absolute": false,
+      "min_elevation": 60,
+      "max_elevation": 90
+    },
+    "groundcover": [
+      {
+        "block": "tfc:wood/twig/sequoia"
+      },
+      {
+        "block": "afc:wood/fallen_leaves/dawn_redwood"
+      }
+    ],
+    "normal_tree": "afc:tree/dawn_redwood",
+    "dead_tree": "afc:tree/dawn_redwood_dead",
+    "soil_disc": "tfc:duff_disc",
+    "old_growth_chance": 3,
+    "fallen_log": "tfc:wood/log/sequoia",
+    "bush_log": {
+      "Name": "tfc:wood/wood/sequoia",
+      "Properties": {
+        "natural": "true",
+        "axis": "y"
+      }
+    },
+    "bush_leaves": "afc:wood/leaves/dawn_redwood",
+    "old_growth_tree": "afc:tree/dawn_redwood_large"
+  }
+}

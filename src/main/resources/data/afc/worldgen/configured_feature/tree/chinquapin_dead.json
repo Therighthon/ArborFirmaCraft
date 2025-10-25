@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "type": "tfc:random_tree",
+  "config": {
+    "structures": [
+      "afc:chinquapin_dead/1",
+      "afc:chinquapin_dead/2",
+      "afc:chinquapin_dead/3",
+      "afc:chinquapin_dead/4",
+      "afc:chinquapin_dead/5",
+      "afc:chinquapin_dead/6"
+    ],
+    "radius": 1,
+    "placement": {
+      "width": 1,
+      "height": 2,
+      "ground_type": "submerged"
+    }
+  }
+}
