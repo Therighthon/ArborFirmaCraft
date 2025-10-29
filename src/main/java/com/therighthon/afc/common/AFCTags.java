@@ -59,6 +59,7 @@ public class AFCTags
         public static final TagKey<Block> RAINBOW_EUCALYPTUS_LOGS = blockTag("rainbow_eucalyptus_logs");
         public static final TagKey<Block> REDCEDAR_LOGS = blockTag("redcedar_logs");
         public static final TagKey<Block> RUBBER_FIG_LOGS = blockTag("rubber_fig_logs");
+        public static final TagKey<Block> KAURI_LOGS = blockTag("kauri_logs");
 
         // Misc
         public static final TagKey<Block> TREE_TAPS = blockTag("tree_taps");

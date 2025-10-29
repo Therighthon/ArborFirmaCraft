@@ -1,5 +1,5 @@
-// 1.21.1	2025-10-24T21:33:57.0222876	Tags for minecraft:block mod id afc
-20106da5f72e924827de0047d02c0777860b077f data/afc/tags/block/araucaria_logs.json
+// 1.21.1	2025-10-29T00:56:44.7479944	Tags for minecraft:block mod id afc
+55952707185f2150fe235e869a445ce05bbeaf49 data/afc/tags/block/araucaria_logs.json
 ff98deaf8197843ee3a51c58bf702af535a4f668 data/afc/tags/block/baobab_logs.json
 49e89121e74f6dfca4b5210c1aacd351eb4e3640 data/afc/tags/block/beech_logs.json
 90c42e7e2e416b175221e304eb50111f6694b90c data/afc/tags/block/black_oak_logs.json
@@ -11,6 +11,7 @@ e6fc748f5856dd2a8f6bb5a44e8d0da3fac1d73c data/afc/tags/block/ginkgo_logs.json
 be73302f566169c72365a7db88bd5e4222f2cdb5 data/afc/tags/block/hevea_logs.json
 8287a8e1b90ecc30b4fa7e2c56d30a0aa214ffe1 data/afc/tags/block/ipe_logs.json
 28e826dd6cb8072d7246b8602c12b1143b8fde76 data/afc/tags/block/ironwood_logs.json
+4735f414751be6d9feb083e06f3ab808df0c4c63 data/afc/tags/block/kauri_logs.json
 294ab83bdd37ca93f5e1cecaf091b45e718eae5a data/afc/tags/block/mahoe_logs.json
 af0ab7586822172b275181e8d22e5acbd248301a data/afc/tags/block/mahogany_logs.json
 c8cfaeb34e637b038b5b7030be43fc442914b87a data/afc/tags/block/poplar_logs.json
@@ -26,10 +27,10 @@ c62ba2f231e5bb9310ea0d742670f355a7eca040 data/c/tags/block/fences/wooden.json
 b08b795b9289791fe2ebec228c4f08aa1de744d1 data/c/tags/block/fence_gates/wooden.json
 6714f5876003c96317e586dae7500b4a6b2a07ae data/minecraft/tags/block/flower_pots.json
 6bcaabb243e5bf1724a4df00ab639faa5ca34d49 data/minecraft/tags/block/leaves.json
-70d5447c117c687797ad1da1e1097642bcced02d data/minecraft/tags/block/logs_that_burn.json
+34d24311a6c07a0fb6594b16db43ee1f1355f5af data/minecraft/tags/block/logs_that_burn.json
 7c4e3c12d242065f07ae07d695fbc9554e820092 data/minecraft/tags/block/mineable/axe.json
 b3d0bef946336f433289adb74477f42ac264cb83 data/minecraft/tags/block/mineable/hoe.json
-70d5447c117c687797ad1da1e1097642bcced02d data/minecraft/tags/block/overworld_natural_logs.json
+34d24311a6c07a0fb6594b16db43ee1f1355f5af data/minecraft/tags/block/overworld_natural_logs.json
 ed4b1551c1566d077c1626f17eced6ccd9f33821 data/minecraft/tags/block/planks.json
 51f08ec3c932630c5538a1b1de7c26c0300d1cc6 data/minecraft/tags/block/saplings.json
 c0cfd528aa79d790865972a87cd69f2e340cbe3d data/minecraft/tags/block/standing_signs.json

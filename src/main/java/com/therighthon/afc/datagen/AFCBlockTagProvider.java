@@ -89,6 +89,8 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         tag(AFCTags.Blocks.CYPRESS_LOGS).addTag(AFCTags.Blocks.REDCEDAR_LOGS);
         makeUniqueLogTag(UniqueLogs.RUBBER_FIG, AncientLogs.ANCIENT_RUBBER_FIG, AFCTags.Blocks.RUBBER_FIG_LOGS);
         tag(AFCTags.Blocks.FIG_LOGS).addTag(AFCTags.Blocks.RUBBER_FIG_LOGS);
+        makeUniqueLogTag(UniqueLogs.KAURI, AncientLogs.ANCIENT_KAURI, AFCTags.Blocks.KAURI_LOGS);
+        tag(AFCTags.Blocks.ARAUCARIA_LOGS).addTag(AFCTags.Blocks.KAURI_LOGS);
 
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).addTags(
             AFCTags.Blocks.BAOBAB_LOGS,
@@ -100,7 +102,11 @@ public class AFCBlockTagProvider extends BlockTagsProvider
             AFCTags.Blocks.IRONWOOD_LOGS,
             AFCTags.Blocks.MAHOGANY_LOGS,
             AFCTags.Blocks.TEAK_LOGS,
-            AFCTags.Blocks.TUALANG_LOGS
+            AFCTags.Blocks.TUALANG_LOGS,
+            AFCTags.Blocks.ARAUCARIA_LOGS,
+            AFCTags.Blocks.BEECH_LOGS,
+            AFCTags.Blocks.GINKGO_LOGS,
+            AFCTags.Blocks.MAHOE_LOGS
         );
         tag(BlockTags.LOGS_THAT_BURN).addTags(
             AFCTags.Blocks.BAOBAB_LOGS,
@@ -112,7 +118,11 @@ public class AFCBlockTagProvider extends BlockTagsProvider
             AFCTags.Blocks.IRONWOOD_LOGS,
             AFCTags.Blocks.MAHOGANY_LOGS,
             AFCTags.Blocks.TEAK_LOGS,
-            AFCTags.Blocks.TUALANG_LOGS
+            AFCTags.Blocks.TUALANG_LOGS,
+            AFCTags.Blocks.ARAUCARIA_LOGS,
+            AFCTags.Blocks.BEECH_LOGS,
+            AFCTags.Blocks.GINKGO_LOGS,
+            AFCTags.Blocks.MAHOE_LOGS
         );
 
         // Stuff without individual tags that still needs to be mineable with an axe
