@@ -3,6 +3,6 @@
   "parent": "block/cube_column",
   "textures": {
     "end": "tfc:block/wood/log/aspen",
-    "side": "tfc:block/wood/log/poplar"
+    "side": "afc:block/wood/log/poplar"
   }
 }

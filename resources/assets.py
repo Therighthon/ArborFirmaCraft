@@ -504,7 +504,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
             }, use_default_model=False)
 
             end = '%s:block/wood/%s/%s' % (prefix, variant.replace('log', 'log_top').replace('wood', 'log'), wood_top)
-            side = '%s:block/wood/%s/%s' % (prefix, variant.replace('wood', 'log'), wood_or_fig)
+            side = '%s:block/wood/%s/%s' % ('afc', variant.replace('wood', 'log'), wood_or_fig) # Always use AFC for side textures
             block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
             block.with_lang(lang('%s %s', wood, variant))

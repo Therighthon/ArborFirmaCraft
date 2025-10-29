@@ -269,8 +269,6 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
     configured_placed_feature(rm, ('tree', 'juniper'), 'tfc:random_tree', random_config('juniper', 15, 1, place=tree_placement_config(2, 2)))
     configured_placed_feature(rm, ('tree', 'juniper_dead'), 'tfc:random_tree', random_config('juniper', 6, 1, '_dead', place=tree_placement_config(1, 2, 'submerged')))
 
-
-
 def tfc_override_configured_placed_feature(rm: ResourceManager, name_parts: ResourceIdentifier, feature: Optional[ResourceIdentifier] = None, config: JsonObject = None, *placements: Json):
     res = utils.resource_location('tfc', name_parts)
     if feature is None:
