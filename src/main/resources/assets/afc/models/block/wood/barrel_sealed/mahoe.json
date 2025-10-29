@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/barrel_sealed",
+  "textures": {
+    "particle": "afc:block/wood/planks/mahoe",
+    "planks": "afc:block/wood/planks/mahoe",
+    "sheet": "afc:block/wood/sheet/mahoe"
+  }
+}

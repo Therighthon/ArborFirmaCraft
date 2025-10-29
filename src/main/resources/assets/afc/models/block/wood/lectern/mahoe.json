@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/mahoe",
+    "base": "afc:block/wood/lectern/mahoe/base",
+    "front": "afc:block/wood/lectern/mahoe/front",
+    "sides": "afc:block/wood/lectern/mahoe/sides",
+    "top": "afc:block/wood/lectern/mahoe/top",
+    "particle": "afc:block/wood/lectern/mahoe/sides"
+  }
+}

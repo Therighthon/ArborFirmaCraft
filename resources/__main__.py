@@ -29,7 +29,7 @@ def main():
     parser = ArgumentParser(description='Entrypoint for all common scripting infrastructure.')
     parser.add_argument('actions', nargs='+', choices=(
         'validate',  # validate no resources are changed when re-running
-        'all', # everything that's still in python
+        'all', # everything that's still in python, except textures
         'textures' # just generate textures
         # 'trees',  # generate tree NBT structures from templates RUN TREES SCRIPTS DIRECTLY
     ))

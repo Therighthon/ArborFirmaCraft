@@ -18,7 +18,11 @@
         "fig": "afc:color_palettes/wood/planks/fig",
         "mahogany": "afc:color_palettes/wood/planks/mahogany",
         "ironwood": "afc:color_palettes/wood/planks/ironwood",
-        "ipe": "afc:color_palettes/wood/planks/ipe"
+        "ipe": "afc:color_palettes/wood/planks/ipe",
+        "araucaria": "afc:color_palettes/wood/planks/araucaria",
+        "beech": "afc:color_palettes/wood/planks/beech",
+        "ginkgo": "afc:color_palettes/wood/planks/ginkgo",
+        "mahoe": "afc:color_palettes/wood/planks/mahoe"
       }
     },
     {
@@ -43,7 +47,11 @@
         "fig": "afc:color_palettes/wood/plank_items/fig",
         "mahogany": "afc:color_palettes/wood/plank_items/mahogany",
         "ironwood": "afc:color_palettes/wood/plank_items/ironwood",
-        "ipe": "afc:color_palettes/wood/plank_items/ipe"
+        "ipe": "afc:color_palettes/wood/plank_items/ipe",
+        "araucaria": "afc:color_palettes/wood/plank_items/araucaria",
+        "beech": "afc:color_palettes/wood/plank_items/beech",
+        "ginkgo": "afc:color_palettes/wood/plank_items/ginkgo",
+        "mahoe": "afc:color_palettes/wood/plank_items/mahoe"
       }
     },
     {
@@ -62,7 +70,11 @@
         "fig": "afc:color_palettes/wood/plank_items/fig",
         "mahogany": "afc:color_palettes/wood/plank_items/mahogany",
         "ironwood": "afc:color_palettes/wood/plank_items/ironwood",
-        "ipe": "afc:color_palettes/wood/plank_items/ipe"
+        "ipe": "afc:color_palettes/wood/plank_items/ipe",
+        "araucaria": "afc:color_palettes/wood/plank_items/araucaria",
+        "beech": "afc:color_palettes/wood/plank_items/beech",
+        "ginkgo": "afc:color_palettes/wood/plank_items/ginkgo",
+        "mahoe": "afc:color_palettes/wood/plank_items/mahoe"
       }
     }
   ]

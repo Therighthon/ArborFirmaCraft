@@ -1,0 +1,12 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/lectern",
+  "textures": {
+    "bottom": "afc:block/wood/planks/ginkgo",
+    "base": "afc:block/wood/lectern/ginkgo/base",
+    "front": "afc:block/wood/lectern/ginkgo/front",
+    "sides": "afc:block/wood/lectern/ginkgo/sides",
+    "top": "afc:block/wood/lectern/ginkgo/top",
+    "particle": "afc:block/wood/lectern/ginkgo/sides"
+  }
+}

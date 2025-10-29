@@ -1,0 +1,13 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "afc:block/wood/workbench/beech_front",
+    "north": "afc:block/wood/workbench/beech_front",
+    "south": "afc:block/wood/workbench/beech_side",
+    "east": "afc:block/wood/workbench/beech_side",
+    "west": "afc:block/wood/workbench/beech_front",
+    "up": "afc:block/wood/workbench/beech_top",
+    "down": "afc:block/wood/planks/beech"
+  }
+}

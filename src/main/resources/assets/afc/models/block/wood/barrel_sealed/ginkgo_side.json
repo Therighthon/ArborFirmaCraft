@@ -1,0 +1,9 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/barrel_side_sealed",
+  "textures": {
+    "particle": "afc:block/wood/planks/ginkgo",
+    "planks": "afc:block/wood/planks/ginkgo",
+    "sheet": "afc:block/wood/sheet/ginkgo"
+  }
+}
