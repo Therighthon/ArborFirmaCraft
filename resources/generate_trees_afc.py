@@ -318,21 +318,16 @@ def main():
     print('}')
 
 
-def make_tree(wood: str, wood_type: str, tree: str | None, suffix: str = '',  il_booleano: bool = False) -> int:
+def make_tree(wood: str, wood_type: str, tree: str | None, suffix: str = '', is_ancient: bool = False) -> int:
     """ Generates tree structures for a given wood type + tree template type
+    :param is_ancient: If the tree being made is old growth and should use ancient log blocks
     :param wood: The name of the tree to be generated (a TFC/AFC wood type)
     :param wood_type: The log type to use (a tfc/afc wood type)
     :param tree: The name of the template tree structures to use
     :param suffix: The suffix to use for the tree structure
     :return: The number of leaves (average) in the normal structure variant
     """
-    prefix = 'afc'
-
-    if wood_type in TFC_WOODS.keys():
-        prefix = 'tfc'
-
-    if il_booleano:
-        prefix = 'afc'
+    if is_ancient:
         wood_type = 'ancient_' + wood_type
 
 
@@ -614,11 +609,10 @@ def create_log_block_tag(wood: str, block_name: str, block_axis: StringTag, adj:
     """ Creates the NBT tag for a log block. """
     # Wood in this function should be a wood type, not a treespecies
 
-    wood_prefix = 'tfc'
-    if wood == 'baobab' or wood == 'eucalyptus' or wood == 'rainbow_eucalyptus' or wood == 'hevea' or wood == 'mahogany' or wood == 'tualang' or wood == 'teak' or wood == 'cypress' or wood == 'fig' or wood == 'mountain_ash' or wood == 'redcedar' or wood == 'weeping_cypress' or wood == 'bald_cypress' or wood == 'black_oak' or wood == 'rubber_fig' or wood == 'sapele_mahogany' or wood == 'small_leaf_mahogany' or wood == 'black_oak' or wood == 'gum_arabic' or wood == 'poplar' or wood == 'ironwood' or wood == 'ipe':
-        wood_prefix = 'afc'
-    if "ancient_" in wood:
-        wood_prefix = 'afc'
+    wood_prefix = 'afc'
+
+    if wood in TFC_WOODS.keys():
+        wood_prefix = 'tfc'
 
     # Check to make sure right blocks are being used
     # print(wood_prefix + ":" + wood)
