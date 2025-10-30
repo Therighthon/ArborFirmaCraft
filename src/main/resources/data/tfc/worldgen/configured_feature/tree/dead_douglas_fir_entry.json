@@ -5,13 +5,13 @@
     "climate": {
       "min_temperature": -7.6,
       "max_temperature": 8.6,
-      "min_groundwater": 280,
+      "min_groundwater": 320,
       "max_groundwater": 500,
       "min_rain_variance": -1,
       "max_rain_variance": -0.2,
       "rain_variance_absolute": false,
       "min_elevation": 60,
-      "max_elevation": 170
+      "max_elevation": 150
     },
     "groundcover": [
       {

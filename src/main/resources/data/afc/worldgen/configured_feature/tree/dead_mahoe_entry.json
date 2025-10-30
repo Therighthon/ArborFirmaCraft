@@ -11,7 +11,7 @@
       "max_rain_variance": 1,
       "rain_variance_absolute": true,
       "min_elevation": 60,
-      "max_elevation": 180
+      "max_elevation": 150
     },
     "groundcover": [
       {

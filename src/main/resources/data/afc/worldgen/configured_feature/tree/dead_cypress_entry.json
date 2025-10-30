@@ -7,11 +7,11 @@
       "max_temperature": 17.6,
       "min_groundwater": 100,
       "max_groundwater": 260,
-      "min_rain_variance": -0.5,
-      "max_rain_variance": -1,
+      "min_rain_variance": -1,
+      "max_rain_variance": -0.5,
       "rain_variance_absolute": false,
       "min_elevation": 60,
-      "max_elevation": 170
+      "max_elevation": 150
     },
     "groundcover": [
       {

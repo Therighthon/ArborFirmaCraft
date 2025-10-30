@@ -4,7 +4,7 @@
   "config": {
     "climate": {
       "min_temperature": 23.0,
-      "max_temperature": 28.4,
+      "max_temperature": 40,
       "min_groundwater": 400,
       "max_groundwater": 500,
       "min_rain_variance": -0.4,

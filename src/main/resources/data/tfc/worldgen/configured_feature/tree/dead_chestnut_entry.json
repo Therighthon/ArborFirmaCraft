@@ -6,7 +6,7 @@
       "min_temperature": -4,
       "max_temperature": 14.0,
       "min_groundwater": 150,
-      "max_groundwater": 300,
+      "max_groundwater": 320,
       "min_rain_variance": -0.5,
       "max_rain_variance": 0.5,
       "rain_variance_absolute": false,
