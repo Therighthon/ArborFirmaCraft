@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-24T21:33:57.0197891	Recipes
+// 1.21.1	2025-10-30T22:00:08.5567184	Recipes
 587d68b04092cced4fef47dd6aed43d4d3117709 data/afc/recipe/crafting/wood/axle/araucaria.json
 d2c5f247f4e5af430e26aa60e4343366f17228a2 data/afc/recipe/crafting/wood/axle/baobab.json
 05c6ebc2773818b1bb578e785a4697be5530d1c1 data/afc/recipe/crafting/wood/axle/beech.json
@@ -338,15 +338,22 @@ a965dd93ba261ef0e86e176987a186b5217c7679 data/afc/recipe/crafting/wood/lectern/t
 4e11614366e3978b0daf2abdb8b46e2b2cdd2a5a data/afc/recipe/crafting/wood/log_fence/araucaria.json
 c5e614293798dae47da505bc6d4a5c55d97091c9 data/afc/recipe/crafting/wood/log_fence/baobab.json
 eb138ea8779fd921ab532dd05ccfed044346511f data/afc/recipe/crafting/wood/log_fence/beech.json
+e33bf7ffc0d7ae9ae6262f69956a9fb2822a57d9 data/afc/recipe/crafting/wood/log_fence/black_oak_from_black_oak_logs.json
 98f8872075f625c09f2c10b0656ff6faebbb0509 data/afc/recipe/crafting/wood/log_fence/cypress.json
 c836c088af41f7992f361b12697d7545d5262942 data/afc/recipe/crafting/wood/log_fence/eucalyptus.json
 5f735a870e86d1694fafe483089c8dae675ea5d7 data/afc/recipe/crafting/wood/log_fence/fig.json
 d4ca834cff30334b9339134e539571d15de97a9c data/afc/recipe/crafting/wood/log_fence/ginkgo.json
+0ff211809224c3d642aea93af996626c80513290 data/afc/recipe/crafting/wood/log_fence/gum_arabic_from_gum_arabic_logs.json
 999c967852487b82f3962c3e6ae6b20d1a53393c data/afc/recipe/crafting/wood/log_fence/hevea.json
 6f08562e5243bce32bbf7f5436751b1a3a441d49 data/afc/recipe/crafting/wood/log_fence/ipe.json
 ecb7e1d6b27c2e5adf5e32d9e24500beaa1e8d43 data/afc/recipe/crafting/wood/log_fence/ironwood.json
+79eed8e0d66c0a088e0d2dab74a848131d298b4b data/afc/recipe/crafting/wood/log_fence/kauri_from_kauri_logs.json
 670c5b8399d86dfa6869a9bdf5d63d6ba46e9691 data/afc/recipe/crafting/wood/log_fence/mahoe.json
 981137c57f2864a110ad8b9ff7b6b4ba97292a6a data/afc/recipe/crafting/wood/log_fence/mahogany.json
+71fdf8545810bc748bb556d3a1e306018bd2688e data/afc/recipe/crafting/wood/log_fence/poplar_from_poplar_logs.json
+0d0af9890513fa7f4941ef8293e2735eba405029 data/afc/recipe/crafting/wood/log_fence/rainbow_eucalyptus_from_rainbow_eucalyptus_logs.json
+70cd78c5278e60955059eb8897749f455a705af5 data/afc/recipe/crafting/wood/log_fence/redcedar_from_redcedar_logs.json
+a0780bb5204d16c11fcae1bf7d886887c5f9e6b5 data/afc/recipe/crafting/wood/log_fence/rubber_fig_from_rubber_fig_logs.json
 4fb35b642aa2358f0568025f4cecca5813dd64a1 data/afc/recipe/crafting/wood/log_fence/teak.json
 5c00f75c3f0f9a74cc146f56fe64965861a5dbfa data/afc/recipe/crafting/wood/log_fence/tualang.json
 bda978c6302185547a0b71ef304904419f90b00d data/afc/recipe/crafting/wood/loom/araucaria.json

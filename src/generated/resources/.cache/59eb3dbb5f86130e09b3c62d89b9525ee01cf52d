@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-24T21:33:57.0127767	Loot Tables
+// 1.21.1	2025-10-30T22:00:08.5447172	Loot Tables
 d783e1dfae26b45a32e5921bc076ada2e98f5748 data/afc/loot_table/blocks/tree_tap.json
 6add50345cd11c2585a0f7709f09364ada02d917 data/afc/loot_table/blocks/wood/axle/araucaria.json
 64f0f8843b536664677995622f903ef0f0f953d1 data/afc/loot_table/blocks/wood/axle/baobab.json
@@ -379,15 +379,22 @@ f6c5cd0fd938b87e994c1a5a64a2802d7a1e83f4 data/afc/loot_table/blocks/wood/log/rub
 d171dbeeffd96f0bd87618597ea615e4148b9b52 data/afc/loot_table/blocks/wood/log_fence/araucaria.json
 f3aa8a7294f5c232ada52a0ee91034c5139a08ed data/afc/loot_table/blocks/wood/log_fence/baobab.json
 83dbc4480ed637c93edd2322e6192d5d425bc976 data/afc/loot_table/blocks/wood/log_fence/beech.json
+927b643ed8908659971e39c1c441f4628c35e801 data/afc/loot_table/blocks/wood/log_fence/black_oak.json
 50438fd90b945e68044dc508c7995233635b9659 data/afc/loot_table/blocks/wood/log_fence/cypress.json
 e749f3814a3b7283a3751c2bab9d6b15f6ad4b79 data/afc/loot_table/blocks/wood/log_fence/eucalyptus.json
 db0fff235db50c641514dd0aef930a124d1793b7 data/afc/loot_table/blocks/wood/log_fence/fig.json
 27644b13bfb5311748cfc3ae7fd3bf8de300ae15 data/afc/loot_table/blocks/wood/log_fence/ginkgo.json
+f0e59b07c8941e758ab342a311ae28adeca22167 data/afc/loot_table/blocks/wood/log_fence/gum_arabic.json
 967c5183ff53eb40c62d0e015f332c9d42a67190 data/afc/loot_table/blocks/wood/log_fence/hevea.json
 b869cc80dfca9f9c16e4f54d557d13242e4129b2 data/afc/loot_table/blocks/wood/log_fence/ipe.json
 7772b10de8a9986c6088e8c8c79fdb71842ece76 data/afc/loot_table/blocks/wood/log_fence/ironwood.json
+c8e985d9f0a9ca4715a3c641bcddf7fa0a4087da data/afc/loot_table/blocks/wood/log_fence/kauri.json
 52af521d2dbc4039c245a844f5cd70f99a93f178 data/afc/loot_table/blocks/wood/log_fence/mahoe.json
 23fb5d3b6fd1d9c4b9b2c30853d3774aa118fba0 data/afc/loot_table/blocks/wood/log_fence/mahogany.json
+bdadd4703fb6ca97caa6c227c39a45b38fd2bfb6 data/afc/loot_table/blocks/wood/log_fence/poplar.json
+4f290d8ce94c444c39d7aa99c300f4b066afa7c5 data/afc/loot_table/blocks/wood/log_fence/rainbow_eucalyptus.json
+1b82fc33ea0a7931bb4cfacddf98a31846dc1910 data/afc/loot_table/blocks/wood/log_fence/redcedar.json
+32beff6be6cba579a97ea21ae838d63b322e5679 data/afc/loot_table/blocks/wood/log_fence/rubber_fig.json
 272f3f67370549e8ef885f42b2dc920a95c2ca63 data/afc/loot_table/blocks/wood/log_fence/teak.json
 afe89c7939661c46c85aaee525490e549188b8b5 data/afc/loot_table/blocks/wood/log_fence/tualang.json
 a0ac6c091e5be8d1420de2ebb5d18adbc170817f data/afc/loot_table/blocks/wood/loom/araucaria.json

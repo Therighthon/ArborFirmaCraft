@@ -277,12 +277,11 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
                 ? AFCItems.SUPPORTS.get(uLog.AFCWoodType()).asItem()
                 : TFCItems.SUPPORTS.get(uLog.TFCWoodType()).get().asItem();
 
-            // TODO: Log fences for unique logs?
-//            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
-//                .input('P', blocks.get(Wood.BlockType.LOG))
-//                .input('L', lumber)
-//                .pattern("PLP", "PLP")
-//                .shaped(blocks.get(Wood.BlockType.LOG_FENCE), 8);
+            recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
+                .input('P', uBlocks.get(UniqueLogs.BlockType.LOG))
+                .input('L', lumber)
+                .pattern("PLP", "PLP")
+                .shaped(uBlocks.get(UniqueLogs.BlockType.LOG_FENCE), 8);
             recipe("from_" + uLog.getSerializedName().toLowerCase() + "_logs")
                 .inputIsPrimary(TFCTags.Items.TOOLS_SAW)
                 .input(uniqueLogsTagOf(Registries.ITEM, uLog))

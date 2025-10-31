@@ -16,6 +16,7 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.wood.LogBlock;
+import net.dries007.tfc.common.blocks.wood.TFCFenceBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
 public enum UniqueLogs implements RegistryUniqueLogs
@@ -99,6 +100,7 @@ public enum UniqueLogs implements RegistryUniqueLogs
     public enum BlockType {
         LOG((self, unique_log) -> new LogBlock(ExtendedProperties.of(state -> state.getValue(RotatedPillarBlock.AXIS) == Direction.Axis.Y ? unique_log.woodColor() : unique_log.barkColor()).strength(8f).sound(SoundType.WOOD).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_LOG))),
         WOOD((self, unique_log) -> new LogBlock(properties(unique_log).strength(8f).requiresCorrectToolForDrops().flammableLikeLogs(), unique_log.isAFCWoodType() ? unique_log.AFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD) : unique_log.TFCWoodType().getBlock(Wood.BlockType.STRIPPED_WOOD))),
+        LOG_FENCE(wood -> new TFCFenceBlock(properties(wood).strength(2.0F, 3.0F).flammableLikeLogs())),
         TWIG((self, unique_log) -> GroundcoverBlock.twig(ExtendedProperties.of().strength(0.05F, 0.0F).sound(SoundType.WOOD).noCollission().flammableLikeWool()));
 
         private static ExtendedProperties properties(RegistryUniqueLogs unique_log)

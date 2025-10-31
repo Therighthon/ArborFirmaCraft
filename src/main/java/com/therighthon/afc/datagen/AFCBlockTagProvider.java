@@ -18,6 +18,7 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
 import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 
 public class AFCBlockTagProvider extends BlockTagsProvider
@@ -92,6 +93,9 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         makeUniqueLogTag(UniqueLogs.KAURI, AncientLogs.ANCIENT_KAURI, AFCTags.Blocks.KAURI_LOGS);
         tag(AFCTags.Blocks.ARAUCARIA_LOGS).addTag(AFCTags.Blocks.KAURI_LOGS);
 
+        addAllAFCUniqueWoods(UniqueLogs.BlockType.LOG_FENCE, Tags.Blocks.FENCES_WOODEN);
+        addAllAFCUniqueWoods(UniqueLogs.BlockType.LOG_FENCE, BlockTags.WOODEN_FENCES);
+
         tag(BlockTags.OVERWORLD_NATURAL_LOGS).addTags(
             AFCTags.Blocks.BAOBAB_LOGS,
             AFCTags.Blocks.CYPRESS_LOGS,
@@ -151,6 +155,8 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         addAllAFCWoods(Wood.BlockType.TRAPDOOR, BlockTags.WOODEN_TRAPDOORS);
         addAllAFCWoods(Wood.BlockType.FENCE, Tags.Blocks.FENCES_WOODEN);
         addAllAFCWoods(Wood.BlockType.LOG_FENCE, Tags.Blocks.FENCES_WOODEN);
+        addAllAFCWoods(Wood.BlockType.FENCE, BlockTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.LOG_FENCE, BlockTags.WOODEN_FENCES);
         addAllAFCWoods(Wood.BlockType.FENCE_GATE, Tags.Blocks.FENCE_GATES_WOODEN); // unstable bottom center?
         addAllAFCWoods(Wood.BlockType.BUTTON, BlockTags.WOODEN_BUTTONS);
         addAllAFCWoods(Wood.BlockType.PRESSURE_PLATE, BlockTags.WOODEN_PRESSURE_PLATES); // Wall post overrides?
@@ -198,6 +204,13 @@ public class AFCBlockTagProvider extends BlockTagsProvider
             (s, m) -> tag(tagKey).add(s.getBlock(type).get())
         );
         addAllAFCWoods(woodType, tagKey);
+    }
+
+    private void addAllAFCUniqueWoods(UniqueLogs.BlockType type, TagKey<Block> tagKey)
+    {
+        AFCBlocks.UNIQUE_LOGS.forEach(
+            (s, m) -> tag(tagKey).add(s.getBlock(type).get())
+        );
     }
 
     private void makeVanillaLogTag(Wood logType, AncientLogs ancient, TagKey<Block> blockTag)

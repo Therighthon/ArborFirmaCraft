@@ -495,6 +495,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         else:
             wood_top = wood
 
+        planks = wood_top
+
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': 'afc:block/wood/log_top/%s' % wood_top}, parent='tfc:block/groundcover/twig')
         for variant in ('log', 'wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
@@ -508,6 +510,25 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
             block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
             block.with_lang(lang('%s %s', wood, variant))
+
+        # Log Fences
+        block = rm.blockstate_multipart('wood/log_fence/%s' % wood, *block_states.fence_multipart('afc:block/wood/log_fence/%s_post' % wood, 'afc:block/wood/log_fence/%s_side' % wood))
+        block.with_lang(lang('%s log fence', wood))
+        rm.block_model('wood/log_fence/%s_post' % wood, textures={'texture': 'afc:block/wood/log/' + wood}, parent='block/fence_post')
+        rm.block_model('wood/log_fence/%s_side' % wood, textures={'texture': '%s:block/wood/planks/%s' % (prefix, planks)}, parent='block/fence_side')
+        rm.block_model('wood/log_fence/%s_inventory' % wood, textures={
+            'log': 'afc:block/wood/log/' + wood,
+            'planks': '%s:block/wood/planks/%s' % (prefix, planks)
+        }, parent='tfc:block/wood/log_fence/inventory')
+        rm.item_model('wood/log_fence/%s' % wood, parent='afc:block/wood/log_fence/%s_inventory' % wood, no_textures=True)
+
+        log_fence_namespace = 'afc:wood/planks/' + wood + '_log_fence'
+        rm.blockstate_multipart(log_fence_namespace, *block_states.fence_multipart('%s:block/wood/planks/%s' % (prefix, planks) + '_log_fence_post', '%s:block/wood/planks/%s' % (prefix, planks) + '_log_fence_side'))
+        rm.block_model(log_fence_namespace + '_post', textures={'texture': 'afc:block/wood/log/' + wood}, parent='block/fence_post')
+        rm.block_model(log_fence_namespace + '_side', textures={'texture': '%s:block/wood/planks/%s' % (prefix, planks)}, parent='block/fence_side')
+        rm.block_model(log_fence_namespace + '_inventory', textures={'log': 'afc:block/wood/log/' + wood, 'planks': '%s:block/wood/planks/%s' % (prefix, planks)}, parent='tfc:block/log_fence_inventory')
+        rm.item_model('%s:wood/planks/%s' % (prefix, planks) + '_log_fence', parent='afc:block/wood/planks/' + wood + '_log_fence_inventory', no_textures=True)
+
 
     for wood in ANCIENT_LOGS.keys():
         base_wood = wood.replace('ancient_', '')

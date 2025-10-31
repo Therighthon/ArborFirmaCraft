@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "L": {
+      "item": "afc:wood/lumber/fig"
+    },
+    "P": {
+      "item": "afc:wood/log/rubber_fig"
+    }
+  },
+  "pattern": [
+    "PLP",
+    "PLP"
+  ],
+  "result": {
+    "count": 8,
+    "id": "afc:wood/log_fence/rubber_fig"
+  }
+}
