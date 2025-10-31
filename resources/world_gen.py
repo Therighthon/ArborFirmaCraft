@@ -21,7 +21,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
     forest_config(rm, 85, 285, 15.8, 24.8, 0.3, 1, True, 60, 85, 'mpingo_blackwood', 'blackwood', False)
     forest_config(tfc_rm, 150, 320, -4, 14., -0.5, 0.5, False, 75, 150, 'chestnut', 'chestnut', False)
     forest_config(tfc_rm, 320, 500, -7.6, 8.6, -1, -0.2, False, 60, 150, 'douglas_fir', 'douglas_fir', True, krum=True)
-    forest_config(rm, 220, 345, 1.4, 14., -0.2, 1, False, 85, 170, 'mountain_fir', 'douglas_fir', True)
+    forest_config(rm, 220, 345, 5, 15.8, -0.2, 1, False, 90, 170, 'mountain_fir', 'douglas_fir', True)
     forest_config(rm, 210, 500, -11.2, 1.4, -0.55, 0.45, False, 60, 150, 'balsam_fir', 'douglas_fir', True)
     forest_config(tfc_rm, 210, 400, -4, 14., -0.45, 0.5, False, 60, 120, 'hickory', 'hickory', False)
     forest_config(rm, 365, 500, 14., 19.4, -0.4, 0.4, False, 60, 80, 'scrub_hickory', 'hickory', True)
