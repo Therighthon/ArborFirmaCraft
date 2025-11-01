@@ -32,7 +32,7 @@ SIGN_METALS: List[str] = [
     'red_steel'
 ]
 
-WOODS: Dict[str, Wood] = {
+AFC_WOODS: Dict[str, Wood] = {
     'cypress': Wood(650, 1000),
     'tualang': Wood(696, 1300),
     'hevea': Wood(700, 1800),
@@ -170,6 +170,23 @@ ANCIENT_LOGS: Dict[str, Wood] = {
     'ancient_beech': Wood(750, 1800),
     'ancient_ginkgo': Wood(720, 1800),
     'ancient_mahoe': Wood(730, 1700)
+}
+
+DEFAULT_SPECIES: Dict[str, str] = {
+    'cypress': "slender_cypress",
+    'tualang': "tualang",
+    'hevea': "hevea",
+    'teak': "true_teak",
+    'eucalyptus': "blue_gum",
+    'baobab': "baobab",
+    'fig': "rusty_fig",
+    'mahogany': "big_leaf_mahogany",
+    'ironwood': "giant_ironwood",
+    'ipe': "yellow_ipe",
+    'araucaria': "monkey_puzzle",
+    'beech': "silver_beech",
+    'ginkgo': "ginkgo",
+    'mahoe': "blue_mahoe"
 }
 
 TREE_VARIANTS: Dict[str, str] = {

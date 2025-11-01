@@ -60,10 +60,12 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
-        block.with_lang(lang('fallen %s leaves', variant))
+        block.with_lang(lang('%s sapling', variant))
 
     # Wood Blocks
-    for wood in WOODS.keys():
+    for wood in AFC_WOODS.keys():
+        default_species = DEFAULT_SPECIES[wood]
+
         # Logs
         for variant in ('log', 'stripped_log', 'wood', 'stripped_wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
@@ -117,7 +119,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
 
-        block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', wood))
+        block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', default_species))
         tex = {'all': 'afc:block/wood/leaves/%s' % wood}
         #Leaving this in, in case we want to use it for other stuff
         if wood in ('mangrove', 'willow'):
@@ -136,7 +138,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         block.with_block_model({'cross': 'afc:block/wood/sapling/%s' % wood}, 'block/cross')
         rm.item_model(('wood', 'sapling', wood), 'afc:block/wood/sapling/%s' % wood)
 
-        flower_pot_cross(rm, '%s sapling' % wood, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood)
+        flower_pot_cross(rm, '%s sapling' % default_species, 'afc:wood/potted_sapling/%s' % wood, 'wood/potted_sapling/%s' % wood, 'afc:block/wood/sapling/%s' % wood)
 
         # Signs + Hanging Signs
         rm.item_model(('wood', 'sign', wood), 'afc:item/wood/sign/%s' % wood, 'tfc:item/wood/sign_head_overlay%s' % ('_white' if wood in ('ironwood', 'mahogany') else ''))
@@ -466,7 +468,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         for variant in ('slab', 'stairs'):
             rm.lang('block.afc.wood.planks.' + wood + '_' + variant, lang('%s %s', wood, variant))
         for variant in ('sapling', 'leaves'):
-            rm.lang('block.afc.wood.' + variant + '.' + wood, lang('%s %s', wood, variant))
+            rm.lang('block.afc.wood.' + variant + '.' + wood, lang('%s %s', default_species, variant))
 
 
     for wood in UNIQUE_LOGS.keys():
@@ -550,24 +552,24 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
              atlases.palette(
                  key='afc:color_palettes/wood/planks/palette',
                  textures=['tfc:block/wood/planks/%s' % v for v in ('bookshelf_top', 'bookshelf_side')],
-                 permutations=dict((wood, 'afc:color_palettes/wood/planks/%s' % wood) for wood in WOODS.keys())
+                 permutations=dict((wood, 'afc:color_palettes/wood/planks/%s' % wood) for wood in AFC_WOODS.keys())
              ),
              atlases.palette(
                  key='afc:color_palettes/wood/planks/palette',
                  textures=['tfc:item/wood/%s' % v for v in ('twig', 'lumber', 'chest_minecart_cover', 'stripped_log', 'sign_head', 'hanging_sign_head', 'water_wheel')],
-                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in WOODS.keys())
+                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
              ),
              atlases.palette(
                  key='afc:color_palettes/wood/planks/palette',
                  textures=['tfc:item/wood/boat'],
-                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in WOODS.keys())
+                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
              )
              )
 
 
 
-def flower_pot_cross(rm: ResourceManager, simple_name: str, name: str, model: str, texture: str):
-    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', simple_name))
+def flower_pot_cross(rm: ResourceManager, lang_name: str, name: str, model: str, texture: str):
+    rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', lang_name))
     rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/loam'})
 
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
