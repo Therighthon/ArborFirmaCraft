@@ -17,7 +17,7 @@
     "radius": 1,
     "placement": {
       "width": 1,
-      "height": 2
+      "height": 4
     },
     "trunk": {
       "state": {
@@ -27,8 +27,8 @@
           "branch_direction": "none"
         }
       },
-      "min_height": 3,
-      "max_height": 6,
+      "min_height": 2,
+      "max_height": 8,
       "wide": false
     }
   }

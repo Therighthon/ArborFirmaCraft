@@ -22,8 +22,8 @@
           "branch_direction": "none"
         }
       },
-      "min_height": 3,
-      "max_height": 6,
+      "min_height": 8,
+      "max_height": 16,
       "wide": true
     }
   }

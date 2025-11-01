@@ -18,6 +18,18 @@
       "width": 1,
       "height": 2,
       "ground_type": "shallow_water"
+    },
+    "trunk": {
+      "state": {
+        "Name": "afc:wood/log/black_oak",
+        "Properties": {
+          "axis": "y",
+          "branch_direction": "none"
+        }
+      },
+      "min_height": 6,
+      "max_height": 12,
+      "wide": true
     }
   }
 }
