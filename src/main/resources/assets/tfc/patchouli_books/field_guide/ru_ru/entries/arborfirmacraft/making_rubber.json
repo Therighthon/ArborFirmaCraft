@@ -1,0 +1,14 @@
+{
+	"name": "Получение резины",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+        "text": "Твёрдую резину можно получить кипячением латекса в горшке с порошком серы. Осталось только найти ей применение..."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}
