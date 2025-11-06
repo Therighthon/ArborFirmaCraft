@@ -330,7 +330,7 @@ def main():
     # for wood in WOODS.keys():
     # Add wood type individually here before running
     # for wood in ['baobab']:
-    for wood in AFCWoods.keys():
+    for wood in AFC_WOODS.keys():
         overlay_image(path_afc + 'block/wood/log_top/%s' % wood, path_afc + 'block/wood/stripped_log/%s' % wood, path_afc + 'block/wood/stripped_log_top/%s' % wood, templates + 'log_top_mask')
         for bench in ('_front', '_side', '_top'):
             overlay_image(templates + 'workbench' + bench, path_afc + 'block/wood/planks/%s' % wood, path_afc + 'block/wood/workbench/%s' % (wood + bench))
