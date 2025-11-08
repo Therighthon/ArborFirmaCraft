@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf_occupied_slot_bottom_left",
   "textures": {
-    "texture": "afc:block/wood/bookshelf/baobab_bookshelf_occupied"
+    "texture": "afc:block/wood/bookshelf/baobab_occupied"
   }
 }

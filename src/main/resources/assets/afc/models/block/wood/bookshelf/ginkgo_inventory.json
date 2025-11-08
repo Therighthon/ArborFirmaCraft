@@ -2,8 +2,8 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "minecraft:block/chiseled_bookshelf_inventory",
   "textures": {
-    "top": "afc:block/wood/bookshelf/ginkgo_bookshelf_top",
-    "side": "afc:block/wood/bookshelf/ginkgo_bookshelf_side",
-    "front": "afc:block/wood/bookshelf/ginkgo_bookshelf_empty"
+    "top": "afc:block/wood/bookshelf/ginkgo_top",
+    "side": "afc:block/wood/bookshelf/ginkgo_side",
+    "front": "afc:block/wood/bookshelf/ginkgo_empty"
   }
 }

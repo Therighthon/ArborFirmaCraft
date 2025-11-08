@@ -249,20 +249,20 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         block = rm.blockstate_multipart(('wood', 'bookshelf', wood), *parts)
         block.with_lang(lang('%s bookshelf', wood))
         rm.block_model(('wood', 'bookshelf', wood), {
-            'top': 'afc:block/wood/bookshelf/%s_bookshelf_top' % wood,
-            'side': 'afc:block/wood/bookshelf/%s_bookshelf_side' % wood
+            'top': 'afc:block/wood/bookshelf/%s_top' % wood,
+            'side': 'afc:block/wood/bookshelf/%s_side' % wood
         }, parent='minecraft:block/chiseled_bookshelf')
         rm.block_model('wood/bookshelf/%s_inventory' % wood, {
-            'top': 'afc:block/wood/bookshelf/%s_bookshelf_top' % wood,
-            'side': 'afc:block/wood/bookshelf/%s_bookshelf_side' % wood,
-            'front': 'afc:block/wood/bookshelf/%s_bookshelf_empty' % wood
+            'top': 'afc:block/wood/bookshelf/%s_top' % wood,
+            'side': 'afc:block/wood/bookshelf/%s_side' % wood,
+            'front': 'afc:block/wood/bookshelf/%s_empty' % wood
         }, parent='minecraft:block/chiseled_bookshelf_inventory')
         rm.item_model('afc:wood/bookshelf/%s' % wood, parent='afc:block/wood/bookshelf/%s_inventory' % wood, no_textures=True)
 
         for slot in ('bottom_left', 'bottom_mid', 'bottom_right', 'top_left', 'top_mid', 'top_right'):
             for occupancy in ('empty', 'occupied'):
                 rm.block_model(f'wood/bookshelf/{wood}_{occupancy}_{slot}', {
-                    'texture': f'afc:block/wood/bookshelf/{wood}_bookshelf_{occupancy}'
+                    'texture': f'afc:block/wood/bookshelf/{wood}_{occupancy}'
                 }, parent=f'minecraft:block/chiseled_bookshelf_{occupancy}_slot_{slot}')
 
         # Workbench

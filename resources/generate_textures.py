@@ -165,21 +165,6 @@ def create_sign(wood: str):
     image.paste(log, (0, 16))
     image.save(path_afc + 'entity/signs/%s.png' % wood)
 
-def create_sign_item(wood: str, plank_color, log_color):
-    head = Image.open(templates + 'sign_head.png')
-    mast = Image.open(templates + 'sign_mast.png')
-    head = put_on_all_pixels(head, plank_color)
-    mast = put_on_all_pixels(mast, log_color)
-    image = Image.alpha_composite(mast, head)
-    image.save(path_afc + 'item/wood/sign/%s.png' % wood)
-
-def create_chest_minecart(wood: str, plank_color):
-    top = Image.open(templates + 'chest_minecart_chest.png')
-    bottom = Image.open(templates + 'chest_minecart_cart.png')
-    top = put_on_all_pixels(top, plank_color)
-    image = Image.alpha_composite(bottom, top)
-    image.save(path_afc + 'item/wood/chest_minecart/%s.png' % wood)
-
 # def create_logs(wood: str, plank_color):
 #     log = Image.open(templates + 'log.png')
 #     face = Image.open(templates + 'log_face.png')
@@ -228,8 +213,45 @@ def create_bookshelf(wood: str):
     filled = Image.open(templates + 'chiseled_bookshelf_occupied.png').convert('RGBA')
     empty.paste(planks, mask=mask)
     filled.paste(planks, mask=mask)
-    empty.save(path_afc + 'block/wood/bookshelf/%s_bookshelf_empty.png' % wood)
-    filled.save(path_afc + 'block/wood/bookshelf/%s_bookshelf_occupied.png' % wood)
+    empty.save(path_afc + 'block/wood/bookshelf/%s_empty.png' % wood)
+    filled.save(path_afc + 'block/wood/bookshelf/%s_occupied.png' % wood)
+
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+    img = Image.open(templates + 'bookshelf_side.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/bookshelf/%s_side.png' % wood)
+    img = Image.open(templates + 'bookshelf_top.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/bookshelf/%s_top.png' % wood)
+
+def create_lectern(wood: str):
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+
+    img = Image.open(templates + 'lectern_sides.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/lectern/%s/sides.png' % wood)
+
+    img = Image.open(templates + 'lectern_top.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/lectern/%s/top.png' % wood)
+
+    img = Image.open(templates + 'lectern_front.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/lectern/%s/front.png' % wood)
+
+    img = Image.open(templates + 'lectern_base.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/lectern/%s/base.png' % wood)
+
+def create_lumber(wood: str):
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+
+    img = Image.open(templates + 'lumber.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'item/wood/lumber/%s.png' % wood)
 
 def create_horse_chest(wood: str, plank_color, log_color):
     for variant in ('chest', 'barrel'):
@@ -263,11 +285,17 @@ def create_chest_boat(wood: str):
     base.save(path_tfc + 'entity/chest_boat/%s.png' % wood)
 
 def create_boat_texture(wood: str):
-    img = Image.open(templates + 'boat.png').convert('RGBA')
+    img = Image.open(templates + 'boat_entity.png').convert('RGBA')
     palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
     palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
     manual_palette_swap(img, palette_key, palette)
     img.save(path_tfc + 'entity/boat/%s.png' % wood)
+
+    img = Image.open(templates + 'boat.png').convert('RGBA')
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'item/wood/boat/%s.png' % wood)
 
 def create_waterwheel_texture(wood: str):
     img = Image.open(templates + 'waterwheel.png').convert('RGBA')
@@ -337,6 +365,8 @@ def main():
         create_chest(wood)
         create_sign(wood)
         create_bookshelf(wood)
+        create_lectern(wood)
+        create_lumber(wood)
         plank_color = get_wood_colors('planks/%s' % wood)
         log_color = get_wood_colors('log/%s' % wood)
         create_horse_chest(wood, plank_color, log_color)
