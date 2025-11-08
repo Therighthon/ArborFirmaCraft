@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "block/cube_column",
   "textures": {
-    "end": "afc:block/wood/log/kauri",
+    "end": "afc:block/wood/log/araucaria",
     "side": "afc:block/wood/log/kauri"
   }
 }

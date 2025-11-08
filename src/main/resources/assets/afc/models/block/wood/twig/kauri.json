@@ -3,6 +3,6 @@
   "parent": "tfc:block/groundcover/twig",
   "textures": {
     "side": "afc:block/wood/log/kauri",
-    "top": "afc:block/wood/log_top/kauri"
+    "top": "afc:block/wood/log_top/araucaria"
   }
 }

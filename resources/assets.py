@@ -488,6 +488,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
             prefix = 'tfc'
         elif wood == 'redcedar':
             wood_top = 'cypress'
+        elif wood == 'kauri':
+            wood_top = 'araucaria'
         elif wood == 'rubber_fig':
             wood_top = 'fig'
             wood_or_fig = 'fig'

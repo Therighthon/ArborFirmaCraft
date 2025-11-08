@@ -253,6 +253,14 @@ def create_lumber(wood: str):
     manual_palette_swap(img, palette_key, palette)
     img.save(path_afc + 'item/wood/lumber/%s.png' % wood)
 
+def create_scribing(wood: str):
+    palette_key = Image.open(path_afc + 'color_palettes/wood/planks/palette.png').convert('RGBA')
+    palette = Image.open(path_afc + 'color_palettes/wood/planks/%s.png' % wood).convert('RGBA')
+
+    img = Image.open(templates + 'scribing_table.png').convert('RGBA')
+    manual_palette_swap(img, palette_key, palette)
+    img.save(path_afc + 'block/wood/scribing_table/%s.png' % wood)
+
 def create_horse_chest(wood: str, plank_color, log_color):
     for variant in ('chest', 'barrel'):
         image = Image.new('RGBA', (64, 64), (0, 0, 0, 0))
@@ -367,6 +375,7 @@ def main():
         create_bookshelf(wood)
         create_lectern(wood)
         create_lumber(wood)
+        create_scribing(wood)
         plank_color = get_wood_colors('planks/%s' % wood)
         log_color = get_wood_colors('log/%s' % wood)
         create_horse_chest(wood, plank_color, log_color)

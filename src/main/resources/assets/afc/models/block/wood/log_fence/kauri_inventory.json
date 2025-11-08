@@ -3,6 +3,6 @@
   "parent": "tfc:block/wood/log_fence/inventory",
   "textures": {
     "log": "afc:block/wood/log/kauri",
-    "planks": "afc:block/wood/planks/kauri"
+    "planks": "afc:block/wood/planks/araucaria"
   }
 }
