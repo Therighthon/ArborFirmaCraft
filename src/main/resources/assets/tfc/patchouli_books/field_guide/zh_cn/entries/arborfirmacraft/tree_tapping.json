@@ -1,0 +1,34 @@
+{
+	"name": "树汁采集",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:tree_tap",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "某些树木可以被采集以获取有用的流体。默认情况下，枫树和桦树可采集含糖树汁，而橡胶无花果树（Rubber Fig）与三叶胶树（Hevea）可采集乳胶。树汁可继续浓缩为糖浆并用作甜味剂，乳胶则可进一步加工为橡胶。"
+	},
+	{
+		"type": "patchouli:image",
+		"title": "获取枫树树汁",
+		"images": [
+	        "afc:textures/gui/book/maple_tapping.png"
+	      ],
+		"border": true
+	},
+	{
+		"type": "patchouli:text",
+		"text": "采集树汁需要三样东西：树木本身、一只树汁龙头（需用锻铁锻造，并放置在至少三格高树干的中部），以及一个木桶（必须正对龙头下方、朝上放置）。若条件合适，木桶会立刻开始注满树汁。"
+	},
+	{
+		"type": "patchouli:text",
+		"text": "并非所有树木都会一直产汁。枫树与桦树在春季、温度介于 -4°C 至 6°C（大致在积雪开始融化时）会产出树汁。三叶胶树仅在气温高于 22°C 时产乳胶；橡胶无花果树在 12°C 及以上即可产乳胶，但速度慢于三叶胶树。纬度、海拔、季节与昼夜都会影响温度，进而影响树汁流速。"
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 1,
+	"extra_recipe_mappings": {
+	  "afc:tree_tap": 0
+	}
+}
+
