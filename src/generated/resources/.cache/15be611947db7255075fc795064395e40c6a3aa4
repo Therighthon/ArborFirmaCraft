@@ -1,4 +1,4 @@
-// 1.21.1	2025-10-24T21:33:57.0117768	Tags for minecraft:item mod id afc
+// 1.21.1	2025-11-08T14:16:50.4004606	Tags for minecraft:item mod id afc
 20106da5f72e924827de0047d02c0777860b077f data/afc/tags/item/araucaria_logs.json
 ff98deaf8197843ee3a51c58bf702af535a4f668 data/afc/tags/item/baobab_logs.json
 49e89121e74f6dfca4b5210c1aacd351eb4e3640 data/afc/tags/item/beech_logs.json
@@ -21,7 +21,16 @@ a3d1ec1f4e1d2f9e996f4a0a18060c17209fdd31 data/afc/tags/item/teak_logs.json
 fecb8f4990ccd6ea2fd562251b1fc868b20b13f7 data/afc/tags/item/tualang_logs.json
 d765946d21fa2d48afb7bd1909deb3f1492ad651 data/c/tags/item/barrels/wooden.json
 d450f09933a9230d7ccd99a51a730c899123799d data/c/tags/item/minecarts.json
-c0cfd528aa79d790865972a87cd69f2e340cbe3d data/minecraft/tags/item/signs.json
+587b353849b36bed78f3c79389fe45b7faf01fd8 data/minecraft/tags/item/buttons.json
+b08b795b9289791fe2ebec228c4f08aa1de744d1 data/minecraft/tags/item/fence_gates.json
+ed4b1551c1566d077c1626f17eced6ccd9f33821 data/minecraft/tags/item/planks.json
+1fe8905584752e7461b86cc3f6b83624ba42c0e1 data/minecraft/tags/item/signs.json
+19621c00a0fd9b669925fb7faf34c2f1e0b5276d data/minecraft/tags/item/wooden_doors.json
+a640c2ff212c3faf05238c56b6bdf6935686164d data/minecraft/tags/item/wooden_fences.json
+2d21216db750e523ebee4cf4a501208543eac9c4 data/minecraft/tags/item/wooden_pressure_plates.json
+597243289c3a5abbca8c6ca60a292a7d6cc55d3f data/minecraft/tags/item/wooden_slabs.json
+b1bfa9e0123dfe41779eebd3c84e4a056faca90f data/minecraft/tags/item/wooden_stairs.json
+58ef13c15c3c1708ccfd81a1ba5b6050f3e9821d data/minecraft/tags/item/wooden_trapdoors.json
 07d135ee4f573eedbc817bec1a70682d1c1c0107 data/tfc/tags/item/acacia_logs.json
 b31749a5e401856588cab99c594bf3c21b10a10d data/tfc/tags/item/aspen_logs.json
 644a7c23abb8caf82678472927446612061a1929 data/tfc/tags/item/carried_by_horse.json
@@ -30,3 +39,4 @@ d327bde8533c830dc558ac17ee26eb5c7dea8d7b data/tfc/tags/item/lumber.json
 398d2f80d83f30be99309d3c1549d12fb27e0131 data/tfc/tags/item/oak_logs.json
 ebe7b4b860336e0ce86cfda0c1b87a895187a2df data/tfc/tags/item/support_beams.json
 b2c91ae2d9396eccc72752f935ef275448d237a7 data/tfc/tags/item/tannin_logs.json
+613882af8defa318faee23ee6ba7008ca0d360bf data/tfc/tags/item/workbenches.json

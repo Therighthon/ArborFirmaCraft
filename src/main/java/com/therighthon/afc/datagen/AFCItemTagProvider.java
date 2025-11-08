@@ -69,7 +69,27 @@ public class AFCItemTagProvider extends ItemTagsProvider
         tag(AFCTags.Items.CYPRESS_LOGS).addTag(AFCTags.Items.REDCEDAR_LOGS);
         makeUniqueLogTag(UniqueLogs.RUBBER_FIG, AncientLogs.ANCIENT_RUBBER_FIG, AFCTags.Items.RUBBER_FIG_LOGS);
         tag(AFCTags.Items.FIG_LOGS).addTag(AFCTags.Items.RUBBER_FIG_LOGS);
-        
+
+        // For all true wood types, add item tags as well as the block tags
+        addAllAFCWoods(Wood.BlockType.PLANKS, ItemTags.PLANKS);
+        addAllAFCWoods(Wood.BlockType.DOOR, ItemTags.WOODEN_DOORS);
+        addAllAFCWoods(Wood.BlockType.TRAPDOOR, ItemTags.WOODEN_TRAPDOORS);
+        addAllAFCWoods(Wood.BlockType.FENCE, ItemTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.LOG_FENCE, ItemTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.FENCE_GATE, ItemTags.FENCE_GATES);
+        addAllAFCWoods(Wood.BlockType.BUTTON, ItemTags.BUTTONS);
+        addAllAFCWoods(Wood.BlockType.PRESSURE_PLATE, ItemTags.WOODEN_PRESSURE_PLATES);
+        addAllAFCWoods(Wood.BlockType.SLAB, ItemTags.WOODEN_SLABS);
+        addAllAFCWoods(Wood.BlockType.STAIRS, ItemTags.WOODEN_STAIRS);
+        addAllAFCWoods(Wood.BlockType.WORKBENCH, WORKBENCHES);
+        addAllAFCWoods(Wood.BlockType.CHEST, ItemTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, ItemTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.SIGN, ItemTags.SIGNS);
+
+        // Unique logs
+        addAllUniqueAFCWoods(UniqueLogs.BlockType.LOG_FENCE, ItemTags.WOODEN_FENCES);
+
+
         AFCItems.SUPPORTS.forEach(
             (w, i) -> tag(TFCTags.Items.SUPPORT_BEAMS).add(i.asItem())
         );
@@ -132,5 +152,19 @@ public class AFCItemTagProvider extends ItemTagsProvider
             .add(logType.getBlock(UniqueLogs.BlockType.WOOD).get().asItem())
             .add(ancient.getBlock(AncientLogs.BlockType.LOG).get().asItem())
             .add(ancient.getBlock(AncientLogs.BlockType.WOOD).get().asItem());
+    }
+
+    private void addAllAFCWoods(Wood.BlockType type, TagKey<Item> tagKey)
+    {
+        AFCBlocks.WOODS.forEach(
+            (s, m) -> tag(tagKey).add(s.getBlock(type).get().asItem())
+        );
+    }
+
+    private void addAllUniqueAFCWoods(UniqueLogs.BlockType type, TagKey<Item> tagKey)
+    {
+        AFCBlocks.UNIQUE_LOGS.forEach(
+            (s, m) -> tag(tagKey).add(s.getBlock(type).get().asItem())
+        );
     }
 }
