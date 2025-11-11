@@ -1,19 +1,26 @@
 package com.therighthon.afc.datagen;
 
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.blocks.AFCWood;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.Registry;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.LootTableProvider;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+
+import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Helpers;
 
 @EventBusSubscriber(modid = AFC.MOD_ID)
 public class DataGenerators
@@ -41,5 +48,6 @@ public class DataGenerators
         // Recipes
         generator.addProvider(event.includeServer(), new AFCRecipeProvider(packOutput, lookupProvider));
 
+        generator.addProvider(event.includeServer(), new AFCFuelProvider(packOutput, lookupProvider));
     }
 }

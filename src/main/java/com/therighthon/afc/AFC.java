@@ -27,10 +27,6 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
 
-import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.util.Metal;
-
 @Mod(AFC.MOD_ID)
 public final class AFC
 {

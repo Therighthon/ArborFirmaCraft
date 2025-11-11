@@ -108,6 +108,7 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
     {
         switch (blockType)
         {
+            // TODO: Natural wood should drop logs
             case LOG, STRIPPED_LOG, WOOD, STRIPPED_WOOD:
                 createLogDrops(species.getBlock(blockType).get());
                 break;

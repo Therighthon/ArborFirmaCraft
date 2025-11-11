@@ -1,0 +1,8 @@
+{
+  "duration": 1000,
+  "ingredient": {
+    "tag": "afc:cypress_logs"
+  },
+  "purity": 0.8,
+  "temperature": 650.0
+}
