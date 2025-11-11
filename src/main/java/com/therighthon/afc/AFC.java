@@ -6,7 +6,6 @@ import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.recipe.AFCRecipeSerializers;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
-import com.therighthon.afc.mixin.BlockEntityTypeAccessor;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -26,7 +25,6 @@ import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
-import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
@@ -47,6 +45,8 @@ public final class AFC
 
         // Data overload
         eventBus.addListener(ModEvents::onPackFinder);
+
+        eventBus.addListener(ModEvents::addToBlockEntities);
 
         AFCBlocks.BLOCKS.register(eventBus);
         AFCBlocks.FLUID_BLOCKS.register(eventBus);
@@ -87,54 +87,8 @@ public final class AFC
     {
         LOGGER.info("AFC COMMON SETUP");
         event.enqueueWork(AFCWood::registerBlockSetTypes);
-        event.enqueueWork(() -> {
-            AFCBlocks.registerFlowerPotFlowers();
-            modifyBlockEntityTypes();
-        });
+        event.enqueueWork(AFCBlocks::registerFlowerPotFlowers);
     }
 
-    private static void modifyBlockEntityTypes()
-    {
-        modifyWood(TFCBlockEntities.CHEST.get(), Wood.BlockType.CHEST);
-        modifyWood(TFCBlockEntities.TRAPPED_CHEST.get(), Wood.BlockType.TRAPPED_CHEST);
-        modifyWood(TFCBlockEntities.LOOM.get(), Wood.BlockType.LOOM);
-        modifyWood(TFCBlockEntities.BARREL.get(), Wood.BlockType.BARREL);
-        modifyWood(TFCBlockEntities.SLUICE.get(), Wood.BlockType.SLUICE);
-        modifyWood(TFCBlockEntities.BOOKSHELF.get(), Wood.BlockType.BOOKSHELF);
-        modifyWood(TFCBlockEntities.TOOL_RACK.get(), Wood.BlockType.TOOL_RACK);
-        modifyWood(TFCBlockEntities.LECTERN.get(), Wood.BlockType.LECTERN);
-        modifyWood(TFCBlockEntities.AXLE.get(), Wood.BlockType.AXLE);
-        modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE);
-        modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL);
-        modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL);
-        modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING);
-        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN);
-        modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN);
 
-        for (Metal metal : Metal.values())
-        {
-            if (metal.allParts())
-            {
-                for (AFCWood wood : AFCWood.values())
-                {
-                    modifyBlockEntityType(TFCBlockEntities.HANGING_SIGN.get(), Stream.of(AFCBlocks.CEILING_HANGING_SIGNS.get(wood).get(metal).get()));
-                    modifyBlockEntityType(TFCBlockEntities.HANGING_SIGN.get(), Stream.of(AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal).get()));
-                }
-            }
-        }
-    }
-
-    private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType)
-    {
-        modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(blockType).get()));
-    }
-
-    private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks)
-    {
-        Set<Block> blocks = type.getValidBlocks();
-        blocks = new HashSet<>(blocks);
-
-        blocks.addAll(extraBlocks.toList());
-        ((BlockEntityTypeAccessor) type).accessor$setValidBlocks(blocks);
-    }
 }

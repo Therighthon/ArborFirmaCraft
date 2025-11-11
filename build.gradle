@@ -171,6 +171,10 @@ dependencies {
 
     implementation("curse.maven:cyanide-541676:$cyanide_version")
 
+    // Forgified Fabric nonsense, don't actually need this, I just thought there was a conflict at one point
+//    compileOnly("curse.maven:forgified-fabric-api-889079:7073436")
+//    runtimeOnly("curse.maven:forgified-fabric-api-889079:7073436")
+
     // TODO: FirmaLife
 //    compileOnly(fg.deobf("curse.maven:firmalife-453394:${firmalife_version}"))
 
