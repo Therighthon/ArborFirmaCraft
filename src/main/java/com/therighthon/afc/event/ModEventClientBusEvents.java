@@ -49,6 +49,7 @@ import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.entities.TFCEntities;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.client.render.blockentity.ChestItemRenderer;
 
@@ -163,6 +164,15 @@ public final class ModEventClientBusEvents
         {
             event.registerLayerDefinition(TFCBoatRenderer.boatName(wood.getSerializedName()), () -> boatLayer);
             event.registerLayerDefinition(TFCChestBoatRenderer.chestBoatName(wood.getSerializedName()), () -> chestLayer);
+        }
+    }
+
+    public static void onRegisterEntityRenderers(EntityRenderersEvent.RegisterRenderers event)
+    {
+        for (AFCWood wood : AFCWood.VALUES)
+        {
+            event.registerEntityRenderer(AFCEntities.BOATS.get(wood).get(), ctx -> new TFCBoatRenderer(ctx, wood.getSerializedName()));
+            event.registerEntityRenderer(AFCEntities.CHEST_BOATS.get(wood).get(), ctx -> new TFCChestBoatRenderer(ctx, wood.getSerializedName()));
         }
     }
 

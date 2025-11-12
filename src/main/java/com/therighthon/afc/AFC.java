@@ -69,6 +69,7 @@ public final class AFC
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerItems);
             eventBus.addListener(ModEventClientBusEvents::onLayers);
+            eventBus.addListener(ModEventClientBusEvents::onRegisterEntityRenderers);
             eventBus.addListener(ModEventClientBusEvents::registerExtensions);
 
             if (ModList.get().isLoaded("firmalife"))

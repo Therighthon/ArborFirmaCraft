@@ -20,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.util.Metal;
 
 public class AFCBlockTagProvider extends BlockTagsProvider
 {
@@ -133,6 +134,7 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         addAllAFCWoods(Wood.BlockType.BOOKSHELF, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.TOOL_RACK, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.TWIG, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.TWIG, TFCTags.Blocks.CAN_BE_SNOW_PILED);
         addAllAFCWoods(Wood.BlockType.LOOM, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.SLUICE, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.BARREL, BlockTags.MINEABLE_WITH_AXE);
@@ -150,6 +152,7 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         addAllAFCWoods(Wood.BlockType.WATER_WHEEL, BlockTags.MINEABLE_WITH_AXE);
 
         // For all true wood types
+        addAllAFCWoods(Wood.BlockType.BARREL, TFCTags.Blocks.CLOCK_READABLE);
         addAllAFCWoods(Wood.BlockType.PLANKS, BlockTags.PLANKS);
         addAllAFCWoods(Wood.BlockType.DOOR, BlockTags.WOODEN_DOORS); // doors? mob interactable doors? added automatically from this?
         addAllAFCWoods(Wood.BlockType.TRAPDOOR, BlockTags.WOODEN_TRAPDOORS);
@@ -163,9 +166,12 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         addAllAFCWoods(Wood.BlockType.SLAB, BlockTags.WOODEN_SLABS);
         addAllAFCWoods(Wood.BlockType.STAIRS, BlockTags.WOODEN_STAIRS);
         addAllAFCWoods(Wood.BlockType.WORKBENCH, TFCTags.Blocks.WORKBENCHES);
+        addAllAFCWoods(Wood.BlockType.WORKBENCH, Tags.Blocks.PLAYER_WORKSTATIONS_CRAFTING_TABLES);
+        addAllAFCWoods(Wood.BlockType.WORKBENCH, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.CHEST, Tags.Blocks.CHESTS_WOODEN); // tfc Pet sits on
+        addAllAFCWoods(Wood.BlockType.CHEST, BlockTags.MINEABLE_WITH_AXE); // tfc Pet sits on
         addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Blocks.CHESTS_WOODEN);
-        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Blocks.CHESTS_TRAPPED);
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.HORIZONTAL_SUPPORT, TFCTags.Blocks.SUPPORT_BEAMS);
         addAllAFCWoods(Wood.BlockType.VERTICAL_SUPPORT, TFCTags.Blocks.SUPPORT_BEAMS);
         addAllAFCWoods(Wood.BlockType.SIGN, BlockTags.STANDING_SIGNS);
@@ -181,6 +187,19 @@ public class AFCBlockTagProvider extends BlockTagsProvider
         breakableBySharps(TreeSpecies.BlockType.LEAVES, Wood.BlockType.LEAVES);
         breakableBySharps(TreeSpecies.BlockType.FALLEN_LEAVES, Wood.BlockType.FALLEN_LEAVES);
         breakableBySharps(TreeSpecies.BlockType.SAPLING, Wood.BlockType.SAPLING);
+
+        // Hanging Signs
+        for (Metal metal : Metal.values())
+        {
+            if (metal.allParts())
+            {
+                for (AFCWood wood : AFCWood.values())
+                {
+                    tag(BlockTags.WALL_HANGING_SIGNS).add(AFCBlocks.WALL_HANGING_SIGNS.get(wood).get(metal).get());
+                    tag(BlockTags.CEILING_HANGING_SIGNS).add(AFCBlocks.CEILING_HANGING_SIGNS.get(wood).get(metal).get());
+                }
+            }
+        }
 
     }
 

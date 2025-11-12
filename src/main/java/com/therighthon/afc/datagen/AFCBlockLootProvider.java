@@ -7,21 +7,30 @@ import com.therighthon.afc.common.blocks.AncientLogs;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
+import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
 import net.minecraft.advancements.critereon.ItemPredicate;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.data.loot.BlockLootSubProvider;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
+import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
+import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
@@ -30,6 +39,7 @@ import net.neoforged.neoforge.common.Tags;
 import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.TFCTags;
+import net.dries007.tfc.common.blocks.TFCBlockStateProperties;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Metal;
 
@@ -121,6 +131,8 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
             case VERTICAL_SUPPORT, HORIZONTAL_SUPPORT:
                 dropOther(species.getBlock(blockType).get(), AFCItems.SUPPORTS.get(species));
                 break;
+            case BARREL:
+                // TODO: Add unique behavior to generate these properly and then a break
             default:
                 dropSelf(species.getBlock(blockType).get());
         }
@@ -191,10 +203,10 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                 lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .add(AlternativesEntry.alternatives(
-                        LootItem.lootTableItem(Items.STICK)
+                        lootTableItem(Items.STICK)
                             .when(isHammer())
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))),
-                        LootItem.lootTableItem(logBlock.asItem())
+                        lootTableItem(logBlock.asItem())
                     )).when(survivesExplosion())
             )
         );
@@ -207,10 +219,10 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                 lootPool()
                     .setRolls(ConstantValue.exactly(1))
                     .add(AlternativesEntry.alternatives(
-                        LootItem.lootTableItem(Items.STICK)
+                        lootTableItem(Items.STICK)
                             .when(isHammer())
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))),
-                        LootItem.lootTableItem(drop)
+                        lootTableItem(drop)
                             .when(randomChance(dropChance))
                     )).when(survivesExplosion())
             )
@@ -242,12 +254,12 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                     .setRolls(ConstantValue.exactly(1))
                     .name("stick_pool")
                     .add(AlternativesEntry.alternatives(
-                        LootItem.lootTableItem(Items.STICK)
+                        lootTableItem(Items.STICK)
                             .when(MatchTool.toolMatches(ItemPredicate.Builder.item().of(TFCTags.Items.TOOLS_SHARP)))
                             .when(InvertedLootItemCondition.invert(hasShearsOrSilkTouch()))
                             .when(randomChance(0.2f))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F))),
-                        LootItem.lootTableItem(Items.STICK)
+                        lootTableItem(Items.STICK)
                             .when(InvertedLootItemCondition.invert(hasShearsOrSilkTouch()))
                             .when(randomChance(0.05f))
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
