@@ -60,7 +60,7 @@
               "condition": "minecraft:survives_explosion"
             },
             {
-              "chance": 0.014,
+              "chance": 0.017,
               "condition": "minecraft:random_chance"
             }
           ],

@@ -1,0 +1,19 @@
+{
+  "type": "tfc:pot",
+  "ingredients": [
+    {
+      "tag": "forge:dusts/sulfur"
+    }
+  ],
+  "item_output": [
+    {
+      "id": "afc:rubber_bar"
+    }
+  ],
+  "fluid_ingredient": {
+    "fluid": "afc:latex",
+    "amount": 1000
+  },
+  "duration": 2000,
+  "temperature": 600
+}

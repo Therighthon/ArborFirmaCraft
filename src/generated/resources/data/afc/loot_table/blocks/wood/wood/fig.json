@@ -37,6 +37,22 @@
             },
             {
               "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "block": "afc:wood/wood/fig",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "branch_direction": "none"
+                    }
+                  }
+                }
+              ],
+              "name": "afc:wood/log/fig"
+            },
+            {
+              "type": "minecraft:item",
               "name": "afc:wood/wood/fig"
             }
           ]

@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-11T16:13:37.7888038	Tags for minecraft:item mod id afc
+// 1.21.1	2025-11-13T16:54:21.3264587	Tags for minecraft:item mod id afc
 20106da5f72e924827de0047d02c0777860b077f data/afc/tags/item/araucaria_logs.json
 ff98deaf8197843ee3a51c58bf702af535a4f668 data/afc/tags/item/baobab_logs.json
 49e89121e74f6dfca4b5210c1aacd351eb4e3640 data/afc/tags/item/beech_logs.json
@@ -36,6 +36,7 @@ b1bfa9e0123dfe41779eebd3c84e4a056faca90f data/minecraft/tags/item/wooden_stairs.
 58ef13c15c3c1708ccfd81a1ba5b6050f3e9821d data/minecraft/tags/item/wooden_trapdoors.json
 07d135ee4f573eedbc817bec1a70682d1c1c0107 data/tfc/tags/item/acacia_logs.json
 b31749a5e401856588cab99c594bf3c21b10a10d data/tfc/tags/item/aspen_logs.json
+d765946d21fa2d48afb7bd1909deb3f1492ad651 data/tfc/tags/item/barrels.json
 644a7c23abb8caf82678472927446612061a1929 data/tfc/tags/item/carried_by_horse.json
 85bbe90118dbb4573b2d22a727fe7f281e5ac616 data/tfc/tags/item/fallen_leaves.json
 ffaab7c78843be0f996bd8ccaada8995a4d49b68 data/tfc/tags/item/foods/sweeteners.json

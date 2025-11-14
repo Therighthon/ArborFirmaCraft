@@ -23,35 +23,37 @@ import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.FallenLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
+import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
+import net.dries007.tfc.util.calendar.ICalendar;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
     GUM_ARABIC(false, 8, 196, 0.0292f),
-    ACACIA_KOA(false, 16, 180, 0.0193f),
+    ACACIA_KOA(false, 16, 180, 0.0196f),
     //Ash
     //Aspen
-    POPLAR(false, 8, 250, 0.0140f),
+    POPLAR(false, 8, 250, 0.0170f),
     //Birch
     //Blackwood
     MPINGO_BLACKWOOD(false, 11, 200, 0.0292f),
     //Chestnut
-    HARDY_CHESTNUT(false, 8, 180, 0.0179f),
+    HARDY_CHESTNUT(false, 8, 180, 0.0189f),
     //Fir
     MOUNTAIN_FIR( true, 11, 0, 0.0543f),
     BALSAM_FIR( true, 13, 0, 0.0511f),
     //Hickory
     SCRUB_HICKORY( false, 7, 220, 0.078f),
     //Kapok
-    RED_SILK_COTTON(false, 18, 150, 0.0089f),
+    RED_SILK_COTTON(false, 18, 150, 0.0145f),
     //Maple
-    BIGLEAF_MAPLE( false, 9, 215, 0.0175f),
+    BIGLEAF_MAPLE( false, 9, 215, 0.0188f),
     WEEPING_MAPLE( true, 9, 0, 0.0545f),
     //Oak
-    BLACK_OAK( false, 14, 180, 0.0174f),
-    LIVE_OAK( false, 10, 155, 0.0175f),
+    BLACK_OAK( false, 14, 180, 0.0187f),
+    LIVE_OAK( false, 10, 155, 0.0188f),
     //Palm
     JAGGERY_PALM(false, 6, 249, 0.0447f),
     //Pine
@@ -61,9 +63,9 @@ public enum TreeSpecies implements RegistryTreeSpecies
     HUANGSHAN_PINE(true, 9, 0, 0.0541f),
 
     //Rosewood
-    GIANT_ROSEWOOD( false, 16, 190, 0.0127f),
+    GIANT_ROSEWOOD( false, 16, 190, 0.0163f),
     //Sequoia
-    COAST_REDWOOD( true, 10, 0, 0.0132f),
+    COAST_REDWOOD( true, 10, 0, 0.0166f),
     DAWN_REDWOOD(true, 9, 0, 0.0248f),
     //Spruce
     COAST_SPRUCE(true, 8, 0, 0.0238f),
@@ -72,22 +74,22 @@ public enum TreeSpecies implements RegistryTreeSpecies
     //Cedar
     ATLAS_CEDAR( true, 10, 0, 0.0210f),
     //Willow
-    WEEPING_WILLOW(false, 16, 240, 0.0107f),
+    WEEPING_WILLOW(false, 16, 240, 0.0154f),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(false, 16, 30, 0.0145f),
-    MOUNTAIN_ASH(false, 13, 150, 0.0140f),
+    RAINBOW_EUCALYPTUS(false, 16, 30, 0.0173f),
+    MOUNTAIN_ASH(false, 13, 150, 0.0170f),
     //Fig
-    RUBBER_FIG(false, 13, 80, 0.0127f),
+    RUBBER_FIG(false, 13, 80, 0.0163f),
     //Cypress
-    REDCEDAR(true, 10, 0, 0.0132f),
+    REDCEDAR(true, 10, 0, 0.0166f),
     WEEPING_CYPRESS(true, 7, 0, 0.0591f),
     BALD_CYPRESS(false, 7, 130, 0.0543f),
     JUNIPER(true, 8, 0, 0.0474f),
     //Mahogany
-    SAPELE_MAHOGANY(false, 14, 170, 0.0089f),
+    SAPELE_MAHOGANY(false, 14, 170, 0.0145f),
     SMALL_LEAF_MAHOGANY(false, 11, 240, 0.0175f),
     //Teak
-    IROKO_TEAK(false, 13, 140, 0.0089f),
+    IROKO_TEAK(false, 13, 140, 0.0143f),
     FLAME_OF_THE_FOREST(false, 11, 0, 0.0428f),
     //Ironwood
     LEBOMBO_IRONWOOD(false, 8, 230, 0.0472f),
@@ -156,6 +158,12 @@ public enum TreeSpecies implements RegistryTreeSpecies
         return defaultDaysToGrow();
     }
 
+    @Override
+    public int ticksToGrow()
+    {
+        return defaultDaysToGrow() * ICalendar.CALENDAR_TICKS_IN_DAY;
+    }
+
     public int defaultDaysToGrow()
     {
         return daysToGrow;
@@ -174,7 +182,8 @@ public enum TreeSpecies implements RegistryTreeSpecies
         SAPLING((self, wood) -> new TFCSaplingBlock(wood.tree(),
             ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0).sound(SoundType.GRASS)
                 .flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER),
-            wood::daysToGrow, wood == TreeSpecies.JAGGERY_PALM), false),
+                wood::ticksToGrow,
+            wood == TreeSpecies.JAGGERY_PALM), false), // TODO: More robust sand handling?
         POTTED_SAPLING((self, wood) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
             wood.getBlock(SAPLING), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING)), false),
         FALLEN_LEAVES((self, wood) -> {

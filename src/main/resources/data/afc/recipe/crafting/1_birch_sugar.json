@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "tfc:fluid_content",
+      "fluid": {
+        "fluid": "afc:birch_syrup",
+        "amount": 100
+      }
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:birch_sugar"
+  }
+}

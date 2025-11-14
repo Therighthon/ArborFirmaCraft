@@ -30,6 +30,8 @@ import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.Sheets;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.core.component.DataComponentType;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -48,8 +50,11 @@ import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.component.TFCComponents;
 import net.dries007.tfc.common.entities.TFCEntities;
+import net.dries007.tfc.common.items.BarrelBlockItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.client.render.blockentity.ChestItemRenderer;
 
@@ -135,6 +140,8 @@ public final class ModEventClientBusEvents
         }
 
         ItemBlockRenderTypes.setRenderLayer(AFCBlocks.TREE_TAP.get(), RenderType.cutout());
+
+        AFCBlocks.WOODS.values().forEach(map -> registerSealedProperty(map.get(BARREL), TFCComponents.BARREL));
     }
 
     public static void clientFLCompatSetup(FMLClientSetupEvent event)
@@ -210,5 +217,12 @@ public final class ModEventClientBusEvents
     private static <T> void registerCustomItemRenderer(RegisterClientExtensionsEvent event, @Nullable Supplier<? extends ItemLike> item, Function<T, BlockEntityWithoutLevelRenderer> renderer)
     {
         if (item != null) event.registerItem(ItemRendererExtension.cached(() -> renderer.apply((T) item.get().asItem())), item.get().asItem());
+    }
+
+    private static final ResourceLocation SEALED = Helpers.identifier("sealed");
+
+    private static void registerSealedProperty(ItemLike item, Supplier<? extends DataComponentType<?>> type)
+    {
+        ItemProperties.register(item.asItem(), SEALED, (stack, level, entity, unused) -> stack.has(type) ? 1.0f : 0f);
     }
 }

@@ -311,9 +311,10 @@ def main():
     for name, count in leaves.items():
         # Base value: every tree results in 3.5 saplings, on average, if every leaf was broken
         # We bias this towards returning larger values, for larger trees, as it requires more leaves to break
+        # We make this bias slightly larger in AFC because trees get larger
         chance = 3.5 / count
         if chance < 0.02:
-            chance = 0.2 * 0.02 + 0.8 * chance
+            chance = 0.6 * 0.02 + 0.4 * chance
         print('    %s: %.4f,' % (repr(name), chance))
     print('}')
 

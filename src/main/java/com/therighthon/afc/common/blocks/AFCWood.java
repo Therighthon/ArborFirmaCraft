@@ -21,18 +21,18 @@ public enum AFCWood implements RegistryWood
     //Wood color, then bark color
     BAOBAB(false, MapColor.WOOD, MapColor.WOOD,10, 212, 0.0506f),
     EUCALYPTUS(false, MapColor.WOOD, MapColor.WOOD,10, 150, 0.0193f),
-    MAHOGANY( false, MapColor.WOOD, MapColor.WOOD,10, 10, 0.0115f),
-    HEVEA(false, MapColor.WOOD, MapColor.WOOD,10, 130, 0.0133f),
-    TUALANG(false, MapColor.WOOD, MapColor.WOOD,10, 226, 0.0133f),
-    TEAK(false, MapColor.WOOD, MapColor.WOOD,10, 240, 0.0115f),
+    MAHOGANY( false, MapColor.WOOD, MapColor.WOOD,10, 10, 0.0157f),
+    HEVEA(false, MapColor.WOOD, MapColor.WOOD,10, 130, 0.0166f),
+    TUALANG(false, MapColor.WOOD, MapColor.WOOD,10, 226, 0.0166f),
+    TEAK(false, MapColor.WOOD, MapColor.WOOD,10, 240, 0.0157f),
     CYPRESS(true, MapColor.WOOD, MapColor.WOOD,10, 0, 0.0795f),
-    FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0133f),
-    IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0089f),
-    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0115f),
+    FIG(false, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0166f),
+    IRONWOOD(false, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0145f),
+    IPE(false, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0157f),
     ARAUCARIA(true, MapColor.WOOD, MapColor.WOOD, 12, 0, 0.0281f),
-    BEECH(false, MapColor.WOOD, MapColor.WOOD, 11, 110, 0.0140f),
+    BEECH(false, MapColor.WOOD, MapColor.WOOD, 11, 110, 0.0170f),
     GINKGO(false, MapColor.WOOD, MapColor.WOOD, 11, 245, 0.0209f),
-    MAHOE(false, MapColor.WOOD, MapColor.WOOD, 11, 212, 0.0179f);
+    MAHOE(false, MapColor.WOOD, MapColor.WOOD, 11, 212, 0.0189f);
 
     public static final AFCWood[] VALUES = values();
 

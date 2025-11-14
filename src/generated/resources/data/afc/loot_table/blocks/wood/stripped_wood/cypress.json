@@ -37,6 +37,22 @@
             },
             {
               "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "block": "afc:wood/stripped_wood/cypress",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "branch_direction": "none"
+                    }
+                  }
+                }
+              ],
+              "name": "afc:wood/log/cypress"
+            },
+            {
+              "type": "minecraft:item",
               "name": "afc:wood/stripped_wood/cypress"
             }
           ]

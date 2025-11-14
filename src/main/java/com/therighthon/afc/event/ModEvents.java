@@ -5,6 +5,7 @@ package com.therighthon.afc.event;
 import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.TreeSpecies;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Stream;
@@ -61,13 +62,14 @@ public class ModEvents
         modifyWood(TFCBlockEntities.BLADED_AXLE.get(), Wood.BlockType.BLADED_AXLE, event);
         modifyWood(TFCBlockEntities.WATER_WHEEL.get(), Wood.BlockType.WATER_WHEEL, event);
         modifyWood(TFCBlockEntities.WINDMILL.get(), Wood.BlockType.WINDMILL, event);
-        modifyWood(TFCBlockEntities.TICK_COUNTER.get(), Wood.BlockType.SAPLING, event);
         modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.SIGN, event);
         modifyWood(TFCBlockEntities.SIGN.get(), Wood.BlockType.WALL_SIGN, event);
         modifyWood(TFCBlockEntities.CLUTCH.get(), Wood.BlockType.CLUTCH, event);
         modifyWood(TFCBlockEntities.GEAR_BOX.get(), Wood.BlockType.GEAR_BOX, event);
         modifyWood(TFCBlockEntities.SHELF.get(), Wood.BlockType.SHELF, event);
         modifyWood(TFCBlockEntities.ENCASED_AXLE.get(), Wood.BlockType.ENCASED_AXLE, event);
+
+        modifySapling(TFCBlockEntities.TICK_COUNTER.get(), event);
 
         for (Metal metal : Metal.values())
         {
@@ -85,6 +87,12 @@ public class ModEvents
     private static void modifyWood(BlockEntityType<?> type, Wood.BlockType blockType,BlockEntityTypeAddBlocksEvent event)
     {
         modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(blockType).get()), event);
+    }
+
+    private static void modifySapling(BlockEntityType<?> type, BlockEntityTypeAddBlocksEvent event)
+    {
+        modifyBlockEntityType(type, AFCBlocks.WOODS.values().stream().map(map -> map.get(Wood.BlockType.SAPLING).get()), event);
+        modifyBlockEntityType(type, AFCBlocks.TREE_SPECIES.values().stream().map(map -> map.get(TreeSpecies.BlockType.SAPLING).get()), event);
     }
 
     private static void modifyBlockEntityType(BlockEntityType<?> type, Stream<Block> extraBlocks, BlockEntityTypeAddBlocksEvent event)

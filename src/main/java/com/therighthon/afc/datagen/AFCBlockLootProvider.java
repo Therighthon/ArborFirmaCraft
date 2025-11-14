@@ -15,16 +15,21 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.component.DataComponentType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.datafix.fixes.BlockEntityCustomNameToComponentFix;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
 import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
@@ -40,8 +45,13 @@ import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlockStateProperties;
+import net.dries007.tfc.common.blocks.wood.BranchDirection;
 import net.dries007.tfc.common.blocks.wood.Wood;
+import net.dries007.tfc.common.component.TFCComponents;
+import net.dries007.tfc.common.component.block.BarrelComponent;
 import net.dries007.tfc.util.Metal;
+import net.dries007.tfc.util.loot.ApplyStackSizeFunction;
+import net.dries007.tfc.util.loot.TFCLoot;
 
 import static net.minecraft.world.level.storage.loot.LootPool.*;
 import static net.minecraft.world.level.storage.loot.entries.LootItem.*;
@@ -118,9 +128,8 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
     {
         switch (blockType)
         {
-            // TODO: Natural wood should drop logs
             case LOG, STRIPPED_LOG, WOOD, STRIPPED_WOOD:
-                createLogDrops(species.getBlock(blockType).get());
+                createLogDrops(species, blockType);
                 break;
             case LEAVES:
                 createAFCLeavesDrops(species.getBlock(blockType).get(), species.getBlock(Wood.BlockType.SAPLING).get(), species.getSaplingDropRate());
@@ -132,7 +141,8 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                 dropOther(species.getBlock(blockType).get(), AFCItems.SUPPORTS.get(species));
                 break;
             case BARREL:
-                // TODO: Add unique behavior to generate these properly and then a break
+                createBarrelDrop(species);
+                break;
             default:
                 dropSelf(species.getBlock(blockType).get());
         }
@@ -158,7 +168,7 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
         switch (blockType)
         {
             case LOG, WOOD:
-                createLogDrops(species.getBlock(blockType).get());
+                createUniqueLogDrops(species, blockType);
                 break;
             default:
                 dropSelf(species.getBlock(blockType).get());
@@ -196,9 +206,12 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
         return AFCBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
     }
 
-    protected void createLogDrops(Block logBlock)
+    protected void createLogDrops(AFCWood species, Wood.BlockType blockType)
     {
-        add(logBlock, LootTable.lootTable()
+        Block thisBlock = species.getBlock(blockType).get();
+        Item logItem = species.getBlock(Wood.BlockType.LOG).get().asItem();
+
+        add(thisBlock, LootTable.lootTable()
             .withPool(
                 lootPool()
                     .setRolls(ConstantValue.exactly(1))
@@ -206,7 +219,30 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                         lootTableItem(Items.STICK)
                             .when(isHammer())
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))),
-                        lootTableItem(logBlock.asItem())
+                        lootTableItem(logItem)
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(thisBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TFCBlockStateProperties.BRANCH_DIRECTION, BranchDirection.NONE)).invert()),
+                        lootTableItem(thisBlock.asItem())
+                    )).when(survivesExplosion())
+            )
+        );
+    }
+
+    protected void createUniqueLogDrops(UniqueLogs species, UniqueLogs.BlockType blockType)
+    {
+        Block thisBlock = species.getBlock(blockType).get();
+        Item logItem = species.getBlock(UniqueLogs.BlockType.LOG).get().asItem();
+
+        add(thisBlock, LootTable.lootTable()
+            .withPool(
+                lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(AlternativesEntry.alternatives(
+                        lootTableItem(Items.STICK)
+                            .when(isHammer())
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 4.0F))),
+                        lootTableItem(logItem)
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(thisBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TFCBlockStateProperties.BRANCH_DIRECTION, BranchDirection.NONE)).invert()),
+                        lootTableItem(thisBlock.asItem())
                     )).when(survivesExplosion())
             )
         );
@@ -265,6 +301,25 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
                     ))
                     .when(survivesExplosion())
+            )
+        );
+    }
+
+    protected void createBarrelDrop(AFCWood wood)
+    {
+        Block barrelBlock = wood.getBlock(Wood.BlockType.BARREL).get();
+
+        add(barrelBlock, LootTable.lootTable()
+            .withPool(
+                lootPool()
+                    .setRolls(ConstantValue.exactly(1))
+                    .add(AlternativesEntry.alternatives(
+                        lootTableItem(barrelBlock)
+                            .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(barrelBlock).setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(TFCBlockStateProperties.SEALED, true)))
+                            .apply(CopyComponentsFunction.copyComponents(CopyComponentsFunction.Source.BLOCK_ENTITY).include(DataComponents.CUSTOM_NAME).include(TFCComponents.BARREL.get()))
+                            .apply(ApplyStackSizeFunction.simpleBuilder(ApplyStackSizeFunction::new)),
+                        lootTableItem(barrelBlock.asItem())
+                    )).when(survivesExplosion())
             )
         );
     }

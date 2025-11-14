@@ -4,6 +4,7 @@ import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
+import com.therighthon.afc.common.items.AFCItemCapabilities;
 import com.therighthon.afc.common.recipe.AFCRecipeSerializers;
 import com.therighthon.afc.common.recipe.AFCRecipeTypes;
 import java.util.HashSet;
@@ -26,6 +27,8 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.fml.loading.FMLEnvironment;
 import org.slf4j.Logger;
+
+import net.dries007.tfc.common.capabilities.ItemCapabilities;
 
 @Mod(AFC.MOD_ID)
 public final class AFC
@@ -71,6 +74,7 @@ public final class AFC
             eventBus.addListener(ModEventClientBusEvents::onLayers);
             eventBus.addListener(ModEventClientBusEvents::onRegisterEntityRenderers);
             eventBus.addListener(ModEventClientBusEvents::registerExtensions);
+            eventBus.addListener(AFCItemCapabilities::register);
 
             if (ModList.get().isLoaded("firmalife"))
             {

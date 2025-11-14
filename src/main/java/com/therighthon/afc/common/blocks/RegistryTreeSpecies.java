@@ -13,5 +13,8 @@ public interface RegistryTreeSpecies extends StringRepresentable
     int autumnIndex();
 
     int daysToGrow();
+
+    int ticksToGrow();
+
     Supplier<Block> getBlock(TreeSpecies.BlockType var1);
 }

@@ -37,6 +37,22 @@
             },
             {
               "type": "minecraft:item",
+              "conditions": [
+                {
+                  "condition": "minecraft:inverted",
+                  "term": {
+                    "block": "afc:wood/wood/baobab",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "branch_direction": "none"
+                    }
+                  }
+                }
+              ],
+              "name": "afc:wood/log/baobab"
+            },
+            {
+              "type": "minecraft:item",
               "name": "afc:wood/wood/baobab"
             }
           ]

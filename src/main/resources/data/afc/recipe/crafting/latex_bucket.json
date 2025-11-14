@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "type": "tfc:fluid_content",
+      "fluid": {
+        "fluid": "afc:latex",
+        "amount": 1000
+      }
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfc:glue"
+  }
+}

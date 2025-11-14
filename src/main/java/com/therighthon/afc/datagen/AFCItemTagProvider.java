@@ -130,8 +130,11 @@ public class AFCItemTagProvider extends ItemTagsProvider
         );
 
         AFCBlocks.WOODS.forEach(
-            (w, i) -> tag(MINECART_HOLDABLE)
-                .add(w.getBlock(Wood.BlockType.BARREL).get().asItem())
+            (w, i) ->
+            {
+                tag(MINECART_HOLDABLE).add(w.getBlock(Wood.BlockType.BARREL).get().asItem());
+                tag(BARRELS).add(w.getBlock(Wood.BlockType.BARREL).get().asItem());
+            }
         );
 
         tag(TANNIN_LOGS)

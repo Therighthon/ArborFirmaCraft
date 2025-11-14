@@ -572,7 +572,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
 def flower_pot_cross(rm: ResourceManager, lang_name: str, name: str, model: str, texture: str):
     rm.blockstate(name, model='afc:block/%s' % model).with_lang(lang('potted %s', lang_name))
-    rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/loam'})
+    rm.block_model(model, parent='minecraft:block/flower_pot_cross', textures={'plant': texture, 'dirt': 'tfc:block/dirt/entisol'})
 
 def item_model_property(rm: ResourceManager, name_parts: utils.ResourceIdentifier, overrides: utils.Json, data: Dict[str, Any]) -> ItemContext:
     res = utils.resource_location(rm.domain, name_parts)
