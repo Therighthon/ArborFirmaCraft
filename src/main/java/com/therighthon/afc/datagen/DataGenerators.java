@@ -49,5 +49,9 @@ public class DataGenerators
         generator.addProvider(event.includeServer(), new AFCRecipeProvider(packOutput, lookupProvider));
 
         generator.addProvider(event.includeServer(), new AFCFuelProvider(packOutput, lookupProvider));
+
+        // Misc
+
+        generator.addProvider(event.includeServer(), new AFCSupportsProvider(packOutput, lookupProvider));
     }
 }

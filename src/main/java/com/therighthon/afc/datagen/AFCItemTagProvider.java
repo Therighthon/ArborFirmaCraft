@@ -153,6 +153,12 @@ public class AFCItemTagProvider extends ItemTagsProvider
             .add(UniqueLogs.BLACK_OAK.getBlock(UniqueLogs.BlockType.LOG).get().asItem())
             .add(UniqueLogs.BLACK_OAK.getBlock(UniqueLogs.BlockType.WOOD).get().asItem());
 
+        // Twigs
+        addAllAFCWoods(Wood.BlockType.TWIG, Tags.Items.RODS_WOODEN);
+        addAllUniqueAFCWoods(UniqueLogs.BlockType.TWIG, Tags.Items.RODS_WOODEN);
+        addAllAFCWoods(Wood.BlockType.TWIG, TWIGS);
+        addAllUniqueAFCWoods(UniqueLogs.BlockType.TWIG, TWIGS);
+
         // Stuff that exists per species
         addAllAFCSpecies(TreeSpecies.BlockType.LEAVES, Wood.BlockType.LEAVES, ItemTags.LEAVES); // Lots to check
         addAllAFCSpecies(TreeSpecies.BlockType.FALLEN_LEAVES, Wood.BlockType.FALLEN_LEAVES, TFCTags.Items.FALLEN_LEAVES); // Lots to check

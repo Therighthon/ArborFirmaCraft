@@ -63,7 +63,7 @@ public class AFCBlocks
 
     public static final Map<TreeSpecies, Map<TreeSpecies.BlockType, Id<Block>>> TREE_SPECIES = Helpers.mapOf(TreeSpecies.class, wood ->
         Helpers.mapOf(TreeSpecies.BlockType.class, type ->
-            register((String) type.nameFor(wood), createTreeSpecies(wood, type), type.createBlockItem(new Item.Properties()))
+            register(type.nameFor(wood), createTreeSpecies(wood, type), type.createBlockItem(new Item.Properties()))
         )
     );
 
@@ -126,6 +126,7 @@ public class AFCBlocks
         return new Id<>(RegistrationHelpers.registerBlock(AFCBlocks.BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory));
     }
 
+    // TODO: Is this wood/planks stuff still relevant? Investigate properly
     private static <B extends SignBlock> Map<AFCWood, Map<Metal, Id<B>>> registerHangingSigns(String variant, BiFunction<ExtendedProperties, WoodType, B> factory)
     {
         return Helpers.mapOf(AFCWood.class, wood ->

@@ -1,5 +1,6 @@
 package com.therighthon.afc.common.blocks;
 
+import com.therighthon.afc.AFCHelpers;
 import java.util.Locale;
 import java.util.Optional;
 import java.util.function.BiFunction;
@@ -26,6 +27,7 @@ import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.ICalendar;
+import net.dries007.tfc.util.registry.RegistryWood;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
@@ -115,9 +117,9 @@ public enum TreeSpecies implements RegistryTreeSpecies
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.autumnIndex = autumnIndex;
         this.tree = new TreeGrower(
-            Helpers.identifier(this.serializedName).toString(),
+            AFCHelpers.modIdentifier(this.serializedName).toString(),
             Optional.empty(),
-            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, Helpers.identifier("tree/" + this.serializedName))),
+            Optional.of(ResourceKey.create(Registries.CONFIGURED_FEATURE, AFCHelpers.modIdentifier("tree/" + this.serializedName))),
             Optional.empty()
         );
         this.conifer = conifer;
@@ -178,20 +180,19 @@ public enum TreeSpecies implements RegistryTreeSpecies
     public enum BlockType {
         LEAVES((self, wood) -> {
             return new TFCLeavesBlock(ExtendedProperties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).defaultInstrument().randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.autumnIndex(), wood.getBlock(self.fallenLeaves()), null) {};
-        }, false),
-        SAPLING((self, wood) -> new TFCSaplingBlock(wood.tree(),
+        }),
+        SAPLING(wood -> new TFCSaplingBlock(wood.tree(),
             ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0).sound(SoundType.GRASS)
                 .flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER),
-                wood::ticksToGrow,
-            wood == TreeSpecies.JAGGERY_PALM), false), // TODO: More robust sand handling?
+                wood::ticksToGrow, wood == TreeSpecies.JAGGERY_PALM)), // TODO: More robust sand handling?
         POTTED_SAPLING((self, wood) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
-            wood.getBlock(SAPLING), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING)), false),
+            wood.getBlock(SAPLING), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING))),
         FALLEN_LEAVES((self, wood) -> {
             return new FallenLeavesBlock(ExtendedProperties.of().strength(0.05F, 0.0F).noOcclusion().noCollission().isViewBlocking(TFCBlocks::never).sound(SoundType.CROP).flammableLikeWool(), wood.getBlock(self.leaves()));
-        }, false);
+        });
 
         private final BiFunction<Block, net.minecraft.world.item.Item.Properties, ? extends BlockItem> blockItemFactory;
-        private final boolean isPlanksVariant;
+
         private final BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory;
 
         private static ExtendedProperties properties(RegistryTreeSpecies wood) {
@@ -210,13 +211,17 @@ public enum TreeSpecies implements RegistryTreeSpecies
             return LEAVES;
         }
 
-        private BlockType(BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory, boolean isPlanksVariant) {
-            this(blockFactory, isPlanksVariant, BlockItem::new);
+        BlockType(Function<RegistryTreeSpecies, Block> blockFactory)
+        {
+            this((self, wood) -> blockFactory.apply(wood));
         }
 
-        private BlockType(BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory, boolean isPlanksVariant, BiFunction<Block, net.minecraft.world.item.Item.Properties, ? extends BlockItem> blockItemFactory) {
+        private BlockType(BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory) {
+            this(blockFactory, BlockItem::new);
+        }
+
+        private BlockType(BiFunction<TreeSpecies.BlockType, RegistryTreeSpecies, Block> blockFactory, BiFunction<Block, net.minecraft.world.item.Item.Properties, ? extends BlockItem> blockItemFactory) {
             this.blockFactory = blockFactory;
-            this.isPlanksVariant = isPlanksVariant;
             this.blockItemFactory = blockItemFactory;
         }
 
@@ -231,18 +236,13 @@ public enum TreeSpecies implements RegistryTreeSpecies
             return this != POTTED_SAPLING;
         }
 
-        public Object nameFor(TreeSpecies wood)
-        {
-            return (this.isPlanksVariant ? "wood/planks/" + wood.getSerializedName() + "_" + this.name() : "wood/" + this.name() + "/" + wood.getSerializedName()).toLowerCase(Locale.ROOT);
-        }
-
         public Supplier<Block> create(RegistryTreeSpecies wood) {
             return () -> {
                 return (Block)this.blockFactory.apply(this, wood);
             };
         }
 
-        public String nameFor(RegistryTreeSpecies wood) {
+        public String nameFor(TreeSpecies wood) {
             return ("wood/" + this.name() + "/" + wood.getSerializedName()).toLowerCase(Locale.ROOT);
         }
 

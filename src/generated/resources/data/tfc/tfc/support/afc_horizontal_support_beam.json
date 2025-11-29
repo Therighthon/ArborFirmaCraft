@@ -1,0 +1,21 @@
+{
+  "ingredient": [
+    "afc:wood/horizontal_support/baobab",
+    "afc:wood/horizontal_support/eucalyptus",
+    "afc:wood/horizontal_support/mahogany",
+    "afc:wood/horizontal_support/hevea",
+    "afc:wood/horizontal_support/tualang",
+    "afc:wood/horizontal_support/teak",
+    "afc:wood/horizontal_support/cypress",
+    "afc:wood/horizontal_support/fig",
+    "afc:wood/horizontal_support/ironwood",
+    "afc:wood/horizontal_support/ipe",
+    "afc:wood/horizontal_support/araucaria",
+    "afc:wood/horizontal_support/beech",
+    "afc:wood/horizontal_support/ginkgo",
+    "afc:wood/horizontal_support/mahoe"
+  ],
+  "support_down": 2,
+  "support_horizontal": 4,
+  "support_up": 2
+}

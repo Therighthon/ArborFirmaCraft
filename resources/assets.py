@@ -477,7 +477,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         block.with_lang(lang('%s twig', wood))
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         prefix = 'afc'
-        wood_or_fig = wood
+        bark_name = wood
         if wood == 'rainbow_eucalyptus':
             wood_top = 'eucalyptus'
         elif wood == 'black_oak':
@@ -492,7 +492,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
             wood_top = 'araucaria'
         elif wood == 'rubber_fig':
             wood_top = 'fig'
-            wood_or_fig = 'fig'
+            bark_name = 'fig'
         elif wood == 'gum_arabic':
             wood_top = 'acacia'
             prefix = 'tfc'
@@ -501,7 +501,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
         planks = wood_top
 
-        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood_or_fig, 'top': 'afc:block/wood/log_top/%s' % wood_top}, parent='tfc:block/groundcover/twig')
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % bark_name, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
         for variant in ('log', 'wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
                 'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
@@ -510,7 +510,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
             }, use_default_model=False)
 
             end = '%s:block/wood/%s/%s' % (prefix, variant.replace('log', 'log_top').replace('wood', 'log'), wood_top)
-            side = '%s:block/wood/%s/%s' % ('afc', variant.replace('wood', 'log'), wood_or_fig) # Always use AFC for side textures
+            side = '%s:block/wood/%s/%s' % ('afc', variant.replace('wood', 'log'), bark_name) # Always use AFC for side textures
             block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
             block.with_lang(lang('%s %s', wood, variant))
