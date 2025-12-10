@@ -541,32 +541,35 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
         else:
             mod_id = 'afc'
         for variant in ('log', 'wood'):
-            block = rm.blockstate(('wood', variant, wood), variants={
+            rm.blockstate(('wood', variant, wood), variants={
                 'axis=y': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood)},
                 'axis=z': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90},
                 'axis=x': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90, 'y': 90}
             }, use_default_model=False)
+            wood_name = wood.replace("ancient_", "")
+            rm.item_model(('wood', variant, wood), '%s:item/wood/%s/%s' % (mod_id, variant, wood_name))
 
     rm.blockstate('light', variants={'level=%s' % i: {'model': 'minecraft:block/light_%s' % i if i >= 10 else 'minecraft:block/light_0%s' % i} for i in range(0, 15 + 1)}).with_lang(lang('Light'))
     rm.item_model('light', no_textures=True, parent='minecraft:item/light')
 
-    rm.atlas('minecraft:blocks',
-             atlases.palette(
-                 key='afc:color_palettes/wood/planks/palette',
-                 textures=['tfc:block/wood/planks/%s' % v for v in ('bookshelf_top', 'bookshelf_side')],
-                 permutations=dict((wood, 'afc:color_palettes/wood/planks/%s' % wood) for wood in AFC_WOODS.keys())
-             ),
-             atlases.palette(
-                 key='afc:color_palettes/wood/planks/palette',
-                 textures=['tfc:item/wood/%s' % v for v in ('twig', 'lumber', 'chest_minecart_cover', 'stripped_log', 'sign_head', 'hanging_sign_head', 'water_wheel')],
-                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
-             ),
-             atlases.palette(
-                 key='afc:color_palettes/wood/planks/palette',
-                 textures=['tfc:item/wood/boat'],
-                 permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
-             )
-             )
+    # TODO: See about re-enabling someday
+    # rm.atlas('minecraft:blocks',
+    #          atlases.palette(
+    #              key='afc:color_palettes/wood/planks/palette',
+    #              textures=['tfc:block/wood/planks/%s' % v for v in ('bookshelf_top', 'bookshelf_side')],
+    #              permutations=dict((wood, 'afc:color_palettes/wood/planks/%s' % wood) for wood in AFC_WOODS.keys())
+    #          ),
+    #          atlases.palette(
+    #              key='afc:color_palettes/wood/planks/palette',
+    #              textures=['tfc:item/wood/%s' % v for v in ('twig', 'lumber', 'chest_minecart_cover', 'stripped_log', 'sign_head', 'hanging_sign_head', 'water_wheel')],
+    #              permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
+    #          ),
+    #          atlases.palette(
+    #              key='afc:color_palettes/wood/planks/palette',
+    #              textures=['tfc:item/wood/boat'],
+    #              permutations=dict((wood, 'afc:color_palettes/wood/plank_items/%s' % wood) for wood in AFC_WOODS.keys())
+    #          )
+    # )
 
 
 

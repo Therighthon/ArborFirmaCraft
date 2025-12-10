@@ -2,7 +2,7 @@
   "type": "tfc:pot",
   "ingredients": [
     {
-      "tag": "forge:dusts/sulfur"
+      "tag": "c:dusts/sulfur"
     }
   ],
   "item_output": [

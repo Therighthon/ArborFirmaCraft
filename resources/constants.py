@@ -140,6 +140,7 @@ ANCIENT_LOGS: Dict[str, Wood] = {
     'ancient_hickory': Wood(762, 2000),
     'ancient_kapok': Wood(645, 1000),
     'ancient_maple': Wood(745, 2000),
+    'ancient_mangrove': Wood(750, 2500),
     'ancient_oak': Wood(728, 2250),
     'ancient_palm': Wood(730, 1250),
     'ancient_pine': Wood(627, 1250),
