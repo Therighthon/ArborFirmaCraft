@@ -1,0 +1,14 @@
+{
+	"name": "Fazendo Borracha",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "Ao ferver látex em uma panela com enxofre em pó, é possível formar borracha sólida. Se ao menos ela fosse útil para alguma coisa..."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}
