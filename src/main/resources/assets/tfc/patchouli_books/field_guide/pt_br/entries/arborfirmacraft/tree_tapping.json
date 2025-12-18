@@ -1,0 +1,33 @@
+{
+	"name": "Sangria de Árvores",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:tree_tap",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "Algumas espécies de árvores podem ser sangradas para a extração de fluidos úteis. Por padrão, o Bordo e a Bétula podem ser sangrados para a obtenção de seiva açucarada, enquanto a Figueira-de-borracha e a Seringueira podem ser sangradas para a produção de látex. A seiva pode ser concentrada em xarope e usada como adoçante, enquanto o látex pode ser processado para a produção de borracha."
+	},
+	{
+		"type": "patchouli:image",
+		"title": "Sangrando um Bordo",
+		"images": [
+        "afc:textures/gui/book/maple_tapping.png"
+      ],
+		"border": true
+	},
+	{
+		"type": "patchouli:text",
+		"text": "Para extrair seiva de uma árvore, são necessárias três coisas: a própria árvore, uma bica de sangria (que deve ser feita de ferro forjado e colocada no meio de um tronco com pelo menos três blocos de altura) e um barril (que deve ser colocado diretamente abaixo da bica, com a face voltada para cima). Se as condições forem adequadas, o barril começará a se encher de seiva imediatamente."
+	},
+	{
+		"type": "patchouli:text",
+		"text": "Nem todas as árvores produzem látex o tempo todo. Os Bordos e as Bétulas produzem seiva na primavera, em temperaturas entre -4°C e 6°C, ou por volta da época em que a neve começa a derreter. As Seringueiras produzem látex apenas quando a temperatura está acima de 22°C. As Figueiras-de-borracha produzem látex a 12°C ou mais, mas em um ritmo mais lento do que as Seringueiras. Latitude, altitude, época do ano e horário do dia influenciam a temperatura e, consequentemente, o fluxo de seiva."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 1,
+    "extra_recipe_mappings": {
+      "afc:tree_tap": 0
+    }
+}
