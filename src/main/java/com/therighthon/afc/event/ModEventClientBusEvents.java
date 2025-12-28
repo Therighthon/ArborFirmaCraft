@@ -3,7 +3,6 @@ package com.therighthon.afc.event;
 import com.therighthon.afc.AFCHelpers;
 import com.therighthon.afc.client.render.blockentities.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.blockentities.AFCSignBlockEntityRenderer;
-import com.therighthon.afc.common.blockentities.AFCBlockEntities;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.function.Function;
@@ -42,6 +41,7 @@ import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsE
 import org.jetbrains.annotations.Nullable;
 
 
+import net.dries007.tfc.client.ClientEventHandler;
 import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
@@ -62,15 +62,6 @@ import static net.dries007.tfc.common.blocks.wood.Wood.BlockType.*;
 
 public final class ModEventClientBusEvents
 {
-    /**
-     * Texture locations for both vanilla and AFC fluid textures
-     */
-    public static final ResourceLocation WATER_STILL = Helpers.identifierMC("block/water_still");
-    public static final ResourceLocation WATER_FLOW = Helpers.identifierMC("block/water_flow");
-    public static final ResourceLocation WATER_OVERLAY = Helpers.identifierMC("block/water_overlay");
-    /** @see net.minecraft.client.renderer.ScreenEffectRenderer#UNDERWATER_LOCATION */
-    public static final ResourceLocation UNDERWATER_LOCATION = Helpers.identifierMC("textures/misc/underwater.png");
-
     public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
     {
         final BlockColor foliageColor = (state, level, pos, tintIndex) -> TFCColors.getFoliageColor(pos, tintIndex);
@@ -209,7 +200,7 @@ public final class ModEventClientBusEvents
 
         // Fluids
         AFCFluids.SIMPLE_AFC_FLUIDS.forEach((fluid, holder) -> event.registerFluidType(
-            new FluidRendererExtension(fluid.isTransparent() ? AFCFluids.ALPHA_MASK | fluid.getColor() : fluid.getColor(), WATER_STILL, WATER_FLOW, WATER_OVERLAY, UNDERWATER_LOCATION),
+            new FluidRendererExtension(fluid.isTransparent() ? AFCFluids.ALPHA_MASK | fluid.getColor() : fluid.getColor(), ClientEventHandler.WATER_STILL, ClientEventHandler.WATER_FLOW, ClientEventHandler.WATER_OVERLAY, ClientEventHandler.UNDERWATER_LOCATION),
             holder.getType()
         ));
     }
