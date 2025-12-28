@@ -3,7 +3,7 @@ loaderVersion="[4,)"
 license="MIT"
 [[mods]] #mandatory
 modId="afc" #mandatory
-version="2.0.4-1.21" #mandatory
+version="2.0.5-1.21" #mandatory
 displayName="ArborFirmaCraft" #mandatory
 logoFile="examplemod.png" #optional
 credits="Thanks for this example mod goes to Java" #optional
