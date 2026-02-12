@@ -1,5 +1,6 @@
 package com.therighthon.afc.common;
 
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.Map;
 import java.util.function.Supplier;
@@ -15,6 +16,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -67,20 +69,19 @@ public final class AFCCreativeModeTabs
                 accept(out, reg);
             });
         }
-        //TODO: Firmalife
-//        if (ModList.get().isLoaded("firmalife"))
-//        {
-//            for (AFCWood wood : AFCWood.VALUES)
-//            {
-//                accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
-//                accept(out, FLCompatBlocks.HANGERS, wood);
-//                accept(out, FLCompatBlocks.JARBNETS, wood);
-//                accept(out, FLCompatBlocks.BIG_BARRELS, wood);
-//                accept(out, FLCompatBlocks.STOMPING_BARRELS, wood);
-//                accept(out, FLCompatBlocks.BARREL_PRESSES, wood);
-//                accept(out, FLCompatBlocks.WINE_SHELVES, wood);
-//            }
-//        }
+        if (ModList.get().isLoaded("firmalife"))
+        {
+            for (AFCWood wood : AFCWood.VALUES)
+            {
+                accept(out, FLCompatBlocks.FOOD_SHELVES, wood);
+                accept(out, FLCompatBlocks.HANGERS, wood);
+                accept(out, FLCompatBlocks.JARBNETS, wood);
+                accept(out, FLCompatBlocks.KEGS, wood);
+                accept(out, FLCompatBlocks.STOMPING_BARRELS, wood);
+                accept(out, FLCompatBlocks.BARREL_PRESSES, wood);
+                accept(out, FLCompatBlocks.WINE_SHELVES, wood);
+            }
+        }
 
     }
 

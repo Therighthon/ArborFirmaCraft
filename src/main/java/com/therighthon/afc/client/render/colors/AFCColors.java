@@ -188,21 +188,4 @@ public final class AFCColors
                 case DECEMBER -> Month.NOVEMBER;
             };
     }
-
-    private static int getClimateColor(int[] colorCache, BlockPos pos) {
-        Level level = ClientHelpers.getLevel();
-        if (level != null) {
-            float temperature = Climate.getTemperature(level, pos);
-            float rainfall = Climate.getRainfall(level, pos);
-            return getClimateColor(colorCache, temperature, rainfall);
-        } else {
-            return 0;
-        }
-    }
-
-    private static int getClimateColor(int[] colorCache, float temperature, float rainfall) {
-        int temperatureIndex = 255 - Mth.clamp((int)((temperature + 30.0F) * 255.0F / 60.0F), 0, 255);
-        int rainfallIndex = 255 - Mth.clamp((int)(rainfall * 255.0F / 500.0F), 0, 255);
-        return colorCache[temperatureIndex | rainfallIndex << 8];
-    }
 }

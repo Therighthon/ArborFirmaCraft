@@ -3,17 +3,17 @@ package com.therighthon.afc.event;
 import com.therighthon.afc.AFCHelpers;
 import com.therighthon.afc.client.render.blockentities.AFCHangingSignBlockEntityRenderer;
 import com.therighthon.afc.client.render.blockentities.AFCSignBlockEntityRenderer;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
-//TODO: FirmaLife
-//import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
-//import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
-//import com.eerussianguy.firmalife.client.model.HangerBlockModel;
-//import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
+import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
+import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
+import com.eerussianguy.firmalife.client.model.HangerBlockModel;
+import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
 import com.therighthon.afc.client.render.colors.AFCColors;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
@@ -140,16 +140,15 @@ public final class ModEventClientBusEvents
         // Render Types
         final RenderType cutout = RenderType.cutout();
 
-        //TODO: FirmaLife
-//        FLCompatBlocks.JARBNETS.values().forEach(map -> {
-//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-//        });
-//        FLCompatBlocks.FOOD_SHELVES.values().forEach(map -> {
-//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-//        });
-//        FLCompatBlocks.HANGERS.values().forEach(map -> {
-//            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
-//        });
+        FLCompatBlocks.JARBNETS.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
+        FLCompatBlocks.FOOD_SHELVES.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
+        FLCompatBlocks.HANGERS.values().forEach(map -> {
+            ItemBlockRenderTypes.setRenderLayer(map.get(), cutout);
+        });
 
     }
 

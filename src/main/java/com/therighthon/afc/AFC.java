@@ -2,6 +2,7 @@ package com.therighthon.afc;
 
 import com.therighthon.afc.common.AFCCreativeModeTabs;
 import com.therighthon.afc.common.blockentities.AFCBlockEntities;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.entities.AFCEntities;
 import com.therighthon.afc.common.fluids.AFCFluids;
 import com.therighthon.afc.common.items.AFCItemCapabilities;
@@ -60,8 +61,7 @@ public final class AFC
 
         if (ModList.get().isLoaded("firmalife"))
         {
-            //TODO: FirmaLife
-//            FLCompatBlocks.BLOCKS.register(eventBus);
+            FLCompatBlocks.FL_COMPAT_BLOCKS.register(eventBus);
             ModEvents.initFLCompat();
         }
         if (FMLEnvironment.dist == Dist.CLIENT)
@@ -78,8 +78,7 @@ public final class AFC
 
             if (ModList.get().isLoaded("firmalife"))
             {
-                //TODO: FirmaLife
-//                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
+                eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
             }
         }
     }
