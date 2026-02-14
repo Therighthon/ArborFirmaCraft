@@ -23,6 +23,8 @@ from resources import generate_textures
 BOOK_LANGUAGES = ('zh_cn', 'ko_kr', 'zh_tw')
 MOD_LANGUAGES = ('zh_cn', 'ru_ru', 'ko_kr', 'pt_br', 'es_es', 'ja_jp')
 RESOURCE_DIR = 'src/main/resources'
+FL_ASSETS_DIR = 'src/main/resources/firmalife_compat_assets'
+FL_DATA_DIR = 'src/main/resources/firmalife_compat_data'
 EXCLUDE_PATHS: set[str] = {'firmalife_compat_data', 'firmalife_compat_assets'}
 
 def main():
@@ -50,7 +52,9 @@ def main():
         elif action == 'all':
             touched: set[str] = resources_at(
                 TempResourceManager('afc', resource_dir=RESOURCE_DIR),
-                TempResourceManager('tfc', resource_dir=RESOURCE_DIR)
+                TempResourceManager('tfc', resource_dir=RESOURCE_DIR),
+                TempResourceManager('afc', resource_dir=FL_ASSETS_DIR),
+                TempResourceManager('afc', resource_dir=FL_DATA_DIR)
             )
             print('Removed Stale =', clean_generated_resources(RESOURCE_DIR, touched))
         elif action == 'textures':
@@ -82,11 +86,13 @@ def validate_resources():
 
 def resources_at(
     rm: ResourceManager,
-    tfc_rm: ResourceManager
+    tfc_rm: ResourceManager,
+    fl_assets_rm: ResourceManager,
+    fl_data_rm: ResourceManager
 ) -> set[str]:
 
     world_gen.generate(rm, tfc_rm)
-    assets.generate(rm, tfc_rm)
+    assets.generate(rm, tfc_rm, fl_assets_rm, fl_data_rm)
 
     # Flush
     rm.flush()

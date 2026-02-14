@@ -10,7 +10,7 @@ from mcresources.type_definitions import JsonObject
 from constants import *
 
 
-def generate(rm: ResourceManager, tfc_rm: ResourceManager):
+def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data_rm: ResourceManager):
 
     rm.lang("afc.creative_tab.arborfirmacraft", "ArborFirmaCraft")
     rm.lang("item.afc.rubber_bar", "Rubber Bar")
@@ -88,29 +88,29 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager):
 
         # TODO: Firmalife.
         # Commented out because they will generate into the wrong directories, needs to be rewritten to write to the override pack
-        # block = rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90)))
-        # block.with_lang(lang('%s food shelf', wood))
-        # rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
-        # rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
-        # rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
-        #
-        # block = rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood)
-        # block.with_lang(lang('%s hanger' % wood))
-        # rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
-        # rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
-        # rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
-        #
-        # block = rm.blockstate('afc:wood/jarbnet/%s' % wood, variants={
-        #     **four_rotations('afc:block/wood/jarbnet/%s_dynamic' % wood, (90, None, 180, 270), suffix=',open=true'),
-        #     **four_rotations('afc:block/wood/jarbnet/%s_shut_dynamic' % wood, (90, None, 180, 270), suffix=',open=false'),
-        # })
-        # block.with_lang(lang('%s jarbnet', wood))
-        # rm.item_model('afc:wood/jarbnet/%s' % wood, parent='afc:block/wood/jarbnet/%s' % wood, no_textures=True)
-        # textures = {'planks': 'afc:block/wood/planks/%s' % wood, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'log': 'afc:block/wood/log/%s' % wood}
-        # rm.block_model('afc:wood/jarbnet/%s' % wood, parent='firmalife:block/jarbnet', textures=textures)
-        # rm.block_model('afc:wood/jarbnet/%s_shut' % wood, parent='firmalife:block/jarbnet_shut', textures=textures)
-        # rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
-        # rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
+        block = fl_assets_rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90)))
+        block.with_lang(lang('%s food shelf', wood))
+        fl_assets_rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
+        fl_assets_rm.custom_block_model('afc:wood/food_shelf/%s_dynamic' % wood, 'firmalife:food_shelf', {'base': {'parent': 'afc:block/wood/food_shelf/%s' % wood}})
+        fl_assets_rm.block_model('afc:wood/food_shelf/%s' % wood, parent='firmalife:block/food_shelf_base', textures={'wood': 'afc:block/wood/planks/%s' % wood})
+
+        block = fl_assets_rm.blockstate('afc:wood/hanger/%s' % wood, model='afc:block/wood/hanger/%s_dynamic' % wood)
+        block.with_lang(lang('%s hanger' % wood))
+        fl_assets_rm.custom_block_model('afc:wood/hanger/%s_dynamic' % wood, 'firmalife:hanger', {'base': {'parent': 'afc:block/wood/hanger/%s' % wood}})
+        fl_assets_rm.item_model('afc:wood/hanger/%s' % wood, parent='afc:block/wood/hanger/%s' % wood, no_textures=True)
+        fl_assets_rm.block_model('afc:wood/hanger/%s' % wood, parent='firmalife:block/hanger_base', textures={'wood': 'afc:block/wood/planks/%s' % wood, 'string': 'minecraft:block/white_wool'})
+
+        block = fl_assets_rm.blockstate('afc:wood/jarbnet/%s' % wood, variants={
+            **four_rotations('afc:block/wood/jarbnet/%s_dynamic' % wood, (90, None, 180, 270), suffix=',open=true'),
+            **four_rotations('afc:block/wood/jarbnet/%s_shut_dynamic' % wood, (90, None, 180, 270), suffix=',open=false'),
+        })
+        block.with_lang(lang('%s jarbnet', wood))
+        fl_assets_rm.item_model('afc:wood/jarbnet/%s' % wood, parent='afc:block/wood/jarbnet/%s' % wood, no_textures=True)
+        textures = {'planks': 'afc:block/wood/planks/%s' % wood, 'sheet': 'afc:block/wood/sheet/%s' % wood, 'log': 'afc:block/wood/log/%s' % wood}
+        fl_assets_rm.block_model('afc:wood/jarbnet/%s' % wood, parent='firmalife:block/jarbnet', textures=textures)
+        fl_assets_rm.block_model('afc:wood/jarbnet/%s_shut' % wood, parent='firmalife:block/jarbnet_shut', textures=textures)
+        fl_assets_rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
+        fl_assets_rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
 
         # Groundcover
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
