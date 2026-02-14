@@ -62,7 +62,6 @@ public final class AFC
         if (ModList.get().isLoaded("firmalife"))
         {
             FLCompatBlocks.FL_COMPAT_BLOCKS.register(eventBus);
-            ModEvents.initFLCompat();
         }
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
@@ -79,6 +78,7 @@ public final class AFC
             if (ModList.get().isLoaded("firmalife"))
             {
                 eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
+                eventBus.addListener(ModEvents::onFLCompatPackFinder);
             }
         }
     }
