@@ -2,18 +2,18 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "facing=east": {
-      "model": "firmalife:block/wood/wine_shelf/cypress_dynamic",
+      "model": "afc:block/wood/wine_shelf/cypress_dynamic",
       "y": 90
     },
     "facing=north": {
-      "model": "firmalife:block/wood/wine_shelf/cypress_dynamic"
+      "model": "afc:block/wood/wine_shelf/cypress_dynamic"
     },
     "facing=south": {
-      "model": "firmalife:block/wood/wine_shelf/cypress_dynamic",
+      "model": "afc:block/wood/wine_shelf/cypress_dynamic",
       "y": 180
     },
     "facing=west": {
-      "model": "firmalife:block/wood/wine_shelf/cypress_dynamic",
+      "model": "afc:block/wood/wine_shelf/cypress_dynamic",
       "y": 270
     }
   }

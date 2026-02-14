@@ -1,9 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "firmalife:block/wine_shelf",
-  "textures": {
-    "0": "tfc:block/wood/planks/eucalyptus",
-    "2": "tfc:block/wood/sheet/eucalyptus",
-    "3": "tfc:block/wood/stripped_log/eucalyptus"
-  }
-}

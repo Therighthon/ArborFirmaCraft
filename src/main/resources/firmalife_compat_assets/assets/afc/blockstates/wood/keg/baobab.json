@@ -1,0 +1,35 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "facing=east,sealed=false": {
+      "model": "afc:block/wood/big_barrel/baobab_0_unsealed",
+      "y": 90
+    },
+    "facing=north,sealed=false": {
+      "model": "afc:block/wood/big_barrel/baobab_0_unsealed"
+    },
+    "facing=south,sealed=false": {
+      "model": "afc:block/wood/big_barrel/baobab_0_unsealed",
+      "y": 180
+    },
+    "facing=west,sealed=false": {
+      "model": "afc:block/wood/big_barrel/baobab_0_unsealed",
+      "y": 270
+    },
+    "facing=east,sealed=true": {
+      "model": "afc:block/wood/big_barrel/baobab_0_sealed",
+      "y": 90
+    },
+    "facing=north,sealed=true": {
+      "model": "afc:block/wood/big_barrel/baobab_0_sealed"
+    },
+    "facing=south,sealed=true": {
+      "model": "afc:block/wood/big_barrel/baobab_0_sealed",
+      "y": 180
+    },
+    "facing=west,sealed=true": {
+      "model": "afc:block/wood/big_barrel/baobab_0_sealed",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "firmalife:block/stomping_barrel",
+  "textures": {
+    "0": "afc:block/wood/sheet/beech"
+  }
+}

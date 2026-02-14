@@ -14,6 +14,7 @@ import com.eerussianguy.firmalife.common.blocks.StompingBarrelBlock;
 import com.eerussianguy.firmalife.common.blocks.WineShelfBlock;
 import com.eerussianguy.firmalife.common.items.FLItems;
 import com.therighthon.afc.AFC;
+import com.therighthon.afc.common.items.AFCItems;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -41,8 +42,8 @@ public class FLCompatBlocks
     public static final Map<AFCWood, TFCBlocks.Id<Block>> KEG_SUBS = Helpers.mapOf(AFCWood.class, wood -> register("wood/keg_sub/" + wood.getSerializedName(), () -> new KegSubBlock(ExtendedProperties.of().noLootTable().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(10f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.KEG))));
     public static final Map<AFCWood, TFCBlocks.Id<Block>> KEGS = Helpers.mapOf(AFCWood.class, wood -> register("wood/keg/" + wood.getSerializedName(), () -> new KegCoreBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(10f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.KEG).serverTicks(KegBlockEntity::serverTick), KEG_SUBS.get(wood))));
     public static final Map<AFCWood, TFCBlocks.Id<Block>> WINE_SHELVES = Helpers.mapOf(AFCWood.class, wood -> register("wood/wine_shelf/" + wood.getSerializedName(), () -> new WineShelfBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(4f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.WINE_SHELF))));
-    public static final Map<AFCWood, TFCBlocks.Id<Block>> STOMPING_BARRELS = Helpers.mapOf(AFCWood.class, wood -> register("wood/stomping_barrel/" + wood.getSerializedName(), () ->new StompingBarrelBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(4f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.STOMPING_BARREL))));
-    public static final Map<AFCWood, TFCBlocks.Id<Block>> BARREL_PRESSES = Helpers.mapOf(AFCWood.class, wood -> register("wood/barrel_press/" + wood.getSerializedName(), () ->new BarrelPressBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(4f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.BARREL_PRESS).ticks(BarrelPressBlockEntity::tick))));
+    public static final Map<AFCWood, TFCBlocks.Id<Block>> STOMPING_BARRELS = Helpers.mapOf(AFCWood.class, wood -> register("wood/stomping_barrel/" + wood.getSerializedName(), () -> new StompingBarrelBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(4f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.STOMPING_BARREL))));
+    public static final Map<AFCWood, TFCBlocks.Id<Block>> BARREL_PRESSES = Helpers.mapOf(AFCWood.class, wood -> register("wood/barrel_press/" + wood.getSerializedName(), () -> new BarrelPressBlock(ExtendedProperties.of().mapColor(wood.woodColor()).sound(SoundType.WOOD).noOcclusion().strength(4f).pushReaction(PushReaction.BLOCK).flammableLikeLogs().blockEntity(FLBlockEntities.BARREL_PRESS).ticks(BarrelPressBlockEntity::tick))));
 
     private static <T extends Block> TFCBlocks.Id<T> register(String name, Supplier<T> blockSupplier)
     {
@@ -56,7 +57,7 @@ public class FLCompatBlocks
 
     private static <T extends Block> TFCBlocks.Id<T> register(String name, Supplier<T> blockSupplier, @Nullable Function<T, ? extends BlockItem> blockItemFactory)
     {
-        return new TFCBlocks.Id<>(RegistrationHelpers.registerBlock(FL_COMPAT_BLOCKS, FLItems.ITEM, name, blockSupplier, blockItemFactory));
+        return new TFCBlocks.Id<>(RegistrationHelpers.registerBlock(FL_COMPAT_BLOCKS, AFCItems.ITEMS, name, blockSupplier, blockItemFactory));
     }
 }
 

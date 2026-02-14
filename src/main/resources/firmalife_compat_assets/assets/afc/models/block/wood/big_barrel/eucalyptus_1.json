@@ -1,0 +1,19 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "firmalife:block/big_barrel_1",
+  "textures": {
+    "0": "afc:block/wood/big_barrel/eucalyptus_3_side",
+    "1": "afc:block/wood/big_barrel/eucalyptus_0",
+    "2": "afc:block/wood/big_barrel/eucalyptus_0_side",
+    "3": "afc:block/wood/big_barrel/eucalyptus_1",
+    "4": "afc:block/wood/big_barrel/eucalyptus_1_side",
+    "5": "afc:block/wood/big_barrel/eucalyptus_2",
+    "6": "afc:block/wood/big_barrel/eucalyptus_2_side",
+    "7": "afc:block/wood/big_barrel/eucalyptus_3",
+    "8": "afc:block/wood/big_barrel/eucalyptus_3_top",
+    "9": "afc:block/wood/big_barrel/eucalyptus_0_top",
+    "10": "afc:block/wood/big_barrel/eucalyptus_1_top",
+    "11": "afc:block/wood/big_barrel/eucalyptus_2_top",
+    "12": "tfc:block/wood/log/eucalyptus"
+  }
+}

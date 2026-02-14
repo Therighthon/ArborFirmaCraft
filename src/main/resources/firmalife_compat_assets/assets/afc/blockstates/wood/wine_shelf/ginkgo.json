@@ -1,0 +1,20 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "variants": {
+    "facing=east": {
+      "model": "afc:block/wood/wine_shelf/ginkgo_dynamic",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "afc:block/wood/wine_shelf/ginkgo_dynamic"
+    },
+    "facing=south": {
+      "model": "afc:block/wood/wine_shelf/ginkgo_dynamic",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "afc:block/wood/wine_shelf/ginkgo_dynamic",
+      "y": 270
+    }
+  }
+}

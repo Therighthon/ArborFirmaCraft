@@ -111,6 +111,48 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         fl_assets_rm.custom_block_model('afc:wood/jarbnet/%s_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s' % wood}})
         fl_assets_rm.custom_block_model('afc:wood/jarbnet/%s_shut_dynamic' % wood, 'firmalife:jarbnet', {'base': {'parent': 'afc:block/wood/jarbnet/%s_shut' % wood}})
 
+        tex = {
+            '0': f'afc:block/wood/big_barrel/{wood}_3_side',
+            '1': f'afc:block/wood/big_barrel/{wood}_0',
+            '2': f'afc:block/wood/big_barrel/{wood}_0_side',
+            '3': f'afc:block/wood/big_barrel/{wood}_1',
+            '4': f'afc:block/wood/big_barrel/{wood}_1_side',
+            '5': f'afc:block/wood/big_barrel/{wood}_2',
+            '6': f'afc:block/wood/big_barrel/{wood}_2_side',
+            '7': f'afc:block/wood/big_barrel/{wood}_3',
+            '8': f'afc:block/wood/big_barrel/{wood}_3_top',
+            '9': f'afc:block/wood/big_barrel/{wood}_0_top',
+            '10': f'afc:block/wood/big_barrel/{wood}_1_top',
+            '11': f'afc:block/wood/big_barrel/{wood}_2_top',
+            '12': f'tfc:block/wood/log/{wood}',
+        }
+        for i in range(1, 8):
+            fl_assets_rm.block_model('wood/big_barrel/%s_%s' % (wood, i), parent='firmalife:block/big_barrel_%s' % i, textures=tex)
+        fl_assets_rm.block_model('wood/big_barrel/%s_0_unsealed' % wood, parent='firmalife:block/big_barrel_0_unsealed', textures=tex)
+        fl_assets_rm.block_model('wood/big_barrel/%s_0_sealed' % wood, parent='firmalife:block/big_barrel_0_sealed', textures=tex)
+        fl_assets_rm.block_model('wood/big_barrel/%s_item' % wood, parent='firmalife:block/big_barrel_item', textures=tex)
+        fl_assets_rm.item_model('wood/keg/%s' % wood, parent='afc:block/wood/big_barrel/%s_item' % wood, no_textures=True)
+        block = fl_assets_rm.blockstate('wood/keg_sub/%s' % wood, variants=dict(
+            ('barrel_part=%s,facing=%s' % (i, f), {'model': 'afc:block/wood/big_barrel/%s_%s' % (wood, i), 'y': y if y != 0 else None})
+            for f, y in (('east', 90), ('north', 0), ('south', 180), ('west', 270)) for i in range(1, 8)
+        )).with_lang(lang('%s keg' % wood))
+        fl_assets_rm.blockstate('wood/keg/%s' % wood, variants={
+            **four_rotations('afc:block/wood/big_barrel/%s_0_unsealed' % wood, (90, None, 180, 270), suffix=',sealed=false'),
+            **four_rotations('afc:block/wood/big_barrel/%s_0_sealed' % wood, (90, None, 180, 270), suffix=',sealed=true')
+        }).with_lang(lang('%s keg', wood))
+
+        fl_assets_rm.blockstate('wood/stomping_barrel/%s' % wood).with_block_model({'0': 'afc:block/wood/sheet/%s' % wood}, 'firmalife:block/stomping_barrel').with_lang(lang('%s stomping barrel', wood))
+        fl_assets_rm.item_model('wood/stomping_barrel/%s' % wood, parent='afc:block/wood/stomping_barrel/%s' % wood, no_textures=True)
+
+        fl_assets_rm.blockstate('wood/barrel_press/%s' % wood).with_block_model({'0': 'afc:block/wood/sheet/%s' % wood}, 'firmalife:block/barrel_press').with_lang(lang('%s barrel press', wood))
+        fl_assets_rm.item_model('wood/barrel_press/%s' % wood, parent='afc:block/wood/barrel_press/%s' % wood, no_textures=True)
+
+        block = fl_assets_rm.blockstate('wood/wine_shelf/%s' % wood, variants=four_rotations('afc:block/wood/wine_shelf/%s_dynamic' % wood, (90, None, 180, 270)))
+        block.with_block_model({'0': 'afc:block/wood/planks/%s' % wood, '2': 'afc:block/wood/sheet/%s' % wood, '3': 'afc:block/wood/stripped_log/%s' % wood}, 'firmalife:block/wine_shelf')
+        block.with_lang(lang('%s wine shelf', wood))
+        fl_assets_rm.item_model('wood/wine_shelf/%s' % wood, parent='afc:block/wood/wine_shelf/%s' % wood, no_textures=True)
+        fl_assets_rm.custom_block_model('afc:wood/wine_shelf/%s_dynamic' % wood, 'firmalife:wine_shelf', {'base': {'parent': 'afc:block/wood/wine_shelf/%s' % wood}})
+
         # Groundcover
         block = rm.blockstate(('wood', 'twig', wood), variants={"": four_ways('afc:block/wood/twig/%s' % wood)}, use_default_model=False)
         block.with_lang(lang('%s twig', wood))

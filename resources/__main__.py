@@ -97,12 +97,14 @@ def resources_at(
     # Flush
     rm.flush()
     tfc_rm.flush()
+    fl_data_rm.flush()
+    fl_assets_rm.flush()
 
     print('New = %d, Modified = %d, Unchanged = %d, Errors = %d' % (
-        rm.new_files + tfc_rm.new_files,
-        rm.modified_files + tfc_rm.modified_files,
-        rm.unchanged_files + tfc_rm.unchanged_files,
-        rm.error_files + tfc_rm.error_files))
+        rm.new_files + tfc_rm.new_files + fl_data_rm.new_files + fl_assets_rm.new_files,
+        rm.modified_files + tfc_rm.modified_files + fl_data_rm.modified_files + fl_assets_rm.modified_files,
+        rm.unchanged_files + tfc_rm.unchanged_files + fl_data_rm.unchanged_files + fl_assets_rm.unchanged_files,
+        rm.error_files + tfc_rm.error_files + fl_data_rm.error_files + fl_assets_rm.error_files))
 
     return rm.written_files | tfc_rm.written_files
 

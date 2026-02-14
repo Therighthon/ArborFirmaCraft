@@ -1,0 +1,7 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "firmalife:wine_shelf",
+  "base": {
+    "parent": "afc:block/wood/wine_shelf/ironwood"
+  }
+}

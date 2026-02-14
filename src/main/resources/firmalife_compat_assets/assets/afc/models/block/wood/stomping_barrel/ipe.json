@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "firmalife:block/stomping_barrel",
   "textures": {
-    "0": "tfc:block/wood/sheet/ipe"
+    "0": "afc:block/wood/sheet/ipe"
   }
 }
