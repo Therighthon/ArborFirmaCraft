@@ -86,8 +86,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         for item_type in ('lumber', 'sign', 'chest_minecart', 'boat'):
             rm.item_model(('wood', item_type, wood)).with_lang(lang('%s %s', wood, item_type))
 
-        # TODO: Firmalife.
-        # Commented out because they will generate into the wrong directories, needs to be rewritten to write to the override pack
+        # Firmalife
         block = fl_assets_rm.blockstate('afc:wood/food_shelf/%s' % wood, variants=four_rotations('afc:block/wood/food_shelf/%s_dynamic' % wood, (270, 180, None, 90)))
         block.with_lang(lang('%s food shelf', wood))
         fl_assets_rm.item_model('afc:wood/food_shelf/%s' % wood, parent='afc:block/wood/food_shelf/%s' % wood, no_textures=True)
