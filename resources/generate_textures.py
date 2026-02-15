@@ -9,6 +9,7 @@ path_afc = 'C:/GitHub/ArborFirmaCraft/src/main/resources/assets/afc/textures/'
 path_tfc = 'C:/GitHub/ArborFirmaCraft/src/main/resources/assets/tfc/textures/'
 mc_path = 'C:/GitHub/ArborFirmaCraft./src/main/resources/assets/minecraft/textures/'
 templates = 'C:/GitHub/ArborFirmaCraft/resources/texture_templates/'
+path = 'C:/GitHub/ArborFirmaCraft/src/main/resources/firmalife_compat_assets/assets/afc/textures/'
 
 def overlay_image(front_file_dir, back_file_dir, result_dir, mask: str = None):
     foreground = Image.open(front_file_dir + '.png').convert('RGBA')
@@ -19,6 +20,45 @@ def overlay_image(front_file_dir, back_file_dir, result_dir, mask: str = None):
         mask = Image.open(mask + '.png').convert('L')
     background.paste(foreground, (0, 0), mask)
     background.save(result_dir + '.png')
+
+def big_barrel(wood: str):
+    log = Image.open(templates + f'wood/log/{wood}.png').convert('RGBA')
+    log_90 = Image.open(templates + f'wood/log/{wood}.png').convert('RGBA').transpose(Transpose.TRANSVERSE)
+    sheet = Image.open(templates + f'wood/sheet/{wood}.png').convert('RGBA')
+    plank = Image.open(templates + f'wood/planks/{wood}.png').convert('RGBA')
+    plank_90 = Image.open(templates + f'wood/planks/{wood}.png').convert('RGBA').transpose(Transpose.TRANSVERSE)
+    log_mask = Image.open(templates + f'bigbarrel/log_template.png').convert('L')
+    sheet_mask = Image.open(templates + f'bigbarrel/sheet_template.png').convert('L')
+    plank_mask = Image.open(templates + f'bigbarrel/planks_template.png').convert('L')
+    side_plank_mask = Image.open(templates + f'bigbarrel/side_planks_template.png').convert('L')
+    side_log_mask = Image.open(templates + f'bigbarrel/side_logs_template.png').convert('L')
+    big_log = fill_image(log, 32, 32, 16, 16)
+    big_log_90 = fill_image(log_90, 32, 32, 16, 16)
+    big_sheet = fill_image(sheet, 32, 32, 16, 16)
+    big_plank = fill_image(plank, 32, 32, 16, 16)
+    big_plank_90 = fill_image(plank_90, 32, 32, 16, 16)
+
+    base_img = Image.new('RGBA', (32, 32), color=(0, 0, 0, 0))
+    base_img.paste(big_plank_90, mask=plank_mask)
+    base_img.paste(big_sheet, mask=sheet_mask)
+    base_img.paste(big_log, mask=log_mask)
+
+    side_img = Image.new('RGBA', (32, 32), color=(0, 0, 0, 0))
+    side_img.paste(big_plank, mask=side_plank_mask)
+    side_img.paste(big_log, mask=side_log_mask)
+    side_img2 = Image.new('RGBA', (32, 32), color=(0, 0, 0, 0))
+    side_img2.paste(big_plank_90, mask=side_plank_mask)
+    side_img2.paste(big_log_90, mask=side_log_mask)
+
+    i = 0
+    for x, y in ((0, 0), (16, 0), (0, 16), (16, 16)):
+        img = base_img.copy().crop((x, y, x + 16, y + 16))
+        img.save(path + 'block/wood/big_barrel/%s_%s.png' % (wood, i))
+        img2 = side_img.copy().crop((x, y, x + 16, y + 16))
+        img2.save(path + 'block/wood/big_barrel/%s_%s_side.png' % (wood, i))
+        img2.save(path + 'block/wood/big_barrel/%s_%s_top.png' % (wood, i))
+        i += 1
+
 
 def create_chest(wood: str):
     log = Image.open(path_afc + 'block/wood/log/%s' % wood + '.png').convert('RGBA').crop((0, 0, 14, 14))
@@ -386,6 +426,8 @@ def main():
             create_boat_texture(wood)
         for metal in SIGN_METALS:
             create_hanging_sign(wood, metal)
+        # Firmalife
+        big_barrel(wood)
 
 
 if __name__ == '__main__':
