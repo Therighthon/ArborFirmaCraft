@@ -586,7 +586,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'axis=y': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood)},
                 'axis=z': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90},
                 'axis=x': {'model': '%s:block/wood/%s/%s' % (mod_id, variant, base_wood), 'x': 90, 'y': 90}
-            }, use_default_model=False)
+            }, use_default_model=False).with_lang(lang('%s %s', wood, variant))
             wood_name = wood.replace("ancient_", "")
             rm.item_model(('wood', variant, wood), '%s:item/wood/%s/%s' % (mod_id, variant, wood_name))
 
