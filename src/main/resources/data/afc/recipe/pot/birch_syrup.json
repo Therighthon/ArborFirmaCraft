@@ -11,13 +11,13 @@
     }
   ],
   "fluid_ingredient": {
-    "fluid": "afc:birch_sap_concentrate",
+    "fluid": "afc:birch_sap",
     "amount": 1000
   },
-  "duration": 1200,
+  "duration": 1500,
   "temperature": 100,
   "fluid_output": {
     "id": "afc:birch_syrup",
-    "amount": 100
+    "amount": 50
   }
 }

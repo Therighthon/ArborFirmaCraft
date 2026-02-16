@@ -7,9 +7,7 @@ import net.minecraft.world.level.material.Fluid;
 public enum SimpleAFCFluid
 {
     MAPLE_SAP(0xFFC39E37),
-    MAPLE_SAP_CONCENTRATE(0xFFC39E37),
     BIRCH_SAP(0xFFDCDCDC),
-    BIRCH_SAP_CONCENTRATE(0xFFDCDCDC),
     LATEX(0xFFB7D9BC),
     MAPLE_SYRUP(0xBBC39E37),
     BIRCH_SYRUP(0xBBDCDCDC);

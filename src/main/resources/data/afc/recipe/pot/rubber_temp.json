@@ -1,0 +1,19 @@
+{
+  "type": "tfc:pot",
+  "ingredients": [
+    {
+      "id": "tfc:powder/sulfur"
+    }
+  ],
+  "item_output": [
+    {
+      "id": "afc:rubber_bar"
+    }
+  ],
+  "fluid_ingredient": {
+    "fluid": "afc:latex",
+    "amount": 1000
+  },
+  "duration": 1000,
+  "temperature": 600
+}

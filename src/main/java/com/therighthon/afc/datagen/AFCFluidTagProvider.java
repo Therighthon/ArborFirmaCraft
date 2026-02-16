@@ -23,13 +23,25 @@ public class AFCFluidTagProvider extends FluidTagsProvider
     {
         tag(DRINKABLES) // Automatically added to INGREDIENTS
             .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SAP).getSource())
-            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SAP_CONCENTRATE).getSource())
             .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SYRUP).getSource())
             .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SAP).getSource())
-            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SAP_CONCENTRATE).getSource())
             .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SYRUP).getSource());
 
         tag(INGREDIENTS) // Automatically added to usable in barrels
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.LATEX).getSource());
+
+        tag(USABLE_IN_BARREL)
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SAP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SYRUP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SAP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SYRUP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.LATEX).getSource());
+
+        tag(USABLE_IN_POT)
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SAP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.MAPLE_SYRUP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SAP).getSource())
+            .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.BIRCH_SYRUP).getSource())
             .add(AFCFluids.SIMPLE_AFC_FLUIDS.get(SimpleAFCFluid.LATEX).getSource());
     }
 }
