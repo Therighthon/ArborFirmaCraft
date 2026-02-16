@@ -11,6 +11,15 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "afc:wood/sluice/mahogany",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "upper": "true"
+              }
+            }
+          ],
           "name": "afc:wood/sluice/mahogany"
         }
       ],

@@ -18,14 +18,19 @@ import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.util.StringRepresentable;
 import net.minecraft.util.datafix.fixes.BlockEntityCustomNameToComponentFix;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.level.block.state.properties.Property;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -45,6 +50,7 @@ import org.jetbrains.annotations.NotNull;
 
 import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlockStateProperties;
+import net.dries007.tfc.common.blocks.devices.SluiceBlock;
 import net.dries007.tfc.common.blocks.wood.BranchDirection;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.component.TFCComponents;
@@ -143,6 +149,12 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
             case BARREL:
                 createBarrelDrop(species);
                 break;
+            case DOOR:
+                createDoorDrop(species);
+                break;
+            case SLUICE:
+                createSluiceDrop(species);
+                break;
             default:
                 dropSelf(species.getBlock(blockType).get());
         }
@@ -225,6 +237,20 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
                     )).when(survivesExplosion())
             )
         );
+    }
+
+    protected void createSluiceDrop(AFCWood species)
+    {
+        Block sluiceBlock = species.getBlock(Wood.BlockType.SLUICE).get();
+        LootTable.Builder table =  LootTable.lootTable().withPool((LootPool.Builder) this.applyExplosionCondition(sluiceBlock, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(sluiceBlock).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(sluiceBlock).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(SluiceBlock.UPPER, true))))));
+        add(sluiceBlock, table);
+    }
+
+    protected void createDoorDrop(AFCWood species)
+    {
+        Block doorBlock = species.getBlock(Wood.BlockType.DOOR).get();
+        LootTable.Builder table = LootTable.lootTable().withPool((LootPool.Builder) this.applyExplosionCondition(doorBlock, LootPool.lootPool().setRolls(ConstantValue.exactly(1.0F)).add(LootItem.lootTableItem(doorBlock).when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(doorBlock).setProperties(net.minecraft.advancements.critereon.StatePropertiesPredicate.Builder.properties().hasProperty(DoorBlock.HALF, DoubleBlockHalf.LOWER))))));
+        add(doorBlock, table);
     }
 
     protected void createUniqueLogDrops(UniqueLogs species, UniqueLogs.BlockType blockType)
