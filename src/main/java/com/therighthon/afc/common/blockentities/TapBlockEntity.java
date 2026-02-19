@@ -162,7 +162,7 @@ public class TapBlockEntity extends BlockEntity
                                 final int dripsPerSkip = skipInterval / dripPeriod; // The number of times syrup would drip in the course of a skip interval
 
                                 long simTick = lastUpdateTick;
-                                while (simTick < thisTick)
+                                while (simTick < thisTick && dripCount < 2000)
                                 {
                                     if (isTempOkay(level, pos, recipe.getMinTemp(), recipe.getMaxTemp(), simTick, daysInMonth) && (!recipe.springOnly() || isSpring(level, pos, simTick, daysInMonth)))
                                     {
