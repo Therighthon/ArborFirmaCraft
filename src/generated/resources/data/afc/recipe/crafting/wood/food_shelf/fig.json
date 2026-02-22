@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "afc:wood/planks/fig"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/fig"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "YYY",
+    "XXX"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/food_shelf/fig"
+  }
+}

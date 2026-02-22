@@ -1,0 +1,21 @@
+{
+  "type": "firmalife:vat",
+  "input_fluid": {
+    "fluid": "afc:birch_sap",
+    "amount": 1000
+  },
+  "input_item": {
+	"count": 1,
+    "item": "minecraft:stick"
+  },
+  "output_fluid": {
+    "id": "afc:birch_syrup",
+    "amount": 50
+  },
+  "output_item": {
+    "count": 1,
+    "id": "minecraft:stick"
+  },
+  "length": 600,
+  "temperature": 300
+}

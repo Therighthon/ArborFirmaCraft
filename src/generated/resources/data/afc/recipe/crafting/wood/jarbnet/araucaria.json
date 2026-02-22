@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "afc:wood/log/araucaria"
+    },
+    "Y": {
+      "item": "afc:wood/lumber/araucaria"
+    },
+    "Z": {
+      "tag": "c:rods/brass"
+    }
+  },
+  "pattern": [
+    "X  ",
+    "ZYY",
+    "X  "
+  ],
+  "result": {
+    "count": 2,
+    "id": "afc:wood/jarbnet/araucaria"
+  }
+}

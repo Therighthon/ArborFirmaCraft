@@ -4,40 +4,31 @@ import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.AncientLogs;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Logger;
+import java.util.stream.Stream;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
-import net.minecraft.core.component.DataComponentType;
 import net.minecraft.core.component.DataComponents;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.util.StringRepresentable;
-import net.minecraft.util.datafix.fixes.BlockEntityCustomNameToComponentFix;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
-import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.CopyComponentsFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunction;
-import net.minecraft.world.level.storage.loot.functions.LootItemFunctionType;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.InvertedLootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
@@ -54,10 +45,8 @@ import net.dries007.tfc.common.blocks.devices.SluiceBlock;
 import net.dries007.tfc.common.blocks.wood.BranchDirection;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.component.TFCComponents;
-import net.dries007.tfc.common.component.block.BarrelComponent;
 import net.dries007.tfc.util.Metal;
 import net.dries007.tfc.util.loot.ApplyStackSizeFunction;
-import net.dries007.tfc.util.loot.TFCLoot;
 
 import static net.minecraft.world.level.storage.loot.LootPool.*;
 import static net.minecraft.world.level.storage.loot.entries.LootItem.*;
@@ -128,6 +117,18 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
 
         // Misc
         dropSelf(AFCBlocks.TREE_TAP.get());
+
+        // Firmalife
+        for (AFCWood wood : AFCWood.values())
+        {
+            dropSelf(FLCompatBlocks.BARREL_PRESSES.get(wood).get());
+            dropSelf(FLCompatBlocks.KEGS.get(wood).get());
+            dropSelf(FLCompatBlocks.STOMPING_BARRELS.get(wood).get());
+            dropSelf(FLCompatBlocks.WINE_SHELVES.get(wood).get());
+            dropSelf(FLCompatBlocks.JARBNETS.get(wood).get());
+            dropSelf(FLCompatBlocks.HANGERS.get(wood).get());
+            dropSelf(FLCompatBlocks.FOOD_SHELVES.get(wood).get());
+        }
     }
 
     protected void createWood(AFCWood species, Wood.BlockType blockType)
@@ -215,7 +216,11 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
     @Override
     protected @NotNull Iterable<Block> getKnownBlocks()
     {
-        return AFCBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
+//        return AFCBlocks.BLOCKS.getEntries().stream().map(Holder::value).toList().stream().toList();
+        return Stream.concat(
+            AFCBlocks.BLOCKS.getEntries().stream().map(Holder::value).toList().stream(),
+            FLCompatBlocks.FL_COMPAT_BLOCKS.getEntries().stream().map(Holder::value).toList().stream()
+        ).toList();
     }
 
     protected void createLogDrops(AFCWood species, Wood.BlockType blockType)

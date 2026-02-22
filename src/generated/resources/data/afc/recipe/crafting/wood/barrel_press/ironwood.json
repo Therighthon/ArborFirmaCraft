@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "afc:wood/stomping_barrel/ironwood"
+    },
+    {
+      "tag": "c:rods/wrought_iron"
+    },
+    {
+      "tag": "c:sheets/wrought_iron"
+    },
+    {
+      "item": "tfc:brass_mechanisms"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/barrel_press/ironwood"
+  }
+}

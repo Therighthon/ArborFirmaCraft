@@ -8,7 +8,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.util.Mth;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -113,7 +112,7 @@ public class TapBlockEntity extends BlockEntity
     {
         //First bit checks if there is a valid container to pour into before starting the pour
         //Every 20 ticks...
-        final long thisTick = Calendars.SERVER.getCalendarTicks();
+        final long thisTick = Calendars.SERVER.getTicks();
         if (thisTick % 20 == 0)
         {
             //Get the position of the log block

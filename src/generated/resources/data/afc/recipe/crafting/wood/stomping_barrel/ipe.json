@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "G": {
+      "item": "tfc:glue"
+    },
+    "X": {
+      "item": "afc:wood/lumber/ipe"
+    }
+  },
+  "pattern": [
+    "XGX",
+    "XXX",
+    "GGG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "afc:wood/stomping_barrel/ipe"
+  }
+}

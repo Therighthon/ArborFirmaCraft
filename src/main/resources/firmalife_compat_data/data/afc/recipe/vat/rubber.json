@@ -1,0 +1,16 @@
+{
+  "type": "firmalife:vat",
+  "input_fluid": {
+    "fluid": "afc:latex",
+    "amount": 1000
+  },
+  "input_item": {
+	"item": "tfc:powder/sulfur"
+  },
+  "output_item": {
+	"count": 1,
+    "id": "afc:rubber_bar"
+  },
+  "length": 600,
+  "temperature": 300.0
+}

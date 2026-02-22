@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "afc:wood/log/mahoe"
+    },
+    "Y": {
+      "item": "firmalife:treated_lumber"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "XYX",
+    "XYX"
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/wine_shelf/mahoe"
+  }
+}

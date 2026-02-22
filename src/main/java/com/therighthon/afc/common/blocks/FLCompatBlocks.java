@@ -34,7 +34,8 @@ import net.dries007.tfc.util.registry.RegistrationHelpers;
 
 public class FLCompatBlocks
 {
-    public static final DeferredRegister<Block> FL_COMPAT_BLOCKS = DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
+    public static final DeferredRegister<Block> FL_COMPAT_BLOCKS =
+        DeferredRegister.create(Registries.BLOCK, AFC.MOD_ID);
 
     public static final Map<AFCWood, TFCBlocks.Id<Block>> FOOD_SHELVES = Helpers.mapOf(AFCWood.class, wood -> register("wood/food_shelf/" + wood.getSerializedName(), () -> new FoodShelfBlock(FLBlocks.shelfProperties().mapColor(wood.woodColor()))));
     public static final Map<AFCWood, TFCBlocks.Id<Block>> HANGERS = Helpers.mapOf(AFCWood.class, wood -> register("wood/hanger/" + wood.getSerializedName(), () -> new HangerBlock(FLBlocks.hangerProperties().mapColor(wood.woodColor()))));

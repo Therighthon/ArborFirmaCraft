@@ -2,7 +2,7 @@
   "type": "tfc:pot",
   "ingredients": [
     {
-      "id": "tfc:powder/sulfur"
+      "item": "tfc:powder/sulfur"
     }
   ],
   "item_output": [

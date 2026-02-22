@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": {
+      "item": "afc:wood/log/araucaria"
+    },
+    "Y": {
+      "item": "firmalife:treated_lumber"
+    }
+  },
+  "pattern": [
+    "XYX",
+    "XYX",
+    "XYX"
+  ],
+  "result": {
+    "count": 4,
+    "id": "afc:wood/wine_shelf/araucaria"
+  }
+}

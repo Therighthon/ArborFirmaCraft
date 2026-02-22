@@ -4,8 +4,10 @@ import com.therighthon.afc.common.AFCTags;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.AncientLogs;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.TreeSpecies;
 import com.therighthon.afc.common.blocks.UniqueLogs;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -201,6 +203,15 @@ public class AFCBlockTagProvider extends BlockTagsProvider
             }
         }
 
+        // Firmalife - there has to be a better way to do this...
+//        addAllAFCWoods(FLCompatBlocks.BARREL_PRESSES, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.HANGERS, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.KEGS, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.KEG_SUBS, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.FOOD_SHELVES, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.JARBNETS, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.WINE_SHELVES, BlockTags.MINEABLE_WITH_AXE);
+//        addAllAFCWoods(FLCompatBlocks.STOMPING_BARRELS, BlockTags.MINEABLE_WITH_AXE);
     }
 
     private void breakableBySharps(TreeSpecies.BlockType species, Wood.BlockType wood)
@@ -214,6 +225,13 @@ public class AFCBlockTagProvider extends BlockTagsProvider
     {
         AFCBlocks.WOODS.forEach(
             (s, m) -> tag(tagKey).add(s.getBlock(type).get())
+        );
+    }
+
+    private void addAllAFCWoods(Map<AFCWood, TFCBlocks.Id<Block>> type, TagKey<Block> tagKey)
+    {
+        AFCBlocks.WOODS.forEach(
+            (s, m) -> tag(tagKey).add(type.get(s).get())
         );
     }
 

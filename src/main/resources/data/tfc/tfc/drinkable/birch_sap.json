@@ -2,9 +2,6 @@
   "ingredient": [
     {
       "fluid": "afc:birch_sap"
-    },
-    {
-      "fluid": "afc:birch_sap_concentrate"
     }
   ],
   "water": 10.0

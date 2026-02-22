@@ -1,8 +1,11 @@
 package com.therighthon.afc.datagen;
 
+import com.eerussianguy.firmalife.common.blocks.FLBlocks;
+import com.eerussianguy.firmalife.common.items.FLItems;
 import com.therighthon.afc.AFCHelpers;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
+import com.therighthon.afc.common.blocks.FLCompatBlocks;
 import com.therighthon.afc.common.blocks.UniqueLogs;
 import com.therighthon.afc.common.items.AFCItems;
 import java.util.Locale;
@@ -36,6 +39,7 @@ import net.dries007.tfc.common.TFCTags;
 import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.items.TFCItems;
+import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.Metal;
 import static net.dries007.tfc.util.DataGenerationHelpers.Builder;
 
@@ -257,6 +261,50 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
                         .pattern("C C", "LLL", "LLL")
                         .shaped(AFCItems.HANGING_SIGNS.get(wood).get(metal), 3);
                 }
+
+            // Firmalife
+            var brassRods = commonTagOf(Registries.ITEM, "rods/brass");
+            var wroughtRods = commonTagOf(Registries.ITEM, "rods/wrought_iron");
+            var wroughtSheets = commonTagOf(Registries.ITEM, "sheets/wrought_iron");
+
+            recipe()
+                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
+                .input('Y', Tags.Items.STRINGS)
+                .pattern("XXX", " Y ", " Y ")
+                .shaped(FLCompatBlocks.HANGERS.get(wood));
+            recipe()
+                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
+                .input('Y', AFCItems.LUMBER.get(wood))
+                .pattern("XXX", "YYY", "XXX")
+                .shaped(FLCompatBlocks.FOOD_SHELVES.get(wood));
+            recipe()
+                .input('X', itemOf(wood, Wood.BlockType.LOG))
+                .input('Y', AFCItems.LUMBER.get(wood))
+                .input('Z', brassRods)
+                .pattern("X  ", "ZYY", "X  ")
+                .shaped(new ItemStack(FLCompatBlocks.JARBNETS.get(wood), 2));
+            recipe()
+                .input('X', itemOf(wood, Wood.BlockType.LOG))
+                .input('Y', FLItems.TREATED_LUMBER)
+                .pattern("XYX", "XYX", "XYX")
+                .shaped(new ItemStack(FLCompatBlocks.WINE_SHELVES.get(wood), 4));
+            recipe()
+                .input('X', AFCItems.LUMBER.get(wood))
+                .input('G', TFCItems.GLUE)
+                .pattern("XGX", "XXX", "GGG")
+                .shaped(FLCompatBlocks.STOMPING_BARRELS.get(wood));
+            recipe()
+                .input(FLCompatBlocks.STOMPING_BARRELS.get(wood))
+                .input(wroughtRods)
+                .input(wroughtSheets)
+                .input(TFCItems.BRASS_MECHANISMS)
+                .shapeless(FLCompatBlocks.BARREL_PRESSES.get(wood));
+            recipe()
+                .input('X', itemOf(wood, Wood.BlockType.LOG))
+                .input('Y', FLItems.BARREL_STAVE)
+                .input('Z', TFCItems.GLUE)
+                .pattern("XYX", "YZY", "XYX")
+                .shaped(FLCompatBlocks.KEGS.get(wood));
         }
 
         // Unique Logs
@@ -412,4 +460,8 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
         return commonTagOf(key, "storage_blocks/" + metal.getSerializedName());
     }
 
+    public ItemLike itemOf(AFCWood wood, Wood.BlockType type)
+    {
+        return AFCBlocks.WOODS.get(wood).get(type);
+    }
 }
