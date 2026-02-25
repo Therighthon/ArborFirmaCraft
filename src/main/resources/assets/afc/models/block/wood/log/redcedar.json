@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "block/cube_column",
   "textures": {
-    "end": "afc:block/wood/log_top/cypress",
+    "end": "afc:block/wood/log_top/redcedar",
     "side": "afc:block/wood/log/redcedar"
   }
 }

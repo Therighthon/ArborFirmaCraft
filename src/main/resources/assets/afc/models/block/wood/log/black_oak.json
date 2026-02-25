@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "block/cube_column",
   "textures": {
-    "end": "tfc:block/wood/log_top/oak",
+    "end": "afc:block/wood/log_top/black_oak",
     "side": "afc:block/wood/log/black_oak"
   }
 }

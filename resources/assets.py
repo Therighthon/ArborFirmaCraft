@@ -518,31 +518,27 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         block.with_lang(lang('%s twig', wood))
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
         prefix = 'afc'
-        bark_name = wood
         if wood == 'rainbow_eucalyptus':
-            wood_top = 'eucalyptus'
+            planks = 'eucalyptus'
         elif wood == 'black_oak':
-            wood_top = 'oak'
+            planks = 'oak'
             prefix = 'tfc'
         elif wood == 'poplar':
-            wood_top = 'aspen'
+            planks = 'aspen'
             prefix = 'tfc'
         elif wood == 'redcedar':
-            wood_top = 'cypress'
+            planks = 'cypress'
         elif wood == 'kauri':
-            wood_top = 'araucaria'
+            planks = 'araucaria'
         elif wood == 'rubber_fig':
-            wood_top = 'fig'
-            bark_name = 'fig'
+            planks = 'fig'
         elif wood == 'gum_arabic':
-            wood_top = 'acacia'
+            planks = 'acacia'
             prefix = 'tfc'
         else:
-            wood_top = wood
+            planks = wood
 
-        planks = wood_top
-
-        block.with_block_model({'side': 'afc:block/wood/log/%s' % bark_name, 'top': '%s:block/wood/log_top/%s' % (prefix, wood_top)}, parent='tfc:block/groundcover/twig')
+        block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
         for variant in ('log', 'wood'):
             block = rm.blockstate(('wood', variant, wood), variants={
                 'axis=y': {'model': 'afc:block/wood/%s/%s' % (variant, wood)},
@@ -550,8 +546,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'axis=x': {'model': 'afc:block/wood/%s/%s' % (variant, wood), 'x': 90, 'y': 90}
             }, use_default_model=False)
 
-            end = '%s:block/wood/%s/%s' % (prefix, variant.replace('log', 'log_top').replace('wood', 'log'), wood_top)
-            side = '%s:block/wood/%s/%s' % ('afc', variant.replace('wood', 'log'), bark_name) # Always use AFC for side textures
+            end = 'afc:block/wood/%s/%s' % (variant.replace('log', 'log_top').replace('wood', 'log'), wood)
+            side = '%s:block/wood/%s/%s' % ('afc', variant.replace('wood', 'log'), wood) # Always use AFC for side textures
             block.with_block_model({'end': end, 'side': side}, parent='block/cube_column')
             rm.item_model(('wood', variant, wood), 'afc:item/wood/%s/%s' % (variant, wood))
             block.with_lang(lang('%s %s', wood, variant))
