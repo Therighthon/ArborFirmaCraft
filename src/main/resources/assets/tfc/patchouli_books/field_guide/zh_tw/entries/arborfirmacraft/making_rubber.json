@@ -1,0 +1,15 @@
+{
+	"name": "製作橡膠",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "將乳膠與硫粉放入陶鍋中一起煮沸。可以得到黏性樹脂。要是還有更多妙用就好了..."
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}
+
