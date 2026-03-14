@@ -1,0 +1,34 @@
+{
+	"name": "樹液採集",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:tree_tap",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "某些樹木可以採集到有用的液體。默認情況下，楓樹和樺樹可以採集到含糖樹液，橡膠無花果樹（Rubber Fig）与乳膠木（Hevea）可以採集乳胶。樹液可以濃縮成糖漿並做成糖，乳膠則可以再加工為橡膠。"
+	},
+	{
+		"type": "patchouli:image",
+		"title": "採集楓樹樹液",
+		"images": [
+	        "afc:textures/gui/book/maple_tapping.png"
+	      ],
+		"border": true
+	},
+	{
+		"type": "patchouli:text",
+		"text": "採集樹液需要三樣東西：樹木本身、一只樹液龍頭（需用鍛鐵鍛鐵，並放置在至少三格高樹幹的中間），以及一個木桶（必須放在龍頭下方、朝上放置）。條件合適時木桶會立刻開始注滿樹液。"
+	},
+	{
+		"type": "patchouli:text",
+		"text": "並非所有樹木都會一直產汁。楓樹與樺樹在春季、溫度介於 -4°C 至 6°C（大致在積雪開始融化時）會產出樹液。三葉膠樹僅在氣溫高於 22°C 時產乳膠；橡膠無花果树在 12°C 及以上產乳膠，但速度慢於三葉膠树。緯度、海拔、季節與晝夜都會影響溫度，進而影響樹液流速。"
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 1,
+	"extra_recipe_mappings": {
+	  "afc:tree_tap": 0
+	}
+}
+
