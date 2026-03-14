@@ -101,8 +101,9 @@ public class AFCItemTagProvider extends ItemTagsProvider
         addAllAFCWoods(Wood.BlockType.SLAB, ItemTags.WOODEN_SLABS);
         addAllAFCWoods(Wood.BlockType.STAIRS, ItemTags.WOODEN_STAIRS);
         addAllAFCWoods(Wood.BlockType.WORKBENCH, WORKBENCHES);
-        addAllAFCWoods(Wood.BlockType.CHEST, ItemTags.WOODEN_FENCES);
-        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, ItemTags.WOODEN_FENCES);
+        addAllAFCWoods(Wood.BlockType.CHEST, Tags.Items.CHESTS_WOODEN);
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Items.CHESTS_WOODEN);
+        addAllAFCWoods(Wood.BlockType.TRAPPED_CHEST, Tags.Items.CHESTS_TRAPPED);
         addAllAFCWoods(Wood.BlockType.SIGN, ItemTags.SIGNS);
 
         // Unique logs

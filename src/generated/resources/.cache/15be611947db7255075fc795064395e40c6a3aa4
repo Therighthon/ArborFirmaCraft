@@ -1,4 +1,4 @@
-// 1.21.1	2025-11-28T16:18:07.240393	Tags for minecraft:item mod id afc
+// 1.21.1	2026-03-14T10:04:38.1411421	Tags for minecraft:item mod id afc
 20106da5f72e924827de0047d02c0777860b077f data/afc/tags/item/araucaria_logs.json
 ff98deaf8197843ee3a51c58bf702af535a4f668 data/afc/tags/item/baobab_logs.json
 49e89121e74f6dfca4b5210c1aacd351eb4e3640 data/afc/tags/item/beech_logs.json
@@ -19,6 +19,8 @@ cb8a647c2067b6383b244095aa21b2b9e69f351b data/afc/tags/item/redcedar_logs.json
 3b46a1e7d12eae549a104aecf4c057ddf5669280 data/afc/tags/item/rubber_fig_logs.json
 a3d1ec1f4e1d2f9e996f4a0a18060c17209fdd31 data/afc/tags/item/teak_logs.json
 fecb8f4990ccd6ea2fd562251b1fc868b20b13f7 data/afc/tags/item/tualang_logs.json
+054432faf751553d1214c66324fe6134a533089c data/c/tags/item/chests/trapped.json
+440c33eea1710a6f8000fd8dd5c314b3097ad044 data/c/tags/item/chests/wooden.json
 d450f09933a9230d7ccd99a51a730c899123799d data/c/tags/item/minecarts.json
 eb18e170340727c9951e30a569042c9b4828bbbc data/c/tags/item/rods/wooden.json
 587b353849b36bed78f3c79389fe45b7faf01fd8 data/minecraft/tags/item/buttons.json
@@ -30,7 +32,7 @@ ed4b1551c1566d077c1626f17eced6ccd9f33821 data/minecraft/tags/item/planks.json
 51f08ec3c932630c5538a1b1de7c26c0300d1cc6 data/minecraft/tags/item/saplings.json
 1fe8905584752e7461b86cc3f6b83624ba42c0e1 data/minecraft/tags/item/signs.json
 19621c00a0fd9b669925fb7faf34c2f1e0b5276d data/minecraft/tags/item/wooden_doors.json
-a640c2ff212c3faf05238c56b6bdf6935686164d data/minecraft/tags/item/wooden_fences.json
+760b63b3e7966f61f96b506a1dfa3ad1b5a8bdf6 data/minecraft/tags/item/wooden_fences.json
 2d21216db750e523ebee4cf4a501208543eac9c4 data/minecraft/tags/item/wooden_pressure_plates.json
 597243289c3a5abbca8c6ca60a292a7d6cc55d3f data/minecraft/tags/item/wooden_slabs.json
 b1bfa9e0123dfe41779eebd3c84e4a056faca90f data/minecraft/tags/item/wooden_stairs.json
