@@ -8,7 +8,7 @@
   ],
   "key": {
     "X": {
-      "item": "afc:wood/log/fig"
+      "tag": "afc:fig_logs"
     },
     "Y": {
       "item": "afc:wood/lumber/fig"

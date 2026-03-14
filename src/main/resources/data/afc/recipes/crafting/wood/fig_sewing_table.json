@@ -17,7 +17,7 @@
       "item": "afc:wood/planks/fig"
     },
     "Y": {
-      "item": "afc:wood/log/fig"
+      "tag": "afc:fig_logs"
     }
   },
   "result": {
