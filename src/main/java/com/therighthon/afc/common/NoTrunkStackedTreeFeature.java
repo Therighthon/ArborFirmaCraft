@@ -35,9 +35,9 @@ public class NoTrunkStackedTreeFeature extends StackedTreeFeature
         final StructureTemplateManager manager = TreeHelpers.getStructureManager(level);
         final StructurePlaceSettings settings = TreeHelpers.getPlacementSettings(level, chunkPos, random);
         if (TreeHelpers.isValidGround(level, pos, settings, config.placement())) {
-            final boolean placeTree = config.rootSystem().map(roots -> TreeHelpers.placeRoots(level, pos.below(), roots, random) || !roots.required()).orElse(true);
+            final boolean placeTree = config.rootSystem().map(roots -> TreeHelpers.placeRoots(level, pos.below().mutable(), roots, random) || !roots.required()).orElse(true);
             if (placeTree) {
-                config.rootSystem().ifPresent(roots -> TreeHelpers.placeRoots(level, pos.below(), roots, random));
+                config.rootSystem().ifPresent(roots -> TreeHelpers.placeRoots(level, pos.below().mutable(), roots, random));
                 for (StackedTreeConfig.Layer layer : config.layers()) {
                     // Place each layer
                     int layerCount = layer.getCount(random);
