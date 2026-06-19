@@ -99,6 +99,7 @@ public class AFCTags
         public static final TagKey<Item> RAINBOW_EUCALYPTUS_LOGS = itemTag("rainbow_eucalyptus_logs");
         public static final TagKey<Item> REDCEDAR_LOGS = itemTag("redcedar_logs");
         public static final TagKey<Item> RUBBER_FIG_LOGS = itemTag("rubber_fig_logs");
+        public static final TagKey<Item> KAURI_LOGS = itemTag("kauri_logs");
 
         private static TagKey<Item> itemTag(String name)
         {

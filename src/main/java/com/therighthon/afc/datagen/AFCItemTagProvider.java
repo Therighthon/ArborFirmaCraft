@@ -71,6 +71,8 @@ public class AFCItemTagProvider extends ItemTagsProvider
         tag(AFCTags.Items.CYPRESS_LOGS).addTag(AFCTags.Items.REDCEDAR_LOGS);
         makeUniqueLogTag(UniqueLogs.RUBBER_FIG, AncientLogs.ANCIENT_RUBBER_FIG, AFCTags.Items.RUBBER_FIG_LOGS);
         tag(AFCTags.Items.FIG_LOGS).addTag(AFCTags.Items.RUBBER_FIG_LOGS);
+        makeUniqueLogTag(UniqueLogs.KAURI, AncientLogs.ANCIENT_KAURI, AFCTags.Items.KAURI_LOGS);
+        tag(AFCTags.Items.ARAUCARIA_LOGS).addTag(AFCTags.Items.KAURI_LOGS);
 
         tag(ItemTags.LOGS_THAT_BURN).addTags(
             AFCTags.Items.BAOBAB_LOGS,
@@ -108,7 +110,6 @@ public class AFCItemTagProvider extends ItemTagsProvider
 
         // Unique logs
         addAllUniqueAFCWoods(UniqueLogs.BlockType.LOG_FENCE, ItemTags.WOODEN_FENCES);
-
 
         AFCItems.SUPPORTS.forEach(
             (w, i) -> tag(TFCTags.Items.SUPPORT_BEAMS).add(i.asItem())

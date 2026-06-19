@@ -1,5 +1,5 @@
-// 1.21.1	2026-03-14T10:04:38.1411421	Tags for minecraft:item mod id afc
-20106da5f72e924827de0047d02c0777860b077f data/afc/tags/item/araucaria_logs.json
+// 1.21.1	2026-06-19T12:56:30.4885134	Tags for minecraft:item mod id afc
+55952707185f2150fe235e869a445ce05bbeaf49 data/afc/tags/item/araucaria_logs.json
 ff98deaf8197843ee3a51c58bf702af535a4f668 data/afc/tags/item/baobab_logs.json
 49e89121e74f6dfca4b5210c1aacd351eb4e3640 data/afc/tags/item/beech_logs.json
 90c42e7e2e416b175221e304eb50111f6694b90c data/afc/tags/item/black_oak_logs.json
@@ -11,6 +11,7 @@ e6fc748f5856dd2a8f6bb5a44e8d0da3fac1d73c data/afc/tags/item/ginkgo_logs.json
 be73302f566169c72365a7db88bd5e4222f2cdb5 data/afc/tags/item/hevea_logs.json
 8287a8e1b90ecc30b4fa7e2c56d30a0aa214ffe1 data/afc/tags/item/ipe_logs.json
 28e826dd6cb8072d7246b8602c12b1143b8fde76 data/afc/tags/item/ironwood_logs.json
+4735f414751be6d9feb083e06f3ab808df0c4c63 data/afc/tags/item/kauri_logs.json
 294ab83bdd37ca93f5e1cecaf091b45e718eae5a data/afc/tags/item/mahoe_logs.json
 af0ab7586822172b275181e8d22e5acbd248301a data/afc/tags/item/mahogany_logs.json
 c8cfaeb34e637b038b5b7030be43fc442914b87a data/afc/tags/item/poplar_logs.json
