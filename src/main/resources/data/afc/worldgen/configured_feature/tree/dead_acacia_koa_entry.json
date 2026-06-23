@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/acacia_koa_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/acacia",
+    "fallen_leaves": "afc:wood/fallen_leaves/acacia_koa",
     "bush_log": {
       "Name": "tfc:wood/wood/acacia",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

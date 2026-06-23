@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/sitka_spruce",
     "dead_tree": "afc:tree/sitka_spruce_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "fallen_log": "tfc:wood/log/spruce",
+    "fallen_leaves": "afc:wood/fallen_leaves/sitka_spruce",
     "bush_log": {
       "Name": "tfc:wood/wood/spruce",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

@@ -23,12 +23,13 @@
     ],
     "normal_tree": "tfc:tree/ash",
     "dead_tree": "tfc:tree/ash_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "tfc:wood/log/ash",
+    "fallen_leaves": "tfc:wood/fallen_leaves/ash",
     "bush_log": {
       "Name": "tfc:wood/wood/ash",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

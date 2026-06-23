@@ -26,10 +26,11 @@
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 3,
     "fallen_log": "afc:wood/log/eucalyptus",
+    "fallen_leaves": "afc:wood/fallen_leaves/mountain_ash",
     "bush_log": {
       "Name": "afc:wood/wood/eucalyptus",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

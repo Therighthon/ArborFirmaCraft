@@ -22,6 +22,7 @@
     "dead_tree": "tfc:tree/palm_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/palm",
+    "fallen_leaves": "tfc:wood/fallen_leaves/palm",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }

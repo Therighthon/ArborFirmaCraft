@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/ipe_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ipe",
+    "fallen_leaves": "afc:wood/fallen_leaves/ipe",
     "bush_log": {
       "Name": "afc:wood/wood/ipe",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

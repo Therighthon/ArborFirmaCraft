@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/ginkgo",
     "dead_tree": "afc:tree/ginkgo_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "afc:wood/log/ginkgo",
+    "fallen_leaves": "afc:wood/fallen_leaves/ginkgo",
     "bush_log": {
       "Name": "afc:wood/wood/ginkgo",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/juniper",
     "dead_tree": "afc:tree/juniper_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "fallen_log": "afc:wood/log/cypress",
+    "fallen_leaves": "afc:wood/fallen_leaves/juniper",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

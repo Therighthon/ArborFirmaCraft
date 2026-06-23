@@ -23,13 +23,14 @@
     ],
     "normal_tree": "afc:tree/columnar_araucaria",
     "dead_tree": "afc:tree/columnar_araucaria_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/araucaria",
+    "fallen_leaves": "afc:wood/fallen_leaves/columnar_araucaria",
     "bush_log": {
       "Name": "afc:wood/wood/araucaria",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

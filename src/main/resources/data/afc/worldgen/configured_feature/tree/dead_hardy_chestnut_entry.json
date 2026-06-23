@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/hardy_chestnut",
     "dead_tree": "afc:tree/hardy_chestnut_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "tfc:wood/log/chestnut",
+    "fallen_leaves": "afc:wood/fallen_leaves/hardy_chestnut",
     "bush_log": {
       "Name": "tfc:wood/wood/chestnut",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

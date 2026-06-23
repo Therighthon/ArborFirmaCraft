@@ -24,6 +24,7 @@
     "normal_tree": "tfc:tree/rosewood",
     "dead_tree": "tfc:tree/rosewood_dead",
     "soil_disc": "tfc:duff_disc",
-    "fallen_log": "tfc:wood/log/rosewood"
+    "fallen_log": "tfc:wood/log/rosewood",
+    "fallen_leaves": "tfc:wood/fallen_leaves/rosewood"
   }
 }

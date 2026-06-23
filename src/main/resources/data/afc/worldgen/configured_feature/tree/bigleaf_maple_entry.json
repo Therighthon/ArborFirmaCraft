@@ -23,13 +23,14 @@
     ],
     "normal_tree": "afc:tree/bigleaf_maple",
     "dead_tree": "afc:tree/bigleaf_maple_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "old_growth_chance": 4,
     "fallen_log": "tfc:wood/log/maple",
+    "fallen_leaves": "afc:wood/fallen_leaves/bigleaf_maple",
     "bush_log": {
       "Name": "tfc:wood/wood/maple",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

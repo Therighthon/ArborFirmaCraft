@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/beech",
     "dead_tree": "afc:tree/beech_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "afc:wood/log/beech",
+    "fallen_leaves": "afc:wood/fallen_leaves/beech",
     "bush_log": {
       "Name": "afc:wood/wood/beech",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

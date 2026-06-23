@@ -26,10 +26,11 @@
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 8,
     "fallen_log": "tfc:wood/log/kapok",
+    "fallen_leaves": "tfc:wood/fallen_leaves/kapok",
     "bush_log": {
       "Name": "tfc:wood/wood/kapok",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

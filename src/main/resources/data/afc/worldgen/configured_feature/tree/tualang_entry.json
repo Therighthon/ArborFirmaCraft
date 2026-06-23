@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/tualang_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/tualang",
+    "fallen_leaves": "afc:wood/fallen_leaves/tualang",
     "bush_log": {
       "Name": "afc:wood/wood/tualang",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

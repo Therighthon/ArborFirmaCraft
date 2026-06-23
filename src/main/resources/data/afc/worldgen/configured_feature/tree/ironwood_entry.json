@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/ironwood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/ironwood",
+    "fallen_leaves": "afc:wood/fallen_leaves/ironwood",
     "bush_log": {
       "Name": "afc:wood/wood/ironwood",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

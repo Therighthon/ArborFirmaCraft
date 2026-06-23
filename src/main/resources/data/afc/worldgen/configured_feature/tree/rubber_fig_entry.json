@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/rubber_fig_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/rubber_fig",
+    "fallen_leaves": "afc:wood/fallen_leaves/rubber_fig",
     "bush_log": {
       "Name": "afc:wood/wood/rubber_fig",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

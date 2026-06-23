@@ -23,12 +23,13 @@
     ],
     "normal_tree": "tfc:tree/hickory",
     "dead_tree": "tfc:tree/hickory_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "tfc:wood/log/hickory",
+    "fallen_leaves": "tfc:wood/fallen_leaves/hickory",
     "bush_log": {
       "Name": "tfc:wood/wood/hickory",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/poplar",
     "dead_tree": "afc:tree/poplar_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "afc:wood/log/poplar",
+    "fallen_leaves": "afc:wood/fallen_leaves/poplar",
     "bush_log": {
       "Name": "afc:wood/wood/poplar",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

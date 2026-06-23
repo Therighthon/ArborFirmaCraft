@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/mahoe_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/mahoe",
+    "fallen_leaves": "afc:wood/fallen_leaves/mahoe",
     "bush_log": {
       "Name": "afc:wood/wood/mahoe",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

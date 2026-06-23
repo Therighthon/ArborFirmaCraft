@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/weeping_willow",
     "dead_tree": "afc:tree/weeping_willow_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "tfc:wood/log/willow",
+    "fallen_leaves": "afc:wood/fallen_leaves/weeping_willow",
     "bush_log": {
       "Name": "tfc:wood/wood/willow",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

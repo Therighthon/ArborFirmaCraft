@@ -23,13 +23,14 @@
     ],
     "normal_tree": "afc:tree/chinquapin",
     "dead_tree": "afc:tree/chinquapin_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/beech",
+    "fallen_leaves": "afc:wood/fallen_leaves/chinquapin",
     "bush_log": {
       "Name": "afc:wood/wood/beech",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

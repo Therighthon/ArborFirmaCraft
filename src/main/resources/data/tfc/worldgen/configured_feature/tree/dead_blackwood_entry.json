@@ -28,7 +28,7 @@
     "bush_log": {
       "Name": "tfc:wood/wood/blackwood",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

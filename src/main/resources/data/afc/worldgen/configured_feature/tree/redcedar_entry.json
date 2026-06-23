@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/redcedar",
     "dead_tree": "afc:tree/redcedar_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "fallen_log": "afc:wood/log/redcedar",
+    "fallen_leaves": "afc:wood/fallen_leaves/redcedar",
     "bush_log": {
       "Name": "afc:wood/wood/redcedar",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

@@ -23,13 +23,14 @@
     ],
     "normal_tree": "afc:tree/bald_cypress",
     "dead_tree": "afc:tree/bald_cypress_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "old_growth_chance": 2,
     "fallen_log": "afc:wood/log/cypress",
+    "fallen_leaves": "afc:wood/fallen_leaves/bald_cypress",
     "bush_log": {
       "Name": "afc:wood/wood/cypress",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

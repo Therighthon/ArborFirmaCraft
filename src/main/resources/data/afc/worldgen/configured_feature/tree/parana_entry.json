@@ -23,12 +23,13 @@
     ],
     "normal_tree": "afc:tree/parana",
     "dead_tree": "afc:tree/parana_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "fallen_log": "afc:wood/log/araucaria",
+    "fallen_leaves": "afc:wood/fallen_leaves/parana",
     "bush_log": {
       "Name": "afc:wood/wood/araucaria",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

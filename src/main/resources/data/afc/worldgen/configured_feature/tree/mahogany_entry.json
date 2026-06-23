@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/mahogany_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/mahogany",
+    "fallen_leaves": "afc:wood/fallen_leaves/mahogany",
     "bush_log": {
       "Name": "afc:wood/wood/mahogany",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

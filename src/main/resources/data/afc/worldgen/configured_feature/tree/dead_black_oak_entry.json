@@ -23,13 +23,14 @@
     ],
     "normal_tree": "afc:tree/black_oak",
     "dead_tree": "afc:tree/black_oak_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/black_oak",
+    "fallen_leaves": "afc:wood/fallen_leaves/black_oak",
     "bush_log": {
       "Name": "afc:wood/wood/black_oak",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

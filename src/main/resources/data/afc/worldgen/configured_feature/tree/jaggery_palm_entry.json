@@ -22,10 +22,11 @@
     "dead_tree": "afc:tree/jaggery_palm_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/palm",
+    "fallen_leaves": "afc:wood/fallen_leaves/jaggery_palm",
     "bush_log": {
       "Name": "tfc:wood/wood/palm",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

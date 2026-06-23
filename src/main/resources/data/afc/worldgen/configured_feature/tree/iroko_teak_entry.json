@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/iroko_teak_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/teak",
+    "fallen_leaves": "afc:wood/fallen_leaves/iroko_teak",
     "bush_log": {
       "Name": "afc:wood/wood/teak",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

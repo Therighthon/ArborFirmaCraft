@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/eucalyptus_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "afc:wood/log/eucalyptus",
+    "fallen_leaves": "afc:wood/fallen_leaves/eucalyptus",
     "bush_log": {
       "Name": "afc:wood/wood/eucalyptus",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

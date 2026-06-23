@@ -26,10 +26,11 @@
     "soil_disc": "tfc:duff_disc",
     "old_growth_chance": 1,
     "fallen_log": "afc:wood/log/rainbow_eucalyptus",
+    "fallen_leaves": "afc:wood/fallen_leaves/rainbow_eucalyptus",
     "bush_log": {
       "Name": "afc:wood/wood/rainbow_eucalyptus",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

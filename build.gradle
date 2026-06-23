@@ -166,8 +166,10 @@ dependencies {
     // Jade
     implementation("curse.maven:jade-324717:$jade_version")
 
+    // TFC
     implementation("curse.maven:terrafirmacraft-302973:${tfc_version}")
-//    implementation files("libs/TerraFirmaCraft-NeoForge-1.21.1-0.0.0-indev.jar")
+    // Dev Versions of TFC
+//    implementation files("C:/Github/TerraFirmaCraft/build/libs/TerraFirmaCraft-NeoForge-1.21.1-0.0.0-indev.jar")
 
     implementation("curse.maven:cyanide-541676:$cyanide_version")
 
@@ -178,8 +180,8 @@ dependencies {
     // FirmaLife
     compileOnly("curse.maven:firmalife-453394:${firmalife_version}")
 
-    // Only use FirmaLife at runtime
-    runtimeOnly("curse.maven:firmalife-453394:${firmalife_version}")
+    // Use FirmaLife at runtime
+//    runtimeOnly("curse.maven:firmalife-453394:${firmalife_version}")
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

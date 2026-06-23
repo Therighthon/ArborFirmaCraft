@@ -26,12 +26,13 @@
     ],
     "normal_tree": "afc:tree/stone_pine",
     "dead_tree": "afc:tree/stone_pine_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:podzol_disc",
     "fallen_log": "tfc:wood/log/pine",
+    "fallen_leaves": "afc:wood/fallen_leaves/stone_pine",
     "bush_log": {
       "Name": "tfc:wood/wood/pine",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

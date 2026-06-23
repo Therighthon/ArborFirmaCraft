@@ -25,6 +25,7 @@
     "dead_tree": "tfc:tree/rosewood_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/rosewood",
+    "fallen_leaves": "tfc:wood/fallen_leaves/rosewood",
     "dead_chance": 1,
     "fallen_tree_chance": 8
   }

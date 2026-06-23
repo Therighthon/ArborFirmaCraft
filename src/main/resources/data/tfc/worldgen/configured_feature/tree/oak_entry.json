@@ -23,12 +23,13 @@
     ],
     "normal_tree": "tfc:tree/oak",
     "dead_tree": "tfc:tree/oak_dead",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "fallen_log": "tfc:wood/log/oak",
+    "fallen_leaves": "tfc:wood/fallen_leaves/oak",
     "bush_log": {
       "Name": "tfc:wood/wood/oak",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

@@ -25,10 +25,11 @@
     "dead_tree": "afc:tree/red_silk_cotton_dead",
     "soil_disc": "tfc:duff_disc",
     "fallen_log": "tfc:wood/log/kapok",
+    "fallen_leaves": "afc:wood/fallen_leaves/red_silk_cotton",
     "bush_log": {
       "Name": "tfc:wood/wood/kapok",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },

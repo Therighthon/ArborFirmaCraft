@@ -24,13 +24,14 @@
     "normal_tree": "tfc:tree/aspen",
     "dead_tree": "tfc:tree/aspen_dead",
     "krummholz": "tfc:tree/aspen_krummholz",
-    "soil_disc": "tfc:duff_disc",
+    "soil_disc": "tfc:alfisol_disc",
     "old_growth_chance": 1,
     "fallen_log": "tfc:wood/log/aspen",
+    "fallen_leaves": "tfc:wood/fallen_leaves/aspen",
     "bush_log": {
       "Name": "tfc:wood/wood/aspen",
       "Properties": {
-        "natural": "true",
+        "branch_direction": "down",
         "axis": "y"
       }
     },
