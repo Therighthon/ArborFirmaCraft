@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/tualang"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/tualang"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/tualang"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/tualang"
+  }
+}

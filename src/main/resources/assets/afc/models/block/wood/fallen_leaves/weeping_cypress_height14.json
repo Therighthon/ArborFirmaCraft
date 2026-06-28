@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/groundcover/fallen_leaves_height14",
   "textures": {
-    "all": "afc:block/wood/leaves/weeping_cypress"
+    "all": "afc:block/wood/leaves/dense_leaves/weeping_cypress"
   }
 }

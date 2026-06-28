@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/giant_rosewood"
+  "parent": "afc:block/wood/leaves/dense_leaves/giant_rosewood",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/giant_rosewood"
+  }
 }

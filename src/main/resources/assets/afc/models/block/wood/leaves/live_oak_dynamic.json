@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/live_oak"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/live_oak"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/live_oak"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/live_oak"
+  }
+}

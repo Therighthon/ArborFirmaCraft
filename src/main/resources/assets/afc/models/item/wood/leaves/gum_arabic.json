@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/gum_arabic"
+  "parent": "afc:block/wood/leaves/dense_leaves/gum_arabic",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/gum_arabic"
+  }
 }

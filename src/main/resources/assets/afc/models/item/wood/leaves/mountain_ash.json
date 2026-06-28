@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/mountain_ash"
+  "parent": "afc:block/wood/leaves/dense_leaves/mountain_ash",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/mountain_ash"
+  }
 }

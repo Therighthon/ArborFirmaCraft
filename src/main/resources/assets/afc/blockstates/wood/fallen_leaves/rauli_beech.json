@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/rauli_beech_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/rauli_beech"
+      "model": "afc:block/wood/leaves/dense_leaves/rauli_beech"
     }
   }
 }

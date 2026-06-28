@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/rainbow_eucalyptus"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/rainbow_eucalyptus"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/rainbow_eucalyptus"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/rainbow_eucalyptus"
+  }
+}

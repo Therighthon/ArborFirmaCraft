@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "": {
-      "model": "afc:block/wood/leaves/flame_of_the_forest"
+      "model": "afc:block/wood/leaves/flame_of_the_forest_dynamic"
     }
   }
 }

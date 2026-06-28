@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/sparse_leaves",
+  "textures": {
+    "leaves": "afc:block/wood/leaves/sparse_leaves/black_spruce",
+    "cross": "afc:block/wood/leaves/bare/black_spruce"
+  }
+}

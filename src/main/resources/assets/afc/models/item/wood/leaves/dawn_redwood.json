@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/dawn_redwood"
+  "parent": "afc:block/wood/leaves/dense_leaves/dawn_redwood",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/dawn_redwood"
+  }
 }

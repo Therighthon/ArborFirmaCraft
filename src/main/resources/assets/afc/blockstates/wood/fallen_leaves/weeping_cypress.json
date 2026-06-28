@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/weeping_cypress_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/weeping_cypress"
+      "model": "afc:block/wood/leaves/dense_leaves/weeping_cypress"
     }
   }
 }

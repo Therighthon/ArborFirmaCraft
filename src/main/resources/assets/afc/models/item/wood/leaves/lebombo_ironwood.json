@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/lebombo_ironwood"
+  "parent": "afc:block/wood/leaves/dense_leaves/lebombo_ironwood",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/lebombo_ironwood"
+  }
 }

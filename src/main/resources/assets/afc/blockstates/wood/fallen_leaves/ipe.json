@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/ipe_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/ipe"
+      "model": "afc:block/wood/leaves/dense_leaves/ipe"
     }
   }
 }

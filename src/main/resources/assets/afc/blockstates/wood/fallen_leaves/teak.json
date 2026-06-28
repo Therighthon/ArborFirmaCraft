@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/teak_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/teak"
+      "model": "afc:block/wood/leaves/dense_leaves/teak"
     }
   }
 }

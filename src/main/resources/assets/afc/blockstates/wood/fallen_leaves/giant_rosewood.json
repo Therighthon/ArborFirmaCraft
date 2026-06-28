@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/giant_rosewood_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/giant_rosewood"
+      "model": "afc:block/wood/leaves/dense_leaves/giant_rosewood"
     }
   }
 }

@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/balsam_fir"
+  "parent": "afc:block/wood/leaves/dense_leaves/balsam_fir",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/balsam_fir"
+  }
 }

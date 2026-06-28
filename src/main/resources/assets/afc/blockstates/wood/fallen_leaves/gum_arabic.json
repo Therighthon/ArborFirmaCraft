@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/gum_arabic_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/gum_arabic"
+      "model": "afc:block/wood/leaves/dense_leaves/gum_arabic"
     }
   }
 }

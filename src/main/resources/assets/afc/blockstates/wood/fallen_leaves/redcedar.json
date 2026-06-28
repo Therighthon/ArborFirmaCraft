@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/redcedar_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/redcedar"
+      "model": "afc:block/wood/leaves/dense_leaves/redcedar"
     }
   }
 }

@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/live_oak"
+  "parent": "afc:block/wood/leaves/dense_leaves/live_oak",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/live_oak"
+  }
 }

@@ -10,11 +10,6 @@ import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.stream.Stream;
-import com.eerussianguy.firmalife.client.model.DynamicBlockModel;
-import com.eerussianguy.firmalife.client.model.FoodShelfBlockModel;
-import com.eerussianguy.firmalife.client.model.HangerBlockModel;
-import com.eerussianguy.firmalife.client.model.JarbnetBlockModel;
-import com.therighthon.afc.client.render.colors.AFCColors;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.AFCWood;
 import com.therighthon.afc.common.blocks.TreeSpecies;
@@ -35,14 +30,12 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.event.RegisterClientReloadListenersEvent;
 import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import org.jetbrains.annotations.Nullable;
 
 
 import net.dries007.tfc.client.ClientEventHandler;
-import net.dries007.tfc.client.ColorMapReloadListener;
 import net.dries007.tfc.client.TFCColors;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
 import net.dries007.tfc.client.extensions.ItemRendererExtension;
@@ -50,11 +43,8 @@ import net.dries007.tfc.client.model.entity.HorseChestLayer;
 import net.dries007.tfc.client.render.entity.TFCBoatRenderer;
 import net.dries007.tfc.client.render.entity.TFCChestBoatRenderer;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
-import net.dries007.tfc.common.blocks.TFCBlocks;
 import net.dries007.tfc.common.blocks.wood.Wood;
 import net.dries007.tfc.common.component.TFCComponents;
-import net.dries007.tfc.common.entities.TFCEntities;
-import net.dries007.tfc.common.items.BarrelBlockItem;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.client.render.blockentity.ChestItemRenderer;
 
@@ -65,23 +55,15 @@ public final class ModEventClientBusEvents
     public static void registerColorHandlerBlocks(RegisterColorHandlersEvent.Block event)
     {
         final BlockColor foliageColor = (state, level, pos, tintIndex) -> TFCColors.getFoliageColor(pos, tintIndex);
-        final BlockColor kapokFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getKapokFoliageColor(pos, tintIndex, TreeSpecies.RED_SILK_COTTON.autumnIndex());
-        final BlockColor jacarandaFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getJacarandaFoliageColor(pos, tintIndex, TreeSpecies.GIANT_ROSEWOOD.autumnIndex());
-        final BlockColor yellowIpeFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getYellowIpeFoliageColor(pos, tintIndex, AFCWood.IPE.autumnIndex());
-        final BlockColor flameOfTheForestFoliageColor = (state, level, pos, tintIndex) -> AFCColors.getFlameOfTheForestFoliageColor(pos, tintIndex, TreeSpecies.FLAME_OF_THE_FOREST.autumnIndex());
 
         AFCBlocks.WOODS.forEach((wood, reg) -> event.register(
             wood.isConifer() ?
-                foliageColor : wood == AFCWood.IPE ? yellowIpeFoliageColor :
-                (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
+                foliageColor : (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
             reg.get(Wood.BlockType.LEAVES).get(), reg.get(Wood.BlockType.FALLEN_LEAVES).get()));
 
         AFCBlocks.TREE_SPECIES.forEach((wood, reg) -> event.register(
             wood.isConifer() ?
-                foliageColor : wood == TreeSpecies.RED_SILK_COTTON ? kapokFoliageColor :
-                wood == TreeSpecies.FLAME_OF_THE_FOREST ? flameOfTheForestFoliageColor :
-                wood == TreeSpecies.GIANT_ROSEWOOD ? jacarandaFoliageColor :
-                (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
+                foliageColor : (state, level, pos, tintIndex) -> TFCColors.getSeasonalFoliageColor(pos, tintIndex, wood.autumnIndex()),
             reg.get(TreeSpecies.BlockType.LEAVES).get(), reg.get(TreeSpecies.BlockType.FALLEN_LEAVES).get()));
     }
 
@@ -179,16 +161,6 @@ public final class ModEventClientBusEvents
         // The trick here ended up being that we can register our own block entity renderers for existing block entities, and only apply them to our blocks
         event.registerBlockEntityRenderer(TFCBlockEntities.SIGN.get(), AFCSignBlockEntityRenderer::new);
         event.registerBlockEntityRenderer(TFCBlockEntities.HANGING_SIGN.get(), AFCHangingSignBlockEntityRenderer::new);
-    }
-
-    public static void registerClientReloadListeners(RegisterClientReloadListenersEvent event)
-    {
-        // Color maps
-        // Based on TFC Custom colormaps
-        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageJacarandaColors, AFCColors.FOLIAGE_JACARANDA_COLORS_LOCATION));
-        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageYellowColors, AFCColors.FOLIAGE_YELLOW_COLORS_LOCATION));
-        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageOrangeColors, AFCColors.FOLIAGE_ORANGE_COLORS_LOCATION));
-        event.registerReloadListener(new ColorMapReloadListener(AFCColors::setFoliageRedColors, AFCColors.FOLIAGE_RED_COLORS_LOCATION));
     }
 
     public static void registerExtensions(RegisterClientExtensionsEvent event)

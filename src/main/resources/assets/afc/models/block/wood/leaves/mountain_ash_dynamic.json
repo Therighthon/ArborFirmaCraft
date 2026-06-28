@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/mountain_ash"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/mountain_ash"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/mountain_ash"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/mountain_ash"
+  }
+}

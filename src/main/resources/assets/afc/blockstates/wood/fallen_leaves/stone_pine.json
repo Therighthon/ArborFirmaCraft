@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/stone_pine_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/stone_pine"
+      "model": "afc:block/wood/leaves/dense_leaves/stone_pine"
     }
   }
 }

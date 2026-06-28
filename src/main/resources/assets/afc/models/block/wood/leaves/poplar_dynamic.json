@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/poplar"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/poplar"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/poplar"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/poplar"
+  }
+}

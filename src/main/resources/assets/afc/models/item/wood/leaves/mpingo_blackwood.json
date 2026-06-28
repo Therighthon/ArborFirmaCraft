@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/mpingo_blackwood"
+  "parent": "afc:block/wood/leaves/dense_leaves/mpingo_blackwood",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/mpingo_blackwood"
+  }
 }

@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/flame_of_the_forest"
+  "parent": "afc:block/wood/leaves/dense_leaves/flame_of_the_forest",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/flame_of_the_forest"
+  }
 }

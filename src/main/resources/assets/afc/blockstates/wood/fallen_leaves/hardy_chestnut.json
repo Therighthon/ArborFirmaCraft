@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/hardy_chestnut_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/hardy_chestnut"
+      "model": "afc:block/wood/leaves/dense_leaves/hardy_chestnut"
     }
   }
 }

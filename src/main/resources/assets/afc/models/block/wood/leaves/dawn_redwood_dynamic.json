@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/dawn_redwood"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/dawn_redwood"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/dawn_redwood"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/dawn_redwood"
+  }
+}

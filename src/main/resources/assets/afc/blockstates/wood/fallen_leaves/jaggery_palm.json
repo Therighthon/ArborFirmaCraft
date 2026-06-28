@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/jaggery_palm_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/jaggery_palm"
+      "model": "afc:block/wood/leaves/dense_leaves/jaggery_palm"
     }
   }
 }

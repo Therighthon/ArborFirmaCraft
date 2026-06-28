@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/hevea"
+  "parent": "afc:block/wood/leaves/dense_leaves/hevea",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/hevea"
+  }
 }

@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/coast_spruce"
+  "parent": "afc:block/wood/leaves/dense_leaves/coast_spruce",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/coast_spruce"
+  }
 }

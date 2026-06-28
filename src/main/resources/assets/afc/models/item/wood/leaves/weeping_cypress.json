@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/weeping_cypress"
+  "parent": "afc:block/wood/leaves/dense_leaves/weeping_cypress",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/weeping_cypress"
+  }
 }

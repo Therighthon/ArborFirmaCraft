@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "": {
-      "model": "afc:block/wood/leaves/red_silk_cotton"
+      "model": "afc:block/wood/leaves/red_silk_cotton_dynamic"
     }
   }
 }

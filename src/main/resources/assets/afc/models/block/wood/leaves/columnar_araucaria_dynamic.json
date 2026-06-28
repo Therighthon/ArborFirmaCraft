@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/columnar_araucaria"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/columnar_araucaria"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/columnar_araucaria"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/columnar_araucaria"
+  }
+}

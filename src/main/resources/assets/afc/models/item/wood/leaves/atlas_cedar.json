@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/atlas_cedar"
+  "parent": "afc:block/wood/leaves/dense_leaves/atlas_cedar",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/atlas_cedar"
+  }
 }

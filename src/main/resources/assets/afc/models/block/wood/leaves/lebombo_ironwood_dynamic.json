@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/lebombo_ironwood"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/lebombo_ironwood"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/lebombo_ironwood"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/lebombo_ironwood"
+  }
+}

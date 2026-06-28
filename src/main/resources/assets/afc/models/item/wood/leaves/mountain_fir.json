@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/mountain_fir"
+  "parent": "afc:block/wood/leaves/dense_leaves/mountain_fir",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/mountain_fir"
+  }
 }

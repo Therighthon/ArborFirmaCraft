@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/rauli_beech"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/rauli_beech"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/rauli_beech"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/rauli_beech"
+  }
+}

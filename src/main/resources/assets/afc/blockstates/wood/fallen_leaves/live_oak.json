@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/live_oak_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/live_oak"
+      "model": "afc:block/wood/leaves/dense_leaves/live_oak"
     }
   }
 }

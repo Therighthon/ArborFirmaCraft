@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/horsetail_ironwood"
+  "parent": "afc:block/wood/leaves/dense_leaves/horsetail_ironwood",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/horsetail_ironwood"
+  }
 }

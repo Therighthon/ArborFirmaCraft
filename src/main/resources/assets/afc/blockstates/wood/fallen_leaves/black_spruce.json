@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/black_spruce_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/black_spruce"
+      "model": "afc:block/wood/leaves/dense_leaves/black_spruce"
     }
   }
 }

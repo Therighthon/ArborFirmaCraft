@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/huangshan_pine_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/huangshan_pine"
+      "model": "afc:block/wood/leaves/dense_leaves/huangshan_pine"
     }
   }
 }

@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/groundcover/fallen_leaves_height2",
   "textures": {
-    "all": "afc:block/wood/leaves/dawn_redwood"
+    "all": "afc:block/wood/leaves/dense_leaves/dawn_redwood"
   }
 }

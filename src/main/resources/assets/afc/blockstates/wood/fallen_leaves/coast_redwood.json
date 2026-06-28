@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/coast_redwood_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/coast_redwood"
+      "model": "afc:block/wood/leaves/dense_leaves/coast_redwood"
     }
   }
 }

@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "": {
-      "model": "afc:block/wood/leaves/rainbow_eucalyptus"
+      "model": "afc:block/wood/leaves/rainbow_eucalyptus_dynamic"
     }
   }
 }

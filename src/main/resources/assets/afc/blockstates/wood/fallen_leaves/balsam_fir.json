@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/balsam_fir_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/balsam_fir"
+      "model": "afc:block/wood/leaves/dense_leaves/balsam_fir"
     }
   }
 }

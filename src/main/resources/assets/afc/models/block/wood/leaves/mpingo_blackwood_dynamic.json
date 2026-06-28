@@ -1,0 +1,16 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "loader": "tfc:leaves",
+  "dense_leaves": {
+    "parent": "afc:block/wood/leaves/dense_leaves/mpingo_blackwood"
+  },
+  "sparse_leaves": {
+    "parent": "afc:block/wood/leaves/sparse_leaves/mpingo_blackwood"
+  },
+  "bare": {
+    "parent": "afc:block/wood/leaves/bare/mpingo_blackwood"
+  },
+  "blooming": {
+    "parent": "afc:block/wood/leaves/blooming/mpingo_blackwood"
+  }
+}

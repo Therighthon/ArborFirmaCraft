@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/mahogany"
+  "parent": "afc:block/wood/leaves/dense_leaves/mahogany",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/mahogany"
+  }
 }

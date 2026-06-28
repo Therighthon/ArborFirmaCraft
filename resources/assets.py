@@ -37,9 +37,29 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
 
     for variant in TREE_VARIANTS.keys():
         # Leaves
-        block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s' % variant)
-        block.with_block_model('afc:block/wood/leaves/%s' % variant, parent='block/leaves')
-        block.with_item_model()
+        block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s_dynamic' % variant)
+
+        # Dynamic Models
+        rm.custom_block_model('wood/leaves/%s_dynamic' % variant, 'tfc:leaves', {
+            'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % variant},
+            'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % variant},
+            'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % variant},
+            'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s' % variant}
+        })
+        rm.block_model('wood/leaves/dense_leaves/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/leaves')
+        rm.block_model('wood/leaves/sparse_leaves/%s' % variant, textures={
+            'leaves': 'afc:block/wood/leaves/sparse_leaves/%s' % variant,
+            'cross': 'afc:block/wood/leaves/bare/%s' % variant
+        }, parent='tfc:block/sparse_leaves')
+        if variant == 'jaggery_palm':
+            rm.block_model('wood/leaves/bare/%s' % variant, {'all': 'afc:block/wood/leaves/bare/%s' % variant}, parent='block/cube_all')
+        else:
+            rm.block_model('wood/leaves/bare/%s' % variant, {'cross': 'afc:block/wood/leaves/bare/%s' % variant}, parent='block/cross')
+        # TODO: Blooming is just disabled for now
+        rm.block_model('wood/leaves/blooming/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/leaves')
+
+        rm.item_model(('wood', 'leaves', variant), parent='afc:block/wood/leaves/dense_leaves/%s' % variant)
+
         block.with_lang(lang('%s leaves', variant))
 
         # Sapling
@@ -52,11 +72,11 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         block.with_lang(lang('potted %s sapling', variant))
 
         # Fallen Leaves
-        rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
-        tex = {'all': 'afc:block/wood/leaves/%s' % variant}
+        rm.blockstate(('wood', 'fallen_leaves', variant), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (variant, i * 2) if i != 8 else 'afc:block/wood/leaves/dense_leaves/%s' % variant}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', variant))
+        tex = {'all': 'afc:block/wood/leaves/dense_leaves/%s' % variant}
         # Replace this with any AFC leaves that should have different top textures
         if variant in ('mangrove', 'willow'):
-            tex['top'] = 'afc:block/wood/leaves/%s_top' % variant
+            tex['top'] = 'afc:block/wood/leaves/dense_leaves/%s_top' % variant
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (variant, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', variant), 'tfc:item/groundcover/fallen_leaves')
@@ -160,19 +180,40 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         block.with_block_model({'side': 'afc:block/wood/log/%s' % wood, 'top': 'afc:block/wood/log_top/%s' % wood}, parent='tfc:block/groundcover/twig')
         rm.item_model('wood/twig/%s' % wood, 'afc:item/wood/twig/%s' % wood, parent='item/handheld_rod')
 
-        block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', default_species))
-        tex = {'all': 'afc:block/wood/leaves/%s' % wood}
+        block = rm.blockstate(('wood', 'fallen_leaves', wood), variants=dict((('layers=%d' % i), {'model': 'afc:block/wood/fallen_leaves/%s_height%d' % (wood, i * 2) if i != 8 else 'afc:block/wood/leaves/dense_leaves/%s' % wood}) for i in range(1, 1 + 8))).with_lang(lang('fallen %s leaves', default_species))
+        tex = {'all': 'afc:block/wood/leaves/dense_leaves/%s' % wood}
         #Leaving this in, in case we want to use it for other stuff
         if wood in ('mangrove', 'willow'):
-            tex['top'] = 'afc:block/wood/leaves/%s_top' % wood
+            tex['top'] = 'afc:block/wood/leaves/dense_leaves/%s_top' % wood
         for i in range(1, 8):
             rm.block_model(('wood', 'fallen_leaves', '%s_height%s' % (wood, i * 2)), tex, parent='tfc:block/groundcover/fallen_leaves_height%s' % (i * 2))
         rm.item_model(('wood', 'fallen_leaves', wood), 'tfc:item/groundcover/fallen_leaves')
 
         # Leaves
-        block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s' % wood)
-        block.with_block_model('afc:block/wood/leaves/%s' % wood, parent='block/leaves')
-        block.with_item_model()
+        block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s_dynamic' % wood)
+
+        # Dynamic Models
+        rm.custom_block_model('wood/leaves/%s_dynamic' % wood, 'tfc:leaves', {
+            'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % wood},
+            'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % wood},
+            'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % wood},
+            'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s' % wood}
+        })
+        rm.block_model('wood/leaves/dense_leaves/%s' % wood, 'afc:block/wood/leaves/dense_leaves/%s' % wood, parent='block/leaves')
+        rm.block_model('wood/leaves/sparse_leaves/%s' % wood, textures={
+            'leaves': 'afc:block/wood/leaves/sparse_leaves/%s' % wood,
+            'cross': 'afc:block/wood/leaves/bare/%s' % wood
+        }, parent='tfc:block/sparse_leaves')
+        if wood == 'jaggery_palm':
+            rm.block_model('wood/leaves/bare/%s' % wood, {'all': 'afc:block/wood/leaves/bare/%s' % wood}, parent='block/cube_all')
+        else:
+            rm.block_model('wood/leaves/bare/%s' % wood, {'cross': 'afc:block/wood/leaves/bare/%s' % wood}, parent='block/cross')
+        # TODO: Blooming is just disabled for now
+        rm.block_model('wood/leaves/blooming/%s' % wood, 'afc:block/wood/leaves/dense_leaves/%s' % wood, parent='block/leaves')
+
+        rm.item_model(('wood', 'leaves', wood), parent='afc:block/wood/leaves/dense_leaves/%s' % wood)
+
+        block.with_lang(lang('%s leaves', wood))
 
         # Sapling
         block = rm.blockstate(('wood', 'sapling', wood), 'afc:block/wood/sapling/%s' % wood)

@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/atlas_cedar_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/atlas_cedar"
+      "model": "afc:block/wood/leaves/dense_leaves/atlas_cedar"
     }
   }
 }

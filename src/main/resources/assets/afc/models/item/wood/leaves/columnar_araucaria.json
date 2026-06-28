@@ -1,4 +1,7 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "afc:block/wood/leaves/columnar_araucaria"
+  "parent": "afc:block/wood/leaves/dense_leaves/columnar_araucaria",
+  "textures": {
+    "layer0": "afc:item/wood/leaves/columnar_araucaria"
+  }
 }

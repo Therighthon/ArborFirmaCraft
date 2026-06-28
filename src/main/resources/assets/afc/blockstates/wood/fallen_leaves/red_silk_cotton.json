@@ -23,7 +23,7 @@
       "model": "afc:block/wood/fallen_leaves/red_silk_cotton_height14"
     },
     "layers=8": {
-      "model": "afc:block/wood/leaves/red_silk_cotton"
+      "model": "afc:block/wood/leaves/dense_leaves/red_silk_cotton"
     }
   }
 }

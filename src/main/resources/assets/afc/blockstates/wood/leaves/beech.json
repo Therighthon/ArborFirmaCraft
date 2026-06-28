@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "variants": {
     "": {
-      "model": "afc:block/wood/leaves/beech"
+      "model": "afc:block/wood/leaves/beech_dynamic"
     }
   }
 }
