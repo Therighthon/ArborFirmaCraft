@@ -2,6 +2,6 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "block/leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/dense_leaves/rainbow_eucalyptus"
+    "all": "afc:block/wood/leaves/sparse_leaves/rainbow_eucalyptus"
   }
 }

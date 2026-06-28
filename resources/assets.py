@@ -56,7 +56,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         else:
             rm.block_model('wood/leaves/bare/%s' % variant, {'cross': 'afc:block/wood/leaves/bare/%s' % variant}, parent='block/cross')
         # TODO: Blooming is just disabled for now
-        rm.block_model('wood/leaves/blooming/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/leaves')
+        rm.block_model('wood/leaves/blooming/%s' % variant, 'afc:block/wood/leaves/sparse_leaves/%s' % variant, parent='block/leaves')
 
         rm.item_model(('wood', 'leaves', variant), parent='afc:block/wood/leaves/dense_leaves/%s' % variant)
 
@@ -209,7 +209,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         else:
             rm.block_model('wood/leaves/bare/%s' % wood, {'cross': 'afc:block/wood/leaves/bare/%s' % wood}, parent='block/cross')
         # TODO: Blooming is just disabled for now
-        rm.block_model('wood/leaves/blooming/%s' % wood, 'afc:block/wood/leaves/dense_leaves/%s' % wood, parent='block/leaves')
+        rm.block_model('wood/leaves/blooming/%s' % wood, 'afc:block/wood/leaves/sparse_leaves/%s' % wood, parent='block/leaves')
 
         rm.item_model(('wood', 'leaves', wood), parent='afc:block/wood/leaves/dense_leaves/%s' % wood)
 
