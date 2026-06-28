@@ -15,6 +15,8 @@ import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
 import org.jetbrains.annotations.Nullable;
 
@@ -25,85 +27,83 @@ import net.dries007.tfc.common.blocks.wood.FallenLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCLeavesBlock;
 import net.dries007.tfc.common.blocks.wood.TFCSaplingBlock;
 import net.dries007.tfc.common.blocks.wood.Wood;
-import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.calendar.ICalendar;
-import net.dries007.tfc.util.registry.RegistryWood;
 
 public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
-    GUM_ARABIC(false, 8, 196, 0.0292f),
-    ACACIA_KOA(false, 16, 180, 0.0196f),
+    GUM_ARABIC(false, 0, 8, 196, 0.0292f),
+    ACACIA_KOA(false, 0, 16, 180, 0.0196f),
     //Ash
     //Aspen
-    POPLAR(false, 8, 250, 0.0170f),
+    POPLAR(false, 0, 8, 250, 0.0170f),
     //Birch
     //Blackwood
-    MPINGO_BLACKWOOD(false, 11, 200, 0.0292f),
+    MPINGO_BLACKWOOD(false, 0, 11, 200, 0.0292f),
     //Chestnut
-    HARDY_CHESTNUT(false, 8, 180, 0.0189f),
+    HARDY_CHESTNUT(false, 0, 8, 180, 0.0189f),
     //Fir
-    MOUNTAIN_FIR( true, 11, 0, 0.0543f),
-    BALSAM_FIR( true, 13, 0, 0.0511f),
+    MOUNTAIN_FIR( true, 0, 11, 0, 0.0543f),
+    BALSAM_FIR( true, 0, 13, 0, 0.0511f),
     //Hickory
-    SCRUB_HICKORY( false, 7, 220, 0.078f),
+    SCRUB_HICKORY( false, 0, 7, 220, 0.078f),
     //Kapok
-    RED_SILK_COTTON(false, 18, 150, 0.0145f),
+    RED_SILK_COTTON(false, 0, 18, 150, 0.0145f),
     //Maple
-    BIGLEAF_MAPLE( false, 9, 215, 0.0188f),
-    WEEPING_MAPLE( true, 9, 0, 0.0545f),
+    BIGLEAF_MAPLE( false, 0, 9, 215, 0.0188f),
+    WEEPING_MAPLE( true, 0, 9, 0, 0.0545f),
     //Oak
-    BLACK_OAK( false, 14, 180, 0.0187f),
-    LIVE_OAK( false, 10, 155, 0.0188f),
+    BLACK_OAK( false, 0, 14, 180, 0.0187f),
+    LIVE_OAK( false, 0, 10, 155, 0.0188f),
     //Palm
-    JAGGERY_PALM(false, 6, 249, 0.0447f),
+    JAGGERY_PALM(false, 0, 6, 249, 0.0447f),
     //Pine
-    STONE_PINE( true, 11, 0, 0.0283f),
-    RED_PINE( true, 8, 0, 0.0248f),
-    TAMARACK(false, 8, 254, 0.0511f),
-    HUANGSHAN_PINE(true, 9, 0, 0.0541f),
+    STONE_PINE( true, 0, 11, 0, 0.0283f),
+    RED_PINE( true, 0, 8, 0, 0.0248f),
+    TAMARACK(false, 0, 8, 254, 0.0511f),
+    HUANGSHAN_PINE(true, 0, 9, 0, 0.0541f),
 
     //Rosewood
-    GIANT_ROSEWOOD( false, 16, 190, 0.0163f),
+    GIANT_ROSEWOOD( false, 0, 16, 190, 0.0163f),
     //Sequoia
-    COAST_REDWOOD( true, 10, 0, 0.0166f),
-    DAWN_REDWOOD(true, 9, 0, 0.0248f),
+    COAST_REDWOOD( true, 0, 10, 0, 0.0166f),
+    DAWN_REDWOOD(true, 0, 9, 0, 0.0248f),
     //Spruce
-    COAST_SPRUCE(true, 8, 0, 0.0238f),
-    SITKA_SPRUCE( true, 10, 0, 0.0543f),
-    BLACK_SPRUCE(true, 12, 0, 0.0318f),
+    COAST_SPRUCE(true, 0, 8, 0, 0.0238f),
+    SITKA_SPRUCE( true, 0, 10, 0, 0.0543f),
+    BLACK_SPRUCE(true, 0, 12, 0, 0.0318f),
     //Cedar
-    ATLAS_CEDAR( true, 10, 0, 0.0210f),
+    ATLAS_CEDAR( true, 0, 10, 0, 0.0210f),
     //Willow
-    WEEPING_WILLOW(false, 16, 240, 0.0154f),
+    WEEPING_WILLOW(false, 0, 16, 240, 0.0154f),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(false, 16, 30, 0.0173f),
-    MOUNTAIN_ASH(false, 13, 150, 0.0170f),
+    RAINBOW_EUCALYPTUS(false, 0, 16, 30, 0.0173f),
+    MOUNTAIN_ASH(false, 0, 13, 150, 0.0170f),
     //Fig
-    RUBBER_FIG(false, 13, 80, 0.0163f),
+    RUBBER_FIG(false, 0, 13, 80, 0.0163f),
     //Cypress
-    REDCEDAR(true, 10, 0, 0.0166f),
-    WEEPING_CYPRESS(true, 7, 0, 0.0591f),
-    BALD_CYPRESS(false, 7, 130, 0.0543f),
-    JUNIPER(true, 8, 0, 0.0474f),
+    REDCEDAR(true, 0, 10, 0, 0.0166f),
+    WEEPING_CYPRESS(true, 0, 7, 0, 0.0591f),
+    BALD_CYPRESS(false, 0, 7, 130, 0.0543f),
+    JUNIPER(true, 0, 8, 0, 0.0474f),
     //Mahogany
-    SAPELE_MAHOGANY(false, 14, 170, 0.0145f),
-    SMALL_LEAF_MAHOGANY(false, 11, 240, 0.0175f),
+    SAPELE_MAHOGANY(false, 0, 14, 170, 0.0145f),
+    SMALL_LEAF_MAHOGANY(false, 0, 11, 240, 0.0175f),
     //Teak
-    IROKO_TEAK(false, 13, 140, 0.0143f),
-    FLAME_OF_THE_FOREST(false, 11, 0, 0.0428f),
+    IROKO_TEAK(false, 0, 13, 140, 0.0143f),
+    FLAME_OF_THE_FOREST(false, 0, 11, 0, 0.0428f),
     //Ironwood
-    LEBOMBO_IRONWOOD(false, 8, 230, 0.0472f),
-    HORSETAIL_IRONWOOD(false, 10, 220, 0.0447f),
+    LEBOMBO_IRONWOOD(false, 0, 8, 230, 0.0472f),
+    HORSETAIL_IRONWOOD(false, 0, 10, 220, 0.0447f),
     //Araucaria
-    KAURI(true, 22, 0, 0.0240f),
-    COLUMNAR_ARAUCARIA(true, 9, 0, 0.0305f),
-    PARANA(true, 11, 0, 0.0554f),
+    KAURI(true, 0, 22, 0, 0.0240f),
+    COLUMNAR_ARAUCARIA(true, 0, 9, 0, 0.0305f),
+    PARANA(true, 0, 11, 0, 0.0554f),
     //Beech
-    RAULI_BEECH(false, 10, 40, 0.0209f),
-    BLACK_BEECH(false, 10, 200, 0.0201f),
-    CHINQUAPIN(false, 7, 130, 0.0350f);
+    RAULI_BEECH(false, 0, 10, 40, 0.0209f),
+    BLACK_BEECH(false, 0, 10, 200, 0.0201f),
+    CHINQUAPIN(false, 0, 7, 130, 0.0350f);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;
@@ -111,9 +111,10 @@ public enum TreeSpecies implements RegistryTreeSpecies
     private final TreeGrower tree;
     private final int daysToGrow;
     private final boolean conifer;
+    private final float flowerOffset;
     private final float saplingDropRate;
 
-    TreeSpecies(boolean conifer, int daysToGrow, int autumnIndex, float saplingDropChance) {
+    TreeSpecies(boolean conifer, float flowerOffset, int daysToGrow, int autumnIndex, float saplingDropChance) {
         this.serializedName = this.name().toLowerCase(Locale.ROOT);
         this.autumnIndex = autumnIndex;
         this.tree = new TreeGrower(
@@ -123,6 +124,7 @@ public enum TreeSpecies implements RegistryTreeSpecies
             Optional.empty()
         );
         this.conifer = conifer;
+        this.flowerOffset = flowerOffset;
         this.daysToGrow = daysToGrow;
         this.saplingDropRate = saplingDropChance;
     }
@@ -130,6 +132,24 @@ public enum TreeSpecies implements RegistryTreeSpecies
     public int autumnIndex()
     {
         return autumnIndex;
+    }
+
+    @Override
+    public Supplier<Block> getBlock(Wood.BlockType blockType)
+    {
+        return null;
+    }
+
+    @Override
+    public BlockSetType getBlockSet()
+    {
+        return null;
+    }
+
+    @Override
+    public WoodType getVanillaWoodType()
+    {
+        return null;
     }
 
     public float getSaplingDropRate()
@@ -147,6 +167,23 @@ public enum TreeSpecies implements RegistryTreeSpecies
     {
         return conifer;
     }
+    
+    public float getFlowerOffset()
+    {
+        return flowerOffset;
+    }
+
+    @Override
+    public MapColor woodColor()
+    {
+        return null;
+    }
+
+    @Override
+    public MapColor barkColor()
+    {
+        return null;
+    }
 
     @Override
     public TreeGrower tree()
@@ -154,16 +191,11 @@ public enum TreeSpecies implements RegistryTreeSpecies
         return tree;
     }
 
-    @Override
-    public int daysToGrow()
-    {
-        return defaultDaysToGrow();
-    }
 
     @Override
-    public int ticksToGrow()
+    public Supplier<Integer> ticksToGrow()
     {
-        return defaultDaysToGrow() * ICalendar.CALENDAR_TICKS_IN_DAY;
+        return () -> defaultDaysToGrow() * ICalendar.CALENDAR_TICKS_IN_DAY;
     }
 
     public int defaultDaysToGrow()
@@ -179,12 +211,12 @@ public enum TreeSpecies implements RegistryTreeSpecies
 
     public enum BlockType {
         LEAVES((self, wood) -> {
-            return new TFCLeavesBlock(ExtendedProperties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).defaultInstrument().randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood.autumnIndex(), wood.getBlock(self.fallenLeaves()), null) {};
+            return new TFCLeavesBlock(ExtendedProperties.of().mapColor(MapColor.PLANT).strength(0.5F).sound(SoundType.GRASS).defaultInstrument().randomTicks().noOcclusion().isViewBlocking(TFCBlocks::never).flammableLikeLeaves(), wood, wood.getBlock(self.fallenLeaves()), null) {};
         }),
         SAPLING(wood -> new TFCSaplingBlock(wood.tree(),
             ExtendedProperties.of(MapColor.PLANT).noCollission().randomTicks().strength(0).sound(SoundType.GRASS)
                 .flammableLikeLeaves().blockEntity(TFCBlockEntities.TICK_COUNTER),
-                wood::ticksToGrow, wood == TreeSpecies.JAGGERY_PALM)), // TODO: More robust sand handling?
+                wood.ticksToGrow(), wood == TreeSpecies.JAGGERY_PALM)), // TODO: More robust sand handling?
         POTTED_SAPLING((self, wood) -> new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT,
             wood.getBlock(SAPLING), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING))),
         FALLEN_LEAVES((self, wood) -> {

@@ -6,15 +6,15 @@ import net.minecraft.util.StringRepresentable;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.grower.TreeGrower;
 
-public interface RegistryTreeSpecies extends StringRepresentable
+import net.dries007.tfc.util.registry.RegistryWood;
+
+public interface RegistryTreeSpecies extends RegistryWood
 {
     TreeGrower tree();
 
-    int autumnIndex();
+    boolean isConifer();
 
-    int daysToGrow();
-
-    int ticksToGrow();
+    float getFlowerOffset();
 
     Supplier<Block> getBlock(TreeSpecies.BlockType var1);
 }
