@@ -67,7 +67,6 @@ public final class AFC
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             eventBus.addListener(ModEventClientBusEvents::clientSetup);
-            eventBus.addListener(ModEventClientBusEvents::registerClientReloadListeners);
             eventBus.addListener(ModEventClientBusEvents::registerEntityLayers);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerBlocks);
             eventBus.addListener(ModEventClientBusEvents::registerColorHandlerItems);
