@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/weeping_cypress"
+    "leaves": "afc:block/wood/leaves/dense_leaves/weeping_cypress",
+    "cross": "afc:block/wood/leaves/blooming/weeping_cypress"
   }
 }

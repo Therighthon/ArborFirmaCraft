@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/coast_spruce"
+    "leaves": "afc:block/wood/leaves/dense_leaves/coast_spruce",
+    "cross": "afc:block/wood/leaves/blooming/coast_spruce"
   }
 }

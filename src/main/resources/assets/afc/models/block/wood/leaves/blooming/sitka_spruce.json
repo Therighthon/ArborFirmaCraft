@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/sitka_spruce"
+    "leaves": "afc:block/wood/leaves/dense_leaves/sitka_spruce",
+    "cross": "afc:block/wood/leaves/blooming/sitka_spruce"
   }
 }

@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/juniper"
+    "leaves": "afc:block/wood/leaves/dense_leaves/juniper",
+    "cross": "afc:block/wood/leaves/blooming/juniper"
   }
 }

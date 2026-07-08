@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/blooming_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/small_leaf_mahogany"
+    "leaves": "afc:block/wood/leaves/dense_leaves/small_leaf_mahogany",
+    "overlay": "afc:block/wood/leaves/blooming/small_leaf_mahogany"
   }
 }

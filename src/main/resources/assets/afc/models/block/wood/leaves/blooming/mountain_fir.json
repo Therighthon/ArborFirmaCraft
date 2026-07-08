@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/mountain_fir"
+    "leaves": "afc:block/wood/leaves/dense_leaves/mountain_fir",
+    "cross": "afc:block/wood/leaves/blooming/mountain_fir"
   }
 }

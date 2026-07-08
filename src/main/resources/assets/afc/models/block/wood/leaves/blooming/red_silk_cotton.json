@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/blooming_branches",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/red_silk_cotton"
+    "leaves": "afc:block/wood/leaves/blooming/red_silk_cotton",
+    "cross": "afc:block/wood/leaves/bare/red_silk_cotton"
   }
 }

@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/blooming_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/jaggery_palm"
+    "leaves": "afc:block/wood/leaves/dense_leaves/jaggery_palm",
+    "overlay": "afc:block/wood/leaves/blooming/jaggery_palm"
   }
 }

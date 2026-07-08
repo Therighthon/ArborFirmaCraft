@@ -1,7 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "block/leaves",
+  "parent": "tfc:block/sparse_leaves",
   "textures": {
-    "all": "afc:block/wood/leaves/sparse_leaves/dawn_redwood"
+    "leaves": "afc:block/wood/leaves/dense_leaves/dawn_redwood",
+    "cross": "afc:block/wood/leaves/blooming/dawn_redwood"
   }
 }
