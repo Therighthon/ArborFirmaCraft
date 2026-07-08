@@ -1,8 +1,40 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "variants": {
-    "": {
-      "model": "afc:block/wood/leaves/hardy_chestnut_dynamic"
+  "multipart": [
+    {
+      "apply": [
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_empty"
+        }
+      ]
+    },
+    {
+      "apply": [
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_0",
+          "weight": 8
+        },
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_1",
+          "weight": 5
+        },
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_2",
+          "weight": 5
+        },
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_3",
+          "weight": 5
+        },
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_4",
+          "weight": 5
+        },
+        {
+          "model": "afc:block/wood/leaves/hardy_chestnut_dynamic_5",
+          "weight": 12
+        }
+      ]
     }
-  }
+  ]
 }

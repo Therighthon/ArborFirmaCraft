@@ -11,6 +11,6 @@
     "parent": "afc:block/wood/leaves/bare/mahoe"
   },
   "blooming": {
-    "parent": "afc:block/wood/leaves/blooming/mahoe"
+    "parent": "afc:block/wood/leaves/blooming/mahoe_0"
   }
 }

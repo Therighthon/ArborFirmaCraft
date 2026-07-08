@@ -41,9 +41,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
 
         if TREE_VARIANTS[variant].flower_model != 'random':
             block = rm.blockstate(('wood', 'leaves', variant), model='afc:block/wood/leaves/%s_dynamic' % variant).with_lang(lang('%s leaves', variant))
-        elif variant == 'chestnut':
-            block = blank_blockstate(rm, ('wood', 'leaves', variant), {"multipart":[{"apply":[{"model":"afc:block/wood/leaves/chestnut_empty"}]},{"apply":[{"model":"afc:block/wood/leaves/chestnut_dynamic_0","weight":8},{"model":"afc:block/wood/leaves/chestnut_dynamic_1","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_2","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_3","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_4","weight":12}]}]}).with_lang(lang('%s leaves', variant))
-
+        elif variant == 'hardy_chestnut':
+            block = blank_blockstate(rm, ('wood', 'leaves', variant), {"multipart":[{"apply":[{"model":"afc:block/wood/leaves/hardy_chestnut_empty"}]},{"apply":[{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_0","weight":8},{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_1","weight":5},{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_2","weight":5},{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_3","weight":5},{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_4","weight":5},{"model":"afc:block/wood/leaves/hardy_chestnut_dynamic_5","weight":12}]}]}).with_lang(lang('%s leaves', variant))
 
         # Dynamic Models
         if TREE_VARIANTS[variant].flower_model != 'random':
@@ -53,9 +52,9 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % variant},
                 'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s' % variant}
             })
-        elif variant == 'chestnut':
-            # Chestnut has random blooming models
-            for i in range(4):
+        elif variant == 'hardy_chestnut':
+            # Hardy Chestnut has random blooming models
+            for i in range(5):
                 rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (variant, i), 'tfc:leaves', {
                     'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % variant},
                     'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % variant},
@@ -63,7 +62,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                     'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s_%s' % (variant, i)}
                 })
             # Include one blooming model where it just shows the normal dense leaf model
-            rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (variant, 4), 'tfc:leaves', {
+            rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (variant, 5), 'tfc:leaves', {
                 'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % variant},
                 'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % variant},
                 'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % variant},
@@ -105,8 +104,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % variant,
                 'cross': 'afc:block/wood/leaves/blooming/%s' % variant
             }, parent='tfc:block/sparse_leaves')
-        elif variant == 'chestnut':
-            for i in range(4):
+        elif variant == 'hardy_chestnut':
+            for i in range(5):
                 rm.block_model('wood/leaves/blooming/%s_%s' % (variant, i), textures={
                     'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % variant,
                     'overlay': 'afc:block/wood/leaves/blooming/%s_%s' % (variant, i)
@@ -246,8 +245,8 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         # Leaves
         if AFC_WOODS[wood].flower_model != 'random':
             block = rm.blockstate(('wood', 'leaves', wood), model='afc:block/wood/leaves/%s_dynamic' % wood)
-        elif wood == 'chestnut':
-            block = blank_blockstate(rm, ('wood', 'leaves', wood), {"multipart":[{"apply":[{"model":"afc:block/wood/leaves/chestnut_empty"}]},{"apply":[{"model":"afc:block/wood/leaves/chestnut_dynamic_0","weight":8},{"model":"afc:block/wood/leaves/chestnut_dynamic_1","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_2","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_3","weight":5},{"model":"afc:block/wood/leaves/chestnut_dynamic_4","weight":12}]}]}).with_lang(lang('%s leaves', wood))
+        elif wood == 'mahoe':
+            block = blank_blockstate(rm, ('wood', 'leaves', wood), {"multipart":[{"apply":[{"model":"afc:block/wood/leaves/mahoe_empty"}]},{"apply":[{"model":"afc:block/wood/leaves/mahoe_dynamic_0","weight":8},{"model":"afc:block/wood/leaves/mahoe_dynamic_1","weight":5},{"model":"afc:block/wood/leaves/mahoe_dynamic_2","weight":5},{"model":"afc:block/wood/leaves/mahoe_dynamic_3","weight":5},{"model":"afc:block/wood/leaves/mahoe_dynamic_4","weight":5},{"model":"afc:block/wood/leaves/mahoe_dynamic_5","weight":12}]}]}).with_lang(lang('%s leaves', wood))
 
 
         # Dynamic Models
@@ -258,9 +257,9 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % wood},
                 'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s' % wood}
             })
-        elif wood == 'chestnut':
-        # Chestnut has random blooming models
-            for i in range(4):
+        elif wood == 'mahoe':
+        # Mahoe has random blooming models
+            for i in range(5):
                 rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (wood, i), 'tfc:leaves', {
                     'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % wood},
                     'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % wood},
@@ -268,7 +267,7 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                     'blooming': {'parent': 'afc:block/wood/leaves/blooming/%s_%s' % (wood, i)}
                 })
             # Include one blooming model where it just shows the normal dense leaf model
-            rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (wood, 4), 'tfc:leaves', {
+            rm.custom_block_model('wood/leaves/%s_dynamic_%s' % (wood, 5), 'tfc:leaves', {
                 'dense_leaves': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % wood},
                 'sparse_leaves': {'parent': 'afc:block/wood/leaves/sparse_leaves/%s' % wood},
                 'bare': {'parent': 'afc:block/wood/leaves/bare/%s' % wood},
@@ -307,17 +306,22 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 }, parent='tfc:block/blooming_leaves')
         elif AFC_WOODS[wood].flower_model == 'leaves':
             # Tinted leaves, flowers over
-            if wood == 'palm' or wood == 'willow' or wood == 'mangrove':
-                rm.block_model('wood/leaves/blooming/%s' % wood, textures={
-                    'side': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
-                    'end': 'afc:block/wood/leaves/dense_leaves/%s_top' % wood,
-                    'overlay': 'afc:block/wood/leaves/blooming/%s' % wood
-                }, parent='tfc:block/blooming_leaves_column')
-            else:
-                rm.block_model('wood/leaves/blooming/%s' % wood, textures={
+            rm.block_model('wood/leaves/blooming/%s' % wood, textures={
                     'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
                     'overlay': 'afc:block/wood/leaves/blooming/%s' % wood
                 }, parent='tfc:block/blooming_leaves')
+        elif AFC_WOODS[wood].flower_model == 'sides':
+            # Tinted leaves, flowers over
+            rm.block_model('wood/leaves/blooming/%s' % wood, textures={
+                    'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
+                    'overlay': 'afc:block/wood/leaves/blooming/%s' % wood
+                }, parent='tfc:block/side_blooming_leaves')
+        elif AFC_WOODS[wood].flower_model == 'hanging':
+            # Tinted leaves, flowers in a cross half-below
+            rm.block_model('wood/leaves/blooming/%s' % wood, textures={
+                'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
+                'cross': 'afc:block/wood/leaves/blooming/%s' % wood
+            }, parent='afc:block/hanging_blooming_leaves')
         elif AFC_WOODS[wood].flower_model == 'cones':
             # Tinted leaves, flowers as cross under
             if wood == 'palm' or wood == 'willow' or wood == 'mangrove':
@@ -331,12 +335,12 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                     'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
                     'cross': 'afc:block/wood/leaves/blooming/%s' % wood
                 }, parent='tfc:block/sparse_leaves')
-        elif wood == 'chestnut':
-            for i in range(4):
+        elif wood == 'mahoe':
+            for i in range(5):
                 rm.block_model('wood/leaves/blooming/%s_%s' % (wood, i), textures={
                     'leaves': 'afc:block/wood/leaves/dense_leaves/%s' % wood,
                     'overlay': 'afc:block/wood/leaves/blooming/%s_%s' % (wood, i)
-                }, parent='tfc:block/side_blooming_leaves')
+                }, parent='tfc:block/blooming_leaves')
 
         rm.item_model(('wood', 'leaves', wood), parent='afc:block/wood/leaves/dense_leaves/%s' % wood)
 
@@ -531,6 +535,9 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
         rm.block_model('wood/sluice/%s_lower' % wood, textures={'texture': 'afc:block/wood/sheet/%s' % wood}, parent='tfc:block/sluice_lower')
         rm.blockstate(('wood', 'sluice', wood), variants={**four_rotations('afc:block/wood/sluice/%s_upper' % wood, (90, 0, 180, 270), suffix=',upper=true'), **four_rotations('afc:block/wood/sluice/%s_lower' % wood, (90, 0, 180, 270), suffix=',upper=false')}).with_lang(lang('%s sluice', wood))
         rm.item_model(('wood', 'sluice', wood), parent='afc:block/wood/sluice/%s_lower' % wood, no_textures=True)
+
+        # Crate
+        block = rm.blockstate(('wood', 'crate', wood)).with_block_model().with_lang(lang('%s crate', wood)).with_block_loot('afc:wood/crate/%s' % wood).with_item_model()
 
         # Barrels
         texture = 'afc:block/wood/planks/%s' % wood

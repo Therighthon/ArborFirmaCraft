@@ -11,6 +11,6 @@
     "parent": "afc:block/wood/leaves/bare/hardy_chestnut"
   },
   "blooming": {
-    "parent": "afc:block/wood/leaves/blooming/hardy_chestnut"
+    "parent": "afc:block/wood/leaves/dense_leaves/hardy_chestnut"
   }
 }

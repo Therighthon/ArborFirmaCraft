@@ -1,8 +1,8 @@
 {
   "__comment__": "This file was automatically created by mcresources",
-  "parent": "tfc:block/blooming_branches",
+  "parent": "afc:block/hanging_blooming_leaves",
   "textures": {
-    "leaves": "afc:block/wood/leaves/blooming/baobab",
-    "cross": "afc:block/wood/leaves/bare/baobab"
+    "leaves": "afc:block/wood/leaves/dense_leaves/baobab",
+    "cross": "afc:block/wood/leaves/blooming/baobab"
   }
 }

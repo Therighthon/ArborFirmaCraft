@@ -81,6 +81,7 @@ public class ModEvents
         modifyWood(TFCBlockEntities.GEAR_BOX.get(), Wood.BlockType.GEAR_BOX, event);
         modifyWood(TFCBlockEntities.SHELF.get(), Wood.BlockType.SHELF, event);
         modifyWood(TFCBlockEntities.ENCASED_AXLE.get(), Wood.BlockType.ENCASED_AXLE, event);
+        modifyWood(TFCBlockEntities.CRATE.get(), Wood.BlockType.CRATE, event);
 
         modifySapling(TFCBlockEntities.TICK_COUNTER.get(), event);
 

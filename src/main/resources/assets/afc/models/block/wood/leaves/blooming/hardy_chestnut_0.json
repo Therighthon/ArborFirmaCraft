@@ -1,0 +1,8 @@
+{
+  "__comment__": "This file was automatically created by mcresources",
+  "parent": "tfc:block/side_blooming_leaves",
+  "textures": {
+    "leaves": "afc:block/wood/leaves/dense_leaves/hardy_chestnut",
+    "overlay": "afc:block/wood/leaves/blooming/hardy_chestnut_0"
+  }
+}

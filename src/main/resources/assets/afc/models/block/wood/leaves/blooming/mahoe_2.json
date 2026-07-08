@@ -3,6 +3,6 @@
   "parent": "tfc:block/blooming_leaves",
   "textures": {
     "leaves": "afc:block/wood/leaves/dense_leaves/mahoe",
-    "overlay": "afc:block/wood/leaves/blooming/mahoe"
+    "overlay": "afc:block/wood/leaves/blooming/mahoe_2"
   }
 }

@@ -45,7 +45,7 @@ AFC_WOODS: Dict[str, Wood] = {
     'hevea': Wood(700, 1800, False, 'leaves'),
     'teak': Wood(720, 1750, False, 'bare'),
     'eucalyptus': Wood(720, 2100, False, 'sparse'),
-    'baobab': Wood(707, 1000, False, 'leaves'),
+    'baobab': Wood(707, 1000, False, 'hanging'),
     'fig': Wood(715, 1900, False, 'leaves'),
     'mahogany': Wood(790, 1600, False, 'leaves'),
     'ironwood': Wood(800, 1400, False, 'leaves'),
@@ -53,7 +53,7 @@ AFC_WOODS: Dict[str, Wood] = {
     'araucaria': Wood(690, 1700, False, 'cones'),
     'beech': Wood(750, 1800, False, 'sparse'),
     'ginkgo': Wood(720, 1800, False, 'sparse'),
-    'mahoe': Wood(730, 1700, False, 'leaves')
+    'mahoe': Wood(730, 1700, False, 'random')
 }
 
 TFC_WOODS: dict[str, Wood] = {
@@ -210,7 +210,7 @@ TREE_VARIANTS: Dict[str, Species] = {
     'live_oak': Species('oak', False, 'sparse'),
     'stone_pine': Species('pine', True, 'cones'),
     'red_pine': Species('pine', True, 'cones'),
-    'tamarack': Species('pine', False, 'bare'),
+    'tamarack': Species('pine', False, 'sparse'),
     'giant_rosewood': Species('rosewood', False, 'bare'),
     'coast_spruce': Species('spruce', True, 'cones'),
     'sitka_spruce': Species('spruce', True, 'cones'),
@@ -240,7 +240,7 @@ TREE_VARIANTS: Dict[str, Species] = {
     'parana': Species('araucaria', True, 'cones'),
     'huangshan_pine': Species('pine', True, 'cones'),
     'dawn_redwood': Species('sequoia', False, 'cones'),
-    'hardy_chestnut': Species('chestnut', False, 'sparse'),
+    'hardy_chestnut': Species('chestnut', False, 'random'),
     'rauli_beech': Species('beech', False, 'sparse'),
     'black_beech': Species('beech', False, 'sparse'),
     'chinquapin': Species('beech', False, 'sparse'),
