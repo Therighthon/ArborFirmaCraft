@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/blooming_leaves",
   "textures": {
-    "leaves": "afc:block/wood/leaves/sparse_leaves/acacia_koa",
+    "leaves": "afc:block/wood/leaves/dense_leaves/acacia_koa",
     "overlay": "afc:block/wood/leaves/blooming/acacia_koa"
   }
 }

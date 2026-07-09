@@ -33,77 +33,77 @@ public enum TreeSpecies implements RegistryTreeSpecies
 {
 
     //Acacia
-    GUM_ARABIC(false, 0, 8, 196, 0.0292f),
-    ACACIA_KOA(false, 0, 16, 180, 0.0196f),
+    GUM_ARABIC(false, 0.1f, 8, 196, 0.0292f),
+    ACACIA_KOA(false, 0.17f, 16, 180, 0.0196f),
     //Ash
     //Aspen
-    POPLAR(false, 0, 8, 250, 0.0170f),
+    POPLAR(false, 0f, 8, 250, 0.0170f),
     //Birch
     //Blackwood
-    MPINGO_BLACKWOOD(false, 0, 11, 200, 0.0292f),
+    MPINGO_BLACKWOOD(false, 0.03f, 11, 200, 0.0292f),
     //Chestnut
-    HARDY_CHESTNUT(false, 0, 8, 180, 0.0189f),
+    HARDY_CHESTNUT(false, 0.2f, 8, 180, 0.0189f),
     //Fir
-    MOUNTAIN_FIR( true, 0, 11, 0, 0.0543f),
-    BALSAM_FIR( true, 0, 13, 0, 0.0511f),
+    MOUNTAIN_FIR( true, 0.25f, 11, 0, 0.0543f),
+    BALSAM_FIR( true, 0.2f, 13, 0, 0.0511f),
     //Hickory
-    SCRUB_HICKORY( false, 0, 7, 220, 0.078f),
+    SCRUB_HICKORY( false, 0f, 7, 220, 0.078f),
     //Kapok
-    RED_SILK_COTTON(false, 0, 18, 150, 0.0145f),
+    RED_SILK_COTTON(false, 0f, 18, 150, 0.0145f),
     //Maple
-    BIGLEAF_MAPLE( false, 0, 9, 215, 0.0188f),
-    WEEPING_MAPLE( true, 0, 9, 0, 0.0545f),
+    BIGLEAF_MAPLE( false, 0f, 9, 215, 0.0188f),
+    WEEPING_MAPLE( true, 0f, 9, 0, 0.0545f),
     //Oak
-    BLACK_OAK( false, 0, 14, 180, 0.0187f),
-    LIVE_OAK( false, 0, 10, 155, 0.0188f),
+    BLACK_OAK( false, 0.06f, 14, 180, 0.0187f),
+    LIVE_OAK( false, 0.03f, 10, 155, 0.0188f),
     //Palm
-    JAGGERY_PALM(false, 0, 6, 249, 0.0447f),
+    JAGGERY_PALM(false, 0f, 6, 249, 0.0447f),
     //Pine
-    STONE_PINE( true, 0, 11, 0, 0.0283f),
-    RED_PINE( true, 0, 8, 0, 0.0248f),
-    TAMARACK(false, 0, 8, 254, 0.0511f),
-    HUANGSHAN_PINE(true, 0, 9, 0, 0.0541f),
+    STONE_PINE( true, 0.25f, 11, 0, 0.0283f),
+    RED_PINE( true, 0.3f, 8, 0, 0.0248f),
+    TAMARACK(false, 0f, 8, 254, 0.0511f),
+    HUANGSHAN_PINE(true, 0.22f, 9, 0, 0.0541f),
 
     //Rosewood
-    GIANT_ROSEWOOD( false, 0, 16, 190, 0.0163f),
+    GIANT_ROSEWOOD( false, 0f, 16, 190, 0.0163f),
     //Sequoia
-    COAST_REDWOOD( true, 0, 10, 0, 0.0166f),
-    DAWN_REDWOOD(true, 0, 9, 0, 0.0248f),
+    COAST_REDWOOD( true, 0.3f, 10, 0, 0.0166f),
+    DAWN_REDWOOD(true, 0.1f, 9, 0, 0.0248f),
     //Spruce
-    COAST_SPRUCE(true, 0, 8, 0, 0.0238f),
-    SITKA_SPRUCE( true, 0, 10, 0, 0.0543f),
-    BLACK_SPRUCE(true, 0, 12, 0, 0.0318f),
+    COAST_SPRUCE(true, 0.2f, 8, 0, 0.0238f),
+    SITKA_SPRUCE( true, 0.18f, 10, 0, 0.0543f),
+    BLACK_SPRUCE(true, 0.26f, 12, 0, 0.0318f),
     //Cedar
-    ATLAS_CEDAR( true, 0, 10, 0, 0.0210f),
+    ATLAS_CEDAR( true, 0.14f, 10, 0, 0.0210f),
     //Willow
-    WEEPING_WILLOW(false, 0, 16, 240, 0.0154f),
+    WEEPING_WILLOW(false, 0f, 16, 240, 0.0154f),
     //Eucalyptus
-    RAINBOW_EUCALYPTUS(false, 0, 16, 30, 0.0173f),
-    MOUNTAIN_ASH(false, 0, 13, 150, 0.0170f),
+    RAINBOW_EUCALYPTUS(false, 0.24f, 16, 30, 0.0173f),
+    MOUNTAIN_ASH(false, 0.16f, 13, 150, 0.0170f),
     //Fig
-    RUBBER_FIG(false, 0, 13, 80, 0.0163f),
+    RUBBER_FIG(false, 0.31f, 13, 80, 0.0163f),
     //Cypress
-    REDCEDAR(true, 0, 10, 0, 0.0166f),
-    WEEPING_CYPRESS(true, 0, 7, 0, 0.0591f),
-    BALD_CYPRESS(false, 0, 7, 130, 0.0543f),
-    JUNIPER(true, 0, 8, 0, 0.0474f),
+    REDCEDAR(true, 0.26f, 10, 0, 0.0166f),
+    WEEPING_CYPRESS(true, 0.35f, 7, 0, 0.0591f),
+    BALD_CYPRESS(false, 0.22f, 7, 130, 0.0543f),
+    JUNIPER(true, 0.19f, 8, 0, 0.0474f),
     //Mahogany
-    SAPELE_MAHOGANY(false, 0, 14, 170, 0.0145f),
-    SMALL_LEAF_MAHOGANY(false, 0, 11, 240, 0.0175f),
+    SAPELE_MAHOGANY(false, 0.06f, 14, 170, 0.0145f),
+    SMALL_LEAF_MAHOGANY(false, 0f, 11, 240, 0.0175f),
     //Teak
-    IROKO_TEAK(false, 0, 13, 140, 0.0143f),
-    FLAME_OF_THE_FOREST(false, 0, 11, 0, 0.0428f),
+    IROKO_TEAK(false, 0.22f, 13, 140, 0.0143f),
+    FLAME_OF_THE_FOREST(false, 0f, 11, 0, 0.0428f),
     //Ironwood
-    LEBOMBO_IRONWOOD(false, 0, 8, 230, 0.0472f),
-    HORSETAIL_IRONWOOD(false, 0, 10, 220, 0.0447f),
+    LEBOMBO_IRONWOOD(false, 0.02f, 8, 230, 0.0472f),
+    HORSETAIL_IRONWOOD(false, 0.36f, 10, 220, 0.0447f),
     //Araucaria
-    KAURI(true, 0, 22, 0, 0.0240f),
-    COLUMNAR_ARAUCARIA(true, 0, 9, 0, 0.0305f),
-    PARANA(true, 0, 11, 0, 0.0554f),
+    KAURI(true, 0.2f, 22, 0, 0.0240f),
+    COLUMNAR_ARAUCARIA(true, 0.3f, 9, 0, 0.0305f),
+    PARANA(true, 0.25f, 11, 0, 0.0554f),
     //Beech
-    RAULI_BEECH(false, 0, 10, 40, 0.0209f),
-    BLACK_BEECH(false, 0, 10, 200, 0.0201f),
-    CHINQUAPIN(false, 0, 7, 130, 0.0350f);
+    RAULI_BEECH(false, 0.11f, 10, 40, 0.0209f),
+    BLACK_BEECH(false, 0.17f, 10, 200, 0.0201f),
+    CHINQUAPIN(false, 0.12f, 7, 130, 0.0350f);
 
     public static final TreeSpecies[] VALUES = values();
     private final String serializedName;

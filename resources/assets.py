@@ -69,11 +69,21 @@ def generate(rm: ResourceManager, tfc_rm: ResourceManager, fl_assets_rm, fl_data
                 'blooming': {'parent': 'afc:block/wood/leaves/dense_leaves/%s' % variant}
             })
 
-        rm.block_model('wood/leaves/dense_leaves/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/leaves')
-        rm.block_model('wood/leaves/sparse_leaves/%s' % variant, textures={
-            'leaves': 'afc:block/wood/leaves/sparse_leaves/%s' % variant,
-            'cross': 'afc:block/wood/leaves/bare/%s' % variant
-        }, parent='tfc:block/sparse_leaves')
+        if variant == 'weeping_maple':
+            rm.block_model('wood/leaves/dense_leaves/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/cube_all')
+
+            rm.block_model('wood/leaves/sparse_leaves/%s' % variant, textures={
+                'leaves': 'afc:block/wood/leaves/sparse_leaves/%s' % variant,
+                'cross': 'afc:block/wood/leaves/bare/%s' % variant
+            }, parent='tfc:block/blooming_branches')
+        else:
+            rm.block_model('wood/leaves/dense_leaves/%s' % variant, 'afc:block/wood/leaves/dense_leaves/%s' % variant, parent='block/leaves')
+
+            rm.block_model('wood/leaves/sparse_leaves/%s' % variant, textures={
+                'leaves': 'afc:block/wood/leaves/sparse_leaves/%s' % variant,
+                'cross': 'afc:block/wood/leaves/bare/%s' % variant
+            }, parent='tfc:block/sparse_leaves')
+
         if variant == 'jaggery_palm':
             rm.block_model('wood/leaves/bare/%s' % variant, {'all': 'afc:block/wood/leaves/bare/%s' % variant}, parent='block/cube_all')
         else:

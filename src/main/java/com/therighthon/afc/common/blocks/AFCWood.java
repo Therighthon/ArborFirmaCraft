@@ -19,20 +19,20 @@ import net.dries007.tfc.util.registry.RegistryWood;
 public enum AFCWood implements RegistryWood
 {
     //Wood color, then bark color
-    BAOBAB(false, 0, MapColor.WOOD, MapColor.WOOD,10, 212, 0.0506f),
-    EUCALYPTUS(false, 0, MapColor.WOOD, MapColor.WOOD,10, 150, 0.0193f),
-    MAHOGANY( false, 0, MapColor.WOOD, MapColor.WOOD,10, 10, 0.0157f),
-    HEVEA(false, 0, MapColor.WOOD, MapColor.WOOD,10, 130, 0.0166f),
-    TUALANG(false, 0, MapColor.WOOD, MapColor.WOOD,10, 226, 0.0166f),
-    TEAK(false, 0, MapColor.WOOD, MapColor.WOOD,10, 240, 0.0157f),
-    CYPRESS(true, 0, MapColor.WOOD, MapColor.WOOD,10, 0, 0.0795f),
-    FIG(false, 0, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0166f),
-    IRONWOOD(false, 0, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0145f),
-    IPE(false, 0, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0157f),
-    ARAUCARIA(true, 0, MapColor.WOOD, MapColor.WOOD, 12, 0, 0.0281f),
-    BEECH(false, 0, MapColor.WOOD, MapColor.WOOD, 11, 110, 0.0170f),
-    GINKGO(false, 0, MapColor.WOOD, MapColor.WOOD, 11, 245, 0.0209f),
-    MAHOE(false, 0, MapColor.WOOD, MapColor.WOOD, 11, 212, 0.0189f);
+    BAOBAB(false, 0.12f, MapColor.WOOD, MapColor.WOOD,10, 212, 0.0506f),
+    EUCALYPTUS(false, 0.2f, MapColor.WOOD, MapColor.WOOD,10, 150, 0.0193f),
+    MAHOGANY( false, 0.13f, MapColor.WOOD, MapColor.WOOD,10, 10, 0.0157f),
+    HEVEA(false, 0.14f, MapColor.WOOD, MapColor.WOOD,10, 130, 0.0166f),
+    TUALANG(false, 0.23f, MapColor.WOOD, MapColor.WOOD,10, 226, 0.0166f),
+    TEAK(false, 0f, MapColor.WOOD, MapColor.WOOD,10, 240, 0.0157f),
+    CYPRESS(true, 0.2f, MapColor.WOOD, MapColor.WOOD,10, 0, 0.0795f),
+    FIG(false, 0.33f, MapColor.WOOD, MapColor.WOOD,12, 250, 0.0166f),
+    IRONWOOD(false, 0.07f, MapColor.WOOD, MapColor.WOOD, 14, 200, 0.0145f),
+    IPE(false, 0f, MapColor.WOOD, MapColor.WOOD, 11, 254, 0.0157f),
+    ARAUCARIA(true, 0.23f, MapColor.WOOD, MapColor.WOOD, 12, 0, 0.0281f),
+    BEECH(false, 0.04f, MapColor.WOOD, MapColor.WOOD, 11, 110, 0.0170f),
+    GINKGO(false, 0f, MapColor.WOOD, MapColor.WOOD, 11, 245, 0.0209f),
+    MAHOE(false, 0.19f, MapColor.WOOD, MapColor.WOOD, 11, 212, 0.0189f);
 
     public static final AFCWood[] VALUES = values();
 

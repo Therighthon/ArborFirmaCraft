@@ -2,7 +2,7 @@
   "__comment__": "This file was automatically created by mcresources",
   "parent": "tfc:block/blooming_leaves",
   "textures": {
-    "leaves": "afc:block/wood/leaves/sparse_leaves/rauli_beech",
+    "leaves": "afc:block/wood/leaves/dense_leaves/rauli_beech",
     "overlay": "afc:block/wood/leaves/blooming/rauli_beech"
   }
 }
