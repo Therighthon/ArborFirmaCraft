@@ -31,10 +31,11 @@ import net.minecraftforge.client.model.data.ModelData;
 import net.dries007.tfc.compat.jei.category.BaseRecipeCategory;
 import org.jetbrains.annotations.NotNull;
 
+@SuppressWarnings("UnnecessaryLocalVariable")
 public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
 {
 
-    private static final int WIDTH = 180;
+    private static final int WIDTH = 184;
     private static final int HEIGHT = 60;
 
     public TreeTappingCategory(RecipeType<TreeTapRecipe> type, IGuiHelper helper)
@@ -44,9 +45,25 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
     }
 
     @Override
-    public void setRecipe(IRecipeLayoutBuilder builder, TreeTapRecipe recipe, @NotNull IFocusGroup focuses)
+    public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull TreeTapRecipe recipe, @NotNull IFocusGroup focuses)
     {
-        builder.addSlot(RecipeIngredientRole.INPUT, 6, 5)
+        int itemX = 7;
+        int itemY = HEIGHT / 2 - 5;
+
+        addInputSlot(builder, recipe, itemX, itemY - 15);
+        addInputSlot(builder, recipe, itemX, itemY);
+        addInputSlot(builder, recipe, itemX, itemY + 15);
+
+        int fluidX = WIDTH / 2 - 10;
+        int fluidY = itemY;
+        builder.addSlot(RecipeIngredientRole.OUTPUT, fluidX, fluidY)
+            .addFluidStack(recipe.getOutput().getFluid(), 1000)
+            .setBackground(slot, -1, -1);
+    }
+
+    private void addInputSlot(IRecipeLayoutBuilder builder, TreeTapRecipe recipe, int x, int y)
+    {
+        builder.addSlot(RecipeIngredientRole.INPUT, x, y)
             .addIngredients(collapse(recipe.getBlockIngredient()))
             .setCustomRenderer(VanillaTypes.ITEM_STACK, new IIngredientRenderer<>() {
 
@@ -59,36 +76,41 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
                     return ingredient.isEmpty() ? List.of() : ingredient.getTooltipLines(Minecraft.getInstance().player, tooltipFlag);
                 }
             });
-
-        builder.addSlot(RecipeIngredientRole.OUTPUT, 76, 5)
-            .addFluidStack(recipe.getOutput().getFluid(), 1000)
-            .setBackground(slot, -1, -1);
     }
 
     @Override
     public void draw(TreeTapRecipe recipe, @NotNull IRecipeSlotsView recipeSlots, @NotNull GuiGraphics graphics, double mouseX, double mouseY)
     {
-        arrow.draw(graphics, 48, 3);
         var font = Minecraft.getInstance().font;
 
         // Temperature Range.
+        int tempX = 30;
+        int tempY = HEIGHT - 10;
         Component rangeComponent = Component.empty()
-            .append(Component.literal(String.format("%.1f°C", recipe.getMinTemp())).withStyle(ChatFormatting.AQUA))
-            .append(Component.literal(" - ").withStyle(ChatFormatting.WHITE))
-            .append(Component.literal(String.format("%.1f°C", recipe.getMaxTemp())).withStyle(ChatFormatting.GOLD));
+            .append(Component.literal(String.format("%.1f°C", recipe.getMinTemp())).withStyle(ChatFormatting.DARK_AQUA))
+            .append(Component.literal(" - ").withStyle(ChatFormatting.DARK_GRAY))
+            .append(Component.literal(String.format("%.1f°C", recipe.getMaxTemp())).withStyle(ChatFormatting.DARK_RED));
 
         Component tempRange = Component.translatable("tfc.tooltip.climate_current_temp", rangeComponent)
-            .withStyle(ChatFormatting.WHITE);
+            .withStyle(ChatFormatting.DARK_GRAY);
 
-        graphics.drawString(font, tempRange, 6, 28, 0xFF404040, true);
+        graphics.drawString(font, tempRange, tempX, tempY, 0xFF404040, false);
+
+        // Arrow.
+        int arrowX = tempX + 10;
+        int arrowY = HEIGHT / 2 - 5;
+        arrow.draw(graphics, arrowX, arrowY);
+        arrowAnimated.draw(graphics, arrowX, arrowY);
 
         // Season Condition.
+        int seasonX = arrowX + 10;
+        int seasonY = 5;
         if (recipe.springOnly())
         {
             Component springOnly = Component.translatable("tfc.tooltip.calendar_season",
-                    Component.translatable(String.format("%s", "tfc.enum.season.april")).withStyle(ChatFormatting.GREEN)
-            ).withStyle(ChatFormatting.WHITE);
-            graphics.drawString(font, springOnly, 6, 40, 0xFF404040, true);
+                    Component.translatable(String.format("%s", "tfc.enum.season.april")).withStyle(ChatFormatting.DARK_GREEN)
+            ).withStyle(ChatFormatting.DARK_GRAY);
+            graphics.drawString(font, springOnly, seasonX, seasonY, 0xFF404040, false);
         }
 
         // 3D Render.
@@ -105,13 +127,19 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
      */
     private void renderTreeTapping(GuiGraphics graphics, BlockState logState)
     {
+        int renderX = 15;
+        int renderY = HEIGHT / 2;
+        int renderZ = 100;
+        float renderRotationX = -15.5f;
+        float renderRotationY = 45f;
+        int renderScale = 16;
+
         PoseStack poseStack = graphics.pose();
         poseStack.pushPose();
-        poseStack.translate(15, 25, 100);
-        poseStack.mulPose(Axis.XP.rotationDegrees(-15.5f));
-        poseStack.mulPose(Axis.YP.rotationDegrees(22.5f));
-        int scale = 16;
-        poseStack.scale(scale, -scale, scale);
+        poseStack.translate(renderX, renderY, renderZ);
+        poseStack.mulPose(Axis.XP.rotationDegrees(renderRotationX));
+        poseStack.mulPose(Axis.YP.rotationDegrees(renderRotationY));
+        poseStack.scale(renderScale, -renderScale, renderScale);
 
         // Logs.
         poseStack.pushPose();
@@ -133,9 +161,6 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
         poseStack.popPose();
     }
 
-    /**
-     * Helper method to render a blockstate display.
-     */
     private void renderBlock(GuiGraphics graphics, PoseStack poseStack, BlockState state, RenderType type)
     {
         Minecraft.getInstance().getBlockRenderer().renderSingleBlock(state, poseStack, graphics.bufferSource(), LightTexture.FULL_BRIGHT, OverlayTexture.NO_OVERLAY, ModelData.EMPTY, type);
