@@ -3,6 +3,7 @@ package com.therighthon.afc.compat.jei;
 import java.util.List;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
+import com.therighthon.afc.AFC;
 import com.therighthon.afc.common.blocks.AFCBlocks;
 import com.therighthon.afc.common.blocks.TapBlock;
 import com.therighthon.afc.common.recipe.TreeTapRecipe;
@@ -22,6 +23,7 @@ import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -38,10 +40,14 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
     private static final int WIDTH = 184;
     private static final int HEIGHT = 60;
 
+    private static final ResourceLocation PROGRESS_BAR_BG = new ResourceLocation(AFC.MOD_ID, "textures/gui/jei/tapping_progress_bg.png");
+    private static final ResourceLocation PROGRESS_BAR_FG = new ResourceLocation(AFC.MOD_ID, "textures/gui/jei/tapping_progress_fg.png");
+    private static final int PROGRESS_WIDTH = 24;
+    private static final int PROGRESS_HEIGHT = 17;
+
     public TreeTappingCategory(RecipeType<TreeTapRecipe> type, IGuiHelper helper)
     {
         super(type, helper, helper.createBlankDrawable(WIDTH, HEIGHT), new ItemStack(AFCBlocks.TREE_TAP.get()));
-
     }
 
     @Override
@@ -96,11 +102,17 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
 
         graphics.drawString(font, tempRange, tempX, tempY, 0xFF404040, false);
 
-        // Arrow.
+        // Progress Bar.
         int arrowX = tempX + 10;
-        int arrowY = HEIGHT / 2 - 5;
-        arrow.draw(graphics, arrowX, arrowY);
-        arrowAnimated.draw(graphics, arrowX, arrowY);
+        int arrowY = (HEIGHT / 2) - (PROGRESS_HEIGHT / 3);
+        long time = System.currentTimeMillis() % 8000;
+        int animatedWidth = (int) (PROGRESS_WIDTH * (time / 8000.0f));
+
+        graphics.blit(PROGRESS_BAR_BG, arrowX, arrowY, 0, 0, PROGRESS_WIDTH, PROGRESS_HEIGHT, PROGRESS_WIDTH, PROGRESS_HEIGHT);
+
+        if (animatedWidth > 0) {
+            graphics.blit(PROGRESS_BAR_FG, arrowX, arrowY, 0, 0, animatedWidth, PROGRESS_HEIGHT, PROGRESS_WIDTH, PROGRESS_HEIGHT);
+        }
 
         // Season Condition.
         int seasonX = arrowX + 10;
