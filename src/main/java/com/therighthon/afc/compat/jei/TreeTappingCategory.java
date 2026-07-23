@@ -38,7 +38,7 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
 {
 
     private static final int WIDTH = 184;
-    private static final int HEIGHT = 60;
+    private static final int HEIGHT = 80;
 
     private static final ResourceLocation PROGRESS_BAR_BG = new ResourceLocation(AFC.MOD_ID, "textures/gui/jei/tapping_progress_bg.png");
     private static final ResourceLocation PROGRESS_BAR_FG = new ResourceLocation(AFC.MOD_ID, "textures/gui/jei/tapping_progress_fg.png");
@@ -54,17 +54,20 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
     public void setRecipe(@NotNull IRecipeLayoutBuilder builder, @NotNull TreeTapRecipe recipe, @NotNull IFocusGroup focuses)
     {
         int itemX = 7;
-        int itemY = HEIGHT / 2 - 5;
+        int itemY = HEIGHT / 2 - 20;
 
         addInputSlot(builder, recipe, itemX, itemY - 15);
         addInputSlot(builder, recipe, itemX, itemY);
         addInputSlot(builder, recipe, itemX, itemY + 15);
 
-        int fluidX = WIDTH / 2 - 10;
-        int fluidY = itemY;
+        int fluidX = WIDTH / 2 + 10;
+        int fluidY = HEIGHT / 4;
         builder.addSlot(RecipeIngredientRole.OUTPUT, fluidX, fluidY)
             .addFluidStack(recipe.getOutput().getFluid(), 1000)
-            .setBackground(slot, -1, -1);
+            .setBackground(slot, -1, -1)
+            .addTooltipCallback((recipeSlotView, tooltip) -> {
+                tooltip.add(Component.literal(recipe.getOutput().getAmount() + " mB/s").withStyle(ChatFormatting.GOLD));
+            });
     }
 
     private void addInputSlot(IRecipeLayoutBuilder builder, TreeTapRecipe recipe, int x, int y)
@@ -90,8 +93,8 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
         var font = Minecraft.getInstance().font;
 
         // Temperature Range.
-        int tempX = 30;
-        int tempY = HEIGHT - 10;
+        int tempX = 5;
+        int tempY = HEIGHT - 20;
         Component rangeComponent = Component.empty()
             .append(Component.literal(String.format("%.1f°C", recipe.getMinTemp())).withStyle(ChatFormatting.DARK_AQUA))
             .append(Component.literal(" - ").withStyle(ChatFormatting.DARK_GRAY))
@@ -103,26 +106,35 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
         graphics.drawString(font, tempRange, tempX, tempY, 0xFF404040, false);
 
         // Progress Bar.
-        int arrowX = tempX + 10;
-        int arrowY = (HEIGHT / 2) - (PROGRESS_HEIGHT / 3);
+        int arrowX = 40;
+        int arrowY = HEIGHT / 4;
         long time = System.currentTimeMillis() % 8000;
-        int animatedWidth = (int) (PROGRESS_WIDTH * (time / 8000.0f));
+        int animatedWidth = (int) (PROGRESS_WIDTH * 2 * (time / 8000.0f));
 
-        graphics.blit(PROGRESS_BAR_BG, arrowX, arrowY, 0, 0, PROGRESS_WIDTH, PROGRESS_HEIGHT, PROGRESS_WIDTH, PROGRESS_HEIGHT);
+        graphics.blit(PROGRESS_BAR_BG, arrowX, arrowY, 0, 0, PROGRESS_WIDTH * 2, PROGRESS_HEIGHT, PROGRESS_WIDTH, PROGRESS_HEIGHT);
 
         if (animatedWidth > 0) {
             graphics.blit(PROGRESS_BAR_FG, arrowX, arrowY, 0, 0, animatedWidth, PROGRESS_HEIGHT, PROGRESS_WIDTH, PROGRESS_HEIGHT);
         }
 
         // Season Condition.
-        int seasonX = arrowX + 10;
-        int seasonY = 5;
+        int seasonX = tempX;
+        int seasonY = tempY + 12;
         if (recipe.springOnly())
         {
             Component springOnly = Component.translatable("tfc.tooltip.calendar_season",
                     Component.translatable(String.format("%s", "tfc.enum.season.april")).withStyle(ChatFormatting.DARK_GREEN)
             ).withStyle(ChatFormatting.DARK_GRAY);
             graphics.drawString(font, springOnly, seasonX, seasonY, 0xFF404040, false);
+        }
+
+        // Fluid Rate.
+        int fluidX = WIDTH / 2 + 12;
+        int fluidY = HEIGHT / 4;
+        if (!recipe.getOutput().isEmpty())
+        {
+            Component fluidRate = Component.literal(recipe.getOutput().getAmount() + " mB/s").withStyle(ChatFormatting.DARK_GRAY);
+            graphics.drawString(font, fluidRate, fluidX + 20, fluidY + 4, 0xFF404040, false);
         }
 
         // 3D Render.
@@ -140,7 +152,7 @@ public class TreeTappingCategory extends BaseRecipeCategory<TreeTapRecipe>
     private void renderTreeTapping(GuiGraphics graphics, BlockState logState)
     {
         int renderX = 15;
-        int renderY = HEIGHT / 2;
+        int renderY = HEIGHT / 2 - 10;
         int renderZ = 100;
         float renderRotationX = -15.5f;
         float renderRotationY = 45f;
