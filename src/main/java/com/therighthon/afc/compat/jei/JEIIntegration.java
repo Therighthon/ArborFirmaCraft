@@ -9,11 +9,14 @@ import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.Container;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 
+import com.therighthon.afc.common.blocks.AFCBlocks;
 import net.dries007.tfc.client.ClientHelpers;
 
 @JeiPlugin
@@ -43,6 +46,12 @@ public class JEIIntegration implements IModPlugin
     public void registerRecipes(IRecipeRegistration r)
     {
         r.addRecipes(TREE_TAP, recipes(AFCRecipeTypes.TREE_TAPPING_RECIPE.get()));
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration)
+    {
+        registration.addRecipeCatalyst(new ItemStack(AFCBlocks.TREE_TAP.get()), TREE_TAP);
     }
 
     private static <C extends Container, T extends Recipe<C>> List<T> recipes(net.minecraft.world.item.crafting.RecipeType<T> type)
