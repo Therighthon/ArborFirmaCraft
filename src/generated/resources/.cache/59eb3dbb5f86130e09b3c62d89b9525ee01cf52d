@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-21T17:45:30.7259367	Loot Tables
+// 1.21.1	2026-07-30T12:18:35.4708608	Loot Tables
 d783e1dfae26b45a32e5921bc076ada2e98f5748 data/afc/loot_table/blocks/tree_tap.json
 6add50345cd11c2585a0f7709f09364ada02d917 data/afc/loot_table/blocks/wood/axle/araucaria.json
 64f0f8843b536664677995622f903ef0f0f953d1 data/afc/loot_table/blocks/wood/axle/baobab.json
@@ -112,6 +112,20 @@ aaaf885bc16a0ab5f3de37ee4bf84ecc5323ec80 data/afc/loot_table/blocks/wood/clutch/
 f49d7e1e1fac461c98f930950b8870ba338b9786 data/afc/loot_table/blocks/wood/clutch/mahogany.json
 9d86b57a23a0e7b885d30bc3b731584deb225d5b data/afc/loot_table/blocks/wood/clutch/teak.json
 ba3a20df087840e4f7a2c3a5797a1e5221b1e2a1 data/afc/loot_table/blocks/wood/clutch/tualang.json
+0d3eb8b6b4dac582b7ee4c819820c58f2612daea data/afc/loot_table/blocks/wood/crate/araucaria.json
+3a7b8665074c87b3751de5d48d90818a980641e8 data/afc/loot_table/blocks/wood/crate/baobab.json
+316b0bc1ebadbd34e1fe5b8cddef1c3b12d4487a data/afc/loot_table/blocks/wood/crate/beech.json
+0fc9e9bb745455ffd9eebb210074695eb744aa62 data/afc/loot_table/blocks/wood/crate/cypress.json
+dad00fc3b2f8c006311dad4ce303363c31842448 data/afc/loot_table/blocks/wood/crate/eucalyptus.json
+0b1fc9b0044fea31a37c2f4c78ea56df80787c3a data/afc/loot_table/blocks/wood/crate/fig.json
+2d9560b5f23dfbefc513b623861d40e12a73d2e5 data/afc/loot_table/blocks/wood/crate/ginkgo.json
+cea3ff1b6d56214689cf5294257c32bb1c7178b8 data/afc/loot_table/blocks/wood/crate/hevea.json
+b6051abf858464c6aa374d32f5eb0dc148ca0d26 data/afc/loot_table/blocks/wood/crate/ipe.json
+ff8900fae4063582b87f64e5a8f2c3de8abe9f6f data/afc/loot_table/blocks/wood/crate/ironwood.json
+d930307ceed3cca4d5f083418b7fca2d90b6dc08 data/afc/loot_table/blocks/wood/crate/mahoe.json
+4cd8dea2e7915723d1bc37fbe05ecfed60534a03 data/afc/loot_table/blocks/wood/crate/mahogany.json
+39ae02a460500c97f64a2ef74e1c5c02ad509391 data/afc/loot_table/blocks/wood/crate/teak.json
+8e66d42ff962a9b7d7e16cfabf427b91a023750c data/afc/loot_table/blocks/wood/crate/tualang.json
 6d45397686a3c75a2e40008fc80e78c90eeb6cb4 data/afc/loot_table/blocks/wood/door/araucaria.json
 8ac938436b41df2ce3822d137b01a7139c254e39 data/afc/loot_table/blocks/wood/door/baobab.json
 d75f9a21669a031703b4e0e704441a64b1f8d637 data/afc/loot_table/blocks/wood/door/beech.json

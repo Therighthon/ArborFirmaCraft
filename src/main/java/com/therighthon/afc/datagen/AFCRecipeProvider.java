@@ -116,6 +116,11 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
             recipe()
                 .input('L', lumber)
                 .input('S', blocks.get(Wood.BlockType.STRIPPED_LOG))
+                .pattern("SLS", "L L", "SLS")
+                .shaped(blocks.get(Wood.BlockType.CRATE));
+            recipe()
+                .input('L', lumber)
+                .input('S', blocks.get(Wood.BlockType.STRIPPED_LOG))
                 .input('M', TFCItems.BRASS_MECHANISMS)
                 .input('A', blocks.get(Wood.BlockType.AXLE))
                 .input('R', Tags.Items.DUSTS_REDSTONE)

@@ -134,6 +134,7 @@ public class AFCBlockTagProvider extends BlockTagsProvider
 
         // Stuff without individual tags that still needs to be mineable with an axe
         addAllAFCWoods(Wood.BlockType.BOOKSHELF, BlockTags.MINEABLE_WITH_AXE);
+        addAllAFCWoods(Wood.BlockType.CRATE, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.TOOL_RACK, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.TWIG, BlockTags.MINEABLE_WITH_AXE);
         addAllAFCWoods(Wood.BlockType.TWIG, TFCTags.Blocks.CAN_BE_SNOW_PILED);
