@@ -272,44 +272,47 @@ public class AFCRecipeProvider extends RecipeProvider implements IConditionBuild
             var wroughtRods = commonTagOf(Registries.ITEM, "rods/wrought_iron");
             var wroughtSheets = commonTagOf(Registries.ITEM, "sheets/wrought_iron");
 
-            recipe()
-                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
-                .input('Y', Tags.Items.STRINGS)
-                .pattern("XXX", " Y ", " Y ")
-                .shaped(FLCompatBlocks.HANGERS.get(wood));
-            recipe()
-                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
-                .input('Y', AFCItems.LUMBER.get(wood))
-                .pattern("XXX", "YYY", "XXX")
-                .shaped(FLCompatBlocks.FOOD_SHELVES.get(wood));
-            recipe()
-                .input('X', itemOf(wood, Wood.BlockType.LOG))
-                .input('Y', AFCItems.LUMBER.get(wood))
-                .input('Z', brassRods)
-                .pattern("X  ", "ZYY", "X  ")
-                .shaped(new ItemStack(FLCompatBlocks.JARBNETS.get(wood), 2));
-            recipe()
-                .input('X', itemOf(wood, Wood.BlockType.LOG))
-                .input('Y', FLItems.TREATED_LUMBER)
-                .pattern("XYX", "XYX", "XYX")
-                .shaped(new ItemStack(FLCompatBlocks.WINE_SHELVES.get(wood), 4));
-            recipe()
-                .input('X', AFCItems.LUMBER.get(wood))
-                .input('G', TFCItems.GLUE)
-                .pattern("XGX", "XXX", "GGG")
-                .shaped(FLCompatBlocks.STOMPING_BARRELS.get(wood));
-            recipe()
-                .input(FLCompatBlocks.STOMPING_BARRELS.get(wood))
-                .input(wroughtRods)
-                .input(wroughtSheets)
-                .input(TFCItems.BRASS_MECHANISMS)
-                .shapeless(FLCompatBlocks.BARREL_PRESSES.get(wood));
-            recipe()
-                .input('X', itemOf(wood, Wood.BlockType.LOG))
-                .input('Y', FLItems.BARREL_STAVE)
-                .input('Z', TFCItems.GLUE)
-                .pattern("XYX", "YZY", "XYX")
-                .shaped(FLCompatBlocks.KEGS.get(wood));
+            // TODO: Long term, firmalife recipes should generate directly into the correct directory
+            //  For now, I am just going to manually move each folder when I run data, and comment this out to avoid
+            //  unintentionally updating it
+//            recipe()
+//                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
+//                .input('Y', Tags.Items.STRINGS)
+//                .pattern("XXX", " Y ", " Y ")
+//                .shaped(FLCompatBlocks.HANGERS.get(wood));
+//            recipe()
+//                .input('X', itemOf(wood, Wood.BlockType.PLANKS))
+//                .input('Y', AFCItems.LUMBER.get(wood))
+//                .pattern("XXX", "YYY", "XXX")
+//                .shaped(FLCompatBlocks.FOOD_SHELVES.get(wood));
+//            recipe()
+//                .input('X', itemOf(wood, Wood.BlockType.LOG))
+//                .input('Y', AFCItems.LUMBER.get(wood))
+//                .input('Z', brassRods)
+//                .pattern("X  ", "ZYY", "X  ")
+//                .shaped(new ItemStack(FLCompatBlocks.JARBNETS.get(wood), 2));
+//            recipe()
+//                .input('X', itemOf(wood, Wood.BlockType.LOG))
+//                .input('Y', FLItems.TREATED_LUMBER)
+//                .pattern("XYX", "XYX", "XYX")
+//                .shaped(new ItemStack(FLCompatBlocks.WINE_SHELVES.get(wood), 4));
+//            recipe()
+//                .input('X', AFCItems.LUMBER.get(wood))
+//                .input('G', TFCItems.GLUE)
+//                .pattern("XGX", "XXX", "GGG")
+//                .shaped(FLCompatBlocks.STOMPING_BARRELS.get(wood));
+//            recipe()
+//                .input(FLCompatBlocks.STOMPING_BARRELS.get(wood))
+//                .input(wroughtRods)
+//                .input(wroughtSheets)
+//                .input(TFCItems.BRASS_MECHANISMS)
+//                .shapeless(FLCompatBlocks.BARREL_PRESSES.get(wood));
+//            recipe()
+//                .input('X', itemOf(wood, Wood.BlockType.LOG))
+//                .input('Y', FLItems.BARREL_STAVE)
+//                .input('Z', TFCItems.GLUE)
+//                .pattern("XYX", "YZY", "XYX")
+//                .shaped(FLCompatBlocks.KEGS.get(wood));
         }
 
         // Unique Logs

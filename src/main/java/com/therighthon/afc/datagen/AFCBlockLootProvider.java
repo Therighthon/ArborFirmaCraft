@@ -118,17 +118,20 @@ public class AFCBlockLootProvider extends BlockLootSubProvider
         // Misc
         dropSelf(AFCBlocks.TREE_TAP.get());
 
+        // TODO: Long term, firmalife loot should generate directly into the correct directory
+        //  For now, I am just going to manually move each folder when I run data, and comment this out to avoid
+        //  unintentionally updating it
         // Firmalife
-        for (AFCWood wood : AFCWood.values())
-        {
-            dropSelf(FLCompatBlocks.BARREL_PRESSES.get(wood).get());
-            dropSelf(FLCompatBlocks.KEGS.get(wood).get());
-            dropSelf(FLCompatBlocks.STOMPING_BARRELS.get(wood).get());
-            dropSelf(FLCompatBlocks.WINE_SHELVES.get(wood).get());
-            dropSelf(FLCompatBlocks.JARBNETS.get(wood).get());
-            dropSelf(FLCompatBlocks.HANGERS.get(wood).get());
-            dropSelf(FLCompatBlocks.FOOD_SHELVES.get(wood).get());
-        }
+//        for (AFCWood wood : AFCWood.values())
+//        {
+//            dropSelf(FLCompatBlocks.BARREL_PRESSES.get(wood).get());
+//            dropSelf(FLCompatBlocks.KEGS.get(wood).get());
+//            dropSelf(FLCompatBlocks.STOMPING_BARRELS.get(wood).get());
+//            dropSelf(FLCompatBlocks.WINE_SHELVES.get(wood).get());
+//            dropSelf(FLCompatBlocks.JARBNETS.get(wood).get());
+//            dropSelf(FLCompatBlocks.HANGERS.get(wood).get());
+//            dropSelf(FLCompatBlocks.FOOD_SHELVES.get(wood).get());
+//        }
     }
 
     protected void createWood(AFCWood species, Wood.BlockType blockType)
