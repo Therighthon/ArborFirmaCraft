@@ -64,6 +64,9 @@ public final class AFC
             FLCompatBlocks.FL_COMPAT_BLOCKS.register(eventBus);
             eventBus.addListener(ModEvents::onFLCompatPackFinder);
         }
+
+        eventBus.addListener(AFCItemCapabilities::register);
+
         if (FMLEnvironment.dist == Dist.CLIENT)
         {
             eventBus.addListener(ModEventClientBusEvents::clientSetup);
@@ -73,8 +76,6 @@ public final class AFC
             eventBus.addListener(ModEventClientBusEvents::onLayers);
             eventBus.addListener(ModEventClientBusEvents::onRegisterEntityRenderers);
             eventBus.addListener(ModEventClientBusEvents::registerExtensions);
-            eventBus.addListener(AFCItemCapabilities::register);
-
             if (ModList.get().isLoaded("firmalife"))
             {
                 eventBus.addListener(ModEventClientBusEvents::clientFLCompatSetup);
