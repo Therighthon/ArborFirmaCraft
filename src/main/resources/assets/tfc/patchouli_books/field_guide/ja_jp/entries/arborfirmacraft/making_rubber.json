@@ -1,0 +1,14 @@
+{
+	"name": "ゴム作り",
+	"category": "tfc:arborfirmacraft",
+	"icon": "afc:rubber_bar",
+	"pages": [
+	{
+		"type": "patchouli:text",
+		"text": "ラテックスを硫黄の粉と一緒に鍋で煮沸することで、固形のゴムを作成できます。これが何かの役に立てばよいのですが……。"
+	}
+	
+	],
+	"read_by_default": true,
+	"sortnum": 3
+}
