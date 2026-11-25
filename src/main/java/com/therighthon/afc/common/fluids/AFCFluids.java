@@ -21,13 +21,15 @@ import net.dries007.tfc.common.fluids.ExtendedFluidType;
 import net.dries007.tfc.common.fluids.FluidRegistryObject;
 import net.dries007.tfc.common.fluids.FluidTypeClientProperties;
 import net.dries007.tfc.common.fluids.MixingFluid;
-import net.dries007.tfc.common.fluids.TFCFluids;
 import net.dries007.tfc.util.Helpers;
 import net.dries007.tfc.util.registry.RegistrationHelpers;
 
+import static com.therighthon.afc.AFC.*;
+
 public final class AFCFluids
 {
-    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, AFC.MOD_ID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MOD_ID);
+    public static final DeferredRegister<FluidType> FLUID_TYPES = DeferredRegister.create(ForgeRegistries.Keys.FLUID_TYPES, MOD_ID);
 
     public static final ResourceLocation WATER_STILL = new ResourceLocation("block/water_still");
     public static final ResourceLocation WATER_FLOW = new ResourceLocation("block/water_flow");
@@ -69,7 +71,7 @@ public final class AFCFluids
         final int index = name.lastIndexOf('/');
         final String flowingName = index == -1 ? "flowing_" + name : name.substring(0, index) + "/flowing_" + name.substring(index + 1);
 
-        return RegistrationHelpers.registerFluid(TFCFluids.FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new ExtendedFluidType(typeProperties, clientProperties), sourceFactory, flowingFactory);
+        return RegistrationHelpers.registerFluid(FLUID_TYPES, FLUIDS, name, name, flowingName, builder, () -> new ExtendedFluidType(typeProperties, clientProperties), sourceFactory, flowingFactory);
     }
 
 }

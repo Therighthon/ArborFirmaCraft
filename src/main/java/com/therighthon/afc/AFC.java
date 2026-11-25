@@ -47,6 +47,7 @@ public class AFC
         AFCBlocks.BLOCKS.register(eventBus);
         AFCItems.ITEMS.register(eventBus);
         AFCFluids.FLUIDS.register(eventBus);
+        AFCFluids.FLUID_TYPES.register(eventBus);
         AFCCommands.ARGUMENT_TYPES.register(eventBus);
         AFCEntities.ENTITIES.register(eventBus);
         AFCFeatures.FEATURES.register(eventBus);
